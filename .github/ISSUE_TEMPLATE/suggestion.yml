@@ -1,11 +1,11 @@
 name: Suggestion
-description: Suggest something that would improve Create
+description: Suggest something that would improve The Abyss II
 labels: [ "suggestion" ]
 body:
     -   type: textarea
         attributes:
             label: Describe the Suggestion
-            description: What should we add or change to make Create better?
+            description: What should we add or change to make The Abyss II better?
         validations:
             required: true
     -   type: textarea
@@ -22,4 +22,4 @@ body:
             required: false
     -   type: markdown
         attributes:
-            value: "Thank you for taking the time to make this suggestion and to help improve Create"
+            value: "Thank you for taking the time to make this suggestion and to help improve The Abyss II"
