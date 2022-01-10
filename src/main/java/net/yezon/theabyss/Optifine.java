@@ -41,9 +41,9 @@ import net.yezon.theabyss.TheAbyss;
 @Mod.EventBusSubscriber(modid = "theabyss", bus = Bus.MOD, value = Dist.CLIENT)
 public class Optifine {
     private static final ResourceLocation DIM_RENDER_INFO = new ResourceLocation("theabyss", "the_abyss");
-    private static final ResourceLocation SUN_TEXTURES = new ResourceLocation("textures/item/redstone.png");
-    private static final ResourceLocation MOON_PHASES_TEXTURES = new ResourceLocation("textures/block/dirt.png");
-    private static final ResourceLocation SKY_TEXTURE = new ResourceLocation("theabyss", "textures/environment/sky.png");
+    private static final ResourceLocation SUN_TEXTURES = new ResourceLocation("");
+    private static final ResourceLocation MOON_PHASES_TEXTURES = new ResourceLocation("");
+    private static final ResourceLocation SKY_TEXTURE = new ResourceLocation("");
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void clientSetup(FMLClientSetupEvent event) {
         // public net.minecraft.client.world.DimensionRenderInfo field_239208_a_ #
