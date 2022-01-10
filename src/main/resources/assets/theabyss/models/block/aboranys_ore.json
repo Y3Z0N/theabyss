@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "theabyss:blocks/unstable_ore",
+    "particle": "theabyss:blocks/unstable_ore"
+  }
+}

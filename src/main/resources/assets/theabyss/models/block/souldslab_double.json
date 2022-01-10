@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "theabyss:blocks/death_abyss_oak_7",
+    "particle": "theabyss:blocks/death_abyss_oak_7"
+  }
+}

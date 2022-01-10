@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1",
+    "2"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:fixed_bone"
+    },
+    "1": {
+      "item": "theabyss:fixed_bone"
+    },
+    "2": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "theabyss:bone_sword_item",
+    "count": 1
+  }
+}

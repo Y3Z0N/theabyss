@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "theabyss:items/abyss_wand"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "theabyss:custom/fallen_leaves",
+  "textures": {
+    "all": "theabyss:blocks/blaru_leave",
+    "particle": "theabyss:blocks/blaru_leave",
+    "texture": "theabyss:blocks/blaru_leave"
+  }
+}

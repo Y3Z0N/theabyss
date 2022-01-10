@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "theabyss:blocks/ruma_leave_2",
+    "particle": "theabyss:blocks/ruma_leave_2"
+  }
+}

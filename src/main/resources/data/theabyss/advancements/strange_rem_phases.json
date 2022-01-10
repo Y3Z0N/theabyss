@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "theabyss:eye_of_abyss"
+    },
+    "title": {
+      "translate": "advancements.strange_rem_phases.title"
+    },
+    "description": {
+      "translate": "advancements.strange_rem_phases.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "strange_rem_phases": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 1
+  },
+  "parent": "theabyss:story_adv"
+}

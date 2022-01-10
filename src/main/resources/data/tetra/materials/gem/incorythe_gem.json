@@ -1,0 +1,31 @@
+{
+    "key": "incorythe_gem",
+    "category": "gem",
+    "primary": "7.6",
+    "secondary": "4.5",
+    "tertiary": "1",
+    "durability": "2000",
+    "integrityCost": "2",
+    "integrityGain": "8",
+    "magicCapacity": "152",
+    "toolLevel": "3",
+    "toolEfficiency": "14",
+    "tints": {
+        "glyph": "00E1A7",
+        "texture": "00E1A7"
+    },
+    "textures": [
+        "metal",
+        "default"
+    ],
+    "material": {
+        "item": "theabyss:incorythe_gem",
+        "count": 1
+    },
+    "effects": {
+        "stabilizing": 20
+    },
+    "requiredTools": {
+        "hammer": 4
+    }
+}

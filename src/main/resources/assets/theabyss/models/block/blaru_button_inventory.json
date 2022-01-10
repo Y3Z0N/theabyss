@@ -1,0 +1,6 @@
+{
+  "parent": "block/button_inventory",
+  "textures": {
+    "texture": "theabyss:blocks/abyss_planks_21"
+  }
+}

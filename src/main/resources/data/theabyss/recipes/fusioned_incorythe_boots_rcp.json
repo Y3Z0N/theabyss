@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:incorythe_armor_boots"
+    },
+    "1": {
+      "item": "theabyss:slime_stage_4"
+    },
+    "2": {
+      "item": "minecraft:netherite_boots"
+    }
+  },
+  "result": {
+    "item": "theabyss:fusioned_incorythe_armor_boots",
+    "count": 1
+  }
+}

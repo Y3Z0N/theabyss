@@ -1,0 +1,278 @@
+{
+  "credit": "Made with Blockbench",
+  "ambientocclusion": false,
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        8.8
+      ],
+      "to": [
+        16,
+        16,
+        8.8
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": -22.5,
+        "axis": "x",
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "rescale": true
+      },
+      "faces": {
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#fire"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        0,
+        7.2
+      ],
+      "to": [
+        16,
+        16,
+        7.2
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 22.5,
+        "axis": "x",
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "rescale": true
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#fire"
+        }
+      }
+    },
+    {
+      "from": [
+        7.2,
+        0,
+        0
+      ],
+      "to": [
+        7.2,
+        16,
+        16
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 22.5,
+        "axis": "z",
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "rescale": true
+      },
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#fire"
+        }
+      }
+    },
+    {
+      "from": [
+        8.8,
+        0,
+        0
+      ],
+      "to": [
+        8.8,
+        16,
+        16
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": -22.5,
+        "axis": "z",
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "rescale": true
+      },
+      "faces": {
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#fire"
+        }
+      }
+    },
+    {
+      "from": [
+        2.375,
+        2.35,
+        0
+      ],
+      "to": [
+        2.375,
+        14.35,
+        16
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 0,
+        "axis": "z",
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "rescale": true
+      },
+      "faces": {
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#fire"
+        }
+      }
+    },
+    {
+      "from": [
+        13.65,
+        2.35,
+        0
+      ],
+      "to": [
+        13.65,
+        14.35,
+        16
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 0,
+        "axis": "z",
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "rescale": true
+      },
+      "faces": {
+        "east": {
+          "uv": [
+            16,
+            0,
+            0,
+            16
+          ],
+          "texture": "#fire"
+        }
+      }
+    },
+    {
+      "from": [
+        2.2781,
+        2.42,
+        0.0281
+      ],
+      "to": [
+        13.5281,
+        14.42,
+        0.0281
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 0,
+        "axis": "z",
+        "origin": [
+          7.56485,
+          8.26777,
+          0.0281
+        ],
+        "rescale": true
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            16,
+            0,
+            0,
+            16
+          ],
+          "texture": "#fire"
+        }
+      }
+    },
+    {
+      "from": [
+        2.2781,
+        2.45,
+        16
+      ],
+      "to": [
+        13.5281,
+        14.45,
+        16
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 0,
+        "axis": "z",
+        "origin": [
+          7.56485,
+          8.26777,
+          15.9719
+        ],
+        "rescale": true
+      },
+      "faces": {
+        "south": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#fire"
+        }
+      }
+    }
+  ]
+}

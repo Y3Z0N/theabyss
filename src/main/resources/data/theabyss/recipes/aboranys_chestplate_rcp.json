@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:aboranys_gem"
+    },
+    "2": {
+      "item": "theabyss:aboranys_gem"
+    },
+    "3": {
+      "item": "theabyss:aboranys_gem"
+    },
+    "4": {
+      "item": "theabyss:aboranys_gem"
+    },
+    "5": {
+      "item": "theabyss:aboranys_gem"
+    },
+    "6": {
+      "item": "theabyss:aboranys_gem"
+    },
+    "7": {
+      "item": "theabyss:aboranys_gem"
+    },
+    "8": {
+      "item": "theabyss:aboranys_gem"
+    }
+  },
+  "result": {
+    "item": "theabyss:aboranys_armor_chestplate",
+    "count": 1
+  }
+}

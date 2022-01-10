@@ -1,0 +1,169 @@
+{
+  "type": "theabyss:the_abyss",
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": 0,
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "seed": 7406401022,
+      "temperature_noise": {
+        "firstOctave": -6.3,
+        "amplitudes": [
+          2,
+          2
+        ]
+      },
+      "humidity_noise": {
+        "firstOctave": -7,
+        "amplitudes": [
+          2,
+          2
+        ]
+      },
+      "altitude_noise": {
+        "firstOctave": -7,
+        "amplitudes": [
+          2,
+          2
+        ]
+      },
+      "weirdness_noise": {
+        "firstOctave": -7,
+        "amplitudes": [
+          2,
+          2
+        ]
+      },
+      
+      "biomes": [
+        {
+          "biome": "theabyss:blue_forest",
+          "parameters": {
+            "temperature": 0.8,
+            "humidity": -1,
+            "altitude": 0.35,
+            "weirdness": -1.0,
+            "offset": 0.5
+          }
+        },
+        {
+          "biome": "theabyss:slime_forest",
+          "parameters": {
+            "temperature": 0.66,
+            "humidity": -0.66,
+            "altitude": -0.95,
+            "weirdness": 1.4,
+            "offset": 0.8
+          }
+        },
+        {
+          "biome": "theabyss:phantom_crate",
+          "parameters": {
+            "temperature": 0.33,
+            "humidity": -0.33,
+            "altitude": -0.05,
+            "weirdness": -1.3,
+            "offset": 1.0
+          }
+        },
+        {
+          "biome": "theabyss:blue_mountain",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "altitude": -1.25,
+            "weirdness": 1.6,
+            "offset": 0.7
+          }
+        },
+        {
+          "biome": "theabyss:blue_jungle",
+          "parameters": {
+            "temperature": -0.33,
+            "humidity": 0.33,
+            "altitude": 0.65,
+            "weirdness": -1.3,
+            "offset": 0.2
+          }
+        },
+        {
+          "biome": "theabyss:plains",
+          "parameters": {
+            "temperature": 0.33,
+            "humidity": 0.33,
+            "altitude": -0.4,
+            "weirdness": -1.5,
+            "offset": 0.5
+          }
+        },
+        {
+          "biome": "theabyss:mud_plains",
+          "parameters": {
+            "temperature": -1,
+            "humidity": 1,
+            "altitude": 0.25,
+            "weirdness": -1.2,
+            "offset": 0.5
+          }
+        },
+        {
+          "biome": "theabyss:infected_lake",
+          "parameters": {
+            "temperature": -1.3,
+            "humidity": 1.6,
+            "altitude": -0.75,
+            "weirdness": 0.8,
+            "offset": 1.0
+          }
+        }
+      ]
+    },
+    "settings": {
+      "name": "theabyss:the_abyss",
+      "bedrock_roof_position": -10,
+      "bedrock_floor_position": 0,
+      "sea_level": 61,
+      "disable_mob_generation": false,
+      "default_block": {
+        "Name": "theabyss:stone"
+      },
+      "default_fluid": {
+        "Name": "minecraft:water",
+        "Properties": {
+          "level": "0"
+        }
+      },
+      "noise": {
+        "min_y": 0,
+        "height": 256,
+        "density_factor": 1,
+        "density_offset": -0.46875,
+        "size_horizontal": 1,
+        "size_vertical": 2,
+        "simplex_surface_noise": true,
+        "random_density_offset": true,
+        "island_noise_override": false,
+        "amplified": false,
+        "sampling": {
+          "xz_scale": 1,
+          "y_scale": 1,
+          "xz_factor": 80,
+          "y_factor": 160
+        },
+        "bottom_slide": {
+          "target": -30,
+          "size": 0,
+          "offset": 0
+        },
+        "top_slide": {
+          "target": -10,
+          "size": 3,
+          "offset": 0
+        }
+      },
+      "structures": {
+        "structures": {}
+      }
+    }
+  }
+}

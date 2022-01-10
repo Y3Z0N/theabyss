@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "theabyss:blocks/oak_door_cr_22",
+    "particle": "theabyss:blocks/oak_door_cr_22"
+  }
+}

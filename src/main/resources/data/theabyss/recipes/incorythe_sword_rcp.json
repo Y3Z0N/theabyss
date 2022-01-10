@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1",
+    "2"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:incorythe_gem"
+    },
+    "1": {
+      "item": "theabyss:incorythe_gem"
+    },
+    "2": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "theabyss:incorythe_sword",
+    "count": 1
+  }
+}

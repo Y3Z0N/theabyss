@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "theabyss:blocks/abyss_planks_21",
+    "up": "theabyss:blocks/abyss_planks_21",
+    "north": "theabyss:blocks/blaru_bookshelf",
+    "east": "theabyss:blocks/blaru_bookshelf",
+    "south": "theabyss:blocks/blaru_bookshelf",
+    "west": "theabyss:blocks/blaru_bookshelf",
+    "particle": "theabyss:blocks/abyss_planks_21"
+  }
+}

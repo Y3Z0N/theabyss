@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1",
+    "2"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:cobble_stone"
+    },
+    "1": {
+      "item": "theabyss:bottle_of_somnium"
+    },
+    "2": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "result": {
+    "item": "theabyss:test_tube_head",
+    "count": 1
+  }
+}

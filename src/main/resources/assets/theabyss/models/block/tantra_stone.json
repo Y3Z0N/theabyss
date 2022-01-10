@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "theabyss:blocks/tantra_stone",
+    "particle": "theabyss:blocks/tantra_stone"
+  }
+}

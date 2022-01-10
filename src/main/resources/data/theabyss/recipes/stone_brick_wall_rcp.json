@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:stone_brick"
+    },
+    "1": {
+      "item": "theabyss:stone_brick"
+    },
+    "2": {
+      "item": "theabyss:stone_brick"
+    },
+    "3": {
+      "item": "theabyss:stone_brick"
+    },
+    "4": {
+      "item": "theabyss:stone_brick"
+    },
+    "5": {
+      "item": "theabyss:stone_brick"
+    }
+  },
+  "result": {
+    "item": "theabyss:stone_brick_wall",
+    "count": 6
+  }
+}

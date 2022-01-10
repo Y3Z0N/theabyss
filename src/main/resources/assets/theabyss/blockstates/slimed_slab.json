@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "theabyss:block/slimed_slab"
+    },
+    "type=top": {
+      "model": "theabyss:block/slimed_slab_top"
+    },
+    "type=double": {
+      "model": "theabyss:block/slimed_slab_full"
+    }
+  }
+}

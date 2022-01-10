@@ -1,0 +1,6 @@
+{
+  "parent": "block/button_pressed",
+  "textures": {
+    "texture": "theabyss:blocks/ruma_planks"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:frozen_planks"
+    },
+    "1": {
+      "item": "theabyss:frozen_planks"
+    },
+    "2": {
+      "item": "theabyss:frozen_planks"
+    },
+    "3": {
+      "item": "theabyss:frozen_planks"
+    },
+    "4": {
+      "item": "theabyss:frozen_planks"
+    },
+    "5": {
+      "item": "theabyss:frozen_planks"
+    }
+  },
+  "result": {
+    "item": "theabyss:frozen_trap_door",
+    "count": 2
+  }
+}

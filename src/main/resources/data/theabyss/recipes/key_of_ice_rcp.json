@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  2",
+    " 4 ",
+    "6  "
+  ],
+  "key": {
+    "2": {
+      "item": "theabyss:dark_stone"
+    },
+    "4": {
+      "item": "theabyss:glacerythe_gem"
+    },
+    "6": {
+      "item": "theabyss:glacerythe_gem"
+    }
+  },
+  "result": {
+    "item": "theabyss:frost_world",
+    "count": 1
+  }
+}

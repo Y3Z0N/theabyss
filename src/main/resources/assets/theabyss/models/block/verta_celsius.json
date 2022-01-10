@@ -1,0 +1,9 @@
+{
+  "parent": "theabyss:custom/plant_d",
+  "textures": {
+    "all": "theabyss:blocks/dungeon_flower1_gl",
+    "particle": "theabyss:blocks/dungeon_flower1_gl",
+    "0": "theabyss:blocks/plant_d_22",
+    "missing": "theabyss:blocks/plant_d_22"
+  }
+}

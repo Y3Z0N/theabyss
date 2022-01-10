@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:unorithe_armor_leggings"
+    },
+    "1": {
+      "item": "theabyss:slime_stage_4"
+    },
+    "2": {
+      "item": "minecraft:netherite_leggings"
+    }
+  },
+  "result": {
+    "item": "theabyss:fusioned_unorithe_armor_leggings",
+    "count": 1
+  }
+}

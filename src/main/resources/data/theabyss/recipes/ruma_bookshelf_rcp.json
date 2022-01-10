@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:ruma_planks"
+    },
+    "1": {
+      "item": "theabyss:ruma_planks"
+    },
+    "2": {
+      "item": "theabyss:ruma_planks"
+    },
+    "3": {
+      "item": "minecraft:book"
+    },
+    "4": {
+      "item": "minecraft:book"
+    },
+    "5": {
+      "item": "minecraft:book"
+    },
+    "6": {
+      "item": "theabyss:ruma_planks"
+    },
+    "7": {
+      "item": "theabyss:ruma_planks"
+    },
+    "8": {
+      "item": "theabyss:ruma_planks"
+    }
+  },
+  "result": {
+    "item": "theabyss:ruma_bookshelf",
+    "count": 1
+  }
+}

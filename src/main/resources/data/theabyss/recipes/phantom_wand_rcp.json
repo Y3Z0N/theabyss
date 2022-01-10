@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    " 4 ",
+    "6 8"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:phantom_essence"
+    },
+    "2": {
+      "item": "theabyss:loran_energy"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "6": {
+      "item": "theabyss:loran_energy"
+    },
+    "8": {
+      "item": "theabyss:phantom_essence"
+    }
+  },
+  "result": {
+    "item": "theabyss:phantom_wand",
+    "count": 1
+  }
+}

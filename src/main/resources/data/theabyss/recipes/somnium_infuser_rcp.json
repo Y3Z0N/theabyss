@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "1": {
+      "item": "theabyss:test_tube_head"
+    },
+    "3": {
+      "item": "theabyss:test_tube"
+    },
+    "4": {
+      "item": "theabyss:cobble_stone"
+    },
+    "5": {
+      "item": "theabyss:test_tube"
+    },
+    "6": {
+      "item": "theabyss:cobble_stone"
+    },
+    "7": {
+      "item": "theabyss:cobble_stone"
+    },
+    "8": {
+      "item": "theabyss:cobble_stone"
+    }
+  },
+  "result": {
+    "item": "theabyss:somnium_infuser",
+    "count": 1
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23",
+    "45"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:tantra_planks"
+    },
+    "1": {
+      "item": "theabyss:tantra_planks"
+    },
+    "2": {
+      "item": "theabyss:tantra_planks"
+    },
+    "3": {
+      "item": "theabyss:tantra_planks"
+    },
+    "4": {
+      "item": "theabyss:tantra_planks"
+    },
+    "5": {
+      "item": "theabyss:tantra_planks"
+    }
+  },
+  "result": {
+    "item": "theabyss:tantra_door",
+    "count": 3
+  }
+}

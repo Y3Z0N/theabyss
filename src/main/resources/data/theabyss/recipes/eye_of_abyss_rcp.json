@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "item": "theabyss:roka_horn"
+    },
+    "3": {
+      "item": "theabyss:crystal_hand"
+    },
+    "4": {
+      "item": "minecraft:ender_eye"
+    },
+    "5": {
+      "item": "theabyss:elder_eye"
+    },
+    "7": {
+      "item": "minecraft:ghast_tear"
+    }
+  },
+  "result": {
+    "item": "theabyss:eye_of_abyss",
+    "count": 1
+  }
+}

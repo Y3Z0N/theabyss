@@ -1,0 +1,8 @@
+{
+  "parent": "theabyss:custom/phantom_hanging_lantern",
+  "textures": {
+    "all": "theabyss:blocks/phantom_lantern_animated",
+    "particle": "theabyss:blocks/phantom_lantern_animated",
+    "lantern": "theabyss:blocks/phantom_lantern_animated"
+  }
+}

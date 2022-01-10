@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "theabyss:loran_flower"
+    },
+    "title": {
+      "translate": "advancements.loran_adv.title"
+    },
+    "description": {
+      "translate": "advancements.loran_adv.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "loran_adv": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 1
+  },
+  "parent": "theabyss:flora_adv"
+}

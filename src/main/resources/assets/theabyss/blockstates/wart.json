@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "theabyss:block/wart"
+    },
+    "facing=east": {
+      "model": "theabyss:block/wart",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "theabyss:block/wart",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "theabyss:block/wart",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "theabyss:block/wart",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "theabyss:block/wart",
+      "x": 90
+    }
+  }
+}

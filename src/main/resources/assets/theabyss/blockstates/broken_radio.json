@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "theabyss:block/broken_radio"
+    },
+    "facing=east": {
+      "model": "theabyss:block/broken_radio",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "theabyss:block/broken_radio",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "theabyss:block/broken_radio",
+      "y": 270
+    }
+  }
+}

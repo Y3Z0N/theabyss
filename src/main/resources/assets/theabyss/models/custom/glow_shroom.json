@@ -1,0 +1,549 @@
+{
+  "credit": "Made with Blockbench",
+  "elements": [
+    {
+      "from": [
+        13.75,
+        0,
+        2.25
+      ],
+      "to": [
+        13.751,
+        12,
+        18.25
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": -45,
+        "axis": "y",
+        "origin": [
+          13.75,
+          -2,
+          2.25
+        ]
+      },
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            4,
+            16,
+            16
+          ],
+          "texture": "#steckling"
+        },
+        "west": {
+          "uv": [
+            16,
+            4,
+            0,
+            16
+          ],
+          "texture": "#steckling"
+        }
+      }
+    },
+    {
+      "from": [
+        2.375,
+        0,
+        2.375
+      ],
+      "to": [
+        2.376,
+        12,
+        18.375
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 45,
+        "axis": "y",
+        "origin": [
+          2.375,
+          0,
+          2.375
+        ]
+      },
+      "faces": {
+        "east": {
+          "uv": [
+            16,
+            4,
+            0,
+            16
+          ],
+          "texture": "#steckling"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            16,
+            16
+          ],
+          "texture": "#steckling"
+        }
+      }
+    },
+    {
+      "name": "Box4",
+      "from": [
+        1.5,
+        8,
+        1.75
+      ],
+      "to": [
+        6.5,
+        11,
+        6.75
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            10,
+            0,
+            15,
+            3
+          ],
+          "texture": "#shrooms"
+        },
+        "east": {
+          "uv": [
+            10,
+            0,
+            15,
+            3
+          ],
+          "texture": "#shrooms"
+        },
+        "south": {
+          "uv": [
+            10,
+            0,
+            15,
+            3
+          ],
+          "texture": "#shrooms"
+        },
+        "west": {
+          "uv": [
+            10,
+            0,
+            15,
+            3
+          ],
+          "texture": "#shrooms"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            5,
+            5
+          ],
+          "texture": "#shrooms"
+        },
+        "down": {
+          "uv": [
+            5,
+            0,
+            10,
+            5
+          ],
+          "texture": "#shrooms"
+        }
+      }
+    },
+    {
+      "name": "Box5",
+      "from": [
+        3.5,
+        12,
+        3.25
+      ],
+      "to": [
+        13.5,
+        15,
+        13.25
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            5,
+            12,
+            15,
+            15
+          ],
+          "texture": "#shrooms"
+        },
+        "east": {
+          "uv": [
+            5,
+            0,
+            15,
+            3
+          ],
+          "texture": "#shrooms"
+        },
+        "south": {
+          "uv": [
+            5,
+            0,
+            15,
+            3
+          ],
+          "texture": "#shrooms"
+        },
+        "west": {
+          "uv": [
+            5,
+            0,
+            15,
+            3
+          ],
+          "texture": "#shrooms"
+        },
+        "up": {
+          "uv": [
+            4,
+            3,
+            14,
+            13
+          ],
+          "texture": "#shrooms"
+        },
+        "down": {
+          "uv": [
+            5,
+            0,
+            15,
+            10
+          ],
+          "texture": "#shrooms"
+        }
+      }
+    },
+    {
+      "name": "Box4",
+      "from": [
+        2.5,
+        8,
+        10
+      ],
+      "to": [
+        5.5,
+        10,
+        13
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            6,
+            9,
+            9,
+            11
+          ],
+          "texture": "#shrooms"
+        },
+        "east": {
+          "uv": [
+            6,
+            9,
+            9,
+            11
+          ],
+          "texture": "#shrooms"
+        },
+        "south": {
+          "uv": [
+            6,
+            9,
+            9,
+            11
+          ],
+          "texture": "#shrooms"
+        },
+        "west": {
+          "uv": [
+            6,
+            9,
+            9,
+            11
+          ],
+          "texture": "#shrooms"
+        },
+        "up": {
+          "uv": [
+            0,
+            9,
+            3,
+            12
+          ],
+          "texture": "#shrooms"
+        },
+        "down": {
+          "uv": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "texture": "#shrooms"
+        }
+      }
+    },
+    {
+      "name": "Box5",
+      "from": [
+        4.5,
+        0,
+        9
+      ],
+      "to": [
+        7.5,
+        2,
+        12
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            6,
+            9,
+            9,
+            11
+          ],
+          "texture": "#shrooms"
+        },
+        "east": {
+          "uv": [
+            6,
+            9,
+            9,
+            11
+          ],
+          "texture": "#shrooms"
+        },
+        "south": {
+          "uv": [
+            6,
+            9,
+            9,
+            11
+          ],
+          "texture": "#shrooms"
+        },
+        "west": {
+          "uv": [
+            6,
+            9,
+            9,
+            11
+          ],
+          "texture": "#shrooms"
+        },
+        "up": {
+          "uv": [
+            0,
+            9,
+            3,
+            12
+          ],
+          "texture": "#shrooms"
+        },
+        "down": {
+          "uv": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "texture": "#shrooms"
+        }
+      }
+    },
+    {
+      "name": "Box6",
+      "from": [
+        7.5,
+        0,
+        5
+      ],
+      "to": [
+        10.5,
+        2,
+        8
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            6,
+            9,
+            9,
+            11
+          ],
+          "texture": "#shrooms"
+        },
+        "east": {
+          "uv": [
+            6,
+            9,
+            9,
+            11
+          ],
+          "texture": "#shrooms"
+        },
+        "south": {
+          "uv": [
+            6,
+            9,
+            9,
+            11
+          ],
+          "texture": "#shrooms"
+        },
+        "west": {
+          "uv": [
+            6,
+            9,
+            9,
+            11
+          ],
+          "texture": "#shrooms"
+        },
+        "up": {
+          "uv": [
+            0,
+            9,
+            3,
+            12
+          ],
+          "texture": "#shrooms"
+        },
+        "down": {
+          "uv": [
+            3,
+            9,
+            6,
+            12
+          ],
+          "texture": "#shrooms"
+        }
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        75,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        2.5,
+        0
+      ],
+      "scale": [
+        0.375,
+        0.375,
+        0.375
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        75,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        2.5,
+        0
+      ],
+      "scale": [
+        0.375,
+        0.375,
+        0.375
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        45,
+        0
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        225,
+        0
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        0.5,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    "gui": {
+      "translation": [
+        0,
+        -3.75,
+        0
+      ],
+      "scale": [
+        0.625,
+        0.49,
+        0.625
+      ]
+    },
+    "fixed": {
+      "translation": [
+        0,
+        -3.25,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "groups": [
+    {
+      "name": "Steckling1",
+      "origin": [
+        13.75,
+        0,
+        2.25
+      ],
+      "children": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ]
+}

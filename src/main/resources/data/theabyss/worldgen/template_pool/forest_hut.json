@@ -1,0 +1,15 @@
+{
+  "name": "theabyss:forest_hut",
+  "fallback": "minecraft:empty",
+  "elements": [
+	{
+      "weight": 100,
+      "element": {
+        "location": "theabyss:forest_hut",
+        "processors": "minecraft:empty",
+		"projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

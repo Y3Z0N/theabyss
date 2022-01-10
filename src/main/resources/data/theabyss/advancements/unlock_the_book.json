@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "unlock_the_book": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "theabyss:translation_letter",
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "theabyss:ring_of_ghosts"
+  },
+  "addition": {
+    "item": "theabyss:loran_energy"
+  },
+  "result": {
+    "item": "theabyss:ring_of_ghosts"
+  }
+}

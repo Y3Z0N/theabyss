@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:sal_planks"
+    },
+    "1": {
+      "item": "theabyss:sal_planks"
+    },
+    "2": {
+      "item": "theabyss:sal_planks"
+    }
+  },
+  "result": {
+    "item": "theabyss:ruma_slab",
+    "count": 6
+  }
+}

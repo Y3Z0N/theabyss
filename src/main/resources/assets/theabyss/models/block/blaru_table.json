@@ -1,0 +1,8 @@
+{
+  "parent": "theabyss:custom/blaru_table",
+  "textures": {
+    "all": "theabyss:blocks/abyss_planks_21",
+    "particle": "theabyss:blocks/abyss_planks_21",
+    "0": "theabyss:blocks/abyss_planks_21"
+  }
+}

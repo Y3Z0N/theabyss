@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "theabyss:blocks/diamond_ore",
+    "particle": "theabyss:blocks/diamond_ore"
+  }
+}

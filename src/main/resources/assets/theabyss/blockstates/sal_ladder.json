@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "theabyss:block/sal_ladder"
+    },
+    "facing=east": {
+      "model": "theabyss:block/sal_ladder",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "theabyss:block/sal_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "theabyss:block/sal_ladder",
+      "y": 270
+    }
+  }
+}

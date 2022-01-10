@@ -1,0 +1,8 @@
+{
+  "parent": "theabyss:custom/abyss_grass",
+  "textures": {
+    "all": "theabyss:blocks/abyss_dirt",
+    "particle": "theabyss:blocks/abyss_dirt",
+    "0": "theabyss:blocks/basegrassblock"
+  }
+}

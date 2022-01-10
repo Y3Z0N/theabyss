@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "theabyss:blocks/abyss_planks_21",
+    "top": "theabyss:blocks/abyss_planks_21",
+    "side": "theabyss:blocks/abyss_planks_21"
+  }
+}

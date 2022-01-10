@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "theabyss:block/loran_flower"
+    },
+    "half=lower": {
+      "model": "theabyss:block/loran_flower_bottom"
+    }
+  }
+}

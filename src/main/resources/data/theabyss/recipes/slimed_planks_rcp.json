@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:slimed_log"
+    }
+  },
+  "result": {
+    "item": "theabyss:slimed_planks",
+    "count": 4
+  }
+}

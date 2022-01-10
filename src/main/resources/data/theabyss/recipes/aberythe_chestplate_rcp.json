@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:aberythe_gem"
+    },
+    "2": {
+      "item": "theabyss:aberythe_gem"
+    },
+    "3": {
+      "item": "theabyss:aberythe_gem"
+    },
+    "4": {
+      "item": "theabyss:aberythe_gem"
+    },
+    "5": {
+      "item": "theabyss:aberythe_gem"
+    },
+    "6": {
+      "item": "theabyss:aberythe_gem"
+    },
+    "7": {
+      "item": "theabyss:aberythe_gem"
+    },
+    "8": {
+      "item": "theabyss:aberythe_gem"
+    }
+  },
+  "result": {
+    "item": "theabyss:aberythe_armor_chestplate",
+    "count": 1
+  }
+}

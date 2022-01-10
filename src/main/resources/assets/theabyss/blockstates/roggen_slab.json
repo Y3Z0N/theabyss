@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "theabyss:block/roggen_slab"
+    },
+    "type=top": {
+      "model": "theabyss:block/roggen_slab_top"
+    },
+    "type=double": {
+      "model": "theabyss:block/roggen_slab_full"
+    }
+  }
+}

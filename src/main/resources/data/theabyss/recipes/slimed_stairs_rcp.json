@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:slimed_planks"
+    },
+    "3": {
+      "item": "theabyss:slimed_planks"
+    },
+    "4": {
+      "item": "theabyss:slimed_planks"
+    },
+    "6": {
+      "item": "theabyss:slimed_planks"
+    },
+    "7": {
+      "item": "theabyss:slimed_planks"
+    },
+    "8": {
+      "item": "theabyss:slimed_planks"
+    }
+  },
+  "result": {
+    "item": "theabyss:slimed_stairs",
+    "count": 4
+  }
+}

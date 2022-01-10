@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "theabyss:blocks/gulom_plant",
+    "particle": "theabyss:blocks/gulom_plant"
+  }
+}

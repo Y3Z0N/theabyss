@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "theabyss:block/bog_slab"
+    },
+    "type=top": {
+      "model": "theabyss:block/bog_slab_top"
+    },
+    "type=double": {
+      "model": "theabyss:block/bog_slab_full"
+    }
+  }
+}

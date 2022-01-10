@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smoking",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "theabyss:deer_beef"
+  },
+  "result": {
+    "item": "theabyss:cooked_deer_beef"
+  }
+}

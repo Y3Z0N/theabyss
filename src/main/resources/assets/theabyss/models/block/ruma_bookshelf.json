@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "theabyss:blocks/ruma_planks",
+    "up": "theabyss:blocks/ruma_planks",
+    "north": "theabyss:blocks/ruma_bookshelf",
+    "east": "theabyss:blocks/ruma_bookshelf",
+    "south": "theabyss:blocks/ruma_bookshelf",
+    "west": "theabyss:blocks/ruma_bookshelf",
+    "particle": "theabyss:blocks/ruma_planks"
+  }
+}

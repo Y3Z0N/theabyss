@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "theabyss:gold_variant"
+  },
+  "result": {
+    "item": "minecraft:gold_ingot"
+  }
+}

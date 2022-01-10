@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "theabyss:blocks/octavys_magynisius",
+    "particle": "theabyss:blocks/octavys_magynisius"
+  }
+}

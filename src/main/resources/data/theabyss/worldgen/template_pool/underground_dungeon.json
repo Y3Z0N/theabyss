@@ -1,0 +1,60 @@
+{
+  "name": "theabyss:underground_dungeon",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 30,
+      "element": {
+        "location": "theabyss:walkway_door_right",
+        "processors": "minecraft:empty",
+		"projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 11,
+      "element": {
+        "location": "theabyss:cross",
+        "processors": "minecraft:empty",
+    "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 40,
+      "element": {
+        "location": "theabyss:underground_stairs",
+        "processors": "minecraft:empty",
+    "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 40,
+      "element": {
+        "location": "theabyss:walkway",
+        "processors": "minecraft:empty",
+    "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 30,
+      "element": {
+        "location": "theabyss:room_2",
+        "processors": "minecraft:empty",
+    "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+	{
+      "weight": 60,
+      "element": {
+        "location": "theabyss:room_1",
+        "processors": "minecraft:empty",
+		"projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

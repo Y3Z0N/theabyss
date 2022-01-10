@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "theabyss:blocks/frozen_planks",
+    "top": "theabyss:blocks/frozen_planks",
+    "side": "theabyss:blocks/frozen_planks"
+  }
+}

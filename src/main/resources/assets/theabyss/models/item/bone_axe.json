@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "theabyss:items/bone_axe_copy"
+  }
+}

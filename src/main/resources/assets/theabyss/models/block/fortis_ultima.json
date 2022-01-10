@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "theabyss:blocks/fortis_ultima",
+    "particle": "theabyss:blocks/fortis_ultima"
+  }
+}

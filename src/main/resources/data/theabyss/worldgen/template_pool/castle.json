@@ -1,0 +1,60 @@
+{
+  "name": "theabyss:castle",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 100,
+      "element": {
+        "location": "theabyss:castle_middle",
+        "processors": "minecraft:empty",
+    "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "location": "theabyss:castle_cross",
+        "processors": "minecraft:empty",
+    "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "location": "theabyss:castle_bridge",
+        "processors": "minecraft:empty",
+    "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "location": "theabyss:castle_bridge_small",
+        "processors": "minecraft:empty",
+    "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "location": "theabyss:castle_terminator_tower",
+        "processors": "minecraft:empty",
+    "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "location": "theabyss:castle_terminator",
+        "processors": "minecraft:empty",
+		"projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

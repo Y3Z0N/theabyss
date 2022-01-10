@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "theabyss:ring_of_ring"
+    },
+    "title": {
+      "translate": "advancements.magic_adv.title"
+    },
+    "description": {
+      "translate": "advancements.magic_adv.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "magic_adv": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 20
+  },
+  "parent": "theabyss:the_abyss_adv"
+}

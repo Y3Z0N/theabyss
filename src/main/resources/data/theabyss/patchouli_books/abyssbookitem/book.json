@@ -1,0 +1,22 @@
+{
+    "name": "The Abyss: Chapter II",
+    "landing_text": "theres a light . . .",
+    "version": 4,
+    "subtitle":"Set version to equal 0 to view",
+    "book_texture":"patchouli:textures/gui/book_gray.png",
+    "model":"theabyss:book_icon",
+    "text_color":"000000",
+    "header_color":"333333",
+    "nameplate_color":"FFFFFF",
+    "link_color":"0000EE",
+    "link_hover_color":"8800EE",
+    "progress_bar_color":"00FFAB",
+    "progress_bar_background":"DDDDDD",
+    "show_progress":true,
+    "creative_tab":"misc",
+    "pause_game":true,
+    "show_toasts":true,
+    "use_blocky_font":false,
+    "Disable_Advancement_Locking":true,
+    "advancement_namespaces": ["theabyss"]
+}

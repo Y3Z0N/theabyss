@@ -1,0 +1,7 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "theabyss:blocks/stone_bricks",
+    "particle": "theabyss:blocks/stone_bricks"
+  }
+}

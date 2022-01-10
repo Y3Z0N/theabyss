@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "theabyss:blocks/roma_mud2",
+    "particle": "theabyss:blocks/roma_mud2"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "theabyss:blocks/rakomi_grass",
+    "particle": "theabyss:blocks/rakomi_grass"
+  }
+}

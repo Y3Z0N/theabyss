@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "theabyss:blocks/abyss_dirt",
+    "up": "theabyss:blocks/blaru_moss_top",
+    "north": "theabyss:blocks/blaru_moss_side",
+    "east": "theabyss:blocks/blaru_moss_side",
+    "south": "theabyss:blocks/blaru_moss_side",
+    "west": "theabyss:blocks/blaru_moss_side",
+    "particle": "theabyss:blocks/abyss_dirt"
+  }
+}

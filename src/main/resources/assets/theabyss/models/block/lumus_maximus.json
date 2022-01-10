@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "theabyss:blocks/lumus_maximus",
+    "particle": "theabyss:blocks/lumus_maximus"
+  }
+}

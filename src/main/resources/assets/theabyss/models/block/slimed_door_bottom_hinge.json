@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom_rh",
+  "textures": {
+    "bottom": "theabyss:blocks/slimed_door_bottom",
+    "top": "theabyss:blocks/slimed_door_top"
+  }
+}
