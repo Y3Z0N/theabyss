@@ -61,7 +61,7 @@ public class SlimedCarpetBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedCarpetBlock(TheAbyss instance) {
-		super(instance, 1344);
+		super(instance, 527);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

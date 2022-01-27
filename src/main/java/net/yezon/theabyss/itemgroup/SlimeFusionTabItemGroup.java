@@ -13,7 +13,7 @@ import net.minecraft.item.ItemGroup;
 @TheAbyss.Processor.Tag
 public class SlimeFusionTabItemGroup extends TheAbyss.Processor {
 	public SlimeFusionTabItemGroup(TheAbyss instance) {
-		super(instance, 573);
+		super(instance, 584);
 	}
 
 	@Override

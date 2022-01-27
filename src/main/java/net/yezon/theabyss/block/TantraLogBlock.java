@@ -33,7 +33,7 @@ public class TantraLogBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TantraLogBlock(TheAbyss instance) {
-		super(instance, 276);
+		super(instance, 284);
 	}
 
 	@Override

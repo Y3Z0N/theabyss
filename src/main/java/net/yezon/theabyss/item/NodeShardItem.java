@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.NodeShardFoodEaten2Event;
+import net.yezon.theabyss.events.ApplyNodeEffectEvent;
 import net.yezon.theabyss.itemgroup.TheAbyssItemGroup;
 import net.yezon.theabyss.TheAbyss;
 
@@ -28,7 +28,7 @@ public class NodeShardItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public NodeShardItem(TheAbyss instance) {
-		super(instance, 120);
+		super(instance, 127);
 	}
 
 	@Override
@@ -68,7 +68,7 @@ public class NodeShardItem extends TheAbyss.Processor {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			NodeShardFoodEaten2Event.executeEvent(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+			ApplyNodeEffectEvent.executeEvent(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			return retval;
 		}

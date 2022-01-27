@@ -24,6 +24,11 @@ import com.google.gson.Gson;
 public class GenerateConfigFileEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event GenerateConfigFile!");
+			return;
+		}
 		IWorld world = (IWorld) dependencies.get("world");
 		Entity entity = (Entity) dependencies.get("entity");
 		File config = new File("config", File.separator + "theabyss2.json");

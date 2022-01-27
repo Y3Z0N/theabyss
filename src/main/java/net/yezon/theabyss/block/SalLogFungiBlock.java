@@ -51,7 +51,7 @@ public class SalLogFungiBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SalLogFungiBlock(TheAbyss instance) {
-		super(instance, 478);
+		super(instance, 490);
 	}
 
 	@Override

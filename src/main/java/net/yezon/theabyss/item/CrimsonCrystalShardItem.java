@@ -23,7 +23,7 @@ public class CrimsonCrystalShardItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public CrimsonCrystalShardItem(TheAbyss instance) {
-		super(instance, 59);
+		super(instance, 68);
 	}
 
 	@Override

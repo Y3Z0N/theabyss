@@ -38,7 +38,7 @@ public class InfectedGrassBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public InfectedGrassBlock(TheAbyss instance) {
-		super(instance, 376);
+		super(instance, 394);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BlockColorRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ItemColorRegisterHandler());
 	}

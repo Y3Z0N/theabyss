@@ -38,7 +38,7 @@ public class UnstableObsidianBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public UnstableObsidianBlock(TheAbyss instance) {
-		super(instance, 212);
+		super(instance, 221);
 	}
 
 	@Override

@@ -38,7 +38,7 @@ public class TantraTableBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TantraTableBlock(TheAbyss instance) {
-		super(instance, 288);
+		super(instance, 296);
 	}
 
 	@Override

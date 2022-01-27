@@ -55,7 +55,7 @@ public class LumusMaximusBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public LumusMaximusBlock(TheAbyss instance) {
-		super(instance, 442);
+		super(instance, 455);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

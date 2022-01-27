@@ -17,7 +17,7 @@ public class EyeOfAbyssItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public EyeOfAbyssItem(TheAbyss instance) {
-		super(instance, 128);
+		super(instance, 135);
 	}
 
 	@Override

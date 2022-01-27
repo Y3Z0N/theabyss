@@ -17,7 +17,7 @@ public class SlimeStage3Item extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public SlimeStage3Item(TheAbyss instance) {
-		super(instance, 110);
+		super(instance, 117);
 	}
 
 	@Override

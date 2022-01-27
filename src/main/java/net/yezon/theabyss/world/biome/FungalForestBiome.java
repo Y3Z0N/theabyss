@@ -55,7 +55,7 @@ public class FungalForestBiome extends TheAbyss.Processor {
 	public static Biome biome;
 
 	public FungalForestBiome(TheAbyss instance) {
-		super(instance, 637);
+		super(instance, 635);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

@@ -41,7 +41,7 @@ public class AbylagerEntity extends TheAbyss.Processor {
 			.size(0.6f, 1.95f)).build("abylager").setRegistryName("abylager");
 
 	public AbylagerEntity(TheAbyss instance) {
-		super(instance, 1341);
+		super(instance, 445);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new AbylagerRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}

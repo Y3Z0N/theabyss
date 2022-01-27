@@ -32,7 +32,7 @@ public class RoggenDoorBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenDoorBlock(TheAbyss instance) {
-		super(instance, 268);
+		super(instance, 276);
 	}
 
 	@Override

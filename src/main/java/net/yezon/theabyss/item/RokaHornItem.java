@@ -17,7 +17,7 @@ public class RokaHornItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public RokaHornItem(TheAbyss instance) {
-		super(instance, 118);
+		super(instance, 125);
 	}
 
 	@Override

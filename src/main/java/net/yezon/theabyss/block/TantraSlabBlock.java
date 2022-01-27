@@ -31,7 +31,7 @@ public class TantraSlabBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TantraSlabBlock(TheAbyss instance) {
-		super(instance, 280);
+		super(instance, 288);
 	}
 
 	@Override

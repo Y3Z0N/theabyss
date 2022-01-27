@@ -42,7 +42,7 @@ public class HoglinHangingLanternBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public HoglinHangingLanternBlock(TheAbyss instance) {
-		super(instance, 842);
+		super(instance, 837);
 	}
 
 	@Override

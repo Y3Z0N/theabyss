@@ -56,7 +56,7 @@ public class VertaCelsiusBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public VertaCelsiusBlock(TheAbyss instance) {
-		super(instance, 471);
+		super(instance, 483);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

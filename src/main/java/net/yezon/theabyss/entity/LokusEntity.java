@@ -1,7 +1,6 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.EntityLevelProcessorEvent;
 import net.yezon.theabyss.itemgroup.TheAbyssEntityItemGroup;
 import net.yezon.theabyss.entity.renderer.LokusRenderer;
 import net.yezon.theabyss.TheAbyss;
@@ -19,12 +18,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.World;
-import net.minecraft.world.IServerWorld;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.network.IPacket;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.Item;
 import net.minecraft.entity.monster.MonsterEntity;
@@ -34,18 +30,11 @@ import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
-
-import javax.annotation.Nullable;
-
-import java.util.Collections;
 
 @TheAbyss.Processor.Tag
 public class LokusEntity extends TheAbyss.Processor {
@@ -54,7 +43,7 @@ public class LokusEntity extends TheAbyss.Processor {
 			.size(0.8f, 2.5f)).build("lokus").setRegistryName("lokus");
 
 	public LokusEntity(TheAbyss instance) {
-		super(instance, 426);
+		super(instance, 438);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new LokusRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);
@@ -142,19 +131,6 @@ public class LokusEntity extends TheAbyss.Processor {
 			if (source == DamageSource.FALL)
 				return false;
 			return super.attackEntityFrom(source, amount);
-		}
-
-		@Override
-		public ILivingEntityData onInitialSpawn(IServerWorld world, DifficultyInstance difficulty, SpawnReason reason,
-				@Nullable ILivingEntityData livingdata, @Nullable CompoundNBT tag) {
-			ILivingEntityData retval = super.onInitialSpawn(world, difficulty, reason, livingdata, tag);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
-
-			EntityLevelProcessorEvent.executeEvent(Collections.EMPTY_MAP);
-			return retval;
 		}
 	}
 }

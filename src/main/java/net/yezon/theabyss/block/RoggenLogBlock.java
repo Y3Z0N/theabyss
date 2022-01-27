@@ -33,7 +33,7 @@ public class RoggenLogBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenLogBlock(TheAbyss instance) {
-		super(instance, 262);
+		super(instance, 270);
 	}
 
 	@Override

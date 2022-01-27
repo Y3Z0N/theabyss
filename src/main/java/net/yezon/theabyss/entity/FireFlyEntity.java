@@ -54,7 +54,7 @@ public class FireFlyEntity extends TheAbyss.Processor {
 			.size(0.6f, 0.6f)).build("fire_fly").setRegistryName("fire_fly");
 
 	public FireFlyEntity(TheAbyss instance) {
-		super(instance, 386);
+		super(instance, 398);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FireFlyRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);

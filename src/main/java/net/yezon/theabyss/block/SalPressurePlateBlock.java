@@ -25,7 +25,7 @@ public class SalPressurePlateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SalPressurePlateBlock(TheAbyss instance) {
-		super(instance, 311);
+		super(instance, 319);
 	}
 
 	@Override

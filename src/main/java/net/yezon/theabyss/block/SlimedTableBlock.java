@@ -38,7 +38,7 @@ public class SlimedTableBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedTableBlock(TheAbyss instance) {
-		super(instance, 327);
+		super(instance, 335);
 	}
 
 	@Override

@@ -30,7 +30,7 @@ public class RoggenTrapDoorBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenTrapDoorBlock(TheAbyss instance) {
-		super(instance, 267);
+		super(instance, 275);
 	}
 
 	@Override

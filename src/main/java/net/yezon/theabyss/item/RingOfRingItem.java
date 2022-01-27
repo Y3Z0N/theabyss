@@ -23,7 +23,7 @@ public class RingOfRingItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public RingOfRingItem(TheAbyss instance) {
-		super(instance, 169);
+		super(instance, 176);
 	}
 
 	@Override

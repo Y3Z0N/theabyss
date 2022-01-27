@@ -38,7 +38,7 @@ public class FrozenTableBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrozenTableBlock(TheAbyss instance) {
-		super(instance, 340);
+		super(instance, 348);
 	}
 
 	@Override

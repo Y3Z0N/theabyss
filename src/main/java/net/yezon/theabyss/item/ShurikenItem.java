@@ -55,7 +55,7 @@ public class ShurikenItem extends TheAbyss.Processor {
 			.size(0.5f, 0.5f)).build("entitybulletshuriken").setRegistryName("entitybulletshuriken");
 
 	public ShurikenItem(TheAbyss instance) {
-		super(instance, 17);
+		super(instance, 16);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ShurikenRenderer.ModelRegisterHandler());
 	}
 

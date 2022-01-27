@@ -23,7 +23,7 @@ public class UnactiveFusionIngotItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public UnactiveFusionIngotItem(TheAbyss instance) {
-		super(instance, 99);
+		super(instance, 106);
 	}
 
 	@Override

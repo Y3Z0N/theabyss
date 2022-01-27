@@ -44,7 +44,7 @@ public class RoggenLadderBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenLadderBlock(TheAbyss instance) {
-		super(instance, 275);
+		super(instance, 283);
 	}
 
 	@Override

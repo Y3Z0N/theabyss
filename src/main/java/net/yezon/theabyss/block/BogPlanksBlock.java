@@ -26,7 +26,7 @@ public class BogPlanksBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BogPlanksBlock(TheAbyss instance) {
-		super(instance, 291);
+		super(instance, 299);
 	}
 
 	@Override

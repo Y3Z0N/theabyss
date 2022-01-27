@@ -16,7 +16,7 @@ public class BookIconItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public BookIconItem(TheAbyss instance) {
-		super(instance, 568);
+		super(instance, 581);
 	}
 
 	@Override

@@ -25,7 +25,7 @@ public class SalTrapDoorBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SalTrapDoorBlock(TheAbyss instance) {
-		super(instance, 307);
+		super(instance, 315);
 	}
 
 	@Override

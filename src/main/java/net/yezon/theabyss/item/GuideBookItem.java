@@ -31,7 +31,7 @@ public class GuideBookItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public GuideBookItem(TheAbyss instance) {
-		super(instance, 384);
+		super(instance, 396);
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.TotemOfThunderClassEvent;
+import net.yezon.theabyss.events.ThunderTotemEvent;
 import net.yezon.theabyss.itemgroup.TheAbyssItemGroup;
 import net.yezon.theabyss.TheAbyss;
 
@@ -29,7 +29,7 @@ public class TotemOfThunderItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public TotemOfThunderItem(TheAbyss instance) {
-		super(instance, 174);
+		super(instance, 181);
 	}
 
 	@Override
@@ -75,13 +75,13 @@ public class TotemOfThunderItem extends TheAbyss.Processor {
 			double z = entity.getPosZ();
 			if (selected)
 
-				TotemOfThunderClassEvent.executeEvent(Stream
+				ThunderTotemEvent.executeEvent(Stream
 						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
 								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
 								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 
-			TotemOfThunderClassEvent.executeEvent(Stream
+			ThunderTotemEvent.executeEvent(Stream
 					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
 							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity),
 							new AbstractMap.SimpleEntry<>("itemstack", itemstack))

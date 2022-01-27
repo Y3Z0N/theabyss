@@ -54,7 +54,7 @@ public class IcelaRankBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public IcelaRankBlock(TheAbyss instance) {
-		super(instance, 460);
+		super(instance, 472);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

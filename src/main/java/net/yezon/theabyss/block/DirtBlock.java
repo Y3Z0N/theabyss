@@ -28,7 +28,7 @@ public class DirtBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public DirtBlock(TheAbyss instance) {
-		super(instance, 365);
+		super(instance, 381);
 	}
 
 	@Override

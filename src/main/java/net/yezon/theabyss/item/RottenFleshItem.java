@@ -26,7 +26,7 @@ public class RottenFleshItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public RottenFleshItem(TheAbyss instance) {
-		super(instance, 136);
+		super(instance, 143);
 	}
 
 	@Override

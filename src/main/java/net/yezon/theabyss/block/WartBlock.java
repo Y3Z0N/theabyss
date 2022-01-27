@@ -34,7 +34,7 @@ public class WartBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public WartBlock(TheAbyss instance) {
-		super(instance, 200);
+		super(instance, 209);
 	}
 
 	@Override

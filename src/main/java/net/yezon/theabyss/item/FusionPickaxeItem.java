@@ -18,7 +18,7 @@ public class FusionPickaxeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public FusionPickaxeItem(TheAbyss instance) {
-		super(instance, 19);
+		super(instance, 18);
 	}
 
 	@Override

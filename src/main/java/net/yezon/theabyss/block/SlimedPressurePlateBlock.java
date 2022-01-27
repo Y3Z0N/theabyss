@@ -25,7 +25,7 @@ public class SlimedPressurePlateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedPressurePlateBlock(TheAbyss instance) {
-		super(instance, 324);
+		super(instance, 332);
 	}
 
 	@Override

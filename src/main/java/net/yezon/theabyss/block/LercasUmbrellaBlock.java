@@ -59,7 +59,7 @@ public class LercasUmbrellaBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public LercasUmbrellaBlock(TheAbyss instance) {
-		super(instance, 439);
+		super(instance, 452);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

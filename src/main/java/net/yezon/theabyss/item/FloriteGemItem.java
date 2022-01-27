@@ -23,7 +23,7 @@ public class FloriteGemItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public FloriteGemItem(TheAbyss instance) {
-		super(instance, 105);
+		super(instance, 112);
 	}
 
 	@Override

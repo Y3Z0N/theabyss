@@ -40,7 +40,7 @@ public class FrostBrickWallBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrostBrickWallBlock(TheAbyss instance) {
-		super(instance, 381);
+		super(instance, 354);
 	}
 
 	@Override
@@ -90,7 +90,9 @@ public class FrostBrickWallBlock extends TheAbyss.Processor {
 			return this.func_235626_a_(iworldreader, blockstate5, blockpos5, blockstate4, flag, flag1, flag2, flag3);
 		}
 
-		@Override
+		@Override /** 
+					* Update the provided state given the provided neighbor facing and neighbor state, returning a new state. For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately returns its solidified counterpart. Note that this method should ideally consider only the specific face passed in.
+					*/
 		public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos,
 				BlockPos facingPos) {
 			if (stateIn.get(WATERLOGGED)) {

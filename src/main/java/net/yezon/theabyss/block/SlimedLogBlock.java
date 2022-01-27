@@ -33,7 +33,7 @@ public class SlimedLogBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedLogBlock(TheAbyss instance) {
-		super(instance, 316);
+		super(instance, 324);
 	}
 
 	@Override

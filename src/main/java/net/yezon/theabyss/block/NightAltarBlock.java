@@ -32,7 +32,7 @@ public class NightAltarBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public NightAltarBlock(TheAbyss instance) {
-		super(instance, 351);
+		super(instance, 367);
 	}
 
 	@Override

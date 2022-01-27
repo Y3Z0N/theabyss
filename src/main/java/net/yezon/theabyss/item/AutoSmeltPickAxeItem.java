@@ -32,7 +32,7 @@ public class AutoSmeltPickAxeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public AutoSmeltPickAxeItem(TheAbyss instance) {
-		super(instance, 39);
+		super(instance, 38);
 	}
 
 	@Override

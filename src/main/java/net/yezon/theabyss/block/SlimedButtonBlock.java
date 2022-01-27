@@ -27,7 +27,7 @@ public class SlimedButtonBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedButtonBlock(TheAbyss instance) {
-		super(instance, 325);
+		super(instance, 333);
 	}
 
 	@Override

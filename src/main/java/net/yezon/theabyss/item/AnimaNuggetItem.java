@@ -19,7 +19,7 @@ public class AnimaNuggetItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public AnimaNuggetItem(TheAbyss instance) {
-		super(instance, 72);
+		super(instance, 79);
 	}
 
 	@Override

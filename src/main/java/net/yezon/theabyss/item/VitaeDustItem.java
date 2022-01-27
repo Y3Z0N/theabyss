@@ -17,7 +17,7 @@ public class VitaeDustItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public VitaeDustItem(TheAbyss instance) {
-		super(instance, 73);
+		super(instance, 80);
 	}
 
 	@Override

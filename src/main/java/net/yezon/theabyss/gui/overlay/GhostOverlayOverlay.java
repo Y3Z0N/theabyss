@@ -15,34 +15,49 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.Minecraft;
 
+import java.util.stream.Stream;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.AbstractMap;
+
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.platform.GlStateManager;
-
-import com.google.common.collect.ImmutableMap;
 
 @Mod.EventBusSubscriber
 public class GhostOverlayOverlay {
 	@OnlyIn(Dist.CLIENT)
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	public static void eventHandler(RenderGameOverlayEvent event) {
-		if (!event.isCancelable() && event.getType() == RenderGameOverlayEvent.ElementType.HELMET) {
-			int posX = (event.getWindow().getScaledWidth()) / 2 + 10;
-			int posY = (event.getWindow().getScaledHeight()) - 49;
+	public static void eventHandler(RenderGameOverlayEvent.Post event) {
+		if (event.getType() == RenderGameOverlayEvent.ElementType.HELMET) {
+			int w = event.getWindow().getScaledWidth();
+			int h = event.getWindow().getScaledHeight();
+			int posX = w / 2;
+			int posY = h / 2;
+			World _world = null;
+			double _x = 0;
+			double _y = 0;
+			double _z = 0;
 			PlayerEntity entity = Minecraft.getInstance().player;
-			World world = entity.world;
-			double x = entity.getPosX();
-			double y = entity.getPosY();
-			double z = entity.getPosZ();
+			if (entity != null) {
+				_world = entity.world;
+				_x = entity.getPosX();
+				_y = entity.getPosY();
+				_z = entity.getPosZ();
+			}
+			World world = _world;
+			double x = _x;
+			double y = _y;
+			double z = _z;
 			RenderSystem.disableDepthTest();
 			RenderSystem.depthMask(false);
 			RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
 					GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 			RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 			RenderSystem.disableAlphaTest();
-			if (ApplyGhostOverlayEvent.executeEvent(ImmutableMap.of("entity", entity))) {
+			if (ApplyGhostOverlayEvent.executeEvent(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll))) {
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("theabyss:textures/ghost_vision.png"));
-				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), 0, 0, 0, 0, event.getWindow().getScaledWidth(),
-						event.getWindow().getScaledHeight(), event.getWindow().getScaledWidth(), event.getWindow().getScaledHeight());
+				Minecraft.getInstance().ingameGUI.blit(event.getMatrixStack(), 0, 0, 0, 0, w, h, w, h);
 			}
 			RenderSystem.depthMask(true);
 			RenderSystem.enableDepthTest();

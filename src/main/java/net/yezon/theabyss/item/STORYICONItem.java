@@ -16,7 +16,7 @@ public class STORYICONItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public STORYICONItem(TheAbyss instance) {
-		super(instance, 949);
+		super(instance, 919);
 	}
 
 	@Override

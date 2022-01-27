@@ -18,7 +18,7 @@ public class BoneShovelItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public BoneShovelItem(TheAbyss instance) {
-		super(instance, 46);
+		super(instance, 45);
 	}
 
 	@Override

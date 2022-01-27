@@ -44,7 +44,7 @@ public class FusionedGlacerytheArmorItem extends TheAbyss.Processor {
 	public static final Item boots = null;
 
 	public FusionedGlacerytheArmorItem(TheAbyss instance) {
-		super(instance, 528);
+		super(instance, 551);
 	}
 
 	@Override

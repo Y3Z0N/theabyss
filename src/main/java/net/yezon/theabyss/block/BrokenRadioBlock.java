@@ -56,7 +56,7 @@ public class BrokenRadioBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BrokenRadioBlock(TheAbyss instance) {
-		super(instance, 366);
+		super(instance, 382);
 	}
 
 	@Override

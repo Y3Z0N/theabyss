@@ -51,7 +51,7 @@ public class RumaLogVineBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RumaLogVineBlock(TheAbyss instance) {
-		super(instance, 487);
+		super(instance, 500);
 	}
 
 	@Override

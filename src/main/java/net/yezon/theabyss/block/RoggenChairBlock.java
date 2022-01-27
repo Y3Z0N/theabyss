@@ -38,7 +38,7 @@ public class RoggenChairBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenChairBlock(TheAbyss instance) {
-		super(instance, 273);
+		super(instance, 281);
 	}
 
 	@Override

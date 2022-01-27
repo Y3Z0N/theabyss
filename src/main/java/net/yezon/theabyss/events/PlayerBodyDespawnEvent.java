@@ -14,6 +14,11 @@ import java.util.Map;
 public class PlayerBodyDespawnEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event PlayerBodyDespawn!");
+			return;
+		}
 		IWorld world = (IWorld) dependencies.get("world");
 		Entity entity = (Entity) dependencies.get("entity");
 		new Object() {

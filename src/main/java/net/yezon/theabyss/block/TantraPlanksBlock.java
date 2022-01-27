@@ -26,7 +26,7 @@ public class TantraPlanksBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TantraPlanksBlock(TheAbyss instance) {
-		super(instance, 278);
+		super(instance, 286);
 	}
 
 	@Override

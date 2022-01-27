@@ -59,7 +59,7 @@ public class GlowShroomBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public GlowShroomBlock(TheAbyss instance) {
-		super(instance, 468);
+		super(instance, 480);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

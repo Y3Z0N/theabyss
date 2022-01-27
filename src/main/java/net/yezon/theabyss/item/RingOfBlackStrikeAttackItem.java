@@ -49,7 +49,7 @@ public class RingOfBlackStrikeAttackItem extends TheAbyss.Processor {
 			.size(0.5f, 0.5f)).build("entitybulletring_of_black_strike_attack").setRegistryName("entitybulletring_of_black_strike_attack");
 
 	public RingOfBlackStrikeAttackItem(TheAbyss instance) {
-		super(instance, 930);
+		super(instance, 901);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new RingOfBlackStrikeAttackRenderer.ModelRegisterHandler());
 	}
 

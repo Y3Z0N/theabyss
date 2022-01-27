@@ -2,7 +2,6 @@
 package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.itemgroup.TheAbyssFlowerItemGroup;
-import net.yezon.theabyss.item.HollowCrystalItem;
 import net.yezon.theabyss.TheAbyss;
 
 import net.minecraftforge.registries.ObjectHolder;
@@ -59,7 +58,7 @@ public class HollowCrystalOreBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public HollowCrystalOreBlock(TheAbyss instance) {
-		super(instance, 508);
+		super(instance, 522);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}
@@ -149,7 +148,7 @@ public class HollowCrystalOreBlock extends TheAbyss.Processor {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(HollowCrystalItem.block));
+			return Collections.singletonList(new ItemStack(HollowCrystalOreBlock.block));
 		}
 
 		@Override

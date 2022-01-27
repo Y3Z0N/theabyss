@@ -25,7 +25,7 @@ public class FixedBoneItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public FixedBoneItem(TheAbyss instance) {
-		super(instance, 116);
+		super(instance, 123);
 	}
 
 	@Override

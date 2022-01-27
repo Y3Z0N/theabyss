@@ -43,7 +43,7 @@ public class LuroFishEntity extends TheAbyss.Processor {
 			.size(0.6f, 1.8f)).build("luro_fish").setRegistryName("luro_fish");
 
 	public LuroFishEntity(TheAbyss instance) {
-		super(instance, 395);
+		super(instance, 407);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new LuroFishRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}

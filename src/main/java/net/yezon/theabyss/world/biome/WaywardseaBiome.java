@@ -60,7 +60,7 @@ public class WaywardseaBiome extends TheAbyss.Processor {
 	public static Biome biome;
 
 	public WaywardseaBiome(TheAbyss instance) {
-		super(instance, 592);
+		super(instance, 595);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

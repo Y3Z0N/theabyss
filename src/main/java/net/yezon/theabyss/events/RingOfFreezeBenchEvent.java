@@ -2,8 +2,8 @@ package net.yezon.theabyss.events;
 
 import net.yezon.theabyss.item.RingOfRingItem;
 import net.yezon.theabyss.item.RingOfFreezeItem;
-import net.yezon.theabyss.item.IcoraStoneItem;
-import net.yezon.theabyss.item.FrostCrystalShardItem;
+import net.yezon.theabyss.item.FrostPowderItem;
+import net.yezon.theabyss.item.CavernaPowderItem;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -26,6 +26,11 @@ import java.util.Map;
 public class RingOfFreezeBenchEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event RingOfFreezeBench!");
+			return;
+		}
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
@@ -121,7 +126,7 @@ public class RingOfFreezeBenchEvent {
 						}
 						return ItemStack.EMPTY;
 					}
-				}.getItemStack((int) (1))).getItem() == FrostCrystalShardItem.block && (new Object() {
+				}.getItemStack((int) (1))).getItem() == FrostPowderItem.block && (new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
 						if (_ent instanceof ServerPlayerEntity) {
@@ -135,7 +140,7 @@ public class RingOfFreezeBenchEvent {
 						}
 						return ItemStack.EMPTY;
 					}
-				}.getItemStack((int) (2))).getItem() == IcoraStoneItem.block && (new Object() {
+				}.getItemStack((int) (2))).getItem() == CavernaPowderItem.block && (new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
 						if (_ent instanceof ServerPlayerEntity) {
@@ -149,7 +154,7 @@ public class RingOfFreezeBenchEvent {
 						}
 						return ItemStack.EMPTY;
 					}
-				}.getItemStack((int) (3))).getItem() == FrostCrystalShardItem.block && (new Object() {
+				}.getItemStack((int) (3))).getItem() == FrostPowderItem.block && (new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
 						if (_ent instanceof ServerPlayerEntity) {
@@ -163,7 +168,7 @@ public class RingOfFreezeBenchEvent {
 						}
 						return ItemStack.EMPTY;
 					}
-				}.getItemStack((int) (4))).getItem() == IcoraStoneItem.block && (new Object() {
+				}.getItemStack((int) (4))).getItem() == CavernaPowderItem.block && (new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
 						if (_ent instanceof ServerPlayerEntity) {
@@ -177,7 +182,7 @@ public class RingOfFreezeBenchEvent {
 						}
 						return ItemStack.EMPTY;
 					}
-				}.getItemStack((int) (5))).getItem() == FrostCrystalShardItem.block && (new Object() {
+				}.getItemStack((int) (5))).getItem() == FrostPowderItem.block && (new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
 						if (_ent instanceof ServerPlayerEntity) {
@@ -191,7 +196,7 @@ public class RingOfFreezeBenchEvent {
 						}
 						return ItemStack.EMPTY;
 					}
-				}.getItemStack((int) (6))).getItem() == IcoraStoneItem.block && (new Object() {
+				}.getItemStack((int) (6))).getItem() == CavernaPowderItem.block && (new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
 						if (_ent instanceof ServerPlayerEntity) {
@@ -205,7 +210,7 @@ public class RingOfFreezeBenchEvent {
 						}
 						return ItemStack.EMPTY;
 					}
-				}.getItemStack((int) (7))).getItem() == FrostCrystalShardItem.block && (new Object() {
+				}.getItemStack((int) (7))).getItem() == FrostPowderItem.block && (new Object() {
 					public ItemStack getItemStack(int sltid) {
 						Entity _ent = entity;
 						if (_ent instanceof ServerPlayerEntity) {
@@ -219,7 +224,7 @@ public class RingOfFreezeBenchEvent {
 						}
 						return ItemStack.EMPTY;
 					}
-				}.getItemStack((int) (8))).getItem() == IcoraStoneItem.block) {
+				}.getItemStack((int) (8))).getItem() == CavernaPowderItem.block) {
 					{
 						Entity _ent = entity;
 						if (_ent instanceof ServerPlayerEntity) {
@@ -240,7 +245,7 @@ public class RingOfFreezeBenchEvent {
 							if (_current instanceof Supplier) {
 								Object invobj = ((Supplier) _current).get();
 								if (invobj instanceof Map) {
-									((Slot) ((Map) invobj).get((int) (1))).decrStackSize((int) (10));
+									((Slot) ((Map) invobj).get((int) (1))).decrStackSize((int) (1));
 									_current.detectAndSendChanges();
 								}
 							}
@@ -266,7 +271,7 @@ public class RingOfFreezeBenchEvent {
 							if (_current instanceof Supplier) {
 								Object invobj = ((Supplier) _current).get();
 								if (invobj instanceof Map) {
-									((Slot) ((Map) invobj).get((int) (3))).decrStackSize((int) (10));
+									((Slot) ((Map) invobj).get((int) (3))).decrStackSize((int) (1));
 									_current.detectAndSendChanges();
 								}
 							}
@@ -292,7 +297,7 @@ public class RingOfFreezeBenchEvent {
 							if (_current instanceof Supplier) {
 								Object invobj = ((Supplier) _current).get();
 								if (invobj instanceof Map) {
-									((Slot) ((Map) invobj).get((int) (5))).decrStackSize((int) (10));
+									((Slot) ((Map) invobj).get((int) (5))).decrStackSize((int) (1));
 									_current.detectAndSendChanges();
 								}
 							}
@@ -318,7 +323,7 @@ public class RingOfFreezeBenchEvent {
 							if (_current instanceof Supplier) {
 								Object invobj = ((Supplier) _current).get();
 								if (invobj instanceof Map) {
-									((Slot) ((Map) invobj).get((int) (7))).decrStackSize((int) (10));
+									((Slot) ((Map) invobj).get((int) (7))).decrStackSize((int) (1));
 									_current.detectAndSendChanges();
 								}
 							}

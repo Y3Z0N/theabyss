@@ -17,7 +17,7 @@ public class BrickedKnightIngotItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public BrickedKnightIngotItem(TheAbyss instance) {
-		super(instance, 106);
+		super(instance, 113);
 	}
 
 	@Override

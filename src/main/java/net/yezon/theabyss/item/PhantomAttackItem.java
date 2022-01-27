@@ -1,9 +1,8 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.PhantomAttackWhileBulletFlyingTickEvent;
-import net.yezon.theabyss.events.PhantomAttackRangedItemUsedEvent;
-import net.yezon.theabyss.events.PhantomAttackBulletHitsPlayerEvent;
+import net.yezon.theabyss.events.PhantomTrailEvent;
+import net.yezon.theabyss.events.PhantomEffectEvent;
 import net.yezon.theabyss.entity.renderer.PhantomAttackRenderer;
 import net.yezon.theabyss.TheAbyss;
 
@@ -44,7 +43,6 @@ import java.util.Random;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
-import java.util.Collections;
 import java.util.AbstractMap;
 
 @TheAbyss.Processor.Tag
@@ -56,7 +54,7 @@ public class PhantomAttackItem extends TheAbyss.Processor {
 			.size(0.5f, 0.5f)).build("entitybulletphantom_attack").setRegistryName("entitybulletphantom_attack");
 
 	public PhantomAttackItem(TheAbyss instance) {
-		super(instance, 551);
+		super(instance, 569);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new PhantomAttackRenderer.ModelRegisterHandler());
 	}
 
@@ -76,18 +74,6 @@ public class PhantomAttackItem extends TheAbyss.Processor {
 		public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
 			entity.setActiveHand(hand);
 			return new ActionResult(ActionResultType.SUCCESS, entity.getHeldItem(hand));
-		}
-
-		@Override
-		public boolean onEntitySwing(ItemStack itemstack, LivingEntity entity) {
-			boolean retval = super.onEntitySwing(itemstack, entity);
-			double x = entity.getPosX();
-			double y = entity.getPosY();
-			double z = entity.getPosZ();
-			World world = entity.world;
-
-			PhantomAttackRangedItemUsedEvent.executeEvent(Collections.EMPTY_MAP);
-			return retval;
 		}
 
 		@Override
@@ -117,8 +103,6 @@ public class PhantomAttackItem extends TheAbyss.Processor {
 					ArrowCustomEntity entityarrow = shoot(world, entity, random, 1f, 2.8, 1);
 					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
-
-					PhantomAttackRangedItemUsedEvent.executeEvent(Collections.EMPTY_MAP);
 				}
 			}
 		}
@@ -168,7 +152,7 @@ public class PhantomAttackItem extends TheAbyss.Processor {
 			World world = this.world;
 			Entity imediatesourceentity = this;
 
-			PhantomAttackBulletHitsPlayerEvent.executeEvent(Stream
+			PhantomEffectEvent.executeEvent(Stream
 					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
 							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
@@ -185,7 +169,7 @@ public class PhantomAttackItem extends TheAbyss.Processor {
 			World world = this.world;
 			Entity imediatesourceentity = this;
 
-			PhantomAttackBulletHitsPlayerEvent.executeEvent(Stream
+			PhantomEffectEvent.executeEvent(Stream
 					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
 							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
@@ -201,7 +185,7 @@ public class PhantomAttackItem extends TheAbyss.Processor {
 			Entity entity = this.func_234616_v_();
 			Entity imediatesourceentity = this;
 
-			PhantomAttackWhileBulletFlyingTickEvent.executeEvent(Stream
+			PhantomTrailEvent.executeEvent(Stream
 					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
 							new AbstractMap.SimpleEntry<>("z", z))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));

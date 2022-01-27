@@ -45,7 +45,7 @@ public class BrainWalkerEntity extends TheAbyss.Processor {
 			.size(0.6f, 1.5999999999999999f)).build("brain_walker").setRegistryName("brain_walker");
 
 	public BrainWalkerEntity(TheAbyss instance) {
-		super(instance, 424);
+		super(instance, 436);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BrainWalkerRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);

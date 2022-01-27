@@ -19,6 +19,11 @@ import java.util.Map;
 public class ExtractSomniumFromLoranEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event ExtractSomniumFromLoran!");
+			return;
+		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {

@@ -67,7 +67,7 @@ public class CyanideBossEntity extends TheAbyss.Processor {
 			.size(0.8f, 1.7999999999999998f)).build("cyanide_boss").setRegistryName("cyanide_boss");
 
 	public CyanideBossEntity(TheAbyss instance) {
-		super(instance, 391);
+		super(instance, 403);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new CyanideBossRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}

@@ -26,7 +26,7 @@ public class RoggenPlanksBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenPlanksBlock(TheAbyss instance) {
-		super(instance, 264);
+		super(instance, 272);
 	}
 
 	@Override

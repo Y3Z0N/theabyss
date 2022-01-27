@@ -25,7 +25,7 @@ public class BogFenceGateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BogFenceGateBlock(TheAbyss instance) {
-		super(instance, 297);
+		super(instance, 305);
 	}
 
 	@Override

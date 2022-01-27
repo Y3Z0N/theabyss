@@ -18,6 +18,11 @@ import java.util.Iterator;
 public class PhantomSoulItemItemInInventoryTickEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event PhantomSoulItemItemInInventoryTick!");
+			return;
+		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.UNLUCK, (int) 1, (int) 1));

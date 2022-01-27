@@ -51,7 +51,7 @@ public class BogLogFungiBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BogLogFungiBlock(TheAbyss instance) {
-		super(instance, 475);
+		super(instance, 487);
 	}
 
 	@Override

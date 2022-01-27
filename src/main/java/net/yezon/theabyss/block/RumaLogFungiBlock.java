@@ -51,7 +51,7 @@ public class RumaLogFungiBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RumaLogFungiBlock(TheAbyss instance) {
-		super(instance, 476);
+		super(instance, 488);
 	}
 
 	@Override

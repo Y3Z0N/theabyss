@@ -57,7 +57,7 @@ public class MutatedEnderpearlItem extends TheAbyss.Processor {
 			.size(0.5f, 0.5f)).build("entitybulletmutated_enderpearl").setRegistryName("entitybulletmutated_enderpearl");
 
 	public MutatedEnderpearlItem(TheAbyss instance) {
-		super(instance, 127);
+		super(instance, 134);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new MutatedEnderpearlRenderer.ModelRegisterHandler());
 	}
 
@@ -69,7 +69,7 @@ public class MutatedEnderpearlItem extends TheAbyss.Processor {
 
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(TheAbyssItemGroup.tab).maxDamage(30));
+			super(new Item.Properties().group(TheAbyssItemGroup.tab).maxDamage(4));
 			setRegistryName("mutated_enderpearl");
 		}
 

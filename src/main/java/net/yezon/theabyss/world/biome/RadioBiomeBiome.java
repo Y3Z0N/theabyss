@@ -44,7 +44,7 @@ public class RadioBiomeBiome extends TheAbyss.Processor {
 	public static Biome biome;
 
 	public RadioBiomeBiome(TheAbyss instance) {
-		super(instance, 889);
+		super(instance, 880);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

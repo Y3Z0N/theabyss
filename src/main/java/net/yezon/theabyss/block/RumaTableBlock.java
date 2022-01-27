@@ -38,7 +38,7 @@ public class RumaTableBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RumaTableBlock(TheAbyss instance) {
-		super(instance, 259);
+		super(instance, 267);
 	}
 
 	@Override

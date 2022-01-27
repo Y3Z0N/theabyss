@@ -44,7 +44,7 @@ public class JungleLadderBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public JungleLadderBlock(TheAbyss instance) {
-		super(instance, 245);
+		super(instance, 253);
 	}
 
 	@Override

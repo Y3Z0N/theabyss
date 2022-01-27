@@ -33,7 +33,7 @@ public class TantraDirtBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TantraDirtBlock(TheAbyss instance) {
-		super(instance, 208);
+		super(instance, 217);
 	}
 
 	@Override

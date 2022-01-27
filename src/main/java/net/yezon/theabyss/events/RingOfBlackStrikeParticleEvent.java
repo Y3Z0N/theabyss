@@ -1,5 +1,6 @@
 package net.yezon.theabyss.events;
 
+import net.yezon.theabyss.particle.PhantomSpectrumParticle;
 import net.yezon.theabyss.particle.PhantomFireParticle;
 import net.yezon.theabyss.TheabyssMod;
 
@@ -24,6 +25,9 @@ public class RingOfBlackStrikeParticleEvent {
 		}
 		if (world instanceof ServerWorld) {
 			((ServerWorld) world).spawnParticle(PhantomFireParticle.particle, x, y, z, (int) 2, 0.08, 0.08, 0.08, 0.1);
+		}
+		if (world instanceof ServerWorld) {
+			((ServerWorld) world).spawnParticle(PhantomSpectrumParticle.particle, x, y, z, (int) 1, 0.01, 0.01, 0.01, 0.01);
 		}
 	}
 }

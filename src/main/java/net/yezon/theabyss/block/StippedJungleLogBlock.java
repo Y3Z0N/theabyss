@@ -33,7 +33,7 @@ public class StippedJungleLogBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public StippedJungleLogBlock(TheAbyss instance) {
-		super(instance, 233);
+		super(instance, 241);
 	}
 
 	@Override

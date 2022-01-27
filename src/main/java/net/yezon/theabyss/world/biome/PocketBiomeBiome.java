@@ -21,7 +21,7 @@ public class PocketBiomeBiome extends TheAbyss.Processor {
 	public static Biome biome;
 
 	public PocketBiomeBiome(TheAbyss instance) {
-		super(instance, 1136);
+		super(instance, 1103);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

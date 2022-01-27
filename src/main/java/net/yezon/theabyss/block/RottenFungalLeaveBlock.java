@@ -42,7 +42,7 @@ public class RottenFungalLeaveBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RottenFungalLeaveBlock(TheAbyss instance) {
-		super(instance, 204);
+		super(instance, 213);
 	}
 
 	@Override

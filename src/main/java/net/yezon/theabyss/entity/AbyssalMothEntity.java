@@ -1,7 +1,6 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.EntityLevelProcessorEvent;
 import net.yezon.theabyss.itemgroup.TheAbyssEntityItemGroup;
 import net.yezon.theabyss.entity.renderer.AbyssalMothRenderer;
 import net.yezon.theabyss.TheAbyss;
@@ -124,18 +123,9 @@ public class AbyssalMothEntity extends TheAbyss.Processor {
 		public net.minecraft.util.SoundEvent getDeathSound() {
 			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:random_fx"));
 		}
-
-		@Override
-		public ILivingEntityData onInitialSpawn(IServerWorld world, DifficultyInstance difficulty, SpawnReason reason,
-				@Nullable ILivingEntityData livingdata, @Nullable CompoundNBT tag) {
-			ILivingEntityData retval = super.onInitialSpawn(world, difficulty, reason, livingdata, tag);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
-
-			EntityLevelProcessorEvent.executeEvent(Collections.EMPTY_MAP);
-			return retval;
-		}
 	}
 }
+
+
+
+

@@ -46,7 +46,7 @@ public class ShieldCampFireBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public ShieldCampFireBlock(TheAbyss instance) {
-		super(instance, 364);
+		super(instance, 380);
 	}
 
 	@Override

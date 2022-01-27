@@ -25,7 +25,7 @@ public class SlimedFenceGateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedFenceGateBlock(TheAbyss instance) {
-		super(instance, 323);
+		super(instance, 331);
 	}
 
 	@Override

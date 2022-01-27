@@ -56,7 +56,7 @@ public class NightHunterAbl2Item extends TheAbyss.Processor {
 			.size(0.5f, 0.5f)).build("entitybulletnight_hunter_abl_2").setRegistryName("entitybulletnight_hunter_abl_2");
 
 	public NightHunterAbl2Item(TheAbyss instance) {
-		super(instance, 542);
+		super(instance, 564);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new NightHunterAbl2Renderer.ModelRegisterHandler());
 	}
 

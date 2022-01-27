@@ -23,7 +23,7 @@ public class GlacerytheGemItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public GlacerytheGemItem(TheAbyss instance) {
-		super(instance, 95);
+		super(instance, 102);
 	}
 
 	@Override

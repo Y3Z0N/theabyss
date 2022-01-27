@@ -25,7 +25,7 @@ public class FrozenPressurePlateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrozenPressurePlateBlock(TheAbyss instance) {
-		super(instance, 337);
+		super(instance, 345);
 	}
 
 	@Override

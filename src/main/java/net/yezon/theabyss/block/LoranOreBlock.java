@@ -53,7 +53,7 @@ public class LoranOreBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public LoranOreBlock(TheAbyss instance) {
-		super(instance, 79);
+		super(instance, 86);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

@@ -45,7 +45,7 @@ public class JungleVineBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public JungleVineBlock(TheAbyss instance) {
-		super(instance, 489);
+		super(instance, 502);
 	}
 
 	@Override

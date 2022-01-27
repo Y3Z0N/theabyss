@@ -23,7 +23,7 @@ public class EnderCrystalShardItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public EnderCrystalShardItem(TheAbyss instance) {
-		super(instance, 57);
+		super(instance, 67);
 	}
 
 	@Override

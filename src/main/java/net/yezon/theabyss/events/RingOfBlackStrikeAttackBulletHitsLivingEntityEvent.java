@@ -12,6 +12,11 @@ import java.util.Map;
 public class RingOfBlackStrikeAttackBulletHitsLivingEntityEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event RingOfBlackStrikeAttackBulletHitsLivingEntity!");
+			return;
+		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.SLOWNESS, (int) 200, (int) 3));

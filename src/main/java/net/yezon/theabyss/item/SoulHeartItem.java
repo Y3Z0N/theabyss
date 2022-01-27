@@ -17,7 +17,7 @@ public class SoulHeartItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public SoulHeartItem(TheAbyss instance) {
-		super(instance, 113);
+		super(instance, 120);
 	}
 
 	@Override

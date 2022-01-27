@@ -2,7 +2,7 @@
 package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.itemgroup.TheAbyssItemGroup;
-import net.yezon.theabyss.gui.ResearchTableGuiGui;
+import net.yezon.theabyss.gui.ResearchGui;
 import net.yezon.theabyss.TheAbyss;
 
 import net.minecraftforge.registries.ObjectHolder;
@@ -71,7 +71,7 @@ public class ResearchTableBlock extends TheAbyss.Processor {
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 
 	public ResearchTableBlock(TheAbyss instance) {
-		super(instance, 369);
+		super(instance, 385);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
@@ -135,7 +135,7 @@ public class ResearchTableBlock extends TheAbyss.Processor {
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new ResearchTableGuiGui.GuiContainerMod(id, inventory,
+						return new ResearchGui.GuiContainerMod(id, inventory,
 								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
@@ -259,7 +259,7 @@ public class ResearchTableBlock extends TheAbyss.Processor {
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new ResearchTableGuiGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return new ResearchGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override

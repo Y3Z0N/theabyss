@@ -68,7 +68,7 @@ public class RaptorEggBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RaptorEggBlock(TheAbyss instance) {
-		super(instance, 1110);
+		super(instance, 1077);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

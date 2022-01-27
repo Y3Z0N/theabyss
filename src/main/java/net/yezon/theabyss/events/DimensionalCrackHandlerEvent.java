@@ -21,6 +21,11 @@ import java.util.Map;
 public class DimensionalCrackHandlerEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event DimensionalCrackHandler!");
+			return;
+		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if ((entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("theabyss:the_abyss")))) {
 			{

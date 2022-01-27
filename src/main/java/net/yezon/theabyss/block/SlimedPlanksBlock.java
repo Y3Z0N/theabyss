@@ -26,7 +26,7 @@ public class SlimedPlanksBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedPlanksBlock(TheAbyss instance) {
-		super(instance, 317);
+		super(instance, 325);
 	}
 
 	@Override

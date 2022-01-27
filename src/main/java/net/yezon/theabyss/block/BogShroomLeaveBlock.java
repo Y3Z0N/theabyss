@@ -33,7 +33,7 @@ public class BogShroomLeaveBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BogShroomLeaveBlock(TheAbyss instance) {
-		super(instance, 201);
+		super(instance, 210);
 	}
 
 	@Override

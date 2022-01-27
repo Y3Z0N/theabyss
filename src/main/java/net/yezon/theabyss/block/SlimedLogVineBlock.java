@@ -51,7 +51,7 @@ public class SlimedLogVineBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedLogVineBlock(TheAbyss instance) {
-		super(instance, 484);
+		super(instance, 497);
 	}
 
 	@Override

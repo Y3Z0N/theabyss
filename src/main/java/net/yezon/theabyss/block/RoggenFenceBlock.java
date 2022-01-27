@@ -32,7 +32,7 @@ public class RoggenFenceBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenFenceBlock(TheAbyss instance) {
-		super(instance, 269);
+		super(instance, 277);
 	}
 
 	@Override

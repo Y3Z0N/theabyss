@@ -27,7 +27,7 @@ public class CobbleStoneSlabBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public CobbleStoneSlabBlock(TheAbyss instance) {
-		super(instance, 343);
+		super(instance, 359);
 	}
 
 	@Override

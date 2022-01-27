@@ -39,7 +39,7 @@ public class WartRankEndBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public WartRankEndBlock(TheAbyss instance) {
-		super(instance, 463);
+		super(instance, 475);
 	}
 
 	@Override

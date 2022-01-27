@@ -44,7 +44,7 @@ public class SalLadderBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SalLadderBlock(TheAbyss instance) {
-		super(instance, 315);
+		super(instance, 323);
 	}
 
 	@Override

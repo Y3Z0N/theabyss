@@ -48,7 +48,7 @@ public class DiamondVariantBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public DiamondVariantBlock(TheAbyss instance) {
-		super(instance, 86);
+		super(instance, 93);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

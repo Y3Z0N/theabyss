@@ -27,7 +27,7 @@ public class JungleMelonBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public JungleMelonBlock(TheAbyss instance) {
-		super(instance, 205);
+		super(instance, 214);
 	}
 
 	@Override

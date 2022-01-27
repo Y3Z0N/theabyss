@@ -41,7 +41,7 @@ public class LorkaLeavesBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public LorkaLeavesBlock(TheAbyss instance) {
-		super(instance, 191);
+		super(instance, 200);
 	}
 
 	@Override

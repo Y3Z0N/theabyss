@@ -23,7 +23,7 @@ public class FrostCrystalShardItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public FrostCrystalShardItem(TheAbyss instance) {
-		super(instance, 61);
+		super(instance, 69);
 	}
 
 	@Override

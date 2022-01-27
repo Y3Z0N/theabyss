@@ -61,7 +61,7 @@ public class BlaruLeaveCarpetBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlaruLeaveCarpetBlock(TheAbyss instance) {
-		super(instance, 1342);
+		super(instance, 525);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

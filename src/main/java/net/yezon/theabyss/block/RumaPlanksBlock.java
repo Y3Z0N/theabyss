@@ -26,7 +26,7 @@ public class RumaPlanksBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RumaPlanksBlock(TheAbyss instance) {
-		super(instance, 249);
+		super(instance, 257);
 	}
 
 	@Override

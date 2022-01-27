@@ -33,7 +33,7 @@ public class RottenLogBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RottenLogBlock(TheAbyss instance) {
-		super(instance, 206);
+		super(instance, 215);
 	}
 
 	@Override

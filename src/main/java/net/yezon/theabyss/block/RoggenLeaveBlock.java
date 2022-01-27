@@ -41,7 +41,7 @@ public class RoggenLeaveBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenLeaveBlock(TheAbyss instance) {
-		super(instance, 193);
+		super(instance, 202);
 	}
 
 	@Override

@@ -18,7 +18,7 @@ public class AberytheHoeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public AberytheHoeItem(TheAbyss instance) {
-		super(instance, 51);
+		super(instance, 50);
 	}
 
 	@Override

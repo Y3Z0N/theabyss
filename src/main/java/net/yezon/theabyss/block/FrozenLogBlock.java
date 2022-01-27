@@ -33,7 +33,7 @@ public class FrozenLogBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrozenLogBlock(TheAbyss instance) {
-		super(instance, 329);
+		super(instance, 337);
 	}
 
 	@Override

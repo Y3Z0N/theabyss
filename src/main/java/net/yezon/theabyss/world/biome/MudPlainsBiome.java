@@ -45,7 +45,7 @@ public class MudPlainsBiome extends TheAbyss.Processor {
 	public static Biome biome;
 
 	public MudPlainsBiome(TheAbyss instance) {
-		super(instance, 587);
+		super(instance, 590);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

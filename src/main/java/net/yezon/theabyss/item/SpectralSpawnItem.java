@@ -56,7 +56,7 @@ public class SpectralSpawnItem extends TheAbyss.Processor {
 			.size(0.5f, 0.5f)).build("entitybulletspectral_spawn").setRegistryName("entitybulletspectral_spawn");
 
 	public SpectralSpawnItem(TheAbyss instance) {
-		super(instance, 607);
+		super(instance, 606);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new SpectralSpawnRenderer.ModelRegisterHandler());
 	}
 

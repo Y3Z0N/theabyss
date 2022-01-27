@@ -29,7 +29,7 @@ public class AmuledOfNosajItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public AmuledOfNosajItem(TheAbyss instance) {
-		super(instance, 170);
+		super(instance, 177);
 	}
 
 	@Override

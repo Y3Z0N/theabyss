@@ -28,7 +28,7 @@ public class RomaMudBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RomaMudBlock(TheAbyss instance) {
-		super(instance, 185);
+		super(instance, 194);
 	}
 
 	@Override

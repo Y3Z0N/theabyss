@@ -40,7 +40,7 @@ public class SpectralEntityEntity extends TheAbyss.Processor {
 			.size(0.4f, 0.1f)).build("spectral_entity").setRegistryName("spectral_entity");
 
 	public SpectralEntityEntity(TheAbyss instance) {
-		super(instance, 606);
+		super(instance, 605);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new SpectralEntityRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}

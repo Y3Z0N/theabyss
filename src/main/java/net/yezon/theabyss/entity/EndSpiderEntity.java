@@ -1,7 +1,6 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.EntityLevelProcessorEvent;
 import net.yezon.theabyss.particle.EndSwordPTParticle;
 import net.yezon.theabyss.itemgroup.TheAbyssEntityItemGroup;
 import net.yezon.theabyss.item.NetherNuggetItem;
@@ -21,12 +20,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.World;
-import net.minecraft.world.IServerWorld;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.network.IPacket;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -40,19 +36,14 @@ import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
 
-import javax.annotation.Nullable;
-
 import java.util.Random;
-import java.util.Collections;
 
 @TheAbyss.Processor.Tag
 public class EndSpiderEntity extends TheAbyss.Processor {
@@ -61,7 +52,7 @@ public class EndSpiderEntity extends TheAbyss.Processor {
 			.size(0.8f, 1.2000000000000002f)).build("end_spider").setRegistryName("end_spider");
 
 	public EndSpiderEntity(TheAbyss instance) {
-		super(instance, 408);
+		super(instance, 420);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EndSpiderRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);
@@ -77,13 +68,21 @@ public class EndSpiderEntity extends TheAbyss.Processor {
 	@SubscribeEvent
 	public void addFeatureToBiomes(BiomeLoadingEvent event) {
 		boolean biomeCriteria = false;
+		if (new ResourceLocation("theabyss:blue_mountain").equals(event.getName()))
+			biomeCriteria = true;
+		if (new ResourceLocation("theabyss:mud_plains").equals(event.getName()))
+			biomeCriteria = true;
+		if (new ResourceLocation("theabyss:slime_forest").equals(event.getName()))
+			biomeCriteria = true;
 		if (new ResourceLocation("theabyss:blue_forest").equals(event.getName()))
 			biomeCriteria = true;
-		if (new ResourceLocation("theabyss:blue_mountain").equals(event.getName()))
+		if (new ResourceLocation("theabyss:blue_jungle").equals(event.getName()))
+			biomeCriteria = true;
+		if (new ResourceLocation("theabyss:plains").equals(event.getName()))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
-		event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(entity, 38, 2, 4));
+		event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(entity, 8, 2, 4));
 	}
 
 	@Override
@@ -96,7 +95,7 @@ public class EndSpiderEntity extends TheAbyss.Processor {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
 			AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
-			ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.5);
+			ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3);
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 40);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 0.1);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 7);
@@ -165,19 +164,6 @@ public class EndSpiderEntity extends TheAbyss.Processor {
 			if (source == DamageSource.LIGHTNING_BOLT)
 				return false;
 			return super.attackEntityFrom(source, amount);
-		}
-
-		@Override
-		public ILivingEntityData onInitialSpawn(IServerWorld world, DifficultyInstance difficulty, SpawnReason reason,
-				@Nullable ILivingEntityData livingdata, @Nullable CompoundNBT tag) {
-			ILivingEntityData retval = super.onInitialSpawn(world, difficulty, reason, livingdata, tag);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
-
-			EntityLevelProcessorEvent.executeEvent(Collections.EMPTY_MAP);
-			return retval;
 		}
 
 		public void livingTick() {

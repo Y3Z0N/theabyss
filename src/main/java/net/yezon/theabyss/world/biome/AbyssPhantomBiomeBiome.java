@@ -31,7 +31,7 @@ public class AbyssPhantomBiomeBiome extends TheAbyss.Processor {
 	public static Biome biome;
 
 	public AbyssPhantomBiomeBiome(TheAbyss instance) {
-		super(instance, 550);
+		super(instance, 568);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

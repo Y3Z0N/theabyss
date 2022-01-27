@@ -32,7 +32,7 @@ public class SalDoorBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SalDoorBlock(TheAbyss instance) {
-		super(instance, 308);
+		super(instance, 316);
 	}
 
 	@Override

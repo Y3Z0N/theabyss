@@ -25,7 +25,7 @@ public class PhantomIngotItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public PhantomIngotItem(TheAbyss instance) {
-		super(instance, 101);
+		super(instance, 108);
 	}
 
 	@Override

@@ -30,7 +30,7 @@ public class TantraPressurePlateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TantraPressurePlateBlock(TheAbyss instance) {
-		super(instance, 285);
+		super(instance, 293);
 	}
 
 	@Override

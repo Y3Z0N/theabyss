@@ -63,7 +63,7 @@ public class CaecusVersaBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public CaecusVersaBlock(TheAbyss instance) {
-		super(instance, 445);
+		super(instance, 458);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}
@@ -93,8 +93,6 @@ public class CaecusVersaBlock extends TheAbyss.Processor {
 					RegistryKey<World> dimensionType = world.getWorld().getDimensionKey();
 					boolean dimensionCriteria = false;
 					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("theabyss:the_abyss")))
-						dimensionCriteria = true;
-					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("theabyss:deleted_mod_element")))
 						dimensionCriteria = true;
 					if (!dimensionCriteria)
 						return false;

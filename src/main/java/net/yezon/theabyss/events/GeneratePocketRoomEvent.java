@@ -1,7 +1,6 @@
 package net.yezon.theabyss.events;
 
-import net.yezon.theabyss.Capabilities;
-import net.yezon.theabyss.TheabyssMod;
+import net.yezon.theabyss.server.Capabilities;
 
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.gen.feature.template.Template;

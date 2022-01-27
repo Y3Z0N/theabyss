@@ -18,7 +18,7 @@ public class GarniteAxeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public GarniteAxeItem(TheAbyss instance) {
-		super(instance, 32);
+		super(instance, 31);
 	}
 
 	@Override

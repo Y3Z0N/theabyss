@@ -23,7 +23,7 @@ public class IncorytheGemItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public IncorytheGemItem(TheAbyss instance) {
-		super(instance, 97);
+		super(instance, 104);
 	}
 
 	@Override

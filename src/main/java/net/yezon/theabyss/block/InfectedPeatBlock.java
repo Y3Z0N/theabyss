@@ -48,7 +48,7 @@ public class InfectedPeatBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public InfectedPeatBlock(TheAbyss instance) {
-		super(instance, 374);
+		super(instance, 391);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

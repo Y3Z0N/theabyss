@@ -18,7 +18,7 @@ public class FusionAxeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public FusionAxeItem(TheAbyss instance) {
-		super(instance, 20);
+		super(instance, 19);
 	}
 
 	@Override

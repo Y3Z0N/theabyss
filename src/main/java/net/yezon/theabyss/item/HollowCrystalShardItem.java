@@ -23,7 +23,7 @@ public class HollowCrystalShardItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public HollowCrystalShardItem(TheAbyss instance) {
-		super(instance, 67);
+		super(instance, 72);
 	}
 
 	@Override

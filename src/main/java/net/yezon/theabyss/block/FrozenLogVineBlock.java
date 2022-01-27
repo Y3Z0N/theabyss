@@ -51,7 +51,7 @@ public class FrozenLogVineBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrozenLogVineBlock(TheAbyss instance) {
-		super(instance, 486);
+		super(instance, 499);
 	}
 
 	@Override

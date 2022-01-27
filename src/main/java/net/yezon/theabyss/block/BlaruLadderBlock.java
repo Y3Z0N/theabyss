@@ -44,7 +44,7 @@ public class BlaruLadderBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlaruLadderBlock(TheAbyss instance) {
-		super(instance, 230);
+		super(instance, 238);
 	}
 
 	@Override

@@ -46,7 +46,7 @@ public class RomaMud2Block extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RomaMud2Block(TheAbyss instance) {
-		super(instance, 186);
+		super(instance, 195);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

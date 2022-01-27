@@ -43,7 +43,7 @@ public class FloriteArmorItem extends TheAbyss.Processor {
 	public static final Item boots = null;
 
 	public FloriteArmorItem(TheAbyss instance) {
-		super(instance, 514);
+		super(instance, 538);
 	}
 
 	@Override

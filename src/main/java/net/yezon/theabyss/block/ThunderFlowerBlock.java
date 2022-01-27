@@ -62,7 +62,7 @@ public class ThunderFlowerBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public ThunderFlowerBlock(TheAbyss instance) {
-		super(instance, 438);
+		super(instance, 451);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}
@@ -96,8 +96,6 @@ public class ThunderFlowerBlock extends TheAbyss.Processor {
 				public boolean generate(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, BlockClusterFeatureConfig config) {
 					RegistryKey<World> dimensionType = world.getWorld().getDimensionKey();
 					boolean dimensionCriteria = false;
-					if (dimensionType == World.OVERWORLD)
-						dimensionCriteria = true;
 					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("theabyss:the_abyss")))
 						dimensionCriteria = true;
 					if (!dimensionCriteria)

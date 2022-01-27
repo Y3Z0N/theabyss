@@ -16,7 +16,7 @@ public class EYEICONItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public EYEICONItem(TheAbyss instance) {
-		super(instance, 537);
+		super(instance, 560);
 	}
 
 	@Override

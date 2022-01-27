@@ -30,7 +30,7 @@ public class SomniumDamageUpragdeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public SomniumDamageUpragdeItem(TheAbyss instance) {
-		super(instance, 183);
+		super(instance, 191);
 	}
 
 	@Override

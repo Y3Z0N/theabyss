@@ -17,7 +17,7 @@ public class ThunderNuggetItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public ThunderNuggetItem(TheAbyss instance) {
-		super(instance, 69);
+		super(instance, 76);
 	}
 
 	@Override

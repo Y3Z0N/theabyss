@@ -79,7 +79,7 @@ public class TheAbyssDimGroundlandsDimension extends TheAbyss.Processor {
 	public static final CustomPortalBlock portal = null;
 
 	public TheAbyssDimGroundlandsDimension(TheAbyss instance) {
-		super(instance, 131);
+		super(instance, 138);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new POIRegisterHandler());
 	}
 
@@ -175,7 +175,9 @@ public class TheAbyssDimGroundlandsDimension extends TheAbyss.Processor {
 			}
 		}
 
-		@Override
+		@Override /** 
+					* Update the provided state given the provided neighbor facing and neighbor state, returning a new state. For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately returns its solidified counterpart. Note that this method should ideally consider only the specific face passed in.
+					*/
 		public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos,
 				BlockPos facingPos) {
 			Direction.Axis direction$axis = facing.getAxis();

@@ -149,26 +149,26 @@ public class AbyssalMothRenderer {
 			LeftWing.setTextureOffset(0, 0).addBox(0.0F, -0.3333F, 8.5F, 21.0F, 0.0F, 17.0F, 0.0F, false);
 		}
 
-		@Override
-		public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue,
-				float alpha) {
-			Body.render(matrixStack, buffer, packedLight, packedOverlay);
-		}
+@Override
+public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue,
+    float alpha) {
+  Body.render(matrixStack, buffer, packedLight, packedOverlay);
+}
 
-		public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-			modelRenderer.rotateAngleX = x;
-			modelRenderer.rotateAngleY = y;
-			modelRenderer.rotateAngleZ = z;
-		}
+public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+  modelRenderer.rotateAngleX = x;
+  modelRenderer.rotateAngleY = y;
+  modelRenderer.rotateAngleZ = z;
+}
 
-		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
 
-			this.Head.rotateAngleY = f3 / (180F / (float) Math.PI);
-			this.Head.rotateAngleX = f4 / (180F / (float) Math.PI);
-			this.RightWing.rotateAngleZ = MathHelper.cos(f * 1.0F) * 1.0F * f1;
-			this.Tail.rotateAngleZ = MathHelper.cos(f * 1.0F) * 1.0F * f1;
-			this.LeftWing.rotateAngleZ = MathHelper.cos(f * 1.0F) * -1.0F * f1;
-		}
-	}
+  this.Head.rotateAngleY = f3 / (180F / (float) Math.PI);
+  this.Head.rotateAngleX = f4 / (180F / (float) Math.PI);
+  this.RightWing.rotateAngleZ = MathHelper.cos(f * 1.0F) * 1.0F * f1;
+  this.Tail.rotateAngleZ = MathHelper.cos(f * 1.0F) * 1.0F * f1;
+  this.LeftWing.rotateAngleZ = MathHelper.cos(f * 1.0F) * -1.0F * f1;
+}
+}
 
 }

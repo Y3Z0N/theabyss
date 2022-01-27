@@ -63,7 +63,7 @@ public class OctavysMagynisiusBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public OctavysMagynisiusBlock(TheAbyss instance) {
-		super(instance, 444);
+		super(instance, 457);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

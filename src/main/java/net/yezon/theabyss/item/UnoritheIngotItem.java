@@ -17,7 +17,7 @@ public class UnoritheIngotItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public UnoritheIngotItem(TheAbyss instance) {
-		super(instance, 104);
+		super(instance, 111);
 	}
 
 	@Override

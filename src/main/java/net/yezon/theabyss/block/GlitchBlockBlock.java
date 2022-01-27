@@ -36,7 +36,7 @@ public class GlitchBlockBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public GlitchBlockBlock(TheAbyss instance) {
-		super(instance, 211);
+		super(instance, 220);
 	}
 
 	@Override

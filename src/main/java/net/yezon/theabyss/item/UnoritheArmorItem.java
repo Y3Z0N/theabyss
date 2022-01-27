@@ -43,7 +43,7 @@ public class UnoritheArmorItem extends TheAbyss.Processor {
 	public static final Item boots = null;
 
 	public UnoritheArmorItem(TheAbyss instance) {
-		super(instance, 516);
+		super(instance, 540);
 	}
 
 	@Override

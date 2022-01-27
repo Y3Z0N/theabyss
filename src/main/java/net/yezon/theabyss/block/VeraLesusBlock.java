@@ -59,7 +59,7 @@ public class VeraLesusBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public VeraLesusBlock(TheAbyss instance) {
-		super(instance, 443);
+		super(instance, 456);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

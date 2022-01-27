@@ -26,7 +26,7 @@ public class BogSlabBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BogSlabBlock(TheAbyss instance) {
-		super(instance, 293);
+		super(instance, 301);
 	}
 
 	@Override

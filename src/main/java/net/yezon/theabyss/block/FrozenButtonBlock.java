@@ -27,7 +27,7 @@ public class FrozenButtonBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrozenButtonBlock(TheAbyss instance) {
-		super(instance, 338);
+		super(instance, 346);
 	}
 
 	@Override

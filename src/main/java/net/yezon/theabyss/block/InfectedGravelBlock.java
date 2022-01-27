@@ -48,7 +48,7 @@ public class InfectedGravelBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public InfectedGravelBlock(TheAbyss instance) {
-		super(instance, 377);
+		super(instance, 393);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

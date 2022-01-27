@@ -7,10 +7,13 @@ import net.yezon.theabyss.item.SomniumItem;
 import net.yezon.theabyss.item.SomniumDamageUpragdeItem;
 import net.yezon.theabyss.item.SomniumCooldownUpgradeItem;
 import net.yezon.theabyss.item.SlimeStage4Item;
+import net.yezon.theabyss.item.RottenFleshItem;
 import net.yezon.theabyss.item.RokaHornItem;
 import net.yezon.theabyss.item.PhantomSoulItemItem;
 import net.yezon.theabyss.item.PhantomEssenceItem;
 import net.yezon.theabyss.item.NodeShardItem;
+import net.yezon.theabyss.item.LurkerSobberItem;
+import net.yezon.theabyss.item.LurkerJuiceItem;
 import net.yezon.theabyss.item.LoranEnergyItem;
 import net.yezon.theabyss.item.ImmortalSubstanceItem;
 import net.yezon.theabyss.item.ElderEyeItem;
@@ -18,6 +21,7 @@ import net.yezon.theabyss.item.CrystalHandItem;
 import net.yezon.theabyss.item.CreeperDustItem;
 import net.yezon.theabyss.item.BottleOfSomniumItem;
 import net.yezon.theabyss.item.AppleOfImmortalityItem;
+import net.yezon.theabyss.item.AntiInfectEssenceItem;
 import net.yezon.theabyss.item.AntiFearEssenceItem;
 import net.yezon.theabyss.TheabyssMod;
 
@@ -43,6 +47,11 @@ import java.util.Map;
 public class GenerateSomniumUpgradesEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event GenerateSomniumUpgrades!");
+			return;
+		}
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
@@ -1040,7 +1049,7 @@ public class GenerateSomniumUpgradesEvent {
 						}
 						return ItemStack.EMPTY;
 					}
-				}.getItemStack((int) (1))).getItem() == NodeShardItem.block) {
+				}.getItemStack((int) (1))).getItem() == CrystalHandItem.block) {
 					if ((new Object() {
 						public ItemStack getItemStack(int sltid) {
 							Entity _ent = entity;
@@ -1431,6 +1440,480 @@ public class GenerateSomniumUpgradesEvent {
 											Object invobj = ((Supplier) _current).get();
 											if (invobj instanceof Map) {
 												ItemStack _setstack = new ItemStack(ImmortalSubstanceItem.block);
+												_setstack.setCount((int) (new Object() {
+													public int getAmount(int sltid) {
+														if (entity instanceof ServerPlayerEntity) {
+															Container _current = ((ServerPlayerEntity) entity).openContainer;
+															if (_current instanceof Supplier) {
+																Object invobj = ((Supplier) _current).get();
+																if (invobj instanceof Map) {
+																	ItemStack stack = ((Slot) ((Map) invobj).get(sltid)).getStack();;
+																	if (stack != null)
+																		return stack.getCount();
+																}
+															}
+														}
+														return 0;
+													}
+												}.getAmount((int) (0)) + 1));
+												((Slot) ((Map) invobj).get((int) (0))).putStack(_setstack);
+												_current.detectAndSendChanges();
+											}
+										}
+									}
+									if (world instanceof World && !world.isRemote()) {
+										((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+														.getValue(new ResourceLocation("theabyss:somnium_infuser_bubble")),
+												SoundCategory.NEUTRAL, (float) 0.3, (float) 1);
+									} else {
+										((World) world).playSound(x, y, z,
+												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+														.getValue(new ResourceLocation("theabyss:somnium_infuser_bubble")),
+												SoundCategory.NEUTRAL, (float) 0.3, (float) 1, false);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if ((new Object() {
+			public ItemStack getItemStack(int sltid) {
+				Entity _ent = entity;
+				if (_ent instanceof ServerPlayerEntity) {
+					Container _current = ((ServerPlayerEntity) _ent).openContainer;
+					if (_current instanceof Supplier) {
+						Object invobj = ((Supplier) _current).get();
+						if (invobj instanceof Map) {
+							return ((Slot) ((Map) invobj).get(sltid)).getStack();
+						}
+					}
+				}
+				return ItemStack.EMPTY;
+			}
+		}.getItemStack((int) (6))).getItem() == SomniumItem.block) {
+			if ((new Object() {
+				public ItemStack getItemStack(int sltid) {
+					Entity _ent = entity;
+					if (_ent instanceof ServerPlayerEntity) {
+						Container _current = ((ServerPlayerEntity) _ent).openContainer;
+						if (_current instanceof Supplier) {
+							Object invobj = ((Supplier) _current).get();
+							if (invobj instanceof Map) {
+								return ((Slot) ((Map) invobj).get(sltid)).getStack();
+							}
+						}
+					}
+					return ItemStack.EMPTY;
+				}
+			}.getItemStack((int) (5))).getItem() == LoranEnergyItem.block) {
+				if ((new Object() {
+					public ItemStack getItemStack(int sltid) {
+						Entity _ent = entity;
+						if (_ent instanceof ServerPlayerEntity) {
+							Container _current = ((ServerPlayerEntity) _ent).openContainer;
+							if (_current instanceof Supplier) {
+								Object invobj = ((Supplier) _current).get();
+								if (invobj instanceof Map) {
+									return ((Slot) ((Map) invobj).get(sltid)).getStack();
+								}
+							}
+						}
+						return ItemStack.EMPTY;
+					}
+				}.getItemStack((int) (1))).getItem() == RottenFleshItem.block) {
+					if ((new Object() {
+						public ItemStack getItemStack(int sltid) {
+							Entity _ent = entity;
+							if (_ent instanceof ServerPlayerEntity) {
+								Container _current = ((ServerPlayerEntity) _ent).openContainer;
+								if (_current instanceof Supplier) {
+									Object invobj = ((Supplier) _current).get();
+									if (invobj instanceof Map) {
+										return ((Slot) ((Map) invobj).get(sltid)).getStack();
+									}
+								}
+							}
+							return ItemStack.EMPTY;
+						}
+					}.getItemStack((int) (2))).getItem() == RottenFleshItem.block) {
+						if ((new Object() {
+							public ItemStack getItemStack(int sltid) {
+								Entity _ent = entity;
+								if (_ent instanceof ServerPlayerEntity) {
+									Container _current = ((ServerPlayerEntity) _ent).openContainer;
+									if (_current instanceof Supplier) {
+										Object invobj = ((Supplier) _current).get();
+										if (invobj instanceof Map) {
+											return ((Slot) ((Map) invobj).get(sltid)).getStack();
+										}
+									}
+								}
+								return ItemStack.EMPTY;
+							}
+						}.getItemStack((int) (3))).getItem() == RottenFleshItem.block) {
+							if ((new Object() {
+								public ItemStack getItemStack(int sltid) {
+									Entity _ent = entity;
+									if (_ent instanceof ServerPlayerEntity) {
+										Container _current = ((ServerPlayerEntity) _ent).openContainer;
+										if (_current instanceof Supplier) {
+											Object invobj = ((Supplier) _current).get();
+											if (invobj instanceof Map) {
+												return ((Slot) ((Map) invobj).get(sltid)).getStack();
+											}
+										}
+									}
+									return ItemStack.EMPTY;
+								}
+							}.getItemStack((int) (4))).getItem() == RottenFleshItem.block) {
+								if (!(new Object() {
+									public int getAmount(int sltid) {
+										if (entity instanceof ServerPlayerEntity) {
+											Container _current = ((ServerPlayerEntity) entity).openContainer;
+											if (_current instanceof Supplier) {
+												Object invobj = ((Supplier) _current).get();
+												if (invobj instanceof Map) {
+													ItemStack stack = ((Slot) ((Map) invobj).get(sltid)).getStack();;
+													if (stack != null)
+														return stack.getCount();
+												}
+											}
+										}
+										return 0;
+									}
+								}.getAmount((int) (0)) == 16)) {
+									{
+										Entity _ent = entity;
+										if (_ent instanceof ServerPlayerEntity) {
+											Container _current = ((ServerPlayerEntity) _ent).openContainer;
+											if (_current instanceof Supplier) {
+												Object invobj = ((Supplier) _current).get();
+												if (invobj instanceof Map) {
+													((Slot) ((Map) invobj).get((int) (1))).decrStackSize((int) (1));
+													_current.detectAndSendChanges();
+												}
+											}
+										}
+									}
+									{
+										Entity _ent = entity;
+										if (_ent instanceof ServerPlayerEntity) {
+											Container _current = ((ServerPlayerEntity) _ent).openContainer;
+											if (_current instanceof Supplier) {
+												Object invobj = ((Supplier) _current).get();
+												if (invobj instanceof Map) {
+													((Slot) ((Map) invobj).get((int) (2))).decrStackSize((int) (1));
+													_current.detectAndSendChanges();
+												}
+											}
+										}
+									}
+									{
+										Entity _ent = entity;
+										if (_ent instanceof ServerPlayerEntity) {
+											Container _current = ((ServerPlayerEntity) _ent).openContainer;
+											if (_current instanceof Supplier) {
+												Object invobj = ((Supplier) _current).get();
+												if (invobj instanceof Map) {
+													((Slot) ((Map) invobj).get((int) (3))).decrStackSize((int) (1));
+													_current.detectAndSendChanges();
+												}
+											}
+										}
+									}
+									{
+										Entity _ent = entity;
+										if (_ent instanceof ServerPlayerEntity) {
+											Container _current = ((ServerPlayerEntity) _ent).openContainer;
+											if (_current instanceof Supplier) {
+												Object invobj = ((Supplier) _current).get();
+												if (invobj instanceof Map) {
+													((Slot) ((Map) invobj).get((int) (4))).decrStackSize((int) (1));
+													_current.detectAndSendChanges();
+												}
+											}
+										}
+									}
+									{
+										Entity _ent = entity;
+										if (_ent instanceof ServerPlayerEntity) {
+											Container _current = ((ServerPlayerEntity) _ent).openContainer;
+											if (_current instanceof Supplier) {
+												Object invobj = ((Supplier) _current).get();
+												if (invobj instanceof Map) {
+													((Slot) ((Map) invobj).get((int) (6))).decrStackSize((int) (1));
+													_current.detectAndSendChanges();
+												}
+											}
+										}
+									}
+									{
+										ItemStack _ist = (new Object() {
+											public ItemStack getItemStack(int sltid) {
+												Entity _ent = entity;
+												if (_ent instanceof ServerPlayerEntity) {
+													Container _current = ((ServerPlayerEntity) _ent).openContainer;
+													if (_current instanceof Supplier) {
+														Object invobj = ((Supplier) _current).get();
+														if (invobj instanceof Map) {
+															return ((Slot) ((Map) invobj).get(sltid)).getStack();
+														}
+													}
+												}
+												return ItemStack.EMPTY;
+											}
+										}.getItemStack((int) (5)));
+										if (_ist.attemptDamageItem((int) 8, new Random(), null)) {
+											_ist.shrink(1);
+											_ist.setDamage(0);
+										}
+									}
+									if (entity instanceof PlayerEntity) {
+										Container _current = ((PlayerEntity) entity).openContainer;
+										if (_current instanceof Supplier) {
+											Object invobj = ((Supplier) _current).get();
+											if (invobj instanceof Map) {
+												ItemStack _setstack = new ItemStack(AntiInfectEssenceItem.block);
+												_setstack.setCount((int) (new Object() {
+													public int getAmount(int sltid) {
+														if (entity instanceof ServerPlayerEntity) {
+															Container _current = ((ServerPlayerEntity) entity).openContainer;
+															if (_current instanceof Supplier) {
+																Object invobj = ((Supplier) _current).get();
+																if (invobj instanceof Map) {
+																	ItemStack stack = ((Slot) ((Map) invobj).get(sltid)).getStack();;
+																	if (stack != null)
+																		return stack.getCount();
+																}
+															}
+														}
+														return 0;
+													}
+												}.getAmount((int) (0)) + 1));
+												((Slot) ((Map) invobj).get((int) (0))).putStack(_setstack);
+												_current.detectAndSendChanges();
+											}
+										}
+									}
+									if (world instanceof World && !world.isRemote()) {
+										((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+														.getValue(new ResourceLocation("theabyss:somnium_infuser_bubble")),
+												SoundCategory.NEUTRAL, (float) 0.3, (float) 1);
+									} else {
+										((World) world).playSound(x, y, z,
+												(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
+														.getValue(new ResourceLocation("theabyss:somnium_infuser_bubble")),
+												SoundCategory.NEUTRAL, (float) 0.3, (float) 1, false);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if ((new Object() {
+			public ItemStack getItemStack(int sltid) {
+				Entity _ent = entity;
+				if (_ent instanceof ServerPlayerEntity) {
+					Container _current = ((ServerPlayerEntity) _ent).openContainer;
+					if (_current instanceof Supplier) {
+						Object invobj = ((Supplier) _current).get();
+						if (invobj instanceof Map) {
+							return ((Slot) ((Map) invobj).get(sltid)).getStack();
+						}
+					}
+				}
+				return ItemStack.EMPTY;
+			}
+		}.getItemStack((int) (6))).getItem() == SomniumItem.block) {
+			if ((new Object() {
+				public ItemStack getItemStack(int sltid) {
+					Entity _ent = entity;
+					if (_ent instanceof ServerPlayerEntity) {
+						Container _current = ((ServerPlayerEntity) _ent).openContainer;
+						if (_current instanceof Supplier) {
+							Object invobj = ((Supplier) _current).get();
+							if (invobj instanceof Map) {
+								return ((Slot) ((Map) invobj).get(sltid)).getStack();
+							}
+						}
+					}
+					return ItemStack.EMPTY;
+				}
+			}.getItemStack((int) (5))).getItem() == LoranEnergyItem.block) {
+				if ((new Object() {
+					public ItemStack getItemStack(int sltid) {
+						Entity _ent = entity;
+						if (_ent instanceof ServerPlayerEntity) {
+							Container _current = ((ServerPlayerEntity) _ent).openContainer;
+							if (_current instanceof Supplier) {
+								Object invobj = ((Supplier) _current).get();
+								if (invobj instanceof Map) {
+									return ((Slot) ((Map) invobj).get(sltid)).getStack();
+								}
+							}
+						}
+						return ItemStack.EMPTY;
+					}
+				}.getItemStack((int) (1))).getItem() == LurkerSobberItem.block) {
+					if ((new Object() {
+						public ItemStack getItemStack(int sltid) {
+							Entity _ent = entity;
+							if (_ent instanceof ServerPlayerEntity) {
+								Container _current = ((ServerPlayerEntity) _ent).openContainer;
+								if (_current instanceof Supplier) {
+									Object invobj = ((Supplier) _current).get();
+									if (invobj instanceof Map) {
+										return ((Slot) ((Map) invobj).get(sltid)).getStack();
+									}
+								}
+							}
+							return ItemStack.EMPTY;
+						}
+					}.getItemStack((int) (2))).getItem() == LurkerSobberItem.block) {
+						if ((new Object() {
+							public ItemStack getItemStack(int sltid) {
+								Entity _ent = entity;
+								if (_ent instanceof ServerPlayerEntity) {
+									Container _current = ((ServerPlayerEntity) _ent).openContainer;
+									if (_current instanceof Supplier) {
+										Object invobj = ((Supplier) _current).get();
+										if (invobj instanceof Map) {
+											return ((Slot) ((Map) invobj).get(sltid)).getStack();
+										}
+									}
+								}
+								return ItemStack.EMPTY;
+							}
+						}.getItemStack((int) (3))).getItem() == LurkerSobberItem.block) {
+							if ((new Object() {
+								public ItemStack getItemStack(int sltid) {
+									Entity _ent = entity;
+									if (_ent instanceof ServerPlayerEntity) {
+										Container _current = ((ServerPlayerEntity) _ent).openContainer;
+										if (_current instanceof Supplier) {
+											Object invobj = ((Supplier) _current).get();
+											if (invobj instanceof Map) {
+												return ((Slot) ((Map) invobj).get(sltid)).getStack();
+											}
+										}
+									}
+									return ItemStack.EMPTY;
+								}
+							}.getItemStack((int) (4))).getItem() == LurkerSobberItem.block) {
+								if (!(new Object() {
+									public int getAmount(int sltid) {
+										if (entity instanceof ServerPlayerEntity) {
+											Container _current = ((ServerPlayerEntity) entity).openContainer;
+											if (_current instanceof Supplier) {
+												Object invobj = ((Supplier) _current).get();
+												if (invobj instanceof Map) {
+													ItemStack stack = ((Slot) ((Map) invobj).get(sltid)).getStack();;
+													if (stack != null)
+														return stack.getCount();
+												}
+											}
+										}
+										return 0;
+									}
+								}.getAmount((int) (0)) == 16)) {
+									{
+										Entity _ent = entity;
+										if (_ent instanceof ServerPlayerEntity) {
+											Container _current = ((ServerPlayerEntity) _ent).openContainer;
+											if (_current instanceof Supplier) {
+												Object invobj = ((Supplier) _current).get();
+												if (invobj instanceof Map) {
+													((Slot) ((Map) invobj).get((int) (1))).decrStackSize((int) (1));
+													_current.detectAndSendChanges();
+												}
+											}
+										}
+									}
+									{
+										Entity _ent = entity;
+										if (_ent instanceof ServerPlayerEntity) {
+											Container _current = ((ServerPlayerEntity) _ent).openContainer;
+											if (_current instanceof Supplier) {
+												Object invobj = ((Supplier) _current).get();
+												if (invobj instanceof Map) {
+													((Slot) ((Map) invobj).get((int) (2))).decrStackSize((int) (1));
+													_current.detectAndSendChanges();
+												}
+											}
+										}
+									}
+									{
+										Entity _ent = entity;
+										if (_ent instanceof ServerPlayerEntity) {
+											Container _current = ((ServerPlayerEntity) _ent).openContainer;
+											if (_current instanceof Supplier) {
+												Object invobj = ((Supplier) _current).get();
+												if (invobj instanceof Map) {
+													((Slot) ((Map) invobj).get((int) (3))).decrStackSize((int) (1));
+													_current.detectAndSendChanges();
+												}
+											}
+										}
+									}
+									{
+										Entity _ent = entity;
+										if (_ent instanceof ServerPlayerEntity) {
+											Container _current = ((ServerPlayerEntity) _ent).openContainer;
+											if (_current instanceof Supplier) {
+												Object invobj = ((Supplier) _current).get();
+												if (invobj instanceof Map) {
+													((Slot) ((Map) invobj).get((int) (4))).decrStackSize((int) (1));
+													_current.detectAndSendChanges();
+												}
+											}
+										}
+									}
+									{
+										Entity _ent = entity;
+										if (_ent instanceof ServerPlayerEntity) {
+											Container _current = ((ServerPlayerEntity) _ent).openContainer;
+											if (_current instanceof Supplier) {
+												Object invobj = ((Supplier) _current).get();
+												if (invobj instanceof Map) {
+													((Slot) ((Map) invobj).get((int) (6))).decrStackSize((int) (1));
+													_current.detectAndSendChanges();
+												}
+											}
+										}
+									}
+									{
+										ItemStack _ist = (new Object() {
+											public ItemStack getItemStack(int sltid) {
+												Entity _ent = entity;
+												if (_ent instanceof ServerPlayerEntity) {
+													Container _current = ((ServerPlayerEntity) _ent).openContainer;
+													if (_current instanceof Supplier) {
+														Object invobj = ((Supplier) _current).get();
+														if (invobj instanceof Map) {
+															return ((Slot) ((Map) invobj).get(sltid)).getStack();
+														}
+													}
+												}
+												return ItemStack.EMPTY;
+											}
+										}.getItemStack((int) (5)));
+										if (_ist.attemptDamageItem((int) 8, new Random(), null)) {
+											_ist.shrink(1);
+											_ist.setDamage(0);
+										}
+									}
+									if (entity instanceof PlayerEntity) {
+										Container _current = ((PlayerEntity) entity).openContainer;
+										if (_current instanceof Supplier) {
+											Object invobj = ((Supplier) _current).get();
+											if (invobj instanceof Map) {
+												ItemStack _setstack = new ItemStack(LurkerJuiceItem.block);
 												_setstack.setCount((int) (new Object() {
 													public int getAmount(int sltid) {
 														if (entity instanceof ServerPlayerEntity) {

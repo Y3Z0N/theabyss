@@ -12,6 +12,11 @@ import java.util.Map;
 public class FrostWorldScreenHandlerEvent {
 
 	public static boolean executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event FrostWorldScreenHandler!");
+			return false;
+		}
 		Entity entity = (Entity) dependencies.get("entity");
 		return (entity.world.getDimensionKey()) == (RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("theabyss:frost_world")));
 	}

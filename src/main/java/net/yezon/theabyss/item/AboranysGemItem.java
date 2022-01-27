@@ -25,7 +25,7 @@ public class AboranysGemItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public AboranysGemItem(TheAbyss instance) {
-		super(instance, 96);
+		super(instance, 103);
 	}
 
 	@Override

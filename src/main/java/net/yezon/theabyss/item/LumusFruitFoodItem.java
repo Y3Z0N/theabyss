@@ -28,7 +28,7 @@ public class LumusFruitFoodItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public LumusFruitFoodItem(TheAbyss instance) {
-		super(instance, 139);
+		super(instance, 146);
 	}
 
 	@Override

@@ -28,7 +28,7 @@ public class RumaBookshelfBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RumaBookshelfBlock(TheAbyss instance) {
-		super(instance, 261);
+		super(instance, 269);
 	}
 
 	@Override

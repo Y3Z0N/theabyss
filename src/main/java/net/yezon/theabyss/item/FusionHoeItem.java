@@ -18,7 +18,7 @@ public class FusionHoeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public FusionHoeItem(TheAbyss instance) {
-		super(instance, 22);
+		super(instance, 21);
 	}
 
 	@Override

@@ -46,7 +46,7 @@ public class HealCampFireBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public HealCampFireBlock(TheAbyss instance) {
-		super(instance, 363);
+		super(instance, 379);
 	}
 
 	@Override

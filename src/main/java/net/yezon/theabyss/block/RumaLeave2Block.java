@@ -42,7 +42,7 @@ public class RumaLeave2Block extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RumaLeave2Block(TheAbyss instance) {
-		super(instance, 196);
+		super(instance, 205);
 	}
 
 	@Override

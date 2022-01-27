@@ -18,7 +18,7 @@ public class KnightHoeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public KnightHoeItem(TheAbyss instance) {
-		super(instance, 43);
+		super(instance, 42);
 	}
 
 	@Override

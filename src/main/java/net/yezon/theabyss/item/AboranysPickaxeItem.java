@@ -20,7 +20,7 @@ public class AboranysPickaxeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public AboranysPickaxeItem(TheAbyss instance) {
-		super(instance, 53);
+		super(instance, 52);
 	}
 
 	@Override

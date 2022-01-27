@@ -64,7 +64,7 @@ public class SlimedVitaeBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedVitaeBlock(TheAbyss instance) {
-		super(instance, 456);
+		super(instance, 468);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

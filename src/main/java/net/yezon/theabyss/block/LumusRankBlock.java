@@ -51,7 +51,7 @@ public class LumusRankBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public LumusRankBlock(TheAbyss instance) {
-		super(instance, 499);
+		super(instance, 512);
 	}
 
 	@Override

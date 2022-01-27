@@ -27,7 +27,7 @@ public class SalFenceBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SalFenceBlock(TheAbyss instance) {
-		super(instance, 309);
+		super(instance, 317);
 	}
 
 	@Override

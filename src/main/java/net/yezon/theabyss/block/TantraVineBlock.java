@@ -50,7 +50,7 @@ public class TantraVineBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TantraVineBlock(TheAbyss instance) {
-		super(instance, 481);
+		super(instance, 493);
 	}
 
 	@Override

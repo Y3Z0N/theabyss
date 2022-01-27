@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.particle.EndSwordPTParticle;
 import net.yezon.theabyss.itemgroup.TheAbyssItemGroup;
-import net.yezon.theabyss.gui.SomniumEnhancerGuiGui;
+import net.yezon.theabyss.gui.InfuserGui;
 import net.yezon.theabyss.TheAbyss;
 
 import net.minecraftforge.registries.ObjectHolder;
@@ -78,7 +78,7 @@ public class SomniumInfuserBlock extends TheAbyss.Processor {
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 
 	public SomniumInfuserBlock(TheAbyss instance) {
-		super(instance, 371);
+		super(instance, 387);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
@@ -169,7 +169,7 @@ public class SomniumInfuserBlock extends TheAbyss.Processor {
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new SomniumEnhancerGuiGui.GuiContainerMod(id, inventory,
+						return new InfuserGui.GuiContainerMod(id, inventory,
 								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
@@ -293,7 +293,7 @@ public class SomniumInfuserBlock extends TheAbyss.Processor {
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new SomniumEnhancerGuiGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return new InfuserGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override

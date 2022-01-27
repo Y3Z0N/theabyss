@@ -45,7 +45,7 @@ public class DimensionalCrackEntity extends TheAbyss.Processor {
 			.size(0.5f, 0.6f)).build("dimensional_crack").setRegistryName("dimensional_crack");
 
 	public DimensionalCrackEntity(TheAbyss instance) {
-		super(instance, 429);
+		super(instance, 441);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new DimensionalCrackRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}

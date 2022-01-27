@@ -17,7 +17,7 @@ public class ElderEyeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public ElderEyeItem(TheAbyss instance) {
-		super(instance, 121);
+		super(instance, 129);
 	}
 
 	@Override

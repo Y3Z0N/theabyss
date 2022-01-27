@@ -50,7 +50,7 @@ public class LaroFishFlyEntity extends TheAbyss.Processor {
 					.build("laro_fish_fly").setRegistryName("laro_fish_fly");
 
 	public LaroFishFlyEntity(TheAbyss instance) {
-		super(instance, 393);
+		super(instance, 405);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new LaroFishFlyRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);

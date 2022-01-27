@@ -2,7 +2,6 @@
 package net.yezon.theabyss.item;
 
 import net.yezon.theabyss.world.dimension.TheAbyssDimDimension;
-import net.yezon.theabyss.events.StartSpreadAbyssEvent;
 import net.yezon.theabyss.itemgroup.TheAbyssItemGroup;
 
 import net.minecraftforge.registries.ObjectHolder;
@@ -15,12 +14,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
 
-import java.util.Map;
-import java.util.HashMap;
-
 public class TheAbyssDimItem extends Item {
 	@ObjectHolder("theabyss:the_abyss")
 	public static final Item block = null;
+
 	public TheAbyssDimItem() {
 		super(new Item.Properties().group(TheAbyssItemGroup.tab).maxDamage(64));
 	}
@@ -37,16 +34,13 @@ public class TheAbyssDimItem extends Item {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			if (world.isAirBlock(pos) && true)
+			boolean success = false;
+			if (world.isAirBlock(pos) && true) {
 				TheAbyssDimDimension.portal.portalSpawn(world, pos);
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("world", world);
-				StartSpreadAbyssEvent.executeEvent($_dependencies);
+				itemstack.damageItem(1, entity, c -> c.sendBreakAnimation(context.getHand()));
+				success = true;
 			}
-			itemstack.damageItem(1, entity, c -> c.sendBreakAnimation(context.getHand()));
-			return ActionResultType.SUCCESS;
+			return success ? ActionResultType.SUCCESS : ActionResultType.FAIL;
 		}
 	}
 }

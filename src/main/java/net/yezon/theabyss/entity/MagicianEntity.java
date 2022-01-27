@@ -57,7 +57,7 @@ public class MagicianEntity extends TheAbyss.Processor {
 			.size(0.6f, 2.8000000000000003f)).build("magician").setRegistryName("magician");
 
 	public MagicianEntity(TheAbyss instance) {
-		super(instance, 400);
+		super(instance, 412);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new MagicianRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);

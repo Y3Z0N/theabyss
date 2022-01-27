@@ -26,7 +26,7 @@ public class SomniumItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public SomniumItem(TheAbyss instance) {
-		super(instance, 124);
+		super(instance, 131);
 	}
 
 	@Override

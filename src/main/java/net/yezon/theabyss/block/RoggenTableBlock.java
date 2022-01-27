@@ -38,7 +38,7 @@ public class RoggenTableBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenTableBlock(TheAbyss instance) {
-		super(instance, 274);
+		super(instance, 282);
 	}
 
 	@Override

@@ -30,7 +30,7 @@ public class RoggenStairsBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenStairsBlock(TheAbyss instance) {
-		super(instance, 265);
+		super(instance, 273);
 	}
 
 	@Override

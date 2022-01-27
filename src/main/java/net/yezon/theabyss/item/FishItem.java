@@ -18,7 +18,7 @@ public class FishItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public FishItem(TheAbyss instance) {
-		super(instance, 137);
+		super(instance, 144);
 	}
 
 	@Override

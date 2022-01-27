@@ -25,7 +25,7 @@ public class BogTrapDoorBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BogTrapDoorBlock(TheAbyss instance) {
-		super(instance, 294);
+		super(instance, 302);
 	}
 
 	@Override

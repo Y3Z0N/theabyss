@@ -23,7 +23,7 @@ public class WarpedCrystalShardItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public WarpedCrystalShardItem(TheAbyss instance) {
-		super(instance, 63);
+		super(instance, 70);
 	}
 
 	@Override

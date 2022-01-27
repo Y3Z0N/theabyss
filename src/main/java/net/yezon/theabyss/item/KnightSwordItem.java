@@ -41,7 +41,7 @@ public class KnightSwordItem extends TheAbyss.Processor {
 			}
 
 			public float getAttackDamage() {
-				return 15f;
+				return 16.5f;
 			}
 
 			public int getHarvestLevel() {
@@ -55,7 +55,7 @@ public class KnightSwordItem extends TheAbyss.Processor {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.fromStacks(new ItemStack(KnightIngotItem.block));
 			}
-		}, 3, -1.7f, new Item.Properties().group(TheAbyssWeaponsItemGroup.tab)) {
+		}, 3, -1.5f, new Item.Properties().group(TheAbyssWeaponsItemGroup.tab)) {
 			@Override
 			public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
 				super.inventoryTick(itemstack, world, entity, slot, selected);

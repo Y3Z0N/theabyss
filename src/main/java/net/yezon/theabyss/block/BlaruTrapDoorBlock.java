@@ -30,7 +30,7 @@ public class BlaruTrapDoorBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlaruTrapDoorBlock(TheAbyss instance) {
-		super(instance, 222);
+		super(instance, 230);
 	}
 
 	@Override

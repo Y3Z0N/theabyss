@@ -1,7 +1,6 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.EntityLevelProcessorEvent;
 import net.yezon.theabyss.particle.EndSwordPTParticle;
 import net.yezon.theabyss.itemgroup.TheAbyssEntityItemGroup;
 import net.yezon.theabyss.entity.renderer.InfectedSpiderRenderer;
@@ -20,12 +19,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.World;
-import net.minecraft.world.IServerWorld;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.network.IPacket;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
@@ -41,19 +37,14 @@ import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
-import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.ILivingEntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
 
-import javax.annotation.Nullable;
-
 import java.util.Random;
-import java.util.Collections;
 
 @TheAbyss.Processor.Tag
 public class InfectedSpiderEntity extends TheAbyss.Processor {
@@ -62,7 +53,7 @@ public class InfectedSpiderEntity extends TheAbyss.Processor {
 			.size(1.4f, 1.2000000000000002f)).build("infected_spider").setRegistryName("infected_spider");
 
 	public InfectedSpiderEntity(TheAbyss instance) {
-		super(instance, 402);
+		super(instance, 414);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new InfectedSpiderRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);
@@ -82,7 +73,7 @@ public class InfectedSpiderEntity extends TheAbyss.Processor {
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
-		event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(entity, 4, 2, 5));
+		event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(entity, 34, 2, 5));
 	}
 
 	@Override
@@ -95,7 +86,7 @@ public class InfectedSpiderEntity extends TheAbyss.Processor {
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
 			AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
-			ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.5);
+			ammma = ammma.createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.3);
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 30);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 0.1);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 8);
@@ -166,19 +157,6 @@ public class InfectedSpiderEntity extends TheAbyss.Processor {
 			if (source == DamageSource.LIGHTNING_BOLT)
 				return false;
 			return super.attackEntityFrom(source, amount);
-		}
-
-		@Override
-		public ILivingEntityData onInitialSpawn(IServerWorld world, DifficultyInstance difficulty, SpawnReason reason,
-				@Nullable ILivingEntityData livingdata, @Nullable CompoundNBT tag) {
-			ILivingEntityData retval = super.onInitialSpawn(world, difficulty, reason, livingdata, tag);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
-
-			EntityLevelProcessorEvent.executeEvent(Collections.EMPTY_MAP);
-			return retval;
 		}
 
 		public void livingTick() {

@@ -18,7 +18,7 @@ public class KnightPickAxeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public KnightPickAxeItem(TheAbyss instance) {
-		super(instance, 40);
+		super(instance, 39);
 	}
 
 	@Override

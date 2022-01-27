@@ -30,7 +30,7 @@ public class JunglePressurePlateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public JunglePressurePlateBlock(TheAbyss instance) {
-		super(instance, 241);
+		super(instance, 249);
 	}
 
 	@Override

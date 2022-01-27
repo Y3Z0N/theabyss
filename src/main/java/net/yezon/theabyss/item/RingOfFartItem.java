@@ -30,7 +30,7 @@ public class RingOfFartItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public RingOfFartItem(TheAbyss instance) {
-		super(instance, 1172);
+		super(instance, 1138);
 	}
 
 	@Override

@@ -42,7 +42,7 @@ public class IgnisitheArmorItem extends TheAbyss.Processor {
 	public static final Item boots = null;
 
 	public IgnisitheArmorItem(TheAbyss instance) {
-		super(instance, 515);
+		super(instance, 539);
 	}
 
 	@Override

@@ -56,7 +56,7 @@ public class YoungExoliusPlantBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public YoungExoliusPlantBlock(TheAbyss instance) {
-		super(instance, 510);
+		super(instance, 524);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

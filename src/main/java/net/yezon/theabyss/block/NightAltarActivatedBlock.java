@@ -2,7 +2,7 @@
 package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.events.NightAltarSummonCheckEvent;
-import net.yezon.theabyss.particle.EndSwordPTParticle;
+import net.yezon.theabyss.particle.PhantomSpectrumParticle;
 import net.yezon.theabyss.itemgroup.TheAbyssItemGroup;
 import net.yezon.theabyss.TheAbyss;
 
@@ -42,7 +42,7 @@ public class NightAltarActivatedBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public NightAltarActivatedBlock(TheAbyss instance) {
-		super(instance, 352);
+		super(instance, 368);
 	}
 
 	@Override
@@ -92,11 +92,11 @@ public class NightAltarActivatedBlock extends TheAbyss.Processor {
 			int y = pos.getY();
 			int z = pos.getZ();
 			if (true)
-				for (int l = 0; l < 30; ++l) {
-					double d0 = (double) ((float) x + 0.5) + (double) (random.nextFloat() - 0.5) * 0.5D;
-					double d1 = ((double) ((float) y + 0.7) + (double) (random.nextFloat() - 0.5) * 0.5D) + 0.5;
-					double d2 = (double) ((float) z + 0.5) + (double) (random.nextFloat() - 0.5) * 0.5D;
-					world.addParticle(EndSwordPTParticle.particle, d0, d1, d2, 0, 0, 0);
+				for (int l = 0; l < 1; ++l) {
+					double d0 = (double) ((float) x + 0.5) + (double) (random.nextFloat() - 0.5) * 0.1D;
+					double d1 = ((double) ((float) y + 0.7) + (double) (random.nextFloat() - 0.5) * 0.1D) + 0.5;
+					double d2 = (double) ((float) z + 0.5) + (double) (random.nextFloat() - 0.5) * 0.1D;
+					world.addParticle(PhantomSpectrumParticle.particle, d0, d1, d2, 0, 0, 0);
 				}
 		}
 

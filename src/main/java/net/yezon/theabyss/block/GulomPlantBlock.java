@@ -55,7 +55,7 @@ public class GulomPlantBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public GulomPlantBlock(TheAbyss instance) {
-		super(instance, 434);
+		super(instance, 447);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}
@@ -89,8 +89,6 @@ public class GulomPlantBlock extends TheAbyss.Processor {
 				public boolean generate(ISeedReader world, ChunkGenerator generator, Random random, BlockPos pos, BlockClusterFeatureConfig config) {
 					RegistryKey<World> dimensionType = world.getWorld().getDimensionKey();
 					boolean dimensionCriteria = false;
-					if (dimensionType == World.OVERWORLD)
-						dimensionCriteria = true;
 					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("theabyss:the_abyss")))
 						dimensionCriteria = true;
 					if (!dimensionCriteria)

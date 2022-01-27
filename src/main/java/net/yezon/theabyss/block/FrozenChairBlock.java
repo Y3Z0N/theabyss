@@ -38,7 +38,7 @@ public class FrozenChairBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrozenChairBlock(TheAbyss instance) {
-		super(instance, 339);
+		super(instance, 347);
 	}
 
 	@Override

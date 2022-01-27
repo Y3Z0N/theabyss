@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.AbyssEcholotEntityWalksOnTheBlockEvent;
+import net.yezon.theabyss.events.EcholotEffectEvent;
 import net.yezon.theabyss.TheAbyss;
 
 import net.minecraftforge.registries.ObjectHolder;
@@ -48,7 +48,7 @@ public class WaterEcholotBottomBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public WaterEcholotBottomBlock(TheAbyss instance) {
-		super(instance, 1168);
+		super(instance, 1134);
 	}
 
 	@Override
@@ -130,8 +130,8 @@ public class WaterEcholotBottomBlock extends TheAbyss.Processor {
 			int z = pos.getZ();
 			BlockState blockstate = world.getBlockState(pos);
 
-			AbyssEcholotEntityWalksOnTheBlockEvent.executeEvent(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			EcholotEffectEvent.executeEvent(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

@@ -26,7 +26,7 @@ public class FrozenPlanksBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrozenPlanksBlock(TheAbyss instance) {
-		super(instance, 330);
+		super(instance, 338);
 	}
 
 	@Override

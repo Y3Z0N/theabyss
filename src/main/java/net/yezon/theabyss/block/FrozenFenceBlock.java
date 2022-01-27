@@ -27,7 +27,7 @@ public class FrozenFenceBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrozenFenceBlock(TheAbyss instance) {
-		super(instance, 335);
+		super(instance, 343);
 	}
 
 	@Override

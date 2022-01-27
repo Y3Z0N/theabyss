@@ -16,7 +16,7 @@ public class NightbladeThemeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public NightbladeThemeItem(TheAbyss instance) {
-		super(instance, 1177);
+		super(instance, 1143);
 	}
 
 	@Override

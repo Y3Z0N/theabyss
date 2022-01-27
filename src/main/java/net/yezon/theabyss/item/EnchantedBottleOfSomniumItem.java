@@ -28,7 +28,7 @@ public class EnchantedBottleOfSomniumItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public EnchantedBottleOfSomniumItem(TheAbyss instance) {
-		super(instance, 177);
+		super(instance, 184);
 	}
 
 	@Override

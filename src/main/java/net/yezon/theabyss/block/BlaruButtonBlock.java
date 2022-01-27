@@ -27,7 +27,7 @@ public class BlaruButtonBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlaruButtonBlock(TheAbyss instance) {
-		super(instance, 227);
+		super(instance, 235);
 	}
 
 	@Override

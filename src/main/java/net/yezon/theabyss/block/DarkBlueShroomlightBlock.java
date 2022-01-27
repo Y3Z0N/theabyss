@@ -26,7 +26,7 @@ public class DarkBlueShroomlightBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public DarkBlueShroomlightBlock(TheAbyss instance) {
-		super(instance, 360);
+		super(instance, 376);
 	}
 
 	@Override

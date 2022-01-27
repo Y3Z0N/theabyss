@@ -54,7 +54,7 @@ public class TeslaRankBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TeslaRankBlock(TheAbyss instance) {
-		super(instance, 459);
+		super(instance, 471);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

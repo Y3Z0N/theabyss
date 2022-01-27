@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.AbyssEcholotUpdateTickEvent;
-import net.yezon.theabyss.events.AbyssEcholotEntityWalksOnTheBlockEvent;
+import net.yezon.theabyss.events.EcholotEffectEvent;
+import net.yezon.theabyss.events.EcholotAmbienceEvent;
 import net.yezon.theabyss.particle.EcholotBubbleParticle;
 import net.yezon.theabyss.TheAbyss;
 
@@ -54,7 +54,7 @@ public class WaterEcholotTopBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public WaterEcholotTopBlock(TheAbyss instance) {
-		super(instance, 1166);
+		super(instance, 1132);
 	}
 
 	@Override
@@ -135,7 +135,7 @@ public class WaterEcholotTopBlock extends TheAbyss.Processor {
 			int y = pos.getY();
 			int z = pos.getZ();
 
-			AbyssEcholotUpdateTickEvent.executeEvent(Stream
+			EcholotAmbienceEvent.executeEvent(Stream
 					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
 							new AbstractMap.SimpleEntry<>("z", z))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
@@ -166,8 +166,8 @@ public class WaterEcholotTopBlock extends TheAbyss.Processor {
 			int z = pos.getZ();
 			BlockState blockstate = world.getBlockState(pos);
 
-			AbyssEcholotEntityWalksOnTheBlockEvent.executeEvent(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
-					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			EcholotEffectEvent.executeEvent(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

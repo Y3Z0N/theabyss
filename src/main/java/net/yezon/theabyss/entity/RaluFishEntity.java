@@ -43,7 +43,7 @@ public class RaluFishEntity extends TheAbyss.Processor {
 			.size(0.6f, 1.8f)).build("ralu_fish").setRegistryName("ralu_fish");
 
 	public RaluFishEntity(TheAbyss instance) {
-		super(instance, 396);
+		super(instance, 408);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new RaluFishRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}

@@ -43,7 +43,7 @@ public class GlacerytheArmorItem extends TheAbyss.Processor {
 	public static final Item boots = null;
 
 	public GlacerytheArmorItem(TheAbyss instance) {
-		super(instance, 518);
+		super(instance, 542);
 	}
 
 	@Override

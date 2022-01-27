@@ -13,6 +13,11 @@ import java.util.Collection;
 public class NodeParticleAdditionalParticleExpiryConditionEvent {
 
 	public static boolean executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event NodeParticleAdditionalParticleExpiryCondition!");
+			return false;
+		}
 		Entity entity = (Entity) dependencies.get("entity");
 		return new Object() {
 			boolean check(Entity _entity) {

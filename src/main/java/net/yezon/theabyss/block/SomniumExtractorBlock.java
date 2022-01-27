@@ -2,7 +2,7 @@
 package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.itemgroup.TheAbyssItemGroup;
-import net.yezon.theabyss.gui.SomniumExtractorGuiGui;
+import net.yezon.theabyss.gui.ExtractorGui;
 import net.yezon.theabyss.TheAbyss;
 
 import net.minecraftforge.registries.ObjectHolder;
@@ -23,6 +23,10 @@ import net.minecraft.world.World;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.NonNullList;
@@ -71,7 +75,7 @@ public class SomniumExtractorBlock extends TheAbyss.Processor {
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 
 	public SomniumExtractorBlock(TheAbyss instance) {
-		super(instance, 367);
+		super(instance, 383);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
@@ -113,6 +117,16 @@ public class SomniumExtractorBlock extends TheAbyss.Processor {
 		}
 
 		@Override
+		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
+			Vector3d offset = state.getOffset(world, pos);
+			return VoxelShapes.or(makeCuboidShape(0, 0, 0, 16, 14, 16)
+
+			)
+
+					.withOffset(offset.x, offset.y, offset.z);
+		}
+
+		@Override
 		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
@@ -136,7 +150,7 @@ public class SomniumExtractorBlock extends TheAbyss.Processor {
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new SomniumExtractorGuiGui.GuiContainerMod(id, inventory,
+						return new ExtractorGui.GuiContainerMod(id, inventory,
 								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
@@ -260,7 +274,7 @@ public class SomniumExtractorBlock extends TheAbyss.Processor {
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new SomniumExtractorGuiGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return new ExtractorGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override

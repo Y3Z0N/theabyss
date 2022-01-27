@@ -43,7 +43,7 @@ public class LaroFishEntity extends TheAbyss.Processor {
 			.size(0.6f, 1.8f)).build("laro_fish").setRegistryName("laro_fish");
 
 	public LaroFishEntity(TheAbyss instance) {
-		super(instance, 394);
+		super(instance, 406);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new LaroFishRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}

@@ -1,7 +1,7 @@
 package net.yezon.theabyss.events;
 
 import net.yezon.theabyss.item.RingOfFireItem;
-import net.yezon.theabyss.Capabilities;
+import net.yezon.theabyss.server.Capabilities;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -27,6 +27,11 @@ import java.util.Comparator;
 public class ApplyRingOfFireEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event ApplyRingOfFire!");
+			return;
+		}
 		if (dependencies.get("itemstack") == null) {
 			if (!dependencies.containsKey("itemstack"))
 				TheabyssMod.LOGGER.warn("Failed to load dependency itemstack for Event ApplyRingOfFire!");

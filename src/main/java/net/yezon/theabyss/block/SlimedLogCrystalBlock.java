@@ -51,7 +51,7 @@ public class SlimedLogCrystalBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedLogCrystalBlock(TheAbyss instance) {
-		super(instance, 492);
+		super(instance, 505);
 	}
 
 	@Override

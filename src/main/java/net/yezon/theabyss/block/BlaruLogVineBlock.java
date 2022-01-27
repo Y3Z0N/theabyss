@@ -51,7 +51,7 @@ public class BlaruLogVineBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlaruLogVineBlock(TheAbyss instance) {
-		super(instance, 488);
+		super(instance, 501);
 	}
 
 	@Override

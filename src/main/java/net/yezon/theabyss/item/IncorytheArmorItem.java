@@ -43,7 +43,7 @@ public class IncorytheArmorItem extends TheAbyss.Processor {
 	public static final Item boots = null;
 
 	public IncorytheArmorItem(TheAbyss instance) {
-		super(instance, 512);
+		super(instance, 536);
 	}
 
 	@Override

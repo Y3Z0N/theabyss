@@ -30,7 +30,7 @@ public class ImmortalSubstanceItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public ImmortalSubstanceItem(TheAbyss instance) {
-		super(instance, 184);
+		super(instance, 193);
 	}
 
 	@Override

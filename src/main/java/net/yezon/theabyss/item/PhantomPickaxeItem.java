@@ -18,7 +18,7 @@ public class PhantomPickaxeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public PhantomPickaxeItem(TheAbyss instance) {
-		super(instance, 27);
+		super(instance, 26);
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 package net.yezon.theabyss.events;
 
-import net.yezon.theabyss.Capabilities;
+import net.yezon.theabyss.server.Capabilities;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraft.util.text.StringTextComponent;
@@ -13,6 +13,11 @@ import java.util.HashMap;
 public class SetzCommandExecutedEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event SetzCommandExecuted!");
+			return;
+		}
 		if (dependencies.get("cmdparams") == null) {
 			if (!dependencies.containsKey("cmdparams"))
 				TheabyssMod.LOGGER.warn("Failed to load dependency cmdparams for Event SetzCommandExecuted!");

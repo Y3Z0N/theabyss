@@ -25,7 +25,7 @@ public class LoranItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public LoranItem(TheAbyss instance) {
-		super(instance, 93);
+		super(instance, 100);
 	}
 
 	@Override

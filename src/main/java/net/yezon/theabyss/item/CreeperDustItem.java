@@ -17,7 +17,7 @@ public class CreeperDustItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public CreeperDustItem(TheAbyss instance) {
-		super(instance, 117);
+		super(instance, 124);
 	}
 
 	@Override

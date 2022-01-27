@@ -30,7 +30,7 @@ public class RingOfFireworkItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public RingOfFireworkItem(TheAbyss instance) {
-		super(instance, 1171);
+		super(instance, 1137);
 	}
 
 	@Override

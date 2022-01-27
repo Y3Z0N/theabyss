@@ -13,7 +13,7 @@ import net.minecraft.item.ItemGroup;
 @TheAbyss.Processor.Tag
 public class TheAbyssToolsItemGroup extends TheAbyss.Processor {
 	public TheAbyssToolsItemGroup(TheAbyss instance) {
-		super(instance, 534);
+		super(instance, 557);
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.AbyssExplosiveShurikenBulletHitsBlockEvent;
+import net.yezon.theabyss.events.ExplosiveShurikenEvent;
 import net.yezon.theabyss.itemgroup.TheAbyssWeaponsItemGroup;
 import net.yezon.theabyss.entity.renderer.ShurikenExplosiveRenderer;
 import net.yezon.theabyss.TheAbyss;
@@ -60,7 +60,7 @@ public class ShurikenExplosiveItem extends TheAbyss.Processor {
 			.size(0.5f, 0.5f)).build("entitybulletshuriken_explosive").setRegistryName("entitybulletshuriken_explosive");
 
 	public ShurikenExplosiveItem(TheAbyss instance) {
-		super(instance, 18);
+		super(instance, 17);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ShurikenExplosiveRenderer.ModelRegisterHandler());
 	}
 
@@ -175,7 +175,7 @@ public class ShurikenExplosiveItem extends TheAbyss.Processor {
 			World world = this.world;
 			Entity imediatesourceentity = this;
 
-			AbyssExplosiveShurikenBulletHitsBlockEvent.executeEvent(Stream
+			ExplosiveShurikenEvent.executeEvent(Stream
 					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
 							new AbstractMap.SimpleEntry<>("z", z))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
@@ -192,7 +192,7 @@ public class ShurikenExplosiveItem extends TheAbyss.Processor {
 			Entity imediatesourceentity = this;
 			if (this.inGround) {
 
-				AbyssExplosiveShurikenBulletHitsBlockEvent.executeEvent(Stream
+				ExplosiveShurikenEvent.executeEvent(Stream
 						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
 								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));

@@ -32,7 +32,7 @@ public class StoneBrickPillarBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public StoneBrickPillarBlock(TheAbyss instance) {
-		super(instance, 355);
+		super(instance, 371);
 	}
 
 	@Override

@@ -57,7 +57,7 @@ public class IceKnightEntity extends TheAbyss.Processor {
 			.size(0.8f, 1.7999999999999998f)).build("ice_knight").setRegistryName("ice_knight");
 
 	public IceKnightEntity(TheAbyss instance) {
-		super(instance, 388);
+		super(instance, 400);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new IceKnightRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);

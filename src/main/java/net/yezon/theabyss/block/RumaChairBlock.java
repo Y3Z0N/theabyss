@@ -38,7 +38,7 @@ public class RumaChairBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RumaChairBlock(TheAbyss instance) {
-		super(instance, 258);
+		super(instance, 266);
 	}
 
 	@Override

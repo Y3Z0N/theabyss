@@ -30,7 +30,7 @@ public class AboranysArmorItem extends TheAbyss.Processor {
 	public static final Item boots = null;
 
 	public AboranysArmorItem(TheAbyss instance) {
-		super(instance, 521);
+		super(instance, 545);
 	}
 
 	@Override

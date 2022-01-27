@@ -57,7 +57,7 @@ public class LeraExiliarisBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public LeraExiliarisBlock(TheAbyss instance) {
-		super(instance, 447);
+		super(instance, 460);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

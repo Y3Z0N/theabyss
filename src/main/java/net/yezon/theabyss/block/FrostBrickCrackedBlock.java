@@ -26,7 +26,7 @@ public class FrostBrickCrackedBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrostBrickCrackedBlock(TheAbyss instance) {
-		super(instance, 382);
+		super(instance, 351);
 	}
 
 	@Override

@@ -51,7 +51,7 @@ public class JungleLogVineBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public JungleLogVineBlock(TheAbyss instance) {
-		super(instance, 485);
+		super(instance, 498);
 	}
 
 	@Override

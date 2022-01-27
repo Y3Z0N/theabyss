@@ -38,7 +38,7 @@ public class BlaruTableBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlaruTableBlock(TheAbyss instance) {
-		super(instance, 228);
+		super(instance, 236);
 	}
 
 	@Override

@@ -17,7 +17,7 @@ public class IcoraStoneItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public IcoraStoneItem(TheAbyss instance) {
-		super(instance, 78);
+		super(instance, 85);
 	}
 
 	@Override

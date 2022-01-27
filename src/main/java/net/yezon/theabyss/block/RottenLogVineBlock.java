@@ -51,7 +51,7 @@ public class RottenLogVineBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RottenLogVineBlock(TheAbyss instance) {
-		super(instance, 502);
+		super(instance, 496);
 	}
 
 	@Override

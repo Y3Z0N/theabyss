@@ -27,7 +27,7 @@ public class TantraButtonBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TantraButtonBlock(TheAbyss instance) {
-		super(instance, 286);
+		super(instance, 294);
 	}
 
 	@Override

@@ -32,7 +32,7 @@ public class SlimedRankBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedRankBlock(TheAbyss instance) {
-		super(instance, 1300);
+		super(instance, 1261);
 	}
 
 	@Override

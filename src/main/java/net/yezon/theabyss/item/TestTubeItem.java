@@ -17,7 +17,7 @@ public class TestTubeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public TestTubeItem(TheAbyss instance) {
-		super(instance, 126);
+		super(instance, 133);
 	}
 
 	@Override

@@ -10,6 +10,8 @@ import net.minecraft.world.gen.settings.StructureSeparationSettings;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.yezon.theabyss.configuredfeature.AbyssDungeon;
+import net.yezon.theabyss.configuredfeature.ForestHutDungeon;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -51,7 +51,7 @@ public class BlaruLogFungiBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlaruLogFungiBlock(TheAbyss instance) {
-		super(instance, 473);
+		super(instance, 485);
 	}
 
 	@Override

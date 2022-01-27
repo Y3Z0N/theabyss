@@ -60,7 +60,7 @@ public class GlacerytheOreBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public GlacerytheOreBlock(TheAbyss instance) {
-		super(instance, 83);
+		super(instance, 90);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

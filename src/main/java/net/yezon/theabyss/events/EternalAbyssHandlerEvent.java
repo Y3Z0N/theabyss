@@ -1,7 +1,7 @@
 package net.yezon.theabyss.events;
 
 import net.yezon.theabyss.potion.ImmortalPotionEffect;
-import net.yezon.theabyss.Capabilities;
+import net.yezon.theabyss.server.Capabilities;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.fml.common.Mod;
@@ -45,6 +45,11 @@ public class EternalAbyssHandlerEvent {
 	}
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event EternalAbyssHandler!");
+			return;
+		}
 		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");

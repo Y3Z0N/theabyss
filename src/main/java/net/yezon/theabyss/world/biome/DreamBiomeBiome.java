@@ -44,7 +44,7 @@ public class DreamBiomeBiome extends TheAbyss.Processor {
 	public static Biome biome;
 
 	public DreamBiomeBiome(TheAbyss instance) {
-		super(instance, 884);
+		super(instance, 879);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

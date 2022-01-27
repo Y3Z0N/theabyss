@@ -27,7 +27,7 @@ public class SalButtonBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SalButtonBlock(TheAbyss instance) {
-		super(instance, 312);
+		super(instance, 320);
 	}
 
 	@Override

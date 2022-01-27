@@ -30,7 +30,7 @@ public class RumaPressurePlateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RumaPressurePlateBlock(TheAbyss instance) {
-		super(instance, 256);
+		super(instance, 264);
 	}
 
 	@Override

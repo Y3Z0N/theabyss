@@ -20,6 +20,11 @@ import java.util.Map;
 public class ApplyRingOfFireworkEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event ApplyRingOfFirework!");
+			return;
+		}
 		if (dependencies.get("itemstack") == null) {
 			if (!dependencies.containsKey("itemstack"))
 				TheabyssMod.LOGGER.warn("Failed to load dependency itemstack for Event ApplyRingOfFirework!");

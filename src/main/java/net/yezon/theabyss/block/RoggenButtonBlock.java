@@ -27,7 +27,7 @@ public class RoggenButtonBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenButtonBlock(TheAbyss instance) {
-		super(instance, 272);
+		super(instance, 280);
 	}
 
 	@Override

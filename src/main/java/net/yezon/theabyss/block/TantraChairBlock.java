@@ -38,7 +38,7 @@ public class TantraChairBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TantraChairBlock(TheAbyss instance) {
-		super(instance, 287);
+		super(instance, 295);
 	}
 
 	@Override

@@ -30,7 +30,7 @@ public class TantraFenceGateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TantraFenceGateBlock(TheAbyss instance) {
-		super(instance, 284);
+		super(instance, 292);
 	}
 
 	@Override

@@ -2,7 +2,7 @@
 package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.itemgroup.TheAbyssItemGroup;
-import net.yezon.theabyss.gui.CrystalCutterGuiGui;
+import net.yezon.theabyss.gui.CutterGui;
 import net.yezon.theabyss.TheAbyss;
 
 import net.minecraftforge.registries.ObjectHolder;
@@ -75,7 +75,7 @@ public class CrystalCutterBlock extends TheAbyss.Processor {
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 
 	public CrystalCutterBlock(TheAbyss instance) {
-		super(instance, 370);
+		super(instance, 386);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
@@ -118,7 +118,7 @@ public class CrystalCutterBlock extends TheAbyss.Processor {
 		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vector3d offset = state.getOffset(world, pos);
-			return VoxelShapes.or(makeCuboidShape(0, 0, 0, 16, 12, 16)
+			return VoxelShapes.or(makeCuboidShape(0, 0, 0, 16, 10, 16)
 
 			)
 
@@ -149,8 +149,7 @@ public class CrystalCutterBlock extends TheAbyss.Processor {
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new CrystalCutterGuiGui.GuiContainerMod(id, inventory,
-								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
+						return new CutterGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
 			}
@@ -273,7 +272,7 @@ public class CrystalCutterBlock extends TheAbyss.Processor {
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new CrystalCutterGuiGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return new CutterGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override

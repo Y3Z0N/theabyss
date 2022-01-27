@@ -28,7 +28,7 @@ public class JungleBookshelfBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public JungleBookshelfBlock(TheAbyss instance) {
-		super(instance, 246);
+		super(instance, 254);
 	}
 
 	@Override

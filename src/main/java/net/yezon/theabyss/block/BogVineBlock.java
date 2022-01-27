@@ -51,7 +51,7 @@ public class BogVineBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BogVineBlock(TheAbyss instance) {
-		super(instance, 480);
+		super(instance, 492);
 	}
 
 	@Override

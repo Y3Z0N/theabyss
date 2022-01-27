@@ -18,7 +18,7 @@ public class DeerBeefItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public DeerBeefItem(TheAbyss instance) {
-		super(instance, 134);
+		super(instance, 141);
 	}
 
 	@Override

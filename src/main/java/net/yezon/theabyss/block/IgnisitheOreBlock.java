@@ -60,7 +60,7 @@ public class IgnisitheOreBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public IgnisitheOreBlock(TheAbyss instance) {
-		super(instance, 81);
+		super(instance, 88);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

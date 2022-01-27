@@ -18,7 +18,7 @@ public class UnorithePickAxeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public UnorithePickAxeItem(TheAbyss instance) {
-		super(instance, 35);
+		super(instance, 34);
 	}
 
 	@Override

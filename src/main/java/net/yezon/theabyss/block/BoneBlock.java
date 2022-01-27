@@ -29,7 +29,7 @@ public class BoneBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BoneBlock(TheAbyss instance) {
-		super(instance, 215);
+		super(instance, 223);
 	}
 
 	@Override

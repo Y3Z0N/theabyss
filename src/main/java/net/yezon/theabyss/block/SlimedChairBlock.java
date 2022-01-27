@@ -38,7 +38,7 @@ public class SlimedChairBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedChairBlock(TheAbyss instance) {
-		super(instance, 326);
+		super(instance, 334);
 	}
 
 	@Override

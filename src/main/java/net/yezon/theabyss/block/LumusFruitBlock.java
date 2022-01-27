@@ -51,7 +51,7 @@ public class LumusFruitBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public LumusFruitBlock(TheAbyss instance) {
-		super(instance, 500);
+		super(instance, 513);
 	}
 
 	@Override

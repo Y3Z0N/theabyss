@@ -32,7 +32,7 @@ public class RumaDoorBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RumaDoorBlock(TheAbyss instance) {
-		super(instance, 253);
+		super(instance, 261);
 	}
 
 	@Override

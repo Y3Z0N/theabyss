@@ -47,7 +47,7 @@ public class IronVariantBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public IronVariantBlock(TheAbyss instance) {
-		super(instance, 88);
+		super(instance, 95);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

@@ -61,7 +61,7 @@ public class JungleLeaveCarpetBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public JungleLeaveCarpetBlock(TheAbyss instance) {
-		super(instance, 1343);
+		super(instance, 526);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

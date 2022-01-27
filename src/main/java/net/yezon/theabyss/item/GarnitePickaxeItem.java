@@ -18,7 +18,7 @@ public class GarnitePickaxeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public GarnitePickaxeItem(TheAbyss instance) {
-		super(instance, 31);
+		super(instance, 30);
 	}
 
 	@Override

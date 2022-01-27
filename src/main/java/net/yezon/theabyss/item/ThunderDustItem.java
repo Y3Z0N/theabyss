@@ -17,7 +17,7 @@ public class ThunderDustItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public ThunderDustItem(TheAbyss instance) {
-		super(instance, 68);
+		super(instance, 75);
 	}
 
 	@Override

@@ -2,7 +2,7 @@ package net.yezon.theabyss.events;
 
 import net.yezon.theabyss.item.RingOfSeekerItem;
 import net.yezon.theabyss.entity.SummonedSeekerEntity;
-import net.yezon.theabyss.Capabilities;
+import net.yezon.theabyss.server.Capabilities;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraft.world.server.ServerWorld;
@@ -23,6 +23,11 @@ import java.util.Map;
 public class ApplyRingOfSeekerEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event ApplyRingOfSeeker!");
+			return;
+		}
 		if (dependencies.get("itemstack") == null) {
 			if (!dependencies.containsKey("itemstack"))
 				TheabyssMod.LOGGER.warn("Failed to load dependency itemstack for Event ApplyRingOfSeeker!");

@@ -34,6 +34,7 @@ public class AbyssalLionRenderer {
 					{
 						this.addLayer(new GlowingLayer<>(this));
 					}
+
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
 						return new ResourceLocation("theabyss:textures/abyssal_lion.png");
@@ -74,6 +75,7 @@ public class AbyssalLionRenderer {
 		private final ModelRenderer LeftEar;
 		private final ModelRenderer RightLowerJaw;
 		private final ModelRenderer LeftLowerJaw;
+
 		public Modelabyssal_lion() {
 			textureWidth = 128;
 			textureHeight = 128;
@@ -163,6 +165,7 @@ public class AbyssalLionRenderer {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+
 			this.LeftLeg.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
 			this.Head.rotateAngleY = f3 / (180F / (float) Math.PI);
 			this.Head.rotateAngleX = f4 / (180F / (float) Math.PI);
@@ -173,4 +176,5 @@ public class AbyssalLionRenderer {
 			this.RightLeg.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 		}
 	}
+
 }

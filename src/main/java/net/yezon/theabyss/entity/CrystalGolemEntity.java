@@ -69,7 +69,7 @@ public class CrystalGolemEntity extends TheAbyss.Processor {
 			.size(0.8f, 3.2f)).build("crystal_golem").setRegistryName("crystal_golem");
 
 	public CrystalGolemEntity(TheAbyss instance) {
-		super(instance, 398);
+		super(instance, 410);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new CrystalGolemRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);

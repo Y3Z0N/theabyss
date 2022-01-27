@@ -30,7 +30,7 @@ public class JungleFenceGateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public JungleFenceGateBlock(TheAbyss instance) {
-		super(instance, 240);
+		super(instance, 248);
 	}
 
 	@Override

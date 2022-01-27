@@ -30,7 +30,7 @@ public class BoneArmorItem extends TheAbyss.Processor {
 	public static final Item boots = null;
 
 	public BoneArmorItem(TheAbyss instance) {
-		super(instance, 519);
+		super(instance, 543);
 	}
 
 	@Override

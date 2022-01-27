@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.NodeShardFoodEatenEvent;
-import net.yezon.theabyss.events.NodePotionRenderEvent;
+import net.yezon.theabyss.events.NodeParticlesEvent;
+import net.yezon.theabyss.events.NodeEffectEvent;
 
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.fml.common.Mod;
@@ -74,7 +74,7 @@ public class NodePotionPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			NodeShardFoodEatenEvent.executeEvent(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+			NodeEffectEvent.executeEvent(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
 					(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 
@@ -85,7 +85,7 @@ public class NodePotionPotionEffect {
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
 
-			NodePotionRenderEvent.executeEvent(Stream
+			NodeParticlesEvent.executeEvent(Stream
 					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
 							new AbstractMap.SimpleEntry<>("z", z))
 					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));

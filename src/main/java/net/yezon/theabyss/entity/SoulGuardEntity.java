@@ -68,7 +68,7 @@ public class SoulGuardEntity extends TheAbyss.Processor {
 			.size(0.8f, 1.7999999999999998f)).build("soul_guard").setRegistryName("soul_guard");
 
 	public SoulGuardEntity(TheAbyss instance) {
-		super(instance, 401);
+		super(instance, 413);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new SoulGuardRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);

@@ -17,7 +17,7 @@ public class CrystalHandItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public CrystalHandItem(TheAbyss instance) {
-		super(instance, 119);
+		super(instance, 126);
 	}
 
 	@Override

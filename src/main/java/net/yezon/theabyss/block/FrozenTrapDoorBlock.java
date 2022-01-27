@@ -25,7 +25,7 @@ public class FrozenTrapDoorBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrozenTrapDoorBlock(TheAbyss instance) {
-		super(instance, 333);
+		super(instance, 341);
 	}
 
 	@Override

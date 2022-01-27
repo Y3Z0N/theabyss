@@ -18,7 +18,7 @@ public class IncorythePickaxeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public IncorythePickaxeItem(TheAbyss instance) {
-		super(instance, 23);
+		super(instance, 22);
 	}
 
 	@Override

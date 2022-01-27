@@ -54,7 +54,7 @@ public class RottenRankBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RottenRankBlock(TheAbyss instance) {
-		super(instance, 461);
+		super(instance, 473);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

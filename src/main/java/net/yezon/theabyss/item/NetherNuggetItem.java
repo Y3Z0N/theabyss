@@ -19,7 +19,7 @@ public class NetherNuggetItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public NetherNuggetItem(TheAbyss instance) {
-		super(instance, 112);
+		super(instance, 119);
 	}
 
 	@Override

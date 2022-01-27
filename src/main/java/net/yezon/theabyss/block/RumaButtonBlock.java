@@ -27,7 +27,7 @@ public class RumaButtonBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RumaButtonBlock(TheAbyss instance) {
-		super(instance, 257);
+		super(instance, 265);
 	}
 
 	@Override

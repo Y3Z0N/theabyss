@@ -32,7 +32,7 @@ public class LoranEnergyItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public LoranEnergyItem(TheAbyss instance) {
-		super(instance, 94);
+		super(instance, 101);
 	}
 
 	@Override

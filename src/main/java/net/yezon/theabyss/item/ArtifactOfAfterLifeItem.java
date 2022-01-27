@@ -29,7 +29,7 @@ public class ArtifactOfAfterLifeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public ArtifactOfAfterLifeItem(TheAbyss instance) {
-		super(instance, 172);
+		super(instance, 179);
 	}
 
 	@Override

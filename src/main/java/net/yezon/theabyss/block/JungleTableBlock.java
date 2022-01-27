@@ -38,7 +38,7 @@ public class JungleTableBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public JungleTableBlock(TheAbyss instance) {
-		super(instance, 244);
+		super(instance, 252);
 	}
 
 	@Override

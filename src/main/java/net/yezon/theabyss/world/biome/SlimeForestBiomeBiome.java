@@ -50,7 +50,7 @@ public class SlimeForestBiomeBiome extends TheAbyss.Processor {
 	public static Biome biome;
 
 	public SlimeForestBiomeBiome(TheAbyss instance) {
-		super(instance, 558);
+		super(instance, 572);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

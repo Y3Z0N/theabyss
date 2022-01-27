@@ -62,7 +62,7 @@ public class GrassSmallBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public GrassSmallBlock(TheAbyss instance) {
-		super(instance, 464);
+		super(instance, 476);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BlockColorRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ItemColorRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);

@@ -30,7 +30,7 @@ public class ForgottenmountainsBiome extends TheAbyss.Processor {
 	public static Biome biome;
 
 	public ForgottenmountainsBiome(TheAbyss instance) {
-		super(instance, 593);
+		super(instance, 596);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

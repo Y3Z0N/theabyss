@@ -20,7 +20,7 @@ public class AboranysShovelItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public AboranysShovelItem(TheAbyss instance) {
-		super(instance, 54);
+		super(instance, 53);
 	}
 
 	@Override

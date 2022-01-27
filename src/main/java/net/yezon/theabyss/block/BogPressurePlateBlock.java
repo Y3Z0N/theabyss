@@ -25,7 +25,7 @@ public class BogPressurePlateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BogPressurePlateBlock(TheAbyss instance) {
-		super(instance, 298);
+		super(instance, 306);
 	}
 
 	@Override

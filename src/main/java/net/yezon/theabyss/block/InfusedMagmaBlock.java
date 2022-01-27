@@ -27,7 +27,7 @@ public class InfusedMagmaBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public InfusedMagmaBlock(TheAbyss instance) {
-		super(instance, 214);
+		super(instance, 222);
 	}
 
 	@Override

@@ -30,7 +30,7 @@ public class SnowBlockBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SnowBlockBlock(TheAbyss instance) {
-		super(instance, 188);
+		super(instance, 197);
 	}
 
 	@Override

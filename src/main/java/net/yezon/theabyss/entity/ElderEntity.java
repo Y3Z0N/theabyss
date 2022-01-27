@@ -68,7 +68,7 @@ public class ElderEntity extends TheAbyss.Processor {
 			.size(0.8f, 2.5f)).build("elder").setRegistryName("elder");
 
 	public ElderEntity(TheAbyss instance) {
-		super(instance, 411);
+		super(instance, 423);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new ElderRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);

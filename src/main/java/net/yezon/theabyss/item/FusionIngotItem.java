@@ -23,7 +23,7 @@ public class FusionIngotItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public FusionIngotItem(TheAbyss instance) {
-		super(instance, 100);
+		super(instance, 107);
 	}
 
 	@Override

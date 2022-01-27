@@ -67,7 +67,7 @@ public class GuardEntity extends TheAbyss.Processor {
 			.size(0.8f, 1.7999999999999998f)).build("guard").setRegistryName("guard");
 
 	public GuardEntity(TheAbyss instance) {
-		super(instance, 404);
+		super(instance, 416);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new GuardRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);

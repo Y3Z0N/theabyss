@@ -60,7 +60,7 @@ public class AboranysOreBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public AboranysOreBlock(TheAbyss instance) {
-		super(instance, 82);
+		super(instance, 89);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

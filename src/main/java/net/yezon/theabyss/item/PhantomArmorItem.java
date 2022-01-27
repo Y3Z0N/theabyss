@@ -42,7 +42,7 @@ public class PhantomArmorItem extends TheAbyss.Processor {
 	public static final Item boots = null;
 
 	public PhantomArmorItem(TheAbyss instance) {
-		super(instance, 513);
+		super(instance, 537);
 	}
 
 	@Override

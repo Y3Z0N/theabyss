@@ -28,7 +28,7 @@ public class BlackVoidBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlackVoidBlock(TheAbyss instance) {
-		super(instance, 372);
+		super(instance, 389);
 	}
 
 	@Override

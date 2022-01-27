@@ -59,7 +59,7 @@ public class LazarusGrassBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public LazarusGrassBlock(TheAbyss instance) {
-		super(instance, 496);
+		super(instance, 509);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

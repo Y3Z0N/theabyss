@@ -59,7 +59,7 @@ public class RubShroomBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RubShroomBlock(TheAbyss instance) {
-		super(instance, 470);
+		super(instance, 482);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

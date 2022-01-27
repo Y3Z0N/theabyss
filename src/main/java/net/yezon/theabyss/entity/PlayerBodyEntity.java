@@ -54,7 +54,7 @@ public class PlayerBodyEntity extends TheAbyss.Processor {
 			.size(0.5f, 0.5f)).build("player_body").setRegistryName("player_body");
 
 	public PlayerBodyEntity(TheAbyss instance) {
-		super(instance, 416);
+		super(instance, 428);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new PlayerBodyRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 	}

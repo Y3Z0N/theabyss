@@ -35,7 +35,7 @@ public class GhostDeactivateKeyBinding extends TheAbyss.Processor {
 	private long lastpress = 0;
 
 	public GhostDeactivateKeyBinding(TheAbyss instance) {
-		super(instance, 1057);
+		super(instance, 1024);
 		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new,
 				KeyBindingPressedMessage::handler);
 	}

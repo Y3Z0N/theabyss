@@ -30,7 +30,7 @@ public class BlaruPressurePlateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlaruPressurePlateBlock(TheAbyss instance) {
-		super(instance, 226);
+		super(instance, 234);
 	}
 
 	@Override

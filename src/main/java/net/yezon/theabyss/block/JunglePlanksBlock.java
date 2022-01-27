@@ -26,7 +26,7 @@ public class JunglePlanksBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public JunglePlanksBlock(TheAbyss instance) {
-		super(instance, 234);
+		super(instance, 242);
 	}
 
 	@Override

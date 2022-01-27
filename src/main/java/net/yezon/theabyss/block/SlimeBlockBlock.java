@@ -42,7 +42,7 @@ public class SlimeBlockBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimeBlockBlock(TheAbyss instance) {
-		super(instance, 203);
+		super(instance, 212);
 	}
 
 	@Override

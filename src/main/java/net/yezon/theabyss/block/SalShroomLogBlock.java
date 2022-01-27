@@ -32,7 +32,7 @@ public class SalShroomLogBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SalShroomLogBlock(TheAbyss instance) {
-		super(instance, 303);
+		super(instance, 311);
 	}
 
 	@Override

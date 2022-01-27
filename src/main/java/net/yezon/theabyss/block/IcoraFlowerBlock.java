@@ -56,7 +56,7 @@ public class IcoraFlowerBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public IcoraFlowerBlock(TheAbyss instance) {
-		super(instance, 458);
+		super(instance, 470);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

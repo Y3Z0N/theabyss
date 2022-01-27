@@ -48,7 +48,7 @@ public class EyelieAttackItem extends TheAbyss.Processor {
 			.size(0.5f, 0.5f)).build("entitybulleteyelie_attack").setRegistryName("entitybulleteyelie_attack");
 
 	public EyelieAttackItem(TheAbyss instance) {
-		super(instance, 549);
+		super(instance, 567);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EyelieAttackRenderer.ModelRegisterHandler());
 	}
 

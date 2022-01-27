@@ -30,7 +30,7 @@ public class AntiFearEssenceItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public AntiFearEssenceItem(TheAbyss instance) {
-		super(instance, 180);
+		super(instance, 187);
 	}
 
 	@Override

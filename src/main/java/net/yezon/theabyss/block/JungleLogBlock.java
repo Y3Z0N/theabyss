@@ -33,7 +33,7 @@ public class JungleLogBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public JungleLogBlock(TheAbyss instance) {
-		super(instance, 232);
+		super(instance, 240);
 	}
 
 	@Override

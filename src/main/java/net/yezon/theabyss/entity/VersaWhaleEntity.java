@@ -51,7 +51,7 @@ public class VersaWhaleEntity extends TheAbyss.Processor {
 			.size(1.7999999999999998f, 2f)).build("versa_whale").setRegistryName("versa_whale");
 
 	public VersaWhaleEntity(TheAbyss instance) {
-		super(instance, 425);
+		super(instance, 437);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new VersaWhaleRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);

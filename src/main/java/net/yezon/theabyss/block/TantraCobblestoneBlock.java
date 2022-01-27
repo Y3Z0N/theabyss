@@ -29,7 +29,7 @@ public class TantraCobblestoneBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TantraCobblestoneBlock(TheAbyss instance) {
-		super(instance, 210);
+		super(instance, 219);
 	}
 
 	@Override

@@ -32,7 +32,7 @@ public class BlaruFenceBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlaruFenceBlock(TheAbyss instance) {
-		super(instance, 224);
+		super(instance, 232);
 	}
 
 	@Override

@@ -30,7 +30,7 @@ public class SomniumRegenUpgradeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public SomniumRegenUpgradeItem(TheAbyss instance) {
-		super(instance, 179);
+		super(instance, 186);
 	}
 
 	@Override
@@ -66,7 +66,7 @@ public class SomniumRegenUpgradeItem extends TheAbyss.Processor {
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
 			list.add(new StringTextComponent("Regenerates somnium when you use it the first time"));
-			list.add(new StringTextComponent("regenerates somnium 5% faster after each luse. Max is 20%"));
+			list.add(new StringTextComponent("regenerates somnium 5% faster after each use. Max is 20%"));
 		}
 
 		@Override

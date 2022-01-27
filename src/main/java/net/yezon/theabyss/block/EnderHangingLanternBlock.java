@@ -42,7 +42,7 @@ public class EnderHangingLanternBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public EnderHangingLanternBlock(TheAbyss instance) {
-		super(instance, 839);
+		super(instance, 834);
 	}
 
 	@Override

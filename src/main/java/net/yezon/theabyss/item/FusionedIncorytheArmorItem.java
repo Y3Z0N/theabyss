@@ -43,7 +43,7 @@ public class FusionedIncorytheArmorItem extends TheAbyss.Processor {
 	public static final Item boots = null;
 
 	public FusionedIncorytheArmorItem(TheAbyss instance) {
-		super(instance, 526);
+		super(instance, 549);
 	}
 
 	@Override

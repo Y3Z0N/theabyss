@@ -57,7 +57,7 @@ public class MiniStone1Block extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public MiniStone1Block(TheAbyss instance) {
-		super(instance, 479);
+		super(instance, 491);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

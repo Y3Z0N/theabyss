@@ -64,7 +64,7 @@ public class VealusMeramusBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public VealusMeramusBlock(TheAbyss instance) {
-		super(instance, 501);
+		super(instance, 514);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

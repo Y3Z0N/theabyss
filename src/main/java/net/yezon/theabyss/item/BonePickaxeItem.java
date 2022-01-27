@@ -18,7 +18,7 @@ public class BonePickaxeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public BonePickaxeItem(TheAbyss instance) {
-		super(instance, 44);
+		super(instance, 43);
 	}
 
 	@Override

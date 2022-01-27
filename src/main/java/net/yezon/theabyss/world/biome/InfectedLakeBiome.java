@@ -45,7 +45,7 @@ public class InfectedLakeBiome extends TheAbyss.Processor {
 	public static Biome biome;
 
 	public InfectedLakeBiome(TheAbyss instance) {
-		super(instance, 1165);
+		super(instance, 1131);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 

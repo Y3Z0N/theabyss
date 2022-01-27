@@ -18,7 +18,7 @@ public class WartShroomItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public WartShroomItem(TheAbyss instance) {
-		super(instance, 132);
+		super(instance, 139);
 	}
 
 	@Override

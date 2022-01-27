@@ -51,7 +51,7 @@ public class SlimedLogFungiBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedLogFungiBlock(TheAbyss instance) {
-		super(instance, 472);
+		super(instance, 484);
 	}
 
 	@Override

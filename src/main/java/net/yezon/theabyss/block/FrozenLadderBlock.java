@@ -44,7 +44,7 @@ public class FrozenLadderBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrozenLadderBlock(TheAbyss instance) {
-		super(instance, 341);
+		super(instance, 349);
 	}
 
 	@Override

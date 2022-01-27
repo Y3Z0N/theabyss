@@ -33,7 +33,7 @@ public class BlaruLogBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlaruLogBlock(TheAbyss instance) {
-		super(instance, 217);
+		super(instance, 225);
 	}
 
 	@Override

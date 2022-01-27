@@ -41,7 +41,7 @@ public class JungleLeavesBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public JungleLeavesBlock(TheAbyss instance) {
-		super(instance, 190);
+		super(instance, 199);
 	}
 
 	@Override

@@ -31,7 +31,7 @@ public class ClockOfTimeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public ClockOfTimeItem(TheAbyss instance) {
-		super(instance, 171);
+		super(instance, 178);
 	}
 
 	@Override

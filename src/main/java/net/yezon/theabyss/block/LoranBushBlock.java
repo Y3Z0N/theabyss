@@ -57,7 +57,7 @@ public class LoranBushBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public LoranBushBlock(TheAbyss instance) {
-		super(instance, 453);
+		super(instance, 465);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

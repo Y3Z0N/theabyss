@@ -18,7 +18,7 @@ public class CookedDeerBeefItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public CookedDeerBeefItem(TheAbyss instance) {
-		super(instance, 135);
+		super(instance, 142);
 	}
 
 	@Override

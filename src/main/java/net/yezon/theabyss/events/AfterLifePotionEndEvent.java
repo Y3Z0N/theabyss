@@ -1,6 +1,6 @@
 package net.yezon.theabyss.events;
 
-import net.yezon.theabyss.Capabilities;
+import net.yezon.theabyss.server.Capabilities;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,6 +19,11 @@ import java.util.Map;
 public class AfterLifePotionEndEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event AfterLifePotionEnd!");
+			return;
+		}
 		IWorld world = (IWorld) dependencies.get("world");
 		Entity entity = (Entity) dependencies.get("entity");
 		new Object() {

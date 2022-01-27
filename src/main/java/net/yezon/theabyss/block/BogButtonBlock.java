@@ -27,7 +27,7 @@ public class BogButtonBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BogButtonBlock(TheAbyss instance) {
-		super(instance, 299);
+		super(instance, 307);
 	}
 
 	@Override

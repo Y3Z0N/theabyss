@@ -26,7 +26,7 @@ public class BlaruPlanksBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlaruPlanksBlock(TheAbyss instance) {
-		super(instance, 219);
+		super(instance, 227);
 	}
 
 	@Override

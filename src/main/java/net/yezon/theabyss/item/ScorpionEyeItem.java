@@ -17,7 +17,7 @@ public class ScorpionEyeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public ScorpionEyeItem(TheAbyss instance) {
-		super(instance, 114);
+		super(instance, 121);
 	}
 
 	@Override

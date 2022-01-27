@@ -47,7 +47,7 @@ public class GoldVariantBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public GoldVariantBlock(TheAbyss instance) {
-		super(instance, 87);
+		super(instance, 94);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

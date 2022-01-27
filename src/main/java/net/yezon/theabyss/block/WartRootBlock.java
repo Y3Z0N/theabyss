@@ -56,7 +56,7 @@ public class WartRootBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public WartRootBlock(TheAbyss instance) {
-		super(instance, 450);
+		super(instance, 463);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

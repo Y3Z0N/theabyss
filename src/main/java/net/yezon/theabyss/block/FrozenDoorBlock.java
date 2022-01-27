@@ -32,7 +32,7 @@ public class FrozenDoorBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrozenDoorBlock(TheAbyss instance) {
-		super(instance, 334);
+		super(instance, 342);
 	}
 
 	@Override

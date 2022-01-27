@@ -17,6 +17,11 @@ import java.util.Map;
 public class RingOfNatureBenchEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event RingOfNatureBench!");
+			return;
+		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if ((new Object() {
 			public ItemStack getItemStack(int sltid) {
@@ -32,7 +37,7 @@ public class RingOfNatureBenchEvent {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (1))).getItem() == Items.BONE_MEAL && (new Object() {
+		}.getItemStack((int) (1))).getItem() == Items.BONE && (new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -46,7 +51,7 @@ public class RingOfNatureBenchEvent {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (2))).getItem() == Items.BONE_MEAL && (new Object() {
+		}.getItemStack((int) (2))).getItem() == Items.BONE && (new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -60,7 +65,7 @@ public class RingOfNatureBenchEvent {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (3))).getItem() == Items.BONE_MEAL && (new Object() {
+		}.getItemStack((int) (3))).getItem() == Items.BONE && (new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -74,7 +79,7 @@ public class RingOfNatureBenchEvent {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (4))).getItem() == Items.BONE_MEAL && (new Object() {
+		}.getItemStack((int) (4))).getItem() == Items.BONE && (new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -88,7 +93,7 @@ public class RingOfNatureBenchEvent {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (5))).getItem() == Items.BONE_MEAL && (new Object() {
+		}.getItemStack((int) (5))).getItem() == Items.BONE && (new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -102,7 +107,7 @@ public class RingOfNatureBenchEvent {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (6))).getItem() == Items.BONE_MEAL && (new Object() {
+		}.getItemStack((int) (6))).getItem() == Items.BONE && (new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -116,7 +121,7 @@ public class RingOfNatureBenchEvent {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (7))).getItem() == Items.BONE_MEAL && (new Object() {
+		}.getItemStack((int) (7))).getItem() == Items.BONE && (new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {
@@ -130,7 +135,7 @@ public class RingOfNatureBenchEvent {
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (8))).getItem() == Items.BONE_MEAL) {
+		}.getItemStack((int) (8))).getItem() == Items.BONE) {
 			{
 				Entity _ent = entity;
 				if (_ent instanceof ServerPlayerEntity) {

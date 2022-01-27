@@ -44,7 +44,7 @@ public class RumaLadderBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RumaLadderBlock(TheAbyss instance) {
-		super(instance, 260);
+		super(instance, 268);
 	}
 
 	@Override

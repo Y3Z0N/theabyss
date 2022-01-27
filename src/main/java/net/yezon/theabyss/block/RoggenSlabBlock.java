@@ -31,7 +31,7 @@ public class RoggenSlabBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenSlabBlock(TheAbyss instance) {
-		super(instance, 266);
+		super(instance, 274);
 	}
 
 	@Override

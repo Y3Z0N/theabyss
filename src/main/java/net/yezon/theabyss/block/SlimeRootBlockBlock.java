@@ -41,7 +41,7 @@ public class SlimeRootBlockBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimeRootBlockBlock(TheAbyss instance) {
-		super(instance, 362);
+		super(instance, 378);
 	}
 
 	@Override

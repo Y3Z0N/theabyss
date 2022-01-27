@@ -2,7 +2,6 @@
 package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.itemgroup.TheAbyssFlowerItemGroup;
-import net.yezon.theabyss.item.FrostCrystalItem;
 import net.yezon.theabyss.TheAbyss;
 
 import net.minecraftforge.registries.ObjectHolder;
@@ -59,7 +58,7 @@ public class FrostCrystalOreBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FrostCrystalOreBlock(TheAbyss instance) {
-		super(instance, 506);
+		super(instance, 520);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}
@@ -149,7 +148,7 @@ public class FrostCrystalOreBlock extends TheAbyss.Processor {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(FrostCrystalItem.block));
+			return Collections.singletonList(new ItemStack(FrostCrystalOreBlock.block));
 		}
 
 		@Override

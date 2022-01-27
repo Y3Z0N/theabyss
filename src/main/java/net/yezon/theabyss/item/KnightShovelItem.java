@@ -18,7 +18,7 @@ public class KnightShovelItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public KnightShovelItem(TheAbyss instance) {
-		super(instance, 42);
+		super(instance, 41);
 	}
 
 	@Override

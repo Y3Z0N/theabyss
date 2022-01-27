@@ -51,7 +51,7 @@ public class SalVineBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SalVineBlock(TheAbyss instance) {
-		super(instance, 482);
+		super(instance, 494);
 	}
 
 	@Override

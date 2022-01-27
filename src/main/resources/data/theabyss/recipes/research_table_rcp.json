@@ -13,7 +13,7 @@
       "item": "minecraft:glass"
     },
     "2": {
-      "item": "theabyss:abyss_crystal"
+      "item": "theabyss:loran"
     },
     "3": {
       "item": "minecraft:stick"
@@ -22,7 +22,7 @@
       "item": "theabyss:cobble_stone"
     },
     "6": {
-      "item": "theabyss:abyss_crystal"
+      "item": "theabyss:loran"
     },
     "8": {
       "item": "minecraft:iron_pickaxe"

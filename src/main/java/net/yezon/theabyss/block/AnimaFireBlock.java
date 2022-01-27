@@ -65,7 +65,7 @@ public class AnimaFireBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public AnimaFireBlock(TheAbyss instance) {
-		super(instance, 455);
+		super(instance, 467);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}
@@ -100,8 +100,6 @@ public class AnimaFireBlock extends TheAbyss.Processor {
 					RegistryKey<World> dimensionType = world.getWorld().getDimensionKey();
 					boolean dimensionCriteria = false;
 					if (dimensionType == RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("theabyss:the_abyss")))
-						dimensionCriteria = true;
-					if (dimensionType == World.OVERWORLD)
 						dimensionCriteria = true;
 					if (!dimensionCriteria)
 						return false;

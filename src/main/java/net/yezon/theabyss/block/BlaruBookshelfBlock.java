@@ -28,7 +28,7 @@ public class BlaruBookshelfBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BlaruBookshelfBlock(TheAbyss instance) {
-		super(instance, 231);
+		super(instance, 239);
 	}
 
 	@Override

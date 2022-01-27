@@ -18,7 +18,7 @@ public class GarniteShovelItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public GarniteShovelItem(TheAbyss instance) {
-		super(instance, 33);
+		super(instance, 32);
 	}
 
 	@Override

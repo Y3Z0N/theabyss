@@ -17,6 +17,7 @@ import net.minecraft.item.Item;
 import net.minecraft.entity.EntityType;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.block.Block;
+import net.yezon.theabyss.server.Capabilities;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -154,6 +155,8 @@ public class TheAbyss {
 		sounds.put(new ResourceLocation("theabyss", "slime_forest_ambience"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("theabyss", "slime_forest_ambience")));
 		sounds.put(new ResourceLocation("theabyss", "random_fx"), new net.minecraft.util.SoundEvent(new ResourceLocation("theabyss", "random_fx")));
+		sounds.put(new ResourceLocation("theabyss", "infected_warden_idle"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("theabyss", "infected_warden_idle")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("theabyss").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

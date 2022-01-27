@@ -2,7 +2,6 @@
 package net.yezon.theabyss.item;
 
 import net.yezon.theabyss.world.dimension.TheAbyssDimGroundlandsDimension;
-import net.yezon.theabyss.events.StartSpreadAbyssEvent;
 import net.yezon.theabyss.itemgroup.TheAbyssItemGroup;
 
 import net.minecraftforge.registries.ObjectHolder;
@@ -14,11 +13,6 @@ import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
 
 public class TheAbyssDimGroundlandsItem extends Item {
 	@ObjectHolder("theabyss:ground_lands")
@@ -46,11 +40,7 @@ public class TheAbyssDimGroundlandsItem extends Item {
 				itemstack.damageItem(1, entity, c -> c.sendBreakAnimation(context.getHand()));
 				success = true;
 			}
-
-			StartSpreadAbyssEvent
-					.executeEvent(Stream.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("entity", entity))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-			return ActionResultType.SUCCESS;
+			return success ? ActionResultType.SUCCESS : ActionResultType.FAIL;
 		}
 	}
 }

@@ -3,7 +3,6 @@ package net.yezon.theabyss.world.biome;
 
 import net.yezon.theabyss.particle.SpursBiome01Particle;
 import net.yezon.theabyss.block.StoneBlock;
-import net.yezon.theabyss.block.InfectedGrassBlock;
 import net.yezon.theabyss.block.BlaruLeavesBlock;
 import net.yezon.theabyss.TheAbyss;
 
@@ -52,7 +51,7 @@ public class AybssMountainBiome extends TheAbyss.Processor {
 	public static Biome biome;
 
 	public AybssMountainBiome(TheAbyss instance) {
-		super(instance, 532);
+		super(instance, 555);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BiomeRegisterHandler());
 	}
 
@@ -61,7 +60,7 @@ public class AybssMountainBiome extends TheAbyss.Processor {
 		public void registerBiomes(RegistryEvent.Register<Biome> event) {
 			if (biome == null) {
 				BiomeAmbience effects = new BiomeAmbience.Builder().setFogColor(-15851474).setWaterColor(-13421773).setWaterFogColor(-10066330)
-						.withSkyColor(-15851474).withFoliageColor(-16777216).withGrassColor(-13158071)
+						.withSkyColor(-15851474).withFoliageColor(-16777216).withGrassColor(-16764109)
 						.setAmbientSound((net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS
 								.getValue(new ResourceLocation("theabyss:blue_mountains_ambience")))
 						.setAdditionsSound(new SoundAdditionsAmbience(
@@ -71,7 +70,7 @@ public class AybssMountainBiome extends TheAbyss.Processor {
 								.getValue(new ResourceLocation("theabyss:the_abyss_music")), 12000, 24000, true))
 						.setParticle(new ParticleEffectAmbience(SpursBiome01Particle.particle, 0.03f)).build();
 				BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder()
-						.withSurfaceBuilder(SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(InfectedGrassBlock.block.getDefaultState(),
+						.withSurfaceBuilder(SurfaceBuilder.DEFAULT.func_242929_a(new SurfaceBuilderConfig(StoneBlock.block.getDefaultState(),
 								StoneBlock.block.getDefaultState(), StoneBlock.block.getDefaultState())));
 				biomeGenerationSettings.withStructure(StructureFeatures.STRONGHOLD);
 				biomeGenerationSettings.withStructure(StructureFeatures.MINESHAFT);

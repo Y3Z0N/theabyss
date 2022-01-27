@@ -1,0 +1,8 @@
+{
+  "parent": "theabyss:custom/fallen_leaves",
+  "textures": {
+    "all": "theabyss:blocks/aurel_leave",
+    "particle": "theabyss:blocks/aurel_leave",
+    "texture": "theabyss:blocks/aurel_leave"
+  }
+}

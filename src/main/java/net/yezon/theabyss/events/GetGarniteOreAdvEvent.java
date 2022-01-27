@@ -15,6 +15,11 @@ import java.util.Iterator;
 public class GetGarniteOreAdvEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event GetGarniteOreAdv!");
+			return;
+		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (entity instanceof ServerPlayerEntity) {
 			Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()

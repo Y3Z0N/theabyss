@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.TotemOfTimeClassEvent;
+import net.yezon.theabyss.events.TimeTotemEvent;
 import net.yezon.theabyss.itemgroup.TheAbyssItemGroup;
 import net.yezon.theabyss.TheAbyss;
 
@@ -29,7 +29,7 @@ public class TotemOfTimeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public TotemOfTimeItem(TheAbyss instance) {
-		super(instance, 175);
+		super(instance, 182);
 	}
 
 	@Override
@@ -75,13 +75,13 @@ public class TotemOfTimeItem extends TheAbyss.Processor {
 			double z = entity.getPosZ();
 			if (selected)
 
-				TotemOfTimeClassEvent.executeEvent(Stream
+				TimeTotemEvent.executeEvent(Stream
 						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
 								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z),
 								new AbstractMap.SimpleEntry<>("entity", entity), new AbstractMap.SimpleEntry<>("itemstack", itemstack))
 						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 
-			TotemOfTimeClassEvent.executeEvent(Stream
+			TimeTotemEvent.executeEvent(Stream
 					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
 							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity),
 							new AbstractMap.SimpleEntry<>("itemstack", itemstack))

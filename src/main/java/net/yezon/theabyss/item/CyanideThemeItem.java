@@ -16,7 +16,7 @@ public class CyanideThemeItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public CyanideThemeItem(TheAbyss instance) {
-		super(instance, 1178);
+		super(instance, 1144);
 	}
 
 	@Override

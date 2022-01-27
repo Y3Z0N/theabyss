@@ -30,7 +30,7 @@ public class RoggenPressurePlateBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public RoggenPressurePlateBlock(TheAbyss instance) {
-		super(instance, 271);
+		super(instance, 279);
 	}
 
 	@Override

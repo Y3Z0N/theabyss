@@ -38,7 +38,7 @@ public class SalTableBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SalTableBlock(TheAbyss instance) {
-		super(instance, 314);
+		super(instance, 322);
 	}
 
 	@Override

@@ -38,7 +38,7 @@ public class BogTableBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BogTableBlock(TheAbyss instance) {
-		super(instance, 301);
+		super(instance, 309);
 	}
 
 	@Override

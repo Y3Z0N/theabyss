@@ -1,12 +1,14 @@
 package net.yezon.theabyss.events;
 
-import net.yezon.theabyss.item.WarpedCrystalItem;
-import net.yezon.theabyss.item.HollowCrystalItem;
-import net.yezon.theabyss.item.FrostCrystalItem;
-import net.yezon.theabyss.item.EndCrystalItem;
-import net.yezon.theabyss.item.CrimsonCrystalItem;
-import net.yezon.theabyss.item.AbyssCrystalItem;
-import net.yezon.theabyss.Capabilities;
+import net.yezon.theabyss.block.WarpedCrystalOreBlock;
+import net.yezon.theabyss.block.HollowCrystalOreBlock;
+import net.yezon.theabyss.block.FrostCrystalOreBlock;
+import net.yezon.theabyss.block.EnderCrystalOreBlock;
+import net.yezon.theabyss.block.CrimsonCrystalOreBlock;
+import net.yezon.theabyss.block.CavernaCrystalOreBlock;
+import net.yezon.theabyss.block.AurelCrystalOreBlock;
+import net.yezon.theabyss.block.AbyssCrystalOreBlock;
+import net.yezon.theabyss.server.Capabilities;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraft.util.text.StringTextComponent;
@@ -23,6 +25,11 @@ import java.util.Map;
 public class ResearchTableHandlerEvent {
 
 	public static void executeEvent(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				TheabyssMod.LOGGER.warn("Failed to load dependency entity for Event ResearchTableHandler!");
+			return;
+		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).experienceLevel : 0) > 5) {
 			if ((new Object() {
@@ -39,7 +46,7 @@ public class ResearchTableHandlerEvent {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (0))).getItem() == CrimsonCrystalItem.block) {
+			}.getItemStack((int) (0))).getItem() == CrimsonCrystalOreBlock.block.asItem()) {
 				if ((entity.getCapability(Capabilities.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new Capabilities.PlayerVariables())).CrimsonCrystalResearch == false) {
 					{
@@ -84,7 +91,7 @@ public class ResearchTableHandlerEvent {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (0))).getItem() == WarpedCrystalItem.block) {
+			}.getItemStack((int) (0))).getItem() == WarpedCrystalOreBlock.block.asItem()) {
 				if ((entity.getCapability(Capabilities.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new Capabilities.PlayerVariables())).WarpedCrystalResearch == false) {
 					{
@@ -129,7 +136,7 @@ public class ResearchTableHandlerEvent {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (0))).getItem() == FrostCrystalItem.block) {
+			}.getItemStack((int) (0))).getItem() == FrostCrystalOreBlock.block.asItem()) {
 				if ((entity.getCapability(Capabilities.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new Capabilities.PlayerVariables())).FrostCrystalResearch == false) {
 					{
@@ -174,7 +181,7 @@ public class ResearchTableHandlerEvent {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (0))).getItem() == AbyssCrystalItem.block) {
+			}.getItemStack((int) (0))).getItem() == AbyssCrystalOreBlock.block.asItem()) {
 				if ((entity.getCapability(Capabilities.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new Capabilities.PlayerVariables())).AbyssCrystalResearch == false) {
 					{
@@ -219,7 +226,7 @@ public class ResearchTableHandlerEvent {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (0))).getItem() == HollowCrystalItem.block) {
+			}.getItemStack((int) (0))).getItem() == HollowCrystalOreBlock.block.asItem()) {
 				if ((entity.getCapability(Capabilities.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new Capabilities.PlayerVariables())).HollowCrystalResearch == false) {
 					{
@@ -264,7 +271,7 @@ public class ResearchTableHandlerEvent {
 					}
 					return ItemStack.EMPTY;
 				}
-			}.getItemStack((int) (0))).getItem() == EndCrystalItem.block) {
+			}.getItemStack((int) (0))).getItem() == EnderCrystalOreBlock.block.asItem()) {
 				if ((entity.getCapability(Capabilities.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new Capabilities.PlayerVariables())).EnderCrystalResearch == false) {
 					{
@@ -291,6 +298,96 @@ public class ResearchTableHandlerEvent {
 					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
 						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
 								"\u00A7bResearch:\u00A7f You already researched the Ender Crystal! This crystal consists of 60% ender aura, 10% poison and 30% dragon aura. It can be used for rings that need the energy of wandering."),
+								(false));
+					}
+				}
+			}
+			if ((new Object() {
+				public ItemStack getItemStack(int sltid) {
+					Entity _ent = entity;
+					if (_ent instanceof ServerPlayerEntity) {
+						Container _current = ((ServerPlayerEntity) _ent).openContainer;
+						if (_current instanceof Supplier) {
+							Object invobj = ((Supplier) _current).get();
+							if (invobj instanceof Map) {
+								return ((Slot) ((Map) invobj).get(sltid)).getStack();
+							}
+						}
+					}
+					return ItemStack.EMPTY;
+				}
+			}.getItemStack((int) (0))).getItem() == CavernaCrystalOreBlock.block.asItem()) {
+				if ((entity.getCapability(Capabilities.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new Capabilities.PlayerVariables())).CavernaCrystalResearch == false) {
+					{
+						boolean _setval = (true);
+						entity.getCapability(Capabilities.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.CavernaCrystalResearch = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+								"\u00A7bResearch:\u00A7f You researched the Caverna Crystal! This crystal consists of 20% cave aura, 10% poison and 30% magma aura. It can be used for rings that need the energy of darkness."),
+								(false));
+					}
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity).sendStatusMessage(
+								new StringTextComponent("\u00A7bResearch:\u00A7f You can now process this crystal in a crystal cutter!"), (false));
+					}
+					if (entity instanceof PlayerEntity)
+						((PlayerEntity) entity).addExperienceLevel(-((int) 5));
+					if (entity instanceof PlayerEntity)
+						((PlayerEntity) entity).giveExperiencePoints((int) 20);
+				} else {
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+								"\u00A7bResearch:\u00A7f You already researched the Caverna Crystal! This crystal consists of 20% cave aura, 10% poison and 30% magma aura. It can be used for rings that need the energy of darkness."),
+								(false));
+					}
+				}
+			}
+			if ((new Object() {
+				public ItemStack getItemStack(int sltid) {
+					Entity _ent = entity;
+					if (_ent instanceof ServerPlayerEntity) {
+						Container _current = ((ServerPlayerEntity) _ent).openContainer;
+						if (_current instanceof Supplier) {
+							Object invobj = ((Supplier) _current).get();
+							if (invobj instanceof Map) {
+								return ((Slot) ((Map) invobj).get(sltid)).getStack();
+							}
+						}
+					}
+					return ItemStack.EMPTY;
+				}
+			}.getItemStack((int) (0))).getItem() == AurelCrystalOreBlock.block.asItem()) {
+				if ((entity.getCapability(Capabilities.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new Capabilities.PlayerVariables())).AurelCrystalResearch == false) {
+					{
+						boolean _setval = (true);
+						entity.getCapability(Capabilities.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.AurelCrystalResearch = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+								"\u00A7bResearch:\u00A7f You researched the Aurel Crystal! This crystal consists of 20% cave aura, 70% light and 10% poison aura. It can be used for rings that need the energy of light."),
+								(false));
+					}
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity).sendStatusMessage(
+								new StringTextComponent("\u00A7bResearch:\u00A7f You can now process this crystal in a crystal cutter!"), (false));
+					}
+					if (entity instanceof PlayerEntity)
+						((PlayerEntity) entity).addExperienceLevel(-((int) 5));
+					if (entity instanceof PlayerEntity)
+						((PlayerEntity) entity).giveExperiencePoints((int) 20);
+				} else {
+					if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+								"\u00A7bResearch:\u00A7f You already researched the Aurel Crystal! This crystal consists of 20% cave aura, 70% light and 10% poison aura. It can be used for rings that need the energy of light."),
 								(false));
 					}
 				}

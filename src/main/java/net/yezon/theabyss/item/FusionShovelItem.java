@@ -18,7 +18,7 @@ public class FusionShovelItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public FusionShovelItem(TheAbyss instance) {
-		super(instance, 21);
+		super(instance, 20);
 	}
 
 	@Override

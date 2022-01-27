@@ -44,7 +44,7 @@ public class BogLadderBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public BogLadderBlock(TheAbyss instance) {
-		super(instance, 302);
+		super(instance, 310);
 	}
 
 	@Override

@@ -55,7 +55,7 @@ public class FortisUltimaBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public FortisUltimaBlock(TheAbyss instance) {
-		super(instance, 436);
+		super(instance, 449);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

@@ -38,7 +38,7 @@ public class SalChairBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SalChairBlock(TheAbyss instance) {
-		super(instance, 313);
+		super(instance, 321);
 	}
 
 	@Override

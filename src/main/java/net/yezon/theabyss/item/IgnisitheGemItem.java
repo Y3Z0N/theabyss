@@ -23,7 +23,7 @@ public class IgnisitheGemItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public IgnisitheGemItem(TheAbyss instance) {
-		super(instance, 91);
+		super(instance, 98);
 	}
 
 	@Override

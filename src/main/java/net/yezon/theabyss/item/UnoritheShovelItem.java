@@ -18,7 +18,7 @@ public class UnoritheShovelItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public UnoritheShovelItem(TheAbyss instance) {
-		super(instance, 37);
+		super(instance, 36);
 	}
 
 	@Override

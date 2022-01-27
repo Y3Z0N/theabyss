@@ -59,7 +59,7 @@ public class LumusGrassBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public LumusGrassBlock(TheAbyss instance) {
-		super(instance, 497);
+		super(instance, 510);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}

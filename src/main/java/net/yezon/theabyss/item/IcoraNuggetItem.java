@@ -17,7 +17,7 @@ public class IcoraNuggetItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public IcoraNuggetItem(TheAbyss instance) {
-		super(instance, 77);
+		super(instance, 84);
 	}
 
 	@Override

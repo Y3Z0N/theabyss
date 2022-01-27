@@ -728,5 +728,34 @@
         "stream": false
       }
     ]
+  },
+  "infected_warden_idle": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:warden_idle1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:warden_idle2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:warden_idle3",
+        "stream": false
+      },
+      {
+        "name": "theabyss:warden_idle4",
+        "stream": false
+      },
+      {
+        "name": "theabyss:warden_idle5",
+        "stream": false
+      },
+      {
+        "name": "theabyss:warden_idle6",
+        "stream": false
+      }
+    ]
   }
 }

@@ -32,7 +32,7 @@ public class SlimedDoorBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public SlimedDoorBlock(TheAbyss instance) {
-		super(instance, 321);
+		super(instance, 329);
 	}
 
 	@Override

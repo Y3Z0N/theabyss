@@ -17,7 +17,7 @@ public class VitaeNuggetItem extends TheAbyss.Processor {
 	public static final Item block = null;
 
 	public VitaeNuggetItem(TheAbyss instance) {
-		super(instance, 74);
+		super(instance, 81);
 	}
 
 	@Override

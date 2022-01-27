@@ -59,7 +59,7 @@ public class TantraGrassBigBlock extends TheAbyss.Processor {
 	public static final Block block = null;
 
 	public TantraGrassBigBlock(TheAbyss instance) {
-		super(instance, 495);
+		super(instance, 508);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new FeatureRegisterHandler());
 	}
