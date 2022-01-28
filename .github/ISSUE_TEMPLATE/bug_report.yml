@@ -55,6 +55,7 @@ body:
                 - "2.0.0-2"
                 - "2.0.0-3"
                 - "2.0.0-4"
+                - "2.2.2"
         validations:
             required: true
     -   type: dropdown
