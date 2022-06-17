@@ -1,7 +1,0 @@
-{
-  "parent": "block/template_wall_side_tall",
-  "textures": {
-    "wall": "theabyss:blocks/abyss_stone_dim",
-    "particle": "theabyss:blocks/abyss_stone_dim"
-  }
-}

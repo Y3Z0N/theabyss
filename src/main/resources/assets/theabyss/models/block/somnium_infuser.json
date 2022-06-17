@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/somnium_infuser",
-  "textures": {
-    "all": "theabyss:blocks/infuser_stand",
-    "particle": "theabyss:blocks/infuser_stand",
-    "stand": "theabyss:blocks/infuser_middle",
-    "base": "theabyss:blocks/infuser_stand"
-  }
-}

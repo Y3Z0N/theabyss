@@ -1,7 +1,0 @@
-{
-  "parent": "block/fence_inventory",
-  "textures": {
-    "texture": "theabyss:blocks/bog_planks",
-    "particle": "theabyss:blocks/bog_planks"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/vealus_meramus_top",
-  "textures": {
-    "all": "theabyss:blocks/vealus_meramus_top",
-    "particle": "theabyss:blocks/vealus_meramus_top",
-    "vealus": "theabyss:blocks/vealus_meramus_top",
-    "vines": "theabyss:blocks/vealus_meramus_vine"
-  }
-}

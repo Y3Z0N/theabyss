@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/blaru_ladder",
-  "textures": {
-    "all": "theabyss:blocks/blaru_ladder",
-    "particle": "theabyss:blocks/blaru_ladder",
-    "texture": "theabyss:blocks/blaru_ladder"
-  }
-}

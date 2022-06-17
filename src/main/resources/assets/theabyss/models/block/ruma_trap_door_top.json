@@ -1,7 +1,0 @@
-{
-  "parent": "block/template_orientable_trapdoor_top",
-  "textures": {
-    "texture": "theabyss:blocks/ruma_planks",
-    "particle": "theabyss:blocks/ruma_planks"
-  }
-}

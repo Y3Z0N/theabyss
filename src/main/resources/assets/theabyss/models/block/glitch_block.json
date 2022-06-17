@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "theabyss:blocks/glitch_block",
-    "particle": "theabyss:blocks/glitch_block"
-  }
-}

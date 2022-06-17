@@ -1,7 +1,0 @@
-{
-  "parent": "block/fence_side",
-  "textures": {
-    "texture": "theabyss:blocks/ruma_planks",
-    "particle": "theabyss:blocks/ruma_planks"
-  }
-}

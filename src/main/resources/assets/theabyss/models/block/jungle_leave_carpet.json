@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/fallen_leaves",
-  "textures": {
-    "all": "theabyss:blocks/jungle_leave_22",
-    "particle": "theabyss:blocks/jungle_leave_22",
-    "texture": "theabyss:blocks/jungle_leave_22"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/crystal",
-  "textures": {
-    "all": "theabyss:blocks/ender_crystal",
-    "particle": "theabyss:blocks/ender_crystal",
-    "1": "theabyss:blocks/ender_crystal"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/hanging_leaves_pr",
-  "textures": {
-    "all": "theabyss:blocks/jungle_leaves_in_22",
-    "particle": "theabyss:blocks/jungle_leaves_in_22",
-    "0": "theabyss:blocks/jungle_leaves_in_22",
-    "2": "theabyss:blocks/jungle_leaves_top_22"
-  }
-}

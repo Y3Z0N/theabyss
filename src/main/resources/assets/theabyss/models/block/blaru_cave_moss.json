@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/moss",
-  "textures": {
-    "all": "theabyss:blocks/blaru_cave_moss_top",
-    "particle": "theabyss:blocks/blaru_cave_moss_top",
-    "side": "theabyss:blocks/glowing_blaru_moss_side",
-    "top": "theabyss:blocks/blaru_cave_moss_top"
-  }
-}

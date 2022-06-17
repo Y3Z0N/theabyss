@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/icela_rank",
-    "particle": "theabyss:blocks/icela_rank"
-  }
-}

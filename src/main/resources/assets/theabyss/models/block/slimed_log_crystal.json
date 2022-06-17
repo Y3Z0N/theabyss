@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/slimed_log_crystal",
-  "textures": {
-    "all": "theabyss:blocks/slimed_log_crystal",
-    "particle": "theabyss:blocks/slimed_log_crystal",
-    "texture": "theabyss:blocks/slimed_log_crystal"
-  }
-}

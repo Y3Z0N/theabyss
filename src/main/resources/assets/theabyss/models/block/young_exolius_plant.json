@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/young_exolius_plant",
-    "particle": "theabyss:blocks/young_exolius_plant"
-  }
-}

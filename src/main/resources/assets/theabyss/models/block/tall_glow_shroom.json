@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/tall_glow_shroom",
-  "textures": {
-    "all": "theabyss:blocks/tall_glow_shroom_steckling",
-    "particle": "theabyss:blocks/tall_glow_shroom_steckling",
-    "steckling": "theabyss:blocks/tall_glow_shroom_steckling",
-    "shrooms": "theabyss:blocks/tall_glow_shrom_cap"
-  }
-}

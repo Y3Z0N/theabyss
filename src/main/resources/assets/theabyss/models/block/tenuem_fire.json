@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/fire_square",
-  "textures": {
-    "all": "theabyss:blocks/tenuem_fire",
-    "particle": "theabyss:blocks/tenuem_fire",
-    "fire": "theabyss:blocks/tenuem_fire"
-  }
-}

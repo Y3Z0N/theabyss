@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "theabyss:cobble_stone"
-  },
-  "result": "theabyss:cobble_stone_wall"
-}

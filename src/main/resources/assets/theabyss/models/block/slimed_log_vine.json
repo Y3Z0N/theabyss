@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/slimed_log_vine",
-  "textures": {
-    "all": "theabyss:blocks/slimed_log_vine",
-    "particle": "theabyss:blocks/slimed_log_vine",
-    "texture": "theabyss:blocks/slimed_log_vine"
-  }
-}

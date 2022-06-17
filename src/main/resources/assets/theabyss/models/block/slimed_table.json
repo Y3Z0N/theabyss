@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/slimed_table",
-  "textures": {
-    "all": "theabyss:blocks/slimed_planks",
-    "particle": "theabyss:blocks/slimed_planks",
-    "0": "theabyss:blocks/slimed_planks"
-  }
-}

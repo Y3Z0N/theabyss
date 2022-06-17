@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/crystal",
-  "textures": {
-    "all": "theabyss:blocks/abyss_crystal",
-    "particle": "theabyss:blocks/abyss_crystal",
-    "1": "theabyss:blocks/abyss_crystal"
-  }
-}

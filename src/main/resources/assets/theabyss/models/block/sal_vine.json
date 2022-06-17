@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/sal_log_vines",
-  "textures": {
-    "all": "theabyss:blocks/sal_log_vines",
-    "particle": "theabyss:blocks/sal_log_vines",
-    "texture": "theabyss:blocks/sal_log_vines"
-  }
-}

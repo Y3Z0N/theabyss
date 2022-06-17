@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/icora_flower",
-    "particle": "theabyss:blocks/icora_flower"
-  }
-}

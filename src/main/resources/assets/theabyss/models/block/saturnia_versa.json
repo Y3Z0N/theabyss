@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/saturnia_versa",
-    "particle": "theabyss:blocks/saturnia_versa"
-  }
-}

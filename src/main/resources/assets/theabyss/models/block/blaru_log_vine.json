@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/blaru_log_vines",
-  "textures": {
-    "all": "theabyss:blocks/blaru_log_vines",
-    "particle": "theabyss:blocks/blaru_log_vines",
-    "texture": "theabyss:blocks/blaru_log_vines"
-  }
-}

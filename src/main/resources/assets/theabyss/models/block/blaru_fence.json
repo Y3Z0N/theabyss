@@ -1,7 +1,0 @@
-{
-  "parent": "block/fence_side",
-  "textures": {
-    "texture": "theabyss:blocks/abyss_planks_21",
-    "particle": "theabyss:blocks/abyss_planks_21"
-  }
-}

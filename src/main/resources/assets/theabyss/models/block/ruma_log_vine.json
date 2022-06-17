@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/ruma_log_vines",
-  "textures": {
-    "all": "theabyss:blocks/ruma_log_vines",
-    "particle": "theabyss:blocks/ruma_log_vines",
-    "texture": "theabyss:blocks/ruma_log_vines"
-  }
-}

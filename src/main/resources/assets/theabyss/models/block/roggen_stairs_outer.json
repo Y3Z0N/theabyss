@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "theabyss:blocks/roggen_planls",
-    "top": "theabyss:blocks/roggen_planls",
-    "side": "theabyss:blocks/roggen_planls"
-  }
-}

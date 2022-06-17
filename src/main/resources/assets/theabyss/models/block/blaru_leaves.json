@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "theabyss:blocks/blaru_leave",
-    "particle": "theabyss:blocks/blaru_leave"
-  }
-}

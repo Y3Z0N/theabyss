@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "theabyss:blocks/dark_blue_shroomlight",
-    "particle": "theabyss:blocks/dark_blue_shroomlight"
-  }
-}

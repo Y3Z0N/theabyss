@@ -1,7 +1,0 @@
-{
-  "parent": "block/wall_inventory",
-  "textures": {
-    "wall": "theabyss:blocks/cobblestone",
-    "particle": "theabyss:blocks/cobblestone"
-  }
-}

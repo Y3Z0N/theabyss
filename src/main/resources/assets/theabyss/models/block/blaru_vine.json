@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/hanging_leaves",
-  "textures": {
-    "all": "theabyss:blocks/blaru_leaves_in_22",
-    "particle": "theabyss:blocks/blaru_leaves_in_22",
-    "0": "theabyss:blocks/blaru_leaves_in_22",
-    "2": "theabyss:blocks/blaru_leaves_in_22"
-  }
-}

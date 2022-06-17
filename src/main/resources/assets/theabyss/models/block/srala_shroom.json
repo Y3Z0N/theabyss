@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/srala_shroom",
-    "particle": "theabyss:blocks/srala_shroom"
-  }
-}

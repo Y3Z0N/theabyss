@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "theabyss:blocks/garnite_ore",
-    "particle": "theabyss:blocks/garnite_ore"
-  }
-}

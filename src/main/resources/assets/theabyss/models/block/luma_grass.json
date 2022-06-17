@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/agave_red",
-  "textures": {
-    "all": "theabyss:blocks/rakomi_grass",
-    "particle": "theabyss:blocks/rakomi_grass",
-    "texture": "theabyss:blocks/rakomi_grass",
-    "texture2": "theabyss:blocks/rakomi_grass"
-  }
-}

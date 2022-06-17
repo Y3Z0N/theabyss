@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/jungle_log_fungi",
-  "textures": {
-    "all": "theabyss:blocks/jungle_log_fungi",
-    "particle": "theabyss:blocks/jungle_log_fungi",
-    "texture": "theabyss:blocks/jungle_log_fungi"
-  }
-}

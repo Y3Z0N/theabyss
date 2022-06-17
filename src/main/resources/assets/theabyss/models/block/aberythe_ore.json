@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "theabyss:blocks/aberythe_ore",
-    "particle": "theabyss:blocks/aberythe_ore"
-  }
-}

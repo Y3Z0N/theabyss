@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/ender_lantern",
-  "textures": {
-    "all": "theabyss:blocks/ender_lantern",
-    "particle": "theabyss:blocks/ender_lantern",
-    "lantern": "theabyss:blocks/ender_lantern"
-  }
-}

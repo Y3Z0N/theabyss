@@ -1,8 +1,0 @@
-{
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "theabyss:blocks/tantra_planks",
-    "top": "theabyss:blocks/tantra_planks",
-    "side": "theabyss:blocks/tantra_planks"
-  }
-}

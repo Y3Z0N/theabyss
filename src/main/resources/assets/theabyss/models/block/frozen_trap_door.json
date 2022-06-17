@@ -1,7 +1,0 @@
-{
-  "parent": "block/template_orientable_trapdoor_bottom",
-  "textures": {
-    "texture": "theabyss:blocks/frozen_planks",
-    "particle": "theabyss:blocks/frozen_planks"
-  }
-}

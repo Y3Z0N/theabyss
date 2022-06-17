@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/bog_chair",
-  "textures": {
-    "all": "theabyss:blocks/bog_planks",
-    "particle": "theabyss:blocks/bog_planks",
-    "0": "theabyss:blocks/bog_planks"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "block/door_bottom_rh",
-  "textures": {
-    "bottom": "theabyss:blocks/abyss_door_bottot_22",
-    "top": "theabyss:blocks/abyss_door_top_22"
-  }
-}

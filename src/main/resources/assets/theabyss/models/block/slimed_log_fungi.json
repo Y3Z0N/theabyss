@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/slimed_log_fungi",
-  "textures": {
-    "all": "theabyss:blocks/slimed_log_fungi",
-    "particle": "theabyss:blocks/slimed_log_fungi",
-    "texture": "theabyss:blocks/slimed_log_fungi"
-  }
-}

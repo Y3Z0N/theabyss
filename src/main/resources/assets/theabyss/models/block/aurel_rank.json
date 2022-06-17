@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/aurel_rank",
-  "textures": {
-    "all": "theabyss:blocks/aurel_rank",
-    "particle": "theabyss:blocks/aurel_rank",
-    "rank": "theabyss:blocks/aurel_rank",
-    "vines": "theabyss:blocks/aurel_vines"
-  }
-}

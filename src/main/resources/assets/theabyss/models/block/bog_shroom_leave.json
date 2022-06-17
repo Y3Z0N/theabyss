@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "theabyss:blocks/bog_shroom_vine",
-    "particle": "theabyss:blocks/bog_shroom_vine"
-  }
-}

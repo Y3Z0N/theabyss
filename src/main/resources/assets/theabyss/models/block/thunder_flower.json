@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/thunderplant",
-    "particle": "theabyss:blocks/thunderplant"
-  }
-}

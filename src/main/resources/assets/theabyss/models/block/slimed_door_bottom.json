@@ -1,7 +1,0 @@
-{
-  "parent": "block/door_bottom",
-  "textures": {
-    "bottom": "theabyss:blocks/slimed_door_bottom",
-    "top": "theabyss:blocks/slimed_door_top"
-  }
-}

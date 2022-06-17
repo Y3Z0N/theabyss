@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/blaru_log_fungi",
-  "textures": {
-    "all": "theabyss:blocks/blaru_log_fungi",
-    "particle": "theabyss:blocks/blaru_log_fungi",
-    "texture": "theabyss:blocks/blaru_log_fungi"
-  }
-}

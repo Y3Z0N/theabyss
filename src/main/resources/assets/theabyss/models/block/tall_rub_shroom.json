@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/tall_rub_shroom",
-  "textures": {
-    "all": "theabyss:blocks/tall_rub_shroom_steckling",
-    "particle": "theabyss:blocks/tall_rub_shroom_steckling",
-    "steckling": "theabyss:blocks/tall_rub_shroom_steckling",
-    "shrooms": "theabyss:blocks/sal_shroom_leave"
-  }
-}

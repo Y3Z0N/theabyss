@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/radio",
-  "textures": {
-    "all": "theabyss:blocks/broken_radio",
-    "particle": "theabyss:blocks/broken_radio",
-    "0": "theabyss:blocks/broken_radio"
-  }
-}

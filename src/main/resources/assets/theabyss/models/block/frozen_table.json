@@ -1,8 +1,0 @@
-{
-  "parent": "theabyss:custom/frozen_table",
-  "textures": {
-    "all": "theabyss:blocks/frozen_planks",
-    "particle": "theabyss:blocks/frozen_planks",
-    "0": "theabyss:blocks/frozen_planks"
-  }
-}

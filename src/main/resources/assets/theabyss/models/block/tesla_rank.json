@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/tesla_flower",
-    "particle": "theabyss:blocks/tesla_flower"
-  }
-}

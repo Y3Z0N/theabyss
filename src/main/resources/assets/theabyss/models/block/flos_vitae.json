@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/flos_vitae",
-    "particle": "theabyss:blocks/flos_vitae"
-  }
-}
