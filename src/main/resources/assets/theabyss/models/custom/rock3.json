@@ -1,0 +1,343 @@
+{
+  "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+  "display": {
+    "gui": {
+      "rotation": [
+        30,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.625,
+        0.625,
+        0.625
+      ]
+    },
+    "ground": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        3,
+        0
+      ],
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "head": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        315,
+        0
+      ],
+      "translation": [
+        0,
+        2.5,
+        0
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        75,
+        315,
+        0
+      ],
+      "translation": [
+        0,
+        2.5,
+        0
+      ],
+      "scale": [
+        0.375,
+        0.375,
+        0.375
+      ]
+    }
+  },
+  "elements": [
+    {
+      "name": "Cube",
+      "from": [
+        7,
+        0,
+        7
+      ],
+      "to": [
+        10,
+        2,
+        13
+      ],
+      "rotation": {
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "axis": "y",
+        "angle": 22.5
+      },
+      "faces": {
+        "north": {
+          "texture": "#end",
+          "uv": [
+            14,
+            0,
+            16,
+            2
+          ]
+        },
+        "east": {
+          "texture": "#end",
+          "uv": [
+            15,
+            0,
+            16,
+            2
+          ]
+        },
+        "south": {
+          "texture": "#end",
+          "uv": [
+            15,
+            0,
+            16,
+            2
+          ]
+        },
+        "west": {
+          "texture": "#end",
+          "uv": [
+            15,
+            0,
+            16,
+            2
+          ]
+        },
+        "up": {
+          "texture": "#end",
+          "uv": [
+            11,
+            0,
+            14,
+            6
+          ]
+        },
+        "down": {
+          "texture": "#end",
+          "uv": [
+            13,
+            0,
+            16,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "name": "Cube",
+      "from": [
+        2,
+        0,
+        8
+      ],
+      "to": [
+        4,
+        1,
+        12
+      ],
+      "rotation": {
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "axis": "y",
+        "angle": -22.5
+      },
+      "faces": {
+        "north": {
+          "texture": "#end",
+          "uv": [
+            14,
+            0,
+            16,
+            1
+          ]
+        },
+        "east": {
+          "texture": "#end",
+          "uv": [
+            15,
+            0,
+            16,
+            1
+          ]
+        },
+        "south": {
+          "texture": "#end",
+          "uv": [
+            15,
+            0,
+            16,
+            1
+          ]
+        },
+        "west": {
+          "texture": "#end",
+          "uv": [
+            15,
+            0,
+            16,
+            1
+          ]
+        },
+        "up": {
+          "texture": "#end",
+          "uv": [
+            11,
+            0,
+            13,
+            4
+          ]
+        },
+        "down": {
+          "texture": "#end",
+          "uv": [
+            13,
+            0,
+            15,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "name": "Cube",
+      "from": [
+        13,
+        0,
+        7
+      ],
+      "to": [
+        15,
+        2,
+        11
+      ],
+      "rotation": {
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "axis": "y",
+        "angle": 45.0
+      },
+      "faces": {
+        "north": {
+          "texture": "#end",
+          "uv": [
+            14,
+            0,
+            16,
+            2
+          ]
+        },
+        "east": {
+          "texture": "#end",
+          "uv": [
+            15,
+            0,
+            16,
+            2
+          ]
+        },
+        "south": {
+          "texture": "#end",
+          "uv": [
+            15,
+            0,
+            16,
+            2
+          ]
+        },
+        "west": {
+          "texture": "#end",
+          "uv": [
+            15,
+            0,
+            16,
+            2
+          ]
+        },
+        "up": {
+          "texture": "#end",
+          "uv": [
+            11,
+            0,
+            13,
+            4
+          ]
+        },
+        "down": {
+          "texture": "#end",
+          "uv": [
+            13,
+            0,
+            15,
+            4
+          ]
+        }
+      }
+    }
+  ]
+}

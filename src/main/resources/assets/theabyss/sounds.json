@@ -1,0 +1,761 @@
+{
+  "phantom_hurt": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:phantom_5-phantom_phantom_damage",
+        "stream": false
+      }
+    ]
+  },
+  "phantom_ambient": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:phantom_1-phantom_ambient_1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:phantom_2-phantom_ambient_2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:phantom_3-phantom_ambient_3",
+        "stream": false
+      }
+    ]
+  },
+  "phantom_attack": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:phantom_4-phantom_attack",
+        "stream": false
+      }
+    ]
+  },
+  "ambientmusic": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "theabyss:ambientmusic",
+        "stream": false
+      }
+    ]
+  },
+  "echolot_ambient": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:echolot_1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:echolot_2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:echolot_3",
+        "stream": false
+      }
+    ]
+  },
+  "ambient_jumpscare_effect": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:ambient_jumpscare_effect",
+        "stream": false
+      }
+    ]
+  },
+  "end_game_music_cyanidex": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:jason_johnson_-_the_cyanidex_theme",
+        "stream": false
+      }
+    ]
+  },
+  "end_game_music": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:end_game",
+        "stream": false
+      }
+    ]
+  },
+  "biome_ruma_ambience": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:ruma_ambience",
+        "stream": false
+      }
+    ]
+  },
+  "biome_ruma_music": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:ruma_music",
+        "stream": false
+      },
+      {
+        "name": "theabyss:ruma_music_2",
+        "stream": false
+      }
+    ]
+  },
+  "abyss_ambience": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:abyss_amcience",
+        "stream": false
+      }
+    ]
+  },
+  "resonator_ambience": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:abyss_resonator_ambience",
+        "stream": false
+      }
+    ]
+  },
+  "broken_radio": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:broken_radio",
+        "stream": false
+      }
+    ]
+  },
+  "dream_event_1": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:jj_first_dream",
+        "stream": false
+      }
+    ]
+  },
+  "dream_event_1_sweep": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:sweep",
+        "stream": false
+      }
+    ]
+  },
+  "raptor_hurt": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:raptor_hurt_1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:raptor_hurt_2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:raptor_hurt_3",
+        "stream": false
+      }
+    ]
+  },
+  "raptor_die": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:raptor_die",
+        "stream": false
+      }
+    ]
+  },
+  "raptor_idle": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:raptor_ambience",
+        "stream": false
+      }
+    ]
+  },
+  "crystal_golem_idle": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:crystal_ambience",
+        "stream": false
+      }
+    ]
+  },
+  "crystal_golem_hurt": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:crystal_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "crystal_golem_die": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:crystal_die",
+        "stream": false
+      }
+    ]
+  },
+  "lizard_idle": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:lizard_ambience",
+        "stream": false
+      }
+    ]
+  },
+  "deer_hurt": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:deer_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "deer_idle": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:deer_ambience",
+        "stream": false
+      },
+      {
+        "name": "theabyss:deer_ambience_2",
+        "stream": false
+      }
+    ]
+  },
+  "spell_of_teleport": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:spell__teleport",
+        "stream": false
+      },
+      {
+        "name": "theabyss:spell__teleport2",
+        "stream": false
+      }
+    ]
+  },
+  "spell_of_freeze": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:spell__freeze",
+        "stream": false
+      }
+    ]
+  },
+  "spell_of_jugger": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:spell__jugger",
+        "stream": false
+      }
+    ]
+  },
+  "spell_of_invisibility": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:spell__invisibility",
+        "stream": false
+      }
+    ]
+  },
+  "spell_of_time": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:spell__time",
+        "stream": false
+      }
+    ]
+  },
+  "spell_of_telekinetic": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:spell__telekinetic",
+        "stream": false
+      }
+    ]
+  },
+  "spell_of_water": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:spell__water",
+        "stream": false
+      }
+    ]
+  },
+  "spell_of_fire": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:spell__fire",
+        "stream": false
+      }
+    ]
+  },
+  "spell_of_regen": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:spell__regenerate",
+        "stream": false
+      }
+    ]
+  },
+  "spell_of_ghost": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:spell__ghost",
+        "stream": false
+      }
+    ]
+  },
+  "spell_of_misc": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:spell__misc",
+        "stream": false
+      }
+    ]
+  },
+  "biome_mountains": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:mountain_biome",
+        "stream": false
+      }
+    ]
+  },
+  "dream_event_2": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:dream_event_2",
+        "stream": false
+      }
+    ]
+  },
+  "somnium_infuser_bubble": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:infuser_bubble_1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:infuser_bubble_2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:infuser_bubble_3",
+        "stream": false
+      },
+      {
+        "name": "theabyss:infuser_bubble_4",
+        "stream": false
+      }
+    ]
+  },
+  "abyssaur_idle": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:abyssaur_idle",
+        "stream": false
+      },
+      {
+        "name": "theabyss:abyssaur_idle_2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:abyssaur_idle_3",
+        "stream": false
+      }
+    ]
+  },
+  "abyssaur_death": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:abyssaur_death",
+        "stream": false
+      }
+    ]
+  },
+  "abyssaur_hurt": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:abyssaur_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "abyssaur_attack": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:abyssaur_attack",
+        "stream": false
+      }
+    ]
+  },
+  "fart": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "theabyss:fart_1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:fart_2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:fart_3",
+        "stream": false
+      },
+      {
+        "name": "theabyss:fart_4",
+        "stream": false
+      },
+      {
+        "name": "theabyss:fart_5",
+        "stream": false
+      },
+      {
+        "name": "theabyss:fart_6",
+        "stream": false
+      },
+      {
+        "name": "theabyss:fart_7",
+        "stream": false
+      }
+    ]
+  },
+  "versa_whale_idle": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:whale_idle_1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:whale_idle_2",
+        "stream": false
+      }
+    ]
+  },
+  "crystal_break": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "theabyss:crystal_break",
+        "stream": false
+      }
+    ]
+  },
+  "fear_event": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "theabyss:fear_event_1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:fear_event_2",
+        "stream": false
+      }
+    ]
+  },
+  "zombie_idle": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:zombie__idle",
+        "stream": false
+      },
+      {
+        "name": "theabyss:zombie__idle2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:zombie__idle3",
+        "stream": false
+      },
+      {
+        "name": "theabyss:zombie__idle4",
+        "stream": false
+      }
+    ]
+  },
+  "zombie_death": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:zombie__death",
+        "stream": false
+      }
+    ]
+  },
+  "zombie_hurt": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:zombie__hurt",
+        "stream": false
+      }
+    ]
+  },
+  "the_abyss_music": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "theabyss:the_abyss_-_a_new_era",
+        "stream": true
+      },
+      {
+        "name": "theabyss:the_abyss_-_faded_reality",
+        "stream": true
+      },
+      {
+        "name": "theabyss:the_abyss_-_frosted",
+        "stream": true
+      },
+      {
+        "name": "theabyss:the_abyss_-_journeys",
+        "stream": true
+      },
+      {
+        "name": "theabyss:the_abyss_-_lost_in_dessert",
+        "stream": true
+      }
+    ]
+  },
+  "dash": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "theabyss:dash",
+        "stream": false
+      }
+    ]
+  },
+  "spell_of_elec": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:ring_of_elec1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:ring_of_elec2",
+        "stream": false
+      }
+    ]
+  },
+  "wolf_idle": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:wolf_idle1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wolf_idle2",
+        "stream": false
+      }
+    ]
+  },
+  "wolf_hurt": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:wolf_hurt1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wolf_hurt2",
+        "stream": false
+      }
+    ]
+  },
+  "wolf_die": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:wolf_die1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wolf_die2",
+        "stream": false
+      }
+    ]
+  },
+  "blue_forest_ambience": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "theabyss:blue_forest",
+        "stream": false
+      }
+    ]
+  },
+  "blue_mountains_ambience": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "theabyss:blue_mountains",
+        "stream": false
+      }
+    ]
+  },
+  "blue_jungle_ambience": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "theabyss:blue_jungle",
+        "stream": false
+      }
+    ]
+  },
+  "frost_world_ambience": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "theabyss:frost_world",
+        "stream": false
+      }
+    ]
+  },
+  "phantom_crate_ambience": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "theabyss:phantom_crate",
+        "stream": false
+      }
+    ]
+  },
+  "slime_forest_ambience": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "theabyss:slime_forest",
+        "stream": false
+      }
+    ]
+  },
+  "random_fx": {
+    "category": "ambient",
+    "sounds": [
+      {
+        "name": "theabyss:randomfx_1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:randomfx_10",
+        "stream": false
+      },
+      {
+        "name": "theabyss:randomfx_11",
+        "stream": false
+      },
+      {
+        "name": "theabyss:randomfx_2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:randomfx_3",
+        "stream": false
+      },
+      {
+        "name": "theabyss:randomfx_4",
+        "stream": false
+      },
+      {
+        "name": "theabyss:randomfx_5",
+        "stream": false
+      },
+      {
+        "name": "theabyss:randomfx_6",
+        "stream": false
+      },
+      {
+        "name": "theabyss:randomfx_7",
+        "stream": false
+      },
+      {
+        "name": "theabyss:randomfx_8",
+        "stream": false
+      },
+      {
+        "name": "theabyss:randomfx_9",
+        "stream": false
+      }
+    ]
+  },
+  "infected_warden_idle": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:warden_idle1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:warden_idle2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:warden_idle3",
+        "stream": false
+      },
+      {
+        "name": "theabyss:warden_idle4",
+        "stream": false
+      },
+      {
+        "name": "theabyss:warden_idle5",
+        "stream": false
+      },
+      {
+        "name": "theabyss:warden_idle6",
+        "stream": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:slime_stage_2"
+    },
+    "1": {
+      "item": "theabyss:slime_stage_2"
+    },
+    "2": {
+      "item": "theabyss:slime_stage_2"
+    },
+    "3": {
+      "item": "theabyss:slime_stage_2"
+    },
+    "4": {
+      "item": "theabyss:slime_stage_2"
+    },
+    "5": {
+      "item": "theabyss:slime_stage_2"
+    },
+    "6": {
+      "item": "theabyss:slime_stage_2"
+    },
+    "7": {
+      "item": "theabyss:slime_stage_2"
+    },
+    "8": {
+      "item": "theabyss:slime_stage_2"
+    }
+  },
+  "result": {
+    "item": "theabyss:slime_stage_3",
+    "count": 3
+  }
+}

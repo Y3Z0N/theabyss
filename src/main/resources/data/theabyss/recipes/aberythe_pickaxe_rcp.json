@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 ",
+    " 7 "
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:aberythe_gem"
+    },
+    "1": {
+      "item": "theabyss:aberythe_gem"
+    },
+    "2": {
+      "item": "theabyss:aberythe_gem"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "7": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "theabyss:aberythe_pickaxe",
+    "count": 1
+  }
+}

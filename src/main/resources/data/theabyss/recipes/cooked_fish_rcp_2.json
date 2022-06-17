@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "theabyss:fish"
+  },
+  "result": "theabyss:cooked_fish"
+}

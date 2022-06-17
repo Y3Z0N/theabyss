@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom_rh",
+  "textures": {
+    "bottom": "theabyss:blocks/jungle_door_bottom",
+    "top": "theabyss:blocks/jungle_door_top"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:cobble_stone"
+    },
+    "3": {
+      "item": "theabyss:cobble_stone"
+    },
+    "4": {
+      "item": "theabyss:cobble_stone"
+    },
+    "6": {
+      "item": "theabyss:cobble_stone"
+    },
+    "7": {
+      "item": "theabyss:cobble_stone"
+    },
+    "8": {
+      "item": "theabyss:cobble_stone"
+    }
+  },
+  "result": {
+    "item": "theabyss:cobble_stone_stairs",
+    "count": 4
+  }
+}

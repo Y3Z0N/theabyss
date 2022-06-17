@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "theabyss:blaru_log",
+    "theabyss:stripped_blaru_log",
+    "theabyss:ruma_log",
+    "theabyss:stipped_jungle_log",
+    "theabyss:sal_shroom_log",
+    "theabyss:jungle_log",
+    "theabyss:stripped_ruma_log",
+    "theabyss:stripped_roggen_log",
+    "theabyss:stripped_tantra_log",
+    "theabyss:frozen_log",
+    "theabyss:roggen_log",
+    "theabyss:rotten_log",
+    "theabyss:slimed_log",
+    "theabyss:bog_shroom_log",
+    "theabyss:tantra_log"
+  ]
+}

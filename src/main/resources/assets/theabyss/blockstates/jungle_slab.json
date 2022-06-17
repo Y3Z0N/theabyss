@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "theabyss:block/jungle_slab"
+    },
+    "type=top": {
+      "model": "theabyss:block/jungle_slab_top"
+    },
+    "type=double": {
+      "model": "theabyss:block/jungle_slab_full"
+    }
+  }
+}

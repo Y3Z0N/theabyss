@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "theabyss:iron_variant"
+  },
+  "result": "minecraft:iron_ingot"
+}

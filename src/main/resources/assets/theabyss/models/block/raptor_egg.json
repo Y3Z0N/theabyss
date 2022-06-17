@@ -1,0 +1,8 @@
+{
+  "parent": "theabyss:custom/raptor_egg",
+  "textures": {
+    "all": "theabyss:blocks/raptor_egg",
+    "particle": "theabyss:blocks/raptor_egg",
+    "0": "theabyss:blocks/raptor_egg"
+  }
+}

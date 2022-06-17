@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "theabyss:block/blaru_slab"
+    },
+    "type=top": {
+      "model": "theabyss:block/blaru_slab_top"
+    },
+    "type=double": {
+      "model": "theabyss:block/blaru_slab_full"
+    }
+  }
+}

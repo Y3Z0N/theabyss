@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "item": "theabyss:ignisithe_gem"
+    },
+    "3": {
+      "item": "theabyss:anima_nugget"
+    },
+    "4": {
+      "item": "theabyss:ignisithe_gem"
+    },
+    "5": {
+      "item": "theabyss:anima_nugget"
+    },
+    "7": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "theabyss:ignisithe_sword",
+    "count": 1
+  }
+}

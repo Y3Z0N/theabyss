@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "theabyss:blocks/abyss_wart_vine_upper",
+    "particle": "theabyss:blocks/abyss_wart_vine_upper"
+  }
+}

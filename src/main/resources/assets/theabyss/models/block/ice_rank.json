@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "theabyss:blocks/ice_rank_22_2",
+    "particle": "theabyss:blocks/ice_rank_22_2"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    " 4 ",
+    "6 8"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:furnace"
+    },
+    "2": {
+      "item": "minecraft:furnace"
+    },
+    "4": {
+      "item": "minecraft:iron_pickaxe"
+    },
+    "6": {
+      "item": "minecraft:furnace"
+    },
+    "8": {
+      "item": "minecraft:furnace"
+    }
+  },
+  "result": {
+    "item": "theabyss:auto_smelt_pick_axe",
+    "count": 1
+  }
+}

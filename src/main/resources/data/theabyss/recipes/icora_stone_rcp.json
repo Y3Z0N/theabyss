@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:icora_nugget"
+    },
+    "1": {
+      "item": "theabyss:icora_nugget"
+    },
+    "2": {
+      "item": "theabyss:icora_nugget"
+    },
+    "3": {
+      "item": "theabyss:icora_nugget"
+    },
+    "4": {
+      "tag": "stone_tool_materials"
+    },
+    "5": {
+      "item": "theabyss:icora_nugget"
+    },
+    "6": {
+      "item": "theabyss:icora_nugget"
+    },
+    "7": {
+      "item": "theabyss:icora_nugget"
+    },
+    "8": {
+      "item": "theabyss:icora_nugget"
+    }
+  },
+  "result": {
+    "item": "theabyss:icora_stone",
+    "count": 1
+  }
+}

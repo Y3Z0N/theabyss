@@ -1,0 +1,8 @@
+{
+  "parent": "theabyss:custom/frozen_log_vines",
+  "textures": {
+    "all": "theabyss:blocks/frozen_log_vines",
+    "particle": "theabyss:blocks/frozen_log_vines",
+    "texture": "theabyss:blocks/frozen_log_vines"
+  }
+}

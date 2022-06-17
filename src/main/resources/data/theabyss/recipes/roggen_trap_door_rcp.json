@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:roggen_planks"
+    },
+    "1": {
+      "item": "theabyss:roggen_planks"
+    },
+    "2": {
+      "item": "theabyss:roggen_planks"
+    },
+    "3": {
+      "item": "theabyss:roggen_planks"
+    },
+    "4": {
+      "item": "theabyss:roggen_planks"
+    },
+    "5": {
+      "item": "theabyss:roggen_planks"
+    }
+  },
+  "result": {
+    "item": "theabyss:roggen_trap_door",
+    "count": 2
+  }
+}

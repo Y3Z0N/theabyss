@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "theabyss:blocks/mossy_gravel",
+    "particle": "theabyss:blocks/mossy_gravel"
+  }
+}

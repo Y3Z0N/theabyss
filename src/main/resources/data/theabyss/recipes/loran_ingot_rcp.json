@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:loran"
+    },
+    "1": {
+      "item": "theabyss:loran"
+    },
+    "2": {
+      "item": "theabyss:loran"
+    },
+    "3": {
+      "item": "theabyss:loran"
+    },
+    "4": {
+      "item": "minecraft:iron_ingot"
+    },
+    "5": {
+      "item": "theabyss:loran"
+    },
+    "6": {
+      "item": "theabyss:loran"
+    },
+    "7": {
+      "item": "theabyss:loran"
+    },
+    "8": {
+      "item": "theabyss:loran"
+    }
+  },
+  "result": {
+    "item": "theabyss:loran_ingot",
+    "count": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:aberythe_armor_chestplate"
+    },
+    "1": {
+      "item": "theabyss:slime_stage_4"
+    },
+    "2": {
+      "item": "minecraft:netherite_chestplate"
+    }
+  },
+  "result": {
+    "item": "theabyss:fusioned_aberythe_armor_chestplate",
+    "count": 1
+  }
+}

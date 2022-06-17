@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  2",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "2": {
+      "item": "minecraft:stick"
+    },
+    "3": {
+      "item": "theabyss:stone"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "5": {
+      "item": "theabyss:stone"
+    },
+    "7": {
+      "item": "theabyss:stone"
+    }
+  },
+  "result": {
+    "item": "theabyss:mortar_and_pestle",
+    "count": 1
+  }
+}

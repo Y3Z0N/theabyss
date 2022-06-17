@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "theabyss:ruma_leave",
+    "theabyss:ruma_leave_2",
+    "theabyss:ruma_leave_3",
+    "theabyss:ruma_leave_4",
+    "theabyss:ruma_leave_5",
+    "theabyss:slime_block",
+    "theabyss:rotten_fungal_leave",
+    "theabyss:slime_root_block",
+    "theabyss:rotten_leave",
+    "theabyss:wart_rank",
+    "theabyss:wart_rank_end"
+  ]
+}

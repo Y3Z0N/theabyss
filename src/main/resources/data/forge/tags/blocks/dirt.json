@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "theabyss:dirt",
+    "theabyss:infected_grass",
+    "theabyss:tantra_dirt",
+    "theabyss:blaru_moss",
+    "theabyss:infected_peat"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:phantom_hoe"
+    },
+    "1": {
+      "item": "theabyss:unorithe_ingot"
+    }
+  },
+  "result": {
+    "item": "theabyss:unorithe_hoe",
+    "count": 1
+  }
+}

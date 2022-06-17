@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "theabyss:block/roggen_vine"
+    },
+    "facing=east": {
+      "model": "theabyss:block/roggen_vine",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "theabyss:block/roggen_vine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "theabyss:block/roggen_vine",
+      "y": 270
+    }
+  }
+}

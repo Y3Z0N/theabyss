@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:ruma_planks"
+    },
+    "3": {
+      "item": "theabyss:ruma_planks"
+    },
+    "4": {
+      "item": "theabyss:ruma_planks"
+    },
+    "6": {
+      "item": "theabyss:ruma_planks"
+    },
+    "7": {
+      "item": "theabyss:ruma_planks"
+    },
+    "8": {
+      "item": "theabyss:ruma_planks"
+    }
+  },
+  "result": {
+    "item": "theabyss:ruma_stairs",
+    "count": 4
+  }
+}

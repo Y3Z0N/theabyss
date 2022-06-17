@@ -1,0 +1,8 @@
+{
+  "parent": "theabyss:custom/hoglin_lantern",
+  "textures": {
+    "all": "theabyss:blocks/hoglin_lantern",
+    "particle": "theabyss:blocks/hoglin_lantern",
+    "lantern": "theabyss:blocks/hoglin_lantern"
+  }
+}

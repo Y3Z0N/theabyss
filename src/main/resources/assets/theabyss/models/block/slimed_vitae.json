@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "theabyss:blocks/slimed_vitae",
+    "particle": "theabyss:blocks/slimed_vitae"
+  }
+}

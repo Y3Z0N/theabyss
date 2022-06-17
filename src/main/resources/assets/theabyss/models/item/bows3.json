@@ -1,0 +1,6 @@
+{
+  "parent": "theabyss:item/abyssbow",
+  "textures": {
+    "layer0": "theabyss:items/bows3"
+  }
+}

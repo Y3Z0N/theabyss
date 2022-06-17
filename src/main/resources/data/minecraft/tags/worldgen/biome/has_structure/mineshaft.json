@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "theabyss:blue_mountain",
+    "theabyss:blue_jungle",
+    "theabyss:plains",
+    "theabyss:fungal_forest",
+    "theabyss:roggen_forest"
+  ]
+}

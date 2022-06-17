@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "theabyss:block/jungle_table"
+    },
+    "facing=east": {
+      "model": "theabyss:block/jungle_table",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "theabyss:block/jungle_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "theabyss:block/jungle_table",
+      "y": 270
+    }
+  }
+}

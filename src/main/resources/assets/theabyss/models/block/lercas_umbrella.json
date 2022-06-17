@@ -1,0 +1,9 @@
+{
+  "parent": "theabyss:custom/umbrella_fungal",
+  "textures": {
+    "all": "theabyss:blocks/umbrella_steckling",
+    "particle": "theabyss:blocks/umbrella_steckling",
+    "head": "theabyss:blocks/umbrella_head",
+    "steckling": "theabyss:blocks/umbrella_steckling"
+  }
+}

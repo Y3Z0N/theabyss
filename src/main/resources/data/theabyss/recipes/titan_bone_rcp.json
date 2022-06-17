@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:broken_bone"
+    },
+    "1": {
+      "item": "theabyss:broken_bone"
+    },
+    "2": {
+      "item": "theabyss:broken_bone"
+    },
+    "3": {
+      "item": "theabyss:broken_bone"
+    },
+    "4": {
+      "item": "theabyss:broken_bone"
+    },
+    "5": {
+      "item": "theabyss:broken_bone"
+    },
+    "6": {
+      "item": "theabyss:broken_bone"
+    },
+    "7": {
+      "item": "theabyss:broken_bone"
+    },
+    "8": {
+      "item": "theabyss:broken_bone"
+    }
+  },
+  "result": {
+    "item": "theabyss:fixed_bone",
+    "count": 1
+  }
+}

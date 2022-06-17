@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:fusion_ingot"
+    },
+    "1": {
+      "item": "theabyss:fusion_ingot"
+    },
+    "2": {
+      "item": "theabyss:fusion_ingot"
+    },
+    "3": {
+      "item": "theabyss:fusion_ingot"
+    },
+    "5": {
+      "item": "theabyss:fusion_ingot"
+    }
+  },
+  "result": {
+    "item": "theabyss:fusion_armor_helmet",
+    "count": 1
+  }
+}

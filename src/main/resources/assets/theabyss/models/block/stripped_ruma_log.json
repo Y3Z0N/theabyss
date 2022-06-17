@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "theabyss:blocks/ruma_log_top",
+    "up": "theabyss:blocks/ruma_log_top",
+    "north": "theabyss:blocks/ruma_log_side",
+    "east": "theabyss:blocks/ruma_log_side",
+    "south": "theabyss:blocks/ruma_log_side",
+    "west": "theabyss:blocks/ruma_log_side",
+    "particle": "theabyss:blocks/ruma_log_top"
+  }
+}

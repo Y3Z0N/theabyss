@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "theabyss:block/ruma_slab"
+    },
+    "type=top": {
+      "model": "theabyss:block/ruma_slab_top"
+    },
+    "type=double": {
+      "model": "theabyss:block/ruma_slab_full"
+    }
+  }
+}

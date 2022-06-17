@@ -1,0 +1,8 @@
+{
+  "parent": "theabyss:custom/research_table",
+  "textures": {
+    "all": "theabyss:blocks/mana_extractor_top",
+    "particle": "theabyss:blocks/mana_extractor_top",
+    "0": "theabyss:blocks/research_table"
+  }
+}

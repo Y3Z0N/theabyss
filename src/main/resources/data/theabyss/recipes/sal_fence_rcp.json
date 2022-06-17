@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:sal_planks"
+    },
+    "1": {
+      "item": "minecraft:stick"
+    },
+    "2": {
+      "item": "theabyss:sal_planks"
+    },
+    "3": {
+      "item": "theabyss:sal_planks"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "5": {
+      "item": "theabyss:sal_planks"
+    }
+  },
+  "result": {
+    "item": "theabyss:sal_fence",
+    "count": 3
+  }
+}

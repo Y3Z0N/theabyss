@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "theabyss:block/bog_table"
+    },
+    "facing=east": {
+      "model": "theabyss:block/bog_table",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "theabyss:block/bog_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "theabyss:block/bog_table",
+      "y": 270
+    }
+  }
+}

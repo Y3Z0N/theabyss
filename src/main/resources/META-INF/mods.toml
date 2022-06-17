@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="Custom license"
+
+[[mods]]
+modId="theabyss"
+version="2.2.34"
+displayName="TheAbyss"
+credits="Mod by Y3Z0N"
+displayURL="https://www.curseforge.com/members/y4z0n/followers"
+logoFile="logo.png"
+authors="Y3Z0N"
+description='''
+The Abyss adds a brand new dimension to explore full of unique adventures and dangers! It's a dimension of darkness the only light comes from magical blocks and the various flora, fungi, and fauna of the dimension.
+'''
+
+[[dependencies.theabyss]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+[[dependencies.theabyss]]
+    modId="just_enough_items"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+

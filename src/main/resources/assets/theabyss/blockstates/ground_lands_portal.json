@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "theabyss:block/ground_lands_portal_ew"
+    },
+    "axis=x": {
+      "model": "theabyss:block/ground_lands_portal_ns"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:cobble_stone"
+    },
+    "1": {
+      "item": "theabyss:cobble_stone"
+    },
+    "2": {
+      "item": "theabyss:cobble_stone"
+    }
+  },
+  "result": {
+    "item": "theabyss:cobble_stone_slab",
+    "count": 6
+  }
+}

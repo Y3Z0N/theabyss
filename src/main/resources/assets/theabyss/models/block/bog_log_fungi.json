@@ -1,0 +1,8 @@
+{
+  "parent": "theabyss:custom/bog_log_fungi",
+  "textures": {
+    "all": "theabyss:blocks/bog_log_fungi",
+    "particle": "theabyss:blocks/bog_log_fungi",
+    "texture": "theabyss:blocks/bog_log_fungi"
+  }
+}

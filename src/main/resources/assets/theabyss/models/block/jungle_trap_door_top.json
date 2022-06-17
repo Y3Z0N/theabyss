@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_orientable_trapdoor_top",
+  "textures": {
+    "texture": "theabyss:blocks/jungle_planks",
+    "particle": "theabyss:blocks/jungle_planks"
+  }
+}

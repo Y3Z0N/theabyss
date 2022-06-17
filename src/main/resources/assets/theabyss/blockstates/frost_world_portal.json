@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "theabyss:block/frost_world_portal_ew"
+    },
+    "axis=x": {
+      "model": "theabyss:block/frost_world_portal_ns"
+    }
+  }
+}

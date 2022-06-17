@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "theabyss:blocks/roggen_log_top",
+    "up": "theabyss:blocks/roggen_log_top",
+    "north": "theabyss:blocks/roggen_log_side",
+    "east": "theabyss:blocks/roggen_log_side",
+    "south": "theabyss:blocks/roggen_log_side",
+    "west": "theabyss:blocks/roggen_log_side",
+    "particle": "theabyss:blocks/roggen_log_top"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "theabyss:block/frozen_slab"
+    },
+    "type=top": {
+      "model": "theabyss:block/frozen_slab_top"
+    },
+    "type=double": {
+      "model": "theabyss:block/frozen_slab_full"
+    }
+  }
+}

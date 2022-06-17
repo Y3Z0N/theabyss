@@ -1,0 +1,257 @@
+{
+  "credit": "Made with Blockbench",
+  "elements": [
+    {
+      "from": [
+        2.375,
+        0,
+        2.25
+      ],
+      "to": [
+        2.376,
+        16,
+        18.25
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 45,
+        "axis": "y",
+        "origin": [
+          2.375,
+          0,
+          2.25
+        ]
+      },
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#rank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#rank"
+        }
+      }
+    },
+    {
+      "from": [
+        13.75,
+        0,
+        2.25
+      ],
+      "to": [
+        13.751,
+        16,
+        18.25
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": -45,
+        "axis": "y",
+        "origin": [
+          13.75,
+          0,
+          2.25
+        ]
+      },
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#rank"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#rank"
+        }
+      }
+    },
+    {
+      "from": [
+        5,
+        0,
+        0.5
+      ],
+      "to": [
+        5.001,
+        16,
+        16.5
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 22.5,
+        "axis": "y",
+        "origin": [
+          5,
+          0,
+          0.5
+        ]
+      },
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            16,
+            16,
+            0
+          ],
+          "texture": "#vines"
+        },
+        "west": {
+          "uv": [
+            0,
+            16,
+            16,
+            0
+          ],
+          "texture": "#vines"
+        }
+      }
+    },
+    {
+      "from": [
+        0.5,
+        0,
+        11
+      ],
+      "to": [
+        16.5,
+        16,
+        11.001
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": 22.5,
+        "axis": "y",
+        "origin": [
+          0.5,
+          0,
+          11
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            16,
+            16,
+            0
+          ],
+          "texture": "#vines"
+        },
+        "south": {
+          "uv": [
+            0,
+            16,
+            16,
+            0
+          ],
+          "texture": "#vines"
+        }
+      }
+    },
+    {
+      "from": [
+        11,
+        0,
+        0.5
+      ],
+      "to": [
+        11.001,
+        16,
+        16.5
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": -22.5,
+        "axis": "y",
+        "origin": [
+          11,
+          0,
+          0.5
+        ]
+      },
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            16,
+            16,
+            0
+          ],
+          "texture": "#vines"
+        },
+        "west": {
+          "uv": [
+            0,
+            16,
+            16,
+            0
+          ],
+          "texture": "#vines"
+        }
+      }
+    },
+    {
+      "from": [
+        0.5,
+        0,
+        5
+      ],
+      "to": [
+        16.5,
+        16,
+        5.001
+      ],
+      "shade": false,
+      "rotation": {
+        "angle": -22.5,
+        "axis": "y",
+        "origin": [
+          0.5,
+          0,
+          5
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            16,
+            16,
+            0
+          ],
+          "texture": "#vines"
+        },
+        "south": {
+          "uv": [
+            0,
+            16,
+            16,
+            0
+          ],
+          "texture": "#vines"
+        }
+      }
+    }
+  ]
+}

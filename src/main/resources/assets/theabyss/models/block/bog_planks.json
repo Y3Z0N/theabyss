@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "theabyss:blocks/bog_planks",
+    "particle": "theabyss:blocks/bog_planks"
+  }
+}

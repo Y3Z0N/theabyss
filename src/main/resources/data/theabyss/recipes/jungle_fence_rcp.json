@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:jungle_planks"
+    },
+    "1": {
+      "item": "minecraft:stick"
+    },
+    "2": {
+      "item": "theabyss:jungle_planks"
+    },
+    "3": {
+      "item": "theabyss:jungle_planks"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "5": {
+      "item": "theabyss:jungle_planks"
+    }
+  },
+  "result": {
+    "item": "theabyss:jungle_fence",
+    "count": 3
+  }
+}

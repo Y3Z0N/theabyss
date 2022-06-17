@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "theabyss:blocks/bog_shroom_log_top",
+    "up": "theabyss:blocks/bog_shroom_log_top",
+    "north": "theabyss:blocks/bog_shroom_log_side",
+    "east": "theabyss:blocks/bog_shroom_log_side",
+    "south": "theabyss:blocks/bog_shroom_log_side",
+    "west": "theabyss:blocks/bog_shroom_log_side",
+    "particle": "theabyss:blocks/bog_shroom_log_top"
+  }
+}

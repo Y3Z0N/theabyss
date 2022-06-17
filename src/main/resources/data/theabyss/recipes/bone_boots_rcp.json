@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:fixed_bone"
+    },
+    "2": {
+      "item": "theabyss:fixed_bone"
+    },
+    "3": {
+      "item": "theabyss:fixed_bone"
+    },
+    "5": {
+      "item": "theabyss:fixed_bone"
+    }
+  },
+  "result": {
+    "item": "theabyss:bone_armor_boots",
+    "count": 1
+  }
+}

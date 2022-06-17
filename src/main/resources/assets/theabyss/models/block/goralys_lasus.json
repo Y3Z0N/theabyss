@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "theabyss:blocks/exomflower_22",
+    "particle": "theabyss:blocks/exomflower_22"
+  }
+}

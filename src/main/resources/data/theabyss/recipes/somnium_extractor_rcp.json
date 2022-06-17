@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "theabyss:cobble_stone"
+    },
+    "1": {
+      "item": "theabyss:cobble_stone"
+    },
+    "2": {
+      "item": "theabyss:cobble_stone"
+    },
+    "3": {
+      "item": "theabyss:cobble_stone"
+    },
+    "4": {
+      "item": "theabyss:loran_energy"
+    },
+    "5": {
+      "item": "theabyss:cobble_stone"
+    },
+    "6": {
+      "item": "theabyss:cobble_stone"
+    },
+    "7": {
+      "item": "theabyss:cobble_stone"
+    },
+    "8": {
+      "item": "theabyss:cobble_stone"
+    }
+  },
+  "result": {
+    "item": "theabyss:somnium_extractor",
+    "count": 1
+  }
+}

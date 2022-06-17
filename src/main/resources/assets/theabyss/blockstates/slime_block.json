@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "theabyss:block/slime_block"
+    },
+    "facing=east": {
+      "model": "theabyss:block/slime_block",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "theabyss:block/slime_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "theabyss:block/slime_block",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "theabyss:block/slime_block",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "theabyss:block/slime_block",
+      "x": 90
+    }
+  }
+}

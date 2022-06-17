@@ -1,0 +1,8 @@
+{
+  "parent": "theabyss:custom/crystal",
+  "textures": {
+    "all": "theabyss:blocks/caverna",
+    "particle": "theabyss:blocks/caverna",
+    "1": "theabyss:blocks/caverna"
+  }
+}
