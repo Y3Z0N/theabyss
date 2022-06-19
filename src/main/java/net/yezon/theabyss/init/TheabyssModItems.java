@@ -353,56 +353,56 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> BROKEN_BONE = REGISTRY.register("broken_bone", () -> new BrokenBoneItem());
 	public static final RegistryObject<Item> FIXED_BONE = REGISTRY.register("fixed_bone", () -> new FixedBoneItem());
 	public static final RegistryObject<Item> CREEPER_DUST = REGISTRY.register("creeper_dust", () -> new CreeperDustItem());
-	public static final RegistryObject<Item> ROKA_HORN = REGISTRY.register("roka_horn", () -> new RokaHornItem());
-	public static final RegistryObject<Item> CRYSTAL_HAND = REGISTRY.register("crystal_hand", () -> new CrystalHandItem());
-	public static final RegistryObject<Item> LURKER_SOBBER = REGISTRY.register("lurker_sobber", () -> new LurkerSobberItem());
-	public static final RegistryObject<Item> ELDER_EYE = REGISTRY.register("elder_eye", () -> new ElderEyeItem());
-	public static final RegistryObject<Item> PHANTOM_SOUL_ITEM = REGISTRY.register("phantom_soul_item", () -> new PhantomSoulItemItem());
-	public static final RegistryObject<Item> SOMNIUM = REGISTRY.register("somnium", () -> new SomniumItem());
-	public static final RegistryObject<Item> TEST_TUBE_HEAD = REGISTRY.register("test_tube_head", () -> new TestTubeHeadItem());
-	public static final RegistryObject<Item> TEST_TUBE = REGISTRY.register("test_tube", () -> new TestTubeItem());
-	public static final RegistryObject<Item> MUTATED_ENDERPEARL = REGISTRY.register("mutated_enderpearl", () -> new MutatedEnderpearlItem());
-	public static final RegistryObject<Item> EYE_OF_ABYSS = REGISTRY.register("eye_of_abyss", () -> new EyeOfAbyssItem());
-	public static final RegistryObject<Item> FROST_WORLD = REGISTRY.register("frost_world", () -> new TheabyssdimiceworldItem());
-	public static final RegistryObject<Item> THE_ABYSS = REGISTRY.register("the_abyss", () -> new TheAbyssDimItem());
-	public static final RegistryObject<Item> GROUND_LANDS = REGISTRY.register("ground_lands", () -> new TheAbyssDimGroundlandsItem());
-	public static final RegistryObject<Item> RING_OF_REG = REGISTRY.register("ring_of_reg", () -> new RingOfRegItem());
-	public static final RegistryObject<Item> RING_OF_TELEPORT = REGISTRY.register("ring_of_teleport", () -> new RingOfTeleportItem());
-	public static final RegistryObject<Item> RING_OF_EAGLE = REGISTRY.register("ring_of_eagle", () -> new RingOfEagleItem());
-	public static final RegistryObject<Item> RING_OF_INVISIBILITY = REGISTRY.register("ring_of_invisibility", () -> new RingOfInvisibilityItem());
-	public static final RegistryObject<Item> RING_OF_OCEAN = REGISTRY.register("ring_of_ocean", () -> new RingOfOceanItem());
-	public static final RegistryObject<Item> RING_OF_THUNDER = REGISTRY.register("ring_of_thunder", () -> new RingOfThunderItem());
-	public static final RegistryObject<Item> RING_OF_FREEZE = REGISTRY.register("ring_of_freeze", () -> new RingOfFreezeItem());
-	public static final RegistryObject<Item> RING_OF_TELEKINETIC = REGISTRY.register("ring_of_telekinetic", () -> new RingOfTelekineticItem());
-	public static final RegistryObject<Item> RING_OF_SPECTRAL = REGISTRY.register("ring_of_spectral", () -> new RingOfSpectralItem());
-	public static final RegistryObject<Item> RING_OF_FIRE = REGISTRY.register("ring_of_fire", () -> new RingOfFireItem());
-	public static final RegistryObject<Item> RING_OF_SPEED = REGISTRY.register("ring_of_speed", () -> new RingOfSpeedItem());
-	public static final RegistryObject<Item> RING_OF_GHOSTS = REGISTRY.register("ring_of_ghosts", () -> new RingOfGhostsItem());
-	public static final RegistryObject<Item> RING_OF_TIME = REGISTRY.register("ring_of_time", () -> new RingOfTimeItem());
-	public static final RegistryObject<Item> RING_OF_JUGGER = REGISTRY.register("ring_of_jugger", () -> new RingOfJuggerItem());
-	public static final RegistryObject<Item> RING_OF_ELECTRO = REGISTRY.register("ring_of_electro", () -> new RingOfElectroItem());
-	public static final RegistryObject<Item> RING_OF_FIRESTRIKE = REGISTRY.register("ring_of_firestrike", () -> new RingOfFirestrikeItem());
-	public static final RegistryObject<Item> RING_OF_BLACKSTRIKE = REGISTRY.register("ring_of_blackstrike", () -> new RingOfBlackstrikeItem());
-	public static final RegistryObject<Item> RING_OF_SLIDE = REGISTRY.register("ring_of_slide", () -> new RingOfSlideItem());
-	public static final RegistryObject<Item> RING_OF_CURSE = REGISTRY.register("ring_of_curse", () -> new RingOfCurseItem());
-	public static final RegistryObject<Item> RING_OF_FIRESTORM = REGISTRY.register("ring_of_firestorm", () -> new RingOfFirestormItem());
-	public static final RegistryObject<Item> RING_OF_NIGHTBLADE = REGISTRY.register("ring_of_nightblade", () -> new RingOfNightbladeItem());
-	public static final RegistryObject<Item> RING_OF_HOME = REGISTRY.register("ring_of_home", () -> new RingOfHomeItem());
-	public static final RegistryObject<Item> RING_OF_POCKET_BOX = REGISTRY.register("ring_of_pocket_box", () -> new RingOfPocketBoxItem());
-	public static final RegistryObject<Item> RING_OF_SEEKER = REGISTRY.register("ring_of_seeker", () -> new RingOfSeekerItem());
-	public static final RegistryObject<Item> RING_OF_ENDER_CHEST = REGISTRY.register("ring_of_ender_chest", () -> new RingOfEnderChestItem());
-	public static final RegistryObject<Item> RING_OF_NATURE = REGISTRY.register("ring_of_nature", () -> new RingOfNatureItem());
-	public static final RegistryObject<Item> RING_OF_FLIGHT = REGISTRY.register("ring_of_flight", () -> new RingOfFlightItem());
-	public static final RegistryObject<Item> RING_OF_FANGS = REGISTRY.register("ring_of_fangs", () -> new RingOfFangsItem());
-	public static final RegistryObject<Item> RING_OF_RING = REGISTRY.register("ring_of_ring", () -> new RingOfRingItem());
-	public static final RegistryObject<Item> AMULED_OF_NOSAJ = REGISTRY.register("amuled_of_nosaj", () -> new AmuledOfNosajItem());
-	public static final RegistryObject<Item> CLOCK_OF_TIME = REGISTRY.register("clock_of_time", () -> new ClockOfTimeItem());
+	public static final RegistryObject<Item> ROKA_HORN = REGISTRY.register("roka_horn", RokaHornItem::new);
+	public static final RegistryObject<Item> CRYSTAL_HAND = REGISTRY.register("crystal_hand", CrystalHandItem::new);
+	public static final RegistryObject<Item> LURKER_SOBBER = REGISTRY.register("lurker_sobber", LurkerSobberItem::new);
+	public static final RegistryObject<Item> ELDER_EYE = REGISTRY.register("elder_eye", ElderEyeItem::new);
+	public static final RegistryObject<Item> PHANTOM_SOUL_ITEM = REGISTRY.register("phantom_soul_item", PhantomSoulItemItem::new);
+	public static final RegistryObject<Item> SOMNIUM = REGISTRY.register("somnium", SomniumItem::new);
+	public static final RegistryObject<Item> TEST_TUBE_HEAD = REGISTRY.register("test_tube_head", TestTubeHeadItem::new);
+	public static final RegistryObject<Item> TEST_TUBE = REGISTRY.register("test_tube", TestTubeItem::new);
+	public static final RegistryObject<Item> MUTATED_ENDERPEARL = REGISTRY.register("mutated_enderpearl", MutatedEnderpearlItem::new);
+	public static final RegistryObject<Item> EYE_OF_ABYSS = REGISTRY.register("eye_of_abyss", EyeOfAbyssItem::new);
+	public static final RegistryObject<Item> FROST_WORLD = REGISTRY.register("frost_world", TheabyssdimiceworldItem::new);
+	public static final RegistryObject<Item> THE_ABYSS = REGISTRY.register("the_abyss", TheAbyssDimItem::new);
+	public static final RegistryObject<Item> GROUND_LANDS = REGISTRY.register("ground_lands", TheAbyssDimGroundlandsItem::new);
+	public static final RegistryObject<Item> RING_OF_REG = REGISTRY.register("ring_of_reg", RingOfRegItem::new);
+	public static final RegistryObject<Item> RING_OF_TELEPORT = REGISTRY.register("ring_of_teleport", RingOfTeleportItem::new);
+	public static final RegistryObject<Item> RING_OF_EAGLE = REGISTRY.register("ring_of_eagle", RingOfEagleItem::new);
+	public static final RegistryObject<Item> RING_OF_INVISIBILITY = REGISTRY.register("ring_of_invisibility", RingOfInvisibilityItem::new);
+	public static final RegistryObject<Item> RING_OF_OCEAN = REGISTRY.register("ring_of_ocean", RingOfOceanItem::new);
+	public static final RegistryObject<Item> RING_OF_THUNDER = REGISTRY.register("ring_of_thunder", RingOfThunderItem::new);
+	public static final RegistryObject<Item> RING_OF_FREEZE = REGISTRY.register("ring_of_freeze", RingOfFreezeItem::new);
+	public static final RegistryObject<Item> RING_OF_TELEKINETIC = REGISTRY.register("ring_of_telekinetic", RingOfTelekineticItem::new);
+	public static final RegistryObject<Item> RING_OF_SPECTRAL = REGISTRY.register("ring_of_spectral", RingOfSpectralItem::new);
+	public static final RegistryObject<Item> RING_OF_FIRE = REGISTRY.register("ring_of_fire", RingOfFireItem::new);
+	public static final RegistryObject<Item> RING_OF_SPEED = REGISTRY.register("ring_of_speed", RingOfSpeedItem::new);
+	public static final RegistryObject<Item> RING_OF_GHOSTS = REGISTRY.register("ring_of_ghosts", RingOfGhostsItem::new);
+	public static final RegistryObject<Item> RING_OF_TIME = REGISTRY.register("ring_of_time", RingOfTimeItem::new);
+	public static final RegistryObject<Item> RING_OF_JUGGER = REGISTRY.register("ring_of_jugger", RingOfJuggerItem::new);
+	public static final RegistryObject<Item> RING_OF_ELECTRO = REGISTRY.register("ring_of_electro", RingOfElectroItem::new);
+	public static final RegistryObject<Item> RING_OF_FIRESTRIKE = REGISTRY.register("ring_of_firestrike", RingOfFirestrikeItem::new);
+	public static final RegistryObject<Item> RING_OF_BLACKSTRIKE = REGISTRY.register("ring_of_blackstrike", RingOfBlackstrikeItem::new);
+	public static final RegistryObject<Item> RING_OF_SLIDE = REGISTRY.register("ring_of_slide", RingOfSlideItem::new);
+	public static final RegistryObject<Item> RING_OF_CURSE = REGISTRY.register("ring_of_curse", RingOfCurseItem::new);
+	public static final RegistryObject<Item> RING_OF_FIRESTORM = REGISTRY.register("ring_of_firestorm", RingOfFirestormItem::new);
+	public static final RegistryObject<Item> RING_OF_NIGHTBLADE = REGISTRY.register("ring_of_nightblade", RingOfNightbladeItem::new);
+	public static final RegistryObject<Item> RING_OF_HOME = REGISTRY.register("ring_of_home", RingOfHomeItem::new);
+	public static final RegistryObject<Item> RING_OF_POCKET_BOX = REGISTRY.register("ring_of_pocket_box", RingOfPocketBoxItem::new);
+	public static final RegistryObject<Item> RING_OF_SEEKER = REGISTRY.register("ring_of_seeker", RingOfSeekerItem::new);
+	public static final RegistryObject<Item> RING_OF_ENDER_CHEST = REGISTRY.register("ring_of_ender_chest", RingOfEnderChestItem::new);
+	public static final RegistryObject<Item> RING_OF_NATURE = REGISTRY.register("ring_of_nature", RingOfNatureItem::new);
+	public static final RegistryObject<Item> RING_OF_FLIGHT = REGISTRY.register("ring_of_flight", RingOfFlightItem::new);
+	public static final RegistryObject<Item> RING_OF_FANGS = REGISTRY.register("ring_of_fangs", RingOfFangsItem::new);
+	public static final RegistryObject<Item> RING_OF_RING = REGISTRY.register("ring_of_ring", RingOfRingItem::new);
+	public static final RegistryObject<Item> AMULED_OF_NOSAJ = REGISTRY.register("amuled_of_nosaj", AmuledOfNosajItem::new);
+	public static final RegistryObject<Item> CLOCK_OF_TIME = REGISTRY.register("clock_of_time", ClockOfTimeItem::new);
 	public static final RegistryObject<Item> ARTIFACT_OF_AFTER_LIFE = REGISTRY.register("artifact_of_after_life",
-			() -> new ArtifactOfAfterLifeItem());
-	public static final RegistryObject<Item> TOTEM_OF_ABYSS = REGISTRY.register("totem_of_abyss", () -> new TotemOfAbyssItem());
-	public static final RegistryObject<Item> TOTEM_OF_THUNDER = REGISTRY.register("totem_of_thunder", () -> new TotemOfThunderItem());
-	public static final RegistryObject<Item> TOTEM_OF_TIME = REGISTRY.register("totem_of_time", () -> new TotemOfTimeItem());
-	public static final RegistryObject<Item> PHANTOM_ESSENCE = REGISTRY.register("phantom_essence", () -> new PhantomEssenceItem());
+			ArtifactOfAfterLifeItem::new);
+	public static final RegistryObject<Item> TOTEM_OF_ABYSS = REGISTRY.register("totem_of_abyss", TotemOfAbyssItem::new);
+	public static final RegistryObject<Item> TOTEM_OF_THUNDER = REGISTRY.register("totem_of_thunder", TotemOfThunderItem::new);
+	public static final RegistryObject<Item> TOTEM_OF_TIME = REGISTRY.register("totem_of_time", TotemOfTimeItem::new);
+	public static final RegistryObject<Item> PHANTOM_ESSENCE = REGISTRY.register("phantom_essence", PhantomEssenceItem::new);
 	public static final RegistryObject<Item> ROMA_MUD = block(TheabyssModBlocks.ROMA_MUD, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> ROMA_MUD_2 = block(TheabyssModBlocks.ROMA_MUD_2, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> DARK_STONE = block(TheabyssModBlocks.DARK_STONE, TheabyssModTabs.TAB_THE_ABYSS);
@@ -599,13 +599,13 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> SOMNIUM_INFUSER = block(TheabyssModBlocks.SOMNIUM_INFUSER, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> MORTAR_AND_PESTLE = block(TheabyssModBlocks.MORTAR_AND_PESTLE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BLACK_VOID = block(TheabyssModBlocks.BLACK_VOID, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ARENO_BUCKET = REGISTRY.register("areno_bucket", () -> new ArenoItem());
+	public static final RegistryObject<Item> ARENO_BUCKET = REGISTRY.register("areno_bucket", ArenoItem::new);
 	public static final RegistryObject<Item> INFECTED_PEAT = block(TheabyssModBlocks.INFECTED_PEAT, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> ROTTEN_LEAVE = block(TheabyssModBlocks.ROTTEN_LEAVE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> GRAVEL = block(TheabyssModBlocks.GRAVEL, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> INFECTED_GRASS = block(TheabyssModBlocks.INFECTED_GRASS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BLARU_MOSS = block(TheabyssModBlocks.BLARU_MOSS, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> GUIDE_BOOK = REGISTRY.register("guide_book", () -> new GuideBookItem());
+	public static final RegistryObject<Item> GUIDE_BOOK = REGISTRY.register("guide_book", GuideBookItem::new);
 	public static final RegistryObject<Item> THE_ROKA = REGISTRY.register("the_roka_spawn_egg",
 			() -> new ForgeSpawnEggItem(TheabyssModEntities.THE_ROKA, -10027060, -1,
 					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
@@ -821,46 +821,46 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> AUREL_LEAVE_CARPET = block(TheabyssModBlocks.AUREL_LEAVE_CARPET, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> AUREL_RANK = block(TheabyssModBlocks.AUREL_RANK, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> BLARU_CAVE_MOSS = block(TheabyssModBlocks.BLARU_CAVE_MOSS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> FUSION_ARMOR_HELMET = REGISTRY.register("fusion_armor_helmet", () -> new FusionArmorItem.Helmet());
+	public static final RegistryObject<Item> FUSION_ARMOR_HELMET = REGISTRY.register("fusion_armor_helmet", FusionArmorItem.Helmet::new);
 	public static final RegistryObject<Item> FUSION_ARMOR_CHESTPLATE = REGISTRY.register("fusion_armor_chestplate",
-			() -> new FusionArmorItem.Chestplate());
-	public static final RegistryObject<Item> FUSION_ARMOR_LEGGINGS = REGISTRY.register("fusion_armor_leggings", () -> new FusionArmorItem.Leggings());
-	public static final RegistryObject<Item> FUSION_ARMOR_BOOTS = REGISTRY.register("fusion_armor_boots", () -> new FusionArmorItem.Boots());
+			FusionArmorItem.Chestplate::new);
+	public static final RegistryObject<Item> FUSION_ARMOR_LEGGINGS = REGISTRY.register("fusion_armor_leggings", FusionArmorItem.Leggings::new);
+	public static final RegistryObject<Item> FUSION_ARMOR_BOOTS = REGISTRY.register("fusion_armor_boots", FusionArmorItem.Boots::new);
 	public static final RegistryObject<Item> INCORYTHE_ARMOR_HELMET = REGISTRY.register("incorythe_armor_helmet",
-			() -> new IncorytheArmorItem.Helmet());
+			IncorytheArmorItem.Helmet::new);
 	public static final RegistryObject<Item> INCORYTHE_ARMOR_CHESTPLATE = REGISTRY.register("incorythe_armor_chestplate",
-			() -> new IncorytheArmorItem.Chestplate());
+			IncorytheArmorItem.Chestplate::new);
 	public static final RegistryObject<Item> INCORYTHE_ARMOR_LEGGINGS = REGISTRY.register("incorythe_armor_leggings",
-			() -> new IncorytheArmorItem.Leggings());
-	public static final RegistryObject<Item> INCORYTHE_ARMOR_BOOTS = REGISTRY.register("incorythe_armor_boots", () -> new IncorytheArmorItem.Boots());
-	public static final RegistryObject<Item> PHANTOM_ARMOR_HELMET = REGISTRY.register("phantom_armor_helmet", () -> new PhantomArmorItem.Helmet());
+			IncorytheArmorItem.Leggings::new);
+	public static final RegistryObject<Item> INCORYTHE_ARMOR_BOOTS = REGISTRY.register("incorythe_armor_boots", IncorytheArmorItem.Boots::new);
+	public static final RegistryObject<Item> PHANTOM_ARMOR_HELMET = REGISTRY.register("phantom_armor_helmet", PhantomArmorItem.Helmet::new);
 	public static final RegistryObject<Item> PHANTOM_ARMOR_CHESTPLATE = REGISTRY.register("phantom_armor_chestplate",
-			() -> new PhantomArmorItem.Chestplate());
+			PhantomArmorItem.Chestplate::new);
 	public static final RegistryObject<Item> PHANTOM_ARMOR_LEGGINGS = REGISTRY.register("phantom_armor_leggings",
-			() -> new PhantomArmorItem.Leggings());
-	public static final RegistryObject<Item> PHANTOM_ARMOR_BOOTS = REGISTRY.register("phantom_armor_boots", () -> new PhantomArmorItem.Boots());
-	public static final RegistryObject<Item> FLORITE_ARMOR_HELMET = REGISTRY.register("florite_armor_helmet", () -> new FloriteArmorItem.Helmet());
+			PhantomArmorItem.Leggings::new);
+	public static final RegistryObject<Item> PHANTOM_ARMOR_BOOTS = REGISTRY.register("phantom_armor_boots", PhantomArmorItem.Boots::new);
+	public static final RegistryObject<Item> FLORITE_ARMOR_HELMET = REGISTRY.register("florite_armor_helmet", FloriteArmorItem.Helmet::new);
 	public static final RegistryObject<Item> FLORITE_ARMOR_CHESTPLATE = REGISTRY.register("florite_armor_chestplate",
-			() -> new FloriteArmorItem.Chestplate());
+			FloriteArmorItem.Chestplate::new);
 	public static final RegistryObject<Item> FLORITE_ARMOR_LEGGINGS = REGISTRY.register("florite_armor_leggings",
-			() -> new FloriteArmorItem.Leggings());
-	public static final RegistryObject<Item> FLORITE_ARMOR_BOOTS = REGISTRY.register("florite_armor_boots", () -> new FloriteArmorItem.Boots());
+			FloriteArmorItem.Leggings::new);
+	public static final RegistryObject<Item> FLORITE_ARMOR_BOOTS = REGISTRY.register("florite_armor_boots", FloriteArmorItem.Boots::new);
 	public static final RegistryObject<Item> IGNISITHE_ARMOR_HELMET = REGISTRY.register("ignisithe_armor_helmet",
-			() -> new IgnisitheArmorItem.Helmet());
+			IgnisitheArmorItem.Helmet::new);
 	public static final RegistryObject<Item> IGNISITHE_ARMOR_CHESTPLATE = REGISTRY.register("ignisithe_armor_chestplate",
-			() -> new IgnisitheArmorItem.Chestplate());
+			IgnisitheArmorItem.Chestplate::new);
 	public static final RegistryObject<Item> IGNISITHE_ARMOR_LEGGINGS = REGISTRY.register("ignisithe_armor_leggings",
-			() -> new IgnisitheArmorItem.Leggings());
-	public static final RegistryObject<Item> IGNISITHE_ARMOR_BOOTS = REGISTRY.register("ignisithe_armor_boots", () -> new IgnisitheArmorItem.Boots());
-	public static final RegistryObject<Item> UNORITHE_ARMOR_HELMET = REGISTRY.register("unorithe_armor_helmet", () -> new UnoritheArmorItem.Helmet());
+			IgnisitheArmorItem.Leggings::new);
+	public static final RegistryObject<Item> IGNISITHE_ARMOR_BOOTS = REGISTRY.register("ignisithe_armor_boots", IgnisitheArmorItem.Boots::new);
+	public static final RegistryObject<Item> UNORITHE_ARMOR_HELMET = REGISTRY.register("unorithe_armor_helmet", UnoritheArmorItem.Helmet::new);
 	public static final RegistryObject<Item> UNORITHE_ARMOR_CHESTPLATE = REGISTRY.register("unorithe_armor_chestplate",
-			() -> new UnoritheArmorItem.Chestplate());
+			UnoritheArmorItem.Chestplate::new);
 	public static final RegistryObject<Item> UNORITHE_ARMOR_LEGGINGS = REGISTRY.register("unorithe_armor_leggings",
-			() -> new UnoritheArmorItem.Leggings());
-	public static final RegistryObject<Item> UNORITHE_ARMOR_BOOTS = REGISTRY.register("unorithe_armor_boots", () -> new UnoritheArmorItem.Boots());
-	public static final RegistryObject<Item> GARNITE_ARMOR_HELMET = REGISTRY.register("garnite_armor_helmet", () -> new GarniteArmorItem.Helmet());
+			UnoritheArmorItem.Leggings::new);
+	public static final RegistryObject<Item> UNORITHE_ARMOR_BOOTS = REGISTRY.register("unorithe_armor_boots", UnoritheArmorItem.Boots::new);
+	public static final RegistryObject<Item> GARNITE_ARMOR_HELMET = REGISTRY.register("garnite_armor_helmet", GarniteArmorItem.Helmet::new);
 	public static final RegistryObject<Item> GARNITE_ARMOR_CHESTPLATE = REGISTRY.register("garnite_armor_chestplate",
-			() -> new GarniteArmorItem.Chestplate());
+			GarniteArmorItem.Chestplate::new);
 	public static final RegistryObject<Item> GARNITE_ARMOR_LEGGINGS = REGISTRY.register("garnite_armor_leggings",
 			() -> new GarniteArmorItem.Leggings());
 	public static final RegistryObject<Item> GARNITE_ARMOR_BOOTS = REGISTRY.register("garnite_armor_boots", () -> new GarniteArmorItem.Boots());
