@@ -1,4 +1,4 @@
-package net.yezon.theabyss.compat.jei;
+package net.yezon.theabyss.compat.jei.categories;
 
 import com.google.common.collect.ImmutableList;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -16,34 +16,22 @@ import net.minecraft.world.item.ItemStack;
 import net.yezon.theabyss.TheabyssMod;
 import net.yezon.theabyss.client.gui.MortarScreen;
 import net.yezon.theabyss.compat.jei.helpers.AbstractRecipeCategory;
+import net.yezon.theabyss.compat.jei.helpers.AbstractRecipeCategoryWrapper;
 import net.yezon.theabyss.compat.jei.helpers.CategoryGuiHelper;
 import net.yezon.theabyss.item.essence.EssenceItem;
-import net.yezon.theabyss.world.inventory.MortarMenu;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
 import static net.yezon.theabyss.init.TheabyssModItems.*;
 
 @SuppressWarnings("removal")
+public
 class MortarRecipeCategory extends AbstractRecipeCategory<MortarRecipeCategory.Wrapper> {
     public static final ResourceLocation GUI_LOCATION = new ResourceLocation(TheabyssMod.MODID, "textures/jei/mortar_and_pestle.png");
     private static final ResourceLocation Uid = new ResourceLocation(TheabyssMod.MODID, "mortar_recipes");
-    private static final RecipeType<Wrapper> RECIPE_TYPE = new RecipeType<>(Uid, Wrapper.class);
-
     public MortarRecipeCategory(IJeiHelpers helpers) {
-        super(helpers, new TranslatableComponent("jei.abyss.mortar_and_pestle"), new CategoryGuiHelper(GUI_LOCATION, 0, 0, 176, 99));
-    }
-
-    @Override
-    public ResourceLocation getUid() {
-        return Uid;
-    }
-
-    @Override
-    public Class<? extends Wrapper> getRecipeClass() {
-        return Wrapper.class;
+        super(helpers, new RecipeType<>(Uid, Wrapper.class), new TranslatableComponent("jei.abyss.mortar_and_pestle"), new CategoryGuiHelper(GUI_LOCATION, 0, 0, 176, 99));
     }
 
     @Override
@@ -62,39 +50,28 @@ class MortarRecipeCategory extends AbstractRecipeCategory<MortarRecipeCategory.W
                 Wrapper.wrap(ARDOR_POWDER).putCrossRecipe(VITAE_DUST, LORAN, BOTTLE_OF_SOMNIUM),
                 Wrapper.wrap(TENEBRIS_POWDER).putCrossRecipe(ROKA_HORN, CAVERNA_POWDER, ANTI_FEAR_ESSENCE)
         );
-        registration.addRecipes(RECIPE_TYPE, recipes);
+        registration.addRecipes(recipeType, recipes);
     }
 
     @Override
     public RecipeType<Wrapper> getRecipeType() {
-        return RECIPE_TYPE;
+        return recipeType;
     }
 
     @Override
     public void registerShowRecipeZone(IGuiHandlerRegistration registration) {
-        registration.addRecipeClickArea(MortarScreen.class, 155, 46, 13, 14, RECIPE_TYPE);
+        registration.addRecipeClickArea(MortarScreen.class, 155, 46, 13, 14, recipeType);
     }
 
     @Override
     public void registerTransferHandler(IRecipeTransferRegistration registration) {
-        //menu has (A) slots for crafting -> recipeSlotStart = index of first CRAFTING slot in menu & recipeSlotCount = (A)
-        //
-        registration.addRecipeTransferHandler(MortarMenu.class, RECIPE_TYPE, 1, 5, 6, 42 - 6);
+        //registration.addRecipeTransferHandler(MortarMenu.class, RECIPE_TYPE, 1, 5, 6, 42 - 6);
     }
 
     @Override
     public Item getCatalystIcon() {
         return MORTAR_AND_PESTLE.get();
     }
-
-    /* setRecipe implementation below can replace this
-
-    @Override
-    public void setIngredients(Wrapper recipe, IIngredients ingredients) {
-        ingredients.setInputs(VanillaTypes.ITEM, recipe.getInputs());
-        ingredients.setOutput(VanillaTypes.ITEM, recipe.getResult());
-    }*/
-
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, Wrapper recipe, IFocusGroup focuses) {
@@ -106,12 +83,9 @@ class MortarRecipeCategory extends AbstractRecipeCategory<MortarRecipeCategory.W
         builder.addSlot(RecipeIngredientRole.OUTPUT, 134, 43).addItemStack(recipe.getResult());
     }
 
-    public static final class Wrapper {
-        private final ArrayList<ItemStack> inputs = new ArrayList<>();
-        private final Item result;
-
+    public static final class Wrapper extends AbstractRecipeCategoryWrapper {
         public Wrapper(Item result) {
-            this.result = result;
+            super(result);
         }
 
         private static Wrapper wrap(Supplier<Item> result) {
@@ -143,18 +117,6 @@ class MortarRecipeCategory extends AbstractRecipeCategory<MortarRecipeCategory.W
 
 
             return this;
-        }
-
-        private ItemStack makeStack(Supplier<Item> item) {
-            return new ItemStack(item.get());
-        }
-
-        public ArrayList<ItemStack> getInputs() {
-            return inputs;
-        }
-
-        public ItemStack getResult() {
-            return new ItemStack(result);
         }
     }
 }

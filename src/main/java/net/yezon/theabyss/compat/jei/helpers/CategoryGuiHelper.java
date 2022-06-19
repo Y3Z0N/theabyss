@@ -1,2 +1,11 @@
-package net.yezon.theabyss.compat.jei.helpers;public class CategoryGuiHelper {
+package net.yezon.theabyss.compat.jei.helpers;
+
+import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.helpers.IGuiHelper;
+import net.minecraft.resources.ResourceLocation;
+
+public record CategoryGuiHelper(ResourceLocation location, int x, int y, int width, int height) {
+    public IDrawable drawBackground(IGuiHelper helper) {
+        return helper.createDrawable(location, x, y, width, height);
+    }
 }

@@ -1,2 +1,7 @@
-package net.yezon.theabyss.item.essence;public class EssenceItem {
+package net.yezon.theabyss.item.essence;
+
+import net.minecraft.world.item.ItemStack;
+
+public interface EssenceItem {
+    ItemStack getStackOfSelf();
 }

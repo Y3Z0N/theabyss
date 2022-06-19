@@ -1,5 +1,5 @@
 
-package net.yezon.theabyss.item;
+package net.yezon.theabyss.item.essence;
 
 import net.yezon.theabyss.events.AntiInfectUseEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
@@ -13,7 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.entity.LivingEntity;
 
-public class AntiInfectEssenceItem extends Item {
+public class AntiInfectEssenceItem extends AbstractEssenceItem {
 	public AntiInfectEssenceItem() {
 		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(16).rarity(Rarity.RARE)
 				.food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.2f).alwaysEat()

@@ -1,5 +1,5 @@
 
-package net.yezon.theabyss.item;
+package net.yezon.theabyss.item.essence;
 
 import net.yezon.theabyss.events.PhantomSoulItemItemInInventoryTickEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
 
-public class PhantomEssenceItem extends Item {
+public class PhantomEssenceItem extends AbstractEssenceItem {
 	public PhantomEssenceItem() {
 		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(64).rarity(Rarity.RARE));
 	}
