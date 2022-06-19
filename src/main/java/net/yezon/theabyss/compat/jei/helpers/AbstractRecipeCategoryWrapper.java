@@ -14,7 +14,7 @@ public abstract class AbstractRecipeCategoryWrapper {
         this.result = result;
     }
 
-    protected ItemStack makeStack(Supplier<Item> item) {
+    public ItemStack makeStack(Supplier<? extends Item> item) {
         return new ItemStack(item.get());
     }
 
@@ -24,5 +24,10 @@ public abstract class AbstractRecipeCategoryWrapper {
 
     public ItemStack getResult() {
         return new ItemStack(result);
+    }
+
+    public AbstractRecipeCategoryWrapper putItem(Supplier<? extends Item> item) {
+        this.inputs.add(makeStack(item));
+        return this;
     }
 }

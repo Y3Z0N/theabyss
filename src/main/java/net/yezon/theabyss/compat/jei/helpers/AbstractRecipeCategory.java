@@ -27,10 +27,11 @@ public abstract class AbstractRecipeCategory<T extends AbstractRecipeCategoryWra
     protected final Component title;
     protected final IDrawable background;
     protected final RecipeType<T> recipeType;
+    protected final IGuiHelper guiHelper;
 
     public AbstractRecipeCategory(IJeiHelpers helpers, RecipeType<T> recipeType, Component title, CategoryGuiHelper backgroundHelper) {
         this.helpers = helpers;
-        IGuiHelper guiHelper = helpers.getGuiHelper();
+        this.guiHelper = helpers.getGuiHelper();
         this.title = title;
         this.background = backgroundHelper.drawBackground(guiHelper);
         this.tabIcon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(getCatalystIcon()));
@@ -62,11 +63,14 @@ public abstract class AbstractRecipeCategory<T extends AbstractRecipeCategoryWra
         return tabIcon;
     }
 
+
     public abstract void registerRecipes(IRecipeRegistration registration);
 
     public abstract Item getCatalystIcon();
 
-    public abstract RecipeType<T> getRecipeType();
+    public final RecipeType<T> getRecipeType() {
+        return recipeType;
+    }
 
     public abstract void registerShowRecipeZone(IGuiHandlerRegistration registration);
 

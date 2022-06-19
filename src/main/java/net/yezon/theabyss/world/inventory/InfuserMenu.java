@@ -32,7 +32,7 @@ import java.util.HashMap;
 
 @Mod.EventBusSubscriber
 public class InfuserMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
-	public final static HashMap<String, Object> guistate = new HashMap<>();
+	public final static HashMap<String, Object> GUI_STATE = new HashMap<>();
 	public final Level world;
 	public final Player entity;
 	public int x, y, z;
@@ -73,7 +73,7 @@ public class InfuserMenu extends AbstractContainerMenu implements Supplier<Map<I
 						this.bound = true;
 					});
 			} else { // might be bound to block
-				BlockEntity ent = inv.player != null ? inv.player.level.getBlockEntity(pos) : null;
+				BlockEntity ent = inv.player.level.getBlockEntity(pos);
 				if (ent != null) {
 					ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 						this.internal = capability;
@@ -106,9 +106,9 @@ public class InfuserMenu extends AbstractContainerMenu implements Supplier<Map<I
 		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
-				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
+				this.addSlot(new Slot(inv, sj + (si + 1) * 9,  8 + sj * 18,  84 + si * 18));
 		for (int si = 0; si < 9; ++si)
-			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
+			this.addSlot(new Slot(inv, si,  8 + si * 18,  142));
 
 		SomniumEnhancerGuiSoundEvent.execute(world, x, y, z);
 	}
@@ -121,8 +121,8 @@ public class InfuserMenu extends AbstractContainerMenu implements Supplier<Map<I
 	@Override
 	public ItemStack quickMoveStack(Player playerIn, int index) {
 		ItemStack itemstack = ItemStack.EMPTY;
-		Slot slot = (Slot) this.slots.get(index);
-		if (slot != null && slot.hasItem()) {
+		Slot slot = this.slots.get(index);
+		if (slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
 			if (index < 7) {

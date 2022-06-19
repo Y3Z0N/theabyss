@@ -54,11 +54,6 @@ class MortarRecipeCategory extends AbstractRecipeCategory<MortarRecipeCategory.W
     }
 
     @Override
-    public RecipeType<Wrapper> getRecipeType() {
-        return recipeType;
-    }
-
-    @Override
     public void registerShowRecipeZone(IGuiHandlerRegistration registration) {
         registration.addRecipeClickArea(MortarScreen.class, 155, 46, 13, 14, recipeType);
     }
