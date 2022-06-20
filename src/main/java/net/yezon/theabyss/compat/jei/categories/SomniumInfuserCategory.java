@@ -29,6 +29,9 @@ import java.util.function.Supplier;
 
 import static net.yezon.theabyss.init.TheabyssModItems.*;
 
+/**
+ * @author KhanhPham05 - KhanhTypo
+ */
 public class SomniumInfuserCategory extends AbstractRecipeCategory<SomniumInfuserCategory.Wrapper> {
     public static final ResourceLocation UID = new ResourceLocation(TheabyssMod.MODID, "somnium_infusing");
     public static final ResourceLocation GUI_LOCATION = new ResourceLocation(TheabyssMod.MODID, "textures/jei/somnium_infuser.png");
@@ -82,7 +85,7 @@ public class SomniumInfuserCategory extends AbstractRecipeCategory<SomniumInfuse
         builder.addSlot(RecipeIngredientRole.INPUT, 132, 42).addItemStack(recipe.getInputs().get(3));
         builder.addSlot(RecipeIngredientRole.INPUT, 36, 11).addItemStack(recipe.makeStack(SOMNIUM));
         builder.addSlot(RecipeIngredientRole.INPUT, 80, 16).addItemStack(recipe.makeStack(LORAN_ENERGY));
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 80, 49).addItemStack(recipe.getResult());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 80, 59).addItemStack(recipe.getResult());
     }
 
     public static final class Wrapper extends AbstractRecipeCategoryWrapper {

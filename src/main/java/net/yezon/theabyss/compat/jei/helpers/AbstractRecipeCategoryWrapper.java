@@ -6,6 +6,9 @@ import net.minecraft.world.item.ItemStack;
 import java.util.ArrayList;
 import java.util.function.Supplier;
 
+/**
+ * @author KhanhPham05 - KhanhTypo
+ */
 public abstract class AbstractRecipeCategoryWrapper {
     protected final ArrayList<ItemStack> inputs = new ArrayList<>();
     protected final Item result;

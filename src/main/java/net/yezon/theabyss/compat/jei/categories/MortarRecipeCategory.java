@@ -25,6 +25,9 @@ import java.util.function.Supplier;
 
 import static net.yezon.theabyss.init.TheabyssModItems.*;
 
+/**
+ * @author KhanhPham05 - KhanhTypo
+ */
 @SuppressWarnings("removal")
 public
 class MortarRecipeCategory extends AbstractRecipeCategory<MortarRecipeCategory.Wrapper> {

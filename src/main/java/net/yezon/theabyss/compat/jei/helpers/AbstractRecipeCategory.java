@@ -19,6 +19,9 @@ import net.minecraft.world.item.ItemStack;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+/**
+ * @author KhanhPham05 - KhanhTypo
+ */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public abstract class AbstractRecipeCategory<T extends AbstractRecipeCategoryWrapper> implements IRecipeCategory<T> {
