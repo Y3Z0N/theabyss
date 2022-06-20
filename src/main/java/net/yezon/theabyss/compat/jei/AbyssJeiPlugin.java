@@ -14,6 +14,9 @@ import net.yezon.theabyss.compat.jei.helpers.AbstractRecipeCategory;
 
 import java.util.ArrayList;
 
+/**
+ * @author KhanhPham05 - KhanhTypo
+ */
 @JeiPlugin
 public class AbyssJeiPlugin implements IModPlugin {
     public static final ResourceLocation PLUGIN_ID = new ResourceLocation(TheabyssMod.MODID, "jei_plugin");

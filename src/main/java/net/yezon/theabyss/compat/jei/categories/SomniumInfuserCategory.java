@@ -29,6 +29,9 @@ import java.util.function.Supplier;
 
 import static net.yezon.theabyss.init.TheabyssModItems.*;
 
+/**
+ * @author KhanhPham05 - KhanhTypo
+ */
 public class SomniumInfuserCategory extends AbstractRecipeCategory<SomniumInfuserCategory.Wrapper> {
     public static final ResourceLocation UID = new ResourceLocation(TheabyssMod.MODID, "somnium_infusing");
     public static final ResourceLocation GUI_LOCATION = new ResourceLocation(TheabyssMod.MODID, "textures/jei/somnium_infuser.png");
