@@ -7,6 +7,7 @@ import mezz.jei.api.registration.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.yezon.theabyss.TheabyssMod;
+import net.yezon.theabyss.compat.jei.categories.ArcaneRecipeCategory;
 import net.yezon.theabyss.compat.jei.categories.MortarRecipeCategory;
 import net.yezon.theabyss.compat.jei.categories.SomniumInfuserCategory;
 import net.yezon.theabyss.compat.jei.helpers.AbstractRecipeCategory;
@@ -38,9 +39,11 @@ public class AbyssJeiPlugin implements IModPlugin {
         IJeiHelpers helper = registration.getJeiHelpers();
         MortarRecipeCategory mortarRecipe = new MortarRecipeCategory(helper);
         SomniumInfuserCategory somniumInfuserCategory = new SomniumInfuserCategory(helper);
+        ArcaneRecipeCategory arcaneRecipeCategory = new ArcaneRecipeCategory(helper);
 
         recipeCategory.add(mortarRecipe);
         recipeCategory.add(somniumInfuserCategory);
+        recipeCategory.add(arcaneRecipeCategory);
         registration.addRecipeCategories(recipeCategory.toArray(new AbstractRecipeCategory<?>[0]));
     }
 
