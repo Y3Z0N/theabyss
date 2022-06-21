@@ -1,4 +1,4 @@
-package net.yezon.theabyss.item.essence;
+package net.yezon.theabyss.item;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

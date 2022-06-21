@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.function.Supplier;
 
 /**
- * @author KhanhPham05 - KhanhTypo
+ * @author KhanhPham05 - KhanhTypo (1.18.2)
+ * @author Y3Z0n (1.16.5)
  */
 public abstract class AbstractRecipeCategoryWrapper {
     protected final ArrayList<ItemStack> inputs = new ArrayList<>();

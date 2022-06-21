@@ -18,7 +18,7 @@ import net.yezon.theabyss.client.gui.MortarScreen;
 import net.yezon.theabyss.compat.jei.helpers.AbstractRecipeCategory;
 import net.yezon.theabyss.compat.jei.helpers.AbstractRecipeCategoryWrapper;
 import net.yezon.theabyss.compat.jei.helpers.CategoryGuiHelper;
-import net.yezon.theabyss.item.essence.EssenceItem;
+import net.yezon.theabyss.item.EssenceItem;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -26,7 +26,8 @@ import java.util.function.Supplier;
 import static net.yezon.theabyss.init.TheabyssModItems.*;
 
 /**
- * @author KhanhPham05 - KhanhTypo
+ * @author KhanhPham05 - KhanhTypo (1.18.2)
+ * @author Y3Z0n (1.16.5)
  */
 @SuppressWarnings("removal")
 public

@@ -5,7 +5,8 @@ import mezz.jei.api.helpers.IGuiHelper;
 import net.minecraft.resources.ResourceLocation;
 
 /**
- * @author KhanhPham05 - KhanhTypo
+ * @author KhanhPham05 - KhanhTypo (1.18.2)
+ * @author Y3Z0n (1.16.5)
  */
 public record CategoryGuiHelper(ResourceLocation location, int x, int y, int width, int height) {
     public IDrawable drawBackground(IGuiHelper helper) {
