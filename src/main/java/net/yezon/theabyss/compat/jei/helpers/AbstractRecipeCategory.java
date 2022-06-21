@@ -20,7 +20,8 @@ import net.minecraft.world.item.ItemStack;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * @author KhanhPham05 - KhanhTypo
+ * @author KhanhPham05 - KhanhTypo (1.18.2)
+ * @author Y3Z0n (1.16.5)
  */
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault

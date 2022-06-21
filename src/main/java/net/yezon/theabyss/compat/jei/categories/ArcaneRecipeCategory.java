@@ -26,7 +26,8 @@ import java.util.function.Supplier;
 import static net.yezon.theabyss.init.TheabyssModItems.*;
 
 /**
- * @author KhanhPham05 - KhanhTypo
+ * @author KhanhPham05 - KhanhTypo (1.18.2)
+ * @author Y3Z0n (1.16.5)
  */
 public class ArcaneRecipeCategory extends AbstractRecipeCategory<ArcaneRecipeCategory.Wrapper> {
     public static final ResourceLocation UID = new ResourceLocation(TheabyssMod.MODID, "arcane_station");

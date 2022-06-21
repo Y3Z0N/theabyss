@@ -1,5 +1,5 @@
 
-package net.yezon.theabyss.item.essence;
+package net.yezon.theabyss.item;
 
 import net.yezon.theabyss.events.BottleOfManaDrinkedEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;

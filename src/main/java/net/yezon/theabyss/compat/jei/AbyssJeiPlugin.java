@@ -15,7 +15,8 @@ import net.yezon.theabyss.compat.jei.helpers.AbstractRecipeCategory;
 import java.util.ArrayList;
 
 /**
- * @author KhanhPham05 - KhanhTypo
+ * @author KhanhPham05 - KhanhTypo (1.18.2)
+ * @author Y3Z0n (1.16.5)
  */
 @JeiPlugin
 public class AbyssJeiPlugin implements IModPlugin {
