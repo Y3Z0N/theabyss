@@ -9,7 +9,7 @@ JEI Compatiblietie - KhanTypo
 TheAbyss - Y3Z0N / Y4Z0N
 Structures - Y3Z0N / TelephaticGrunt thanks for all your Tutorials!
 
-License:
+# License
 
 Code: MIT
 
