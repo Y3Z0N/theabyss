@@ -4,5 +4,6 @@
     "bottom": "theabyss:blocks/jungle_planks",
     "top": "theabyss:blocks/jungle_planks",
     "side": "theabyss:blocks/jungle_planks"
-  }
+  },
+  "render_type": "solid"
 }

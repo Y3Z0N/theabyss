@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/jungle_ladder",
     "particle": "theabyss:blocks/jungle_ladder",
     "texture": "theabyss:blocks/jungle_ladder"
-  }
+  },
+  "render_type": "solid"
 }

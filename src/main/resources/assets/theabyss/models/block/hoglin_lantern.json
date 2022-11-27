@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/hoglin_lantern",
     "particle": "theabyss:blocks/hoglin_lantern",
     "lantern": "theabyss:blocks/hoglin_lantern"
-  }
+  },
+  "render_type": "solid"
 }

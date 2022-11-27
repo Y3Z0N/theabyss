@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/mini_stone_item",
     "particle": "theabyss:blocks/mini_stone_item",
     "0": "theabyss:blocks/mini_stone"
-  }
+  },
+  "render_type": "cutout"
 }

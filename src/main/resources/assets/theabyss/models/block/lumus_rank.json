@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/lumus_rank",
     "particle": "theabyss:blocks/lumus_rank"
-  }
+  },
+  "render_type": "cutout"
 }

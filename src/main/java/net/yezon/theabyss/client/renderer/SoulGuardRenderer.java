@@ -20,13 +20,13 @@ public class SoulGuardRenderer extends HumanoidMobRenderer<SoulGuardEntity, Huma
 		this.addLayer(new EyesLayer<SoulGuardEntity, HumanoidModel<SoulGuardEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/soul-sand-demon.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/soul-sand-demon.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(SoulGuardEntity entity) {
-		return new ResourceLocation("theabyss:textures/soul-sand-demon.png");
+		return new ResourceLocation("theabyss:textures/entities/soul-sand-demon.png");
 	}
 }

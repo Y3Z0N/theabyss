@@ -14,7 +14,7 @@ import java.util.Collections;
 
 public class RumaButtonBlock extends WoodButtonBlock {
 	public RumaButtonBlock() {
-		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(1.5f, 10f));
+		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(1.5f, 10f).dynamicShape());
 	}
 
 	@Override

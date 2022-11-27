@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/caecus_versa",
     "particle": "theabyss:blocks/caecus_versa"
-  }
+  },
+  "render_type": "cutout"
 }

@@ -46,7 +46,7 @@ public class MortarScreen extends AbstractContainerScreen<MortarMenu> {
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/morta_gui.png"));
+		RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/screens/morta_gui.png"));
 		this.blit(ms, this.leftPos + 0, this.topPos + 0, 0, 0, 256, 256, 256, 256);
 
 		RenderSystem.disableBlend();

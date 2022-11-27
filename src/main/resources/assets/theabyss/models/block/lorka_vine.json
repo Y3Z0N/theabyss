@@ -5,5 +5,6 @@
     "particle": "theabyss:blocks/hanging_leaves_in_gr_22",
     "0": "theabyss:blocks/hanging_leaves_in_gr_22",
     "2": "theabyss:blocks/hanging_leaves_top_gr_22"
-  }
+  },
+  "render_type": "cutout"
 }

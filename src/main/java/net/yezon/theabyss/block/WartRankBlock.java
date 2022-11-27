@@ -1,11 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.init.TheabyssModBlocks;
-
 import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.FluidState;
@@ -21,14 +17,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 public class WartRankBlock extends Block {
 	public WartRankBlock() {
 		super(BlockBehaviour.Properties.of(Material.NETHER_WOOD).sound(SoundType.WEEPING_VINES).strength(1.45f, 10f).requiresCorrectToolForDrops()
 				.noCollission().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
-				.isRedstoneConductor((bs, br, bp) -> false).noDrops());
+				.isRedstoneConductor((bs, br, bp) -> false).noLootTable());
 	}
 
 	@Override
@@ -72,10 +66,4 @@ public class WartRankBlock extends Block {
 			return tieredItem.getTier().getLevel() >= 0;
 		return false;
 	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(TheabyssModBlocks.WART_RANK.get(), renderType -> renderType == RenderType.cutout());
-	}
-
 }

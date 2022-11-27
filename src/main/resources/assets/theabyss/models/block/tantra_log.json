@@ -8,5 +8,6 @@
     "south": "theabyss:blocks/tantra_log_side",
     "west": "theabyss:blocks/tantra_log_side",
     "particle": "theabyss:blocks/tantra_log_top"
-  }
+  },
+  "render_type": "solid"
 }

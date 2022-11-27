@@ -33,20 +33,13 @@ public class BlaruLeaveCarpetFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new BlaruLeaveCarpetFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:blaru_leave_carpet", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.BLARU_LEAVE_CARPET.get().defaultBlockState())),
-						List.of(), 32));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:blaru_leave_carpet", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.BLARU_LEAVE_CARPET.get())), List.of(), 32));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:blaru_leave_carpet", CONFIGURED_FEATURE,
 				List.of(CountPlacement.of(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_forest"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

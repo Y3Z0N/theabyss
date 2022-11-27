@@ -8,5 +8,6 @@
     "south": "theabyss:blocks/blaru_moss_side",
     "west": "theabyss:blocks/blaru_moss_side",
     "particle": "theabyss:blocks/abyss_dirt"
-  }
+  },
+  "render_type": "solid"
 }

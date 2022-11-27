@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "theabyss:mud_plains",
+    "theabyss:blue_mountain",
+    "theabyss:blue_jungle",
+    "theabyss:blue_forest",
+    "theabyss:plains",
+    "theabyss:slime_forest"
+  ],
+  "spawners": {
+    "type": "theabyss:end_spider",
+    "weight": 8,
+    "minCount": 2,
+    "maxCount": 4
+  }
+}

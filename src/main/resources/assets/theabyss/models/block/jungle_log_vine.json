@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/jungle_log_vines",
     "particle": "theabyss:blocks/jungle_log_vines",
     "texture": "theabyss:blocks/jungle_log_vines"
-  }
+  },
+  "render_type": "cutout"
 }

@@ -8,5 +8,6 @@
     "south": "theabyss:blocks/jungle_log_side",
     "west": "theabyss:blocks/jungle_log_side",
     "particle": "theabyss:blocks/jungle_log_top"
-  }
+  },
+  "render_type": "solid"
 }

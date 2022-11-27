@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/sal_ladder",
     "particle": "theabyss:blocks/sal_ladder",
     "texture": "theabyss:blocks/sal_ladder"
-  }
+  },
+  "render_type": "solid"
 }

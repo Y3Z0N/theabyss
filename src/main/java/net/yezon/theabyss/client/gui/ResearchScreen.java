@@ -9,7 +9,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
@@ -37,7 +36,7 @@ public class ResearchScreen extends AbstractContainerScreen<ResearchMenu> {
 		this.imageHeight = 166;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("theabyss:textures/research.png");
+	private static final ResourceLocation texture = new ResourceLocation("theabyss:textures/screens/research.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -54,7 +53,7 @@ public class ResearchScreen extends AbstractContainerScreen<ResearchMenu> {
 		RenderSystem.setShaderTexture(0, texture);
 		this.blit(ms, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/research_gui.png"));
+		RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/screens/research_gui.png"));
 		this.blit(ms, this.leftPos + 0, this.topPos + 0, 0, 0, 256, 256, 256, 256);
 
 		RenderSystem.disableBlend();
@@ -91,7 +90,7 @@ public class ResearchScreen extends AbstractContainerScreen<ResearchMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 78, this.topPos + 42, 65, 20, new TextComponent("Research"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 78, this.topPos + 42, 65, 20, Component.literal("Research"), e -> {
 			if (true) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new ResearchButtonMessage(0, x, y, z));
 				ResearchButtonMessage.handleButtonAction(entity, 0, x, y, z);

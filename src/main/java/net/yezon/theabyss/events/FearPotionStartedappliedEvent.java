@@ -12,7 +12,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
@@ -25,11 +25,11 @@ public class FearPotionStartedappliedEvent {
 		if (entity == null)
 			return;
 		if (entity instanceof Player _player && !_player.level.isClientSide())
-			_player.displayClientMessage(new TextComponent("\u00A7fYou're \u00A75scared\u00A7f. \u00A7fTake care"), (true));
+			_player.displayClientMessage(Component.literal((Component.translatable("event.theabyss.fear").getString())), (true));
 		if (world instanceof ServerLevel _level)
 			_level.getServer().getCommands()
-					.performCommand(
-							new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""),
+					.performPrefixedCommand(
+							new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""),
 									_level.getServer(), null).withSuppressedOutput(),
 							("/playsound theabyss:fear_event master " + entity.getDisplayName().getString()));
 		if (entity instanceof LivingEntity _entity)

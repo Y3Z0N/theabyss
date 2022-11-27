@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/phantom_lantern_animated",
     "particle": "theabyss:blocks/phantom_lantern_animated",
     "lantern": "theabyss:blocks/phantom_lantern_animated"
-  }
+  },
+  "render_type": "solid"
 }

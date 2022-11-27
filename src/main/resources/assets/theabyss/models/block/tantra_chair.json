@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/tantra_planks",
     "particle": "theabyss:blocks/tantra_planks",
     "0": "theabyss:blocks/tantra_planks"
-  }
+  },
+  "render_type": "solid"
 }

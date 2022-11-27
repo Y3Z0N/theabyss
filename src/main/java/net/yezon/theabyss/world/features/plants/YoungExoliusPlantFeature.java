@@ -35,18 +35,12 @@ public class YoungExoliusPlantFeature extends RandomPatchFeature {
 		FEATURE = new YoungExoliusPlantFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:young_exolius_plant", FEATURE,
 				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.YOUNG_EXOLIUS_PLANT.get().defaultBlockState())),
-						List.of(), 64));
+						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.YOUNG_EXOLIUS_PLANT.get())), List.of(), 64));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:young_exolius_plant", CONFIGURED_FEATURE,
 				List.of(CountPlacement.of(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_forest"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

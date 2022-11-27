@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/lazarus_grass",
     "particle": "theabyss:blocks/lazarus_grass"
-  }
+  },
+  "render_type": "cutout"
 }

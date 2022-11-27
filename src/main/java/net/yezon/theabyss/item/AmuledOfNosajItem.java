@@ -12,7 +12,6 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
 import java.util.List;
@@ -28,11 +27,6 @@ public class AmuledOfNosajItem extends Item {
 	}
 
 	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 0;
-	}
-
-	@Override
 	public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 		return 0F;
 	}
@@ -40,11 +34,11 @@ public class AmuledOfNosajItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("When in Inventory:"));
-		list.add(new TextComponent("\u00A7b[+] Resistance I"));
-		list.add(new TextComponent("\u00A7b[+] Fire Resistance I"));
-		list.add(new TextComponent("\u00A7b[+] Water Breathing I"));
-		list.add(new TextComponent("\u00A7b[+] Haste I"));
+		list.add(Component.literal("When in Inventory:"));
+		list.add(Component.literal("\u00A7b[+] Resistance I"));
+		list.add(Component.literal("\u00A7b[+] Fire Resistance I"));
+		list.add(Component.literal("\u00A7b[+] Water Breathing I"));
+		list.add(Component.literal("\u00A7b[+] Haste I"));
 	}
 
 	@Override

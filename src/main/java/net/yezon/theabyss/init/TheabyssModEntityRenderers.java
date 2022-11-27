@@ -1,12 +1,11 @@
 
-/*
- *    Y3 was here UwU ^-^
- */
+
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.client.renderer.VersaWhaleRenderer;
 import net.yezon.theabyss.client.renderer.TheRokaRenderer;
 import net.yezon.theabyss.client.renderer.SummonedSeekerRenderer;
+import net.yezon.theabyss.client.renderer.SummonedHollowSeekerRenderer;
 import net.yezon.theabyss.client.renderer.SpectralEntityRenderer;
 import net.yezon.theabyss.client.renderer.SoulGuardRenderer;
 import net.yezon.theabyss.client.renderer.SlimeSpiderRenderer;
@@ -121,5 +120,6 @@ public class TheabyssModEntityRenderers {
 		event.registerEntityRenderer(TheabyssModEntities.SPECTRAL_SPAWN.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.RING_OF_FIRE_STRIKE_ATTACK.get(), RingOfFireStrikeAttackRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.RING_OF_BLACK_STRIKE_ATTACK.get(), RingOfBlackStrikeAttackRenderer::new);
+		event.registerEntityRenderer(TheabyssModEntities.SUMMONED_HOLLOW_SEEKER.get(), SummonedHollowSeekerRenderer::new);
 	}
 }

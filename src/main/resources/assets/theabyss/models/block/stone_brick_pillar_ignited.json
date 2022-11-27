@@ -7,5 +7,6 @@
     "3": "theabyss:blocks/green_fire",
     "top": "theabyss:blocks/stone_bricks",
     "base": "theabyss:blocks/stone_bricks"
-  }
+  },
+  "render_type": "cutout"
 }

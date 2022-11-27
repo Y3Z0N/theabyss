@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/infected_peat",
     "particle": "theabyss:blocks/infected_peat"
-  }
+  },
+  "render_type": "solid"
 }

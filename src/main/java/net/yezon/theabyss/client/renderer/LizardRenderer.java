@@ -16,13 +16,13 @@ public class LizardRenderer extends MobRenderer<LizardEntity, Modelsoul_lizard<L
 		this.addLayer(new EyesLayer<LizardEntity, Modelsoul_lizard<LizardEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/the_abyss_lizard.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/the_abyss_lizard.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(LizardEntity entity) {
-		return new ResourceLocation("theabyss:textures/the_abyss_lizard.png");
+		return new ResourceLocation("theabyss:textures/entities/the_abyss_lizard.png");
 	}
 }

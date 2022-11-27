@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:blue_forest",
+  "features": "theabyss:thunder_flower",
+  "step": "vegetal_decoration"
+}

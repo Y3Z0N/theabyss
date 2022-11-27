@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "theabyss:mud_plains",
+  "spawners": {
+    "type": "theabyss:mud_zombie",
+    "weight": 12,
+    "minCount": 3,
+    "maxCount": 5
+  }
+}

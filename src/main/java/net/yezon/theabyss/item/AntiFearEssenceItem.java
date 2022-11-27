@@ -13,12 +13,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
 import java.util.List;
 
-public class AntiFearEssenceItem extends AbstractEssenceItem {
+public class AntiFearEssenceItem extends Item {
 	public AntiFearEssenceItem() {
 		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(16).rarity(Rarity.COMMON)
 				.food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.2f).alwaysEat()
@@ -44,7 +43,7 @@ public class AntiFearEssenceItem extends AbstractEssenceItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("you have no more fear for 30 minutes"));
+		list.add(Component.literal("you have no more fear for 30 minutes"));
 	}
 
 	@Override

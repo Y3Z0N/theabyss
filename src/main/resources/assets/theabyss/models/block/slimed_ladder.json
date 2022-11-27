@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/slimed_ladder",
     "particle": "theabyss:blocks/slimed_ladder",
     "texture": "theabyss:blocks/slimed_ladder"
-  }
+  },
+  "render_type": "solid"
 }

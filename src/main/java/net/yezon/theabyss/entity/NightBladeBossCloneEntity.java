@@ -35,7 +35,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.particles.SimpleParticleType;
 
 public class NightBladeBossCloneEntity extends Monster {
@@ -50,7 +50,7 @@ public class NightBladeBossCloneEntity extends Monster {
 		super(type, world);
 		xpReward = 37;
 		setNoAi(false);
-		setCustomName(new TextComponent("Nightblade"));
+		setCustomName(Component.literal("Nightblade"));
 		setCustomNameVisible(true);
 		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(TheabyssModItems.ABYSS_SWORD.get()));
 		this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(TheabyssModItems.ABYSS_SWORD.get()));
@@ -171,6 +171,7 @@ public class NightBladeBossCloneEntity extends Monster {
 		builder = builder.add(Attributes.MAX_HEALTH, 150);
 		builder = builder.add(Attributes.ARMOR, 5);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 2);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 2);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 2);
 		return builder;

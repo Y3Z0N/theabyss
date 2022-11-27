@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/blaru_log_fungi",
     "particle": "theabyss:blocks/blaru_log_fungi",
     "texture": "theabyss:blocks/blaru_log_fungi"
-  }
+  },
+  "render_type": "solid"
 }

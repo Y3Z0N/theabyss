@@ -19,6 +19,6 @@ public class SeekerRenderer extends HumanoidMobRenderer<SeekerEntity, HumanoidMo
 
 	@Override
 	public ResourceLocation getTextureLocation(SeekerEntity entity) {
-		return new ResourceLocation("theabyss:textures/firefly_entity.png");
+		return new ResourceLocation("theabyss:textures/entities/firefly_entity.png");
 	}
 }

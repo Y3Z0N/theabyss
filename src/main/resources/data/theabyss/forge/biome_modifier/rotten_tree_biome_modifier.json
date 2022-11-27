@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:phantom_crate",
+  "features": "theabyss:rotten_tree",
+  "step": "surface_structures"
+}

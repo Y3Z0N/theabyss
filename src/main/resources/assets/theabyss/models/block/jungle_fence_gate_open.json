@@ -2,5 +2,6 @@
   "parent": "block/template_fence_gate_open",
   "textures": {
     "texture": "theabyss:blocks/jungle_planks"
-  }
+  },
+  "render_type": "solid"
 }

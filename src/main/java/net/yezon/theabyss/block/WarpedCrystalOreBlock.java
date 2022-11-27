@@ -7,8 +7,6 @@ import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraftforge.common.util.ForgeSoundType;
 import net.minecraftforge.common.PlantType;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
@@ -24,8 +22,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import java.util.List;
 import java.util.Collections;
@@ -33,13 +29,13 @@ import java.util.Collections;
 public class WarpedCrystalOreBlock extends FlowerBlock {
 	public WarpedCrystalOreBlock() {
 		super(MobEffects.SATURATION, 0,
-				BlockBehaviour.Properties.of(Material.PLANT).noCollission()
+				BlockBehaviour.Properties.of(Material.PLANT)
 						.sound(new ForgeSoundType(1.0f, 1.0f, () -> new SoundEvent(new ResourceLocation("theabyss:crystal_break")),
 								() -> new SoundEvent(new ResourceLocation("block.stone.step")),
 								() -> new SoundEvent(new ResourceLocation("block.stone.place")),
 								() -> new SoundEvent(new ResourceLocation("block.stone.hit")),
 								() -> new SoundEvent(new ResourceLocation("block.stone.fall"))))
-						.instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 3));
+						.instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 3).noCollission());
 	}
 
 	@Override
@@ -62,9 +58,7 @@ public class WarpedCrystalOreBlock extends FlowerBlock {
 
 	@Override
 	public boolean mayPlaceOn(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
-		return groundState.is(Blocks.WARPED_NYLIUM)
-
-		;
+		return groundState.is(Blocks.WARPED_NYLIUM);
 	}
 
 	@Override
@@ -77,10 +71,5 @@ public class WarpedCrystalOreBlock extends FlowerBlock {
 	@Override
 	public PlantType getPlantType(BlockGetter world, BlockPos pos) {
 		return PlantType.NETHER;
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(TheabyssModBlocks.WARPED_CRYSTAL_ORE.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

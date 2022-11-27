@@ -16,13 +16,13 @@ public class BrainWalkerRenderer extends MobRenderer<BrainWalkerEntity, Modelbra
 		this.addLayer(new EyesLayer<BrainWalkerEntity, Modelbrain<BrainWalkerEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/brain_walker.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/brain_walker.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(BrainWalkerEntity entity) {
-		return new ResourceLocation("theabyss:textures/firefly_entity.png");
+		return new ResourceLocation("theabyss:textures/entities/firefly_entity.png");
 	}
 }

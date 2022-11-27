@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/bog_ladder",
     "particle": "theabyss:blocks/bog_ladder",
     "texture": "theabyss:blocks/bog_ladder"
-  }
+  },
+  "render_type": "solid"
 }

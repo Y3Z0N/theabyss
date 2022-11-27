@@ -11,13 +11,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
-
-import java.util.Random;
 
 public class ApplyClockOfTimeEvent {
 	public static void execute(LevelAccessor world, Entity entity, ItemStack itemstack) {
@@ -31,14 +30,14 @@ public class ApplyClockOfTimeEvent {
 							* (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(new TextComponent("you don't have enough \u00A7benergy"), (true));
+					_player.displayClientMessage(Component.literal((Component.translatable("ring.theabyss.low_energy").getString())), (true));
 			} else {
 				if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new TheabyssModVariables.PlayerVariables())).ClockActive == false) {
 					if (itemstack.getItem() == TheabyssModItems.CLOCK_OF_TIME.get()) {
 						{
 							ItemStack _ist = itemstack;
-							if (_ist.hurt(1, new Random(), null)) {
+							if (_ist.hurt(1, RandomSource.create(), null)) {
 								_ist.shrink(1);
 								_ist.setDamageValue(0);
 							}
@@ -87,12 +86,14 @@ public class ApplyClockOfTimeEvent {
 						});
 					}
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent("\u00A7btimestamp \u00A7fcreated!"), (false));
+						_player.displayClientMessage(Component.literal((Component.translatable("ring.theabyss.timestamp").getString())), (true));
+					if (entity instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7btimestamp \u00A7fcreated!"), (false));
 				} else {
 					if (itemstack.getItem() == TheabyssModItems.CLOCK_OF_TIME.get()) {
 						{
 							ItemStack _ist = itemstack;
-							if (_ist.hurt(1, new Random(), null)) {
+							if (_ist.hurt(1, RandomSource.create(), null)) {
 								_ist.shrink(1);
 								_ist.setDamageValue(0);
 							}

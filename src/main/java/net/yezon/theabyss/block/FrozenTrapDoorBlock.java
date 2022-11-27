@@ -16,7 +16,7 @@ import java.util.Collections;
 
 public class FrozenTrapDoorBlock extends TrapDoorBlock {
 	public FrozenTrapDoorBlock() {
-		super(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.WOOD).strength(1f, 10f));
+		super(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.WOOD).strength(1f, 10f).dynamicShape());
 	}
 
 	@Override

@@ -16,13 +16,13 @@ public class MagicalDeerRenderer extends MobRenderer<MagicalDeerEntity, Modeldee
 		this.addLayer(new EyesLayer<MagicalDeerEntity, Modeldeer<MagicalDeerEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/pink_deer_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/pink_deer_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(MagicalDeerEntity entity) {
-		return new ResourceLocation("theabyss:textures/pink_deer.png");
+		return new ResourceLocation("theabyss:textures/entities/pink_deer.png");
 	}
 }

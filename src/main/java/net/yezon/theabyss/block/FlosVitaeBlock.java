@@ -3,12 +3,9 @@ package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.events.HealFlowerEffectEvent;
 import net.yezon.theabyss.init.TheabyssModItems;
-import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
@@ -21,27 +18,24 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
-import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
 public class FlosVitaeBlock extends SugarCaneBlock {
 	public FlosVitaeBlock() {
-		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.GRASS).instabreak()
-				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
+		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true)
+				.emissiveRendering((bs, br, bp) -> true).noCollission());
 	}
 
 	@Override
 	public void appendHoverText(ItemStack itemstack, BlockGetter world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("this plant can cure you for a short time!"));
+		list.add(Component.literal("this plant can cure you for a short time!"));
 	}
 
 	@Override
@@ -58,7 +52,7 @@ public class FlosVitaeBlock extends SugarCaneBlock {
 	}
 
 	@Override
-	public void randomTick(BlockState blockstate, ServerLevel world, BlockPos blockpos, Random random) {
+	public void randomTick(BlockState blockstate, ServerLevel world, BlockPos blockpos, RandomSource random) {
 		if (world.isEmptyBlock(blockpos.above())) {
 			int i = 1;
 			for (; world.getBlockState(blockpos.below(i)).is(this); ++i);
@@ -79,10 +73,5 @@ public class FlosVitaeBlock extends SugarCaneBlock {
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
 		HealFlowerEffectEvent.execute(entity);
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(TheabyssModBlocks.FLOS_VITAE.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/emerald_ore",
     "particle": "theabyss:blocks/emerald_ore"
-  }
+  },
+  "render_type": "solid"
 }

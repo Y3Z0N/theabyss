@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:fungal_forest",
+  "features": "theabyss:giant_shroom_2",
+  "step": "surface_structures"
+}

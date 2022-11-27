@@ -35,20 +35,13 @@ public class BlaruCaveMossFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new BlaruCaveMossFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:blaru_cave_moss", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.BLARU_CAVE_MOSS.get().defaultBlockState())),
-						List.of(), 999));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:blaru_cave_moss", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.BLARU_CAVE_MOSS.get())), List.of(), 999));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:blaru_cave_moss", CONFIGURED_FEATURE, List.of(CountPlacement.of(40),
 				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_jungle"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

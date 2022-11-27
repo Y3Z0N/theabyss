@@ -2,10 +2,6 @@
 package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.events.AnimaFireEffectEvent;
-import net.yezon.theabyss.init.TheabyssModBlocks;
-
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -22,27 +18,20 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import java.util.List;
 import java.util.Collections;
 
 public class TenuemFireBlock extends FlowerBlock {
 	public TenuemFireBlock() {
-		super(MobEffects.SATURATION, 0, BlockBehaviour.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS).instabreak()
-				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 3));
+		super(MobEffects.SATURATION, 0,
+				BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true)
+						.emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 3).noCollission().offsetType(BlockBehaviour.OffsetType.NONE));
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-
 		return box(0, 0, 0, 16, 2, 16);
-	}
-
-	@Override
-	public BlockBehaviour.OffsetType getOffsetType() {
-		return BlockBehaviour.OffsetType.NONE;
 	}
 
 	@Override
@@ -57,10 +46,5 @@ public class TenuemFireBlock extends FlowerBlock {
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
 		AnimaFireEffectEvent.execute(entity);
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(TheabyssModBlocks.TENUEM_FIRE.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

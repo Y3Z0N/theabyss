@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "theabyss:blue_forest",
+  "spawners": {
+    "type": "theabyss:infected_creeper",
+    "weight": 28,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

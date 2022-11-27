@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/iron_ore",
     "particle": "theabyss:blocks/iron_ore"
-  }
+  },
+  "render_type": "solid"
 }

@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "theabyss:mud_plains",
+    "theabyss:blue_mountain",
+    "theabyss:blue_jungle",
+    "theabyss:blue_forest",
+    "theabyss:plains"
+  ],
+  "features": "theabyss:wart_root",
+  "step": "vegetal_decoration"
+}

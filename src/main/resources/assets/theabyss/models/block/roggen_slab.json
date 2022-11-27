@@ -4,5 +4,6 @@
     "bottom": "theabyss:blocks/roggen_planls",
     "top": "theabyss:blocks/roggen_planls",
     "side": "theabyss:blocks/roggen_planls"
-  }
+  },
+  "render_type": "solid"
 }

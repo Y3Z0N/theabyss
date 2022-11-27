@@ -5,10 +5,10 @@ import net.yezon.theabyss.init.TheabyssModItems;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerPlayer;
 
 import java.util.function.Supplier;
-import java.util.Random;
 import java.util.Map;
 
 public class ExtractSomniumFromLoranEvent {
@@ -40,7 +40,7 @@ public class ExtractSomniumFromLoranEvent {
 					{
 						ItemStack _ist = (entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 								&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(2)).getItem() : ItemStack.EMPTY);
-						if (_ist.hurt(1, new Random(), null)) {
+						if (_ist.hurt(1, RandomSource.create(), null)) {
 							_ist.shrink(1);
 							_ist.setDamageValue(0);
 						}

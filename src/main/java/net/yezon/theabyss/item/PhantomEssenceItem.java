@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.Entity;
 
-public class PhantomEssenceItem extends AbstractEssenceItem {
+public class PhantomEssenceItem extends Item {
 	public PhantomEssenceItem() {
 		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(64).rarity(Rarity.RARE));
 	}
@@ -19,11 +19,6 @@ public class PhantomEssenceItem extends AbstractEssenceItem {
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
 		return UseAnim.EAT;
-	}
-
-	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 0;
 	}
 
 	@Override

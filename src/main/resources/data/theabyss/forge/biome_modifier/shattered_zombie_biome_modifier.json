@@ -1,0 +1,14 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "theabyss:mud_plains",
+    "theabyss:blue_jungle",
+    "theabyss:blue_forest"
+  ],
+  "spawners": {
+    "type": "theabyss:shattered_zombie",
+    "weight": 5,
+    "minCount": 1,
+    "maxCount": 4
+  }
+}

@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/grass2",
     "particle": "theabyss:blocks/grass2"
-  }
+  },
+  "render_type": "cutout"
 }

@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/ruma_leave_1",
     "particle": "theabyss:blocks/ruma_leave_1"
-  }
+  },
+  "render_type": "translucent"
 }

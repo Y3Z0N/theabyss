@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/rotten_rank",
     "particle": "theabyss:blocks/rotten_rank"
-  }
+  },
+  "render_type": "cutout"
 }

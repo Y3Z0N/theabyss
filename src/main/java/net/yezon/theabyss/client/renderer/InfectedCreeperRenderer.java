@@ -16,6 +16,6 @@ public class InfectedCreeperRenderer extends MobRenderer<InfectedCreeperEntity, 
 
 	@Override
 	public ResourceLocation getTextureLocation(InfectedCreeperEntity entity) {
-		return new ResourceLocation("theabyss:textures/dark_creeper_new.png");
+		return new ResourceLocation("theabyss:textures/entities/dark_creeper_new.png");
 	}
 }

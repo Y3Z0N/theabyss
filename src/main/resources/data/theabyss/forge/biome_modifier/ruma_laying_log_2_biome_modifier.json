@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:fungal_forest",
+  "features": "theabyss:ruma_laying_log_2",
+  "step": "surface_structures"
+}

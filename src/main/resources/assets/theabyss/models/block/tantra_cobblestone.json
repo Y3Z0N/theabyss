@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/tantra_cobblestone",
     "particle": "theabyss:blocks/tantra_cobblestone"
-  }
+  },
+  "render_type": "solid"
 }

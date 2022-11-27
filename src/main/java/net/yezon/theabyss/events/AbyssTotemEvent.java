@@ -11,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -18,8 +19,6 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
-
-import java.util.Random;
 
 public class AbyssTotemEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
@@ -36,7 +35,7 @@ public class AbyssTotemEvent {
 				if (itemstack.getItem() == TheabyssModItems.TOTEM_OF_ABYSS.get()) {
 					{
 						ItemStack _ist = itemstack;
-						if (_ist.hurt(25, new Random(), null)) {
+						if (_ist.hurt(25, RandomSource.create(), null)) {
 							_ist.shrink(1);
 							_ist.setDamageValue(0);
 						}

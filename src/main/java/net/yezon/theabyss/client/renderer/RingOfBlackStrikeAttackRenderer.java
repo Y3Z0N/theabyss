@@ -16,7 +16,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
 public class RingOfBlackStrikeAttackRenderer extends EntityRenderer<RingOfBlackStrikeAttackEntity> {
-	private static final ResourceLocation texture = new ResourceLocation("theabyss:textures/firefly_entity.png");
+	private static final ResourceLocation texture = new ResourceLocation("theabyss:textures/entities/firefly_entity.png");
 	private final Modelabyss_raptor model;
 
 	public RingOfBlackStrikeAttackRenderer(EntityRendererProvider.Context context) {

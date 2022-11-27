@@ -1,7 +1,5 @@
 
-/*
- *    Y3 was here UwU ^-^
- */
+ 
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.client.gui.WikiGuiScreen;
@@ -25,14 +23,14 @@ public class TheabyssModScreens {
 	@SubscribeEvent
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
-			MenuScreens.register(TheabyssModMenus.PATREON_SCREEN, PatreonScreenScreen::new);
-			MenuScreens.register(TheabyssModMenus.WIKI_GUI, WikiGuiScreen::new);
-			MenuScreens.register(TheabyssModMenus.INFUSER, InfuserScreen::new);
-			MenuScreens.register(TheabyssModMenus.CUTTER, CutterScreen::new);
-			MenuScreens.register(TheabyssModMenus.ARCANE, ArcaneScreen::new);
-			MenuScreens.register(TheabyssModMenus.RESEARCH, ResearchScreen::new);
-			MenuScreens.register(TheabyssModMenus.EXTRACTOR, ExtractorScreen::new);
-			MenuScreens.register(TheabyssModMenus.MORTAR, MortarScreen::new);
+			MenuScreens.register(TheabyssModMenus.PATREON_SCREEN.get(), PatreonScreenScreen::new);
+			MenuScreens.register(TheabyssModMenus.WIKI_GUI.get(), WikiGuiScreen::new);
+			MenuScreens.register(TheabyssModMenus.INFUSER.get(), InfuserScreen::new);
+			MenuScreens.register(TheabyssModMenus.CUTTER.get(), CutterScreen::new);
+			MenuScreens.register(TheabyssModMenus.ARCANE.get(), ArcaneScreen::new);
+			MenuScreens.register(TheabyssModMenus.RESEARCH.get(), ResearchScreen::new);
+			MenuScreens.register(TheabyssModMenus.EXTRACTOR.get(), ExtractorScreen::new);
+			MenuScreens.register(TheabyssModMenus.MORTAR.get(), MortarScreen::new);
 		});
 	}
 }

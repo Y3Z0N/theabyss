@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:blue_jungle",
+  "features": "theabyss:lercas_umbrella",
+  "step": "vegetal_decoration"
+}

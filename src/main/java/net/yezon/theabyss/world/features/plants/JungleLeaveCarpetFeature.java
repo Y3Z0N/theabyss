@@ -35,18 +35,12 @@ public class JungleLeaveCarpetFeature extends RandomPatchFeature {
 		FEATURE = new JungleLeaveCarpetFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:jungle_leave_carpet", FEATURE,
 				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.JUNGLE_LEAVE_CARPET.get().defaultBlockState())),
-						List.of(), 32));
+						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.JUNGLE_LEAVE_CARPET.get())), List.of(), 32));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:jungle_leave_carpet", CONFIGURED_FEATURE,
 				List.of(CountPlacement.of(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_jungle"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

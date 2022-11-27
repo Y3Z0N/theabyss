@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/frozen_leave",
     "particle": "theabyss:blocks/frozen_leave"
-  }
+  },
+  "render_type": "cutout"
 }

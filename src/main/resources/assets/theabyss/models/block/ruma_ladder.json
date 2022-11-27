@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/ruma_ladder",
     "particle": "theabyss:blocks/ruma_ladder",
     "texture": "theabyss:blocks/ruma_ladder"
-  }
+  },
+  "render_type": "solid"
 }

@@ -8,5 +8,6 @@
     "south": "theabyss:blocks/tantra_grass_side",
     "west": "theabyss:blocks/tantra_grass_side",
     "particle": "theabyss:blocks/tantra_grass_down"
-  }
+  },
+  "render_type": "solid"
 }

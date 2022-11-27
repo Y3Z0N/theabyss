@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/frozen_log_vines",
     "particle": "theabyss:blocks/frozen_log_vines",
     "texture": "theabyss:blocks/frozen_log_vines"
-  }
+  },
+  "render_type": "cutout"
 }

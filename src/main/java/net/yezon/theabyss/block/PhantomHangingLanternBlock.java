@@ -4,13 +4,9 @@ package net.yezon.theabyss.block;
 import net.yezon.theabyss.events.PhantomLanternUncheckEvent;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.block.state.BlockState;
@@ -20,12 +16,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
-import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
@@ -47,8 +41,8 @@ public class PhantomHangingLanternBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		Vec3 offset = state.getOffset(world, pos);
-		return Shapes.or(box(6, 1, 6, 10, 10, 10), box(5, 1, 5, 11, 8, 11)).move(offset.x, offset.y, offset.z);
+
+		return Shapes.or(box(6, 1, 6, 10, 10, 10), box(5, 1, 5, 11, 8, 11));
 	}
 
 	@Override
@@ -72,7 +66,7 @@ public class PhantomHangingLanternBlock extends Block {
 	}
 
 	@Override
-	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, Random random) {
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
 		int x = pos.getX();
 		int y = pos.getY();
@@ -80,10 +74,5 @@ public class PhantomHangingLanternBlock extends Block {
 
 		PhantomLanternUncheckEvent.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 10);
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(TheabyssModBlocks.PHANTOM_HANGING_LANTERN.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

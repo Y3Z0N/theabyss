@@ -7,5 +7,6 @@
     "top": "theabyss:blocks/crystal_cutter_top",
     "bottom": "theabyss:blocks/crystal_bottom",
     "saw": "theabyss:blocks/crystal_cutter_saw"
-  }
+  },
+  "render_type": "solid"
 }

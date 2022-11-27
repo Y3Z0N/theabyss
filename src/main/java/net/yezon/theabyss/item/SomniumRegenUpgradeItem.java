@@ -13,7 +13,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
 import java.util.List;
@@ -44,8 +43,8 @@ public class SomniumRegenUpgradeItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("Regenerates somnium when you use it the first time"));
-		list.add(new TextComponent("regenerates somnium 5% faster after each use. Max is 20%"));
+		list.add(Component.literal("Regenerates somnium when you use it the first time"));
+		list.add(Component.literal("regenerates somnium 5% faster after each use. Max is 20%"));
 	}
 
 	@Override

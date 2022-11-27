@@ -43,7 +43,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.particles.SimpleParticleType;
 
@@ -61,7 +61,7 @@ public class NightbladeBossEntity extends Monster {
 		super(type, world);
 		xpReward = 1000;
 		setNoAi(false);
-		setCustomName(new TextComponent("Nightblade"));
+		setCustomName(Component.literal("Nightblade"));
 		setCustomNameVisible(true);
 		setPersistenceRequired();
 		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(TheabyssModItems.ABYSS_SWORD.get()));
@@ -213,6 +213,7 @@ public class NightbladeBossEntity extends Monster {
 		builder = builder.add(Attributes.MAX_HEALTH, 1024);
 		builder = builder.add(Attributes.ARMOR, 10);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 10);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 4);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 2);
 		return builder;

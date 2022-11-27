@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:mud_plains",
+  "features": "theabyss:tall_rub_shroom",
+  "step": "vegetal_decoration"
+}

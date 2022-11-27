@@ -3,14 +3,13 @@ package net.yezon.theabyss.potion;
 
 import net.yezon.theabyss.events.ElectricityOnEffectActiveEvent;
 
-import net.minecraftforge.client.EffectRenderer;
+import net.minecraftforge.client.extensions.common.IClientMobEffectExtensions;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen;
-import net.minecraft.client.gui.GuiComponent;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
@@ -35,30 +34,22 @@ public class ElectricityMobEffect extends MobEffect {
 	}
 
 	@Override
-	public void initializeClient(java.util.function.Consumer<net.minecraftforge.client.EffectRenderer> consumer) {
-		consumer.accept(new EffectRenderer() {
+	public void initializeClient(java.util.function.Consumer<IClientMobEffectExtensions> consumer) {
+		consumer.accept(new IClientMobEffectExtensions() {
 			@Override
-			public boolean shouldRender(MobEffectInstance effect) {
+			public boolean isVisibleInInventory(MobEffectInstance effect) {
 				return false;
 			}
 
 			@Override
-			public boolean shouldRenderInvText(MobEffectInstance effect) {
+			public boolean renderInventoryText(MobEffectInstance instance, EffectRenderingInventoryScreen<?> screen, PoseStack poseStack, int x,
+					int y, int blitOffset) {
 				return false;
 			}
 
 			@Override
-			public boolean shouldRenderHUD(MobEffectInstance effect) {
+			public boolean isVisibleInGui(MobEffectInstance effect) {
 				return false;
-			}
-
-			@Override
-			public void renderInventoryEffect(MobEffectInstance effect, EffectRenderingInventoryScreen<?> gui, PoseStack mStack, int x, int y,
-					float z) {
-			}
-
-			@Override
-			public void renderHUDEffect(MobEffectInstance effect, GuiComponent gui, PoseStack mStack, int x, int y, float z, float alpha) {
 			}
 		});
 	}

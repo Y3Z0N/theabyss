@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/tenuem_fire",
     "particle": "theabyss:blocks/tenuem_fire",
     "fire": "theabyss:blocks/tenuem_fire"
-  }
+  },
+  "render_type": "cutout"
 }

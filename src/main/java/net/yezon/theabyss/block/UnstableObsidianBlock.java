@@ -19,7 +19,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
@@ -39,7 +38,7 @@ public class UnstableObsidianBlock extends Block {
 	@Override
 	public void appendHoverText(ItemStack itemstack, BlockGetter world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("is needed to craft the portal"));
+		list.add(Component.literal("is needed to craft the portal"));
 	}
 
 	@Override
@@ -53,21 +52,20 @@ public class UnstableObsidianBlock extends Block {
 	}
 
 	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		return this.defaultBlockState().setValue(AXIS, context.getClickedFace().getAxis());
+	}
+
+	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
 		if (rot == Rotation.CLOCKWISE_90 || rot == Rotation.COUNTERCLOCKWISE_90) {
-			if ((Direction.Axis) state.getValue(AXIS) == Direction.Axis.X) {
+			if (state.getValue(AXIS) == Direction.Axis.X) {
 				return state.setValue(AXIS, Direction.Axis.Z);
-			} else if ((Direction.Axis) state.getValue(AXIS) == Direction.Axis.Z) {
+			} else if (state.getValue(AXIS) == Direction.Axis.Z) {
 				return state.setValue(AXIS, Direction.Axis.X);
 			}
 		}
 		return state;
-	}
-
-	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		Direction.Axis axis = context.getClickedFace().getAxis();;
-		return this.defaultBlockState().setValue(AXIS, axis);
 	}
 
 	@Override

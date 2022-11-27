@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:plains",
+  "features": "theabyss:ralom_plant",
+  "step": "vegetal_decoration"
+}

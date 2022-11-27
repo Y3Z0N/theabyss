@@ -16,13 +16,13 @@ public class RaptorRenderer extends MobRenderer<RaptorEntity, Modelabyss_raptor<
 		this.addLayer(new EyesLayer<RaptorEntity, Modelabyss_raptor<RaptorEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/the_abyss_raptor_glow.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/the_abyss_raptor_glow.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(RaptorEntity entity) {
-		return new ResourceLocation("theabyss:textures/the_abyss_raptor.png");
+		return new ResourceLocation("theabyss:textures/entities/the_abyss_raptor.png");
 	}
 }

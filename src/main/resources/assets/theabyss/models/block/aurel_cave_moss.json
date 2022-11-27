@@ -5,5 +5,6 @@
     "particle": "theabyss:blocks/aurel_cave_moss_top",
     "side": "theabyss:blocks/aurel_cave_moss_side",
     "top": "theabyss:blocks/aurel_cave_moss_top"
-  }
+  },
+  "render_type": "cutout"
 }

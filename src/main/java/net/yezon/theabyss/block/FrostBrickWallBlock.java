@@ -14,7 +14,7 @@ import java.util.Collections;
 
 public class FrostBrickWallBlock extends WallBlock {
 	public FrostBrickWallBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f));
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).dynamicShape());
 	}
 
 	@Override

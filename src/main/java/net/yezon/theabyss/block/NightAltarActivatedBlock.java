@@ -3,7 +3,6 @@ package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.events.NightAltarSummonCheckEvent;
 import net.yezon.theabyss.init.TheabyssModParticleTypes;
-import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
@@ -22,14 +21,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.util.RandomSource;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.Minecraft;
 
-import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
@@ -67,7 +64,7 @@ public class NightAltarActivatedBlock extends Block {
 
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	public void animateTick(BlockState blockstate, Level world, BlockPos pos, Random random) {
+	public void animateTick(BlockState blockstate, Level world, BlockPos pos, RandomSource random) {
 		super.animateTick(blockstate, world, pos, random);
 		Player entity = Minecraft.getInstance().player;
 		int x = pos.getX();
@@ -94,10 +91,5 @@ public class NightAltarActivatedBlock extends Block {
 
 		NightAltarSummonCheckEvent.execute();
 		return InteractionResult.SUCCESS;
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(TheabyssModBlocks.NIGHT_ALTAR_ACTIVATED.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

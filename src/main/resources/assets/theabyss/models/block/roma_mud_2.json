@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/roma_mud2",
     "particle": "theabyss:blocks/roma_mud2"
-  }
+  },
+  "render_type": "solid"
 }

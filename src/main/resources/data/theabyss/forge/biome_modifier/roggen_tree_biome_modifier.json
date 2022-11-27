@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:roggen_forest",
+  "features": "theabyss:roggen_tree",
+  "step": "surface_structures"
+}

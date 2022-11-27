@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/snow",
     "particle": "theabyss:blocks/snow"
-  }
+  },
+  "render_type": "solid"
 }

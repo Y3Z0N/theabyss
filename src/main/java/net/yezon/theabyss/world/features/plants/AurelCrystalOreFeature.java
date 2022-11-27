@@ -35,20 +35,13 @@ public class AurelCrystalOreFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new AurelCrystalOreFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:aurel_crystal_ore", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.AUREL_CRYSTAL_ORE.get().defaultBlockState())),
-						List.of(), 69));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:aurel_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(21),
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:aurel_crystal_ore", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.AUREL_CRYSTAL_ORE.get())), List.of(), 69));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:aurel_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(35),
 				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_forest"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

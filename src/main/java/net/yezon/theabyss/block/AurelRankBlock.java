@@ -5,8 +5,6 @@ import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.block.state.BlockState;
@@ -15,27 +13,20 @@ import net.minecraft.world.level.block.SugarCaneBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-
-import java.util.Random;
 
 public class AurelRankBlock extends SugarCaneBlock {
 	public AurelRankBlock() {
-		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.GRASS).instabreak().noDrops());
+		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).instabreak().noLootTable().noCollission()
+				.offsetType(BlockBehaviour.OffsetType.NONE));
 	}
 
 	@Override
 	public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
 		return 100;
-	}
-
-	@Override
-	public BlockBehaviour.OffsetType getOffsetType() {
-		return BlockBehaviour.OffsetType.NONE;
 	}
 
 	@Override
@@ -47,9 +38,7 @@ public class AurelRankBlock extends SugarCaneBlock {
 	public boolean canSurvive(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
 		BlockPos blockpos = pos.below();
 		BlockState groundState = worldIn.getBlockState(blockpos);
-		return groundState.is(this) || groundState.is(TheabyssModBlocks.STONE.get())
-
-		;
+		return groundState.is(this) || groundState.is(TheabyssModBlocks.STONE.get());
 	}
 
 	@Override
@@ -58,7 +47,7 @@ public class AurelRankBlock extends SugarCaneBlock {
 	}
 
 	@Override
-	public void randomTick(BlockState blockstate, ServerLevel world, BlockPos blockpos, Random random) {
+	public void randomTick(BlockState blockstate, ServerLevel world, BlockPos blockpos, RandomSource random) {
 		if (world.isEmptyBlock(blockpos.above())) {
 			int i = 1;
 			for (; world.getBlockState(blockpos.below(i)).is(this); ++i);
@@ -73,10 +62,5 @@ public class AurelRankBlock extends SugarCaneBlock {
 				}
 			}
 		}
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(TheabyssModBlocks.AUREL_RANK.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

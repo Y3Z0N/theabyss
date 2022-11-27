@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/bricks_cracked",
     "particle": "theabyss:blocks/bricks_cracked",
     "texture": "theabyss:blocks/echolot_bottom_middle"
-  }
+  },
+  "render_type": "solid"
 }

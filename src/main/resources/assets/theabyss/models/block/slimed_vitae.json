@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/slimed_vitae",
     "particle": "theabyss:blocks/slimed_vitae"
-  }
+  },
+  "render_type": "cutout"
 }

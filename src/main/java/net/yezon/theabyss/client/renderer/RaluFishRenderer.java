@@ -16,13 +16,13 @@ public class RaluFishRenderer extends MobRenderer<RaluFishEntity, Modelfish3<Ral
 		this.addLayer(new EyesLayer<RaluFishEntity, Modelfish3<RaluFishEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/ralu_fish.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/ralu_fish.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(RaluFishEntity entity) {
-		return new ResourceLocation("theabyss:textures/ralu_fish.png");
+		return new ResourceLocation("theabyss:textures/entities/ralu_fish.png");
 	}
 }

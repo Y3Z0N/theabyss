@@ -16,13 +16,13 @@ public class IceSkeletonRenderer extends MobRenderer<IceSkeletonEntity, Modelske
 		this.addLayer(new EyesLayer<IceSkeletonEntity, Modelskeleton_abyss<IceSkeletonEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/ice_skeleton_glow_22.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/ice_skeleton_glow_22.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(IceSkeletonEntity entity) {
-		return new ResourceLocation("theabyss:textures/ice_skeleton_22.png");
+		return new ResourceLocation("theabyss:textures/entities/ice_skeleton_22.png");
 	}
 }

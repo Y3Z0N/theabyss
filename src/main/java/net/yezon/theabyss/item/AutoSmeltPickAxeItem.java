@@ -13,7 +13,6 @@ import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
@@ -58,7 +57,7 @@ public class AutoSmeltPickAxeItem extends PickaxeItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("smelts automatically ores. (example: iron ores"));
-		list.add(new TextComponent("gold ores)"));
+		list.add(Component.literal("smelts automatically ores. (example: iron ores"));
+		list.add(Component.literal("gold ores)"));
 	}
 }

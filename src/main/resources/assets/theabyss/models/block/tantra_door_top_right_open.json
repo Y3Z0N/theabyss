@@ -1,0 +1,8 @@
+{
+  "parent": "block/door_top_right_open",
+  "textures": {
+    "bottom": "theabyss:blocks/tantra_door_bottom",
+    "top": "theabyss:blocks/tantra_door_top"
+  },
+  "render_type": "cutout"
+}

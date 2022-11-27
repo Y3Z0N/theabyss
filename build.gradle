@@ -21,7 +21,7 @@ archivesBaseName = 'TheAbyss'
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'parchment', version: '2022.06.05-1.18.2'
+    mappings channel: 'parchment', version: '2022.08.10-1.19.2'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -48,58 +48,16 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                theabyss {
+                examplemod {
                     source sourceSets.main
                 }
             }
         }
-
-	data {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-
-            args '--mod', 'theabyss',
-                    '--all',
-                    '--output', file('src/generated/resources/'),
-                    '--existing', file('src/main/resources/')
-
-            mods {
-                theabyss {
-                    source sourceSets.main
-                }
-            }
-        }
-    }
-}
-
-repositories {
-    maven {
-        // location of the maven that hosts JEI files
-        name = "Progwml6 maven"
-        url = "https://dvs1.progwml6.com/files/maven/"
-    }
-    maven {
-        // location of a maven mirror for JEI files, as a fallback
-        name = "ModMaven"
-        url = "https://modmaven.dev"
-    }
-    maven {
-        url = "https://www.cursemaven.com/"
     }
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.51'
-    compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
-
-    runtimeOnly fg.deobf("curse.maven:ferritecore-429235:3672146")
-    runtimeOnly fg.deobf("curse.maven:lazy-dfu-forge-460819:3544496")
-    runtimeOnly fg.deobf("curse.maven:shutup-experimental-settings-407174:3544525")
+    minecraft 'net.minecraftforge:forge:1.19.2-43.1.47'
 }
 
 tasks.withType(JavaCompile).configureEach {

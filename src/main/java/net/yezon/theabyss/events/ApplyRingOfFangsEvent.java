@@ -2,10 +2,7 @@ package net.yezon.theabyss.events;
 
 import net.yezon.theabyss.network.TheabyssModVariables;
 import net.yezon.theabyss.init.TheabyssModItems;
-
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
+import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -14,13 +11,13 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
 import java.util.stream.Collectors;
-import java.util.Random;
 import java.util.List;
 import java.util.Comparator;
 
@@ -36,12 +33,12 @@ public class ApplyRingOfFangsEvent {
 							* (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(new TextComponent("you don't have enough \u00A7benergy"), (true));
+					_player.displayClientMessage(Component.literal((Component.translatable("ring.theabyss.low_energy").getString())), (true));
 			} else {
 				if (itemstack.getItem() == TheabyssModItems.RING_OF_FANGS.get()) {
 					{
 						ItemStack _ist = itemstack;
-						if (_ist.hurt(1, new Random(), null)) {
+						if (_ist.hurt(1, RandomSource.create(), null)) {
 							_ist.shrink(1);
 							_ist.setDamageValue(0);
 						}
@@ -62,477 +59,347 @@ public class ApplyRingOfFangsEvent {
 					});
 				}
 				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((x + 2), y, z), Vec2.ZERO,
-							_level, 4, "", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "summon minecraft:evoker_fangs");
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((x + 2), y, z),
+							Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+							"summon minecraft:evoker_fangs");
 				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((x - 2), y, z), Vec2.ZERO,
-							_level, 4, "", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "summon minecraft:evoker_fangs");
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((x - 2), y, z),
+							Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+							"summon minecraft:evoker_fangs");
 				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z + 2)), Vec2.ZERO,
-							_level, 4, "", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "summon minecraft:evoker_fangs");
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z + 2)),
+							Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+							"summon minecraft:evoker_fangs");
 				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z - 2)), Vec2.ZERO,
-							_level, 4, "", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(), "summon minecraft:evoker_fangs");
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private LevelAccessor world;
-
-					public void start(LevelAccessor world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
-						}
-					}
-
-					private void run() {
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z - 2)),
+							Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+							"summon minecraft:evoker_fangs");
+				TheabyssMod.queueServerWork(5, () -> {
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z - 1)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z - 1)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z + 1)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z + 1)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+				});
+				TheabyssMod.queueServerWork(10, () -> {
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 3), y, z), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 3), y, z), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z + 3)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z - 3)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 2), y, (z - 2)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 2), y, (z + 2)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 2), y, (z + 2)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 2), y, (z - 2)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+				});
+				TheabyssMod.queueServerWork(15, () -> {
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 4), y, (z - 1)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 4), y, (z + 1)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 3), y, (z + 3)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z + 4)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z + 4)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 3), y, (z + 3)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 4), y, (z + 1)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 4), y, (z - 1)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 3), y, (z - 3)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z - 4)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z - 4)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 3), y, (z - 3)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+				});
+				TheabyssMod.queueServerWork(20, () -> {
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 5), y, z), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 5), y, z), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z + 5)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z - 5)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+				});
+				TheabyssMod.queueServerWork(25, () -> {
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z - 1)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z - 1)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z + 1)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands()
+								.performPrefixedCommand(
+										new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z + 1)), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+										"summon minecraft:evoker_fangs");
+					TheabyssMod.queueServerWork(5, () -> {
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z - 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z - 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z + 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z + 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, 5);
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private LevelAccessor world;
-
-					public void start(LevelAccessor world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
-						}
-					}
-
-					private void run() {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 3), y, z), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 3), y, z), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z + 3)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z - 3)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 2), y, (z - 2)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 2), y, (z + 2)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 2), y, (z + 2)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 2), y, (z - 2)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, 10);
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private LevelAccessor world;
-
-					public void start(LevelAccessor world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
-						}
-					}
-
-					private void run() {
+					});
+					TheabyssMod.queueServerWork(10, () -> {
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 4), y, (z - 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 4), y, (z + 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 3), y, (z + 3)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z + 4)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z + 4)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 3), y, (z + 3)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 4), y, (z + 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 4), y, (z - 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 3), y, (z - 3)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z - 4)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z - 4)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands()
-									.performCommand(
+									.performPrefixedCommand(
 											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 3), y, (z - 3)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											"summon minecraft:evoker_fangs");
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, 15);
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private LevelAccessor world;
-
-					public void start(LevelAccessor world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
-						}
-					}
-
-					private void run() {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 5), y, z), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 5), y, z), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z + 5)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z - 5)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, 20);
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private LevelAccessor world;
-
-					public void start(LevelAccessor world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
-						}
-					}
-
-					private void run() {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z - 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z - 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z + 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z + 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-						new Object() {
-							private int ticks = 0;
-							private float waitTicks;
-							private LevelAccessor world;
-
-							public void start(LevelAccessor world, int waitTicks) {
-								this.waitTicks = waitTicks;
-								MinecraftForge.EVENT_BUS.register(this);
-								this.world = world;
-							}
-
-							@SubscribeEvent
-							public void tick(TickEvent.ServerTickEvent event) {
-								if (event.phase == TickEvent.Phase.END) {
-									this.ticks += 1;
-									if (this.ticks >= this.waitTicks)
-										run();
-								}
-							}
-
-							private void run() {
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 3), y, z), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 3), y, z), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z + 3)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, (z - 3)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 2), y, (z - 2)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 2), y, (z + 2)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 2), y, (z + 2)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 2), y, (z - 2)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								MinecraftForge.EVENT_BUS.unregister(this);
-							}
-						}.start(world, 5);
-						new Object() {
-							private int ticks = 0;
-							private float waitTicks;
-							private LevelAccessor world;
-
-							public void start(LevelAccessor world, int waitTicks) {
-								this.waitTicks = waitTicks;
-								MinecraftForge.EVENT_BUS.register(this);
-								this.world = world;
-							}
-
-							@SubscribeEvent
-							public void tick(TickEvent.ServerTickEvent event) {
-								if (event.phase == TickEvent.Phase.END) {
-									this.ticks += 1;
-									if (this.ticks >= this.waitTicks)
-										run();
-								}
-							}
-
-							private void run() {
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 4), y, (z - 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 4), y, (z + 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 3), y, (z + 3)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z + 4)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z + 4)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 3), y, (z + 3)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 4), y, (z + 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 4), y, (z - 1)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 3), y, (z - 3)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x - 1), y, (z - 4)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 1), y, (z - 4)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3((x + 3), y, (z - 3)), Vec2.ZERO, _level, 4, "",
-													new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
-											"summon minecraft:evoker_fangs");
-								MinecraftForge.EVENT_BUS.unregister(this);
-							}
-						}.start(world, 10);
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, 25);
+					});
+				});
 				if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 						.orElse(new TheabyssModVariables.PlayerVariables())).FriendMode == true) {
 					{
@@ -544,9 +411,9 @@ public class ApplyRingOfFangsEvent {
 								if (!(entityiterator instanceof Player)) {
 									if (world instanceof ServerLevel _level)
 										_level.getServer().getCommands()
-												.performCommand(new CommandSourceStack(CommandSource.NULL,
+												.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL,
 														new Vec3((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ())),
-														Vec2.ZERO, _level, 4, "", new TextComponent(""), _level.getServer(), null)
+														Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null)
 														.withSuppressedOutput(), "summon minecraft:evoker_fangs");
 								}
 							}
@@ -561,9 +428,9 @@ public class ApplyRingOfFangsEvent {
 							if (!(entityiterator == entity)) {
 								if (world instanceof ServerLevel _level)
 									_level.getServer().getCommands()
-											.performCommand(new CommandSourceStack(CommandSource.NULL,
+											.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL,
 													new Vec3((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ())), Vec2.ZERO,
-													_level, 4, "", new TextComponent(""), _level.getServer(), null).withSuppressedOutput(),
+													_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 													"summon minecraft:evoker_fangs");
 							}
 						}

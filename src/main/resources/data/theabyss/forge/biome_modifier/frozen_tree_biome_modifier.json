@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:waywardsea",
+  "features": "theabyss:frozen_tree",
+  "step": "surface_structures"
+}

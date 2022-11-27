@@ -9,7 +9,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
@@ -50,7 +49,7 @@ public class ArcaneScreen extends AbstractContainerScreen<ArcaneMenu> {
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 
-		RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/arcane_gui.png"));
+		RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/screens/arcane_gui.png"));
 		this.blit(ms, this.leftPos + 0, this.topPos + 0, 0, 0, 256, 256, 256, 256);
 
 		RenderSystem.disableBlend();
@@ -85,7 +84,7 @@ public class ArcaneScreen extends AbstractContainerScreen<ArcaneMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 98, this.topPos + 41, 50, 20, new TextComponent("Build"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 98, this.topPos + 41, 50, 20, Component.literal("Build"), e -> {
 			if (true) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new ArcaneButtonMessage(0, x, y, z));
 				ArcaneButtonMessage.handleButtonAction(entity, 0, x, y, z);

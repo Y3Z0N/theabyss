@@ -757,5 +757,26 @@
         "stream": false
       }
     ]
+  },
+  "seeker_ambient": {
+    "category": "hostile",
+    "sounds": [
+      {
+        "name": "theabyss:seeker_ambient_1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:seeker_ambient_2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:seeker_ambient_3",
+        "stream": false
+      },
+      {
+        "name": "theabyss:seeker_ambient_4",
+        "stream": false
+      }
+    ]
   }
 }

@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/stone",
     "particle": "theabyss:blocks/stone",
     "mortar": "theabyss:blocks/mortar_and_pestle"
-  }
+  },
+  "render_type": "solid"
 }

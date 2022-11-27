@@ -6,5 +6,6 @@
     "lit_log": "theabyss:blocks/campfire_log",
     "log": "theabyss:blocks/campfire_log",
     "fire": "theabyss:blocks/tenuem_fire"
-  }
+  },
+  "render_type": "solid"
 }

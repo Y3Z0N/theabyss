@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:forgottenmountains",
+  "features": "theabyss:frost_crystal_ore",
+  "step": "vegetal_decoration"
+}

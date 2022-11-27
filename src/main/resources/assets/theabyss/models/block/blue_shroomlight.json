@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/blue_shroomlight",
     "particle": "theabyss:blocks/blue_shroomlight"
-  }
+  },
+  "render_type": "solid"
 }

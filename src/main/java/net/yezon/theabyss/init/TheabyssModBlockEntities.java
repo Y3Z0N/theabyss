@@ -1,7 +1,4 @@
 
-/*
- *    Y3 was here UwU ^-^
- */
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.block.entity.SomniumInfuserBlockEntity;
@@ -20,7 +17,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.Block;
 
 public class TheabyssModBlockEntities {
-	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, TheabyssMod.MODID);
+	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES,
+			TheabyssMod.MODID);
 	public static final RegistryObject<BlockEntityType<?>> SOMNIUM_EXTRACTOR = register("somnium_extractor", TheabyssModBlocks.SOMNIUM_EXTRACTOR,
 			SomniumExtractorBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> ARCANE_WORKBENCH = register("arcane_workbench", TheabyssModBlocks.ARCANE_WORKBENCH,

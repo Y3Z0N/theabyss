@@ -40,7 +40,7 @@ public class OctavysMagynisiusFeature extends RandomPatchFeature {
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:octavys_magynisius", FEATURE,
 				FeatureUtils.simpleRandomPatchConfiguration(64, PlacementUtils.filtered(Feature.BLOCK_COLUMN,
 						BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4),
-								BlockStateProvider.simple(TheabyssModBlocks.OCTAVYS_MAGYNISIUS.get().defaultBlockState())),
+								BlockStateProvider.simple(TheabyssModBlocks.OCTAVYS_MAGYNISIUS.get())),
 						BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,
 								BlockPredicate.wouldSurvive(TheabyssModBlocks.OCTAVYS_MAGYNISIUS.get().defaultBlockState(), BlockPos.ZERO)))));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:octavys_magynisius", CONFIGURED_FEATURE, List.of(CountPlacement.of(3),
@@ -48,12 +48,6 @@ public class OctavysMagynisiusFeature extends RandomPatchFeature {
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_jungle"),
-			new ResourceLocation("theabyss:blue_forest"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/rotten_leaves",
     "particle": "theabyss:blocks/rotten_leaves"
-  }
+  },
+  "render_type": "translucent"
 }

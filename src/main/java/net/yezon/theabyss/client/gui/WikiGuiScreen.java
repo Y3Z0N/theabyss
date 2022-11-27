@@ -8,7 +8,6 @@ import net.yezon.theabyss.TheabyssMod;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
@@ -95,7 +94,7 @@ public class WikiGuiScreen extends AbstractContainerScreen<WikiGuiMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 178, 70, 20, new TextComponent("Open Wiki"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 178, 70, 20, Component.literal("Open Wiki"), e -> {
 			if (true) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new WikiGuiButtonMessage(0, x, y, z));
 				WikiGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);

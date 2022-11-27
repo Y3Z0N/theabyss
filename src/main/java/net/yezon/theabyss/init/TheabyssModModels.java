@@ -1,12 +1,11 @@
 
-/*
- *    Y3 was here UwU ^-^
- */
+
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.client.model.Modelzombie1;
 import net.yezon.theabyss.client.model.Modelwhale;
 import net.yezon.theabyss.client.model.Modelsoul_lizard;
+import net.yezon.theabyss.client.model.Modelslime_spider;
 import net.yezon.theabyss.client.model.Modelskeleton_abyss;
 import net.yezon.theabyss.client.model.Modelscorpion;
 import net.yezon.theabyss.client.model.Modelmagician;
@@ -16,7 +15,9 @@ import net.yezon.theabyss.client.model.Modelfrost_spider;
 import net.yezon.theabyss.client.model.Modelfish3;
 import net.yezon.theabyss.client.model.Modelfish2;
 import net.yezon.theabyss.client.model.Modelfish1;
+import net.yezon.theabyss.client.model.Modelelder_entity;
 import net.yezon.theabyss.client.model.Modeldeer;
+import net.yezon.theabyss.client.model.Modelcrystal_golem_big;
 import net.yezon.theabyss.client.model.Modelbrain;
 import net.yezon.theabyss.client.model.Modelancient_seeker;
 import net.yezon.theabyss.client.model.Modelabyssal_lion;
@@ -38,7 +39,9 @@ public class TheabyssModModels {
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		event.registerLayerDefinition(Modelfish3.LAYER_LOCATION, Modelfish3::createBodyLayer);
 		event.registerLayerDefinition(ModelRokaEntityModel.LAYER_LOCATION, ModelRokaEntityModel::createBodyLayer);
+		event.registerLayerDefinition(Modelcrystal_golem_big.LAYER_LOCATION, Modelcrystal_golem_big::createBodyLayer);
 		event.registerLayerDefinition(Modelsoul_lizard.LAYER_LOCATION, Modelsoul_lizard::createBodyLayer);
+		event.registerLayerDefinition(Modelelder_entity.LAYER_LOCATION, Modelelder_entity::createBodyLayer);
 		event.registerLayerDefinition(Modelbrain.LAYER_LOCATION, Modelbrain::createBodyLayer);
 		event.registerLayerDefinition(Modeldeer.LAYER_LOCATION, Modeldeer::createBodyLayer);
 		event.registerLayerDefinition(Modelabyss_lurker.LAYER_LOCATION, Modelabyss_lurker::createBodyLayer);
@@ -57,6 +60,7 @@ public class TheabyssModModels {
 		event.registerLayerDefinition(Modelglow_pug.LAYER_LOCATION, Modelglow_pug::createBodyLayer);
 		event.registerLayerDefinition(Modelzombie1.LAYER_LOCATION, Modelzombie1::createBodyLayer);
 		event.registerLayerDefinition(Modelabysaurus_rex.LAYER_LOCATION, Modelabysaurus_rex::createBodyLayer);
+		event.registerLayerDefinition(Modelslime_spider.LAYER_LOCATION, Modelslime_spider::createBodyLayer);
 		event.registerLayerDefinition(Modelfish1.LAYER_LOCATION, Modelfish1::createBodyLayer);
 	}
 }

@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/frozen_ladder",
     "particle": "theabyss:blocks/frozen_ladder",
     "texture": "theabyss:blocks/frozen_ladder"
-  }
+  },
+  "render_type": "solid"
 }

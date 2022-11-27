@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:blue_mountain",
+  "features": "theabyss:abyss_crystal_ore",
+  "step": "vegetal_decoration"
+}

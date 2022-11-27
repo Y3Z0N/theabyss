@@ -3,5 +3,6 @@
   "textures": {
     "wall": "theabyss:blocks/bone_block",
     "particle": "theabyss:blocks/bone_block"
-  }
+  },
+  "render_type": "solid"
 }

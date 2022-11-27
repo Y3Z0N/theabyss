@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/tantra_grass_down",
     "particle": "theabyss:blocks/tantra_grass_down"
-  }
+  },
+  "render_type": "solid"
 }

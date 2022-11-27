@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:plains",
+  "features": "theabyss:bog_mini_island_2",
+  "step": "raw_generation"
+}

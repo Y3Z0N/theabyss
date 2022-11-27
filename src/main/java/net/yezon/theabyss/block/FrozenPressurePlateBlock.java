@@ -16,7 +16,7 @@ import java.util.Collections;
 
 public class FrozenPressurePlateBlock extends PressurePlateBlock {
 	public FrozenPressurePlateBlock() {
-		super(Sensitivity.MOBS, BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.WOOD).strength(1f, 10f));
+		super(Sensitivity.MOBS, BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.WOOD).strength(1f, 10f).dynamicShape());
 	}
 
 	@Override

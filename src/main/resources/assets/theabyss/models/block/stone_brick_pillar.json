@@ -6,5 +6,6 @@
     "pillar": "theabyss:blocks/stone_bricks",
     "top": "theabyss:blocks/stone_bricks",
     "base": "theabyss:blocks/stone_bricks"
-  }
+  },
+  "render_type": "solid"
 }

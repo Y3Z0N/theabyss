@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/crimson_crystal",
     "particle": "theabyss:blocks/crimson_crystal",
     "1": "theabyss:blocks/crimson_crystal"
-  }
+  },
+  "render_type": "cutout"
 }

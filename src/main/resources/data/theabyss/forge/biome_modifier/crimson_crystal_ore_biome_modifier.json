@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "crimson_forest",
+  "features": "theabyss:crimson_crystal_ore",
+  "step": "vegetal_decoration"
+}

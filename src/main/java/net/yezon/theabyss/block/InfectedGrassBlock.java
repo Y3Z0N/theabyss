@@ -4,7 +4,7 @@ package net.yezon.theabyss.block;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.client.event.ColorHandlerEvent;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -19,8 +19,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.BiomeColors;
 
 import java.util.List;
@@ -56,19 +54,14 @@ public class InfectedGrassBlock extends Block {
 	}
 
 	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(TheabyssModBlocks.INFECTED_GRASS.get(), renderType -> renderType == RenderType.cutout());
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void blockColorLoad(ColorHandlerEvent.Block event) {
+	public static void blockColorLoad(RegisterColorHandlersEvent.Block event) {
 		event.getBlockColors().register((bs, world, pos, index) -> {
 			return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
 		}, TheabyssModBlocks.INFECTED_GRASS.get());
 	}
 
 	@OnlyIn(Dist.CLIENT)
-	public static void itemColorLoad(ColorHandlerEvent.Item event) {
+	public static void itemColorLoad(RegisterColorHandlersEvent.Item event) {
 		event.getItemColors().register((stack, index) -> {
 			return GrassColor.get(0.5D, 1.0D);
 		}, TheabyssModBlocks.INFECTED_GRASS.get());

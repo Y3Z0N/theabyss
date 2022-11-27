@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/incorythe_ore",
     "particle": "theabyss:blocks/incorythe_ore"
-  }
+  },
+  "render_type": "solid"
 }

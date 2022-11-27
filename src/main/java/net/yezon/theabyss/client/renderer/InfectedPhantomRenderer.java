@@ -16,13 +16,13 @@ public class InfectedPhantomRenderer extends MobRenderer<InfectedPhantomEntity, 
 		this.addLayer(new EyesLayer<InfectedPhantomEntity, ModelPhantom<InfectedPhantomEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/phantoms_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/phantoms_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(InfectedPhantomEntity entity) {
-		return new ResourceLocation("theabyss:textures/phantoms.png");
+		return new ResourceLocation("theabyss:textures/entities/phantoms.png");
 	}
 }

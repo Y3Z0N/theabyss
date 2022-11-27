@@ -21,7 +21,7 @@ import java.util.Collections;
 
 public class BoneThinBlock extends WallBlock {
 	public BoneThinBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.BONE_BLOCK).strength(1f, 10f));
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.BONE_BLOCK).strength(1f, 10f).dynamicShape());
 	}
 
 	@Override

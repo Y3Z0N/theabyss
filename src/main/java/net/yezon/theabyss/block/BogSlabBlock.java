@@ -17,7 +17,7 @@ import java.util.Collections;
 
 public class BogSlabBlock extends SlabBlock {
 	public BogSlabBlock() {
-		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2f, 10f));
+		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2f, 10f).dynamicShape());
 	}
 
 	@Override

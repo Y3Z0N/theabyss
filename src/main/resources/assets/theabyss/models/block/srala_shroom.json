@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/srala_shroom",
     "particle": "theabyss:blocks/srala_shroom"
-  }
+  },
+  "render_type": "cutout"
 }

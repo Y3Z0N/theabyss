@@ -3,11 +3,9 @@ package net.yezon.theabyss.events;
 import net.yezon.theabyss.network.TheabyssModVariables;
 import net.yezon.theabyss.init.TheabyssModParticleTypes;
 import net.yezon.theabyss.init.TheabyssModItems;
+import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
@@ -20,16 +18,16 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
 
 import java.util.stream.Collectors;
-import java.util.Random;
 import java.util.List;
 import java.util.Comparator;
 
@@ -45,12 +43,12 @@ public class ApplyRingOfNightbladeEvent {
 							* (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(new TextComponent("you don't have enough \u00A7benergy"), (true));
+					_player.displayClientMessage(Component.literal((Component.translatable("ring.theabyss.low_energy").getString())), (true));
 			} else {
 				if (itemstack.getItem() == TheabyssModItems.RING_OF_NIGHTBLADE.get()) {
 					{
 						ItemStack _ist = itemstack;
-						if (_ist.hurt(1, new Random(), null)) {
+						if (_ist.hurt(1, RandomSource.create(), null)) {
 							_ist.shrink(1);
 							_ist.setDamageValue(0);
 						}
@@ -96,39 +94,17 @@ public class ApplyRingOfNightbladeEvent {
 							}
 							entityiterator.setNoGravity((true));
 							entityiterator.hurt(DamageSource.MAGIC, 4);
-							new Object() {
-								private int ticks = 0;
-								private float waitTicks;
-								private LevelAccessor world;
-
-								public void start(LevelAccessor world, int waitTicks) {
-									this.waitTicks = waitTicks;
-									MinecraftForge.EVENT_BUS.register(this);
-									this.world = world;
+							TheabyssMod.queueServerWork(100, () -> {
+								{
+									Entity _ent = entityiterator;
+									_ent.teleportTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()));
+									if (_ent instanceof ServerPlayer _serverPlayer)
+										_serverPlayer.connection.teleport((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()),
+												_ent.getYRot(), _ent.getXRot());
 								}
-
-								@SubscribeEvent
-								public void tick(TickEvent.ServerTickEvent event) {
-									if (event.phase == TickEvent.Phase.END) {
-										this.ticks += 1;
-										if (this.ticks >= this.waitTicks)
-											run();
-									}
-								}
-
-								private void run() {
-									{
-										Entity _ent = entityiterator;
-										_ent.teleportTo((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()));
-										if (_ent instanceof ServerPlayer _serverPlayer)
-											_serverPlayer.connection.teleport((entityiterator.getX()), (entityiterator.getY()),
-													(entityiterator.getZ()), _ent.getYRot(), _ent.getXRot());
-									}
-									entityiterator.hurt(DamageSource.MAGIC, 4);
-									entityiterator.setNoGravity((false));
-									MinecraftForge.EVENT_BUS.unregister(this);
-								}
-							}.start(world, 100);
+								entityiterator.hurt(DamageSource.GENERIC, 4);
+								entityiterator.setNoGravity((false));
+							});
 						}
 					}
 				}
@@ -159,94 +135,49 @@ public class ApplyRingOfNightbladeEvent {
 					_level.sendParticles((SimpleParticleType) (TheabyssModParticleTypes.SHINNY_CYAN.get()), x, y, z, 25, 20, 30, 20, 0.01);
 				if (entity instanceof LivingEntity _entity)
 					_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20, 0, (false), (false)));
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private LevelAccessor world;
-
-					public void start(LevelAccessor world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
+				TheabyssMod.queueServerWork(3, () -> {
+					entity.setNoGravity((true));
+					{
+						Entity _ent = entity;
+						_ent.teleportTo(x, (y + 10), z);
+						if (_ent instanceof ServerPlayer _serverPlayer)
+							_serverPlayer.connection.teleport(x, (y + 10), z, _ent.getYRot(), _ent.getXRot());
 					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
-						}
-					}
-
-					private void run() {
-						entity.setNoGravity((true));
-						{
-							Entity _ent = entity;
-							_ent.teleportTo(x, (y + 10), z);
-							if (_ent instanceof ServerPlayer _serverPlayer)
-								_serverPlayer.connection.teleport(x, (y + 10), z, _ent.getYRot(), _ent.getXRot());
-						}
-						MinecraftForge.EVENT_BUS.unregister(this);
-					}
-				}.start(world, 3);
-				new Object() {
-					private int ticks = 0;
-					private float waitTicks;
-					private LevelAccessor world;
-
-					public void start(LevelAccessor world, int waitTicks) {
-						this.waitTicks = waitTicks;
-						MinecraftForge.EVENT_BUS.register(this);
-						this.world = world;
-					}
-
-					@SubscribeEvent
-					public void tick(TickEvent.ServerTickEvent event) {
-						if (event.phase == TickEvent.Phase.END) {
-							this.ticks += 1;
-							if (this.ticks >= this.waitTicks)
-								run();
-						}
-					}
-
-					private void run() {
-						entity.setNoGravity((false));
-						{
-							Entity _ent = entity;
-							_ent.teleportTo(
+				});
+				TheabyssMod.queueServerWork(100, () -> {
+					entity.setNoGravity((false));
+					{
+						Entity _ent = entity;
+						_ent.teleportTo(
+								((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new TheabyssModVariables.PlayerVariables())).NightbladeX),
+								((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new TheabyssModVariables.PlayerVariables())).NightbladeY),
+								((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										.orElse(new TheabyssModVariables.PlayerVariables())).NightbladeZ));
+						if (_ent instanceof ServerPlayer _serverPlayer)
+							_serverPlayer.connection.teleport(
 									((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 											.orElse(new TheabyssModVariables.PlayerVariables())).NightbladeX),
 									((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 											.orElse(new TheabyssModVariables.PlayerVariables())).NightbladeY),
 									((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new TheabyssModVariables.PlayerVariables())).NightbladeZ));
-							if (_ent instanceof ServerPlayer _serverPlayer)
-								_serverPlayer.connection.teleport(
-										((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new TheabyssModVariables.PlayerVariables())).NightbladeX),
-										((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new TheabyssModVariables.PlayerVariables())).NightbladeY),
-										((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new TheabyssModVariables.PlayerVariables())).NightbladeZ),
-										_ent.getYRot(), _ent.getXRot());
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, new BlockPos(x, y, z),
-										ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_teleport")),
-										SoundSource.NEUTRAL, 1, 1);
-							} else {
-								_level.playLocalSound(x, y, z,
-										ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_teleport")),
-										SoundSource.NEUTRAL, 1, 1, false);
-							}
-						}
-						if (entity instanceof LivingEntity _entity)
-							_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20, 0, (false), (false)));
-						MinecraftForge.EVENT_BUS.unregister(this);
+											.orElse(new TheabyssModVariables.PlayerVariables())).NightbladeZ),
+									_ent.getYRot(), _ent.getXRot());
 					}
-				}.start(world, 100);
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, new BlockPos(x, y, z),
+									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_teleport")), SoundSource.NEUTRAL, 1,
+									1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_teleport")),
+									SoundSource.NEUTRAL, 1, 1, false);
+						}
+					}
+					if (entity instanceof LivingEntity _entity)
+						_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 20, 0, (false), (false)));
+				});
 			}
 		}
 	}

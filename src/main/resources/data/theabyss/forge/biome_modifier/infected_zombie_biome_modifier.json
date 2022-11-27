@@ -1,0 +1,14 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "theabyss:mud_plains",
+    "theabyss:blue_mountain",
+    "theabyss:phantom_crate"
+  ],
+  "spawners": {
+    "type": "theabyss:infected_zombie",
+    "weight": 9,
+    "minCount": 2,
+    "maxCount": 5
+  }
+}

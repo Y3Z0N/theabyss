@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/saturnia_versa",
     "particle": "theabyss:blocks/saturnia_versa"
-  }
+  },
+  "render_type": "cutout"
 }

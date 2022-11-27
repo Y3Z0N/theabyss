@@ -13,7 +13,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.Button;
@@ -41,7 +40,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 		this.imageHeight = 220;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("theabyss:textures/patreon_screen.png");
+	private static final ResourceLocation texture = new ResourceLocation("theabyss:textures/screens/patreon_screen.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -91,7 +90,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 25, 125, 20, new TextComponent("Get Disc 1"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 25, 125, 20, Component.literal("Get Disc 1"), e -> {
 			if (Tier3Event.execute(entity)) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(0, x, y, z));
 				PatreonScreenButtonMessage.handleButtonAction(entity, 0, x, y, z);
@@ -103,7 +102,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 52, 125, 20, new TextComponent("Get Disc 2"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 52, 125, 20, Component.literal("Get Disc 2"), e -> {
 			if (Tier4Event.execute(entity)) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(1, x, y, z));
 				PatreonScreenButtonMessage.handleButtonAction(entity, 1, x, y, z);
@@ -115,7 +114,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 79, 125, 20, new TextComponent("Firework On Join"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 79, 125, 20, Component.literal("Firework On Join"), e -> {
 			if (Tier4Event.execute(entity)) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(2, x, y, z));
 				PatreonScreenButtonMessage.handleButtonAction(entity, 2, x, y, z);
@@ -127,7 +126,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 106, 125, 20, new TextComponent("Particles On Death"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 106, 125, 20, Component.literal("Particles On Death"), e -> {
 			if (Tier4Event.execute(entity)) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(3, x, y, z));
 				PatreonScreenButtonMessage.handleButtonAction(entity, 3, x, y, z);
@@ -139,7 +138,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 133, 125, 20, new TextComponent("Ring Of Firework"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 133, 125, 20, Component.literal("Ring Of Firework"), e -> {
 			if (Tier4Event.execute(entity)) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(4, x, y, z));
 				PatreonScreenButtonMessage.handleButtonAction(entity, 4, x, y, z);
@@ -151,7 +150,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 160, 125, 20, new TextComponent("Particles While Walk"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 160, 125, 20, Component.literal("Particles While Walk"), e -> {
 			if (Tier4Event.execute(entity)) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(5, x, y, z));
 				PatreonScreenButtonMessage.handleButtonAction(entity, 5, x, y, z);
@@ -163,7 +162,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 187, 125, 20, new TextComponent("Ring Of Fart"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 187, 125, 20, Component.literal("Ring Of Fart"), e -> {
 			if (Tier5Event.execute(entity)) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(6, x, y, z));
 				PatreonScreenButtonMessage.handleButtonAction(entity, 6, x, y, z);
@@ -175,7 +174,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 25, 67, 20, new TextComponent("Creative"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 25, 67, 20, Component.literal("Creative"), e -> {
 			if (TierXEvent.execute(entity)) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(7, x, y, z));
 				PatreonScreenButtonMessage.handleButtonAction(entity, 7, x, y, z);
@@ -187,7 +186,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 52, 67, 20, new TextComponent("Survival"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 52, 67, 20, Component.literal("Survival"), e -> {
 			if (TierXEvent.execute(entity)) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(8, x, y, z));
 				PatreonScreenButtonMessage.handleButtonAction(entity, 8, x, y, z);
@@ -199,7 +198,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 79, 67, 20, new TextComponent("Spectator"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 79, 67, 20, Component.literal("Spectator"), e -> {
 			if (TierXEvent.execute(entity)) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(9, x, y, z));
 				PatreonScreenButtonMessage.handleButtonAction(entity, 9, x, y, z);
@@ -211,7 +210,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 106, 67, 20, new TextComponent("OP Sword"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 106, 67, 20, Component.literal("OP Sword"), e -> {
 			if (TierXEvent.execute(entity)) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(10, x, y, z));
 				PatreonScreenButtonMessage.handleButtonAction(entity, 10, x, y, z);

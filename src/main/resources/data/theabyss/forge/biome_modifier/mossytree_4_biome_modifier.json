@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:plains",
+  "features": "theabyss:mossytree_4",
+  "step": "surface_structures"
+}

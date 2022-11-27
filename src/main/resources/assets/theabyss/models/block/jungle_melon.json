@@ -8,5 +8,6 @@
     "south": "theabyss:blocks/jungle_melon_side",
     "west": "theabyss:blocks/jungle_melon_side",
     "particle": "theabyss:blocks/jungle_melon_top"
-  }
+  },
+  "render_type": "solid"
 }

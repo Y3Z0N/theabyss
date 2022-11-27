@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[40,)"
+loaderVersion="[43,)"
 license="Custom license"
 
 [[mods]]
@@ -17,16 +17,10 @@ The Abyss adds a brand new dimension to explore full of unique adventures and da
 [[dependencies.theabyss]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.2]"
+    versionRange="[1.19.2]"
     ordering="NONE"
     side="BOTH"
 
 
 
-[[dependencies.theabyss]]
-    modId="just_enough_items"
-    mandatory=false
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
 

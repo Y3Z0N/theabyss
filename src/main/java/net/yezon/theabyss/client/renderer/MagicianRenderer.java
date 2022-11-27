@@ -16,13 +16,13 @@ public class MagicianRenderer extends MobRenderer<MagicianEntity, Modelmagician<
 		this.addLayer(new EyesLayer<MagicianEntity, Modelmagician<MagicianEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/magician_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/magician_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(MagicianEntity entity) {
-		return new ResourceLocation("theabyss:textures/magician.png");
+		return new ResourceLocation("theabyss:textures/entities/magician.png");
 	}
 }

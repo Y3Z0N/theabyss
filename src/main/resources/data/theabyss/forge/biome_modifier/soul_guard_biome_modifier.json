@@ -1,0 +1,14 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "theabyss:blue_mountain",
+    "theabyss:blue_jungle",
+    "theabyss:blue_forest"
+  ],
+  "spawners": {
+    "type": "theabyss:soul_guard",
+    "weight": 3,
+    "minCount": 2,
+    "maxCount": 5
+  }
+}

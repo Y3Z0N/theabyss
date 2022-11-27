@@ -10,5 +10,6 @@
     "ring": "theabyss:blocks/arcane_ring",
     "bottom": "theabyss:blocks/arcane_bottom",
     "crimson_crystal": "theabyss:blocks/crimson_crystal"
-  }
+  },
+  "render_type": "solid"
 }

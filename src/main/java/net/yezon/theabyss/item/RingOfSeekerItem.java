@@ -13,7 +13,6 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
 import java.util.List;
@@ -29,30 +28,27 @@ public class RingOfSeekerItem extends Item {
 	}
 
 	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 0;
-	}
-
-	@Override
 	public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 		return 0F;
 	}
 
-	@Override
-	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, world, list, flag);
-list.add(new TextComponent("\u18B1 50.0 \u18B4 100.0 \u18B9 Right Click"));
-list.add(new TextComponent("\u00A7bAbility\u00A7f: Summon Seekers that help you fight against Monsters."));
-list.add(new TextComponent("It uses \u00A7b50 percent somnium\u00A7f by default but can be improved with potions."));
-list.add(new TextComponent(""));
-list.add(new TextComponent("This item must be produced in the \u00A7bArcane Workbench.\u00A7f"));
-	}
+@Override
+public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
+  super.appendHoverText(itemstack, world, list, flag);
+list.add(Component.literal("\uEF02 50.0 \uEF04 100.0 \uEF03 Right Click"));
+		list.add(Component.translatable("tooltip.theabyss.ring_of_seeker"));
+		list.add(Component.literal(""));
+		list.add(Component.translatable("tooltip.theabyss.ring_crafting"));
+		list.add(Component.translatable("tooltip.theabyss.ring_consume"));
+		list.add(Component.literal(""));
+		list.add(Component.translatable("tooltip.theabyss.ring_upgrade"));
+}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
-		InteractionResult retval = super.useOn(context);
+		super.useOn(context);
 		ApplyRingOfSeekerEvent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
 				context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
-		return retval;
+		return InteractionResult.SUCCESS;
 	}
 }

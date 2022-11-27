@@ -16,13 +16,13 @@ public class PoweredWolfRenderer extends MobRenderer<PoweredWolfEntity, Modelaby
 		this.addLayer(new EyesLayer<PoweredWolfEntity, Modelabyss_wolf<PoweredWolfEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/powered_wolf_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/powered_wolf_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(PoweredWolfEntity entity) {
-		return new ResourceLocation("theabyss:textures/powered_wolf.png");
+		return new ResourceLocation("theabyss:textures/entities/powered_wolf.png");
 	}
 }

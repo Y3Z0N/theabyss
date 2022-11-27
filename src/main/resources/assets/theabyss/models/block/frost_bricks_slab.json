@@ -4,5 +4,6 @@
     "bottom": "theabyss:blocks/frost_bricks",
     "top": "theabyss:blocks/frost_bricks",
     "side": "theabyss:blocks/frost_bricks"
-  }
+  },
+  "render_type": "solid"
 }

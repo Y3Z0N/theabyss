@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "theabyss:mud_plains",
+    "theabyss:blue_jungle"
+  ],
+  "features": "theabyss:raptor_egg",
+  "step": "vegetal_decoration"
+}

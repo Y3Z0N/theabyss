@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "theabyss:blue_jungle",
+    "theabyss:slime_forest"
+  ],
+  "features": "theabyss:garnite_ore",
+  "step": "underground_ores"
+}

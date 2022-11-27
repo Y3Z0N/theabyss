@@ -4,7 +4,7 @@ import net.yezon.theabyss.network.TheabyssModVariables;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 
 public class PatreonWalkParticlesEvent {
 	public static void execute(Entity entity) {
@@ -20,7 +20,7 @@ public class PatreonWalkParticlesEvent {
 				});
 			}
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(new TextComponent("\u00A7b[THE ABYSS]\u00A7f Walk Particles: \u00A7bEnabled"), (false));
+				_player.displayClientMessage(Component.literal("\u00A7b[THE ABYSS]\u00A7f Walk Particles: \u00A7bEnabled"), (false));
 		} else {
 			{
 				boolean _setval = false;
@@ -30,7 +30,7 @@ public class PatreonWalkParticlesEvent {
 				});
 			}
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(new TextComponent("\u00A7b[THE ABYSS]\u00A7f Walk Particles: \u00A7bDisabled"), (false));
+				_player.displayClientMessage(Component.literal("\u00A7b[THE ABYSS]\u00A7f Walk Particles: \u00A7bDisabled"), (false));
 		}
 	}
 }

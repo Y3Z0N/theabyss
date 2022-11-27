@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/abyss_planks_21",
     "particle": "theabyss:blocks/abyss_planks_21",
     "0": "theabyss:blocks/abyss_planks_21"
-  }
+  },
+  "render_type": "solid"
 }

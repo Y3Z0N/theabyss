@@ -40,11 +40,6 @@ public class SkelBoneFeature extends Feature<NoneFeatureConfiguration> {
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:phantom_crate"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(
 			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")),
 			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:deleted_mod_element")));

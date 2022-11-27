@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/icora_flower",
     "particle": "theabyss:blocks/icora_flower"
-  }
+  },
+  "render_type": "cutout"
 }

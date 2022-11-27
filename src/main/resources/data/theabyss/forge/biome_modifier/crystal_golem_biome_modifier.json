@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "theabyss:slime_forest",
+  "spawners": {
+    "type": "theabyss:crystal_golem",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

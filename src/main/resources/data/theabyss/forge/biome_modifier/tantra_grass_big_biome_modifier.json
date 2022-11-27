@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "theabyss:fungal_forest",
+    "theabyss:roggen_forest"
+  ],
+  "features": "theabyss:tantra_grass_big",
+  "step": "vegetal_decoration"
+}

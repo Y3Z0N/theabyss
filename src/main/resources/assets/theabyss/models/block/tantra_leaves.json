@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/tantra_leave",
     "particle": "theabyss:blocks/tantra_leave"
-  }
+  },
+  "render_type": "cutout"
 }

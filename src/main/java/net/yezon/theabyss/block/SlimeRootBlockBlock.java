@@ -23,14 +23,12 @@ import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.util.RandomSource;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.Minecraft;
 
-import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
@@ -83,7 +81,7 @@ public class SlimeRootBlockBlock extends Block {
 
 	@OnlyIn(Dist.CLIENT)
 	@Override
-	public void animateTick(BlockState blockstate, Level world, BlockPos pos, Random random) {
+	public void animateTick(BlockState blockstate, Level world, BlockPos pos, RandomSource random) {
 		super.animateTick(blockstate, world, pos, random);
 		Player entity = Minecraft.getInstance().player;
 		int x = pos.getX();
@@ -99,10 +97,4 @@ public class SlimeRootBlockBlock extends Block {
 			world.addParticle((SimpleParticleType) (TheabyssModParticleTypes.UDPT.get()), x0, y0, z0, dx, dy, dz);
 		}
 	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(TheabyssModBlocks.SLIME_ROOT_BLOCK.get(), renderType -> renderType == RenderType.translucent());
-	}
-
 }

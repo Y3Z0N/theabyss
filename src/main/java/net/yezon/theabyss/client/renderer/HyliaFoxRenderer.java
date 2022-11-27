@@ -16,13 +16,13 @@ public class HyliaFoxRenderer extends MobRenderer<HyliaFoxEntity, Modelhylia_fox
 		this.addLayer(new EyesLayer<HyliaFoxEntity, Modelhylia_fox<HyliaFoxEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/hylia_fox_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/hylia_fox_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(HyliaFoxEntity entity) {
-		return new ResourceLocation("theabyss:textures/hylia_fox.png");
+		return new ResourceLocation("theabyss:textures/entities/hylia_fox.png");
 	}
 }

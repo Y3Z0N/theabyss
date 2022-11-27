@@ -35,24 +35,15 @@ public class LoranFlowerFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new LoranFlowerFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:loran_flower", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.LORAN_FLOWER.get().defaultBlockState())), List.of(), 64));
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.LORAN_FLOWER.get())), List.of(), 64));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:loran_flower", CONFIGURED_FEATURE, List.of(CountPlacement.of(1),
 				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_mountain"),
-			new ResourceLocation("theabyss:blue_jungle"), new ResourceLocation("theabyss:radio_biome"),
-			new ResourceLocation("theabyss:fungal_forest"), new ResourceLocation("theabyss:blue_forest"),
-			new ResourceLocation("theabyss:roggen_forest"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(
 			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")),
-			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:ground_lands")),
-			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:radio")));
+			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:ground_lands")));
 
 	public LoranFlowerFeature() {
 		super(RandomPatchConfiguration.CODEC);

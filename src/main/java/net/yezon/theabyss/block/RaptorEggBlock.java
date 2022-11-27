@@ -2,10 +2,6 @@
 package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.events.RaptorEggEventEvent;
-import net.yezon.theabyss.init.TheabyssModBlocks;
-
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -26,15 +22,13 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import java.util.List;
 import java.util.Collections;
 
 public class RaptorEggBlock extends FlowerBlock {
 	public RaptorEggBlock() {
-		super(MobEffects.SATURATION, 0, BlockBehaviour.Properties.of(Material.PLANT).noCollission().sound(SoundType.STONE).instabreak());
+		super(MobEffects.SATURATION, 0, BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.STONE).instabreak().noCollission());
 	}
 
 	@Override
@@ -72,10 +66,5 @@ public class RaptorEggBlock extends FlowerBlock {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
 		RaptorEggEventEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		return retval;
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(TheabyssModBlocks.RAPTOR_EGG.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

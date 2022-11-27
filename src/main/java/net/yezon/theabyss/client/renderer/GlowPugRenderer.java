@@ -16,13 +16,13 @@ public class GlowPugRenderer extends MobRenderer<GlowPugEntity, Modelglow_pug<Gl
 		this.addLayer(new EyesLayer<GlowPugEntity, Modelglow_pug<GlowPugEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/glow_pug_texture_glow.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/glow_pug_texture_glow.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(GlowPugEntity entity) {
-		return new ResourceLocation("theabyss:textures/glow_pug_texture.png");
+		return new ResourceLocation("theabyss:textures/entities/glow_pug_texture.png");
 	}
 }

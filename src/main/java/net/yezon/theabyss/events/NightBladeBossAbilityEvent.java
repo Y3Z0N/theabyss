@@ -4,10 +4,7 @@ import net.yezon.theabyss.init.TheabyssModParticleTypes;
 import net.yezon.theabyss.init.TheabyssModMobEffects;
 import net.yezon.theabyss.init.TheabyssModEntities;
 import net.yezon.theabyss.entity.NightBladeBossCloneEntity;
-
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
+import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
@@ -88,32 +85,10 @@ public class NightBladeBossAbilityEvent {
 									_serverPlayer.connection.teleport(x, (y + 10), z, _ent.getYRot(), _ent.getXRot());
 							}
 						}
-						new Object() {
-							private int ticks = 0;
-							private float waitTicks;
-							private LevelAccessor world;
-
-							public void start(LevelAccessor world, int waitTicks) {
-								this.waitTicks = waitTicks;
-								MinecraftForge.EVENT_BUS.register(this);
-								this.world = world;
-							}
-
-							@SubscribeEvent
-							public void tick(TickEvent.ServerTickEvent event) {
-								if (event.phase == TickEvent.Phase.END) {
-									this.ticks += 1;
-									if (this.ticks >= this.waitTicks)
-										run();
-								}
-							}
-
-							private void run() {
-								entity.setNoGravity((false));
-								entityiterator.setNoGravity((false));
-								MinecraftForge.EVENT_BUS.unregister(this);
-							}
-						}.start(world, 200);
+						TheabyssMod.queueServerWork(200, () -> {
+							entity.setNoGravity((false));
+							entityiterator.setNoGravity((false));
+						});
 						entity.setNoGravity((true));
 						entityiterator.setNoGravity((true));
 					}

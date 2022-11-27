@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/exomflower_22",
     "particle": "theabyss:blocks/exomflower_22"
-  }
+  },
+  "render_type": "cutout"
 }

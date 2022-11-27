@@ -19,6 +19,6 @@ public class SummonedSeekerRenderer extends HumanoidMobRenderer<SummonedSeekerEn
 
 	@Override
 	public ResourceLocation getTextureLocation(SummonedSeekerEntity entity) {
-		return new ResourceLocation("theabyss:textures/firefly_entity.png");
+		return new ResourceLocation("theabyss:textures/entities/firefly_entity.png");
 	}
 }

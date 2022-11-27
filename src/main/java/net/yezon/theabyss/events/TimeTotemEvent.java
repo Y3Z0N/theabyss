@@ -16,6 +16,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -25,7 +26,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
 
 import java.util.stream.Collectors;
-import java.util.Random;
 import java.util.List;
 import java.util.Comparator;
 
@@ -44,7 +44,7 @@ public class TimeTotemEvent {
 				if (itemstack.getItem() == TheabyssModItems.TOTEM_OF_TIME.get()) {
 					{
 						ItemStack _ist = itemstack;
-						if (_ist.hurt(25, new Random(), null)) {
+						if (_ist.hurt(25, RandomSource.create(), null)) {
 							_ist.shrink(1);
 							_ist.setDamageValue(0);
 						}

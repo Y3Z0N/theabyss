@@ -3,5 +3,6 @@
   "textures": {
     "texture": "theabyss:blocks/sal_planks",
     "particle": "theabyss:blocks/sal_planks"
-  }
+  },
+  "render_type": "solid"
 }

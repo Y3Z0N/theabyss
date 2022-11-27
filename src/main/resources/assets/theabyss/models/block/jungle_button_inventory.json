@@ -2,5 +2,6 @@
   "parent": "block/button_inventory",
   "textures": {
     "texture": "theabyss:blocks/jungle_planks"
-  }
+  },
+  "render_type": "solid"
 }

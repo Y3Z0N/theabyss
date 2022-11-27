@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/slimed_log_crystal",
     "particle": "theabyss:blocks/slimed_log_crystal",
     "texture": "theabyss:blocks/slime_block"
-  }
+  },
+  "render_type": "cutout"
 }

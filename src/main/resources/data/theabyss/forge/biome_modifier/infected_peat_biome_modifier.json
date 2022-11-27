@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:blue_jungle",
+  "features": "theabyss:infected_peat",
+  "step": "underground_ores"
+}

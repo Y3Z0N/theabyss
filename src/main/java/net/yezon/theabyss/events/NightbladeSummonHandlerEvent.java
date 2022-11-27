@@ -4,14 +4,13 @@ import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 import net.yezon.theabyss.entity.NightbladeBossEntity;
+import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -31,7 +30,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
@@ -43,9 +42,9 @@ import java.util.Map;
 public class NightbladeSummonHandlerEvent {
 	@SubscribeEvent
 	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-		if (event.getHand() != event.getPlayer().getUsedItemHand())
+		if (event.getHand() != event.getEntity().getUsedItemHand())
 			return;
-		execute(event, event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getPlayer());
+		execute(event, event.getLevel(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -113,302 +112,104 @@ public class NightbladeSummonHandlerEvent {
 						&& (world.getBlockState(new BlockPos(x - 3, y + 4, z + 3))).getBlock() == TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED.get()
 						&& (world.getBlockState(new BlockPos(x - 3, y + 4, z - 3))).getBlock() == TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED
 								.get()) {
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private LevelAccessor world;
-
-						public void start(LevelAccessor world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
+					TheabyssMod.queueServerWork(20, () -> {
+						world.setBlock(new BlockPos(x + 6, y + 5, z), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+							entityToSpawn.setVisualOnly(true);
+							_level.addFreshEntity(entityToSpawn);
 						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
-							}
+					});
+					TheabyssMod.queueServerWork(40, () -> {
+						world.setBlock(new BlockPos(x - 6, y + 5, z), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+							entityToSpawn.setVisualOnly(true);
+							_level.addFreshEntity(entityToSpawn);
 						}
-
-						private void run() {
-							world.setBlock(new BlockPos(x + 6, y + 5, z), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
-							if (world instanceof ServerLevel _level) {
-								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-								entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-								entityToSpawn.setVisualOnly(true);
-								_level.addFreshEntity(entityToSpawn);
-							}
-							MinecraftForge.EVENT_BUS.unregister(this);
+					});
+					TheabyssMod.queueServerWork(60, () -> {
+						world.setBlock(new BlockPos(x, y + 5, z + 6), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+							entityToSpawn.setVisualOnly(true);
+							_level.addFreshEntity(entityToSpawn);
 						}
-					}.start(world, 20);
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private LevelAccessor world;
-
-						public void start(LevelAccessor world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
+					});
+					TheabyssMod.queueServerWork(80, () -> {
+						world.setBlock(new BlockPos(x, y + 5, z - 6), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+							entityToSpawn.setVisualOnly(true);
+							_level.addFreshEntity(entityToSpawn);
 						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
-							}
+					});
+					TheabyssMod.queueServerWork(100, () -> {
+						world.setBlock(new BlockPos(x + 3, y + 4, z - 3), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+							entityToSpawn.setVisualOnly(true);
+							_level.addFreshEntity(entityToSpawn);
 						}
-
-						private void run() {
-							world.setBlock(new BlockPos(x - 6, y + 5, z), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
-							if (world instanceof ServerLevel _level) {
-								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-								entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-								entityToSpawn.setVisualOnly(true);
-								_level.addFreshEntity(entityToSpawn);
-							}
-							MinecraftForge.EVENT_BUS.unregister(this);
+					});
+					TheabyssMod.queueServerWork(120, () -> {
+						world.setBlock(new BlockPos(x + 3, y + 4, z + 3), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+							entityToSpawn.setVisualOnly(true);
+							_level.addFreshEntity(entityToSpawn);
 						}
-					}.start(world, 40);
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private LevelAccessor world;
-
-						public void start(LevelAccessor world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
+					});
+					TheabyssMod.queueServerWork(140, () -> {
+						world.setBlock(new BlockPos(x - 3, y + 4, z + 3), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+							entityToSpawn.setVisualOnly(true);
+							_level.addFreshEntity(entityToSpawn);
 						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
-							}
+					});
+					TheabyssMod.queueServerWork(160, () -> {
+						world.setBlock(new BlockPos(x - 3, y + 4, z - 3), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+							entityToSpawn.setVisualOnly(true);
+							_level.addFreshEntity(entityToSpawn);
 						}
-
-						private void run() {
-							world.setBlock(new BlockPos(x, y + 5, z + 6), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
-							if (world instanceof ServerLevel _level) {
-								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-								entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-								entityToSpawn.setVisualOnly(true);
-								_level.addFreshEntity(entityToSpawn);
-							}
-							MinecraftForge.EVENT_BUS.unregister(this);
+					});
+					TheabyssMod.queueServerWork(180, () -> {
+						world.setBlock(new BlockPos(x, y, z), TheabyssModBlocks.NIGHT_ALTAR.get().defaultBlockState(), 3);
+						if (world instanceof ServerLevel _level) {
+							LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+							entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
+							entityToSpawn.setVisualOnly(true);
+							_level.addFreshEntity(entityToSpawn);
 						}
-					}.start(world, 60);
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private LevelAccessor world;
-
-						public void start(LevelAccessor world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
+						if (world instanceof ServerLevel _level) {
+							Entity entityToSpawn = new NightbladeBossEntity(TheabyssModEntities.NIGHTBLADE_BOSS.get(), _level);
+							entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
+							if (entityToSpawn instanceof Mob _mobToSpawn)
+								_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()),
+										MobSpawnType.MOB_SUMMONED, null, null);
+							world.addFreshEntity(entityToSpawn);
 						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
-							}
-						}
-
-						private void run() {
-							world.setBlock(new BlockPos(x, y + 5, z - 6), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
-							if (world instanceof ServerLevel _level) {
-								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-								entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-								entityToSpawn.setVisualOnly(true);
-								_level.addFreshEntity(entityToSpawn);
-							}
-							MinecraftForge.EVENT_BUS.unregister(this);
-						}
-					}.start(world, 80);
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private LevelAccessor world;
-
-						public void start(LevelAccessor world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
-						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
-							}
-						}
-
-						private void run() {
-							world.setBlock(new BlockPos(x + 3, y + 4, z - 3), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
-							if (world instanceof ServerLevel _level) {
-								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-								entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-								entityToSpawn.setVisualOnly(true);
-								_level.addFreshEntity(entityToSpawn);
-							}
-							MinecraftForge.EVENT_BUS.unregister(this);
-						}
-					}.start(world, 100);
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private LevelAccessor world;
-
-						public void start(LevelAccessor world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
-						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
-							}
-						}
-
-						private void run() {
-							world.setBlock(new BlockPos(x + 3, y + 4, z + 3), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
-							if (world instanceof ServerLevel _level) {
-								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-								entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-								entityToSpawn.setVisualOnly(true);
-								_level.addFreshEntity(entityToSpawn);
-							}
-							MinecraftForge.EVENT_BUS.unregister(this);
-						}
-					}.start(world, 120);
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private LevelAccessor world;
-
-						public void start(LevelAccessor world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
-						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
-							}
-						}
-
-						private void run() {
-							world.setBlock(new BlockPos(x - 3, y + 4, z + 3), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
-							if (world instanceof ServerLevel _level) {
-								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-								entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-								entityToSpawn.setVisualOnly(true);
-								_level.addFreshEntity(entityToSpawn);
-							}
-							MinecraftForge.EVENT_BUS.unregister(this);
-						}
-					}.start(world, 140);
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private LevelAccessor world;
-
-						public void start(LevelAccessor world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
-						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
-							}
-						}
-
-						private void run() {
-							world.setBlock(new BlockPos(x - 3, y + 4, z - 3), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
-							if (world instanceof ServerLevel _level) {
-								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-								entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-								entityToSpawn.setVisualOnly(true);
-								_level.addFreshEntity(entityToSpawn);
-							}
-							MinecraftForge.EVENT_BUS.unregister(this);
-						}
-					}.start(world, 160);
-					new Object() {
-						private int ticks = 0;
-						private float waitTicks;
-						private LevelAccessor world;
-
-						public void start(LevelAccessor world, int waitTicks) {
-							this.waitTicks = waitTicks;
-							MinecraftForge.EVENT_BUS.register(this);
-							this.world = world;
-						}
-
-						@SubscribeEvent
-						public void tick(TickEvent.ServerTickEvent event) {
-							if (event.phase == TickEvent.Phase.END) {
-								this.ticks += 1;
-								if (this.ticks >= this.waitTicks)
-									run();
-							}
-						}
-
-						private void run() {
-							world.setBlock(new BlockPos(x, y, z), TheabyssModBlocks.NIGHT_ALTAR.get().defaultBlockState(), 3);
-							if (world instanceof ServerLevel _level) {
-								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-								entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(x, y, z)));
-								entityToSpawn.setVisualOnly(true);
-								_level.addFreshEntity(entityToSpawn);
-							}
-							if (world instanceof ServerLevel _level) {
-								Entity entityToSpawn = new NightbladeBossEntity(TheabyssModEntities.NIGHTBLADE_BOSS.get(), _level);
-								entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-								if (entityToSpawn instanceof Mob _mobToSpawn)
-									_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()),
-											MobSpawnType.MOB_SUMMONED, null, null);
-								world.addFreshEntity(entityToSpawn);
-							}
-							MinecraftForge.EVENT_BUS.unregister(this);
-						}
-					}.start(world, 180);
+					});
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent("that \u00A7bdoes\u00A7f not work ..."), (true));
+						_player.displayClientMessage(Component.literal("that \u00A7bdoes\u00A7f not work ..."), (true));
 				}
 				if (entity instanceof LivingEntity _entity)
 					_entity.swing(InteractionHand.MAIN_HAND, true);
 			} else {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(new TextComponent("that \u00A7bdoes\u00A7f not work ..."), (true));
+					_player.displayClientMessage(Component.literal("that \u00A7bdoes\u00A7f not work ..."), (true));
 			}
 		}
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.SOUL_HEART.get()

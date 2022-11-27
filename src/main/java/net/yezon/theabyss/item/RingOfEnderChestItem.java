@@ -18,46 +18,16 @@ import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.ChatFormatting;
-
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.Component;
-
-
-import javax.annotation.Nullable;
-
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.PlayerEnderChestContainer;
-import net.minecraft.world.inventory.ChestMenu;
-import net.minecraft.world.SimpleMenuProvider;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.network.chat.Component;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-
-import net.minecraft.world.item.Item.Properties;
 
 import java.util.List;
 
-public class RingOfEnderChestItem extends Item 
-{
+public class RingOfEnderChestItem extends Item {
+	public static final Component CONTAINER_TITLE;
 
-public static final TranslatableComponent CONTAINER_TITLE = new TranslatableComponent("item.theabyss.ring_of_ender_chest");
-
-	public RingOfEnderChestItem() 
-	{
+	public RingOfEnderChestItem() {
 		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).durability(250).rarity(Rarity.UNCOMMON));
-
 	}
 
 	public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
@@ -72,14 +42,22 @@ public static final TranslatableComponent CONTAINER_TITLE = new TranslatableComp
 		return new InteractionResultHolder<ItemStack>(InteractionResult.PASS, player.getItemInHand(hand));
 	}
 
+	    static {
+        CONTAINER_TITLE = Component.translatable("item.theabyss.ring_of_ender_chest");
+    }
+
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-
-		list.add(new TextComponent("\u18B1 0.0 \u18B4 100.0 \u18B9 Right Click"));
-list.add(new TextComponent("\u00A7bAbility\u00A7f: Your Ender Chest to go!"));
-list.add(new TextComponent("It uses \u00A7b0 percent somnium\u00A7f."));
-list.add(new TextComponent(""));
-list.add(new TextComponent("This item must be produced in the \u00A7bArcane Workbench.\u00A7f"));
+		list.add(Component.literal("\uEF02 0.0 \uEF04 100.0 \uEF03 Right Click"));
+		list.add(Component.translatable("tooltip.theabyss.ring_of_enderchest"));
+		list.add(Component.literal(""));
+		list.add(Component.translatable("tooltip.theabyss.ring_crafting"));
+		list.add(Component.translatable("tooltip.theabyss.ring_consume"));
+		list.add(Component.literal(""));
+		list.add(Component.translatable("tooltip.theabyss.ring_upgrade"));
 	}
+
+
 }
+

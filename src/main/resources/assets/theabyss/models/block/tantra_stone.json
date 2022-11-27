@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/tantra_stone",
     "particle": "theabyss:blocks/tantra_stone"
-  }
+  },
+  "render_type": "solid"
 }

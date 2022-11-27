@@ -3,10 +3,10 @@ package net.yezon.theabyss.world.teleporter;
 
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
+import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.common.util.ITeleporter;
 
 import net.minecraft.world.phys.Vec3;
@@ -28,6 +28,7 @@ import net.minecraft.server.level.TicketType;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Vec3i;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.BlockUtil;
@@ -41,15 +42,16 @@ import com.google.common.collect.ImmutableSet;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TheabyssdimiceworldTeleporter implements ITeleporter {
 	public static final TicketType<BlockPos> CUSTOM_PORTAL = TicketType.create("frost_world_portal", Vec3i::compareTo, 300);
-	public static PoiType poi = null;
+	public static Holder<PoiType> poi = null;
 
 	@SubscribeEvent
-	public static void registerPointOfInterest(RegistryEvent.Register<PoiType> event) {
-		poi = new PoiType("frost_world_portal",
-				com.google.common.collect.Sets
-						.newHashSet(ImmutableSet.copyOf(TheabyssModBlocks.FROST_WORLD_PORTAL.get().getStateDefinition().getPossibleStates())),
-				0, 1).setRegistryName("frost_world_portal");
-		ForgeRegistries.POI_TYPES.register(poi);
+	public static void registerPointOfInterest(RegisterEvent event) {
+		event.register(ForgeRegistries.Keys.POI_TYPES, registerHelper -> {
+			PoiType poiType = new PoiType(ImmutableSet.copyOf(TheabyssModBlocks.FROST_WORLD_PORTAL.get().getStateDefinition().getPossibleStates()), 0,
+					1);
+			registerHelper.register("frost_world_portal", poiType);
+			poi = ForgeRegistries.POI_TYPES.getHolder(poiType).get();
+		});
 	}
 
 	private final ServerLevel level;
@@ -60,16 +62,16 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 		this.entityEnterPos = entityEnterPos;
 	}
 
-	public Optional<BlockUtil.FoundRectangle> findPortalAround(BlockPos p_192986_, boolean p_192987_, WorldBorder p_192988_) {
+	public Optional<BlockUtil.FoundRectangle> findPortalAround(BlockPos pPos, boolean pIsNether, WorldBorder pWorldBorder) {
 		PoiManager poimanager = this.level.getPoiManager();
-		int i = p_192987_ ? 16 : 128;
-		poimanager.ensureLoadedAndValid(this.level, p_192986_, i);
-		Optional<PoiRecord> optional = poimanager.getInSquare((p_77654_) -> {
-			return p_77654_ == poi;
-		}, p_192986_, i, PoiManager.Occupancy.ANY).filter((p_192981_) -> {
-			return p_192988_.isWithinBounds(p_192981_.getPos());
+		int i = pIsNether ? 16 : 128;
+		poimanager.ensureLoadedAndValid(this.level, pPos, i);
+		Optional<PoiRecord> optional = poimanager.getInSquare((p_230634_) -> {
+			return p_230634_.is(poi.unwrapKey().get());
+		}, pPos, i, PoiManager.Occupancy.ANY).filter((p_192981_) -> {
+			return pWorldBorder.isWithinBounds(p_192981_.getPos());
 		}).sorted(Comparator.<PoiRecord>comparingDouble((p_192984_) -> {
-			return p_192984_.getPos().distSqr(p_192986_);
+			return p_192984_.getPos().distSqr(pPos);
 		}).thenComparingInt((p_192992_) -> {
 			return p_192992_.getPos().getY();
 		})).filter((p_192990_) -> {
@@ -86,16 +88,16 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 		});
 	}
 
-	public Optional<BlockUtil.FoundRectangle> createPortal(BlockPos p_77667_, Direction.Axis p_77668_) {
-		Direction direction = Direction.get(Direction.AxisDirection.POSITIVE, p_77668_);
+	public Optional<BlockUtil.FoundRectangle> createPortal(BlockPos pPos, Direction.Axis pAxis) {
+		Direction direction = Direction.get(Direction.AxisDirection.POSITIVE, pAxis);
 		double d0 = -1.0D;
 		BlockPos blockpos = null;
 		double d1 = -1.0D;
 		BlockPos blockpos1 = null;
 		WorldBorder worldborder = this.level.getWorldBorder();
 		int i = Math.min(this.level.getMaxBuildHeight(), this.level.getMinBuildHeight() + this.level.getLogicalHeight()) - 1;
-		BlockPos.MutableBlockPos blockpos$mutableblockpos = p_77667_.mutable();
-		for (BlockPos.MutableBlockPos blockpos$mutableblockpos1 : BlockPos.spiralAround(p_77667_, 16, Direction.EAST, Direction.SOUTH)) {
+		BlockPos.MutableBlockPos blockpos$mutableblockpos = pPos.mutable();
+		for (BlockPos.MutableBlockPos blockpos$mutableblockpos1 : BlockPos.spiralAround(pPos, 16, Direction.EAST, Direction.SOUTH)) {
 			int j = Math.min(i,
 					this.level.getHeight(Heightmap.Types.MOTION_BLOCKING, blockpos$mutableblockpos1.getX(), blockpos$mutableblockpos1.getZ()));
 			int k = 1;
@@ -113,7 +115,7 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 							if (j1 <= 0 || j1 >= 3) {
 								blockpos$mutableblockpos1.setY(l);
 								if (this.canHostFrame(blockpos$mutableblockpos1, blockpos$mutableblockpos, direction, 0)) {
-									double d2 = p_77667_.distSqr(blockpos$mutableblockpos1);
+									double d2 = pPos.distSqr(blockpos$mutableblockpos1);
 									if (this.canHostFrame(blockpos$mutableblockpos1, blockpos$mutableblockpos, direction, -1)
 											&& this.canHostFrame(blockpos$mutableblockpos1, blockpos$mutableblockpos, direction, 1)
 											&& (d0 == -1.0D || d0 > d2)) {
@@ -141,7 +143,7 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 			if (i2 < k1) {
 				return Optional.empty();
 			}
-			blockpos = (new BlockPos(p_77667_.getX(), Mth.clamp(p_77667_.getY(), k1, i2), p_77667_.getZ())).immutable();
+			blockpos = (new BlockPos(pPos.getX(), Mth.clamp(pPos.getY(), k1, i2), pPos.getZ())).immutable();
 			Direction direction1 = direction.getClockWise();
 			if (!worldborder.isWithinBounds(blockpos)) {
 				return Optional.empty();
@@ -165,7 +167,7 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 				}
 			}
 		}
-		BlockState blockstate = TheabyssModBlocks.FROST_WORLD_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, p_77668_);
+		BlockState blockstate = TheabyssModBlocks.FROST_WORLD_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, pAxis);
 		for (int k2 = 0; k2 < 2; ++k2) {
 			for (int l2 = 0; l2 < 3; ++l2) {
 				blockpos$mutableblockpos.setWithOffset(blockpos, k2 * direction.getStepX(), l2, k2 * direction.getStepZ());
@@ -176,16 +178,16 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 		return Optional.of(new BlockUtil.FoundRectangle(blockpos.immutable(), 2, 3));
 	}
 
-	private boolean canHostFrame(BlockPos p_77662_, BlockPos.MutableBlockPos p_77663_, Direction p_77664_, int p_77665_) {
-		Direction direction = p_77664_.getClockWise();
+	private boolean canHostFrame(BlockPos pOriginalPos, BlockPos.MutableBlockPos pOffsetPos, Direction pDirection, int pOffsetScale) {
+		Direction direction = pDirection.getClockWise();
 		for (int i = -1; i < 3; ++i) {
 			for (int j = -1; j < 4; ++j) {
-				p_77663_.setWithOffset(p_77662_, p_77664_.getStepX() * i + direction.getStepX() * p_77665_, j,
-						p_77664_.getStepZ() * i + direction.getStepZ() * p_77665_);
-				if (j < 0 && !this.level.getBlockState(p_77663_).getMaterial().isSolid()) {
+				pOffsetPos.setWithOffset(pOriginalPos, pDirection.getStepX() * i + direction.getStepX() * pOffsetScale, j,
+						pDirection.getStepZ() * i + direction.getStepZ() * pOffsetScale);
+				if (j < 0 && !this.level.getBlockState(pOffsetPos).getMaterial().isSolid()) {
 					return false;
 				}
-				if (j >= 0 && !this.level.isEmptyBlock(p_77663_)) {
+				if (j >= 0 && !this.level.isEmptyBlock(pOffsetPos)) {
 					return false;
 				}
 			}

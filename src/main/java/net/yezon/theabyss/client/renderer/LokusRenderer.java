@@ -16,13 +16,13 @@ public class LokusRenderer extends MobRenderer<LokusEntity, Modelancient_seeker<
 		this.addLayer(new EyesLayer<LokusEntity, Modelancient_seeker<LokusEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/lokus_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/lokus_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(LokusEntity entity) {
-		return new ResourceLocation("theabyss:textures/lokus.png");
+		return new ResourceLocation("theabyss:textures/entities/lokus.png");
 	}
 }

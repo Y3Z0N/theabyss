@@ -8,5 +8,6 @@
     "south": "theabyss:blocks/frozen_log_side",
     "west": "theabyss:blocks/frozen_log_side",
     "particle": "theabyss:blocks/frozen_log_top"
-  }
+  },
+  "render_type": "solid"
 }

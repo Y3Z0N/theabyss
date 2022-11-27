@@ -1,12 +1,10 @@
 
-/*
- *    Y3 was here UwU ^-^
- */
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.entity.VersaWhaleEntity;
 import net.yezon.theabyss.entity.TheRokaEntity;
 import net.yezon.theabyss.entity.SummonedSeekerEntity;
+import net.yezon.theabyss.entity.SummonedHollowSeekerEntity;
 import net.yezon.theabyss.entity.SpectralSpawnEntity;
 import net.yezon.theabyss.entity.SpectralEntityEntity;
 import net.yezon.theabyss.entity.SoulGuardEntity;
@@ -76,7 +74,7 @@ import net.minecraft.world.entity.Entity;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TheabyssModEntities {
-	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITIES, TheabyssMod.MODID);
+	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, TheabyssMod.MODID);
 	public static final RegistryObject<EntityType<ShurikenEntity>> SHURIKEN = register("projectile_shuriken",
 			EntityType.Builder.<ShurikenEntity>of(ShurikenEntity::new, MobCategory.MISC).setCustomClientFactory(ShurikenEntity::new)
 					.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
@@ -291,6 +289,10 @@ public class TheabyssModEntities {
 			EntityType.Builder.<RingOfBlackStrikeAttackEntity>of(RingOfBlackStrikeAttackEntity::new, MobCategory.MISC)
 					.setCustomClientFactory(RingOfBlackStrikeAttackEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<SummonedHollowSeekerEntity>> SUMMONED_HOLLOW_SEEKER = register("summoned_hollow_seeker",
+			EntityType.Builder.<SummonedHollowSeekerEntity>of(SummonedHollowSeekerEntity::new, MobCategory.CREATURE)
+					.setShouldReceiveVelocityUpdates(true).setTrackingRange(100).setUpdateInterval(3)
+					.setCustomClientFactory(SummonedHollowSeekerEntity::new).fireImmune().sized(0.7999999999999999f, 2f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -346,6 +348,7 @@ public class TheabyssModEntities {
 			InfcetedCowEntity.init();
 			AbylagerEntity.init();
 			SpectralEntityEntity.init();
+			SummonedHollowSeekerEntity.init();
 		});
 	}
 
@@ -398,5 +401,6 @@ public class TheabyssModEntities {
 		event.put(INFCETED_COW.get(), InfcetedCowEntity.createAttributes().build());
 		event.put(ABYLAGER.get(), AbylagerEntity.createAttributes().build());
 		event.put(SPECTRAL_ENTITY.get(), SpectralEntityEntity.createAttributes().build());
+		event.put(SUMMONED_HOLLOW_SEEKER.get(), SummonedHollowSeekerEntity.createAttributes().build());
 	}
 }

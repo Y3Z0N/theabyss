@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
-import net.minecraftforge.client.event.ColorHandlerEvent;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -21,8 +21,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.BiomeColors;
 
 import java.util.List;
@@ -30,7 +28,7 @@ import java.util.Collections;
 
 public class GrassBigBlock extends FlowerBlock {
 	public GrassBigBlock() {
-		super(MobEffects.SATURATION, 0, BlockBehaviour.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS).instabreak());
+		super(MobEffects.SATURATION, 0, BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().noCollission());
 	}
 
 	@Override
@@ -57,19 +55,14 @@ public class GrassBigBlock extends FlowerBlock {
 	}
 
 	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(TheabyssModBlocks.GRASS_BIG.get(), renderType -> renderType == RenderType.cutout());
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void blockColorLoad(ColorHandlerEvent.Block event) {
+	public static void blockColorLoad(RegisterColorHandlersEvent.Block event) {
 		event.getBlockColors().register((bs, world, pos, index) -> {
 			return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
 		}, TheabyssModBlocks.GRASS_BIG.get());
 	}
 
 	@OnlyIn(Dist.CLIENT)
-	public static void itemColorLoad(ColorHandlerEvent.Item event) {
+	public static void itemColorLoad(RegisterColorHandlersEvent.Item event) {
 		event.getItemColors().register((stack, index) -> {
 			return GrassColor.get(0.5D, 1.0D);
 		}, TheabyssModBlocks.GRASS_BIG.get());

@@ -7,5 +7,6 @@
     "top": "theabyss:blocks/aurel_cave_moss_top",
     "shroom": "theabyss:blocks/aurel_shroom",
     "stem": "theabyss:blocks/aurel_stem"
-  }
+  },
+  "render_type": "cutout"
 }

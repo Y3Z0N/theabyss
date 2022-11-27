@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "theabyss:blue_mountain",
+    "theabyss:blue_forest",
+    "theabyss:plains",
+    "theabyss:roggen_forest"
+  ],
+  "features": "theabyss:saturnia_versa",
+  "step": "vegetal_decoration"
+}

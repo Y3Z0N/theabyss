@@ -33,21 +33,13 @@ public class GlowingBlaruMossFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new GlowingBlaruMossFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:glowing_blaru_moss", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.GLOWING_BLARU_MOSS.get().defaultBlockState())),
-						List.of(), 32));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:glowing_blaru_moss", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.GLOWING_BLARU_MOSS.get())), List.of(), 32));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:glowing_blaru_moss", CONFIGURED_FEATURE,
 				List.of(CountPlacement.of(20), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_mountain"),
-			new ResourceLocation("theabyss:blue_forest"), new ResourceLocation("theabyss:slime_forest"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

@@ -5,5 +5,6 @@
     "particle": "theabyss:blocks/umbrella_steckling",
     "head": "theabyss:blocks/umbrella_head",
     "steckling": "theabyss:blocks/umbrella_steckling"
-  }
+  },
+  "render_type": "cutout"
 }

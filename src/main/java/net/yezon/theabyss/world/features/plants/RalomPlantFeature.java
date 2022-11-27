@@ -35,17 +35,12 @@ public class RalomPlantFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new RalomPlantFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:ralom_plant", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.RALOM_PLANT.get().defaultBlockState())), List.of(), 64));
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.RALOM_PLANT.get())), List.of(), 64));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:ralom_plant", CONFIGURED_FEATURE, List.of(CountPlacement.of(6),
 				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:plains"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

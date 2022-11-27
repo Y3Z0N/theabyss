@@ -16,13 +16,13 @@ public class AbyssaurRenderer extends MobRenderer<AbyssaurEntity, Modelabysaurus
 		this.addLayer(new EyesLayer<AbyssaurEntity, Modelabysaurus_rex<AbyssaurEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/abysaurus_rex_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/abysaurus_rex_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(AbyssaurEntity entity) {
-		return new ResourceLocation("theabyss:textures/abysaurus_rex.png");
+		return new ResourceLocation("theabyss:textures/entities/abysaurus_rex.png");
 	}
 }

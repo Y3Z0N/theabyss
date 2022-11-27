@@ -6,5 +6,6 @@
     "0": "theabyss:blocks/slimed_moss_top",
     "1": "theabyss:blocks/slimed_moss_top",
     "ranks": "theabyss:blocks/slime_stem_vine"
-  }
+  },
+  "render_type": "cutout"
 }

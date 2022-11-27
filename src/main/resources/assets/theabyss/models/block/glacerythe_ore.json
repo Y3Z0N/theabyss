@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/glacerythe_ore",
     "particle": "theabyss:blocks/glacerythe_ore"
-  }
+  },
+  "render_type": "solid"
 }

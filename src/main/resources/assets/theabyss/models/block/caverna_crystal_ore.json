@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/caverna",
     "particle": "theabyss:blocks/caverna",
     "1": "theabyss:blocks/caverna"
-  }
+  },
+  "render_type": "cutout"
 }

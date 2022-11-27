@@ -2,5 +2,6 @@
   "parent": "block/template_fence_gate",
   "textures": {
     "texture": "theabyss:blocks/abyss_planks_21"
-  }
+  },
+  "render_type": "solid"
 }

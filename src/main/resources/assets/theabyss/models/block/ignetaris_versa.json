@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/eye_vine",
     "particle": "theabyss:blocks/eye_vine"
-  }
+  },
+  "render_type": "cutout"
 }

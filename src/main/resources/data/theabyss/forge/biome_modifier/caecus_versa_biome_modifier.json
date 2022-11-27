@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "theabyss:blue_mountain",
+    "theabyss:blue_jungle"
+  ],
+  "features": "theabyss:caecus_versa",
+  "step": "vegetal_decoration"
+}

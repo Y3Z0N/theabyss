@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/blaru_leave",
     "particle": "theabyss:blocks/blaru_leave"
-  }
+  },
+  "render_type": "cutout"
 }

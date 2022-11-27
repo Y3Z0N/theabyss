@@ -16,13 +16,13 @@ public class ShatteredZombieRenderer extends MobRenderer<ShatteredZombieEntity, 
 		this.addLayer(new EyesLayer<ShatteredZombieEntity, Modelzombie1<ShatteredZombieEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/shattered_zombie_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/infected_zombie_skeleton_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(ShatteredZombieEntity entity) {
-		return new ResourceLocation("theabyss:textures/shattered_zombie.png");
+		return new ResourceLocation("theabyss:textures/entities/infected_zombie_skeleton.png");
 	}
 }

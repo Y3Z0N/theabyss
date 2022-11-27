@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/abyss_wart_block",
     "particle": "theabyss:blocks/abyss_wart_block"
-  }
+  },
+  "render_type": "solid"
 }

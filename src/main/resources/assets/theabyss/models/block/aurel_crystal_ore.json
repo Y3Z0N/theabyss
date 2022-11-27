@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/aurel",
     "particle": "theabyss:blocks/aurel",
     "1": "theabyss:blocks/aurel"
-  }
+  },
+  "render_type": "cutout"
 }

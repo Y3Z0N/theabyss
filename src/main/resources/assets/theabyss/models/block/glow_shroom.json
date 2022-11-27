@@ -5,5 +5,6 @@
     "particle": "theabyss:blocks/tall_glow_shroom_steckling",
     "steckling": "theabyss:blocks/tall_glow_shroom_steckling",
     "shrooms": "theabyss:blocks/tall_glow_shrom_cap"
-  }
+  },
+  "render_type": "cutout"
 }

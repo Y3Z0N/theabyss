@@ -20,13 +20,13 @@ public class IceKnightRenderer extends HumanoidMobRenderer<IceKnightEntity, Huma
 		this.addLayer(new EyesLayer<IceKnightEntity, HumanoidModel<IceKnightEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/ice_knight_glow.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/ice_knight_glow.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(IceKnightEntity entity) {
-		return new ResourceLocation("theabyss:textures/ice_knight.png");
+		return new ResourceLocation("theabyss:textures/entities/ice_knight.png");
 	}
 }

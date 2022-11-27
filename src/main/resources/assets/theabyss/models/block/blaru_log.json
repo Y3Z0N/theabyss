@@ -8,5 +8,6 @@
     "south": "theabyss:blocks/blaru_log_side",
     "west": "theabyss:blocks/blaru_log_side",
     "particle": "theabyss:blocks/blaru_log_top"
-  }
+  },
+  "render_type": "solid"
 }

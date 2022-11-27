@@ -2,5 +2,6 @@
   "parent": "block/template_fence_gate_wall_open",
   "textures": {
     "texture": "theabyss:blocks/tantra_planks"
-  }
+  },
+  "render_type": "solid"
 }

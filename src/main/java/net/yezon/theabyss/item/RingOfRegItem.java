@@ -16,7 +16,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
 import java.util.List;
@@ -32,11 +31,6 @@ public class RingOfRegItem extends Item {
 	}
 
 	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 0;
-	}
-
-	@Override
 	public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 		return 0F;
 	}
@@ -44,12 +38,17 @@ public class RingOfRegItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-			list.add(new TextComponent("\u18B1 20.0 \u18B4 100.0 \u18B9 Right Click"));
-			list.add(new TextComponent("\u00A7bAbility\u00A7f: This ring can regenerate your health."));
-			list.add(new TextComponent("It uses \u00A7b20 percent somnium\u00A7f by default but can be improved with potions."));
-			list.add(new TextComponent(""));
-			list.add(new TextComponent("This item must be produced in the \u00A7bArcane Workbench.\u00A7f"));
+		list.add(Component.literal("\uEF02 20.0 \uEF04 100.0 \uEF03 Right Click"));
+		list.add(Component.translatable("tooltip.theabyss.ring_of_reg"));
+		list.add(Component.literal(""));
+		list.add(Component.translatable("tooltip.theabyss.ring_crafting"));
+		list.add(Component.translatable("tooltip.theabyss.ring_consume"));
+		list.add(Component.literal(""));
+		list.add(Component.translatable("tooltip.theabyss.ring_upgrade"));
+
 	}
+
+	
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
@@ -58,16 +57,15 @@ public class RingOfRegItem extends Item {
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
-
 		ApplyRingOfRegEvent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
-		InteractionResult retval = super.useOn(context);
+		super.useOn(context);
 		ApplyRingOfRegEvent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
 				context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
-		return retval;
+		return InteractionResult.SUCCESS;
 	}
 }

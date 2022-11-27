@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:blue_jungle",
+  "features": "theabyss:jungle_bush_4",
+  "step": "surface_structures"
+}

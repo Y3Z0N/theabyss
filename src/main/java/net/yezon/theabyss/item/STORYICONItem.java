@@ -15,9 +15,4 @@ public class STORYICONItem extends Item {
 	public UseAnim getUseAnimation(ItemStack itemstack) {
 		return UseAnim.EAT;
 	}
-
-	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 0;
-	}
 }

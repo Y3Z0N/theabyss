@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/jungle_leave_22",
     "particle": "theabyss:blocks/jungle_leave_22"
-  }
+  },
+  "render_type": "cutout"
 }

@@ -16,13 +16,13 @@ public class InfectedWolfRenderer extends MobRenderer<InfectedWolfEntity, Modela
 		this.addLayer(new EyesLayer<InfectedWolfEntity, Modelabyss_wolf<InfectedWolfEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/abyss_wolf_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/abyss_wolf_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(InfectedWolfEntity entity) {
-		return new ResourceLocation("theabyss:textures/abyss_wolf.png");
+		return new ResourceLocation("theabyss:textures/entities/abyss_wolf.png");
 	}
 }

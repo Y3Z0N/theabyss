@@ -8,5 +8,6 @@
     "south": "theabyss:blocks/jungle_bookshelf",
     "west": "theabyss:blocks/jungle_bookshelf",
     "particle": "theabyss:blocks/jungle_planks"
-  }
+  },
+  "render_type": "solid"
 }

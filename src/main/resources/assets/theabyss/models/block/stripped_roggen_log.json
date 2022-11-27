@@ -8,5 +8,6 @@
     "south": "theabyss:blocks/roggen_log_side",
     "west": "theabyss:blocks/roggen_log_side",
     "particle": "theabyss:blocks/roggen_log_top"
-  }
+  },
+  "render_type": "solid"
 }

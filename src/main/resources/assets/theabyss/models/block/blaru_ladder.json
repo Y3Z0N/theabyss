@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/blaru_ladder",
     "particle": "theabyss:blocks/blaru_ladder",
     "texture": "theabyss:blocks/blaru_ladder"
-  }
+  },
+  "render_type": "solid"
 }

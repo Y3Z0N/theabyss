@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "theabyss:mud_plains",
+    "theabyss:plains"
+  ],
+  "features": "theabyss:gulom_plant",
+  "step": "vegetal_decoration"
+}

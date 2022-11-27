@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "theabyss:waywardsea",
+  "spawners": {
+    "type": "theabyss:frost_spider",
+    "weight": 20,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

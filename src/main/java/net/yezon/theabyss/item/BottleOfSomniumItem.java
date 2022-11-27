@@ -13,14 +13,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.entity.LivingEntity;
 
-public class BottleOfSomniumItem extends AbstractEssenceItem {
+public class BottleOfSomniumItem extends Item {
 	public BottleOfSomniumItem() {
 		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(16).rarity(Rarity.RARE)
 				.food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.2f).alwaysEat()
 
 						.build()));
 	}
-
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {

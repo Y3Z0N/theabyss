@@ -2,5 +2,6 @@
   "parent": "block/button",
   "textures": {
     "texture": "theabyss:blocks/ruma_planks"
-  }
+  },
+  "render_type": "solid"
 }

@@ -5,5 +5,6 @@
     "particle": "theabyss:blocks/mana_extractor_top",
     "SIDE": "theabyss:blocks/mana_extractor_side",
     "TOP": "theabyss:blocks/mana_extractor_top"
-  }
+  },
+  "render_type": "solid"
 }

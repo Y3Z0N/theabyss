@@ -38,10 +38,10 @@ public class IgnetarisVersaFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new IgnetarisVersaFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:ignetaris_versa", FEATURE,
-				FeatureUtils.simpleRandomPatchConfiguration(64,
+				FeatureUtils.simpleRandomPatchConfiguration(20,
 						PlacementUtils.filtered(Feature.BLOCK_COLUMN,
 								BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4),
-										BlockStateProvider.simple(TheabyssModBlocks.IGNETARIS_VERSA.get().defaultBlockState())),
+										BlockStateProvider.simple(TheabyssModBlocks.IGNETARIS_VERSA.get())),
 								BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,
 										BlockPredicate.wouldSurvive(TheabyssModBlocks.IGNETARIS_VERSA.get().defaultBlockState(), BlockPos.ZERO)))));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:ignetaris_versa", CONFIGURED_FEATURE, List.of(CountPlacement.of(10),
@@ -49,11 +49,6 @@ public class IgnetarisVersaFeature extends RandomPatchFeature {
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_jungle"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

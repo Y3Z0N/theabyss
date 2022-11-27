@@ -16,7 +16,7 @@ import java.util.Collections;
 
 public class BogFenceBlock extends FenceBlock {
 	public BogFenceBlock() {
-		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2f, 10f));
+		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2f, 10f).dynamicShape());
 	}
 
 	@Override

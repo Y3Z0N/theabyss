@@ -1,7 +1,4 @@
 
-/*
- *    Y3 was here UwU ^-^
- */
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.block.YoungExoliusPlantBlock;
@@ -20,7 +17,6 @@ import net.yezon.theabyss.block.UnstableObsidianBlock;
 import net.yezon.theabyss.block.ThunderFlowerBlock;
 import net.yezon.theabyss.block.TheabyssdimiceworldPortalBlock;
 import net.yezon.theabyss.block.TheAbyssDimPortalBlock;
-import net.yezon.theabyss.block.TheAbyssDimGroundlandsPortalBlock;
 import net.yezon.theabyss.block.TeslaRankBlock;
 import net.yezon.theabyss.block.TenuemFireBlock;
 import net.yezon.theabyss.block.TantraVineBlock;
@@ -269,7 +265,6 @@ import net.yezon.theabyss.block.CobbleStoneSlabBlock;
 import net.yezon.theabyss.block.CobbleStoneBlock;
 import net.yezon.theabyss.block.CavernaCrystalOreBlock;
 import net.yezon.theabyss.block.CaecusVersaBlock;
-import net.yezon.theabyss.block.BrokenRadioBlock;
 import net.yezon.theabyss.block.BoneThinBlock;
 import net.yezon.theabyss.block.BoneBlock;
 import net.yezon.theabyss.block.BogVineBlock;
@@ -327,10 +322,9 @@ import net.yezon.theabyss.TheabyssMod;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.client.event.ColorHandlerEvent;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
@@ -353,8 +347,6 @@ public class TheabyssModBlocks {
 	public static final RegistryObject<Block> FROST_WORLD_PORTAL = REGISTRY.register("frost_world_portal",
 			() -> new TheabyssdimiceworldPortalBlock());
 	public static final RegistryObject<Block> THE_ABYSS_PORTAL = REGISTRY.register("the_abyss_portal", () -> new TheAbyssDimPortalBlock());
-	public static final RegistryObject<Block> GROUND_LANDS_PORTAL = REGISTRY.register("ground_lands_portal",
-			() -> new TheAbyssDimGroundlandsPortalBlock());
 	public static final RegistryObject<Block> ROMA_MUD = REGISTRY.register("roma_mud", () -> new RomaMudBlock());
 	public static final RegistryObject<Block> ROMA_MUD_2 = REGISTRY.register("roma_mud_2", () -> new RomaMud2Block());
 	public static final RegistryObject<Block> DARK_STONE = REGISTRY.register("dark_stone", () -> new DarkStoneBlock());
@@ -550,7 +542,6 @@ public class TheabyssModBlocks {
 	public static final RegistryObject<Block> HEAL_CAMP_FIRE = REGISTRY.register("heal_camp_fire", () -> new HealCampFireBlock());
 	public static final RegistryObject<Block> SHIELD_CAMP_FIRE = REGISTRY.register("shield_camp_fire", () -> new ShieldCampFireBlock());
 	public static final RegistryObject<Block> DIRT = REGISTRY.register("dirt", () -> new DirtBlock());
-	public static final RegistryObject<Block> BROKEN_RADIO = REGISTRY.register("broken_radio", () -> new BrokenRadioBlock());
 	public static final RegistryObject<Block> SOMNIUM_EXTRACTOR = REGISTRY.register("somnium_extractor", () -> new SomniumExtractorBlock());
 	public static final RegistryObject<Block> ARCANE_WORKBENCH = REGISTRY.register("arcane_workbench", () -> new ArcaneWorkbenchBlock());
 	public static final RegistryObject<Block> RESEARCH_TABLE = REGISTRY.register("research_table", () -> new ResearchTableBlock());
@@ -672,214 +663,7 @@ public class TheabyssModBlocks {
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {
 		@SubscribeEvent
-		public static void clientSetup(FMLClientSetupEvent event) {
-			BlaruLeavesBlock.registerRenderLayer();
-			JungleLeavesBlock.registerRenderLayer();
-			LorkaLeavesBlock.registerRenderLayer();
-			TantraLeavesBlock.registerRenderLayer();
-			RoggenLeaveBlock.registerRenderLayer();
-			FrozenLeavesBlock.registerRenderLayer();
-			RumaLeaveBlock.registerRenderLayer();
-			RumaLeave2Block.registerRenderLayer();
-			RumaLeave3Block.registerRenderLayer();
-			RumaLeave4Block.registerRenderLayer();
-			RumaLeave5Block.registerRenderLayer();
-			BogShroomLeaveBlock.registerRenderLayer();
-			SalShroomLeaveBlock.registerRenderLayer();
-			SlimeBlockBlock.registerRenderLayer();
-			RottenFungalLeaveBlock.registerRenderLayer();
-			TantraGrassBlock.registerRenderLayer();
-			TantraDirtBlock.registerRenderLayer();
-			BlaruStairsBlock.registerRenderLayer();
-			BlaruSlabBlock.registerRenderLayer();
-			BlaruTrapDoorBlock.registerRenderLayer();
-			BlaruDoorBlock.registerRenderLayer();
-			BlaruFenceBlock.registerRenderLayer();
-			BlaruFenceGateBlock.registerRenderLayer();
-			BlaruPressurePlateBlock.registerRenderLayer();
-			BlaruTableBlock.registerRenderLayer();
-			BlaruChairBlock.registerRenderLayer();
-			BlaruLadderBlock.registerRenderLayer();
-			JungleStairsBlock.registerRenderLayer();
-			JungleSlabBlock.registerRenderLayer();
-			JungleTrapDoorBlock.registerRenderLayer();
-			JungleDoorBlock.registerRenderLayer();
-			JungleFenceBlock.registerRenderLayer();
-			JungleFenceGateBlock.registerRenderLayer();
-			JunglePressurePlateBlock.registerRenderLayer();
-			JungleChairBlock.registerRenderLayer();
-			JungleTableBlock.registerRenderLayer();
-			JungleLadderBlock.registerRenderLayer();
-			RumaStairsBlock.registerRenderLayer();
-			RumaSlabBlock.registerRenderLayer();
-			RumaTrapDoorBlock.registerRenderLayer();
-			RumaDoorBlock.registerRenderLayer();
-			RumaFenceBlock.registerRenderLayer();
-			RumaFenceGateBlock.registerRenderLayer();
-			RumaPressurePlateBlock.registerRenderLayer();
-			RumaChairBlock.registerRenderLayer();
-			RumaTableBlock.registerRenderLayer();
-			RumaLadderBlock.registerRenderLayer();
-			RoggenStairsBlock.registerRenderLayer();
-			RoggenSlabBlock.registerRenderLayer();
-			RoggenTrapDoorBlock.registerRenderLayer();
-			RoggenDoorBlock.registerRenderLayer();
-			RoggenFenceBlock.registerRenderLayer();
-			RoggenFenceGateBlock.registerRenderLayer();
-			RoggenPressurePlateBlock.registerRenderLayer();
-			RoggenChairBlock.registerRenderLayer();
-			RoggenTableBlock.registerRenderLayer();
-			RoggenLadderBlock.registerRenderLayer();
-			TantraStairsBlock.registerRenderLayer();
-			TantraSlabBlock.registerRenderLayer();
-			TantraTrapDoorBlock.registerRenderLayer();
-			TantraDoorBlock.registerRenderLayer();
-			TantraFenceBlock.registerRenderLayer();
-			TantraFenceGateBlock.registerRenderLayer();
-			TantraPressurePlateBlock.registerRenderLayer();
-			TantraChairBlock.registerRenderLayer();
-			TantraTableBlock.registerRenderLayer();
-			TantraLadderBlock.registerRenderLayer();
-			BogDoorBlock.registerRenderLayer();
-			BogChairBlock.registerRenderLayer();
-			BogTableBlock.registerRenderLayer();
-			BogLadderBlock.registerRenderLayer();
-			SalDoorBlock.registerRenderLayer();
-			SalChairBlock.registerRenderLayer();
-			SalTableBlock.registerRenderLayer();
-			SalLadderBlock.registerRenderLayer();
-			SlimedDoorBlock.registerRenderLayer();
-			SlimedChairBlock.registerRenderLayer();
-			SlimedTableBlock.registerRenderLayer();
-			SlimedLadderBlock.registerRenderLayer();
-			FrozenDoorBlock.registerRenderLayer();
-			FrozenChairBlock.registerRenderLayer();
-			FrozenTableBlock.registerRenderLayer();
-			FrozenLadderBlock.registerRenderLayer();
-			NightAltarBlock.registerRenderLayer();
-			NightAltarActivatedBlock.registerRenderLayer();
-			StoneBrickPillarIgnitedBlock.registerRenderLayer();
-			StoneBrickPillarBlock.registerRenderLayer();
-			PhantomLanternBlock.registerRenderLayer();
-			EnderLanternBlock.registerRenderLayer();
-			HoglinLanternBlock.registerRenderLayer();
-			SlimeRootBlockBlock.registerRenderLayer();
-			HealCampFireBlock.registerRenderLayer();
-			ShieldCampFireBlock.registerRenderLayer();
-			BrokenRadioBlock.registerRenderLayer();
-			SomniumExtractorBlock.registerRenderLayer();
-			ArcaneWorkbenchBlock.registerRenderLayer();
-			ResearchTableBlock.registerRenderLayer();
-			CrystalCutterBlock.registerRenderLayer();
-			SomniumInfuserBlock.registerRenderLayer();
-			MortarAndPestleBlock.registerRenderLayer();
-			RottenLeaveBlock.registerRenderLayer();
-			InfectedGrassBlock.registerRenderLayer();
-			LoranFlowerBlock.registerRenderLayer();
-			GulomPlantBlock.registerRenderLayer();
-			RalomPlantBlock.registerRenderLayer();
-			FortisUltimaBlock.registerRenderLayer();
-			OpiaShroomBlock.registerRenderLayer();
-			ThunderFlowerBlock.registerRenderLayer();
-			LercasUmbrellaBlock.registerRenderLayer();
-			SralaShroomBlock.registerRenderLayer();
-			SaturniaVersaBlock.registerRenderLayer();
-			LumusMaximusBlock.registerRenderLayer();
-			VeraLesusBlock.registerRenderLayer();
-			OctavysMagynisiusBlock.registerRenderLayer();
-			CaecusVersaBlock.registerRenderLayer();
-			FlosVitaeBlock.registerRenderLayer();
-			LeraExiliarisBlock.registerRenderLayer();
-			IgnetarisVersaBlock.registerRenderLayer();
-			GoralysLasusBlock.registerRenderLayer();
-			WartRootBlock.registerRenderLayer();
-			LoranBush2Block.registerRenderLayer();
-			LoranBushBlock.registerRenderLayer();
-			TenuemFireBlock.registerRenderLayer();
-			AnimaFireBlock.registerRenderLayer();
-			SlimedVitaeBlock.registerRenderLayer();
-			IceRankBlock.registerRenderLayer();
-			IcoraFlowerBlock.registerRenderLayer();
-			TeslaRankBlock.registerRenderLayer();
-			IcelaRankBlock.registerRenderLayer();
-			RottenRankBlock.registerRenderLayer();
-			WartRankBlock.registerRenderLayer();
-			WartRankEndBlock.registerRenderLayer();
-			GrassSmallBlock.registerRenderLayer();
-			GrassMiddleBlock.registerRenderLayer();
-			GrassBigBlock.registerRenderLayer();
-			TallGlowShroomBlock.registerRenderLayer();
-			GlowShroomBlock.registerRenderLayer();
-			TallRubShroomBlock.registerRenderLayer();
-			RubShroomBlock.registerRenderLayer();
-			VertaCelsiusBlock.registerRenderLayer();
-			SlimedLogFungiBlock.registerRenderLayer();
-			BlaruLogFungiBlock.registerRenderLayer();
-			JungleLogFungiBlock.registerRenderLayer();
-			BogLogFungiBlock.registerRenderLayer();
-			RumaLogFungiBlock.registerRenderLayer();
-			RumaLogFungi2Block.registerRenderLayer();
-			SalLogFungiBlock.registerRenderLayer();
-			MiniStone1Block.registerRenderLayer();
-			BogVineBlock.registerRenderLayer();
-			TantraVineBlock.registerRenderLayer();
-			SalVineBlock.registerRenderLayer();
-			RoggenVineBlock.registerRenderLayer();
-			RottenLogVineBlock.registerRenderLayer();
-			SlimedLogVineBlock.registerRenderLayer();
-			JungleLogVineBlock.registerRenderLayer();
-			FrozenLogVineBlock.registerRenderLayer();
-			RumaLogVineBlock.registerRenderLayer();
-			BlaruLogVineBlock.registerRenderLayer();
-			JungleVineBlock.registerRenderLayer();
-			BlaruVineBlock.registerRenderLayer();
-			LorkaVineBlock.registerRenderLayer();
-			SlimedLogCrystalBlock.registerRenderLayer();
-			TantraGrassSmallBlock.registerRenderLayer();
-			TantraGrassMiddleBlock.registerRenderLayer();
-			TantraGrassBigBlock.registerRenderLayer();
-			LazarusGrassBlock.registerRenderLayer();
-			LumusGrassBlock.registerRenderLayer();
-			LumusFlowerBlock.registerRenderLayer();
-			LumusRankBlock.registerRenderLayer();
-			LumusFruitBlock.registerRenderLayer();
-			VealusMeramusBlock.registerRenderLayer();
-			CrimsonCrystalOreBlock.registerRenderLayer();
-			WarpedCrystalOreBlock.registerRenderLayer();
-			AurelCrystalOreBlock.registerRenderLayer();
-			CavernaCrystalOreBlock.registerRenderLayer();
-			EnderCrystalOreBlock.registerRenderLayer();
-			FrostCrystalOreBlock.registerRenderLayer();
-			AbyssCrystalOreBlock.registerRenderLayer();
-			HollowCrystalOreBlock.registerRenderLayer();
-			ExoliusPlantBlock.registerRenderLayer();
-			YoungExoliusPlantBlock.registerRenderLayer();
-			BlaruLeaveCarpetBlock.registerRenderLayer();
-			JungleLeaveCarpetBlock.registerRenderLayer();
-			SlimedCarpetBlock.registerRenderLayer();
-			LungoRankBlock.registerRenderLayer();
-			GlowingBlaruMossBlock.registerRenderLayer();
-			AurelCaveMossBlock.registerRenderLayer();
-			AurelShroomBlock.registerRenderLayer();
-			AurelLeaveCarpetBlock.registerRenderLayer();
-			AurelRankBlock.registerRenderLayer();
-			BlaruCaveMossBlock.registerRenderLayer();
-			EcholotTopBlock.registerRenderLayer();
-			EcholotMiddleBlock.registerRenderLayer();
-			EcholotBottomBlock.registerRenderLayer();
-			LumaGrassBlock.registerRenderLayer();
-			PhantomHangingLanternBlock.registerRenderLayer();
-			EnderHangingLanternBlock.registerRenderLayer();
-			HoglinHangingLanternBlock.registerRenderLayer();
-			RaptorEggBlock.registerRenderLayer();
-			WaterEcholotTopBlock.registerRenderLayer();
-			WaterEcholotMiddleBlock.registerRenderLayer();
-			WaterEcholotBottomBlock.registerRenderLayer();
-			SlimedRankBlock.registerRenderLayer();
-		}
-
-		@SubscribeEvent
-		public static void blockColorLoad(ColorHandlerEvent.Block event) {
+		public static void blockColorLoad(RegisterColorHandlersEvent.Block event) {
 			InfectedGrassBlock.blockColorLoad(event);
 			GrassSmallBlock.blockColorLoad(event);
 			GrassMiddleBlock.blockColorLoad(event);
@@ -887,7 +671,7 @@ public class TheabyssModBlocks {
 		}
 
 		@SubscribeEvent
-		public static void itemColorLoad(ColorHandlerEvent.Item event) {
+		public static void itemColorLoad(RegisterColorHandlersEvent.Item event) {
 			InfectedGrassBlock.itemColorLoad(event);
 			GrassSmallBlock.itemColorLoad(event);
 			GrassMiddleBlock.itemColorLoad(event);

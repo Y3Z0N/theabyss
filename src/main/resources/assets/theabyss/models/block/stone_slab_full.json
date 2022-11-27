@@ -4,5 +4,6 @@
     "bottom": "theabyss:blocks/stone",
     "top": "theabyss:blocks/stone",
     "side": "theabyss:blocks/stone"
-  }
+  },
+  "render_type": "solid"
 }

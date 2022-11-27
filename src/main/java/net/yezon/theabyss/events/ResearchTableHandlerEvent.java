@@ -8,7 +8,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 
 import java.util.function.Supplier;
 import java.util.Map;
@@ -31,20 +31,15 @@ public class ResearchTableHandlerEvent {
 						});
 					}
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You researched the Crimson Crystal! This crystal consists of 50% lava, 20% air and 30% obsidian. It can be used for rings that need the energy of fire."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_research").getString())),
 								(false));
-					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(
-								new TextComponent("\u00A7bResearch:\u00A7f You can now process this crystal in a crystal cutter!"), (false));
 					if (entity instanceof Player _player)
 						_player.giveExperiencePoints(20);
 					if (entity instanceof Player _player)
 						_player.giveExperienceLevels(-(5));
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You already researched the Crimson Crystal! This crystal consists of 50% lava, 20% air and 30% obsidian. It can be used for rings that need the energy of fire."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_researched").getString())),
 								(false));
 				}
 			}
@@ -61,20 +56,15 @@ public class ResearchTableHandlerEvent {
 						});
 					}
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You researched the Warped Crystal! This crystal consists of 10% lava, 40% air and 50% earth. It can be used for rings that need the energy of healing."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_research").getString())),
 								(false));
-					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(
-								new TextComponent("\u00A7bResearch:\u00A7f You can now process this crystal in a crystal cutter!"), (false));
 					if (entity instanceof Player _player)
 						_player.giveExperienceLevels(-(5));
 					if (entity instanceof Player _player)
 						_player.giveExperiencePoints(20);
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You already researched the Warped Crystal! This crystal consists of 10% lava, 40% air and 50% earth. It can be used for rings that need the energy of healing."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_researched").getString())),
 								(false));
 				}
 			}
@@ -91,20 +81,15 @@ public class ResearchTableHandlerEvent {
 						});
 					}
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You researched the Frost Crystal! This crystal consists of 80% ice, 10% air and 10% organs. It can be used for rings that need the energy of frost."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_research").getString())),
 								(false));
-					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(
-								new TextComponent("\u00A7bResearch:\u00A7f You can now process this crystal in a crystal cutter!"), (false));
 					if (entity instanceof Player _player)
 						_player.giveExperienceLevels(-(5));
 					if (entity instanceof Player _player)
 						_player.giveExperiencePoints(20);
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You already researched the Frost Crystal! This crystal consists of 80% ice, 10% air and 10% organs. It can be used for rings that need the energy of frost."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_researched").getString())),
 								(false));
 				}
 			}
@@ -121,20 +106,15 @@ public class ResearchTableHandlerEvent {
 						});
 					}
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You researched the Abyss Crystal! This crystal consists of 60% souls, 20% organs and 20% loran energy. It can be used for rings that need the energy of souls."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_research").getString())),
 								(false));
-					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(
-								new TextComponent("\u00A7bResearch:\u00A7f You can now process this crystal in a crystal cutter!"), (false));
 					if (entity instanceof Player _player)
 						_player.giveExperiencePoints(20);
 					if (entity instanceof Player _player)
 						_player.giveExperienceLevels(-(5));
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You already researched the Abyss Crystal! This crystal consists of 60% souls, 20% organs and 20% loran energy. It can be used for rings that need the energy of souls."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_researched").getString())),
 								(false));
 				}
 			}
@@ -151,20 +131,15 @@ public class ResearchTableHandlerEvent {
 						});
 					}
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You researched the Hollow Crystal! This crystal consists of 40% souls, 40% venom and 20% phantom aura. It can be used for rings that need the energy of curse."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_research").getString())),
 								(false));
-					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(
-								new TextComponent("\u00A7bResearch:\u00A7f You can now process this crystal in a crystal cutter!"), (false));
 					if (entity instanceof Player _player)
 						_player.giveExperiencePoints(20);
 					if (entity instanceof Player _player)
 						_player.giveExperienceLevels(-(5));
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You already researched the Hollow Crystal! This crystal consists of 40% souls, 40% venom and 20% phantom aura. It can be used for rings that need the energy of curse."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_researched").getString())),
 								(false));
 				}
 			}
@@ -181,20 +156,15 @@ public class ResearchTableHandlerEvent {
 						});
 					}
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You researched the Ender Crystal! This crystal consists of 60% ender aura, 10% poison and 30% dragon aura. It can be used for rings that need the energy of wandering."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_research").getString())),
 								(false));
-					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(
-								new TextComponent("\u00A7bResearch:\u00A7f You can now process this crystal in a crystal cutter!"), (false));
 					if (entity instanceof Player _player)
 						_player.giveExperienceLevels(-(5));
 					if (entity instanceof Player _player)
 						_player.giveExperiencePoints(20);
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You already researched the Ender Crystal! This crystal consists of 60% ender aura, 10% poison and 30% dragon aura. It can be used for rings that need the energy of wandering."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_researched").getString())),
 								(false));
 				}
 			}
@@ -211,20 +181,15 @@ public class ResearchTableHandlerEvent {
 						});
 					}
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You researched the Caverna Crystal! This crystal consists of 20% cave aura, 10% poison and 30% magma aura. It can be used for rings that need the energy of darkness."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_research").getString())),
 								(false));
-					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(
-								new TextComponent("\u00A7bResearch:\u00A7f You can now process this crystal in a crystal cutter!"), (false));
 					if (entity instanceof Player _player)
 						_player.giveExperienceLevels(-(5));
 					if (entity instanceof Player _player)
 						_player.giveExperiencePoints(20);
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You already researched the Caverna Crystal! This crystal consists of 20% cave aura, 10% poison and 30% magma aura. It can be used for rings that need the energy of darkness."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_researched").getString())),
 								(false));
 				}
 			}
@@ -241,26 +206,21 @@ public class ResearchTableHandlerEvent {
 						});
 					}
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You researched the Aurel Crystal! This crystal consists of 20% cave aura, 70% light and 10% poison aura. It can be used for rings that need the energy of light."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_research").getString())),
 								(false));
-					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(
-								new TextComponent("\u00A7bResearch:\u00A7f You can now process this crystal in a crystal cutter!"), (false));
 					if (entity instanceof Player _player)
 						_player.giveExperienceLevels(-(5));
 					if (entity instanceof Player _player)
 						_player.giveExperiencePoints(20);
 				} else {
 					if (entity instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(
-								"\u00A7bResearch:\u00A7f You already researched the Aurel Crystal! This crystal consists of 20% cave aura, 70% light and 10% poison aura. It can be used for rings that need the energy of light."),
+						_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_researched").getString())),
 								(false));
 				}
 			}
 		} else {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(new TextComponent("\u00A7bResearch:\u00A7f You don't have enough XP Levels to research this!"), (false));
+				_player.displayClientMessage(Component.literal((Component.translatable("note.theabyss.crystal_no_xp").getString())), (false));
 		}
 	}
 }

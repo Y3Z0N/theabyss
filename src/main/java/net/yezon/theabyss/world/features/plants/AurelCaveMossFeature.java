@@ -35,20 +35,13 @@ public class AurelCaveMossFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new AurelCaveMossFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:aurel_cave_moss", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.AUREL_CAVE_MOSS.get().defaultBlockState())),
-						List.of(), 1024));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:aurel_cave_moss", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.AUREL_CAVE_MOSS.get())), List.of(), 1024));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:aurel_cave_moss", CONFIGURED_FEATURE, List.of(CountPlacement.of(40),
 				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_forest"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

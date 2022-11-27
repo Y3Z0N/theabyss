@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "theabyss:stone",
+    "theabyss:roma_mud",
+    "theabyss:infected_grass",
+    "theabyss:dirt",
+    "theabyss:gravel",
+    "theabyss:blaru_moss",
+    "theabyss:dark_stone",
+    "theabyss:snow_block",
+    "theabyss:tantra_stone",
+    "theabyss:tantra_grass",
+    "theabyss:tantra_dirt",
+    "theabyss:black_void"
+  ]
+}

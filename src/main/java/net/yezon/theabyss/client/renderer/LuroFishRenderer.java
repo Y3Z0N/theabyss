@@ -16,13 +16,13 @@ public class LuroFishRenderer extends MobRenderer<LuroFishEntity, Modelfish2<Lur
 		this.addLayer(new EyesLayer<LuroFishEntity, Modelfish2<LuroFishEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/luro_fish.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/luro_fish.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(LuroFishEntity entity) {
-		return new ResourceLocation("theabyss:textures/luro_fish.png");
+		return new ResourceLocation("theabyss:textures/entities/luro_fish.png");
 	}
 }

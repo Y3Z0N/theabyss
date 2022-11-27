@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/fortis_ultima",
     "particle": "theabyss:blocks/fortis_ultima"
-  }
+  },
+  "render_type": "cutout"
 }

@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "theabyss:blue_mountain",
+    "theabyss:blue_jungle",
+    "theabyss:blue_forest",
+    "theabyss:plains",
+    "theabyss:roggen_forest"
+  ],
+  "features": "theabyss:flos_vitae",
+  "step": "vegetal_decoration"
+}

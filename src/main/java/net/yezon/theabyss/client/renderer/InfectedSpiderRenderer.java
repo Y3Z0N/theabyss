@@ -17,13 +17,13 @@ public class InfectedSpiderRenderer extends MobRenderer<InfectedSpiderEntity, Sp
 		this.addLayer(new EyesLayer<InfectedSpiderEntity, SpiderModel<InfectedSpiderEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/infected_spidder_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/infected_spidder_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(InfectedSpiderEntity entity) {
-		return new ResourceLocation("theabyss:textures/infected_spider.png");
+		return new ResourceLocation("theabyss:textures/entities/infected_spider.png");
 	}
 }

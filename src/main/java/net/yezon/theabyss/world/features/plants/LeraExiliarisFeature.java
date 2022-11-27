@@ -35,18 +35,12 @@ public class LeraExiliarisFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new LeraExiliarisFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:lera_exiliaris", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.LERA_EXILIARIS.get().defaultBlockState())), List.of(), 64));
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.LERA_EXILIARIS.get())), List.of(), 64));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:lera_exiliaris", CONFIGURED_FEATURE, List.of(CountPlacement.of(6),
 				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_mountain"),
-			new ResourceLocation("theabyss:blue_jungle"), new ResourceLocation("theabyss:blue_forest"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

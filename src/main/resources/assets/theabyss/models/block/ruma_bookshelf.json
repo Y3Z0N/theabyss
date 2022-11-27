@@ -8,5 +8,6 @@
     "south": "theabyss:blocks/ruma_bookshelf",
     "west": "theabyss:blocks/ruma_bookshelf",
     "particle": "theabyss:blocks/ruma_planks"
-  }
+  },
+  "render_type": "solid"
 }

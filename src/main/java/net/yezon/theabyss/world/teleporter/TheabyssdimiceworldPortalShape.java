@@ -9,9 +9,11 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.NetherPortalBlock;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.util.Mth;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
@@ -39,31 +41,31 @@ public class TheabyssdimiceworldPortalShape {
 	private int height;
 	private final int width;
 
-	public static Optional<TheabyssdimiceworldPortalShape> findEmptyPortalShape(LevelAccessor p_77709_, BlockPos p_77710_, Direction.Axis p_77711_) {
-		return findPortalShape(p_77709_, p_77710_, (p_77727_) -> {
+	public static Optional<TheabyssdimiceworldPortalShape> findEmptyPortalShape(LevelAccessor pLevel, BlockPos pBottomLeft, Direction.Axis pAxis) {
+		return findPortalShape(pLevel, pBottomLeft, (p_77727_) -> {
 			return p_77727_.isValid() && p_77727_.numPortalBlocks == 0;
-		}, p_77711_);
+		}, pAxis);
 	}
 
-	public static Optional<TheabyssdimiceworldPortalShape> findPortalShape(LevelAccessor p_77713_, BlockPos p_77714_,
-			Predicate<TheabyssdimiceworldPortalShape> p_77715_, Direction.Axis p_77716_) {
-		Optional<TheabyssdimiceworldPortalShape> optional = Optional.of(new TheabyssdimiceworldPortalShape(p_77713_, p_77714_, p_77716_))
-				.filter(p_77715_);
+	public static Optional<TheabyssdimiceworldPortalShape> findPortalShape(LevelAccessor pLevel, BlockPos pBottomLeft,
+			Predicate<TheabyssdimiceworldPortalShape> pPredicate, Direction.Axis pAxis) {
+		Optional<TheabyssdimiceworldPortalShape> optional = Optional.of(new TheabyssdimiceworldPortalShape(pLevel, pBottomLeft, pAxis))
+				.filter(pPredicate);
 		if (optional.isPresent()) {
 			return optional;
 		} else {
-			Direction.Axis direction$axis = p_77716_ == Direction.Axis.X ? Direction.Axis.Z : Direction.Axis.X;
-			return Optional.of(new TheabyssdimiceworldPortalShape(p_77713_, p_77714_, direction$axis)).filter(p_77715_);
+			Direction.Axis direction$axis = pAxis == Direction.Axis.X ? Direction.Axis.Z : Direction.Axis.X;
+			return Optional.of(new TheabyssdimiceworldPortalShape(pLevel, pBottomLeft, direction$axis)).filter(pPredicate);
 		}
 	}
 
-	public TheabyssdimiceworldPortalShape(LevelAccessor p_77695_, BlockPos p_77696_, Direction.Axis p_77697_) {
-		this.level = p_77695_;
-		this.axis = p_77697_;
-		this.rightDir = p_77697_ == Direction.Axis.X ? Direction.WEST : Direction.SOUTH;
-		this.bottomLeft = this.calculateBottomLeft(p_77696_);
+	public TheabyssdimiceworldPortalShape(LevelAccessor pLevel, BlockPos pBottomLeft, Direction.Axis pAxis) {
+		this.level = pLevel;
+		this.axis = pAxis;
+		this.rightDir = pAxis == Direction.Axis.X ? Direction.WEST : Direction.SOUTH;
+		this.bottomLeft = this.calculateBottomLeft(pBottomLeft);
 		if (this.bottomLeft == null) {
-			this.bottomLeft = p_77696_;
+			this.bottomLeft = pBottomLeft;
 			this.width = 1;
 			this.height = 1;
 		} else {
@@ -89,10 +91,10 @@ public class TheabyssdimiceworldPortalShape {
 		return i >= 2 && i <= 21 ? i : 0;
 	}
 
-	private int getDistanceUntilEdgeAboveFrame(BlockPos p_77736_, Direction p_77737_) {
+	private int getDistanceUntilEdgeAboveFrame(BlockPos pPos, Direction pDirection) {
 		BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 		for (int i = 0; i <= 21; ++i) {
-			blockpos$mutableblockpos.set(p_77736_).move(p_77737_, i);
+			blockpos$mutableblockpos.set(pPos).move(pDirection, i);
 			BlockState blockstate = this.level.getBlockState(blockpos$mutableblockpos);
 			if (!isEmpty(blockstate)) {
 				if (FRAME.test(blockstate, this.level, blockpos$mutableblockpos)) {
@@ -124,19 +126,19 @@ public class TheabyssdimiceworldPortalShape {
 		return true;
 	}
 
-	private int getDistanceUntilTop(BlockPos.MutableBlockPos p_77729_) {
+	private int getDistanceUntilTop(BlockPos.MutableBlockPos pPos) {
 		for (int i = 0; i < 21; ++i) {
-			p_77729_.set(this.bottomLeft).move(Direction.UP, i).move(this.rightDir, -1);
-			if (!FRAME.test(this.level.getBlockState(p_77729_), this.level, p_77729_)) {
+			pPos.set(this.bottomLeft).move(Direction.UP, i).move(this.rightDir, -1);
+			if (!FRAME.test(this.level.getBlockState(pPos), this.level, pPos)) {
 				return i;
 			}
-			p_77729_.set(this.bottomLeft).move(Direction.UP, i).move(this.rightDir, this.width);
-			if (!FRAME.test(this.level.getBlockState(p_77729_), this.level, p_77729_)) {
+			pPos.set(this.bottomLeft).move(Direction.UP, i).move(this.rightDir, this.width);
+			if (!FRAME.test(this.level.getBlockState(pPos), this.level, pPos)) {
 				return i;
 			}
 			for (int j = 0; j < this.width; ++j) {
-				p_77729_.set(this.bottomLeft).move(Direction.UP, i).move(this.rightDir, j);
-				BlockState blockstate = this.level.getBlockState(p_77729_);
+				pPos.set(this.bottomLeft).move(Direction.UP, i).move(this.rightDir, j);
+				BlockState blockstate = this.level.getBlockState(pPos);
 				if (!isEmpty(blockstate)) {
 					return i;
 				}
@@ -148,8 +150,8 @@ public class TheabyssdimiceworldPortalShape {
 		return 21;
 	}
 
-	private static boolean isEmpty(BlockState p_77718_) {
-		return p_77718_.isAir() || p_77718_.getBlock() == TheabyssModBlocks.FROST_WORLD_PORTAL.get();
+	private static boolean isEmpty(BlockState pState) {
+		return pState.isAir() || pState.is(BlockTags.FIRE) || pState.is(Blocks.NETHER_PORTAL);
 	}
 
 	public boolean isValid() {
@@ -193,21 +195,21 @@ public class TheabyssdimiceworldPortalShape {
 		return new Vec3(d2, d4, d3);
 	}
 
-	public static PortalInfo createPortalInfo(ServerLevel p_77700_, BlockUtil.FoundRectangle p_77701_, Direction.Axis p_77702_, Vec3 p_77703_,
-			EntityDimensions p_77704_, Vec3 p_77705_, float p_77706_, float p_77707_) {
+	public static PortalInfo createPortalInfo(ServerLevel pLevel, BlockUtil.FoundRectangle p_77701_, Direction.Axis pAxis, Vec3 p_77703_,
+			EntityDimensions pDimensions, Vec3 p_77705_, float p_77706_, float pXRot) {
 		BlockPos blockpos = p_77701_.minCorner;
-		BlockState blockstate = p_77700_.getBlockState(blockpos);
+		BlockState blockstate = pLevel.getBlockState(blockpos);
 		Direction.Axis direction$axis = blockstate.getOptionalValue(BlockStateProperties.HORIZONTAL_AXIS).orElse(Direction.Axis.X);
 		double d0 = (double) p_77701_.axis1Size;
 		double d1 = (double) p_77701_.axis2Size;
-		int i = p_77702_ == direction$axis ? 0 : 90;
-		Vec3 vec3 = p_77702_ == direction$axis ? p_77705_ : new Vec3(p_77705_.z, p_77705_.y, -p_77705_.x);
-		double d2 = (double) p_77704_.width / 2.0D + (d0 - (double) p_77704_.width) * p_77703_.x();
-		double d3 = (d1 - (double) p_77704_.height) * p_77703_.y();
+		int i = pAxis == direction$axis ? 0 : 90;
+		Vec3 vec3 = pAxis == direction$axis ? p_77705_ : new Vec3(p_77705_.z, p_77705_.y, -p_77705_.x);
+		double d2 = (double) pDimensions.width / 2.0D + (d0 - (double) pDimensions.width) * p_77703_.x();
+		double d3 = (d1 - (double) pDimensions.height) * p_77703_.y();
 		double d4 = 0.5D + p_77703_.z();
 		boolean flag = direction$axis == Direction.Axis.X;
 		Vec3 vec31 = new Vec3((double) blockpos.getX() + (flag ? d2 : d4), (double) blockpos.getY() + d3,
 				(double) blockpos.getZ() + (flag ? d4 : d2));
-		return new PortalInfo(vec31, vec3, p_77706_ + (float) i, p_77707_);
+		return new PortalInfo(vec31, vec3, p_77706_ + (float) i, pXRot);
 	}
 }

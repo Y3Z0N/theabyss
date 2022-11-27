@@ -20,13 +20,13 @@ public class NightbladeBossRenderer extends HumanoidMobRenderer<NightbladeBossEn
 		this.addLayer(new EyesLayer<NightbladeBossEntity, HumanoidModel<NightbladeBossEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/nightblade_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/nightblade_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(NightbladeBossEntity entity) {
-		return new ResourceLocation("theabyss:textures/nightblade.png");
+		return new ResourceLocation("theabyss:textures/entities/nightblade.png");
 	}
 }

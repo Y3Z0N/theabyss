@@ -17,13 +17,13 @@ public class EndSpiderRenderer extends MobRenderer<EndSpiderEntity, SpiderModel<
 		this.addLayer(new EyesLayer<EndSpiderEntity, SpiderModel<EndSpiderEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/end_spider_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/end_spider_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(EndSpiderEntity entity) {
-		return new ResourceLocation("theabyss:textures/end_spider.png");
+		return new ResourceLocation("theabyss:textures/entities/end_spider.png");
 	}
 }

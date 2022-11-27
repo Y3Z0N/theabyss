@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:fungal_forest",
+  "features": "theabyss:wart_rank_small",
+  "step": "surface_structures"
+}

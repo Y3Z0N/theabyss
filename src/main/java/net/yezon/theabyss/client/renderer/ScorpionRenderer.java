@@ -16,13 +16,13 @@ public class ScorpionRenderer extends MobRenderer<ScorpionEntity, Modelscorpion<
 		this.addLayer(new EyesLayer<ScorpionEntity, Modelscorpion<ScorpionEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/the_abyss_scorpion_glow.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/the_abyss_scorpion_glow.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(ScorpionEntity entity) {
-		return new ResourceLocation("theabyss:textures/the_abyss_scropion.png");
+		return new ResourceLocation("theabyss:textures/entities/the_abyss_scropion.png");
 	}
 }

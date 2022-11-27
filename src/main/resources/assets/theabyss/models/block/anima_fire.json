@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/anima_fire",
     "particle": "theabyss:blocks/anima_fire",
     "fire": "theabyss:blocks/anima_fire"
-  }
+  },
+  "render_type": "cutout"
 }

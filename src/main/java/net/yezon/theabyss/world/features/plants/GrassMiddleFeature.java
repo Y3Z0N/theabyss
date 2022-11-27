@@ -34,19 +34,12 @@ public class GrassMiddleFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new GrassMiddleFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:grass_middle", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.GRASS_MIDDLE.get().defaultBlockState())), List.of(), 64));
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.GRASS_MIDDLE.get())), List.of(), 64));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:grass_middle", CONFIGURED_FEATURE,
 				List.of(CountPlacement.of(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:mud_plains"),
-			new ResourceLocation("theabyss:blue_mountain"), new ResourceLocation("theabyss:blue_jungle"),
-			new ResourceLocation("theabyss:phantom_crate"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

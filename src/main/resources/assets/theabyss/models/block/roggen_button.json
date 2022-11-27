@@ -2,5 +2,6 @@
   "parent": "block/button",
   "textures": {
     "texture": "theabyss:blocks/roggen_planls"
-  }
+  },
+  "render_type": "solid"
 }

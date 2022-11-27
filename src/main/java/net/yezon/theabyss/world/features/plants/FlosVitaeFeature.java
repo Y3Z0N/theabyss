@@ -37,25 +37,16 @@ public class FlosVitaeFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new FlosVitaeFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:flos_vitae", FEATURE,
-				FeatureUtils.simpleRandomPatchConfiguration(64,
-						PlacementUtils.filtered(Feature.BLOCK_COLUMN,
-								BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4),
-										BlockStateProvider.simple(TheabyssModBlocks.FLOS_VITAE.get().defaultBlockState())),
-								BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,
-										BlockPredicate.wouldSurvive(TheabyssModBlocks.FLOS_VITAE.get().defaultBlockState(), BlockPos.ZERO)))));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:flos_vitae", FEATURE, FeatureUtils.simpleRandomPatchConfiguration(18,
+				PlacementUtils.filtered(Feature.BLOCK_COLUMN,
+						BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(TheabyssModBlocks.FLOS_VITAE.get())),
+						BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,
+								BlockPredicate.wouldSurvive(TheabyssModBlocks.FLOS_VITAE.get().defaultBlockState(), BlockPos.ZERO)))));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:flos_vitae", CONFIGURED_FEATURE, List.of(CountPlacement.of(8),
 				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_mountain"),
-			new ResourceLocation("theabyss:blue_jungle"), new ResourceLocation("theabyss:blue_forest"), new ResourceLocation("theabyss:plains"),
-			new ResourceLocation("theabyss:roggen_forest"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(
 			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")),
 			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:ground_lands")));

@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/fusion_ore",
     "particle": "theabyss:blocks/fusion_ore"
-  }
+  },
+  "render_type": "solid"
 }

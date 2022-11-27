@@ -20,13 +20,13 @@ public class PlayerBodyRenderer extends HumanoidMobRenderer<PlayerBodyEntity, Hu
 		this.addLayer(new EyesLayer<PlayerBodyEntity, HumanoidModel<PlayerBodyEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/player_body.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/player_body.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(PlayerBodyEntity entity) {
-		return new ResourceLocation("theabyss:textures/player_body.png");
+		return new ResourceLocation("theabyss:textures/entities/player_body.png");
 	}
 }

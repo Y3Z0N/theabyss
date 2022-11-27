@@ -8,10 +8,10 @@ import net.yezon.theabyss.init.TheabyssModItems;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.Level;
@@ -40,7 +40,7 @@ public class CutterMenu extends AbstractContainerMenu implements Supplier<Map<In
 	private boolean bound = false;
 
 	public CutterMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(TheabyssModMenus.CUTTER, id);
+		super(TheabyssModMenus.CUTTER.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level;
 		this.internal = new ItemStackHandler(3);
@@ -59,7 +59,7 @@ public class CutterMenu extends AbstractContainerMenu implements Supplier<Map<In
 					itemstack = this.entity.getMainHandItem();
 				else
 					itemstack = this.entity.getOffhandItem();
-				itemstack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+				itemstack.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 					this.internal = capability;
 					this.bound = true;
 				});
@@ -67,14 +67,14 @@ public class CutterMenu extends AbstractContainerMenu implements Supplier<Map<In
 				extraData.readByte(); // drop padding
 				Entity entity = world.getEntity(extraData.readVarInt());
 				if (entity != null)
-					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+					entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 						this.internal = capability;
 						this.bound = true;
 					});
 			} else { // might be bound to block
 				BlockEntity ent = inv.player != null ? inv.player.level.getBlockEntity(pos) : null;
 				if (ent != null) {
-					ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+					ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
 						this.internal = capability;
 						this.bound = true;
 					});
@@ -115,102 +115,99 @@ public class CutterMenu extends AbstractContainerMenu implements Supplier<Map<In
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
 			if (index < 3) {
-				if (!this.moveItemStackTo(itemstack1, 3, this.slots.size(), true)) {
+				if (!this.moveItemStackTo(itemstack1, 3, this.slots.size(), true))
 					return ItemStack.EMPTY;
-				}
 				slot.onQuickCraft(itemstack1, itemstack);
 			} else if (!this.moveItemStackTo(itemstack1, 0, 3, false)) {
 				if (index < 3 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 3 + 27, this.slots.size(), true)) {
+					if (!this.moveItemStackTo(itemstack1, 3 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
-					}
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 3, 3 + 27, false)) {
+					if (!this.moveItemStackTo(itemstack1, 3, 3 + 27, false))
 						return ItemStack.EMPTY;
-					}
 				}
 				return ItemStack.EMPTY;
 			}
-			if (itemstack1.getCount() == 0) {
+			if (itemstack1.getCount() == 0)
 				slot.set(ItemStack.EMPTY);
-			} else {
+			else
 				slot.setChanged();
-			}
-			if (itemstack1.getCount() == itemstack.getCount()) {
+			if (itemstack1.getCount() == itemstack.getCount())
 				return ItemStack.EMPTY;
-			}
 			slot.onTake(playerIn, itemstack1);
 		}
 		return itemstack;
 	}
 
-	@Override
-	protected boolean moveItemStackTo(ItemStack p_38904_, int p_38905_, int p_38906_, boolean p_38907_) {
+	@Override /**
+				* Merges provided ItemStack with the first avaliable one in the container/player inventor between minIndex (included) and maxIndex (excluded). Args : stack, minIndex, maxIndex, negativDirection. [!] the Container implementation do not check if the item is valid for the slot
+				*/
+	protected boolean moveItemStackTo(ItemStack pStack, int pStartIndex, int pEndIndex, boolean pReverseDirection) {
 		boolean flag = false;
-		int i = p_38905_;
-		if (p_38907_) {
-			i = p_38906_ - 1;
+		int i = pStartIndex;
+		if (pReverseDirection) {
+			i = pEndIndex - 1;
 		}
-		if (p_38904_.isStackable()) {
-			while (!p_38904_.isEmpty()) {
-				if (p_38907_) {
-					if (i < p_38905_) {
+		if (pStack.isStackable()) {
+			while (!pStack.isEmpty()) {
+				if (pReverseDirection) {
+					if (i < pStartIndex) {
 						break;
 					}
-				} else if (i >= p_38906_) {
+				} else if (i >= pEndIndex) {
 					break;
 				}
 				Slot slot = this.slots.get(i);
 				ItemStack itemstack = slot.getItem();
-				if (slot.mayPlace(itemstack) && !itemstack.isEmpty() && ItemStack.isSameItemSameTags(p_38904_, itemstack)) {
-					int j = itemstack.getCount() + p_38904_.getCount();
-					int maxSize = Math.min(slot.getMaxStackSize(), p_38904_.getMaxStackSize());
+				if (slot.mayPlace(itemstack) && !itemstack.isEmpty() && ItemStack.isSameItemSameTags(pStack, itemstack)) {
+					int j = itemstack.getCount() + pStack.getCount();
+					int maxSize = Math.min(slot.getMaxStackSize(), pStack.getMaxStackSize());
 					if (j <= maxSize) {
-						p_38904_.setCount(0);
+						pStack.setCount(0);
 						itemstack.setCount(j);
 						slot.set(itemstack);
 						flag = true;
 					} else if (itemstack.getCount() < maxSize) {
-						p_38904_.shrink(maxSize - itemstack.getCount());
+						pStack.shrink(maxSize - itemstack.getCount());
 						itemstack.setCount(maxSize);
 						slot.set(itemstack);
 						flag = true;
 					}
 				}
-				if (p_38907_) {
+				if (pReverseDirection) {
 					--i;
 				} else {
 					++i;
 				}
 			}
 		}
-		if (!p_38904_.isEmpty()) {
-			if (p_38907_) {
-				i = p_38906_ - 1;
+		if (!pStack.isEmpty()) {
+			if (pReverseDirection) {
+				i = pEndIndex - 1;
 			} else {
-				i = p_38905_;
+				i = pStartIndex;
 			}
 			while (true) {
-				if (p_38907_) {
-					if (i < p_38905_) {
+				if (pReverseDirection) {
+					if (i < pStartIndex) {
 						break;
 					}
-				} else if (i >= p_38906_) {
+				} else if (i >= pEndIndex) {
 					break;
 				}
 				Slot slot1 = this.slots.get(i);
 				ItemStack itemstack1 = slot1.getItem();
-				if (itemstack1.isEmpty() && slot1.mayPlace(p_38904_)) {
-					if (p_38904_.getCount() > slot1.getMaxStackSize()) {
-						slot1.set(p_38904_.split(slot1.getMaxStackSize()));
+				if (itemstack1.isEmpty() && slot1.mayPlace(pStack)) {
+					if (pStack.getCount() > slot1.getMaxStackSize()) {
+						slot1.set(pStack.split(slot1.getMaxStackSize()));
 					} else {
-						slot1.set(p_38904_.split(p_38904_.getCount()));
+						slot1.set(pStack.split(pStack.getCount()));
 					}
 					slot1.setChanged();
 					flag = true;
 					break;
 				}
-				if (p_38907_) {
+				if (pReverseDirection) {
 					--i;
 				} else {
 					++i;
@@ -248,7 +245,6 @@ public class CutterMenu extends AbstractContainerMenu implements Supplier<Map<In
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-
 			CrystalCutterHandlerEvent.execute(world, x, y, z, entity);
 		}
 	}

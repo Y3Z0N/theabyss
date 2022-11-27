@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:blue_jungle",
+  "features": "theabyss:ignetaris_versa",
+  "step": "vegetal_decoration"
+}

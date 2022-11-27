@@ -16,13 +16,13 @@ public class JungleLurkerRenderer extends MobRenderer<JungleLurkerEntity, Modela
 		this.addLayer(new EyesLayer<JungleLurkerEntity, Modelabyss_lurker<JungleLurkerEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/the_abyss_lurker_glow.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/the_abyss_lurker_glow.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(JungleLurkerEntity entity) {
-		return new ResourceLocation("theabyss:textures/the_abyss_lurker.png");
+		return new ResourceLocation("theabyss:textures/entities/the_abyss_lurker.png");
 	}
 }

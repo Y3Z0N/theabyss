@@ -10,13 +10,13 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
 import java.util.function.Supplier;
-import java.util.Random;
 import java.util.Map;
 
 public class GenerateSomniumUpgradesEvent {
@@ -82,7 +82,7 @@ public class GenerateSomniumUpgradesEvent {
 												&& _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 														? ((Slot) _slt.get(5)).getItem()
 														: ItemStack.EMPTY);
-										if (_ist.hurt(8, new Random(), null)) {
+										if (_ist.hurt(8, RandomSource.create(), null)) {
 											_ist.shrink(1);
 											_ist.setDamageValue(0);
 										}
@@ -181,7 +181,7 @@ public class GenerateSomniumUpgradesEvent {
 												&& _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 														? ((Slot) _slt.get(5)).getItem()
 														: ItemStack.EMPTY);
-										if (_ist.hurt(8, new Random(), null)) {
+										if (_ist.hurt(8, RandomSource.create(), null)) {
 											_ist.shrink(1);
 											_ist.setDamageValue(0);
 										}
@@ -280,7 +280,7 @@ public class GenerateSomniumUpgradesEvent {
 												&& _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 														? ((Slot) _slt.get(5)).getItem()
 														: ItemStack.EMPTY);
-										if (_ist.hurt(8, new Random(), null)) {
+										if (_ist.hurt(8, RandomSource.create(), null)) {
 											_ist.shrink(1);
 											_ist.setDamageValue(0);
 										}
@@ -379,7 +379,7 @@ public class GenerateSomniumUpgradesEvent {
 												&& _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 														? ((Slot) _slt.get(5)).getItem()
 														: ItemStack.EMPTY);
-										if (_ist.hurt(8, new Random(), null)) {
+										if (_ist.hurt(8, RandomSource.create(), null)) {
 											_ist.shrink(1);
 											_ist.setDamageValue(0);
 										}
@@ -478,7 +478,7 @@ public class GenerateSomniumUpgradesEvent {
 												&& _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 														? ((Slot) _slt.get(5)).getItem()
 														: ItemStack.EMPTY);
-										if (_ist.hurt(8, new Random(), null)) {
+										if (_ist.hurt(8, RandomSource.create(), null)) {
 											_ist.shrink(1);
 											_ist.setDamageValue(0);
 										}
@@ -575,7 +575,7 @@ public class GenerateSomniumUpgradesEvent {
 												&& _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 														? ((Slot) _slt.get(5)).getItem()
 														: ItemStack.EMPTY);
-										if (_ist.hurt(8, new Random(), null)) {
+										if (_ist.hurt(8, RandomSource.create(), null)) {
 											_ist.shrink(1);
 											_ist.setDamageValue(0);
 										}
@@ -674,7 +674,7 @@ public class GenerateSomniumUpgradesEvent {
 												&& _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 														? ((Slot) _slt.get(5)).getItem()
 														: ItemStack.EMPTY);
-										if (_ist.hurt(8, new Random(), null)) {
+										if (_ist.hurt(8, RandomSource.create(), null)) {
 											_ist.shrink(1);
 											_ist.setDamageValue(0);
 										}
@@ -773,7 +773,7 @@ public class GenerateSomniumUpgradesEvent {
 												&& _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 														? ((Slot) _slt.get(5)).getItem()
 														: ItemStack.EMPTY);
-										if (_ist.hurt(8, new Random(), null)) {
+										if (_ist.hurt(8, RandomSource.create(), null)) {
 											_ist.shrink(1);
 											_ist.setDamageValue(0);
 										}

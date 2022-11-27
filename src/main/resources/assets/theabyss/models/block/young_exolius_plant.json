@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/young_exolius_plant",
     "particle": "theabyss:blocks/young_exolius_plant"
-  }
+  },
+  "render_type": "cutout"
 }

@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/ruma_log_fungi",
     "particle": "theabyss:blocks/ruma_log_fungi",
     "texture": "theabyss:blocks/ruma_log_side"
-  }
+  },
+  "render_type": "solid"
 }

@@ -6,14 +6,10 @@ import net.yezon.theabyss.init.TheabyssModEntities;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
@@ -28,30 +24,17 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.Difficulty;
+import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.core.BlockPos;
 
-import java.util.Set;
-import java.util.Random;
-
-@Mod.EventBusSubscriber
 public class VersaWhaleEntity extends Monster {
-	private static final Set<ResourceLocation> SPAWN_BIOMES = Set.of(new ResourceLocation("theabyss:blue_mountain"),
-			new ResourceLocation("theabyss:plains"));
-
-	@SubscribeEvent
-	public static void addLivingEntityToBiomes(BiomeLoadingEvent event) {
-		if (SPAWN_BIOMES.contains(event.getName()))
-			event.getSpawns().getSpawner(MobCategory.MONSTER).add(new MobSpawnSettings.SpawnerData(TheabyssModEntities.VERSA_WHALE.get(), 15, 1, 1));
-	}
-
 	public VersaWhaleEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(TheabyssModEntities.VERSA_WHALE.get(), world);
 	}
@@ -79,7 +62,7 @@ public class VersaWhaleEntity extends Monster {
 		this.goalSelector.addGoal(1, new RandomStrollGoal(this, 0.8, 20) {
 			@Override
 			protected Vec3 getPosition() {
-				Random random = VersaWhaleEntity.this.getRandom();
+				RandomSource random = VersaWhaleEntity.this.getRandom();
 				double dir_x = VersaWhaleEntity.this.getX() + ((random.nextFloat() * 2 - 1) * 16);
 				double dir_y = VersaWhaleEntity.this.getY() + ((random.nextFloat() * 2 - 1) * 16);
 				double dir_z = VersaWhaleEntity.this.getZ() + ((random.nextFloat() * 2 - 1) * 16);
@@ -143,6 +126,7 @@ public class VersaWhaleEntity extends Monster {
 		builder = builder.add(Attributes.MAX_HEALTH, 200);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 15);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.FLYING_SPEED, 0.3);
 		return builder;
 	}

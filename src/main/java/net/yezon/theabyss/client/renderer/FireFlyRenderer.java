@@ -19,6 +19,6 @@ public class FireFlyRenderer extends HumanoidMobRenderer<FireFlyEntity, Humanoid
 
 	@Override
 	public ResourceLocation getTextureLocation(FireFlyEntity entity) {
-		return new ResourceLocation("theabyss:textures/firefly_entity.png");
+		return new ResourceLocation("theabyss:textures/entities/firefly_entity.png");
 	}
 }

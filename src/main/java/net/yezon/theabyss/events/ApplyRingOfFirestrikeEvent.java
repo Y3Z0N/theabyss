@@ -2,6 +2,7 @@ package net.yezon.theabyss.events;
 
 import net.yezon.theabyss.network.TheabyssModVariables;
 import net.yezon.theabyss.init.TheabyssModItems;
+import net.yezon.theabyss.init.TheabyssModEntities;
 import net.yezon.theabyss.entity.RingOfFireStrikeAttackEntity;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -9,15 +10,15 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
-
-import java.util.Random;
 
 public class ApplyRingOfFirestrikeEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
@@ -31,12 +32,12 @@ public class ApplyRingOfFirestrikeEvent {
 							* (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 									.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(new TextComponent("you don't have enough \u00A7benergy"), (true));
+					_player.displayClientMessage(Component.literal((Component.translatable("ring.theabyss.low_energy").getString())), (true));
 			} else {
 				if (itemstack.getItem() == TheabyssModItems.RING_OF_FIRESTRIKE.get()) {
 					{
 						ItemStack _ist = itemstack;
-						if (_ist.hurt(1, new Random(), null)) {
+						if (_ist.hurt(1, RandomSource.create(), null)) {
 							_ist.shrink(1);
 							_ist.setDamageValue(0);
 						}
@@ -55,11 +56,26 @@ public class ApplyRingOfFirestrikeEvent {
 								SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
-				if (entity instanceof LivingEntity _ent_sa && !_ent_sa.level.isClientSide()) {
-					RingOfFireStrikeAttackEntity.shoot(_ent_sa.level, _ent_sa, _ent_sa.level.getRandom(), (float) 1.5,
-							(float) (3 + (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new TheabyssModVariables.PlayerVariables())).ManaDamage),
-							2);
+				{
+					Entity _shootFrom = entity;
+					Level projectileLevel = _shootFrom.level;
+					if (!projectileLevel.isClientSide()) {
+						Projectile _entityToSpawn = new Object() {
+							public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
+								AbstractArrow entityToSpawn = new RingOfFireStrikeAttackEntity(TheabyssModEntities.RING_OF_FIRE_STRIKE_ATTACK.get(),
+										level);
+								entityToSpawn.setOwner(shooter);
+								entityToSpawn.setBaseDamage(damage);
+								entityToSpawn.setKnockback(knockback);
+								entityToSpawn.setSilent(true);
+								return entityToSpawn;
+							}
+						}.getArrow(projectileLevel, entity, (float) (3 + (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new TheabyssModVariables.PlayerVariables())).ManaDamage), 2);
+						_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+						_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.5, 0);
+						projectileLevel.addFreshEntity(_entityToSpawn);
+					}
 				}
 				{
 					double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)

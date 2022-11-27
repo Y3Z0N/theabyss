@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "theabyss:blue_forest",
+    "theabyss:plains"
+  ],
+  "spawners": {
+    "type": "theabyss:lokus",
+    "weight": 10,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

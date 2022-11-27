@@ -12,7 +12,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
@@ -34,10 +33,10 @@ public class ExecutePatreonCommandEvent {
 			{
 				if (entity instanceof ServerPlayer _ent) {
 					BlockPos _bpos = new BlockPos(x, y, z);
-					NetworkHooks.openGui((ServerPlayer) _ent, new MenuProvider() {
+					NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
 						@Override
 						public Component getDisplayName() {
-							return new TextComponent("PatreonScreen");
+							return Component.literal("PatreonScreen");
 						}
 
 						@Override
@@ -49,7 +48,7 @@ public class ExecutePatreonCommandEvent {
 			}
 		} else {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(new TextComponent("\u00A7b[THE ABYSS]\u00A7b You need to be Tier 3-5 to open this menu!"), (false));
+				_player.displayClientMessage(Component.literal("\u00A7b[THE ABYSS]\u00A7b You need to be Tier 3-5 to open this menu!"), (false));
 		}
 	}
 }

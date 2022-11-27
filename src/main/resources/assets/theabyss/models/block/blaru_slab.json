@@ -4,5 +4,6 @@
     "bottom": "theabyss:blocks/abyss_planks_21",
     "top": "theabyss:blocks/abyss_planks_21",
     "side": "theabyss:blocks/abyss_planks_21"
-  }
+  },
+  "render_type": "solid"
 }

@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/blaru_log_vines",
     "particle": "theabyss:blocks/blaru_log_vines",
     "texture": "theabyss:blocks/blaru_log_vines"
-  }
+  },
+  "render_type": "cutout"
 }

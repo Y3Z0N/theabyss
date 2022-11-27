@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/ragonagma",
     "particle": "theabyss:blocks/ragonagma"
-  }
+  },
+  "render_type": "solid"
 }

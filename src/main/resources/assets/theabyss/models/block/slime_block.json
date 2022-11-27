@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/slime_block",
     "particle": "theabyss:blocks/slime_block"
-  }
+  },
+  "render_type": "translucent"
 }

@@ -15,6 +15,6 @@ public class FrostSpiderRenderer extends MobRenderer<FrostSpiderEntity, Modelfro
 
 	@Override
 	public ResourceLocation getTextureLocation(FrostSpiderEntity entity) {
-		return new ResourceLocation("theabyss:textures/frost_spider.png");
+		return new ResourceLocation("theabyss:textures/entities/frost_spider.png");
 	}
 }

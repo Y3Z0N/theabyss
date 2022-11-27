@@ -1,0 +1,14 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "theabyss:mud_plains",
+    "theabyss:blue_mountain",
+    "theabyss:plains"
+  ],
+  "spawners": {
+    "type": "theabyss:infceted_cow",
+    "weight": 11,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

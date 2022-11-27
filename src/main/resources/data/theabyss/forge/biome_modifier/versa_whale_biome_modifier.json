@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "theabyss:blue_mountain",
+    "theabyss:plains"
+  ],
+  "spawners": {
+    "type": "theabyss:versa_whale",
+    "weight": 15,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/octavys_magynisius",
     "particle": "theabyss:blocks/octavys_magynisius"
-  }
+  },
+  "render_type": "cutout"
 }

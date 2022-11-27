@@ -19,6 +19,6 @@ public class NightHunterRenderer extends HumanoidMobRenderer<NightHunterEntity, 
 
 	@Override
 	public ResourceLocation getTextureLocation(NightHunterEntity entity) {
-		return new ResourceLocation("theabyss:textures/dark_hunter.png");
+		return new ResourceLocation("theabyss:textures/entities/dark_hunter.png");
 	}
 }

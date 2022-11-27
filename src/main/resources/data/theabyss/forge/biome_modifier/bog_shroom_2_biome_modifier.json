@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:blue_forest",
+  "features": "theabyss:bog_shroom_2",
+  "step": "surface_structures"
+}

@@ -8,5 +8,6 @@
     "south": "theabyss:blocks/blaru_bookshelf",
     "west": "theabyss:blocks/blaru_bookshelf",
     "particle": "theabyss:blocks/abyss_planks_21"
-  }
+  },
+  "render_type": "solid"
 }

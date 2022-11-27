@@ -3,16 +3,13 @@ package net.yezon.theabyss.world.features.treedecorators;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.CocoaDecorator;
-import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.util.RandomSource;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import java.util.function.BiConsumer;
-import java.util.Random;
 import java.util.List;
 
 public class SlimeForestBiomeFruitDecorator extends CocoaDecorator {
@@ -22,8 +19,7 @@ public class SlimeForestBiomeFruitDecorator extends CocoaDecorator {
 	static {
 		codec = com.mojang.serialization.Codec.unit(() -> INSTANCE);
 		tdt = new TreeDecoratorType<>(codec);
-		tdt.setRegistryName("slime_forest_tree_fruit_decorator");
-		ForgeRegistries.TREE_DECORATOR_TYPES.register(tdt);
+		ForgeRegistries.TREE_DECORATOR_TYPES.register("slime_forest_tree_fruit_decorator", tdt);
 	}
 
 	public SlimeForestBiomeFruitDecorator() {
@@ -36,19 +32,20 @@ public class SlimeForestBiomeFruitDecorator extends CocoaDecorator {
 	}
 
 	@Override
-	public void place(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> biConsumer, Random random, List<BlockPos> blocks,
-			List<BlockPos> blocks2) {
-		if (!(random.nextFloat() >= 0.2F)) {
-			int i = blocks.get(0).getY();
-			blocks.stream().filter((p_69980_) -> {
+	public void place(TreeDecorator.Context pContext) {
+		RandomSource randomsource = pContext.random();
+		if (!(randomsource.nextFloat() >= 0.2F)) {
+			List<BlockPos> list = pContext.logs();
+			int i = list.get(0).getY();
+			list.stream().filter((p_69980_) -> {
 				return p_69980_.getY() - i <= 2;
-			}).forEach((p_161728_) -> {
+			}).forEach((p_226026_) -> {
 				for (Direction direction : Direction.Plane.HORIZONTAL) {
-					if (random.nextFloat() <= 0.25F) {
+					if (randomsource.nextFloat() <= 0.25F) {
 						Direction direction1 = direction.getOpposite();
-						BlockPos blockpos = p_161728_.offset(direction1.getStepX(), 0, direction1.getStepZ());
-						if (Feature.isAir(level, blockpos)) {
-							biConsumer.accept(blockpos, Blocks.AIR.defaultBlockState());
+						BlockPos blockpos = p_226026_.offset(direction1.getStepX(), 0, direction1.getStepZ());
+						if (pContext.isAir(blockpos)) {
+							pContext.setBlock(blockpos, Blocks.AIR.defaultBlockState());
 						}
 					}
 				}

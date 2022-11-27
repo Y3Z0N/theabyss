@@ -1,0 +1,8 @@
+{
+  "type": "forge:add_features",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "features": "theabyss:caverna_crystal_ore",
+  "step": "vegetal_decoration"
+}

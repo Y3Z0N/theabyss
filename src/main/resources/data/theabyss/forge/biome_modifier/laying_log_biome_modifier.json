@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:slime_forest",
+  "features": "theabyss:laying_log",
+  "step": "surface_structures"
+}

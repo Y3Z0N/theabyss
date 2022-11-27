@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/mossy_gravel",
     "particle": "theabyss:blocks/mossy_gravel"
-  }
+  },
+  "render_type": "solid"
 }

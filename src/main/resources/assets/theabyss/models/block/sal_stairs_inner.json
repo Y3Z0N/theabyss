@@ -4,5 +4,6 @@
     "bottom": "theabyss:blocks/sal_planks",
     "top": "theabyss:blocks/sal_planks",
     "side": "theabyss:blocks/sal_planks"
-  }
+  },
+  "render_type": "solid"
 }

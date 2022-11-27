@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:mud_plains",
+  "features": "theabyss:sal_shroom",
+  "step": "surface_structures"
+}

@@ -35,19 +35,12 @@ public class TantraGrassMiddleFeature extends RandomPatchFeature {
 		FEATURE = new TantraGrassMiddleFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:tantra_grass_middle", FEATURE,
 				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.TANTRA_GRASS_MIDDLE.get().defaultBlockState())),
-						List.of(), 64));
+						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.TANTRA_GRASS_MIDDLE.get())), List.of(), 64));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:tantra_grass_middle", CONFIGURED_FEATURE,
 				List.of(CountPlacement.of(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:fungal_forest"),
-			new ResourceLocation("theabyss:roggen_forest"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:ground_lands")));
 

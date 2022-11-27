@@ -16,13 +16,13 @@ public class AbyssalLionRenderer extends MobRenderer<AbyssalLionEntity, Modelaby
 		this.addLayer(new EyesLayer<AbyssalLionEntity, Modelabyssal_lion<AbyssalLionEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/abyssal_lion_glow.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/abyssal_lion_glow.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(AbyssalLionEntity entity) {
-		return new ResourceLocation("theabyss:textures/abyssal_lion.png");
+		return new ResourceLocation("theabyss:textures/entities/abyssal_lion.png");
 	}
 }

@@ -35,17 +35,12 @@ public class FortisUltimaFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new FortisUltimaFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:fortis_ultima", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.FORTIS_ULTIMA.get().defaultBlockState())), List.of(), 64));
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.FORTIS_ULTIMA.get())), List.of(), 64));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:fortis_ultima", CONFIGURED_FEATURE, List.of(CountPlacement.of(2),
 				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_forest"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(Level.OVERWORLD,
 			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

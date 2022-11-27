@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/dark_stone_22",
     "particle": "theabyss:blocks/dark_stone_22"
-  }
+  },
+  "render_type": "solid"
 }

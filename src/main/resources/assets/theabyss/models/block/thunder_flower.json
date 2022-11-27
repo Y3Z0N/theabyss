@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/thunderplant",
     "particle": "theabyss:blocks/thunderplant"
-  }
+  },
+  "render_type": "cutout"
 }

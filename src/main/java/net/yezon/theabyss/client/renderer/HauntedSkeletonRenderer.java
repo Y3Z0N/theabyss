@@ -16,13 +16,13 @@ public class HauntedSkeletonRenderer extends MobRenderer<HauntedSkeletonEntity, 
 		this.addLayer(new EyesLayer<HauntedSkeletonEntity, Modelskeleton_abyss<HauntedSkeletonEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/haunted_skeleton_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/haunted_skeleton_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(HauntedSkeletonEntity entity) {
-		return new ResourceLocation("theabyss:textures/haunted_skeleton.png");
+		return new ResourceLocation("theabyss:textures/entities/haunted_skeleton.png");
 	}
 }

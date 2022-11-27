@@ -19,6 +19,6 @@ public class SpectralEntityRenderer extends HumanoidMobRenderer<SpectralEntityEn
 
 	@Override
 	public ResourceLocation getTextureLocation(SpectralEntityEntity entity) {
-		return new ResourceLocation("theabyss:textures/firefly_entity.png");
+		return new ResourceLocation("theabyss:textures/entities/firefly_entity.png");
 	}
 }

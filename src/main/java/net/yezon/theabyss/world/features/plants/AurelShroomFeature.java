@@ -36,17 +36,12 @@ public class AurelShroomFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new AurelShroomFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:aurel_shroom", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.AUREL_SHROOM.get().defaultBlockState())), List.of(), 512));
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.AUREL_SHROOM.get())), List.of(), 600));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:aurel_shroom", CONFIGURED_FEATURE, List.of(CountPlacement.of(40),
 				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = Set.of(new ResourceLocation("theabyss:blue_forest"));
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

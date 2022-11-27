@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/flos_vitae",
     "particle": "theabyss:blocks/flos_vitae"
-  }
+  },
+  "render_type": "cutout"
 }

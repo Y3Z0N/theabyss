@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "theabyss:blue_mountain",
+    "theabyss:phantom_crate"
+  ],
+  "spawners": {
+    "type": "theabyss:abyssal_lion",
+    "weight": 10,
+    "minCount": 1,
+    "maxCount": 2
+  }
+}

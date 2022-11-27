@@ -19,6 +19,6 @@ public class GuardRenderer extends HumanoidMobRenderer<GuardEntity, HumanoidMode
 
 	@Override
 	public ResourceLocation getTextureLocation(GuardEntity entity) {
-		return new ResourceLocation("theabyss:textures/abyss_guardian.png");
+		return new ResourceLocation("theabyss:textures/entities/abyss_guardian.png");
 	}
 }

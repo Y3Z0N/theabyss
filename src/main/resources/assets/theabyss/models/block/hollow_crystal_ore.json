@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/hollow_crystal",
     "particle": "theabyss:blocks/hollow_crystal",
     "1": "theabyss:blocks/hollow_crystal"
-  }
+  },
+  "render_type": "cutout"
 }

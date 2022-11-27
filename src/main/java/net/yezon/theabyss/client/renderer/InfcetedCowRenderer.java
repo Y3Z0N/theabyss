@@ -17,13 +17,13 @@ public class InfcetedCowRenderer extends MobRenderer<InfcetedCowEntity, CowModel
 		this.addLayer(new EyesLayer<InfcetedCowEntity, CowModel<InfcetedCowEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/cow_infected_glowinglayer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/cow_infected_glowinglayer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(InfcetedCowEntity entity) {
-		return new ResourceLocation("theabyss:textures/cow_infected.png");
+		return new ResourceLocation("theabyss:textures/entities/cow_infected.png");
 	}
 }

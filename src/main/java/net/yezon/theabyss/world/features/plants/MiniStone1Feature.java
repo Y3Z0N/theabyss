@@ -35,17 +35,12 @@ public class MiniStone1Feature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new MiniStone1Feature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:mini_stone_1", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.MINI_STONE_1.get().defaultBlockState())), List.of(), 64));
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.MINI_STONE_1.get())), List.of(), 64));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:mini_stone_1", CONFIGURED_FEATURE, List.of(CountPlacement.of(3),
 				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	public static Holder<PlacedFeature> placedFeature() {
-		return PLACED_FEATURE;
-	}
-
-	public static final Set<ResourceLocation> GENERATE_BIOMES = null;
 	private final Set<ResourceKey<Level>> generate_dimensions = Set
 			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 

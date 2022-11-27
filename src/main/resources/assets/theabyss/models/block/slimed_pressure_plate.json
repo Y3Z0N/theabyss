@@ -2,5 +2,6 @@
   "parent": "block/pressure_plate_up",
   "textures": {
     "texture": "theabyss:blocks/slimed_planks"
-  }
+  },
+  "render_type": "solid"
 }

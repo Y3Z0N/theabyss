@@ -19,7 +19,7 @@ import java.util.Collections;
 
 public class StoneBrickSlabBlock extends SlabBlock {
 	public StoneBrickSlabBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(3f, 10f).requiresCorrectToolForDrops());
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(3f, 10f).requiresCorrectToolForDrops().dynamicShape());
 	}
 
 	@Override

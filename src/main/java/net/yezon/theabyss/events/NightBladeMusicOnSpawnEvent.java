@@ -2,10 +2,7 @@ package net.yezon.theabyss.events;
 
 import net.yezon.theabyss.init.TheabyssModEntities;
 import net.yezon.theabyss.entity.NightBladeBossCloneEntity;
-
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
+import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -18,7 +15,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
@@ -36,60 +33,38 @@ public class NightBladeMusicOnSpawnEvent {
 					.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
 				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performCommand(
-							new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", new TextComponent(""),
+					_level.getServer().getCommands().performPrefixedCommand(
+							new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""),
 									_level.getServer(), null).withSuppressedOutput(),
 							("/playsound theabyss:end_game_music music " + entityiterator.getDisplayName().getString()));
 			}
 		}
-		new Object() {
-			private int ticks = 0;
-			private float waitTicks;
-			private LevelAccessor world;
-
-			public void start(LevelAccessor world, int waitTicks) {
-				this.waitTicks = waitTicks;
-				MinecraftForge.EVENT_BUS.register(this);
-				this.world = world;
+		TheabyssMod.queueServerWork(620, () -> {
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = new NightBladeBossCloneEntity(TheabyssModEntities.NIGHT_BLADE_BOSS_CLONE.get(), _level);
+				entityToSpawn.moveTo((x + 3), (y + 2), z, world.getRandom().nextFloat() * 360F, 0);
+				if (entityToSpawn instanceof Mob _mobToSpawn)
+					_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null,
+							null);
+				world.addFreshEntity(entityToSpawn);
 			}
-
-			@SubscribeEvent
-			public void tick(TickEvent.ServerTickEvent event) {
-				if (event.phase == TickEvent.Phase.END) {
-					this.ticks += 1;
-					if (this.ticks >= this.waitTicks)
-						run();
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = new NightBladeBossCloneEntity(TheabyssModEntities.NIGHT_BLADE_BOSS_CLONE.get(), _level);
+				entityToSpawn.moveTo(x, (y + 2), (z + 3), world.getRandom().nextFloat() * 360F, 0);
+				if (entityToSpawn instanceof Mob _mobToSpawn)
+					_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null,
+							null);
+				world.addFreshEntity(entityToSpawn);
+			}
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(200 / 2d), e -> true).stream()
+						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					if (entity instanceof LivingEntity _entity)
+						_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 25, 1));
 				}
 			}
-
-			private void run() {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = new NightBladeBossCloneEntity(TheabyssModEntities.NIGHT_BLADE_BOSS_CLONE.get(), _level);
-					entityToSpawn.moveTo((x + 3), (y + 2), z, world.getRandom().nextFloat() * 360F, 0);
-					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED,
-								null, null);
-					world.addFreshEntity(entityToSpawn);
-				}
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = new NightBladeBossCloneEntity(TheabyssModEntities.NIGHT_BLADE_BOSS_CLONE.get(), _level);
-					entityToSpawn.moveTo(x, (y + 2), (z + 3), world.getRandom().nextFloat() * 360F, 0);
-					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED,
-								null, null);
-					world.addFreshEntity(entityToSpawn);
-				}
-				{
-					final Vec3 _center = new Vec3(x, y, z);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(200 / 2d), e -> true).stream()
-							.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
-					for (Entity entityiterator : _entfound) {
-						if (entity instanceof LivingEntity _entity)
-							_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 25, 1));
-					}
-				}
-				MinecraftForge.EVENT_BUS.unregister(this);
-			}
-		}.start(world, 620);
+		});
 	}
 }

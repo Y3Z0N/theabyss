@@ -16,13 +16,13 @@ public class TheRokaRenderer extends MobRenderer<TheRokaEntity, ModelRokaEntityM
 		this.addLayer(new EyesLayer<TheRokaEntity, ModelRokaEntityModel<TheRokaEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/rokaentitytexture_glow.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/rokaentitytexture_glow.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(TheRokaEntity entity) {
-		return new ResourceLocation("theabyss:textures/rokaentitytexture.png");
+		return new ResourceLocation("theabyss:textures/entities/rokaentitytexture.png");
 	}
 }

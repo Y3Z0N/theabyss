@@ -16,7 +16,7 @@ import java.util.Collections;
 
 public class SalPressurePlateBlock extends PressurePlateBlock {
 	public SalPressurePlateBlock() {
-		super(Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(1f, 10f));
+		super(Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(1f, 10f).dynamicShape());
 	}
 
 	@Override

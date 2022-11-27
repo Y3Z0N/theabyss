@@ -4,7 +4,7 @@ import net.yezon.theabyss.network.TheabyssModVariables;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 
 import java.util.HashMap;
 
@@ -28,7 +28,7 @@ public class SetzCommandExecutedEvent {
 			});
 		}
 		if (entity instanceof Player _player && !_player.level.isClientSide())
-			_player.displayClientMessage(new TextComponent(("Y SET TO: " + (entity
+			_player.displayClientMessage(Component.literal(("Y SET TO: " + (entity
 					.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).HudY)),
 					(false));
 	}

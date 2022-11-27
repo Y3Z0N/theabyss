@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/abyss_dirt",
     "particle": "theabyss:blocks/abyss_dirt",
     "0": "theabyss:blocks/basegrassblock"
-  }
+  },
+  "render_type": "solid"
 }

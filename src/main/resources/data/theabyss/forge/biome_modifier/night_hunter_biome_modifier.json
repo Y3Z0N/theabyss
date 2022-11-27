@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "theabyss:blue_mountain",
+  "spawners": {
+    "type": "theabyss:night_hunter",
+    "weight": 4,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

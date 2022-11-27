@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/abyss_dirt",
     "particle": "theabyss:blocks/abyss_dirt"
-  }
+  },
+  "render_type": "solid"
 }

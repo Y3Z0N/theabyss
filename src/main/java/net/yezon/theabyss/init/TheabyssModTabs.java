@@ -1,11 +1,6 @@
 
-/*
- *    Y3 was here UwU ^-^
- */
-package net.yezon.theabyss.init;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
+package net.yezon.theabyss.init;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.CreativeModeTab;
@@ -26,7 +21,7 @@ public class TheabyssModTabs {
 				return new ItemStack(TheabyssModItems.BOOK_ICON.get());
 			}
 
-			@OnlyIn(Dist.CLIENT)
+			@Override
 			public boolean hasSearchBar() {
 				return true;
 			}
@@ -37,7 +32,7 @@ public class TheabyssModTabs {
 				return new ItemStack(TheabyssModItems.INCORYTHE_ARMOR_CHESTPLATE.get());
 			}
 
-			@OnlyIn(Dist.CLIENT)
+			@Override
 			public boolean hasSearchBar() {
 				return false;
 			}
@@ -48,7 +43,7 @@ public class TheabyssModTabs {
 				return new ItemStack(TheabyssModItems.UNORITHE_PICK_AXE.get());
 			}
 
-			@OnlyIn(Dist.CLIENT)
+			@Override
 			public boolean hasSearchBar() {
 				return false;
 			}
@@ -59,7 +54,7 @@ public class TheabyssModTabs {
 				return new ItemStack(TheabyssModBlocks.LORAN_FLOWER.get());
 			}
 
-			@OnlyIn(Dist.CLIENT)
+			@Override
 			public boolean hasSearchBar() {
 				return false;
 			}
@@ -70,7 +65,7 @@ public class TheabyssModTabs {
 				return new ItemStack(TheabyssModItems.FUSION_SWORD.get());
 			}
 
-			@OnlyIn(Dist.CLIENT)
+			@Override
 			public boolean hasSearchBar() {
 				return false;
 			}
@@ -81,7 +76,7 @@ public class TheabyssModTabs {
 				return new ItemStack(TheabyssModItems.NIGHT_HUNTER_ABL_2.get());
 			}
 
-			@OnlyIn(Dist.CLIENT)
+			@Override
 			public boolean hasSearchBar() {
 				return false;
 			}
@@ -92,7 +87,7 @@ public class TheabyssModTabs {
 				return new ItemStack(TheabyssModItems.MUTATED_ENDERPEARL.get());
 			}
 
-			@OnlyIn(Dist.CLIENT)
+			@Override
 			public boolean hasSearchBar() {
 				return false;
 			}

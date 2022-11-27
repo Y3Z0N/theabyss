@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "theabyss:blue_mountain",
+    "theabyss:blue_jungle",
+    "theabyss:fungal_forest",
+    "theabyss:blue_forest",
+    "theabyss:roggen_forest"
+  ],
+  "features": "theabyss:loran_flower",
+  "step": "vegetal_decoration"
+}

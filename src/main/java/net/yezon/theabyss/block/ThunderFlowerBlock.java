@@ -3,10 +3,6 @@ package net.yezon.theabyss.block;
 
 import net.yezon.theabyss.events.ThunderFlowerEffectEvent;
 import net.yezon.theabyss.init.TheabyssModItems;
-import net.yezon.theabyss.init.TheabyssModBlocks;
-
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
@@ -19,8 +15,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import java.util.List;
 import java.util.Collections;
@@ -28,7 +22,7 @@ import java.util.Collections;
 public class ThunderFlowerBlock extends FlowerBlock {
 	public ThunderFlowerBlock() {
 		super(MobEffects.SATURATION, 0,
-				BlockBehaviour.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS).instabreak().lightLevel(s -> 5));
+				BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().lightLevel(s -> 5).noCollission());
 	}
 
 	@Override
@@ -43,10 +37,5 @@ public class ThunderFlowerBlock extends FlowerBlock {
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
 		ThunderFlowerEffectEvent.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(TheabyssModBlocks.THUNDER_FLOWER.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

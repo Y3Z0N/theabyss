@@ -20,13 +20,13 @@ public class MudZombieRenderer extends HumanoidMobRenderer<MudZombieEntity, Huma
 		this.addLayer(new EyesLayer<MudZombieEntity, HumanoidModel<MudZombieEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/forest_zombie_32_glowinglayer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/forest_zombie_32_glowinglayer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(MudZombieEntity entity) {
-		return new ResourceLocation("theabyss:textures/forest_zombie_32.png");
+		return new ResourceLocation("theabyss:textures/entities/forest_zombie_32.png");
 	}
 }

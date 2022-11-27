@@ -8,5 +8,6 @@
     "south": "theabyss:blocks/ruma_log_side",
     "west": "theabyss:blocks/ruma_log_side",
     "particle": "theabyss:blocks/ruma_log_top"
-  }
+  },
+  "render_type": "solid"
 }

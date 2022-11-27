@@ -16,13 +16,13 @@ public class VersaWhaleRenderer extends MobRenderer<VersaWhaleEntity, Modelwhale
 		this.addLayer(new EyesLayer<VersaWhaleEntity, Modelwhale<VersaWhaleEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/versa_whale_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/versa_whale_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(VersaWhaleEntity entity) {
-		return new ResourceLocation("theabyss:textures/versa_whale.png");
+		return new ResourceLocation("theabyss:textures/entities/versa_whale.png");
 	}
 }

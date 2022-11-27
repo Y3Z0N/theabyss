@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/diamond_ore",
     "particle": "theabyss:blocks/diamond_ore"
-  }
+  },
+  "render_type": "solid"
 }

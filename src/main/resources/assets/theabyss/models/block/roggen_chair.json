@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/roggen_planls",
     "particle": "theabyss:blocks/roggen_planls",
     "0": "theabyss:blocks/roggen_planls"
-  }
+  },
+  "render_type": "solid"
 }

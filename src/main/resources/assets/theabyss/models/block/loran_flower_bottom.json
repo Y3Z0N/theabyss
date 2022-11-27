@@ -3,5 +3,6 @@
   "textures": {
     "cross": "theabyss:blocks/loran_flower_lower",
     "particle": "theabyss:blocks/loran_flower_lower"
-  }
+  },
+  "render_type": "cutout"
 }

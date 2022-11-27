@@ -4,5 +4,6 @@
     "all": "theabyss:blocks/stone_bricks",
     "particle": "theabyss:blocks/stone_bricks",
     "0": "theabyss:blocks/altar_activated_texture"
-  }
+  },
+  "render_type": "solid"
 }

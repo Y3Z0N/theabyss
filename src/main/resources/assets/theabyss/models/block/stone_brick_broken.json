@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/cracked_stone_bricks",
     "particle": "theabyss:blocks/cracked_stone_bricks"
-  }
+  },
+  "render_type": "solid"
 }

@@ -3,5 +3,6 @@
   "textures": {
     "all": "theabyss:blocks/slimed_planks",
     "particle": "theabyss:blocks/slimed_planks"
-  }
+  },
+  "render_type": "solid"
 }

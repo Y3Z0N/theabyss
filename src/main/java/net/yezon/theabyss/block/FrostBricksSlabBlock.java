@@ -15,7 +15,7 @@ import java.util.Collections;
 
 public class FrostBricksSlabBlock extends SlabBlock {
 	public FrostBricksSlabBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f));
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).dynamicShape());
 	}
 
 	@Override

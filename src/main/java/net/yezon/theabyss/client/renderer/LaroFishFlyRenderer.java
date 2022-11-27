@@ -16,13 +16,13 @@ public class LaroFishFlyRenderer extends MobRenderer<LaroFishFlyEntity, Modelfis
 		this.addLayer(new EyesLayer<LaroFishFlyEntity, Modelfish1<LaroFishFlyEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/laro_fish.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/laro_fish.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(LaroFishFlyEntity entity) {
-		return new ResourceLocation("theabyss:textures/laro_fish.png");
+		return new ResourceLocation("theabyss:textures/entities/laro_fish.png");
 	}
 }

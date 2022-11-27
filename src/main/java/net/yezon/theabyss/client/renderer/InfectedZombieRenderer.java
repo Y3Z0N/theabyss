@@ -16,13 +16,13 @@ public class InfectedZombieRenderer extends MobRenderer<InfectedZombieEntity, Mo
 		this.addLayer(new EyesLayer<InfectedZombieEntity, Modelzombie1<InfectedZombieEntity>>(this) {
 			@Override
 			public RenderType renderType() {
-				return RenderType.eyes(new ResourceLocation("theabyss:textures/infected_zombie_skeleton_glowing_layer.png"));
+				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/infected_zombie_skeleton_glowing_layer.png"));
 			}
 		});
 	}
 
 	@Override
 	public ResourceLocation getTextureLocation(InfectedZombieEntity entity) {
-		return new ResourceLocation("theabyss:textures/infected_zombie_skeleton.png");
+		return new ResourceLocation("theabyss:textures/entities/infected_zombie_skeleton.png");
 	}
 }
