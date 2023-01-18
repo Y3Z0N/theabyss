@@ -1,8 +1,0 @@
-{
-  "parent": "block/tinted_cross",
-  "textures": {
-    "cross": "theabyss:blocks/grass3",
-    "particle": "theabyss:blocks/grass3"
-  },
-  "render_type": "cutout"
-}

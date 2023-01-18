@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/lumus_rank_fruit",
-    "particle": "theabyss:blocks/lumus_rank_fruit"
-  },
-  "render_type": "cutout"
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/abyss_spros_22",
-    "particle": "theabyss:blocks/abyss_spros_22"
-  },
-  "render_type": "cutout"
-}

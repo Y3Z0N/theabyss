@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/grass_flower",
-  "textures": {
-    "all": "theabyss:blocks/loran_flower_upper",
-    "particle": "theabyss:blocks/loran_flower_upper",
-    "texture": "theabyss:blocks/loran_flower_upper"
-  },
-  "render_type": "cutout"
-}

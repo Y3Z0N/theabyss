@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:phantom_crate",
+  "features": "theabyss:phantom_pillar_3",
+  "step": "surface_structures"
+}

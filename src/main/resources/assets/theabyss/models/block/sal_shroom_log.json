@@ -1,13 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "theabyss:blocks/sal_shroom_log_top",
-    "up": "theabyss:blocks/sal_shroom_log_top",
-    "north": "theabyss:blocks/sal_shroom_log_side",
-    "east": "theabyss:blocks/sal_shroom_log_side",
-    "south": "theabyss:blocks/sal_shroom_log_side",
-    "west": "theabyss:blocks/sal_shroom_log_side",
-    "particle": "theabyss:blocks/sal_shroom_log_top"
+    "down": "theabyss:blocks/sal_log_top",
+    "up": "theabyss:blocks/sal_log_top",
+    "north": "theabyss:blocks/sal_log",
+    "east": "theabyss:blocks/sal_log",
+    "south": "theabyss:blocks/sal_log",
+    "west": "theabyss:blocks/sal_log",
+    "particle": "theabyss:blocks/sal_log_top"
   },
   "render_type": "solid"
 }

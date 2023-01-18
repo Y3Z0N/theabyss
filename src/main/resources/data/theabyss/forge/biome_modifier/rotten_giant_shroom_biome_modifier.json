@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "theabyss:phantom_crate",
-  "features": "theabyss:rotten_giant_shroom",
-  "step": "surface_structures"
-}

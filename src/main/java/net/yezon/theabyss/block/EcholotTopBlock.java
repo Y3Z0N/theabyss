@@ -1,13 +1,14 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.EcholotEffectEvent;
-import net.yezon.theabyss.events.EcholotAmbienceEvent;
-import net.yezon.theabyss.init.TheabyssModParticleTypes;
+import org.checkerframework.checker.units.qual.s;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
+import net.yezon.theabyss.events.EcholotEffectevent;
+import net.yezon.theabyss.events.EcholotAmbienceevent;
 
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.block.state.BlockState;
@@ -16,13 +17,10 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.Minecraft;
 
 public class EcholotTopBlock extends Block {
 	public EcholotTopBlock() {
@@ -42,6 +40,11 @@ public class EcholotTopBlock extends Block {
 	}
 
 	@Override
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
+	}
+
+	@Override
 	public PushReaction getPistonPushReaction(BlockState state) {
 		return PushReaction.IGNORE;
 	}
@@ -53,28 +56,12 @@ public class EcholotTopBlock extends Block {
 		int y = pos.getY();
 		int z = pos.getZ();
 
-		EcholotAmbienceEvent.execute(world, x, y, z);
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	@Override
-	public void animateTick(BlockState blockstate, Level world, BlockPos pos, RandomSource random) {
-		super.animateTick(blockstate, world, pos, random);
-		Player entity = Minecraft.getInstance().player;
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		for (int l = 0; l < 15; ++l) {
-			double x0 = x + 0.5 + (random.nextFloat() - 0.5) * 0.4000000014901161D;
-			double y0 = y + 1.2 + (random.nextFloat() - 0.5) * 0.4000000014901161D * 100;
-			double z0 = z + 0.5 + (random.nextFloat() - 0.5) * 0.4000000014901161D;
-			world.addParticle((SimpleParticleType) (TheabyssModParticleTypes.ECHOLOT_BUBBLE.get()), x0, y0, z0, 0, 0, 0);
-		}
+		EcholotAmbienceevent.execute(world, x, y, z);
 	}
 
 	@Override
 	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
 		super.stepOn(world, pos, blockstate, entity);
-		EcholotEffectEvent.execute(entity);
+		EcholotEffectevent.execute(entity);
 	}
 }

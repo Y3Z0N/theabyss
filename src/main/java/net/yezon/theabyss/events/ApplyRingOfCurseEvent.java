@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
 
-public class ApplyRingOfCurseEvent {
+public class ApplyRingOfCurseevent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
@@ -63,13 +63,10 @@ public class ApplyRingOfCurseEvent {
 							if (!(entityiterator == entity)) {
 								if (!(entityiterator instanceof Player)) {
 									if (entityiterator instanceof LivingEntity _entity)
-										_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200,
-												(int) (0 + (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-														.orElse(new TheabyssModVariables.PlayerVariables())).ManaDamage),
-												(false), (false)));
+										_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 1, (false), (false)));
 									if (entityiterator instanceof LivingEntity _entity)
-										_entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100,
-												(int) (1 + (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+										_entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 100,
+												(int) (0 + (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 														.orElse(new TheabyssModVariables.PlayerVariables())).ManaDamage),
 												(false), (false)));
 									if (entityiterator instanceof LivingEntity _entity)
@@ -94,13 +91,10 @@ public class ApplyRingOfCurseEvent {
 						for (Entity entityiterator : _entfound) {
 							if (!(entityiterator == entity)) {
 								if (entityiterator instanceof LivingEntity _entity)
-									_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200,
-											(int) (0 + (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-													.orElse(new TheabyssModVariables.PlayerVariables())).ManaDamage),
-											(false), (false)));
+									_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 1, (false), (false)));
 								if (entityiterator instanceof LivingEntity _entity)
-									_entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100,
-											(int) (1 + (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									_entity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 100,
+											(int) (0 + (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 													.orElse(new TheabyssModVariables.PlayerVariables())).ManaDamage),
 											(false), (false)));
 								if (entityiterator instanceof LivingEntity _entity)

@@ -1,0 +1,25 @@
+{
+	"name": "Warped Crystal Shard",
+	"icon": "theabyss:warped_crystal_shard",
+"category": "theabyss:crystals",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:warped_crystal_shard",
+	"title": "Warped Crystal Shard",
+	"link_recipe": false,
+	"text": "Do you dare to brave the twisted, otherworldly landscape of the Nether dimension in Minecraft? If so, you might just come across the rare and enigmatic Warped Crystal Shards. These shimmering, glowing crystals are a bit difficult to find, as they are only located within the eerie, twisted Warped Forests that dot the Nether."
+	},
+	{
+	"type": "text",
+	"text": "Some believe that the Warped Crystal Shards hold powerful, magical properties, and many brave adventurers journey to the Nether in search of them. But be warned - the Nether is a treacherous place, full of danger and mystery. Will you be the one to discover the secrets of the Warped Crystal Shards?"
+}
+	]
+	}

@@ -1,11 +1,8 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.JungleMelonEffectEvent;
+import net.yezon.theabyss.events.JungleMelonEffectevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
-
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
@@ -29,19 +26,13 @@ public class JungleMelonItemItem extends Item {
 	}
 
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public boolean isFoil(ItemStack itemstack) {
-		return true;
-	}
-
-	@Override
 	public ItemStack finishUsingItem(ItemStack itemstack, Level world, LivingEntity entity) {
 		ItemStack retval = super.finishUsingItem(itemstack, world, entity);
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		JungleMelonEffectEvent.execute(entity);
+		JungleMelonEffectevent.execute(entity);
 		return retval;
 	}
 }

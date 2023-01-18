@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.GetFusionOreAdvEvent;
+import net.yezon.theabyss.events.GetFusionOreAdvevent;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -58,7 +58,7 @@ public class FusionOreBlock extends Block {
 	@Override
 	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		GetFusionOreAdvEvent.execute(entity);
+		GetFusionOreAdvevent.execute(entity);
 		return retval;
 	}
 }

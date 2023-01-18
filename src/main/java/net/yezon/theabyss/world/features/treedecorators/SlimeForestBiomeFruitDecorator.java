@@ -32,10 +32,10 @@ public class SlimeForestBiomeFruitDecorator extends CocoaDecorator {
 	}
 
 	@Override
-	public void place(TreeDecorator.Context pContext) {
-		RandomSource randomsource = pContext.random();
+	public void place(TreeDecorator.Context context) {
+		RandomSource randomsource = context.random();
 		if (!(randomsource.nextFloat() >= 0.2F)) {
-			List<BlockPos> list = pContext.logs();
+			List<BlockPos> list = context.logs();
 			int i = list.get(0).getY();
 			list.stream().filter((p_69980_) -> {
 				return p_69980_.getY() - i <= 2;
@@ -44,8 +44,8 @@ public class SlimeForestBiomeFruitDecorator extends CocoaDecorator {
 					if (randomsource.nextFloat() <= 0.25F) {
 						Direction direction1 = direction.getOpposite();
 						BlockPos blockpos = p_226026_.offset(direction1.getStepX(), 0, direction1.getStepZ());
-						if (pContext.isAir(blockpos)) {
-							pContext.setBlock(blockpos, Blocks.AIR.defaultBlockState());
+						if (context.isAir(blockpos)) {
+							context.setBlock(blockpos, Blocks.AIR.defaultBlockState());
 						}
 					}
 				}

@@ -1,0 +1,9 @@
+{
+  "parent": "theabyss:custom/outer_leaves",
+  "textures": {
+    "all": "theabyss:blocks/outer_leaves_vigilant",
+    "particle": "theabyss:blocks/outer_leaves_vigilant",
+    "leaves": "theabyss:blocks/outer_leaves_vigilant"
+  },
+  "render_type": "cutout"
+}

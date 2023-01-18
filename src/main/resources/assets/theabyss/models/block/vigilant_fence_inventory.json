@@ -1,0 +1,8 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "theabyss:blocks/planks_vigilant",
+    "particle": "theabyss:blocks/planks_vigilant"
+  },
+  "render_type": "solid"
+}

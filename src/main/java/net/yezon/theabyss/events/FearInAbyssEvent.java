@@ -22,7 +22,7 @@ import net.minecraft.client.Minecraft;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class FearInAbyssEvent {
+public class FearInAbyssevent {
 	@SubscribeEvent
 	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {

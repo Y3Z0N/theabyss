@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "theabyss:blue_jungle",
-  "features": "theabyss:blaru_cave_moss",
-  "step": "vegetal_decoration"
-}

@@ -5,7 +5,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 
-public class CookedFishEffectEvent {
+public class CookedFishEffectevent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Thunder",
+	"icon": "theabyss:ring_of_thunder",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_thunder",
+	"title": "Ring Of Thunder",
+	"link_recipe": false,
+	"text": "Unleash the power of the skies with this incredible ring! It gives you the ability to summon lightning strikes on nearby entities, allowing you to strike fear into your enemies and protect yourself from harm. With this ring, you'll be able to harness the full fury of a thunderstorm and turn it to your advantage. And the best part? It only requires 60.0 somnium to use. Become a true master of the elements with this amazing lightning ring!"
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_ring",
+	"input1": "theabyss:abyss_powder",
+	"input2": "theabyss:ardor_powder",
+	"input3": "theabyss:abyss_powder",
+	"input4": "theabyss:ardor_powder",
+	"input5": "theabyss:abyss_powder",
+	"input6": "theabyss:ardor_powder",
+	"input7": "theabyss:abyss_powder",
+	"input8": "theabyss:ardor_powder",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

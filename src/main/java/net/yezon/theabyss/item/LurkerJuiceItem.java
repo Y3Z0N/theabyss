@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.LurkerJuiceEffectEvent;
+import net.yezon.theabyss.events.LurkerJuiceEffectevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -43,7 +43,7 @@ public class LurkerJuiceItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		LurkerJuiceEffectEvent.execute(entity);
+		LurkerJuiceEffectevent.execute(entity);
 		return retval;
 	}
 }

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.world.features.plants;
 
-import net.yezon.theabyss.events.CaveMossGenEvent;
+import net.yezon.theabyss.events.CaveMossGenevent;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
@@ -37,8 +37,8 @@ public class CavernaCrystalOreFeature extends RandomPatchFeature {
 		FEATURE = new CavernaCrystalOreFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:caverna_crystal_ore", FEATURE,
 				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.CAVERNA_CRYSTAL_ORE.get())), List.of(), 65));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:caverna_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(35),
+						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.CAVERNA_CRYSTAL_ORE.get())), List.of(), 6));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:caverna_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(12),
 				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));
 		return FEATURE;
 	}
@@ -57,7 +57,7 @@ public class CavernaCrystalOreFeature extends RandomPatchFeature {
 		int x = context.origin().getX();
 		int y = context.origin().getY();
 		int z = context.origin().getZ();
-		if (!CaveMossGenEvent.execute(y))
+		if (!CaveMossGenevent.execute(y))
 			return false;
 		return super.place(context);
 	}

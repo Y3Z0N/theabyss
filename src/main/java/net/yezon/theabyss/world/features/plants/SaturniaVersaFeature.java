@@ -43,7 +43,7 @@ public class SaturniaVersaFeature extends RandomPatchFeature {
 
 	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(
 			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")),
-			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:ground_lands")));
+			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:deleted_mod_element")));
 
 	public SaturniaVersaFeature() {
 		super(RandomPatchConfiguration.CODEC);

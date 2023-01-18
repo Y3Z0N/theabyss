@@ -16,7 +16,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class PatreonHandlerEvent {
+public class PatreonHandlerevent {
 	@SubscribeEvent
 	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {

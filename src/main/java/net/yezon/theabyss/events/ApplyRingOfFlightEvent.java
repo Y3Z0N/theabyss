@@ -10,7 +10,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.network.chat.Component;
 
-public class ApplyRingOfFlightEvent {
+public class ApplyRingOfFlightevent {
 	public static void execute(Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;

@@ -1,0 +1,7 @@
+{
+  "parent": "block/pressure_plate_down",
+  "textures": {
+    "texture": "theabyss:blocks/planks_vigilant"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Fire",
+	"icon": "theabyss:ring_of_fire",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_fire",
+	"title": "Ring Of Fire",
+	"link_recipe": false,
+	"text": "Ignite your enemies with the power of this fiery ring. Its burning aura engulfs nearby foes, consuming 35.0 somnium with each use. Watch as your enemies writhe in agony as the flames consume them. Strike fear into the hearts of your enemies with this devastating ring."
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_ring",
+	"input1": "theabyss:crimson_powder",
+	"input2": "minecraft:blaze_rod",
+	"input3": "theabyss:crimson_powder",
+	"input4": "minecraft:blaze_rod",
+	"input5": "theabyss:crimson_powder",
+	"input6": "minecraft:blaze_rod",
+	"input7": "theabyss:crimson_powder",
+	"input8": "minecraft:blaze_rod",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ManaCooldownUpgradeResultEvent;
+import net.yezon.theabyss.events.ManaCooldownUpgradeResultevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -54,7 +54,7 @@ public class SomniumCooldownUpgradeItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ManaCooldownUpgradeResultEvent.execute(entity);
+		ManaCooldownUpgradeResultevent.execute(entity);
 		return retval;
 	}
 }

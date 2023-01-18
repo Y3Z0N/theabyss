@@ -1,0 +1,47 @@
+{
+	"name": "Somnium Regen",
+	"icon": "theabyss:somnium_regen_upgrade",
+"category": "theabyss:alchemy",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:somnium_regen_upgrade",
+	"title": "Somnium Regen Upgrade",
+	"link_recipe": false,
+	"text": "The Somnium Regen Upgrade essence has two distinct effects on the user. When consumed for the first time, it activates natural Somnium regeneration in the body. When consumed again, it increases the rate of Somnium regeneration by up to 20%. This essence can be consumed 3 to 5 times to fully realize its potential. "
+	},
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "The Somnium Regen Upgrade can be crafted in a Somnium Infuser using loran energy and somnium as ingredients."
+},
+{
+	"type": "theabyss:infuser_recipes",
+	"heading": "Recipe",
+	"somnium": "theabyss:somnium",
+	"energy": "theabyss:loran_energy",
+	"input1": "theabyss:roka_horn",
+	"input2": "theabyss:phantom_essence",
+	"input3": "theabyss:phantom_essence",
+	"input4": "theabyss:infected_slime",
+	"text1": "Place Somnium and loran energy in the upper input slots.",
+	"text2": "To craft Somnium Regen Upgrade, place the required items in the test tubes on the left and right."
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/somnium_usage.png"
+		]
+}
+	]
+	}

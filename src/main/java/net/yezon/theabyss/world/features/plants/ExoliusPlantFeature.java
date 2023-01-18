@@ -34,7 +34,7 @@ public class ExoliusPlantFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new ExoliusPlantFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:exolius_plant", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.EXOLIUS_PLANT.get())), List.of(), 64));
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.EXOLIUS_PLANT.get())), List.of(), 24));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:exolius_plant", CONFIGURED_FEATURE,
 				List.of(CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;

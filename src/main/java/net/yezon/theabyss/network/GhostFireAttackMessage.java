@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.network;
 
-import net.yezon.theabyss.events.ApplyGhostFireAttackEvent;
+import net.yezon.theabyss.events.ApplyGhostFireAttackevent;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.network.NetworkEvent;
@@ -52,11 +52,11 @@ public class GhostFireAttackMessage {
 			return;
 		if (type == 0) {
 
-			ApplyGhostFireAttackEvent.execute(world, x, y, z, entity);
+			ApplyGhostFireAttackevent.execute(world, x, y, z, entity);
 		}
 		if (type == 1) {
 
-			ApplyGhostFireAttackEvent.execute(world, x, y, z, entity);
+			ApplyGhostFireAttackevent.execute(world, x, y, z, entity);
 		}
 	}
 

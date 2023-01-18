@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.MagicianSpawnEvent;
-import net.yezon.theabyss.events.MagicianAbilitiesEvent;
+import net.yezon.theabyss.events.MagicianSpawnevent;
+import net.yezon.theabyss.events.MagicianAbilitiesevent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -60,7 +60,7 @@ public class MagicianEntity extends Monster {
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
-				return (double) (4.0 + entity.getBbWidth() * entity.getBbWidth());
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
@@ -104,7 +104,7 @@ public class MagicianEntity extends Monster {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		MagicianAbilitiesEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		MagicianAbilitiesevent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override
@@ -136,7 +136,7 @@ public class MagicianEntity extends Monster {
 					int x = pos.getX();
 					int y = pos.getY();
 					int z = pos.getZ();
-					return MagicianSpawnEvent.execute(world);
+					return MagicianSpawnevent.execute(world);
 				});
 	}
 

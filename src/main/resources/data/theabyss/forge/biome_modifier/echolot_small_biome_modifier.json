@@ -1,9 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": [
-    "theabyss:blue_jungle",
-    "theabyss:fungal_forest"
-  ],
+  "biomes": "theabyss:blue_jungle",
   "features": "theabyss:echolot_small",
   "step": "surface_structures"
 }

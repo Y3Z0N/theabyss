@@ -143,75 +143,73 @@ public class ArcaneMenu extends AbstractContainerMenu implements Supplier<Map<In
 		return itemstack;
 	}
 
-	@Override /**
-				* Merges provided ItemStack with the first avaliable one in the container/player inventor between minIndex (included) and maxIndex (excluded). Args : stack, minIndex, maxIndex, negativDirection. [!] the Container implementation do not check if the item is valid for the slot
-				*/
-	protected boolean moveItemStackTo(ItemStack pStack, int pStartIndex, int pEndIndex, boolean pReverseDirection) {
+	@Override
+	protected boolean moveItemStackTo(ItemStack p_38904_, int p_38905_, int p_38906_, boolean p_38907_) {
 		boolean flag = false;
-		int i = pStartIndex;
-		if (pReverseDirection) {
-			i = pEndIndex - 1;
+		int i = p_38905_;
+		if (p_38907_) {
+			i = p_38906_ - 1;
 		}
-		if (pStack.isStackable()) {
-			while (!pStack.isEmpty()) {
-				if (pReverseDirection) {
-					if (i < pStartIndex) {
+		if (p_38904_.isStackable()) {
+			while (!p_38904_.isEmpty()) {
+				if (p_38907_) {
+					if (i < p_38905_) {
 						break;
 					}
-				} else if (i >= pEndIndex) {
+				} else if (i >= p_38906_) {
 					break;
 				}
 				Slot slot = this.slots.get(i);
 				ItemStack itemstack = slot.getItem();
-				if (slot.mayPlace(itemstack) && !itemstack.isEmpty() && ItemStack.isSameItemSameTags(pStack, itemstack)) {
-					int j = itemstack.getCount() + pStack.getCount();
-					int maxSize = Math.min(slot.getMaxStackSize(), pStack.getMaxStackSize());
+				if (slot.mayPlace(itemstack) && !itemstack.isEmpty() && ItemStack.isSameItemSameTags(p_38904_, itemstack)) {
+					int j = itemstack.getCount() + p_38904_.getCount();
+					int maxSize = Math.min(slot.getMaxStackSize(), p_38904_.getMaxStackSize());
 					if (j <= maxSize) {
-						pStack.setCount(0);
+						p_38904_.setCount(0);
 						itemstack.setCount(j);
 						slot.set(itemstack);
 						flag = true;
 					} else if (itemstack.getCount() < maxSize) {
-						pStack.shrink(maxSize - itemstack.getCount());
+						p_38904_.shrink(maxSize - itemstack.getCount());
 						itemstack.setCount(maxSize);
 						slot.set(itemstack);
 						flag = true;
 					}
 				}
-				if (pReverseDirection) {
+				if (p_38907_) {
 					--i;
 				} else {
 					++i;
 				}
 			}
 		}
-		if (!pStack.isEmpty()) {
-			if (pReverseDirection) {
-				i = pEndIndex - 1;
+		if (!p_38904_.isEmpty()) {
+			if (p_38907_) {
+				i = p_38906_ - 1;
 			} else {
-				i = pStartIndex;
+				i = p_38905_;
 			}
 			while (true) {
-				if (pReverseDirection) {
-					if (i < pStartIndex) {
+				if (p_38907_) {
+					if (i < p_38905_) {
 						break;
 					}
-				} else if (i >= pEndIndex) {
+				} else if (i >= p_38906_) {
 					break;
 				}
 				Slot slot1 = this.slots.get(i);
 				ItemStack itemstack1 = slot1.getItem();
-				if (itemstack1.isEmpty() && slot1.mayPlace(pStack)) {
-					if (pStack.getCount() > slot1.getMaxStackSize()) {
-						slot1.set(pStack.split(slot1.getMaxStackSize()));
+				if (itemstack1.isEmpty() && slot1.mayPlace(p_38904_)) {
+					if (p_38904_.getCount() > slot1.getMaxStackSize()) {
+						slot1.set(p_38904_.split(slot1.getMaxStackSize()));
 					} else {
-						slot1.set(pStack.split(pStack.getCount()));
+						slot1.set(p_38904_.split(p_38904_.getCount()));
 					}
 					slot1.setChanged();
 					flag = true;
 					break;
 				}
-				if (pReverseDirection) {
+				if (p_38907_) {
 					--i;
 				} else {
 					++i;

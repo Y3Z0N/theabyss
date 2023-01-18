@@ -4,7 +4,7 @@ license="Custom license"
 
 [[mods]]
 modId="theabyss"
-version="2.2.34"
+version="2.5"
 displayName="TheAbyss"
 credits="Mod by Y3Z0N"
 displayURL="https://www.curseforge.com/members/y4z0n/followers"
@@ -23,4 +23,16 @@ The Abyss adds a brand new dimension to explore full of unique adventures and da
 
 
 
+[[dependencies.theabyss]]
+    modId="patchouli"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.theabyss]]
+    modId="geckolib"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 

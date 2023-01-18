@@ -49,17 +49,15 @@ public class TheAbyssDimPortalBlock extends NetherPortalBlock {
 		}
 	}
 
-	@Override /** 
-				* Update the provided state given the provided neighbor direction and neighbor state, returning a new state. For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately returns its solidified counterpart. Note that this method should ideally consider only the specific direction passed in.
-				*/
-	public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos,
-			BlockPos pFacingPos) {
-		Direction.Axis direction$axis = pFacing.getAxis();
-		Direction.Axis direction$axis1 = pState.getValue(AXIS);
+	@Override
+	public BlockState updateShape(BlockState p_54928_, Direction p_54929_, BlockState p_54930_, LevelAccessor p_54931_, BlockPos p_54932_,
+			BlockPos p_54933_) {
+		Direction.Axis direction$axis = p_54929_.getAxis();
+		Direction.Axis direction$axis1 = p_54928_.getValue(AXIS);
 		boolean flag = direction$axis1 != direction$axis && direction$axis.isHorizontal();
-		return !flag && !pFacingState.is(this) && !(new TheAbyssDimPortalShape(pLevel, pCurrentPos, direction$axis1)).isComplete()
+		return !flag && !p_54930_.is(this) && !(new TheAbyssDimPortalShape(p_54931_, p_54932_, direction$axis1)).isComplete()
 				? Blocks.AIR.defaultBlockState()
-				: super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+				: super.updateShape(p_54928_, p_54929_, p_54930_, p_54931_, p_54932_, p_54933_);
 	}
 
 	@OnlyIn(Dist.CLIENT)

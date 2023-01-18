@@ -5,7 +5,6 @@
     "theabyss:loran_ore",
     "theabyss:garnite_ore",
     "theabyss:ignisithe_ore",
-    "theabyss:aboranys_ore",
     "theabyss:glacerythe_ore",
     "theabyss:aberythe_ore",
     "theabyss:incorythe_ore",
@@ -13,9 +12,6 @@
     "theabyss:gold_variant",
     "theabyss:iron_variant",
     "theabyss:emerald_variant",
-    "theabyss:florite_ore",
-    "theabyss:tantra_stone",
-    "theabyss:tantra_cobblestone",
     "theabyss:unstable_obsidian",
     "theabyss:infused_magma",
     "theabyss:stone",
@@ -34,6 +30,7 @@
     "theabyss:night_altar_activated",
     "theabyss:stone_brick_wall",
     "theabyss:stone_brick_pillar_ignited",
-    "theabyss:stone_brick_pillar"
+    "theabyss:stone_brick_pillar",
+    "theabyss:stone_rackle"
   ]
 }

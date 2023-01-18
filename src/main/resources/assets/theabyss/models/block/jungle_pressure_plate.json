@@ -1,7 +1,7 @@
 {
   "parent": "block/pressure_plate_up",
   "textures": {
-    "texture": "theabyss:blocks/jungle_planks"
+    "texture": "theabyss:blocks/nightgrove_planks"
   },
   "render_type": "solid"
 }

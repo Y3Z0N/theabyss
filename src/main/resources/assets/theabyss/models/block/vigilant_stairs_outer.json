@@ -1,0 +1,9 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "theabyss:blocks/planks_vigilant",
+    "top": "theabyss:blocks/planks_vigilant",
+    "side": "theabyss:blocks/planks_vigilant"
+  },
+  "render_type": "solid"
+}

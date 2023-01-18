@@ -1,0 +1,42 @@
+{
+	"name": "Research Table",
+	"icon": "theabyss:research_table",
+"category": "theabyss:crafting_blocks",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+		{
+			"type": "spotlight",
+			"item": "theabyss:research_table",
+			"title": "Research Table",
+			"link_recipe":false,
+			"text": "Unlock the secrets of the universe with the Research Table! This tool lets you research crystals, artifacts, and more before cutting them with the crystal cutter. Don't risk destroying your goods - make sure to research first."
+		},
+			{
+				"type": "multiblock",
+				"text": "",
+				"name": "Research Table",
+				"multiblock": {
+					"pattern": [
+						["0"],
+						["A"],
+						[" "],
+						[" "]
+					],
+					"mapping": {
+						"A": "theabyss:research_table"
+					}
+				}
+			},
+			{
+				"type": "crafting",
+				"title": "Research Table",
+				"recipe": "theabyss:research_table_rcp"
+			}
+	]
+}

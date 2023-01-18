@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.IceKnightEntityIsHurtEvent;
+import net.yezon.theabyss.events.IceKnightEntityIsHurtevent;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -58,7 +58,7 @@ public class IceKnightEntity extends Monster {
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
-				return (double) (4.0 + entity.getBbWidth() * entity.getBbWidth());
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
@@ -88,7 +88,7 @@ public class IceKnightEntity extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		IceKnightEntityIsHurtEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		IceKnightEntityIsHurtevent.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (source.getDirectEntity() instanceof AbstractArrow)
 			return false;
 		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)

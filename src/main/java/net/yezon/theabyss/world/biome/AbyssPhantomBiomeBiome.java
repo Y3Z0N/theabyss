@@ -17,8 +17,8 @@ import net.minecraft.core.particles.ParticleTypes;
 
 public class AbyssPhantomBiomeBiome {
 	public static Biome createBiome() {
-		BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder().fogColor(-16702428).waterColor(-13421773).waterFogColor(-13421773)
-				.skyColor(-16702428).foliageColorOverride(-14145233).grassColorOverride(-14079439)
+		BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder().fogColor(-16702428).waterColor(-16764109).waterFogColor(-16764109)
+				.skyColor(-16702428).foliageColorOverride(-16764109).grassColorOverride(-16764109)
 				.ambientLoopSound(new SoundEvent(new ResourceLocation("theabyss:phantom_crate_ambience")))
 				.ambientAdditionsSound(new AmbientAdditionsSettings(new SoundEvent(new ResourceLocation("theabyss:random_fx")), 0.0111D))
 				.backgroundMusic(new Music(new SoundEvent(new ResourceLocation("theabyss:the_abyss_music")), 12000, 24000, true))

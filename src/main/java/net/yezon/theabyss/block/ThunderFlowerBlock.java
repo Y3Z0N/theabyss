@@ -1,7 +1,9 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.ThunderFlowerEffectEvent;
+import org.checkerframework.checker.units.qual.s;
+
+import net.yezon.theabyss.events.ThunderFlowerEffectevent;
 import net.yezon.theabyss.init.TheabyssModItems;
 
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -36,6 +38,6 @@ public class ThunderFlowerBlock extends FlowerBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		ThunderFlowerEffectEvent.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+		ThunderFlowerEffectevent.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
 	}
 }

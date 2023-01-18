@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "theabyss:fungal_forest",
-  "features": "theabyss:lumus_flower",
-  "step": "vegetal_decoration"
-}

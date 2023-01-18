@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.ExplosiveShurikenEvent;
+import net.yezon.theabyss.events.ExplosiveShurikenevent;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -67,13 +67,13 @@ public class ShurikenExplosiveEntity extends AbstractArrow implements ItemSuppli
 	@Override
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
-		ExplosiveShurikenEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		ExplosiveShurikenevent.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override
 	public void onHitBlock(BlockHitResult blockHitResult) {
 		super.onHitBlock(blockHitResult);
-		ExplosiveShurikenEvent.execute(this.level, blockHitResult.getBlockPos().getX(), blockHitResult.getBlockPos().getY(),
+		ExplosiveShurikenevent.execute(this.level, blockHitResult.getBlockPos().getX(), blockHitResult.getBlockPos().getY(),
 				blockHitResult.getBlockPos().getZ());
 	}
 

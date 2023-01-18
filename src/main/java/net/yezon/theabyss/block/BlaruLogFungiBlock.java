@@ -1,9 +1,12 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.BreakVinesEvent;
+import org.checkerframework.checker.units.qual.s;
+
+import net.yezon.theabyss.events.BreakVinesevent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
@@ -33,7 +36,7 @@ public class BlaruLogFungiBlock extends Block {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
 	public BlaruLogFungiBlock() {
-		super(BlockBehaviour.Properties.of(Material.WATER_PLANT).sound(SoundType.GRASS).strength(1f, 10f).lightLevel(s -> 1).noCollission()
+		super(BlockBehaviour.Properties.of(Material.WATER_PLANT).sound(SoundType.GRASS).strength(1f, 10f).lightLevel(s -> 5).noCollission()
 				.noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
 				.isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
@@ -47,6 +50,11 @@ public class BlaruLogFungiBlock extends Block {
 	@Override
 	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
+	}
+
+	@Override
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
 	}
 
 	@Override
@@ -99,6 +107,6 @@ public class BlaruLogFungiBlock extends Block {
 	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		BreakVinesEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		BreakVinesevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 }

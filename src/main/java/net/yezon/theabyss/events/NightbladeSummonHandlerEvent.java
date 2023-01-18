@@ -39,7 +39,7 @@ import javax.annotation.Nullable;
 import java.util.Map;
 
 @Mod.EventBusSubscriber
-public class NightbladeSummonHandlerEvent {
+public class NightbladeSummonHandlerevent {
 	@SubscribeEvent
 	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
 		if (event.getHand() != event.getEntity().getUsedItemHand())

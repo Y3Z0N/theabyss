@@ -1,0 +1,9 @@
+{
+  "parent": "theabyss:custom/skeleton_body_2",
+  "textures": {
+    "all": "theabyss:blocks/bone_block",
+    "particle": "theabyss:blocks/bone_block",
+    "0": "theabyss:blocks/skeleton_body"
+  },
+  "render_type": "cutout"
+}

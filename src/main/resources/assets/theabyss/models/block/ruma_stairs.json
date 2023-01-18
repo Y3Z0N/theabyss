@@ -1,9 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "theabyss:blocks/ruma_planks",
-    "top": "theabyss:blocks/ruma_planks",
-    "side": "theabyss:blocks/ruma_planks"
-  },
-  "render_type": "solid"
-}

@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "theabyss:infected_lake",
-  "features": "theabyss:water_echolot_group_middle",
-  "step": "surface_structures"
-}

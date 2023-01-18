@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.SeekerOnEntityTickUpdateEvent;
+import net.yezon.theabyss.events.SeekerOnEntityTickUpdateevent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -51,7 +51,7 @@ public class SeekerEntity extends Monster {
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
-				return (double) (4.0 + entity.getBbWidth() * entity.getBbWidth());
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
@@ -98,7 +98,7 @@ public class SeekerEntity extends Monster {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		SeekerOnEntityTickUpdateEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		SeekerOnEntityTickUpdateevent.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	public static void init() {

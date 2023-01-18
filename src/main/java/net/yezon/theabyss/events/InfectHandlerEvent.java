@@ -21,7 +21,7 @@ import net.minecraft.client.Minecraft;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class InfectHandlerEvent {
+public class InfectHandlerevent {
 	@SubscribeEvent
 	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {

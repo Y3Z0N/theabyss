@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyNodeEffectEvent;
+import net.yezon.theabyss.events.ApplyNodeEffectevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -46,7 +46,7 @@ public class NodeShardItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyNodeEffectEvent.execute(entity);
+		ApplyNodeEffectevent.execute(entity);
 		return retval;
 	}
 }

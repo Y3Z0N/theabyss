@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "theabyss:jungle_leave_carpet",
+    "theabyss:blaru_leave_carpet",
+    "theabyss:bog_shroom_leave",
+    "theabyss:frozen_leaves",
+    "theabyss:vigilant_leaves",
+    "theabyss:jungle_leaves",
+    "theabyss:blaru_leaves",
+    "theabyss:sal_shroom_leave",
+    "theabyss:aurel_leave_carpet"
+  ]
+}

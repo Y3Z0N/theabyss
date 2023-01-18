@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "theabyss:blue_forest",
+  "biomes": "theabyss:blaru_forest",
   "features": "theabyss:aurel_crystal_ore",
   "step": "vegetal_decoration"
 }

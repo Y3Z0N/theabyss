@@ -1,0 +1,26 @@
+{
+	"name": "Bottle Of Somnium",
+	"icon": "theabyss:bottle_of_somnium",
+"category": "theabyss:alchemy",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+		{
+			"type": "spotlight",
+			"item": "theabyss:bottle_of_somnium",
+			"title": "Bottle Of Somnium",
+			"link_recipe":false,
+			"text": "A Bottle of Somnium is essential for practicing alchemy. It serves as a base potion alongside loran energy, and is necessary for creating all manner of magical remedies. But the benefits of Somnium don't stop there - it's also great for your health and energy! Acting as a bridge between two worlds, Somnium is said to have an energy that surpasses even mana. Whether you're a budding alchemist or simply looking to boost your vitality, a Bottle of Somnium is a must-have."
+		},
+		{
+			"type": "text",
+			"title": "Crafting",
+			"text": "The Crafting Table is a tool for creating essences and potions. Use it to craft helpful remedies for your journey through the Abyss."
+		}
+	]
+}

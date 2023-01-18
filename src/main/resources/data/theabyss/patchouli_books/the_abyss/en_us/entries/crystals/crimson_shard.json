@@ -1,0 +1,25 @@
+{
+	"name": "Crimson Crystal Shard",
+	"icon": "theabyss:crimson_crystal_shard",
+"category": "theabyss:crystals",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:crimson_crystal_shard",
+	"title": "Crimson Crystal Shard",
+	"link_recipe": false,
+	"text": "Enter the fiery depths of the Nether dimension in Minecraft, and you may just stumble upon the elusive Crimson Crystal Shards. These rare and coveted crystals can only be found within the Crimson Forests, where they shimmer and glow amidst the twisted, crimson-hued trees. "
+	},
+	{
+	"type": "text",
+	"text": "It's said that the Crimson Crystal Shards are imbued with otherworldly powers, and many adventurers brave the dangers of the Nether in search of them. But be warned - the Nether is a treacherous place, and you'll need to keep your wits about you if you hope to come away with a few of these rare crystals. Will you be brave enough to seek out the Crimson Crystal Shards in the Nether?"
+}
+	]
+	}

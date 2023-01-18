@@ -1,0 +1,25 @@
+{
+	"name": "Abyss Crystal Shard",
+	"icon": "theabyss:abyss_crystal_shard",
+"category": "theabyss:crystals",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:abyss_crystal_shard",
+	"title": "Abyss Crystal Shard",
+	"link_recipe": false,
+	"text": "Are you brave enough to delve into the mysterious, unknown depths of the Abyss dimension in Minecraft? If so, you might just come across the rare and coveted Abyss Crystal Shards. These shimmering, glowing crystals are not easy to find, as they are only located within the treacherous Blue Mountain biomes that dot the landscape of the Abyss."
+	},
+	{
+	"type": "text",
+	"text": "Some say that the Abyss Crystal Shards hold great power and mystery, and many adventurers brave the dangers of the Abyss in search of them. But be warned - the Abyss is a treacherous place, full of danger and the unknown. Will you be the one to uncover the secrets of the Abyss Crystal Shards?"
+}
+	]
+	}

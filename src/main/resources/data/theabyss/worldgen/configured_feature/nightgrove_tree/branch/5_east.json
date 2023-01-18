@@ -1,0 +1,323 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": {
+          "config": {
+            "features": [
+              {
+                "feature": {
+                  "config": {
+                    "to_place": {
+                      "state": {
+                        "Properties": {
+                          "axis": "x"
+                        },
+                        "Name": "theabyss:jungle_log"
+                      },
+                      "type": "minecraft:simple_state_provider"
+                    }
+                  },
+                  "type": "minecraft:simple_block"
+                },
+                "placement": [
+                  {
+                    "predicate": {
+                      "blocks": "#theabyss:tree_branch_replaceable",
+                      "type": "minecraft:matching_blocks"
+                    },
+                    "type": "minecraft:block_predicate_filter"
+                  }
+                ]
+              },
+              {
+                "feature": {
+                  "config": {
+                    "decorators": [
+                      {
+                        "block_provider": {
+                          "state": {
+                            "Properties": {
+                              "persistent": "false",
+                              "distance": "2",
+                              "waterlogged": "false"
+                            },
+                            "Name": "theabyss:jungle_leaves"
+                          },
+                          "type": "minecraft:simple_state_provider"
+                        },
+                        "required_empty_blocks": 2,
+                        "directions": [
+                          "down"
+                        ],
+                        "probability": 0.2,
+                        "exclusion_radius_xz": 0,
+                        "exclusion_radius_y": 0,
+                        "type": "minecraft:attached_to_leaves"
+                      },
+                      {
+                        "probability": 0.15,
+                        "type": "minecraft:leave_vine"
+                      }
+                    ],
+                    "ignore_vines": true,
+                    "force_dirt": false,
+                    "dirt_provider": {
+                      "state": {
+                        "Name": "minecraft:air"
+                      },
+                      "type": "minecraft:simple_state_provider"
+                    },
+                    "minimum_size": {
+                      "limit": 1,
+                      "lower_size": 0,
+                      "upper_size": 0,
+                      "type": "minecraft:two_layers_feature_size"
+                    },
+                    "trunk_provider": {
+                      "state": {
+                        "Properties": {
+                          "axis": "x"
+                        },
+                        "Name": "theabyss:jungle_log"
+                      },
+                      "type": "minecraft:simple_state_provider"
+                    },
+                    "trunk_placer": {
+                      "base_height": 1,
+                      "height_rand_a": 0,
+                      "height_rand_b": 0,
+                      "type": "minecraft:straight_trunk_placer"
+                    },
+                    "foliage_provider": {
+                      "state": {
+                        "Properties": {
+                          "persistent": "false",
+                          "distance": "1",
+                          "waterlogged": "false"
+                        },
+                        "Name": "theabyss:jungle_leaves"
+                      },
+                      "type": "minecraft:simple_state_provider"
+                    },
+                    "foliage_placer": {
+                      "radius": 2,
+                      "offset": 0,
+                      "height": 1,
+                      "type": "minecraft:blob_foliage_placer"
+                    }
+                  },
+                  "type": "minecraft:tree"
+                },
+                "placement": [
+                  {
+                    "predicate": {
+                      "blocks": "theabyss:jungle_log",
+                      "type": "minecraft:matching_blocks"
+                    },
+                    "type": "minecraft:block_predicate_filter"
+                  },
+                  {
+                    "count": 8,
+                    "type": "minecraft:count"
+                  },
+                  {
+                    "xz_spread": {
+                      "type": "minecraft:uniform",
+                      "value": {
+                        "min_inclusive": 0,
+                        "max_inclusive": 1
+                      }
+                    },
+                    "y_spread": 0,
+                    "type": "minecraft:random_offset"
+                  },
+                  {
+                    "predicate": {
+                      "predicates": [
+                        {
+                          "blocks": "#theabyss:tree_branch_replaceable",
+                          "type": "minecraft:matching_blocks"
+                        },
+                        {
+                          "blocks": "theabyss:jungle_log",
+                          "offset": [
+                            -1,
+                            0,
+                            0
+                          ],
+                          "type": "minecraft:matching_blocks"
+                        },
+                        {
+                          "blocks": "theabyss:jungle_log",
+                          "offset": [
+                            -2,
+                            0,
+                            0
+                          ],
+                          "type": "minecraft:matching_blocks"
+                        },
+                        {
+                          "blocks": "theabyss:jungle_log",
+                          "offset": [
+                            -2,
+                            -3,
+                            0
+                          ],
+                          "type": "minecraft:matching_blocks"
+                        },
+                        {
+                          "blocks": "#theabyss:tree_branch_replaceable",
+                          "offset": [
+                            -1,
+                            0,
+                            1
+                          ],
+                          "type": "minecraft:matching_blocks"
+                        },
+                        {
+                          "blocks": "#theabyss:tree_branch_replaceable",
+                          "offset": [
+                            -1,
+                            0,
+                            -1
+                          ],
+                          "type": "minecraft:matching_blocks"
+                        }
+                      ],
+                      "type": "minecraft:all_of"
+                    },
+                    "type": "minecraft:block_predicate_filter"
+                  },
+                  {
+                    "count": 4,
+                    "type": "minecraft:count"
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "minecraft:simple_random_selector"
+        },
+        "placement": [
+          {
+            "count": 16,
+            "type": "minecraft:count"
+          },
+          {
+            "xz_spread": {
+              "type": "minecraft:uniform",
+              "value": {
+                "min_inclusive": 0,
+                "max_inclusive": 1
+              }
+            },
+            "y_spread": -1,
+            "type": "minecraft:random_offset"
+          },
+          {
+            "predicate": {
+              "predicates": [
+                {
+                  "blocks": "#theabyss:tree_branch_replaceable",
+                  "type": "minecraft:matching_blocks"
+                },
+                {
+                  "blocks": "theabyss:jungle_log",
+                  "offset": [
+                    -1,
+                    0,
+                    0
+                  ],
+                  "type": "minecraft:matching_blocks"
+                },
+                {
+                  "blocks": "theabyss:jungle_log",
+                  "offset": [
+                    -1,
+                    -3,
+                    0
+                  ],
+                  "type": "minecraft:matching_blocks"
+                },
+                {
+                  "blocks": "#theabyss:tree_branch_replaceable",
+                  "offset": [
+                    0,
+                    0,
+                    1
+                  ],
+                  "type": "minecraft:matching_blocks"
+                },
+                {
+                  "blocks": "#theabyss:tree_branch_replaceable",
+                  "offset": [
+                    0,
+                    0,
+                    -1
+                  ],
+                  "type": "minecraft:matching_blocks"
+                },
+                {
+                  "predicate": {
+                    "blocks": "theabyss:jungle_log",
+                    "offset": [
+                      0,
+                      1,
+                      0
+                    ],
+                    "type": "minecraft:matching_blocks"
+                  },
+                  "type": "minecraft:not"
+                },
+                {
+                  "predicate": {
+                    "blocks": "theabyss:jungle_log",
+                    "offset": [
+                      0,
+                      2,
+                      0
+                    ],
+                    "type": "minecraft:matching_blocks"
+                  },
+                  "type": "minecraft:not"
+                },
+                {
+                  "predicate": {
+                    "blocks": "theabyss:jungle_log",
+                    "offset": [
+                      0,
+                      -1,
+                      0
+                    ],
+                    "type": "minecraft:matching_blocks"
+                  },
+                  "type": "minecraft:not"
+                },
+                {
+                  "predicate": {
+                    "blocks": "theabyss:jungle_log",
+                    "offset": [
+                      0,
+                      -2,
+                      0
+                    ],
+                    "type": "minecraft:matching_blocks"
+                  },
+                  "type": "minecraft:not"
+                }
+              ],
+              "type": "minecraft:all_of"
+            },
+            "type": "minecraft:block_predicate_filter"
+          },
+          {
+            "count": 28,
+            "type": "minecraft:count"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "minecraft:simple_random_selector"
+}

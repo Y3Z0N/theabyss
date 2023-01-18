@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:blaru_forest",
+  "features": "theabyss:blaru_melon",
+  "step": "surface_structures"
+}

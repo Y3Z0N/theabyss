@@ -37,7 +37,7 @@ public class LungoRankFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new LungoRankFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:lungo_rank", FEATURE, FeatureUtils.simpleRandomPatchConfiguration(9,
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:lungo_rank", FEATURE, FeatureUtils.simpleRandomPatchConfiguration(6,
 				PlacementUtils.filtered(Feature.BLOCK_COLUMN,
 						BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(TheabyssModBlocks.LUNGO_RANK.get())),
 						BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,

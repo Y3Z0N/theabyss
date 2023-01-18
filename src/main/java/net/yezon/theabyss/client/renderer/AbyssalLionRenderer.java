@@ -10,6 +10,8 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+
 public class AbyssalLionRenderer extends MobRenderer<AbyssalLionEntity, Modelabyssal_lion<AbyssalLionEntity>> {
 	public AbyssalLionRenderer(EntityRendererProvider.Context context) {
 		super(context, new Modelabyssal_lion(context.bakeLayer(Modelabyssal_lion.LAYER_LOCATION)), 0.5f);
@@ -19,6 +21,10 @@ public class AbyssalLionRenderer extends MobRenderer<AbyssalLionEntity, Modelaby
 				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/abyssal_lion_glow.png"));
 			}
 		});
+	}
+
+	protected void scale(AbyssalLionEntity entity, PoseStack posestack, float partialTicks) {
+		posestack.scale(0.5f, 0.5f, 0.5f);
 	}
 
 	@Override

@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "theabyss:cobble_stone",
-    "theabyss:tantra_cobblestone"
+    "theabyss:cobble_stone"
   ]
 }

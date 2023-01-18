@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "theabyss:blocks/bush_vigilant",
+    "particle": "theabyss:blocks/bush_vigilant"
+  },
+  "render_type": "cutout"
+}

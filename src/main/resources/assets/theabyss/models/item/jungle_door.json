@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "theabyss:items/jungle_door"
-  }
+    "layer0": "theabyss:items/nightgrove_door"
+  },
+  "render_type": "translucent"
 }

@@ -1,16 +1,16 @@
 {
   "replace": false,
   "values": [
-    "theabyss:ruma_leave",
-    "theabyss:ruma_leave_2",
-    "theabyss:ruma_leave_3",
-    "theabyss:ruma_leave_4",
-    "theabyss:ruma_leave_5",
     "theabyss:slime_block",
-    "theabyss:rotten_fungal_leave",
     "theabyss:slime_root_block",
-    "theabyss:rotten_leave",
-    "theabyss:wart_rank",
-    "theabyss:wart_rank_end"
+    "theabyss:vigilant_planks",
+    "theabyss:vigilant_stairs",
+    "theabyss:vigilant_slab",
+    "theabyss:vigilant_fence",
+    "theabyss:vigilant_trap_door",
+    "theabyss:vigilant_door",
+    "theabyss:vigilant_fence_gate",
+    "theabyss:vigilant_button",
+    "theabyss:vigilant_pressure_plate"
   ]
 }

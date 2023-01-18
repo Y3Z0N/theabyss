@@ -1,8 +1,8 @@
 {
   "parent": "block/fence_inventory",
   "textures": {
-    "texture": "theabyss:blocks/abyss_planks_21",
-    "particle": "theabyss:blocks/abyss_planks_21"
+    "texture": "theabyss:blocks/blaru_planks",
+    "particle": "theabyss:blocks/blaru_planks"
   },
   "render_type": "solid"
 }

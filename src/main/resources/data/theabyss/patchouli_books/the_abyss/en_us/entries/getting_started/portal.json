@@ -1,0 +1,58 @@
+{
+	"name": "Creating a Portal",
+	"icon": "minecraft:paper",
+"category": "theabyss:getting_started",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+		{
+			"type": "text",
+			"text": "Explore the depths of the Abyss, a dimension filled with unique adventures and dangers. Illuminated only by glowing magical blocks and the diverse array of flora, fungi, and fauna that inhabit it, this shadowy world holds countless secrets waiting to be uncovered."
+		},
+		{
+			"type": "text",
+			"text": "To survive in this dangerous world, it's crucial to equip yourself with the best armor and tools. Protect yourself against the various creatures you'll encounter on your journey! Discover the secrets of building a portal to the Abyss dimension on the next page. Find out what materials you'll need and how to create this magical gateway. Start your journey to the Abyss now!"
+		},
+
+
+		{
+			"type": "spotlight",
+			"item": "theabyss:loran",
+			"title": "Loran",
+			"link_recipe":false,
+			"text": "Take the first steps towards building a portal with Loran, a mysterious blue plant that absorbs and stores light, converting it into various energies. With both helpful and harmful properties depending on what it mixes with, Loran is a powerful tool for creating portals and harnessing its energy. Just be sure to handle it with caution!"
+		},
+			{
+				"type": "text",
+				"text": "To build the portal frame, you'll need Loran, a glowing blue plant that absorbs and stores light, Obsidian, a hard and durable material formed from cooled lava, and Crying obsidian, a rare and elusive variant of obsidian imbued with magical properties. Mix these ingredients to create unstable obsidian, a crucial component for building the portal frame. But be careful, unstable obsidian is volatile and must be handled with caution."
+			},
+			{
+				"type": "crafting",
+				"title": "Unstable Obsidian & Key",
+				"recipe": "theabyss:unstable_obsidian_rcp",
+				"recipe2": "theabyss:portal_igniter_rcp"
+			},
+			{
+				"type": "multiblock",
+				"text": "This is the Portal.",
+				"name": "The Portal",
+				"multiblock": {
+					"pattern": [
+						["AAAA"],
+						["A  A"],
+						["A  A"],
+						["A 0A"],
+						["AAAA"]
+					],
+					"mapping": {
+						"A": "theabyss:unstable_obsidian"
+					}
+				}
+			}
+	]
+}

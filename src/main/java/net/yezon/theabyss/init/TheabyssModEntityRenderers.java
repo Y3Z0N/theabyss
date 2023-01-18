@@ -1,12 +1,11 @@
 
-
+  
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.client.renderer.VersaWhaleRenderer;
 import net.yezon.theabyss.client.renderer.TheRokaRenderer;
 import net.yezon.theabyss.client.renderer.SummonedSeekerRenderer;
 import net.yezon.theabyss.client.renderer.SummonedHollowSeekerRenderer;
-import net.yezon.theabyss.client.renderer.SpectralEntityRenderer;
 import net.yezon.theabyss.client.renderer.SoulGuardRenderer;
 import net.yezon.theabyss.client.renderer.SlimeSpiderRenderer;
 import net.yezon.theabyss.client.renderer.ShatteredZombieRenderer;
@@ -19,16 +18,13 @@ import net.yezon.theabyss.client.renderer.RaluFishRenderer;
 import net.yezon.theabyss.client.renderer.PoweredWolfRenderer;
 import net.yezon.theabyss.client.renderer.PlayerBodyRenderer;
 import net.yezon.theabyss.client.renderer.NightbladeBossRenderer;
-import net.yezon.theabyss.client.renderer.NightHunterRenderer;
 import net.yezon.theabyss.client.renderer.NightBladeBossCloneRenderer;
 import net.yezon.theabyss.client.renderer.MudZombieRenderer;
 import net.yezon.theabyss.client.renderer.MagicianRenderer;
-import net.yezon.theabyss.client.renderer.MagicalDeerRenderer;
 import net.yezon.theabyss.client.renderer.LuroFishRenderer;
 import net.yezon.theabyss.client.renderer.LokusRenderer;
 import net.yezon.theabyss.client.renderer.LizardRenderer;
 import net.yezon.theabyss.client.renderer.LaroFishRenderer;
-import net.yezon.theabyss.client.renderer.LaroFishFlyRenderer;
 import net.yezon.theabyss.client.renderer.JungleLurkerRenderer;
 import net.yezon.theabyss.client.renderer.InfectedZombieRenderer;
 import net.yezon.theabyss.client.renderer.InfectedWolfRenderer;
@@ -43,7 +39,6 @@ import net.yezon.theabyss.client.renderer.HauntedSkeletonRenderer;
 import net.yezon.theabyss.client.renderer.GuardRenderer;
 import net.yezon.theabyss.client.renderer.GlowPugRenderer;
 import net.yezon.theabyss.client.renderer.FrostSpiderRenderer;
-import net.yezon.theabyss.client.renderer.FireFlyRenderer;
 import net.yezon.theabyss.client.renderer.EndSpiderRenderer;
 import net.yezon.theabyss.client.renderer.ElderRenderer;
 import net.yezon.theabyss.client.renderer.DeerRenderer;
@@ -68,13 +63,11 @@ public class TheabyssModEntityRenderers {
 		event.registerEntityRenderer(TheabyssModEntities.SHURIKEN_EXPLOSIVE.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.MUTATED_ENDERPEARL.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.THE_ROKA.get(), TheRokaRenderer::new);
-		event.registerEntityRenderer(TheabyssModEntities.FIRE_FLY.get(), FireFlyRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.ICE_SKELETON.get(), IceSkeletonRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.ICE_KNIGHT.get(), IceKnightRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.NIGHTBLADE_BOSS.get(), NightbladeBossRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.NIGHT_BLADE_BOSS_CLONE.get(), NightBladeBossCloneRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.DEER.get(), DeerRenderer::new);
-		event.registerEntityRenderer(TheabyssModEntities.LARO_FISH_FLY.get(), LaroFishFlyRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.LARO_FISH.get(), LaroFishRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.LURO_FISH.get(), LuroFishRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.RALU_FISH.get(), RaluFishRenderer::new);
@@ -90,7 +83,6 @@ public class TheabyssModEntityRenderers {
 		event.registerEntityRenderer(TheabyssModEntities.INFECTED_ZOMBIE.get(), InfectedZombieRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.RAPTOR.get(), RaptorRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.END_SPIDER.get(), EndSpiderRenderer::new);
-		event.registerEntityRenderer(TheabyssModEntities.NIGHT_HUNTER.get(), NightHunterRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.LIZARD.get(), LizardRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.ELDER.get(), ElderRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.JUNGLE_LURKER.get(), JungleLurkerRenderer::new);
@@ -101,7 +93,6 @@ public class TheabyssModEntityRenderers {
 		event.registerEntityRenderer(TheabyssModEntities.HAUNTED_SKELETON.get(), HauntedSkeletonRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.SHATTERED_ZOMBIE.get(), ShatteredZombieRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.SUMMONED_SEEKER.get(), SummonedSeekerRenderer::new);
-		event.registerEntityRenderer(TheabyssModEntities.MAGICAL_DEER.get(), MagicalDeerRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.INFECTED_WOLF.get(), InfectedWolfRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.INFECTED_PHANTOM.get(), InfectedPhantomRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.POWERED_WOLF.get(), PoweredWolfRenderer::new);
@@ -113,13 +104,10 @@ public class TheabyssModEntityRenderers {
 		event.registerEntityRenderer(TheabyssModEntities.ABYSSAL_LION.get(), AbyssalLionRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.INFCETED_COW.get(), InfcetedCowRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.ABYLAGER.get(), AbylagerRenderer::new);
-		event.registerEntityRenderer(TheabyssModEntities.NIGHT_HUNTER_ABL_2.get(), ThrownItemRenderer::new);
-		event.registerEntityRenderer(TheabyssModEntities.EYELIE_ATTACK.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.PHANTOM_ATTACK.get(), ThrownItemRenderer::new);
-		event.registerEntityRenderer(TheabyssModEntities.SPECTRAL_ENTITY.get(), SpectralEntityRenderer::new);
-		event.registerEntityRenderer(TheabyssModEntities.SPECTRAL_SPAWN.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.RING_OF_FIRE_STRIKE_ATTACK.get(), RingOfFireStrikeAttackRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.RING_OF_BLACK_STRIKE_ATTACK.get(), RingOfBlackStrikeAttackRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.SUMMONED_HOLLOW_SEEKER.get(), SummonedHollowSeekerRenderer::new);
+		event.registerEntityRenderer(TheabyssModEntities.ARTIFACT_OF_PHANTOMS.get(), ThrownItemRenderer::new);
 	}
 }

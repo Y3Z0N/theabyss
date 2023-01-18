@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "theabyss:blocks/roggen_planls",
-    "particle": "theabyss:blocks/roggen_planls"
-  },
-  "render_type": "solid"
-}

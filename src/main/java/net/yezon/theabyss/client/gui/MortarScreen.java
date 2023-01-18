@@ -68,7 +68,7 @@ public class MortarScreen extends AbstractContainerScreen<MortarMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Mortar", 132, 6, -6684724);
+		this.font.draw(poseStack, Component.translatable("gui.theabyss.mortar.label_mortar"), 132, 6, -6684724);
 	}
 
 	@Override

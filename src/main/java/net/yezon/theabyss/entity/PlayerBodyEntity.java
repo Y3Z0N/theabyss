@@ -1,9 +1,9 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.ReturnToLifeEvent;
-import net.yezon.theabyss.events.PlayerBodyParticlesEvent;
-import net.yezon.theabyss.events.PlayerBodyDespawnEvent;
+import net.yezon.theabyss.events.ReturnToLifeevent;
+import net.yezon.theabyss.events.PlayerBodyParticlesevent;
+import net.yezon.theabyss.events.PlayerBodyDespawnevent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,7 +22,6 @@ import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
@@ -30,7 +29,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.core.particles.ParticleTypes;
 
 import javax.annotation.Nullable;
 
@@ -96,35 +94,20 @@ public class PlayerBodyEntity extends Monster {
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason,
 			@Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		PlayerBodyDespawnEvent.execute(world, this);
+		PlayerBodyDespawnevent.execute(world, this);
 		return retval;
 	}
 
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		PlayerBodyParticlesEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		PlayerBodyParticlesevent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override
 	public void playerTouch(Player sourceentity) {
 		super.playerTouch(sourceentity);
-		ReturnToLifeEvent.execute(this);
-	}
-
-	public void aiStep() {
-		super.aiStep();
-		double x = this.getX();
-		double y = this.getY();
-		double z = this.getZ();
-		Entity entity = this;
-		Level world = this.level;
-		for (int l = 0; l < 4; ++l) {
-			double x0 = x + 0.5 + (random.nextFloat() - 0.5) * 0.3000000014901161D;
-			double y0 = y + 1.2 + (random.nextFloat() - 0.5) * 0.3000000014901161D * 100;
-			double z0 = z + 0.5 + (random.nextFloat() - 0.5) * 0.3000000014901161D;
-			world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, x0, y0, z0, 0, 0, 0);
-		}
+		ReturnToLifeevent.execute(this);
 	}
 
 	public static void init() {

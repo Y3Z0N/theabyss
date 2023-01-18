@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/tantra_ladder",
-  "textures": {
-    "all": "theabyss:blocks/tantra_ladder",
-    "particle": "theabyss:blocks/tantra_ladder",
-    "texture": "theabyss:blocks/tantra_ladder"
-  },
-  "render_type": "solid"
-}

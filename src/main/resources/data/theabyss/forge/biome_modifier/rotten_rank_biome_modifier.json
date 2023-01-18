@@ -1,9 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": [
-    "theabyss:forgottenmountains",
-    "theabyss:waywardsea"
-  ],
-  "features": "theabyss:rotten_rank",
-  "step": "vegetal_decoration"
-}

@@ -31,7 +31,7 @@ public class HollowCrystalOreBlock extends FlowerBlock {
 						() -> new SoundEvent(new ResourceLocation("block.stone.step")),
 						() -> new SoundEvent(new ResourceLocation("block.stone.place")),
 						() -> new SoundEvent(new ResourceLocation("block.stone.hit")), () -> new SoundEvent(new ResourceLocation("block.snow.fall"))))
-				.instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 3).noCollission());
+				.instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 15).noCollission());
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class HollowCrystalOreBlock extends FlowerBlock {
 
 	@Override
 	public boolean mayPlaceOn(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
-		return groundState.is(TheabyssModBlocks.INFECTED_GRASS.get()) || groundState.is(TheabyssModBlocks.STONE.get());
+		return groundState.is(TheabyssModBlocks.STONE.get());
 	}
 
 	@Override

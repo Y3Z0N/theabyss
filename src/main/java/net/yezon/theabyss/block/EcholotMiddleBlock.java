@@ -1,8 +1,13 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.EcholotEffectEvent;
+import org.checkerframework.checker.units.qual.s;
 
+import net.yezon.theabyss.events.EcholotEffectevent;
+
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.block.state.BlockState;
@@ -32,6 +37,11 @@ public class EcholotMiddleBlock extends Block {
 	}
 
 	@Override
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
+	}
+
+	@Override
 	public PushReaction getPistonPushReaction(BlockState state) {
 		return PushReaction.IGNORE;
 	}
@@ -39,6 +49,6 @@ public class EcholotMiddleBlock extends Block {
 	@Override
 	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
 		super.stepOn(world, pos, blockstate, entity);
-		EcholotEffectEvent.execute(entity);
+		EcholotEffectevent.execute(entity);
 	}
 }

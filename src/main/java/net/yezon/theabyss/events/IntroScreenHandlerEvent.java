@@ -4,7 +4,7 @@ import net.yezon.theabyss.network.TheabyssModVariables;
 
 import net.minecraft.world.entity.Entity;
 
-public class IntroScreenHandlerEvent {
+public class IntroScreenHandlerevent {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;

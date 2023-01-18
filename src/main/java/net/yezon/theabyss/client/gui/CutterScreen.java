@@ -68,7 +68,7 @@ public class CutterScreen extends AbstractContainerScreen<CutterMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Crystal Cutter", 6, 7, -6684724);
+		this.font.draw(poseStack, Component.translatable("gui.theabyss.cutter.label_crystal_cutter"), 6, 7, -6684724);
 	}
 
 	@Override

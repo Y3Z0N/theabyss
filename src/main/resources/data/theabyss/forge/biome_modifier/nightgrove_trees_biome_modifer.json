@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:blue_jungle",
+  "features": "theabyss:nightgrove_jungle/trees/layer_1",
+  "step": "top_layer_modification"
+}

@@ -36,10 +36,10 @@ public class EmeraldVariantFeature extends OreFeature {
 		FEATURE = new EmeraldVariantFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:emerald_variant", FEATURE,
 				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()),
-						TheabyssModBlocks.EMERALD_VARIANT.get().defaultBlockState())), 4));
+						TheabyssModBlocks.EMERALD_VARIANT.get().defaultBlockState())), 5));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:emerald_variant", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(11), InSquarePlacement.spread(),
-						HeightRangePlacement.uniform(VerticalAnchor.absolute(1), VerticalAnchor.absolute(33)), BiomeFilter.biome()));
+				List.of(CountPlacement.of(2), InSquarePlacement.spread(),
+						HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(-35)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 

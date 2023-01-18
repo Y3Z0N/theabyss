@@ -1,12 +1,11 @@
 
+  
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.entity.VersaWhaleEntity;
 import net.yezon.theabyss.entity.TheRokaEntity;
 import net.yezon.theabyss.entity.SummonedSeekerEntity;
 import net.yezon.theabyss.entity.SummonedHollowSeekerEntity;
-import net.yezon.theabyss.entity.SpectralSpawnEntity;
-import net.yezon.theabyss.entity.SpectralEntityEntity;
 import net.yezon.theabyss.entity.SoulGuardEntity;
 import net.yezon.theabyss.entity.SlimeSpiderEntity;
 import net.yezon.theabyss.entity.ShurikenExplosiveEntity;
@@ -22,17 +21,13 @@ import net.yezon.theabyss.entity.PoweredWolfEntity;
 import net.yezon.theabyss.entity.PlayerBodyEntity;
 import net.yezon.theabyss.entity.PhantomAttackEntity;
 import net.yezon.theabyss.entity.NightbladeBossEntity;
-import net.yezon.theabyss.entity.NightHunterEntity;
-import net.yezon.theabyss.entity.NightHunterAbl2Entity;
 import net.yezon.theabyss.entity.NightBladeBossCloneEntity;
 import net.yezon.theabyss.entity.MutatedEnderpearlEntity;
 import net.yezon.theabyss.entity.MudZombieEntity;
 import net.yezon.theabyss.entity.MagicianEntity;
-import net.yezon.theabyss.entity.MagicalDeerEntity;
 import net.yezon.theabyss.entity.LuroFishEntity;
 import net.yezon.theabyss.entity.LokusEntity;
 import net.yezon.theabyss.entity.LizardEntity;
-import net.yezon.theabyss.entity.LaroFishFlyEntity;
 import net.yezon.theabyss.entity.LaroFishEntity;
 import net.yezon.theabyss.entity.JungleLurkerEntity;
 import net.yezon.theabyss.entity.InfectedZombieEntity;
@@ -48,13 +43,12 @@ import net.yezon.theabyss.entity.HauntedSkeletonEntity;
 import net.yezon.theabyss.entity.GuardEntity;
 import net.yezon.theabyss.entity.GlowPugEntity;
 import net.yezon.theabyss.entity.FrostSpiderEntity;
-import net.yezon.theabyss.entity.FireFlyEntity;
-import net.yezon.theabyss.entity.EyelieAttackEntity;
 import net.yezon.theabyss.entity.EndSpiderEntity;
 import net.yezon.theabyss.entity.ElderEntity;
 import net.yezon.theabyss.entity.DeerEntity;
 import net.yezon.theabyss.entity.CrystalGolemEntity;
 import net.yezon.theabyss.entity.BrainWalkerEntity;
+import net.yezon.theabyss.entity.ArtifactOfPhantomsEntity;
 import net.yezon.theabyss.entity.AbyssaurEntity;
 import net.yezon.theabyss.entity.AbyssalLionEntity;
 import net.yezon.theabyss.entity.AbylagerEntity;
@@ -89,9 +83,6 @@ public class TheabyssModEntities {
 	public static final RegistryObject<EntityType<TheRokaEntity>> THE_ROKA = register("the_roka",
 			EntityType.Builder.<TheRokaEntity>of(TheRokaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 					.setUpdateInterval(3).setCustomClientFactory(TheRokaEntity::new).fireImmune().sized(0.8f, 2.6f));
-	public static final RegistryObject<EntityType<FireFlyEntity>> FIRE_FLY = register("fire_fly",
-			EntityType.Builder.<FireFlyEntity>of(FireFlyEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(20)
-					.setUpdateInterval(3).setCustomClientFactory(FireFlyEntity::new).fireImmune().sized(0.6f, 0.6f));
 	public static final RegistryObject<EntityType<IceSkeletonEntity>> ICE_SKELETON = register("ice_skeleton",
 			EntityType.Builder.<IceSkeletonEntity>of(IceSkeletonEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(IceSkeletonEntity::new).fireImmune().sized(0.6f, 1.8f));
@@ -110,24 +101,19 @@ public class TheabyssModEntities {
 	public static final RegistryObject<EntityType<DeerEntity>> DEER = register("deer",
 			EntityType.Builder.<DeerEntity>of(DeerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(20)
 					.setUpdateInterval(3).setCustomClientFactory(DeerEntity::new).fireImmune().sized(0.9f, 1.4f));
-	public static final RegistryObject<EntityType<LaroFishFlyEntity>> LARO_FISH_FLY = register("laro_fish_fly",
-			EntityType.Builder.<LaroFishFlyEntity>of(LaroFishFlyEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
-					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LaroFishFlyEntity::new)
-
-					.sized(1f, 1f));
 	public static final RegistryObject<EntityType<LaroFishEntity>> LARO_FISH = register("laro_fish",
-			EntityType.Builder.<LaroFishEntity>of(LaroFishEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
-					.setUpdateInterval(3).setCustomClientFactory(LaroFishEntity::new)
+			EntityType.Builder.<LaroFishEntity>of(LaroFishEntity::new, MobCategory.WATER_AMBIENT).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LaroFishEntity::new)
 
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<LuroFishEntity>> LURO_FISH = register("luro_fish",
-			EntityType.Builder.<LuroFishEntity>of(LuroFishEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
-					.setUpdateInterval(3).setCustomClientFactory(LuroFishEntity::new)
+			EntityType.Builder.<LuroFishEntity>of(LuroFishEntity::new, MobCategory.WATER_AMBIENT).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LuroFishEntity::new)
 
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<RaluFishEntity>> RALU_FISH = register("ralu_fish",
-			EntityType.Builder.<RaluFishEntity>of(RaluFishEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
-					.setUpdateInterval(3).setCustomClientFactory(RaluFishEntity::new)
+			EntityType.Builder.<RaluFishEntity>of(RaluFishEntity::new, MobCategory.WATER_AMBIENT).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RaluFishEntity::new)
 
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<HyliaFoxEntity>> HYLIA_FOX = register("hylia_fox",
@@ -171,11 +157,6 @@ public class TheabyssModEntities {
 			EntityType.Builder.<EndSpiderEntity>of(EndSpiderEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 					.setTrackingRange(40).setUpdateInterval(3).setCustomClientFactory(EndSpiderEntity::new).fireImmune()
 					.sized(0.8f, 1.2000000000000002f));
-	public static final RegistryObject<EntityType<NightHunterEntity>> NIGHT_HUNTER = register("night_hunter",
-			EntityType.Builder.<NightHunterEntity>of(NightHunterEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
-					.setTrackingRange(20).setUpdateInterval(3).setCustomClientFactory(NightHunterEntity::new)
-
-					.sized(0.8f, 1.8f));
 	public static final RegistryObject<EntityType<LizardEntity>> LIZARD = register("lizard",
 			EntityType.Builder.<LizardEntity>of(LizardEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 					.setUpdateInterval(3).setCustomClientFactory(LizardEntity::new).fireImmune().sized(0.8f, 0.6f));
@@ -213,9 +194,6 @@ public class TheabyssModEntities {
 			EntityType.Builder.<SummonedSeekerEntity>of(SummonedSeekerEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true)
 					.setTrackingRange(100).setUpdateInterval(3).setCustomClientFactory(SummonedSeekerEntity::new).fireImmune()
 					.sized(0.7999999999999999f, 2f));
-	public static final RegistryObject<EntityType<MagicalDeerEntity>> MAGICAL_DEER = register("magical_deer",
-			EntityType.Builder.<MagicalDeerEntity>of(MagicalDeerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
-					.setTrackingRange(20).setUpdateInterval(3).setCustomClientFactory(MagicalDeerEntity::new).fireImmune().sized(0.9f, 1.4f));
 	public static final RegistryObject<EntityType<InfectedWolfEntity>> INFECTED_WOLF = register("infected_wolf",
 			EntityType.Builder.<InfectedWolfEntity>of(InfectedWolfEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 					.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(InfectedWolfEntity::new).fireImmune()
@@ -261,23 +239,8 @@ public class TheabyssModEntities {
 	public static final RegistryObject<EntityType<AbylagerEntity>> ABYLAGER = register("abylager",
 			EntityType.Builder.<AbylagerEntity>of(AbylagerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 					.setUpdateInterval(3).setCustomClientFactory(AbylagerEntity::new).fireImmune().sized(0.6f, 1.95f));
-	public static final RegistryObject<EntityType<NightHunterAbl2Entity>> NIGHT_HUNTER_ABL_2 = register("projectile_night_hunter_abl_2",
-			EntityType.Builder.<NightHunterAbl2Entity>of(NightHunterAbl2Entity::new, MobCategory.MISC)
-					.setCustomClientFactory(NightHunterAbl2Entity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
-					.setUpdateInterval(1).sized(0.5f, 0.5f));
-	public static final RegistryObject<EntityType<EyelieAttackEntity>> EYELIE_ATTACK = register("projectile_eyelie_attack",
-			EntityType.Builder.<EyelieAttackEntity>of(EyelieAttackEntity::new, MobCategory.MISC).setCustomClientFactory(EyelieAttackEntity::new)
-					.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<PhantomAttackEntity>> PHANTOM_ATTACK = register("projectile_phantom_attack",
 			EntityType.Builder.<PhantomAttackEntity>of(PhantomAttackEntity::new, MobCategory.MISC).setCustomClientFactory(PhantomAttackEntity::new)
-					.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
-	public static final RegistryObject<EntityType<SpectralEntityEntity>> SPECTRAL_ENTITY = register("spectral_entity",
-			EntityType.Builder.<SpectralEntityEntity>of(SpectralEntityEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
-					.setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(SpectralEntityEntity::new)
-
-					.sized(0.4f, 0.1f));
-	public static final RegistryObject<EntityType<SpectralSpawnEntity>> SPECTRAL_SPAWN = register("projectile_spectral_spawn",
-			EntityType.Builder.<SpectralSpawnEntity>of(SpectralSpawnEntity::new, MobCategory.MISC).setCustomClientFactory(SpectralSpawnEntity::new)
 					.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<RingOfFireStrikeAttackEntity>> RING_OF_FIRE_STRIKE_ATTACK = register(
 			"projectile_ring_of_fire_strike_attack",
@@ -293,6 +256,10 @@ public class TheabyssModEntities {
 			EntityType.Builder.<SummonedHollowSeekerEntity>of(SummonedHollowSeekerEntity::new, MobCategory.CREATURE)
 					.setShouldReceiveVelocityUpdates(true).setTrackingRange(100).setUpdateInterval(3)
 					.setCustomClientFactory(SummonedHollowSeekerEntity::new).fireImmune().sized(0.7999999999999999f, 2f));
+	public static final RegistryObject<EntityType<ArtifactOfPhantomsEntity>> ARTIFACT_OF_PHANTOMS = register("projectile_artifact_of_phantoms",
+			EntityType.Builder.<ArtifactOfPhantomsEntity>of(ArtifactOfPhantomsEntity::new, MobCategory.MISC)
+					.setCustomClientFactory(ArtifactOfPhantomsEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -302,13 +269,11 @@ public class TheabyssModEntities {
 	public static void init(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			TheRokaEntity.init();
-			FireFlyEntity.init();
 			IceSkeletonEntity.init();
 			IceKnightEntity.init();
 			NightbladeBossEntity.init();
 			NightBladeBossCloneEntity.init();
 			DeerEntity.init();
-			LaroFishFlyEntity.init();
 			LaroFishEntity.init();
 			LuroFishEntity.init();
 			RaluFishEntity.init();
@@ -324,7 +289,6 @@ public class TheabyssModEntities {
 			InfectedZombieEntity.init();
 			RaptorEntity.init();
 			EndSpiderEntity.init();
-			NightHunterEntity.init();
 			LizardEntity.init();
 			ElderEntity.init();
 			JungleLurkerEntity.init();
@@ -335,7 +299,6 @@ public class TheabyssModEntities {
 			HauntedSkeletonEntity.init();
 			ShatteredZombieEntity.init();
 			SummonedSeekerEntity.init();
-			MagicalDeerEntity.init();
 			InfectedWolfEntity.init();
 			InfectedPhantomEntity.init();
 			PoweredWolfEntity.init();
@@ -347,7 +310,6 @@ public class TheabyssModEntities {
 			AbyssalLionEntity.init();
 			InfcetedCowEntity.init();
 			AbylagerEntity.init();
-			SpectralEntityEntity.init();
 			SummonedHollowSeekerEntity.init();
 		});
 	}
@@ -355,13 +317,11 @@ public class TheabyssModEntities {
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(THE_ROKA.get(), TheRokaEntity.createAttributes().build());
-		event.put(FIRE_FLY.get(), FireFlyEntity.createAttributes().build());
 		event.put(ICE_SKELETON.get(), IceSkeletonEntity.createAttributes().build());
 		event.put(ICE_KNIGHT.get(), IceKnightEntity.createAttributes().build());
 		event.put(NIGHTBLADE_BOSS.get(), NightbladeBossEntity.createAttributes().build());
 		event.put(NIGHT_BLADE_BOSS_CLONE.get(), NightBladeBossCloneEntity.createAttributes().build());
 		event.put(DEER.get(), DeerEntity.createAttributes().build());
-		event.put(LARO_FISH_FLY.get(), LaroFishFlyEntity.createAttributes().build());
 		event.put(LARO_FISH.get(), LaroFishEntity.createAttributes().build());
 		event.put(LURO_FISH.get(), LuroFishEntity.createAttributes().build());
 		event.put(RALU_FISH.get(), RaluFishEntity.createAttributes().build());
@@ -377,7 +337,6 @@ public class TheabyssModEntities {
 		event.put(INFECTED_ZOMBIE.get(), InfectedZombieEntity.createAttributes().build());
 		event.put(RAPTOR.get(), RaptorEntity.createAttributes().build());
 		event.put(END_SPIDER.get(), EndSpiderEntity.createAttributes().build());
-		event.put(NIGHT_HUNTER.get(), NightHunterEntity.createAttributes().build());
 		event.put(LIZARD.get(), LizardEntity.createAttributes().build());
 		event.put(ELDER.get(), ElderEntity.createAttributes().build());
 		event.put(JUNGLE_LURKER.get(), JungleLurkerEntity.createAttributes().build());
@@ -388,7 +347,6 @@ public class TheabyssModEntities {
 		event.put(HAUNTED_SKELETON.get(), HauntedSkeletonEntity.createAttributes().build());
 		event.put(SHATTERED_ZOMBIE.get(), ShatteredZombieEntity.createAttributes().build());
 		event.put(SUMMONED_SEEKER.get(), SummonedSeekerEntity.createAttributes().build());
-		event.put(MAGICAL_DEER.get(), MagicalDeerEntity.createAttributes().build());
 		event.put(INFECTED_WOLF.get(), InfectedWolfEntity.createAttributes().build());
 		event.put(INFECTED_PHANTOM.get(), InfectedPhantomEntity.createAttributes().build());
 		event.put(POWERED_WOLF.get(), PoweredWolfEntity.createAttributes().build());
@@ -400,7 +358,6 @@ public class TheabyssModEntities {
 		event.put(ABYSSAL_LION.get(), AbyssalLionEntity.createAttributes().build());
 		event.put(INFCETED_COW.get(), InfcetedCowEntity.createAttributes().build());
 		event.put(ABYLAGER.get(), AbylagerEntity.createAttributes().build());
-		event.put(SPECTRAL_ENTITY.get(), SpectralEntityEntity.createAttributes().build());
 		event.put(SUMMONED_HOLLOW_SEEKER.get(), SummonedHollowSeekerEntity.createAttributes().build());
 	}
 }

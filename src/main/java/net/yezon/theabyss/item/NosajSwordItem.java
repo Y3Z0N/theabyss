@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.BrikedKnightSwordToolInHandTickEvent;
+import net.yezon.theabyss.events.BrikedKnightSwordToolInHandTickevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.Level;
@@ -38,13 +38,13 @@ public class NosajSwordItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.EMPTY;
 			}
-		}, 3, -1f, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_WEAPONS));
+		}, 3, -1f, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_IN_DEV));
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			BrikedKnightSwordToolInHandTickEvent.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
+			BrikedKnightSwordToolInHandTickevent.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 }

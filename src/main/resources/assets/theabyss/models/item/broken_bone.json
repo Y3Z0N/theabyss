@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "theabyss:items/bone"
+    "layer0": "theabyss:items/broken_bone"
   }
 }

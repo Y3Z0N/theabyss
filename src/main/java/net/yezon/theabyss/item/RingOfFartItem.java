@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfFartEvent;
+import net.yezon.theabyss.events.ApplyRingOfFartevent;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
@@ -46,7 +46,7 @@ public class RingOfFartItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyRingOfFartEvent.execute(world, x, y, z);
+		ApplyRingOfFartevent.execute(world, x, y, z);
 		return ar;
 	}
 }

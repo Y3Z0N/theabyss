@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:blaru_forest",
+  "features": "theabyss:blaru_moss_cave_layer",
+  "step": "top_layer_modification"
+}

@@ -1,0 +1,25 @@
+{
+	"name": "Aurel Crystal Shard",
+	"icon": "theabyss:aurel_crystal_shard",
+"category": "theabyss:crystals",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:aurel_crystal_shard",
+	"title": "Aurel Crystal Shard",
+	"link_recipe": false,
+	"text": "Are you brave enough to venture into the depths of the Abyss dimension in Minecraft, where danger lurks at every turn? If so, you might just come across the rare and coveted Aurel Crystal Shards. These shimmering, glowing crystals can only be found within the hidden caves that lie beneath the Blue Forest biomes of the Abyss."
+	},
+	{
+	"type": "text",
+	"text": "It's said that the Aurel Crystal Shards hold great power and mystery, and many adventurers brave the dangers of the Abyss in search of them. But be warned - the Abyss is a treacherous place, full of danger and the unknown. Will you be the one to uncover the secrets of the Aurel Crystal Shards?"
+}
+	]
+	}

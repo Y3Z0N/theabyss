@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/frozen_chair",
-  "textures": {
-    "all": "theabyss:blocks/frozen_planks",
-    "particle": "theabyss:blocks/frozen_planks",
-    "0": "theabyss:blocks/frozen_planks"
-  },
-  "render_type": "solid"
-}

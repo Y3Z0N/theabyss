@@ -40,15 +40,14 @@ public class EcholotBigFeature extends Feature<NoneFeatureConfiguration> {
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(
-			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")),
-			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:ground_lands")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 	private final List<Block> base_blocks;
 	private StructureTemplate template = null;
 
 	public EcholotBigFeature() {
 		super(NoneFeatureConfiguration.CODEC);
-		base_blocks = List.of(TheabyssModBlocks.TANTRA_GRASS.get(), TheabyssModBlocks.INFECTED_GRASS.get());
+		base_blocks = List.of(TheabyssModBlocks.INFECTED_GRASS.get());
 	}
 
 	@Override

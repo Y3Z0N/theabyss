@@ -7,7 +7,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.SimpleParticleType;
 
-public class GlowingBlaruMossParticleEvent {
+public class GlowingBlaruMossParticleevent {
 	public static void execute(LevelAccessor world, double y, Entity entity) {
 		if (entity == null)
 			return;

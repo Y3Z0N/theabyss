@@ -1,10 +1,8 @@
 {
   "type": "forge:add_features",
-  "biomes": [
-    "theabyss:blue_mountain",
-    "theabyss:blue_forest",
-    "nether_wastes"
-  ],
+  "biomes": {
+    "type": "forge:any"
+  },
   "features": "theabyss:ignisithe_ore",
   "step": "underground_ores"
 }

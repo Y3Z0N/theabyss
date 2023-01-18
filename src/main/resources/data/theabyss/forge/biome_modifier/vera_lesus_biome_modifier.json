@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "theabyss:blue_forest",
-  "features": "theabyss:vera_lesus",
-  "step": "vegetal_decoration"
-}

@@ -19,7 +19,7 @@ import net.minecraft.core.BlockPos;
 import java.util.function.Supplier;
 import java.util.Map;
 
-public class GenerateSomniumUpgradesEvent {
+public class GenerateSomniumUpgradesevent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
@@ -139,7 +139,7 @@ public class GenerateSomniumUpgradesEvent {
 								.getItem() == TheabyssModItems.BOTTLE_OF_SOMNIUM.get()) {
 							if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr
 									&& _splr.get() instanceof Map _slt ? ((Slot) _slt.get(4)).getItem() : ItemStack.EMPTY)
-									.getItem() == TheabyssModItems.SLIME_STAGE_4.get()) {
+									.getItem() == TheabyssModItems.INFECTED_SLIME.get()) {
 								if (!(new Object() {
 									public int getAmount(int sltid) {
 										if (entity instanceof ServerPlayer _player && _player.containerMenu instanceof Supplier _current

@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "theabyss:items/oak_door_cr_22"
-  }
+    "layer0": "theabyss:items/blaru_door"
+  },
+  "render_type": "translucent"
 }

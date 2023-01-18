@@ -36,10 +36,10 @@ public class DiamondVariantFeature extends OreFeature {
 		FEATURE = new DiamondVariantFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:diamond_variant", FEATURE,
 				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()),
-						TheabyssModBlocks.DIAMOND_VARIANT.get().defaultBlockState())), 5));
+						TheabyssModBlocks.DIAMOND_VARIANT.get().defaultBlockState())), 4));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:diamond_variant", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(3), InSquarePlacement.spread(),
-						HeightRangePlacement.uniform(VerticalAnchor.absolute(1), VerticalAnchor.absolute(16)), BiomeFilter.biome()));
+				List.of(CountPlacement.of(2), InSquarePlacement.spread(),
+						HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-20)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 

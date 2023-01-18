@@ -3,7 +3,7 @@
   "biomes": [
     "theabyss:mud_plains",
     "theabyss:blue_jungle",
-    "theabyss:blue_forest"
+    "theabyss:blaru_forest"
   ],
   "spawners": {
     "type": "theabyss:shattered_zombie",

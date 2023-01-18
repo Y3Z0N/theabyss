@@ -3,10 +3,10 @@
   "textures": {
     "down": "theabyss:blocks/blaru_log_top",
     "up": "theabyss:blocks/blaru_log_top",
-    "north": "theabyss:blocks/blaru_log_side",
-    "east": "theabyss:blocks/blaru_log_side",
-    "south": "theabyss:blocks/blaru_log_side",
-    "west": "theabyss:blocks/blaru_log_side",
+    "north": "theabyss:blocks/blaru_log",
+    "east": "theabyss:blocks/blaru_log",
+    "south": "theabyss:blocks/blaru_log",
+    "west": "theabyss:blocks/blaru_log",
     "particle": "theabyss:blocks/blaru_log_top"
   },
   "render_type": "solid"

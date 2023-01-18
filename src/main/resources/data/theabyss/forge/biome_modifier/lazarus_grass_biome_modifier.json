@@ -1,9 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": [
-    "theabyss:fungal_forest",
-    "theabyss:roggen_forest"
-  ],
-  "features": "theabyss:lazarus_grass",
-  "step": "vegetal_decoration"
-}

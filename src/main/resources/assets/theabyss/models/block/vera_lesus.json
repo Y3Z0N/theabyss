@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/vera_lesus",
-    "particle": "theabyss:blocks/vera_lesus"
-  },
-  "render_type": "cutout"
-}

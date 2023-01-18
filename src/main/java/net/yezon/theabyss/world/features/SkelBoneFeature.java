@@ -40,15 +40,14 @@ public class SkelBoneFeature extends Feature<NoneFeatureConfiguration> {
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(
-			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")),
-			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:deleted_mod_element")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 	private final List<Block> base_blocks;
 	private StructureTemplate template = null;
 
 	public SkelBoneFeature() {
 		super(NoneFeatureConfiguration.CODEC);
-		base_blocks = List.of(TheabyssModBlocks.INFECTED_GRASS.get());
+		base_blocks = List.of(TheabyssModBlocks.STONE.get());
 	}
 
 	@Override
@@ -60,7 +59,7 @@ public class SkelBoneFeature extends Feature<NoneFeatureConfiguration> {
 		if (template == null)
 			return false;
 		boolean anyPlaced = false;
-		if ((context.random().nextInt(1000000) + 1) <= 300000) {
+		if ((context.random().nextInt(1000000) + 1) <= 100000) {
 			int count = context.random().nextInt(1) + 1;
 			for (int a = 0; a < count; a++) {
 				int i = context.origin().getX() + context.random().nextInt(16);

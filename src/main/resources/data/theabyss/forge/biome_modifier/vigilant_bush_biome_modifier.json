@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:vigilant_forest",
+  "features": "theabyss:vigilant_bush",
+  "step": "vegetal_decoration"
+}

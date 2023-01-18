@@ -1,7 +1,9 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.HealFlowerEffectEvent;
+import org.checkerframework.checker.units.qual.s;
+
+import net.yezon.theabyss.events.HealFlowerEffectevent;
 
 import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.ForgeHooks;
@@ -72,6 +74,6 @@ public class SlimedVitaeBlock extends SugarCaneBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		HealFlowerEffectEvent.execute(entity);
+		HealFlowerEffectevent.execute(entity);
 	}
 }

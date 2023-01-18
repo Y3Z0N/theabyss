@@ -3,10 +3,10 @@
   "textures": {
     "down": "theabyss:blocks/slimed_log_top",
     "up": "theabyss:blocks/slimed_log_top",
-    "north": "theabyss:blocks/slimed_log_side",
-    "east": "theabyss:blocks/slimed_log_side",
-    "south": "theabyss:blocks/slimed_log_side",
-    "west": "theabyss:blocks/slimed_log_side",
+    "north": "theabyss:blocks/slimed_log",
+    "east": "theabyss:blocks/slimed_log",
+    "south": "theabyss:blocks/slimed_log",
+    "west": "theabyss:blocks/slimed_log",
     "particle": "theabyss:blocks/slimed_log_top"
   },
   "render_type": "solid"

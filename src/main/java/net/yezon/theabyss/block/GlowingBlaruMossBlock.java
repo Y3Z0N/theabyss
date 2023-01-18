@@ -1,7 +1,9 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.GlowingBlaruMossParticleEvent;
+import org.checkerframework.checker.units.qual.s;
+
+import net.yezon.theabyss.events.GlowingBlaruMossParticleevent;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -16,6 +18,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
@@ -40,6 +43,11 @@ public class GlowingBlaruMossBlock extends FlowerBlock {
 	@Override
 	public int getEffectDuration() {
 		return 100;
+	}
+
+	@Override
+	public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
+		return useContext.getItemInHand().getItem() != this.asItem();
 	}
 
 	@Override
@@ -76,12 +84,12 @@ public class GlowingBlaruMossBlock extends FlowerBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		GlowingBlaruMossParticleEvent.execute(world, pos.getY(), entity);
+		GlowingBlaruMossParticleevent.execute(world, pos.getY(), entity);
 	}
 
 	@Override
 	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
 		super.stepOn(world, pos, blockstate, entity);
-		GlowingBlaruMossParticleEvent.execute(world, pos.getY(), entity);
+		GlowingBlaruMossParticleevent.execute(world, pos.getY(), entity);
 	}
 }

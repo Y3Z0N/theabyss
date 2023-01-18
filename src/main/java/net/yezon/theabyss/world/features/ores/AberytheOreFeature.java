@@ -38,8 +38,8 @@ public class AberytheOreFeature extends OreFeature {
 				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()),
 						TheabyssModBlocks.ABERYTHE_ORE.get().defaultBlockState())), 5));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:aberythe_ore", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(5), InSquarePlacement.spread(),
-						HeightRangePlacement.uniform(VerticalAnchor.absolute(2), VerticalAnchor.absolute(14)), BiomeFilter.biome()));
+				List.of(CountPlacement.of(2), InSquarePlacement.spread(),
+						HeightRangePlacement.uniform(VerticalAnchor.absolute(-40), VerticalAnchor.absolute(-15)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 

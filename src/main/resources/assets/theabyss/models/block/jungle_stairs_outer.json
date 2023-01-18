@@ -1,9 +1,9 @@
 {
   "parent": "block/outer_stairs",
   "textures": {
-    "bottom": "theabyss:blocks/jungle_planks",
-    "top": "theabyss:blocks/jungle_planks",
-    "side": "theabyss:blocks/jungle_planks"
+    "bottom": "theabyss:blocks/nightgrove_planks",
+    "top": "theabyss:blocks/nightgrove_planks",
+    "side": "theabyss:blocks/nightgrove_planks"
   },
   "render_type": "solid"
 }

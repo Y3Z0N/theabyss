@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "theabyss:block/stripped_sal_shroom_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "theabyss:block/stripped_sal_shroom_log"
+    },
+    "axis=z": {
+      "model": "theabyss:block/stripped_sal_shroom_log",
+      "x": 90
+    }
+  }
+}

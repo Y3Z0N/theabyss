@@ -1,7 +1,0 @@
-{
-  "parent": "theabyss:custom/hammer_of_abyss",
-  "textures": {
-    "0": "theabyss:blocks/hammer_1_22",
-    "particle": "theabyss:items/tron_disc"
-  }
-}

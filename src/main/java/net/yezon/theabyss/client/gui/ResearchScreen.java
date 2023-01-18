@@ -75,9 +75,9 @@ public class ResearchScreen extends AbstractContainerScreen<ResearchMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Research Table", 6, 7, -6684724);
-		this.font.draw(poseStack, "Cost:", 78, 25, -6684724);
-		this.font.draw(poseStack, "5 XP Levels", 105, 25, -16724788);
+		this.font.draw(poseStack, Component.translatable("gui.theabyss.research.label_research_table"), 6, 7, -6684724);
+		this.font.draw(poseStack, Component.translatable("gui.theabyss.research.label_cost"), 78, 25, -6684724);
+		this.font.draw(poseStack, Component.translatable("gui.theabyss.research.label_5_xp_levels"), 105, 25, -16724788);
 	}
 
 	@Override
@@ -90,11 +90,12 @@ public class ResearchScreen extends AbstractContainerScreen<ResearchMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 78, this.topPos + 42, 65, 20, Component.literal("Research"), e -> {
-			if (true) {
-				TheabyssMod.PACKET_HANDLER.sendToServer(new ResearchButtonMessage(0, x, y, z));
-				ResearchButtonMessage.handleButtonAction(entity, 0, x, y, z);
-			}
-		}));
+		this.addRenderableWidget(
+				new Button(this.leftPos + 78, this.topPos + 42, 65, 20, Component.translatable("gui.theabyss.research.button_research"), e -> {
+					if (true) {
+						TheabyssMod.PACKET_HANDLER.sendToServer(new ResearchButtonMessage(0, x, y, z));
+						ResearchButtonMessage.handleButtonAction(entity, 0, x, y, z);
+					}
+				}));
 	}
 }

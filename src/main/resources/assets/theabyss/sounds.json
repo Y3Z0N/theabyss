@@ -778,5 +778,112 @@
         "stream": false
       }
     ]
+  },
+  "nightblade_attack": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "theabyss:night_soul_1-audio",
+        "stream": false
+      },
+      {
+        "name": "theabyss:night_soul_2-audio",
+        "stream": false
+      },
+      {
+        "name": "theabyss:night_soul_3-audio",
+        "stream": false
+      },
+      {
+        "name": "theabyss:night_soul_4-audio",
+        "stream": false
+      },
+      {
+        "name": "theabyss:night_soul_5-audio",
+        "stream": false
+      },
+      {
+        "name": "theabyss:night_soul_6-audio",
+        "stream": false
+      },
+      {
+        "name": "theabyss:night_soul_7-audio",
+        "stream": false
+      },
+      {
+        "name": "theabyss:night_soul_8-audio",
+        "stream": false
+      },
+      {
+        "name": "theabyss:night_soul_9-audio",
+        "stream": false
+      },
+      {
+        "name": "theabyss:night_soul_10-audio",
+        "stream": false
+      },
+      {
+        "name": "theabyss:night_soul_11-audio",
+        "stream": false
+      }
+    ]
+  },
+  "wood_place": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "theabyss:wood_place1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wood_place2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wood_place3",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wood_place4",
+        "stream": false
+      }
+    ]
+  },
+  "wood_step": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "theabyss:wood_step1",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wood_step2",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wood_step3",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wood_step4",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wood_step5",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wood_step6",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wood_step7",
+        "stream": false
+      },
+      {
+        "name": "theabyss:wood_step8",
+        "stream": false
+      }
+    ]
   }
 }

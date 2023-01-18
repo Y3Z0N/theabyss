@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "theabyss:blocks/abyss_dirt",
-    "particle": "theabyss:blocks/abyss_dirt"
+    "all": "theabyss:blocks/infected_dirt",
+    "particle": "theabyss:blocks/infected_dirt"
   },
   "render_type": "solid"
 }

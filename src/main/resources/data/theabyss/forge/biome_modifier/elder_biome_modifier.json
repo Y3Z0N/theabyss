@@ -1,9 +1,6 @@
 {
   "type": "forge:add_spawns",
-  "biomes": [
-    "theabyss:blue_mountain",
-    "theabyss:blue_forest"
-  ],
+  "biomes": "theabyss:blue_mountain",
   "spawners": {
     "type": "theabyss:elder",
     "weight": 2,

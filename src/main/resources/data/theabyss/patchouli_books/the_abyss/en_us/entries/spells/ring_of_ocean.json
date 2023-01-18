@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Ocean",
+	"icon": "theabyss:ring_of_ocean",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_ocean",
+	"title": "Ring Of Ocean",
+	"link_recipe": false,
+	"text": "Dive into adventure with this ring that lets you breathe underwater and swim faster. It only requires 15.0 somnium to use. Explore the depths of the ocean and discover its wonders with this underwater ring."
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_ring",
+	"input1": "minecraft:water_bucket",
+	"input2": "theabyss:loran",
+	"input3": "minecraft:water_bucket",
+	"input4": "theabyss:loran",
+	"input5": "minecraft:water_bucket",
+	"input6": "theabyss:loran",
+	"input7": "minecraft:water_bucket",
+	"input8": "theabyss:loran",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

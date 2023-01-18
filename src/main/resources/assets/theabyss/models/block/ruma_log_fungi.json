@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/ruma_log_fungi",
-  "textures": {
-    "all": "theabyss:blocks/ruma_log_fungi",
-    "particle": "theabyss:blocks/ruma_log_fungi",
-    "texture": "theabyss:blocks/ruma_log_fungi"
-  },
-  "render_type": "solid"
-}

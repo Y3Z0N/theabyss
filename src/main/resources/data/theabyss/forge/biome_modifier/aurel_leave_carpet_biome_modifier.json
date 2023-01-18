@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "theabyss:blue_forest",
-  "features": "theabyss:aurel_leave_carpet",
-  "step": "vegetal_decoration"
-}

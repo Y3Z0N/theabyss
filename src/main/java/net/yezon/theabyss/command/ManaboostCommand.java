@@ -1,7 +1,9 @@
 
 package net.yezon.theabyss.command;
 
-import net.yezon.theabyss.events.ManaboostCommandEvent;
+import org.checkerframework.checker.units.qual.s;
+
+import net.yezon.theabyss.events.ManaboostCommandevent;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -39,7 +41,7 @@ public class ManaboostCommand {
 						index++;
 					}
 
-					ManaboostCommandEvent.execute(entity);
+					ManaboostCommandevent.execute(entity);
 					return 0;
 				})).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();
@@ -58,7 +60,7 @@ public class ManaboostCommand {
 						index++;
 					}
 
-					ManaboostCommandEvent.execute(entity);
+					ManaboostCommandevent.execute(entity);
 					return 0;
 				}));
 	}

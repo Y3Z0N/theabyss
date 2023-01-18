@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.FearPotionStartedappliedEvent;
+import net.yezon.theabyss.events.FearPotionStartedappliedevent;
 
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,7 +20,7 @@ public class FearMobEffect extends MobEffect {
 
 	@Override
 	public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-		FearPotionStartedappliedEvent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		FearPotionStartedappliedevent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 
 	@Override

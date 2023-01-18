@@ -41,9 +41,8 @@ public class LoranFlowerFeature extends RandomPatchFeature {
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(
-			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")),
-			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:ground_lands")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public LoranFlowerFeature() {
 		super(RandomPatchConfiguration.CODEC);

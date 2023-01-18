@@ -11,5 +11,5 @@
     "bottom": "theabyss:blocks/arcane_bottom",
     "crimson_crystal": "theabyss:blocks/crimson_crystal"
   },
-  "render_type": "solid"
+  "render_type": "cutout"
 }

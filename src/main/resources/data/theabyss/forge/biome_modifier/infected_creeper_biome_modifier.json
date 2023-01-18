@@ -1,6 +1,6 @@
 {
   "type": "forge:add_spawns",
-  "biomes": "theabyss:blue_forest",
+  "biomes": "theabyss:blaru_forest",
   "spawners": {
     "type": "theabyss:infected_creeper",
     "weight": 28,

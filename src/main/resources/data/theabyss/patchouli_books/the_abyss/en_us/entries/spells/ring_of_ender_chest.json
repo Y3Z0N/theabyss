@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Ender Chest",
+	"icon": "theabyss:ring_of_ender_chest",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_ender_chest",
+	"title": "Ring Of Ender Chest",
+	"link_recipe": false,
+	"text": "Carry the ultimate in storage convenience with this amazing ring! Not only is it a portable ender chest, allowing you to access all of your stored items at a moment's notice, but it also doesn't require any somnium to use. Never be caught without your essential items again with this handy ring!"
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_ring",
+	"input1": "theabyss:ender_crystal_shard",
+	"input2": "theabyss:caverna_crystal",
+	"input3": "theabyss:ender_crystal_shard",
+	"input4": "theabyss:caverna_crystal",
+	"input5": "theabyss:ender_crystal_shard",
+	"input6": "theabyss:caverna_crystal",
+	"input7": "theabyss:ender_crystal_shard",
+	"input8": "theabyss:caverna_crystal",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

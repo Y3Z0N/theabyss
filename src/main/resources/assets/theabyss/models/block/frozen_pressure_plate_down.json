@@ -1,7 +1,7 @@
 {
   "parent": "block/pressure_plate_down",
   "textures": {
-    "texture": "theabyss:blocks/frozen_planks"
+    "texture": "theabyss:blocks/frost_planks"
   },
   "render_type": "solid"
 }

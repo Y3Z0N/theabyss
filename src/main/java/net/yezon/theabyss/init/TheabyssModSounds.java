@@ -1,5 +1,5 @@
 
-
+  
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.TheabyssMod;
@@ -139,4 +139,10 @@ public class TheabyssModSounds {
 			() -> new SoundEvent(new ResourceLocation("theabyss", "infected_warden_idle")));
 	public static final RegistryObject<SoundEvent> SEEKER_AMBIENT = REGISTRY.register("seeker_ambient",
 			() -> new SoundEvent(new ResourceLocation("theabyss", "seeker_ambient")));
+	public static final RegistryObject<SoundEvent> NIGHTBLADE_ATTACK = REGISTRY.register("nightblade_attack",
+			() -> new SoundEvent(new ResourceLocation("theabyss", "nightblade_attack")));
+	public static final RegistryObject<SoundEvent> WOOD_PLACE = REGISTRY.register("wood_place",
+			() -> new SoundEvent(new ResourceLocation("theabyss", "wood_place")));
+	public static final RegistryObject<SoundEvent> WOOD_STEP = REGISTRY.register("wood_step",
+			() -> new SoundEvent(new ResourceLocation("theabyss", "wood_step")));
 }

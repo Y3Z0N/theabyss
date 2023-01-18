@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.IncorytheArmorBodyAbilityEvent;
-import net.yezon.theabyss.events.IncorytheArmorAbilityEvent;
+import net.yezon.theabyss.events.IncorytheArmorBodyAbilityevent;
+import net.yezon.theabyss.events.IncorytheArmorAbilityevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 import net.yezon.theabyss.init.TheabyssModItems;
 
@@ -98,7 +98,7 @@ public abstract class IncorytheArmorItem extends ArmorItem {
 
 		@Override
 		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
-			IncorytheArmorBodyAbilityEvent.execute(entity);
+			IncorytheArmorBodyAbilityevent.execute(entity);
 		}
 	}
 
@@ -131,7 +131,7 @@ public abstract class IncorytheArmorItem extends ArmorItem {
 
 		@Override
 		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
-			IncorytheArmorAbilityEvent.execute(entity);
+			IncorytheArmorAbilityevent.execute(entity);
 		}
 	}
 }

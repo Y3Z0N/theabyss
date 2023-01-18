@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
@@ -27,6 +28,11 @@ public class BlaruLeaveCarpetBlock extends FlowerBlock {
 	@Override
 	public int getEffectDuration() {
 		return 100;
+	}
+
+	@Override
+	public boolean canBeReplaced(BlockState state, BlockPlaceContext useContext) {
+		return useContext.getItemInHand().getItem() != this.asItem();
 	}
 
 	@Override

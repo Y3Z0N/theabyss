@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "theabyss:block/vigilant_slab"
+    },
+    "type=top": {
+      "model": "theabyss:block/vigilant_slab_top"
+    },
+    "type=double": {
+      "model": "theabyss:block/vigilant_slab_full"
+    }
+  }
+}

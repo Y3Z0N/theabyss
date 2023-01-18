@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "theabyss:items/exp_shuriken"
+    "layer0": "theabyss:items/shuriken"
   },
   "display": {
     "thirdperson_righthand": {

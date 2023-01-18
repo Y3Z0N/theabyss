@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Flight",
+	"icon": "theabyss:ring_of_flight",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_flight",
+	"title": "Ring Of Flight",
+	"link_recipe": false,
+	"text": "Experience the freedom of flight with this incredible ring! Just like in creative mode, you'll be able to soar through the skies with ease. And the best part? You can even use it in your off-hand for maximum convenience. Just be prepared to pay a somnium cost of 5.0 per second to keep the wings of this ring flapping. Are you ready to take to the skies?"
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_slide",
+	"input1": "minecraft:elytra",
+	"input2": "theabyss:ender_crystal_shard",
+	"input3": "minecraft:elytra",
+	"input4": "theabyss:ender_crystal_shard",
+	"input5": "minecraft:elytra",
+	"input6": "theabyss:ender_crystal_shard",
+	"input7": "minecraft:elytra",
+	"input8": "theabyss:ender_crystal_shard",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

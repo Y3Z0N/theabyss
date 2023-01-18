@@ -62,7 +62,7 @@ public class FrostPortalFeature extends Feature<NoneFeatureConfiguration> {
 				int k = context.origin().getZ() + context.random().nextInt(16);
 				int j = context.level().getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, k);
 				j = Mth.nextInt(context.random(), 8 + context.level().getMinBuildHeight(), Math.max(j, 9 + context.level().getMinBuildHeight()));
-				BlockPos spawnTo = new BlockPos(i + 0, j + 0, k + 0);
+				BlockPos spawnTo = new BlockPos(i + 0, j + -20, k + 0);
 				if (template.placeInWorld(context.level(), spawnTo, spawnTo,
 						new StructurePlaceSettings().setMirror(Mirror.values()[context.random().nextInt(2)])
 								.setRotation(Rotation.values()[context.random().nextInt(3)]).setRandom(context.random())

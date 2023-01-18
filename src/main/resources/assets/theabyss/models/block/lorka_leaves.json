@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "theabyss:blocks/abyss_leaves_gr_22",
-    "particle": "theabyss:blocks/abyss_leaves_gr_22"
-  },
-  "render_type": "cutout"
-}

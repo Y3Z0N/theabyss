@@ -1,0 +1,47 @@
+{
+	"name": "Somnium Damage",
+	"icon": "theabyss:somnium_damage_upragde",
+"category": "theabyss:alchemy",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:somnium_damage_upragde",
+	"title": "Somnium Damage Upgrade",
+	"link_recipe": false,
+	"text": "The Somnium Damage Upgrade essence enhances the power of spells, artifacts, and rings, giving them an extra edge in battle. However, be cautious when using this essence, as it may cause hallucinations and draw the user towards darkness. Use it wisely and at your own risk. "
+	},
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "The Somnium Damage Upgrade can be crafted in a Somnium Infuser using loran energy and somnium as ingredients."
+},
+{
+	"type": "theabyss:infuser_recipes",
+	"heading": "Recipe",
+	"somnium": "theabyss:somnium",
+	"energy": "theabyss:loran_energy",
+	"input1": "theabyss:roka_horn",
+	"input2": "theabyss:elder_eye",
+	"input3": "theabyss:crystal_hand",
+	"input4": "theabyss:creeper_dust",
+	"text1": "Place Somnium and loran energy in the upper input slots.",
+	"text2": "To craft Somnium Damage Upgrade, place the required items in the test tubes on the left and right."
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/somnium_usage.png"
+		]
+}
+	]
+	}

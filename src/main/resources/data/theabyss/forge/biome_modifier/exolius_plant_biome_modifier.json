@@ -1,9 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": [
-    "theabyss:blue_forest",
-    "theabyss:slime_forest"
-  ],
+  "biomes": "theabyss:blaru_forest",
   "features": "theabyss:exolius_plant",
   "step": "vegetal_decoration"
 }

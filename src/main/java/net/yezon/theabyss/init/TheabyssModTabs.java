@@ -1,5 +1,5 @@
 
-
+  
 package net.yezon.theabyss.init;
 
 import net.minecraft.world.item.ItemStack;
@@ -13,6 +13,7 @@ public class TheabyssModTabs {
 	public static CreativeModeTab TAB_THE_ABYSS_WEAPONS;
 	public static CreativeModeTab TAB_THE_ABYSS_ENTITY;
 	public static CreativeModeTab TAB_SLIME_FUSION_TAB;
+	public static CreativeModeTab TAB_THE_ABYSS_IN_DEV;
 
 	public static void load() {
 		TAB_THE_ABYSS = new CreativeModeTab("tabthe_abyss") {
@@ -73,7 +74,7 @@ public class TheabyssModTabs {
 		TAB_THE_ABYSS_ENTITY = new CreativeModeTab("tabthe_abyss_entity") {
 			@Override
 			public ItemStack makeIcon() {
-				return new ItemStack(TheabyssModItems.NIGHT_HUNTER_ABL_2.get());
+				return new ItemStack(TheabyssModItems.FISH.get());
 			}
 
 			@Override
@@ -85,6 +86,17 @@ public class TheabyssModTabs {
 			@Override
 			public ItemStack makeIcon() {
 				return new ItemStack(TheabyssModItems.MUTATED_ENDERPEARL.get());
+			}
+
+			@Override
+			public boolean hasSearchBar() {
+				return false;
+			}
+		};
+		TAB_THE_ABYSS_IN_DEV = new CreativeModeTab("tabthe_abyss_in_dev") {
+			@Override
+			public ItemStack makeIcon() {
+				return new ItemStack(TheabyssModBlocks.DARK_STONE.get());
 			}
 
 			@Override

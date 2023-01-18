@@ -1,13 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "theabyss:blocks/log_top",
-    "up": "theabyss:blocks/log_top",
-    "north": "theabyss:blocks/log_side",
-    "east": "theabyss:blocks/log_side",
-    "south": "theabyss:blocks/log_side",
-    "west": "theabyss:blocks/log_side",
-    "particle": "theabyss:blocks/log_top"
+    "down": "theabyss:blocks/stripped_blaru_log_top",
+    "up": "theabyss:blocks/stripped_blaru_log_top",
+    "north": "theabyss:blocks/stripped_blaru_log",
+    "east": "theabyss:blocks/stripped_blaru_log",
+    "south": "theabyss:blocks/stripped_blaru_log",
+    "west": "theabyss:blocks/stripped_blaru_log",
+    "particle": "theabyss:blocks/stripped_blaru_log_top"
   },
   "render_type": "solid"
 }

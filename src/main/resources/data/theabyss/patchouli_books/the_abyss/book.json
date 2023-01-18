@@ -1,0 +1,30 @@
+{
+    "name": "The Abyss: Chapter II",
+    "landing_text": "A dimension filled with unique adventures and dangers. Illuminated only by glowing magical blocks and the diverse array of flora, fungi, and fauna that inhabit it, this shadowy world holds countless secrets waiting to be uncovered.",
+    "version": 4,
+    "subtitle":"Set version to equal 0 to view",
+    "model":"theabyss:book_icon",
+    "text_color":"000000",
+    "header_color":"333333",
+    "nameplate_color":"FFFFFF",
+    "link_color":"0000EE",
+    "link_hover_color":"8800EE",
+    "show_progress":true,
+    "creative_tab":"tabthe_abyss",
+    "pause_game":false,
+    "show_toasts":true,
+    "use_blocky_font":false,
+    "disable_advancement_locking":true,
+
+    "filler_texture": "theabyss:textures/gui/page_filler.png",
+    "book_texture": "theabyss:textures/gui/guide_book.png",
+
+    "nameplate_color": "FFAA00",
+  	"link_color": "00AAAA",
+  	"link_hover_color": "AA00AA",
+  	"progress_bar_color": "AA00AA",
+  	"progress_bar_background": "555555",
+
+
+    "advancement_namespaces": ["theabyss"]
+}

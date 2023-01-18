@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/opia_shroom",
-    "particle": "theabyss:blocks/opia_shroom"
-  },
-  "render_type": "cutout"
-}

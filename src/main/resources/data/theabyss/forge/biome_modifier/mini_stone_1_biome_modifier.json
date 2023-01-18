@@ -1,8 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": {
-    "type": "forge:any"
-  },
-  "features": "theabyss:mini_stone_1",
-  "step": "vegetal_decoration"
-}

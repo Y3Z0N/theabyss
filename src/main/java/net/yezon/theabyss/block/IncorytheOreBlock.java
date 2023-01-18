@@ -1,12 +1,8 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.GetIncorytheOreAdvEvent;
-import net.yezon.theabyss.init.TheabyssModParticleTypes;
+import net.yezon.theabyss.events.GetIncorytheOreAdvevent;
 import net.yezon.theabyss.init.TheabyssModItems;
-
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
@@ -21,11 +17,8 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.util.RandomSource;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.Minecraft;
 
 import java.util.List;
 import java.util.Collections;
@@ -62,29 +55,10 @@ public class IncorytheOreBlock extends Block {
 		return Collections.singletonList(new ItemStack(TheabyssModItems.INCORYTHE_GEM.get()));
 	}
 
-	@OnlyIn(Dist.CLIENT)
-	@Override
-	public void animateTick(BlockState blockstate, Level world, BlockPos pos, RandomSource random) {
-		super.animateTick(blockstate, world, pos, random);
-		Player entity = Minecraft.getInstance().player;
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		for (int l = 0; l < 4; ++l) {
-			double x0 = x + random.nextFloat();
-			double y0 = y + random.nextFloat();
-			double z0 = z + random.nextFloat();
-			double dx = (random.nextFloat() - 0.5D) * 0.5D;
-			double dy = (random.nextFloat() - 0.5D) * 0.5D;
-			double dz = (random.nextFloat() - 0.5D) * 0.5D;
-			world.addParticle((SimpleParticleType) (TheabyssModParticleTypes.END_SWORD_PT.get()), x0, y0, z0, dx, dy, dz);
-		}
-	}
-
 	@Override
 	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		GetIncorytheOreAdvEvent.execute(entity);
+		GetIncorytheOreAdvevent.execute(entity);
 		return retval;
 	}
 }

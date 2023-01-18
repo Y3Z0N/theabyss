@@ -1,9 +1,9 @@
 {
   "parent": "block/stairs",
   "textures": {
-    "bottom": "theabyss:blocks/abyss_planks_21",
-    "top": "theabyss:blocks/abyss_planks_21",
-    "side": "theabyss:blocks/abyss_planks_21"
+    "bottom": "theabyss:blocks/blaru_planks",
+    "top": "theabyss:blocks/blaru_planks",
+    "side": "theabyss:blocks/blaru_planks"
   },
   "render_type": "solid"
 }

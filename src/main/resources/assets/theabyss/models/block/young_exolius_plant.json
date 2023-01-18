@@ -1,7 +1,7 @@
 {
-  "parent": "block/cross",
+  "parent": "block/crop",
   "textures": {
-    "cross": "theabyss:blocks/young_exolius_plant",
+    "crop": "theabyss:blocks/young_exolius_plant",
     "particle": "theabyss:blocks/young_exolius_plant"
   },
   "render_type": "cutout"

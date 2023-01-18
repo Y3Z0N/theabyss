@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "theabyss:blocks/tantra_grass_middle",
-    "particle": "theabyss:blocks/tantra_grass_middle"
-  },
-  "render_type": "cutout"
-}

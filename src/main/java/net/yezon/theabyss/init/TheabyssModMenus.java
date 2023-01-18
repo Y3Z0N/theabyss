@@ -1,8 +1,7 @@
 
- 
+
 package net.yezon.theabyss.init;
 
-import net.yezon.theabyss.world.inventory.WikiGuiMenu;
 import net.yezon.theabyss.world.inventory.ResearchMenu;
 import net.yezon.theabyss.world.inventory.PatreonScreenMenu;
 import net.yezon.theabyss.world.inventory.MortarMenu;
@@ -23,7 +22,6 @@ public class TheabyssModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, TheabyssMod.MODID);
 	public static final RegistryObject<MenuType<PatreonScreenMenu>> PATREON_SCREEN = REGISTRY.register("patreon_screen",
 			() -> IForgeMenuType.create(PatreonScreenMenu::new));
-	public static final RegistryObject<MenuType<WikiGuiMenu>> WIKI_GUI = REGISTRY.register("wiki_gui", () -> IForgeMenuType.create(WikiGuiMenu::new));
 	public static final RegistryObject<MenuType<InfuserMenu>> INFUSER = REGISTRY.register("infuser", () -> IForgeMenuType.create(InfuserMenu::new));
 	public static final RegistryObject<MenuType<CutterMenu>> CUTTER = REGISTRY.register("cutter", () -> IForgeMenuType.create(CutterMenu::new));
 	public static final RegistryObject<MenuType<ArcaneMenu>> ARCANE = REGISTRY.register("arcane", () -> IForgeMenuType.create(ArcaneMenu::new));

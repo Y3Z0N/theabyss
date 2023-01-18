@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/roggen_log_vines",
-  "textures": {
-    "all": "theabyss:blocks/roggen_log_vines",
-    "particle": "theabyss:blocks/roggen_log_vines",
-    "texture": "theabyss:blocks/roggen_log_vines"
-  },
-  "render_type": "cutout"
-}

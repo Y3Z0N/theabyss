@@ -1,0 +1,9 @@
+{
+	"name": "Ores & Gems",
+	"description": "This is the gem index. It show's you how to find specific ores & gems.",
+	"icon": "theabyss:incorythe_gem",
+
+
+	"sortnum":6,
+	"secret":false
+}

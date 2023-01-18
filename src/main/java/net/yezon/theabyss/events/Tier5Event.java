@@ -4,7 +4,7 @@ import net.yezon.theabyss.network.TheabyssModVariables;
 
 import net.minecraft.world.entity.Entity;
 
-public class Tier5Event {
+public class Tier5event {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;

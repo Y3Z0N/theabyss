@@ -1,7 +1,9 @@
 
 package net.yezon.theabyss.client.screens;
 
-import net.yezon.theabyss.events.ManaBarToggleEvent;
+import org.checkerframework.checker.units.qual.h;
+
+import net.yezon.theabyss.events.ManaBarToggleevent;
 import net.yezon.theabyss.network.TheabyssModVariables;
 
 import net.minecraftforge.fml.common.Mod;
@@ -23,10 +25,10 @@ import com.mojang.blaze3d.platform.GlStateManager;
 public class SomniumBarOverlay {
 	@SubscribeEvent(priority = EventPriority.NORMAL)
 	public static void eventHandler(RenderGuiEvent.Pre event) {
-			int w = event.getWindow().getGuiScaledWidth() / 2 + 10;
-			int h = event.getWindow().getGuiScaledHeight() - 49;
-			int posX = w;
-			int posY = h;
+		int w = event.getWindow().getGuiScaledWidth() / 2 + 10;
+		int h = event.getWindow().getGuiScaledHeight() - 49;
+		int posX = w;
+		int posY = h;
 		Level _world = null;
 		double _x = 0;
 		double _y = 0;
@@ -42,6 +44,10 @@ public class SomniumBarOverlay {
 		double x = _x;
 		double y = _y;
 		double z = _z;
+		int HudX = ((int) ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new TheabyssModVariables.PlayerVariables())).HudX));
+		int HudY = ((int) ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new TheabyssModVariables.PlayerVariables())).HudY));
 		RenderSystem.disableDepthTest();
 		RenderSystem.depthMask(false);
 		RenderSystem.enableBlend();
@@ -49,126 +55,126 @@ public class SomniumBarOverlay {
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
 				GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		if (ManaBarToggleEvent.execute(entity)) {
+		if (ManaBarToggleevent.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_none_icon.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 0, posY + 0, 0, 0, 9, 9, 9, 9);
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 0, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_none_icon.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 8, posY + 0, 0, 0, 9, 9, 9, 9);
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 8, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_none_icon.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 16, posY + 0, 0, 0, 9, 9, 9, 9);
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 16, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_none_icon.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 24, posY + 0, 0, 0, 9, 9, 9, 9);
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 24, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_none_icon.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 32, posY + 0, 0, 0, 9, 9, 9, 9);
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 32, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_none_icon.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 40, posY + 0, 0, 0, 9, 9, 9, 9);
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 40, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_none_icon.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 48, posY + 0, 0, 0, 9, 9, 9, 9);
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 48, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_none_icon.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 56, posY + 0, 0, 0, 9, 9, 9, 9);
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 56, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_none_icon.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 64, posY + 0, 0, 0, 9, 9, 9, 9);
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 64, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_none_icon.png"));
-			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 72, posY + 0, 0, 0, 9, 9, 9, 9);
+			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 72, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 4) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_half_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 0, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 0, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 14) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_half_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 8, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 8, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 24) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_half_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 16, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 16, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 34) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_half_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 24, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 24, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 44) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_half_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 32, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 32, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 54) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_half_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 40, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 40, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 64) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_half_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 48, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 48, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 74) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_half_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 56, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 56, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 84) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_half_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 64, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 64, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 94) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_half_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 72, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 72, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 9) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 0, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 0, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 19) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 8, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 8, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 29) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 16, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 16, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 39) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 24, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 24, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 49) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 32, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 32, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 59) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 40, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 40, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 69) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 48, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 48, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 79) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 56, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 56, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 89) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 64, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 64, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 					.orElse(new TheabyssModVariables.PlayerVariables())).Mana > 99) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_icon.png"));
-				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + 72, posY + 0, 0, 0, 9, 9, 9, 9);
+				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 72, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			}
 		}
 		RenderSystem.depthMask(true);

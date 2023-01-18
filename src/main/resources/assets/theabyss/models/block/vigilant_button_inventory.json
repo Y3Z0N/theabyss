@@ -1,0 +1,7 @@
+{
+  "parent": "block/button_inventory",
+  "textures": {
+    "texture": "theabyss:blocks/planks_vigilant"
+  },
+  "render_type": "solid"
+}

@@ -3,16 +3,18 @@ package net.yezon.theabyss.events;
 import net.yezon.theabyss.init.TheabyssModParticleTypes;
 
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.SimpleParticleType;
 
-public class TimeStopPotionIratorOnPotionActiveTickEvent {
+public class TimeStopPotionIratorOnPotionActiveTickevent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
+		entity.makeStuckInBlock(Blocks.AIR.defaultBlockState(), new Vec3(0.25, 0.05, 0.25));
 		entity.setDeltaMovement(new Vec3(0, 0, 0));
 		{
 			Entity _ent = entity;

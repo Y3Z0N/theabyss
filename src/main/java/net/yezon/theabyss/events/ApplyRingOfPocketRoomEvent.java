@@ -27,7 +27,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
-public class ApplyRingOfPocketRoomEvent {
+public class ApplyRingOfPocketRoomevent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
@@ -111,7 +111,7 @@ public class ApplyRingOfPocketRoomEvent {
 								});
 							}
 							TheabyssMod.queueServerWork(4, () -> {
-								ApplyPocketPortEvent.execute(world);
+								ApplyPocketPortevent.execute(world);
 							});
 							TheabyssMod.queueServerWork(6, () -> {
 								if (world instanceof ServerLevel _level)

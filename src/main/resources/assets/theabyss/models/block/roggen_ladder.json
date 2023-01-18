@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/roggen_ladder",
-  "textures": {
-    "all": "theabyss:blocks/roggen_ladder",
-    "particle": "theabyss:blocks/roggen_ladder",
-    "texture": "theabyss:blocks/roggen_ladder"
-  },
-  "render_type": "solid"
-}

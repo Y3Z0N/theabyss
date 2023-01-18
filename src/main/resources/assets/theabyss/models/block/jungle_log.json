@@ -1,13 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "theabyss:blocks/jungle_log_top",
-    "up": "theabyss:blocks/jungle_log_top",
-    "north": "theabyss:blocks/jungle_log_side",
-    "east": "theabyss:blocks/jungle_log_side",
-    "south": "theabyss:blocks/jungle_log_side",
-    "west": "theabyss:blocks/jungle_log_side",
-    "particle": "theabyss:blocks/jungle_log_top"
+    "down": "theabyss:blocks/nightgrove_log_top",
+    "up": "theabyss:blocks/nightgrove_log_top",
+    "north": "theabyss:blocks/nightgrove_log",
+    "east": "theabyss:blocks/nightgrove_log",
+    "south": "theabyss:blocks/nightgrove_log",
+    "west": "theabyss:blocks/nightgrove_log",
+    "particle": "theabyss:blocks/nightgrove_log_top"
   },
   "render_type": "solid"
 }

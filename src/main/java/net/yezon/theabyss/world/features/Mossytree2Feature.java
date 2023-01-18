@@ -47,7 +47,7 @@ public class Mossytree2Feature extends Feature<NoneFeatureConfiguration> {
 
 	public Mossytree2Feature() {
 		super(NoneFeatureConfiguration.CODEC);
-		base_blocks = List.of(TheabyssModBlocks.BLACK_VOID.get(), TheabyssModBlocks.INFECTED_GRASS.get());
+		base_blocks = List.of(TheabyssModBlocks.INFECTED_GRASS.get());
 	}
 
 	@Override

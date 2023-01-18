@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Electro",
+	"icon": "theabyss:ring_of_electro",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_electro",
+	"title": "Ring Of Electro",
+	"link_recipe": false,
+	"text": "With this powerful ring, you have the ability to paralyze any entity in your vicinity and deal devastating damage. However, be warned: the ring requires a hefty 40.0 somnium to use. Will you risk it all for the chance to wield such immense power?"
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_ring",
+	"input1": "theabyss:ardor_powder",
+	"input2": "theabyss:thunder_stone",
+	"input3": "theabyss:ardor_powder",
+	"input4": "theabyss:thunder_stone",
+	"input5": "theabyss:ardor_powder",
+	"input6": "theabyss:thunder_stone",
+	"input7": "theabyss:ardor_powder",
+	"input8": "theabyss:thunder_stone",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

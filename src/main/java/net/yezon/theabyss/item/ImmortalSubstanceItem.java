@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ImmortalSubstanceDrinkedEvent;
+import net.yezon.theabyss.events.ImmortalSubstanceDrinkedevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -53,7 +53,7 @@ public class ImmortalSubstanceItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ImmortalSubstanceDrinkedEvent.execute(entity);
+		ImmortalSubstanceDrinkedevent.execute(entity);
 		return retval;
 	}
 }

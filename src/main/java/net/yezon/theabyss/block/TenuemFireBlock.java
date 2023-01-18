@@ -1,7 +1,10 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.AnimaFireEffectEvent;
+import org.checkerframework.checker.units.qual.s;
+
+import net.yezon.theabyss.events.BurnEffectevent;
+import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -12,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.ItemStack;
@@ -26,7 +30,7 @@ public class TenuemFireBlock extends FlowerBlock {
 	public TenuemFireBlock() {
 		super(MobEffects.SATURATION, 0,
 				BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true)
-						.emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 3).noCollission().offsetType(BlockBehaviour.OffsetType.NONE));
+						.emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 15).noCollission().offsetType(BlockBehaviour.OffsetType.NONE));
 	}
 
 	@Override
@@ -43,8 +47,20 @@ public class TenuemFireBlock extends FlowerBlock {
 	}
 
 	@Override
+	public boolean mayPlaceOn(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
+		return groundState.is(TheabyssModBlocks.STONE.get());
+	}
+
+	@Override
+	public boolean canSurvive(BlockState blockstate, LevelReader worldIn, BlockPos pos) {
+		BlockPos blockpos = pos.below();
+		BlockState groundState = worldIn.getBlockState(blockpos);
+		return this.mayPlaceOn(groundState, worldIn, blockpos);
+	}
+
+	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		AnimaFireEffectEvent.execute(entity);
+		BurnEffectevent.execute(entity);
 	}
 }

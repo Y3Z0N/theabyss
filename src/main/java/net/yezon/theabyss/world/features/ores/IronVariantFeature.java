@@ -36,10 +36,10 @@ public class IronVariantFeature extends OreFeature {
 		FEATURE = new IronVariantFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:iron_variant", FEATURE,
 				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()),
-						TheabyssModBlocks.IRON_VARIANT.get().defaultBlockState())), 15));
+						TheabyssModBlocks.IRON_VARIANT.get().defaultBlockState())), 7));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:iron_variant", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(20), InSquarePlacement.spread(),
-						HeightRangePlacement.uniform(VerticalAnchor.absolute(5), VerticalAnchor.absolute(60)), BiomeFilter.biome()));
+				List.of(CountPlacement.of(4), InSquarePlacement.spread(),
+						HeightRangePlacement.uniform(VerticalAnchor.absolute(-45), VerticalAnchor.absolute(-25)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 

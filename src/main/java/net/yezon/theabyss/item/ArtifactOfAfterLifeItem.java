@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.DestroyArtifactOfAfterLifeEvent;
+import net.yezon.theabyss.events.DestroyArtifactOfAfterLifeevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -42,7 +42,7 @@ public class ArtifactOfAfterLifeItem extends Item {
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			DestroyArtifactOfAfterLifeEvent.execute(world, entity, itemstack);
-		DestroyArtifactOfAfterLifeEvent.execute(world, entity, itemstack);
+			DestroyArtifactOfAfterLifeevent.execute(world, entity, itemstack);
+		DestroyArtifactOfAfterLifeevent.execute(world, entity, itemstack);
 	}
 }

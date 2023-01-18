@@ -1,11 +1,8 @@
 {
   "type": "forge:add_features",
-  "biomes": [
-    "theabyss:blue_mountain",
-    "theabyss:blue_forest",
-    "theabyss:phantom_crate",
-    "theabyss:slime_forest"
-  ],
+  "biomes": {
+    "type": "forge:any"
+  },
   "features": "theabyss:aberythe_ore",
   "step": "underground_ores"
 }

@@ -1,5 +1,5 @@
 
-
+  
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.item.WartShroomItem;
@@ -28,17 +28,12 @@ import net.yezon.theabyss.item.TheAbyssDimItem;
 import net.yezon.theabyss.item.TestTubeItem;
 import net.yezon.theabyss.item.TestTubeHeadItem;
 import net.yezon.theabyss.item.TenebrisPowderItem;
-import net.yezon.theabyss.item.SpectralSpawnItem;
 import net.yezon.theabyss.item.SoulHeartItem;
 import net.yezon.theabyss.item.SomniumUpgradeItem;
 import net.yezon.theabyss.item.SomniumRegenUpgradeItem;
 import net.yezon.theabyss.item.SomniumItem;
 import net.yezon.theabyss.item.SomniumDamageUpragdeItem;
 import net.yezon.theabyss.item.SomniumCooldownUpgradeItem;
-import net.yezon.theabyss.item.SlimeStage4Item;
-import net.yezon.theabyss.item.SlimeStage3Item;
-import net.yezon.theabyss.item.SlimeStage2Item;
-import net.yezon.theabyss.item.SlimeStage1Item;
 import net.yezon.theabyss.item.ShurikenItem;
 import net.yezon.theabyss.item.ShurikenExplosiveItem;
 import net.yezon.theabyss.item.ScorpionEyeItem;
@@ -50,7 +45,6 @@ import net.yezon.theabyss.item.RingOfThunderItem;
 import net.yezon.theabyss.item.RingOfTeleportItem;
 import net.yezon.theabyss.item.RingOfTelekineticItem;
 import net.yezon.theabyss.item.RingOfSpeedItem;
-import net.yezon.theabyss.item.RingOfSpectralItem;
 import net.yezon.theabyss.item.RingOfSlideItem;
 import net.yezon.theabyss.item.RingOfSeekerItem;
 import net.yezon.theabyss.item.RingOfRingItem;
@@ -91,12 +85,9 @@ import net.yezon.theabyss.item.PhantomArmorItem;
 import net.yezon.theabyss.item.NosajSwordItem;
 import net.yezon.theabyss.item.NodeShardItem;
 import net.yezon.theabyss.item.NightbladeThemeItem;
-import net.yezon.theabyss.item.NightHunterAbl2Item;
-import net.yezon.theabyss.item.NetherNuggetItem;
 import net.yezon.theabyss.item.MutatedEnderpearlItem;
 import net.yezon.theabyss.item.LurkerSobberItem;
 import net.yezon.theabyss.item.LurkerJuiceItem;
-import net.yezon.theabyss.item.LumusFruitFoodItem;
 import net.yezon.theabyss.item.LoranItem;
 import net.yezon.theabyss.item.LoranIngotItem;
 import net.yezon.theabyss.item.LoranEnergyItem;
@@ -108,6 +99,7 @@ import net.yezon.theabyss.item.KnightIngotItem;
 import net.yezon.theabyss.item.KnightHoeItem;
 import net.yezon.theabyss.item.KnightAxeItem;
 import net.yezon.theabyss.item.JungleMelonItemItem;
+import net.yezon.theabyss.item.InfectedSlimeItem;
 import net.yezon.theabyss.item.IncorytheSwordMKIIItem;
 import net.yezon.theabyss.item.IncorytheSwordItem;
 import net.yezon.theabyss.item.IncorytheShovelItem;
@@ -122,10 +114,9 @@ import net.yezon.theabyss.item.IgnisitheGemItem;
 import net.yezon.theabyss.item.IgnisitheArmorItem;
 import net.yezon.theabyss.item.IcoraStoneItem;
 import net.yezon.theabyss.item.IcoraNuggetItem;
+import net.yezon.theabyss.item.HolySpoonItem;
 import net.yezon.theabyss.item.HollowPowderItem;
 import net.yezon.theabyss.item.HollowCrystalShardItem;
-import net.yezon.theabyss.item.HammerOfAbyssItem;
-import net.yezon.theabyss.item.GuideBookItem;
 import net.yezon.theabyss.item.GlacerytheGemItem;
 import net.yezon.theabyss.item.GlacerytheArmorItem;
 import net.yezon.theabyss.item.GarniteSwordItem;
@@ -135,10 +126,6 @@ import net.yezon.theabyss.item.GarniteIngotItem;
 import net.yezon.theabyss.item.GarniteHoeItem;
 import net.yezon.theabyss.item.GarniteAxeItem;
 import net.yezon.theabyss.item.GarniteArmorItem;
-import net.yezon.theabyss.item.FusionedUnoritheArmorItem;
-import net.yezon.theabyss.item.FusionedIncorytheArmorItem;
-import net.yezon.theabyss.item.FusionedGlacerytheArmorItem;
-import net.yezon.theabyss.item.FusionedAberytheArmorItem;
 import net.yezon.theabyss.item.FusionSwordItem;
 import net.yezon.theabyss.item.FusionShovelItem;
 import net.yezon.theabyss.item.FusionPickaxeItem;
@@ -148,12 +135,9 @@ import net.yezon.theabyss.item.FusionAxeItem;
 import net.yezon.theabyss.item.FusionArmorItem;
 import net.yezon.theabyss.item.FrostPowderItem;
 import net.yezon.theabyss.item.FrostCrystalShardItem;
-import net.yezon.theabyss.item.FloriteGemItem;
-import net.yezon.theabyss.item.FloriteArmorItem;
 import net.yezon.theabyss.item.FixedBoneItem;
 import net.yezon.theabyss.item.FishItem;
 import net.yezon.theabyss.item.FearPowderItem;
-import net.yezon.theabyss.item.EyelieAttackItem;
 import net.yezon.theabyss.item.EyeOfAbyssItem;
 import net.yezon.theabyss.item.EnderPowderItem;
 import net.yezon.theabyss.item.EnderCrystalShardItem;
@@ -163,6 +147,7 @@ import net.yezon.theabyss.item.EYEICONItem;
 import net.yezon.theabyss.item.DeerBeefItem;
 import net.yezon.theabyss.item.CyanideThemeItem;
 import net.yezon.theabyss.item.CrystalHandItem;
+import net.yezon.theabyss.item.CrownOfNosajItem;
 import net.yezon.theabyss.item.CrimsonPowderItem;
 import net.yezon.theabyss.item.CrimsonCrystalShardItem;
 import net.yezon.theabyss.item.CreeperDustItem;
@@ -182,9 +167,9 @@ import net.yezon.theabyss.item.BonePickaxeItem;
 import net.yezon.theabyss.item.BoneHoeItem;
 import net.yezon.theabyss.item.BoneAxeItem;
 import net.yezon.theabyss.item.BoneArmorItem;
-import net.yezon.theabyss.item.AutoSmeltPickAxeItem;
 import net.yezon.theabyss.item.AurelPowderItem;
 import net.yezon.theabyss.item.AurelCrystalShardItem;
+import net.yezon.theabyss.item.ArtifactOfPhantomsItem;
 import net.yezon.theabyss.item.ArtifactOfAfterLifeItem;
 import net.yezon.theabyss.item.ArenoItem;
 import net.yezon.theabyss.item.ArdorPowderItem;
@@ -197,13 +182,6 @@ import net.yezon.theabyss.item.AmuledOfNosajItem;
 import net.yezon.theabyss.item.AbyssSwordItem;
 import net.yezon.theabyss.item.AbyssPowderItem;
 import net.yezon.theabyss.item.AbyssCrystalShardItem;
-import net.yezon.theabyss.item.AboranysSwordItem;
-import net.yezon.theabyss.item.AboranysShovelItem;
-import net.yezon.theabyss.item.AboranysPickaxeItem;
-import net.yezon.theabyss.item.AboranysHoeItem;
-import net.yezon.theabyss.item.AboranysGemItem;
-import net.yezon.theabyss.item.AboranysAxeItem;
-import net.yezon.theabyss.item.AboranysArmorItem;
 import net.yezon.theabyss.item.AberytheSwordItem;
 import net.yezon.theabyss.item.AberytheShovelItem;
 import net.yezon.theabyss.item.AberythePickaxeItem;
@@ -239,8 +217,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> NOSAJ_SWORD = REGISTRY.register("nosaj_sword", () -> new NosajSwordItem());
 	public static final RegistryObject<Item> BONE_SWORD_ITEM = REGISTRY.register("bone_sword_item", () -> new BoneSwordItemItem());
 	public static final RegistryObject<Item> ABERYTHE_SWORD = REGISTRY.register("aberythe_sword", () -> new AberytheSwordItem());
-	public static final RegistryObject<Item> ABORANYS_SWORD = REGISTRY.register("aboranys_sword", () -> new AboranysSwordItem());
-	public static final RegistryObject<Item> HAMMER_OF_ABYSS = REGISTRY.register("hammer_of_abyss", () -> new HammerOfAbyssItem());
 	public static final RegistryObject<Item> SHURIKEN = REGISTRY.register("shuriken", () -> new ShurikenItem());
 	public static final RegistryObject<Item> SHURIKEN_EXPLOSIVE = REGISTRY.register("shuriken_explosive", () -> new ShurikenExplosiveItem());
 	public static final RegistryObject<Item> FUSION_PICKAXE = REGISTRY.register("fusion_pickaxe", () -> new FusionPickaxeItem());
@@ -263,7 +239,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> UNORITHE_AXE = REGISTRY.register("unorithe_axe", () -> new UnoritheAxeItem());
 	public static final RegistryObject<Item> UNORITHE_SHOVEL = REGISTRY.register("unorithe_shovel", () -> new UnoritheShovelItem());
 	public static final RegistryObject<Item> UNORITHE_HOE = REGISTRY.register("unorithe_hoe", () -> new UnoritheHoeItem());
-	public static final RegistryObject<Item> AUTO_SMELT_PICK_AXE = REGISTRY.register("auto_smelt_pick_axe", () -> new AutoSmeltPickAxeItem());
 	public static final RegistryObject<Item> KNIGHT_PICK_AXE = REGISTRY.register("knight_pick_axe", () -> new KnightPickAxeItem());
 	public static final RegistryObject<Item> KNIGHT_AXE = REGISTRY.register("knight_axe", () -> new KnightAxeItem());
 	public static final RegistryObject<Item> KNIGHT_SHOVEL = REGISTRY.register("knight_shovel", () -> new KnightShovelItem());
@@ -276,10 +251,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> ABERYTHE_PICKAXE = REGISTRY.register("aberythe_pickaxe", () -> new AberythePickaxeItem());
 	public static final RegistryObject<Item> ABERYTHE_SHOVEL = REGISTRY.register("aberythe_shovel", () -> new AberytheShovelItem());
 	public static final RegistryObject<Item> ABERYTHE_HOE = REGISTRY.register("aberythe_hoe", () -> new AberytheHoeItem());
-	public static final RegistryObject<Item> ABORANYS_AXE = REGISTRY.register("aboranys_axe", () -> new AboranysAxeItem());
-	public static final RegistryObject<Item> ABORANYS_PICKAXE = REGISTRY.register("aboranys_pickaxe", () -> new AboranysPickaxeItem());
-	public static final RegistryObject<Item> ABORANYS_SHOVEL = REGISTRY.register("aboranys_shovel", () -> new AboranysShovelItem());
-	public static final RegistryObject<Item> ABORANYS_HOE = REGISTRY.register("aboranys_hoe", () -> new AboranysHoeItem());
 	public static final RegistryObject<Item> ABYSS_POWDER = REGISTRY.register("abyss_powder", () -> new AbyssPowderItem());
 	public static final RegistryObject<Item> AUREL_POWDER = REGISTRY.register("aurel_powder", () -> new AurelPowderItem());
 	public static final RegistryObject<Item> CAVERNA_POWDER = REGISTRY.register("caverna_powder", () -> new CavernaPowderItem());
@@ -314,7 +285,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> LORAN_ORE = block(TheabyssModBlocks.LORAN_ORE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> GARNITE_ORE = block(TheabyssModBlocks.GARNITE_ORE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> IGNISITHE_ORE = block(TheabyssModBlocks.IGNISITHE_ORE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ABORANYS_ORE = block(TheabyssModBlocks.ABORANYS_ORE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> GLACERYTHE_ORE = block(TheabyssModBlocks.GLACERYTHE_ORE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> ABERYTHE_ORE = block(TheabyssModBlocks.ABERYTHE_ORE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> INCORYTHE_ORE = block(TheabyssModBlocks.INCORYTHE_ORE, TheabyssModTabs.TAB_THE_ABYSS);
@@ -322,13 +292,11 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> GOLD_VARIANT = block(TheabyssModBlocks.GOLD_VARIANT, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> IRON_VARIANT = block(TheabyssModBlocks.IRON_VARIANT, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> EMERALD_VARIANT = block(TheabyssModBlocks.EMERALD_VARIANT, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> FLORITE_ORE = block(TheabyssModBlocks.FLORITE_ORE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> IGNISITHE_GEM = REGISTRY.register("ignisithe_gem", () -> new IgnisitheGemItem());
 	public static final RegistryObject<Item> ABERYTHE_GEM = REGISTRY.register("aberythe_gem", () -> new AberytheGemItem());
 	public static final RegistryObject<Item> LORAN = REGISTRY.register("loran", () -> new LoranItem());
 	public static final RegistryObject<Item> LORAN_ENERGY = REGISTRY.register("loran_energy", () -> new LoranEnergyItem());
 	public static final RegistryObject<Item> GLACERYTHE_GEM = REGISTRY.register("glacerythe_gem", () -> new GlacerytheGemItem());
-	public static final RegistryObject<Item> ABORANYS_GEM = REGISTRY.register("aboranys_gem", () -> new AboranysGemItem());
 	public static final RegistryObject<Item> INCORYTHE_GEM = REGISTRY.register("incorythe_gem", () -> new IncorytheGemItem());
 	public static final RegistryObject<Item> KNIGHT_SHARD = REGISTRY.register("knight_shard", () -> new KnightShardItem());
 	public static final RegistryObject<Item> UNACTIVE_FUSION_INGOT = REGISTRY.register("unactive_fusion_ingot", () -> new UnactiveFusionIngotItem());
@@ -337,14 +305,8 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> LORAN_INGOT = REGISTRY.register("loran_ingot", () -> new LoranIngotItem());
 	public static final RegistryObject<Item> GARNITE_INGOT = REGISTRY.register("garnite_ingot", () -> new GarniteIngotItem());
 	public static final RegistryObject<Item> UNORITHE_INGOT = REGISTRY.register("unorithe_ingot", () -> new UnoritheIngotItem());
-	public static final RegistryObject<Item> FLORITE_GEM = REGISTRY.register("florite_gem", () -> new FloriteGemItem());
 	public static final RegistryObject<Item> BRICKED_KNIGHT_INGOT = REGISTRY.register("bricked_knight_ingot", () -> new BrickedKnightIngotItem());
 	public static final RegistryObject<Item> KNIGHT_INGOT = REGISTRY.register("knight_ingot", () -> new KnightIngotItem());
-	public static final RegistryObject<Item> SLIME_STAGE_1 = REGISTRY.register("slime_stage_1", () -> new SlimeStage1Item());
-	public static final RegistryObject<Item> SLIME_STAGE_2 = REGISTRY.register("slime_stage_2", () -> new SlimeStage2Item());
-	public static final RegistryObject<Item> SLIME_STAGE_3 = REGISTRY.register("slime_stage_3", () -> new SlimeStage3Item());
-	public static final RegistryObject<Item> SLIME_STAGE_4 = REGISTRY.register("slime_stage_4", () -> new SlimeStage4Item());
-	public static final RegistryObject<Item> NETHER_NUGGET = REGISTRY.register("nether_nugget", () -> new NetherNuggetItem());
 	public static final RegistryObject<Item> SOUL_HEART = REGISTRY.register("soul_heart", () -> new SoulHeartItem());
 	public static final RegistryObject<Item> SCORPION_EYE = REGISTRY.register("scorpion_eye", () -> new ScorpionEyeItem());
 	public static final RegistryObject<Item> BROKEN_BONE = REGISTRY.register("broken_bone", () -> new BrokenBoneItem());
@@ -370,7 +332,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> RING_OF_THUNDER = REGISTRY.register("ring_of_thunder", () -> new RingOfThunderItem());
 	public static final RegistryObject<Item> RING_OF_FREEZE = REGISTRY.register("ring_of_freeze", () -> new RingOfFreezeItem());
 	public static final RegistryObject<Item> RING_OF_TELEKINETIC = REGISTRY.register("ring_of_telekinetic", () -> new RingOfTelekineticItem());
-	public static final RegistryObject<Item> RING_OF_SPECTRAL = REGISTRY.register("ring_of_spectral", () -> new RingOfSpectralItem());
 	public static final RegistryObject<Item> RING_OF_FIRE = REGISTRY.register("ring_of_fire", () -> new RingOfFireItem());
 	public static final RegistryObject<Item> RING_OF_SPEED = REGISTRY.register("ring_of_speed", () -> new RingOfSpeedItem());
 	public static final RegistryObject<Item> RING_OF_GHOSTS = REGISTRY.register("ring_of_ghosts", () -> new RingOfGhostsItem());
@@ -401,36 +362,20 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> PHANTOM_ESSENCE = REGISTRY.register("phantom_essence", () -> new PhantomEssenceItem());
 	public static final RegistryObject<Item> ROMA_MUD = block(TheabyssModBlocks.ROMA_MUD, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> ROMA_MUD_2 = block(TheabyssModBlocks.ROMA_MUD_2, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> DARK_STONE = block(TheabyssModBlocks.DARK_STONE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> SNOW_BLOCK = block(TheabyssModBlocks.SNOW_BLOCK, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> DARK_STONE = block(TheabyssModBlocks.DARK_STONE, TheabyssModTabs.TAB_THE_ABYSS_IN_DEV);
+	public static final RegistryObject<Item> SNOW_BLOCK = block(TheabyssModBlocks.SNOW_BLOCK, TheabyssModTabs.TAB_THE_ABYSS_IN_DEV);
 	public static final RegistryObject<Item> BLARU_LEAVES = block(TheabyssModBlocks.BLARU_LEAVES, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> JUNGLE_LEAVES = block(TheabyssModBlocks.JUNGLE_LEAVES, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> LORKA_LEAVES = block(TheabyssModBlocks.LORKA_LEAVES, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_LEAVES = block(TheabyssModBlocks.TANTRA_LEAVES, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_LEAVE = block(TheabyssModBlocks.ROGGEN_LEAVE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> FROZEN_LEAVES = block(TheabyssModBlocks.FROZEN_LEAVES, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_LEAVE = block(TheabyssModBlocks.RUMA_LEAVE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_LEAVE_2 = block(TheabyssModBlocks.RUMA_LEAVE_2, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_LEAVE_3 = block(TheabyssModBlocks.RUMA_LEAVE_3, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_LEAVE_4 = block(TheabyssModBlocks.RUMA_LEAVE_4, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_LEAVE_5 = block(TheabyssModBlocks.RUMA_LEAVE_5, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> WART = block(TheabyssModBlocks.WART, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BOG_SHROOM_LEAVE = block(TheabyssModBlocks.BOG_SHROOM_LEAVE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SAL_SHROOM_LEAVE = block(TheabyssModBlocks.SAL_SHROOM_LEAVE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SLIME_BLOCK = block(TheabyssModBlocks.SLIME_BLOCK, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROTTEN_FUNGAL_LEAVE = block(TheabyssModBlocks.ROTTEN_FUNGAL_LEAVE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> JUNGLE_MELON = block(TheabyssModBlocks.JUNGLE_MELON, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROTTEN_LOG = block(TheabyssModBlocks.ROTTEN_LOG, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_GRASS = block(TheabyssModBlocks.TANTRA_GRASS, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_DIRT = block(TheabyssModBlocks.TANTRA_DIRT, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_STONE = block(TheabyssModBlocks.TANTRA_STONE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_COBBLESTONE = block(TheabyssModBlocks.TANTRA_COBBLESTONE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> UNSTABLE_OBSIDIAN = block(TheabyssModBlocks.UNSTABLE_OBSIDIAN, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> INFUSED_MAGMA = block(TheabyssModBlocks.INFUSED_MAGMA, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> BONE = block(TheabyssModBlocks.BONE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> BONE_THIN = block(TheabyssModBlocks.BONE_THIN, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> BONE = block(TheabyssModBlocks.BONE, TheabyssModTabs.TAB_THE_ABYSS_IN_DEV);
+	public static final RegistryObject<Item> BONE_THIN = block(TheabyssModBlocks.BONE_THIN, TheabyssModTabs.TAB_THE_ABYSS_IN_DEV);
 	public static final RegistryObject<Item> BLARU_LOG = block(TheabyssModBlocks.BLARU_LOG, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> STRIPPED_BLARU_LOG = block(TheabyssModBlocks.STRIPPED_BLARU_LOG, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BLARU_PLANKS = block(TheabyssModBlocks.BLARU_PLANKS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BLARU_STAIRS = block(TheabyssModBlocks.BLARU_STAIRS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BLARU_SLAB = block(TheabyssModBlocks.BLARU_SLAB, TheabyssModTabs.TAB_THE_ABYSS);
@@ -440,12 +385,7 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> BLARU_FENCE_GATE = block(TheabyssModBlocks.BLARU_FENCE_GATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BLARU_PRESSURE_PLATE = block(TheabyssModBlocks.BLARU_PRESSURE_PLATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BLARU_BUTTON = block(TheabyssModBlocks.BLARU_BUTTON, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> BLARU_TABLE = block(TheabyssModBlocks.BLARU_TABLE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> BLARU_CHAIR = block(TheabyssModBlocks.BLARU_CHAIR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> BLARU_LADDER = block(TheabyssModBlocks.BLARU_LADDER, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> BLARU_BOOKSHELF = block(TheabyssModBlocks.BLARU_BOOKSHELF, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> JUNGLE_LOG = block(TheabyssModBlocks.JUNGLE_LOG, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> STIPPED_JUNGLE_LOG = block(TheabyssModBlocks.STIPPED_JUNGLE_LOG, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> JUNGLE_PLANKS = block(TheabyssModBlocks.JUNGLE_PLANKS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> JUNGLE_STAIRS = block(TheabyssModBlocks.JUNGLE_STAIRS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> JUNGLE_SLAB = block(TheabyssModBlocks.JUNGLE_SLAB, TheabyssModTabs.TAB_THE_ABYSS);
@@ -455,53 +395,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> JUNGLE_FENCE_GATE = block(TheabyssModBlocks.JUNGLE_FENCE_GATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> JUNGLE_PRESSURE_PLATE = block(TheabyssModBlocks.JUNGLE_PRESSURE_PLATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> JUNGLE_BUTTON = block(TheabyssModBlocks.JUNGLE_BUTTON, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> JUNGLE_CHAIR = block(TheabyssModBlocks.JUNGLE_CHAIR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> JUNGLE_TABLE = block(TheabyssModBlocks.JUNGLE_TABLE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> JUNGLE_LADDER = block(TheabyssModBlocks.JUNGLE_LADDER, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> JUNGLE_BOOKSHELF = block(TheabyssModBlocks.JUNGLE_BOOKSHELF, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_LOG = block(TheabyssModBlocks.RUMA_LOG, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> STRIPPED_RUMA_LOG = block(TheabyssModBlocks.STRIPPED_RUMA_LOG, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_PLANKS = block(TheabyssModBlocks.RUMA_PLANKS, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_STAIRS = block(TheabyssModBlocks.RUMA_STAIRS, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_SLAB = block(TheabyssModBlocks.RUMA_SLAB, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_TRAP_DOOR = block(TheabyssModBlocks.RUMA_TRAP_DOOR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_DOOR = doubleBlock(TheabyssModBlocks.RUMA_DOOR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_FENCE = block(TheabyssModBlocks.RUMA_FENCE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_FENCE_GATE = block(TheabyssModBlocks.RUMA_FENCE_GATE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_PRESSURE_PLATE = block(TheabyssModBlocks.RUMA_PRESSURE_PLATE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_BUTTON = block(TheabyssModBlocks.RUMA_BUTTON, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_CHAIR = block(TheabyssModBlocks.RUMA_CHAIR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_TABLE = block(TheabyssModBlocks.RUMA_TABLE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_LADDER = block(TheabyssModBlocks.RUMA_LADDER, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> RUMA_BOOKSHELF = block(TheabyssModBlocks.RUMA_BOOKSHELF, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_LOG = block(TheabyssModBlocks.ROGGEN_LOG, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> STRIPPED_ROGGEN_LOG = block(TheabyssModBlocks.STRIPPED_ROGGEN_LOG, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_PLANKS = block(TheabyssModBlocks.ROGGEN_PLANKS, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_STAIRS = block(TheabyssModBlocks.ROGGEN_STAIRS, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_SLAB = block(TheabyssModBlocks.ROGGEN_SLAB, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_TRAP_DOOR = block(TheabyssModBlocks.ROGGEN_TRAP_DOOR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_DOOR = doubleBlock(TheabyssModBlocks.ROGGEN_DOOR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_FENCE = block(TheabyssModBlocks.ROGGEN_FENCE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_FENCE_GATE = block(TheabyssModBlocks.ROGGEN_FENCE_GATE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_PRESSURE_PLATE = block(TheabyssModBlocks.ROGGEN_PRESSURE_PLATE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_BUTTON = block(TheabyssModBlocks.ROGGEN_BUTTON, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_CHAIR = block(TheabyssModBlocks.ROGGEN_CHAIR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_TABLE = block(TheabyssModBlocks.ROGGEN_TABLE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROGGEN_LADDER = block(TheabyssModBlocks.ROGGEN_LADDER, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_LOG = block(TheabyssModBlocks.TANTRA_LOG, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> STRIPPED_TANTRA_LOG = block(TheabyssModBlocks.STRIPPED_TANTRA_LOG, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_PLANKS = block(TheabyssModBlocks.TANTRA_PLANKS, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_STAIRS = block(TheabyssModBlocks.TANTRA_STAIRS, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_SLAB = block(TheabyssModBlocks.TANTRA_SLAB, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_TRAP_DOOR = block(TheabyssModBlocks.TANTRA_TRAP_DOOR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_DOOR = doubleBlock(TheabyssModBlocks.TANTRA_DOOR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_FENCE = block(TheabyssModBlocks.TANTRA_FENCE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_FENCE_GATE = block(TheabyssModBlocks.TANTRA_FENCE_GATE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_PRESSURE_PLATE = block(TheabyssModBlocks.TANTRA_PRESSURE_PLATE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_BUTTON = block(TheabyssModBlocks.TANTRA_BUTTON, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_CHAIR = block(TheabyssModBlocks.TANTRA_CHAIR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_TABLE = block(TheabyssModBlocks.TANTRA_TABLE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> TANTRA_LADDER = block(TheabyssModBlocks.TANTRA_LADDER, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BOG_SHROOM_LOG = block(TheabyssModBlocks.BOG_SHROOM_LOG, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BOG_PLANKS = block(TheabyssModBlocks.BOG_PLANKS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BOG_STAIRS = block(TheabyssModBlocks.BOG_STAIRS, TheabyssModTabs.TAB_THE_ABYSS);
@@ -512,9 +405,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> BOG_FENCE_GATE = block(TheabyssModBlocks.BOG_FENCE_GATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BOG_PRESSURE_PLATE = block(TheabyssModBlocks.BOG_PRESSURE_PLATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BOG_BUTTON = block(TheabyssModBlocks.BOG_BUTTON, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> BOG_CHAIR = block(TheabyssModBlocks.BOG_CHAIR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> BOG_TABLE = block(TheabyssModBlocks.BOG_TABLE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> BOG_LADDER = block(TheabyssModBlocks.BOG_LADDER, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SAL_SHROOM_LOG = block(TheabyssModBlocks.SAL_SHROOM_LOG, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SAL_PLANKS = block(TheabyssModBlocks.SAL_PLANKS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SAL_STAIRS = block(TheabyssModBlocks.SAL_STAIRS, TheabyssModTabs.TAB_THE_ABYSS);
@@ -525,9 +415,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> SAL_FENCE_GATE = block(TheabyssModBlocks.SAL_FENCE_GATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SAL_PRESSURE_PLATE = block(TheabyssModBlocks.SAL_PRESSURE_PLATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SAL_BUTTON = block(TheabyssModBlocks.SAL_BUTTON, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> SAL_CHAIR = block(TheabyssModBlocks.SAL_CHAIR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> SAL_TABLE = block(TheabyssModBlocks.SAL_TABLE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> SAL_LADDER = block(TheabyssModBlocks.SAL_LADDER, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SLIMED_LOG = block(TheabyssModBlocks.SLIMED_LOG, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SLIMED_PLANKS = block(TheabyssModBlocks.SLIMED_PLANKS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SLIMED_STAIRS = block(TheabyssModBlocks.SLIMED_STAIRS, TheabyssModTabs.TAB_THE_ABYSS);
@@ -538,9 +425,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> SLIMED_FENCE_GATE = block(TheabyssModBlocks.SLIMED_FENCE_GATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SLIMED_PRESSURE_PLATE = block(TheabyssModBlocks.SLIMED_PRESSURE_PLATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SLIMED_BUTTON = block(TheabyssModBlocks.SLIMED_BUTTON, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> SLIMED_CHAIR = block(TheabyssModBlocks.SLIMED_CHAIR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> SLIMED_TABLE = block(TheabyssModBlocks.SLIMED_TABLE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> SLIMED_LADDER = block(TheabyssModBlocks.SLIMED_LADDER, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> FROZEN_LOG = block(TheabyssModBlocks.FROZEN_LOG, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> FROZEN_PLANKS = block(TheabyssModBlocks.FROZEN_PLANKS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> FROZEN_STAIRS = block(TheabyssModBlocks.FROZEN_STAIRS, TheabyssModTabs.TAB_THE_ABYSS);
@@ -551,14 +435,11 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> FROZEN_FENCE_GATE = block(TheabyssModBlocks.FROZEN_FENCE_GATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> FROZEN_PRESSURE_PLATE = block(TheabyssModBlocks.FROZEN_PRESSURE_PLATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> FROZEN_BUTTON = block(TheabyssModBlocks.FROZEN_BUTTON, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> FROZEN_CHAIR = block(TheabyssModBlocks.FROZEN_CHAIR, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> FROZEN_TABLE = block(TheabyssModBlocks.FROZEN_TABLE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> FROZEN_LADDER = block(TheabyssModBlocks.FROZEN_LADDER, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> FROST_BRICK = block(TheabyssModBlocks.FROST_BRICK, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> FROST_BRICK_CRACKED = block(TheabyssModBlocks.FROST_BRICK_CRACKED, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> FROST_BRICK_STAIRS = block(TheabyssModBlocks.FROST_BRICK_STAIRS, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> FROST_BRICKS_SLAB = block(TheabyssModBlocks.FROST_BRICKS_SLAB, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> FROST_BRICK_WALL = block(TheabyssModBlocks.FROST_BRICK_WALL, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> FROST_BRICK = block(TheabyssModBlocks.FROST_BRICK, TheabyssModTabs.TAB_THE_ABYSS_IN_DEV);
+	public static final RegistryObject<Item> FROST_BRICK_CRACKED = block(TheabyssModBlocks.FROST_BRICK_CRACKED, TheabyssModTabs.TAB_THE_ABYSS_IN_DEV);
+	public static final RegistryObject<Item> FROST_BRICK_STAIRS = block(TheabyssModBlocks.FROST_BRICK_STAIRS, TheabyssModTabs.TAB_THE_ABYSS_IN_DEV);
+	public static final RegistryObject<Item> FROST_BRICKS_SLAB = block(TheabyssModBlocks.FROST_BRICKS_SLAB, TheabyssModTabs.TAB_THE_ABYSS_IN_DEV);
+	public static final RegistryObject<Item> FROST_BRICK_WALL = block(TheabyssModBlocks.FROST_BRICK_WALL, TheabyssModTabs.TAB_THE_ABYSS_IN_DEV);
 	public static final RegistryObject<Item> STONE = block(TheabyssModBlocks.STONE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> STONE_STAIRS = block(TheabyssModBlocks.STONE_STAIRS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> STONE_SLAB = block(TheabyssModBlocks.STONE_SLAB, TheabyssModTabs.TAB_THE_ABYSS);
@@ -593,19 +474,14 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> CRYSTAL_CUTTER = block(TheabyssModBlocks.CRYSTAL_CUTTER, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SOMNIUM_INFUSER = block(TheabyssModBlocks.SOMNIUM_INFUSER, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> MORTAR_AND_PESTLE = block(TheabyssModBlocks.MORTAR_AND_PESTLE, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> BLACK_VOID = block(TheabyssModBlocks.BLACK_VOID, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> BLACK_VOID = block(TheabyssModBlocks.BLACK_VOID, TheabyssModTabs.TAB_THE_ABYSS_IN_DEV);
 	public static final RegistryObject<Item> ARENO_BUCKET = REGISTRY.register("areno_bucket", () -> new ArenoItem());
 	public static final RegistryObject<Item> INFECTED_PEAT = block(TheabyssModBlocks.INFECTED_PEAT, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> ROTTEN_LEAVE = block(TheabyssModBlocks.ROTTEN_LEAVE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> GRAVEL = block(TheabyssModBlocks.GRAVEL, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> INFECTED_GRASS = block(TheabyssModBlocks.INFECTED_GRASS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BLARU_MOSS = block(TheabyssModBlocks.BLARU_MOSS, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> GUIDE_BOOK = REGISTRY.register("guide_book", () -> new GuideBookItem());
 	public static final RegistryObject<Item> THE_ROKA = REGISTRY.register("the_roka_spawn_egg",
 			() -> new ForgeSpawnEggItem(TheabyssModEntities.THE_ROKA, -10027060, -1,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> FIRE_FLY = REGISTRY.register("fire_fly_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.FIRE_FLY, -16187646, -16711783,
 					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
 	public static final RegistryObject<Item> ICE_SKELETON = REGISTRY.register("ice_skeleton_spawn_egg",
 			() -> new ForgeSpawnEggItem(TheabyssModEntities.ICE_SKELETON, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
@@ -620,9 +496,6 @@ public class TheabyssModItems {
 					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
 	public static final RegistryObject<Item> DEER = REGISTRY.register("deer_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.DEER,
 			-16777216, -10158107, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> LARO_FISH_FLY = REGISTRY.register("laro_fish_fly_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.LARO_FISH_FLY, -16777216, -16711732,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
 	public static final RegistryObject<Item> LARO_FISH = REGISTRY.register("laro_fish_spawn_egg",
 			() -> new ForgeSpawnEggItem(TheabyssModEntities.LARO_FISH, -14539719, -16711732,
 					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
@@ -664,8 +537,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> END_SPIDER = REGISTRY.register("end_spider_spawn_egg",
 			() -> new ForgeSpawnEggItem(TheabyssModEntities.END_SPIDER, -16764109, -16764109,
 					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> NIGHT_HUNTER = REGISTRY.register("night_hunter_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.NIGHT_HUNTER, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
 	public static final RegistryObject<Item> LIZARD = REGISTRY.register("lizard_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.LIZARD,
 			-16777216, -16711783, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
 	public static final RegistryObject<Item> ELDER = REGISTRY.register("elder_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.ELDER,
@@ -691,9 +562,6 @@ public class TheabyssModItems {
 					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
 	public static final RegistryObject<Item> SUMMONED_SEEKER = REGISTRY.register("summoned_seeker_spawn_egg",
 			() -> new ForgeSpawnEggItem(TheabyssModEntities.SUMMONED_SEEKER, -16777216, -16777216,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> MAGICAL_DEER = REGISTRY.register("magical_deer_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.MAGICAL_DEER, -16777216, -10158107,
 					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
 	public static final RegistryObject<Item> INFECTED_WOLF = REGISTRY.register("infected_wolf_spawn_egg",
 			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFECTED_WOLF, -16764109, -16724839,
@@ -731,22 +599,14 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> GULOM_PLANT = block(TheabyssModBlocks.GULOM_PLANT, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> RALOM_PLANT = block(TheabyssModBlocks.RALOM_PLANT, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> FORTIS_ULTIMA = block(TheabyssModBlocks.FORTIS_ULTIMA, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> OPIA_SHROOM = block(TheabyssModBlocks.OPIA_SHROOM, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> THUNDER_FLOWER = block(TheabyssModBlocks.THUNDER_FLOWER, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> LERCAS_UMBRELLA = block(TheabyssModBlocks.LERCAS_UMBRELLA, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> SRALA_SHROOM = block(TheabyssModBlocks.SRALA_SHROOM, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> SATURNIA_VERSA = block(TheabyssModBlocks.SATURNIA_VERSA, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> LUMUS_MAXIMUS = block(TheabyssModBlocks.LUMUS_MAXIMUS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> VERA_LESUS = block(TheabyssModBlocks.VERA_LESUS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> OCTAVYS_MAGYNISIUS = block(TheabyssModBlocks.OCTAVYS_MAGYNISIUS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> CAECUS_VERSA = block(TheabyssModBlocks.CAECUS_VERSA, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> FLOS_VITAE = block(TheabyssModBlocks.FLOS_VITAE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> LERA_EXILIARIS = block(TheabyssModBlocks.LERA_EXILIARIS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> IGNETARIS_VERSA = block(TheabyssModBlocks.IGNETARIS_VERSA, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> GORALYS_LASUS = block(TheabyssModBlocks.GORALYS_LASUS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> WART_ROOT = block(TheabyssModBlocks.WART_ROOT, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> LORAN_BUSH_2 = block(TheabyssModBlocks.LORAN_BUSH_2, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> LORAN_BUSH = block(TheabyssModBlocks.LORAN_BUSH, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> TENUEM_FIRE = block(TheabyssModBlocks.TENUEM_FIRE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> ANIMA_FIRE = block(TheabyssModBlocks.ANIMA_FIRE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> SLIMED_VITAE = block(TheabyssModBlocks.SLIMED_VITAE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
@@ -754,48 +614,22 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> ICORA_FLOWER = block(TheabyssModBlocks.ICORA_FLOWER, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> TESLA_RANK = block(TheabyssModBlocks.TESLA_RANK, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> ICELA_RANK = block(TheabyssModBlocks.ICELA_RANK, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> ROTTEN_RANK = block(TheabyssModBlocks.ROTTEN_RANK, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> WART_RANK = block(TheabyssModBlocks.WART_RANK, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> WART_RANK_END = block(TheabyssModBlocks.WART_RANK_END, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> GRASS_SMALL = block(TheabyssModBlocks.GRASS_SMALL, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> GRASS_MIDDLE = block(TheabyssModBlocks.GRASS_MIDDLE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> GRASS_BIG = block(TheabyssModBlocks.GRASS_BIG, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> TALL_GLOW_SHROOM = block(TheabyssModBlocks.TALL_GLOW_SHROOM, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> GLOW_SHROOM = block(TheabyssModBlocks.GLOW_SHROOM, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> TALL_RUB_SHROOM = block(TheabyssModBlocks.TALL_RUB_SHROOM, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> RUB_SHROOM = block(TheabyssModBlocks.RUB_SHROOM, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> VERTA_CELSIUS = block(TheabyssModBlocks.VERTA_CELSIUS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> SLIMED_LOG_FUNGI = block(TheabyssModBlocks.SLIMED_LOG_FUNGI, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> BLARU_LOG_FUNGI = block(TheabyssModBlocks.BLARU_LOG_FUNGI, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> JUNGLE_LOG_FUNGI = block(TheabyssModBlocks.JUNGLE_LOG_FUNGI, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> BOG_LOG_FUNGI = block(TheabyssModBlocks.BOG_LOG_FUNGI, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> RUMA_LOG_FUNGI = block(TheabyssModBlocks.RUMA_LOG_FUNGI, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> RUMA_LOG_FUNGI_2 = block(TheabyssModBlocks.RUMA_LOG_FUNGI_2, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> SAL_LOG_FUNGI = block(TheabyssModBlocks.SAL_LOG_FUNGI, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> MINI_STONE_1 = block(TheabyssModBlocks.MINI_STONE_1, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> BOG_VINE = block(TheabyssModBlocks.BOG_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> TANTRA_VINE = block(TheabyssModBlocks.TANTRA_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> SAL_VINE = block(TheabyssModBlocks.SAL_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> ROGGEN_VINE = block(TheabyssModBlocks.ROGGEN_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> ROTTEN_LOG_VINE = block(TheabyssModBlocks.ROTTEN_LOG_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> SLIMED_LOG_VINE = block(TheabyssModBlocks.SLIMED_LOG_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> JUNGLE_LOG_VINE = block(TheabyssModBlocks.JUNGLE_LOG_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> FROZEN_LOG_VINE = block(TheabyssModBlocks.FROZEN_LOG_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> RUMA_LOG_VINE = block(TheabyssModBlocks.RUMA_LOG_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> BLARU_LOG_VINE = block(TheabyssModBlocks.BLARU_LOG_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> JUNGLE_VINE = block(TheabyssModBlocks.JUNGLE_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> BLARU_VINE = block(TheabyssModBlocks.BLARU_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> LORKA_VINE = block(TheabyssModBlocks.LORKA_VINE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> SLIMED_LOG_CRYSTAL = block(TheabyssModBlocks.SLIMED_LOG_CRYSTAL, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> TANTRA_GRASS_SMALL = block(TheabyssModBlocks.TANTRA_GRASS_SMALL, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> TANTRA_GRASS_MIDDLE = block(TheabyssModBlocks.TANTRA_GRASS_MIDDLE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> TANTRA_GRASS_BIG = block(TheabyssModBlocks.TANTRA_GRASS_BIG, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> LAZARUS_GRASS = block(TheabyssModBlocks.LAZARUS_GRASS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> LUMUS_GRASS = block(TheabyssModBlocks.LUMUS_GRASS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> LUMUS_FLOWER = block(TheabyssModBlocks.LUMUS_FLOWER, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> LUMUS_RANK = block(TheabyssModBlocks.LUMUS_RANK, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> LUMUS_FRUIT = block(TheabyssModBlocks.LUMUS_FRUIT, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> VEALUS_MERAMUS = block(TheabyssModBlocks.VEALUS_MERAMUS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> CRIMSON_CRYSTAL_ORE = block(TheabyssModBlocks.CRIMSON_CRYSTAL_ORE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> WARPED_CRYSTAL_ORE = block(TheabyssModBlocks.WARPED_CRYSTAL_ORE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> AUREL_CRYSTAL_ORE = block(TheabyssModBlocks.AUREL_CRYSTAL_ORE, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
@@ -811,11 +645,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> SLIMED_CARPET = block(TheabyssModBlocks.SLIMED_CARPET, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> LUNGO_RANK = block(TheabyssModBlocks.LUNGO_RANK, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> GLOWING_BLARU_MOSS = block(TheabyssModBlocks.GLOWING_BLARU_MOSS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> AUREL_CAVE_MOSS = block(TheabyssModBlocks.AUREL_CAVE_MOSS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> AUREL_SHROOM = block(TheabyssModBlocks.AUREL_SHROOM, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> AUREL_LEAVE_CARPET = block(TheabyssModBlocks.AUREL_LEAVE_CARPET, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> AUREL_RANK = block(TheabyssModBlocks.AUREL_RANK, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> BLARU_CAVE_MOSS = block(TheabyssModBlocks.BLARU_CAVE_MOSS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> FUSION_ARMOR_HELMET = REGISTRY.register("fusion_armor_helmet", () -> new FusionArmorItem.Helmet());
 	public static final RegistryObject<Item> FUSION_ARMOR_CHESTPLATE = REGISTRY.register("fusion_armor_chestplate",
 			() -> new FusionArmorItem.Chestplate());
@@ -834,12 +663,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> PHANTOM_ARMOR_LEGGINGS = REGISTRY.register("phantom_armor_leggings",
 			() -> new PhantomArmorItem.Leggings());
 	public static final RegistryObject<Item> PHANTOM_ARMOR_BOOTS = REGISTRY.register("phantom_armor_boots", () -> new PhantomArmorItem.Boots());
-	public static final RegistryObject<Item> FLORITE_ARMOR_HELMET = REGISTRY.register("florite_armor_helmet", () -> new FloriteArmorItem.Helmet());
-	public static final RegistryObject<Item> FLORITE_ARMOR_CHESTPLATE = REGISTRY.register("florite_armor_chestplate",
-			() -> new FloriteArmorItem.Chestplate());
-	public static final RegistryObject<Item> FLORITE_ARMOR_LEGGINGS = REGISTRY.register("florite_armor_leggings",
-			() -> new FloriteArmorItem.Leggings());
-	public static final RegistryObject<Item> FLORITE_ARMOR_BOOTS = REGISTRY.register("florite_armor_boots", () -> new FloriteArmorItem.Boots());
 	public static final RegistryObject<Item> IGNISITHE_ARMOR_HELMET = REGISTRY.register("ignisithe_armor_helmet",
 			() -> new IgnisitheArmorItem.Helmet());
 	public static final RegistryObject<Item> IGNISITHE_ARMOR_CHESTPLATE = REGISTRY.register("ignisithe_armor_chestplate",
@@ -877,54 +700,12 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> ABERYTHE_ARMOR_LEGGINGS = REGISTRY.register("aberythe_armor_leggings",
 			() -> new AberytheArmorItem.Leggings());
 	public static final RegistryObject<Item> ABERYTHE_ARMOR_BOOTS = REGISTRY.register("aberythe_armor_boots", () -> new AberytheArmorItem.Boots());
-	public static final RegistryObject<Item> ABORANYS_ARMOR_HELMET = REGISTRY.register("aboranys_armor_helmet", () -> new AboranysArmorItem.Helmet());
-	public static final RegistryObject<Item> ABORANYS_ARMOR_CHESTPLATE = REGISTRY.register("aboranys_armor_chestplate",
-			() -> new AboranysArmorItem.Chestplate());
-	public static final RegistryObject<Item> ABORANYS_ARMOR_LEGGINGS = REGISTRY.register("aboranys_armor_leggings",
-			() -> new AboranysArmorItem.Leggings());
-	public static final RegistryObject<Item> ABORANYS_ARMOR_BOOTS = REGISTRY.register("aboranys_armor_boots", () -> new AboranysArmorItem.Boots());
-	public static final RegistryObject<Item> FUSIONED_INCORYTHE_ARMOR_HELMET = REGISTRY.register("fusioned_incorythe_armor_helmet",
-			() -> new FusionedIncorytheArmorItem.Helmet());
-	public static final RegistryObject<Item> FUSIONED_INCORYTHE_ARMOR_CHESTPLATE = REGISTRY.register("fusioned_incorythe_armor_chestplate",
-			() -> new FusionedIncorytheArmorItem.Chestplate());
-	public static final RegistryObject<Item> FUSIONED_INCORYTHE_ARMOR_LEGGINGS = REGISTRY.register("fusioned_incorythe_armor_leggings",
-			() -> new FusionedIncorytheArmorItem.Leggings());
-	public static final RegistryObject<Item> FUSIONED_INCORYTHE_ARMOR_BOOTS = REGISTRY.register("fusioned_incorythe_armor_boots",
-			() -> new FusionedIncorytheArmorItem.Boots());
-	public static final RegistryObject<Item> FUSIONED_UNORITHE_ARMOR_HELMET = REGISTRY.register("fusioned_unorithe_armor_helmet",
-			() -> new FusionedUnoritheArmorItem.Helmet());
-	public static final RegistryObject<Item> FUSIONED_UNORITHE_ARMOR_CHESTPLATE = REGISTRY.register("fusioned_unorithe_armor_chestplate",
-			() -> new FusionedUnoritheArmorItem.Chestplate());
-	public static final RegistryObject<Item> FUSIONED_UNORITHE_ARMOR_LEGGINGS = REGISTRY.register("fusioned_unorithe_armor_leggings",
-			() -> new FusionedUnoritheArmorItem.Leggings());
-	public static final RegistryObject<Item> FUSIONED_UNORITHE_ARMOR_BOOTS = REGISTRY.register("fusioned_unorithe_armor_boots",
-			() -> new FusionedUnoritheArmorItem.Boots());
-	public static final RegistryObject<Item> FUSIONED_GLACERYTHE_ARMOR_HELMET = REGISTRY.register("fusioned_glacerythe_armor_helmet",
-			() -> new FusionedGlacerytheArmorItem.Helmet());
-	public static final RegistryObject<Item> FUSIONED_GLACERYTHE_ARMOR_CHESTPLATE = REGISTRY.register("fusioned_glacerythe_armor_chestplate",
-			() -> new FusionedGlacerytheArmorItem.Chestplate());
-	public static final RegistryObject<Item> FUSIONED_GLACERYTHE_ARMOR_LEGGINGS = REGISTRY.register("fusioned_glacerythe_armor_leggings",
-			() -> new FusionedGlacerytheArmorItem.Leggings());
-	public static final RegistryObject<Item> FUSIONED_GLACERYTHE_ARMOR_BOOTS = REGISTRY.register("fusioned_glacerythe_armor_boots",
-			() -> new FusionedGlacerytheArmorItem.Boots());
-	public static final RegistryObject<Item> FUSIONED_ABERYTHE_ARMOR_HELMET = REGISTRY.register("fusioned_aberythe_armor_helmet",
-			() -> new FusionedAberytheArmorItem.Helmet());
-	public static final RegistryObject<Item> FUSIONED_ABERYTHE_ARMOR_CHESTPLATE = REGISTRY.register("fusioned_aberythe_armor_chestplate",
-			() -> new FusionedAberytheArmorItem.Chestplate());
-	public static final RegistryObject<Item> FUSIONED_ABERYTHE_ARMOR_LEGGINGS = REGISTRY.register("fusioned_aberythe_armor_leggings",
-			() -> new FusionedAberytheArmorItem.Leggings());
-	public static final RegistryObject<Item> FUSIONED_ABERYTHE_ARMOR_BOOTS = REGISTRY.register("fusioned_aberythe_armor_boots",
-			() -> new FusionedAberytheArmorItem.Boots());
 	public static final RegistryObject<Item> EYEICON = REGISTRY.register("eyeicon", () -> new EYEICONItem());
-	public static final RegistryObject<Item> NIGHT_HUNTER_ABL_2 = REGISTRY.register("night_hunter_abl_2", () -> new NightHunterAbl2Item());
-	public static final RegistryObject<Item> EYELIE_ATTACK = REGISTRY.register("eyelie_attack", () -> new EyelieAttackItem());
 	public static final RegistryObject<Item> PHANTOM_ATTACK = REGISTRY.register("phantom_attack", () -> new PhantomAttackItem());
 	public static final RegistryObject<Item> BOOK_ICON = REGISTRY.register("book_icon", () -> new BookIconItem());
-	public static final RegistryObject<Item> SPECTRAL_SPAWN = REGISTRY.register("spectral_spawn", () -> new SpectralSpawnItem());
 	public static final RegistryObject<Item> ECHOLOT_TOP = block(TheabyssModBlocks.ECHOLOT_TOP, null);
 	public static final RegistryObject<Item> ECHOLOT_MIDDLE = block(TheabyssModBlocks.ECHOLOT_MIDDLE, null);
 	public static final RegistryObject<Item> ECHOLOT_BOTTOM = block(TheabyssModBlocks.ECHOLOT_BOTTOM, null);
-	public static final RegistryObject<Item> LUMA_GRASS = block(TheabyssModBlocks.LUMA_GRASS, null);
 	public static final RegistryObject<Item> PHANTOM_HANGING_LANTERN = block(TheabyssModBlocks.PHANTOM_HANGING_LANTERN, null);
 	public static final RegistryObject<Item> ENDER_HANGING_LANTERN = block(TheabyssModBlocks.ENDER_HANGING_LANTERN, null);
 	public static final RegistryObject<Item> HOGLIN_HANGING_LANTERN = block(TheabyssModBlocks.HOGLIN_HANGING_LANTERN, null);
@@ -934,9 +715,6 @@ public class TheabyssModItems {
 			() -> new RingOfBlackStrikeAttackItem());
 	public static final RegistryObject<Item> STORYICON = REGISTRY.register("storyicon", () -> new STORYICONItem());
 	public static final RegistryObject<Item> RAPTOR_EGG = block(TheabyssModBlocks.RAPTOR_EGG, null);
-	public static final RegistryObject<Item> WATER_ECHOLOT_TOP = block(TheabyssModBlocks.WATER_ECHOLOT_TOP, null);
-	public static final RegistryObject<Item> WATER_ECHOLOT_MIDDLE = block(TheabyssModBlocks.WATER_ECHOLOT_MIDDLE, null);
-	public static final RegistryObject<Item> WATER_ECHOLOT_BOTTOM = block(TheabyssModBlocks.WATER_ECHOLOT_BOTTOM, null);
 	public static final RegistryObject<Item> RING_OF_FIREWORK = REGISTRY.register("ring_of_firework", () -> new RingOfFireworkItem());
 	public static final RegistryObject<Item> RING_OF_FART = REGISTRY.register("ring_of_fart", () -> new RingOfFartItem());
 	public static final RegistryObject<Item> NIGHTBLADE_THEME = REGISTRY.register("nightblade_theme", () -> new NightbladeThemeItem());
@@ -944,7 +722,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> SLIMED_RANK = block(TheabyssModBlocks.SLIMED_RANK, null);
 	public static final RegistryObject<Item> NODE_SHARD = REGISTRY.register("node_shard", () -> new NodeShardItem());
 	public static final RegistryObject<Item> WART_SHROOM = REGISTRY.register("wart_shroom", () -> new WartShroomItem());
-	public static final RegistryObject<Item> LUMUS_FRUIT_FOOD = REGISTRY.register("lumus_fruit_food", () -> new LumusFruitFoodItem());
 	public static final RegistryObject<Item> JUNGLE_MELON_ITEM = REGISTRY.register("jungle_melon_item", () -> new JungleMelonItemItem());
 	public static final RegistryObject<Item> DEER_BEEF = REGISTRY.register("deer_beef", () -> new DeerBeefItem());
 	public static final RegistryObject<Item> COOKED_DEER_BEEF = REGISTRY.register("cooked_deer_beef", () -> new CookedDeerBeefItem());
@@ -968,6 +745,48 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> SUMMONED_HOLLOW_SEEKER = REGISTRY.register("summoned_hollow_seeker_spawn_egg",
 			() -> new ForgeSpawnEggItem(TheabyssModEntities.SUMMONED_HOLLOW_SEEKER, -16777216, -16777216,
 					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> HOLY_SPOON = REGISTRY.register("holy_spoon", () -> new HolySpoonItem());
+	public static final RegistryObject<Item> CROWN_OF_NOSAJ = REGISTRY.register("crown_of_nosaj", () -> new CrownOfNosajItem());
+	public static final RegistryObject<Item> ARTIFACT_OF_PHANTOMS = REGISTRY.register("artifact_of_phantoms", () -> new ArtifactOfPhantomsItem());
+	public static final RegistryObject<Item> INFECTED_SLIME = REGISTRY.register("infected_slime", () -> new InfectedSlimeItem());
+	public static final RegistryObject<Item> SKELETON_HEAD_VARIANT_1 = block(TheabyssModBlocks.SKELETON_HEAD_VARIANT_1, null);
+	public static final RegistryObject<Item> SKELETON_HEAD_VARIANT_2 = block(TheabyssModBlocks.SKELETON_HEAD_VARIANT_2, null);
+	public static final RegistryObject<Item> SKELETON_BODY_VARIANT_1 = block(TheabyssModBlocks.SKELETON_BODY_VARIANT_1, null);
+	public static final RegistryObject<Item> SKELETON_BODY_VARIANT_2 = block(TheabyssModBlocks.SKELETON_BODY_VARIANT_2, null);
+	public static final RegistryObject<Item> SKELETON_BODY_VARIANT_3 = block(TheabyssModBlocks.SKELETON_BODY_VARIANT_3, null);
+	public static final RegistryObject<Item> SKELETON_BODY_VARIANT_4 = block(TheabyssModBlocks.SKELETON_BODY_VARIANT_4, null);
+	public static final RegistryObject<Item> SKELETON_BODY_VARIANT_5 = block(TheabyssModBlocks.SKELETON_BODY_VARIANT_5, null);
+	public static final RegistryObject<Item> STONE_RACKLE = block(TheabyssModBlocks.STONE_RACKLE, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_MOSS = block(TheabyssModBlocks.VIGILANT_MOSS, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_BUSH = block(TheabyssModBlocks.VIGILANT_BUSH, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
+	public static final RegistryObject<Item> VIGILANT_LEAVES = block(TheabyssModBlocks.VIGILANT_LEAVES, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_HANGING_FRUIT = block(TheabyssModBlocks.VIGILANT_HANGING_FRUIT,
+			TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
+	public static final RegistryObject<Item> VIGILANT_LOG = block(TheabyssModBlocks.VIGILANT_LOG, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_GRASS = block(TheabyssModBlocks.VIGILANT_GRASS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
+	public static final RegistryObject<Item> VIGILANT_BLUE_GRASS = block(TheabyssModBlocks.VIGILANT_BLUE_GRASS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
+	public static final RegistryObject<Item> VIGILANT_PLANKS = block(TheabyssModBlocks.VIGILANT_PLANKS, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_STAIRS = block(TheabyssModBlocks.VIGILANT_STAIRS, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_SLAB = block(TheabyssModBlocks.VIGILANT_SLAB, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_FENCE = block(TheabyssModBlocks.VIGILANT_FENCE, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_TRAP_DOOR = block(TheabyssModBlocks.VIGILANT_TRAP_DOOR, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_DOOR = doubleBlock(TheabyssModBlocks.VIGILANT_DOOR, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_FENCE_GATE = block(TheabyssModBlocks.VIGILANT_FENCE_GATE, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_BUTTON = block(TheabyssModBlocks.VIGILANT_BUTTON, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_PRESSURE_PLATE = block(TheabyssModBlocks.VIGILANT_PRESSURE_PLATE,
+			TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_OUTER_LEAVES = block(TheabyssModBlocks.VIGILANT_OUTER_LEAVES,
+			TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
+	public static final RegistryObject<Item> VIGILANT_BLUE_OUTER_LEAVES = block(TheabyssModBlocks.VIGILANT_BLUE_OUTER_LEAVES,
+			TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
+	public static final RegistryObject<Item> STRIPPED_BLARU_LOG = block(TheabyssModBlocks.STRIPPED_BLARU_LOG, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> STRIPPED_JUNGLE_LOG = block(TheabyssModBlocks.STRIPPED_JUNGLE_LOG, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> STRIPPED_BOG_SHROOM_LOG = block(TheabyssModBlocks.STRIPPED_BOG_SHROOM_LOG,
+			TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> STRIPPED_SAL_SHROOM_LOG = block(TheabyssModBlocks.STRIPPED_SAL_SHROOM_LOG,
+			TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> STRIPPED_SLIMED_LOG = block(TheabyssModBlocks.STRIPPED_SLIMED_LOG, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> STRIPPED_FROZEN_LOG = block(TheabyssModBlocks.STRIPPED_FROZEN_LOG, TheabyssModTabs.TAB_THE_ABYSS);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

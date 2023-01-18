@@ -1,9 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": [
-    "theabyss:blue_mountain",
-    "theabyss:blue_forest"
-  ],
-  "features": "theabyss:loran_bush",
-  "step": "vegetal_decoration"
-}

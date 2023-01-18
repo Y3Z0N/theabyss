@@ -72,8 +72,8 @@ public class InfuserScreen extends AbstractContainerScreen<InfuserMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Infuser", 123, 7, -6684724);
-		this.font.draw(poseStack, "Inventory", 8, 72, -6684724);
+		this.font.draw(poseStack, Component.translatable("gui.theabyss.infuser.label_infuser"), 123, 7, -6684724);
+		this.font.draw(poseStack, Component.translatable("gui.theabyss.infuser.label_inventory"), 8, 72, -6684724);
 	}
 
 	@Override

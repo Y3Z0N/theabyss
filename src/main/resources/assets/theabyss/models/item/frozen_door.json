@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "theabyss:items/frozen_door"
-  }
+    "layer0": "theabyss:items/frost_door"
+  },
+  "render_type": "translucent"
 }

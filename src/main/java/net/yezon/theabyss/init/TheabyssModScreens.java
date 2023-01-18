@@ -2,7 +2,6 @@
  
 package net.yezon.theabyss.init;
 
-import net.yezon.theabyss.client.gui.WikiGuiScreen;
 import net.yezon.theabyss.client.gui.ResearchScreen;
 import net.yezon.theabyss.client.gui.PatreonScreenScreen;
 import net.yezon.theabyss.client.gui.MortarScreen;
@@ -24,7 +23,6 @@ public class TheabyssModScreens {
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
 			MenuScreens.register(TheabyssModMenus.PATREON_SCREEN.get(), PatreonScreenScreen::new);
-			MenuScreens.register(TheabyssModMenus.WIKI_GUI.get(), WikiGuiScreen::new);
 			MenuScreens.register(TheabyssModMenus.INFUSER.get(), InfuserScreen::new);
 			MenuScreens.register(TheabyssModMenus.CUTTER.get(), CutterScreen::new);
 			MenuScreens.register(TheabyssModMenus.ARCANE.get(), ArcaneScreen::new);

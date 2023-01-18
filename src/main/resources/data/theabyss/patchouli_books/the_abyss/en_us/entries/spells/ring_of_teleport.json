@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Teleport",
+	"icon": "theabyss:ring_of_teleport",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_teleport",
+	"title": "Ring Of Teleport",
+	"link_recipe": false,
+	"text": "Imagine being able to instantly transport yourself to any location just by wearing this incredible ring! With the power of teleportation at your fingertips, you'll be able to explore new places and experience the world in a whole new way. Simply focus on where you want to go and this extraordinary piece of jewelry will do the rest. And the best part? It only requires 20.0 somnium to use. Start your journey to the unknown with this amazing teleport ring!"
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_ring",
+	"input1": "theabyss:ender_powder",
+	"input2": "theabyss:mutated_enderpearl",
+	"input3": "theabyss:ender_powder",
+	"input4": "theabyss:mutated_enderpearl",
+	"input5": "theabyss:ender_powder",
+	"input6": "theabyss:mutated_enderpearl",
+	"input7": "theabyss:ender_powder",
+	"input8": "theabyss:mutated_enderpearl",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

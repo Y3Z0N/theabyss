@@ -1,0 +1,25 @@
+{
+	"name": "Frost Crystal Shard",
+	"icon": "theabyss:frost_crystal_shard",
+"category": "theabyss:crystals",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:frost_crystal_shard",
+	"title": "Frost Crystal Shard",
+	"link_recipe": false,
+	"text": "Are you brave enough to venture into the icy realm of the Frost World dimension in Minecraft? If so, you might just be rewarded with the rare and coveted Frost Crystal Shards. These shimmering, icy crystals are a bit difficult to come by, as they can only be found in the dark, frozen caves that dot the landscape of the Frost World."
+	},
+	{
+	"type": "text",
+	"text": "Some say that the Frost Crystal Shards possess powerful, otherworldly abilities, and many adventurers brave the cold in search of them. But be warned - the Frost World is a treacherous place, and you'll need to keep your wits about you if you hope to come away with a few of these rare crystals. Will you be the one to uncover the secrets of the Frost Crystal Shards?"
+}
+	]
+	}

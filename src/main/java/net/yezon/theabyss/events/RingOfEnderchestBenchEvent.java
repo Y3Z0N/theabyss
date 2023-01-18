@@ -10,7 +10,7 @@ import net.minecraft.server.level.ServerPlayer;
 import java.util.function.Supplier;
 import java.util.Map;
 
-public class RingOfEnderchestBenchEvent {
+public class RingOfEnderchestBenchevent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

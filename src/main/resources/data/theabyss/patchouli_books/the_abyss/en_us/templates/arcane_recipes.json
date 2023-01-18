@@ -1,0 +1,96 @@
+{
+  "components": [
+    {
+      "type": "patchouli:header",
+      "text": "#heading",
+      "x": -1,
+      "y": -1
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#ring",
+      "framed": "true",
+    "link_recipe": false,
+      "x": 48,
+      "y": 60
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input1",
+      "framed": "true",
+	  "link_recipe": false,
+      "x": 10,
+      "y": 60
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input2",
+      "framed": "true",
+	  "link_recipe": false,
+      "x": 20,
+      "y": 34
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input3",
+      "framed": "true",
+	  "link_recipe": false,
+      "x": 48,
+      "y": 20
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input4",
+      "framed": "true",
+	  "link_recipe": false,
+      "x": 75,
+      "y": 34
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input5",
+      "framed": "true",
+    "link_recipe": false,
+      "x": 85,
+      "y": 60
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input6",
+      "framed": "true",
+    "link_recipe": false,
+      "x": 75,
+      "y": 86
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input7",
+      "framed": "true",
+    "link_recipe": false,
+      "x": 48,
+      "y": 100
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input8",
+      "framed": "true",
+    "link_recipe": false,
+      "x": 20,
+      "y": 86
+    },
+    {
+      "type": "patchouli:text",
+      "text": "#text1",
+    "x": 1,
+      "y": 40,
+    "max_width": 115
+  },
+    {
+      "type": "patchouli:text",
+      "text": "#text2",
+	  "x": 1,
+      "y": 100,
+	  "max_width": 115
+    }
+  ]
+}

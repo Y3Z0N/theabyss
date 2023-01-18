@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Regen",
+	"icon": "theabyss:ring_of_reg",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_reg",
+	"title": "Ring Of Regen",
+	"link_recipe": false,
+	"text": "Looking for a quick pick-me-up in the midst of battle? The Ring of Regen is here to help! This magical ring regenerates your health and consumes 20.0 Somnium to fuel its powers. It's the perfect addition to any adventurer's arsenal. Don't wait - add the Ring of Regen to your collection now!"
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_ring",
+	"input1": "theabyss:aurel_powder",
+	"input2": "theabyss:vitae_stone",
+	"input3": "theabyss:aurel_powder",
+	"input4": "theabyss:vitae_stone",
+	"input5": "theabyss:aurel_powder",
+	"input6": "theabyss:vitae_stone",
+	"input7": "theabyss:aurel_powder",
+	"input8": "theabyss:vitae_stone",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

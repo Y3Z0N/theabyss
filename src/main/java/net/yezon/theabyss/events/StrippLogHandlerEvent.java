@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
 import java.util.Map;
 
 @Mod.EventBusSubscriber
-public class StrippLogHandlerEvent {
+public class StrippLogHandlerevent {
 	@SubscribeEvent
 	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
 		if (event.getHand() != event.getEntity().getUsedItemHand())
@@ -105,7 +105,207 @@ public class StrippLogHandlerEvent {
 			}
 			{
 				BlockPos _bp = new BlockPos(x, y, z);
-				BlockState _bs = TheabyssModBlocks.STIPPED_JUNGLE_LOG.get().defaultBlockState();
+				BlockState _bs = TheabyssModBlocks.STRIPPED_JUNGLE_LOG.get().defaultBlockState();
+				BlockState _bso = world.getBlockState(_bp);
+				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
+						try {
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
+						} catch (Exception e) {
+						}
+				}
+				BlockEntity _be = world.getBlockEntity(_bp);
+				CompoundTag _bnbt = null;
+				if (_be != null) {
+					_bnbt = _be.saveWithFullMetadata();
+					_be.setRemoved();
+				}
+				world.setBlock(_bp, _bs, 3);
+				if (_bnbt != null) {
+					_be = world.getBlockEntity(_bp);
+					if (_be != null) {
+						try {
+							_be.load(_bnbt);
+						} catch (Exception ignored) {
+						}
+					}
+				}
+			}
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.axe.strip")),
+							SoundSource.NEUTRAL, 1, 1);
+				} else {
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.axe.strip")), SoundSource.NEUTRAL,
+							1, 1, false);
+				}
+			}
+			if (entity instanceof LivingEntity _entity)
+				_entity.swing(InteractionHand.MAIN_HAND, true);
+		}
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() instanceof AxeItem
+				&& TheabyssModBlocks.BOG_SHROOM_LOG.get() == (world.getBlockState(new BlockPos(x, y, z))).getBlock()) {
+			{
+				ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
+				if (_ist.hurt(1, RandomSource.create(), null)) {
+					_ist.shrink(1);
+					_ist.setDamageValue(0);
+				}
+			}
+			{
+				BlockPos _bp = new BlockPos(x, y, z);
+				BlockState _bs = TheabyssModBlocks.STRIPPED_BOG_SHROOM_LOG.get().defaultBlockState();
+				BlockState _bso = world.getBlockState(_bp);
+				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
+						try {
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
+						} catch (Exception e) {
+						}
+				}
+				BlockEntity _be = world.getBlockEntity(_bp);
+				CompoundTag _bnbt = null;
+				if (_be != null) {
+					_bnbt = _be.saveWithFullMetadata();
+					_be.setRemoved();
+				}
+				world.setBlock(_bp, _bs, 3);
+				if (_bnbt != null) {
+					_be = world.getBlockEntity(_bp);
+					if (_be != null) {
+						try {
+							_be.load(_bnbt);
+						} catch (Exception ignored) {
+						}
+					}
+				}
+			}
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.axe.strip")),
+							SoundSource.NEUTRAL, 1, 1);
+				} else {
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.axe.strip")), SoundSource.NEUTRAL,
+							1, 1, false);
+				}
+			}
+			if (entity instanceof LivingEntity _entity)
+				_entity.swing(InteractionHand.MAIN_HAND, true);
+		}
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() instanceof AxeItem
+				&& TheabyssModBlocks.SAL_SHROOM_LOG.get() == (world.getBlockState(new BlockPos(x, y, z))).getBlock()) {
+			{
+				ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
+				if (_ist.hurt(1, RandomSource.create(), null)) {
+					_ist.shrink(1);
+					_ist.setDamageValue(0);
+				}
+			}
+			{
+				BlockPos _bp = new BlockPos(x, y, z);
+				BlockState _bs = TheabyssModBlocks.STRIPPED_SAL_SHROOM_LOG.get().defaultBlockState();
+				BlockState _bso = world.getBlockState(_bp);
+				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
+						try {
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
+						} catch (Exception e) {
+						}
+				}
+				BlockEntity _be = world.getBlockEntity(_bp);
+				CompoundTag _bnbt = null;
+				if (_be != null) {
+					_bnbt = _be.saveWithFullMetadata();
+					_be.setRemoved();
+				}
+				world.setBlock(_bp, _bs, 3);
+				if (_bnbt != null) {
+					_be = world.getBlockEntity(_bp);
+					if (_be != null) {
+						try {
+							_be.load(_bnbt);
+						} catch (Exception ignored) {
+						}
+					}
+				}
+			}
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.axe.strip")),
+							SoundSource.NEUTRAL, 1, 1);
+				} else {
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.axe.strip")), SoundSource.NEUTRAL,
+							1, 1, false);
+				}
+			}
+			if (entity instanceof LivingEntity _entity)
+				_entity.swing(InteractionHand.MAIN_HAND, true);
+		}
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() instanceof AxeItem
+				&& TheabyssModBlocks.SLIMED_LOG.get() == (world.getBlockState(new BlockPos(x, y, z))).getBlock()) {
+			{
+				ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
+				if (_ist.hurt(1, RandomSource.create(), null)) {
+					_ist.shrink(1);
+					_ist.setDamageValue(0);
+				}
+			}
+			{
+				BlockPos _bp = new BlockPos(x, y, z);
+				BlockState _bs = TheabyssModBlocks.STRIPPED_SLIMED_LOG.get().defaultBlockState();
+				BlockState _bso = world.getBlockState(_bp);
+				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
+						try {
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
+						} catch (Exception e) {
+						}
+				}
+				BlockEntity _be = world.getBlockEntity(_bp);
+				CompoundTag _bnbt = null;
+				if (_be != null) {
+					_bnbt = _be.saveWithFullMetadata();
+					_be.setRemoved();
+				}
+				world.setBlock(_bp, _bs, 3);
+				if (_bnbt != null) {
+					_be = world.getBlockEntity(_bp);
+					if (_be != null) {
+						try {
+							_be.load(_bnbt);
+						} catch (Exception ignored) {
+						}
+					}
+				}
+			}
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.axe.strip")),
+							SoundSource.NEUTRAL, 1, 1);
+				} else {
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.axe.strip")), SoundSource.NEUTRAL,
+							1, 1, false);
+				}
+			}
+			if (entity instanceof LivingEntity _entity)
+				_entity.swing(InteractionHand.MAIN_HAND, true);
+		}
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() instanceof AxeItem
+				&& TheabyssModBlocks.FROZEN_LOG.get() == (world.getBlockState(new BlockPos(x, y, z))).getBlock()) {
+			{
+				ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
+				if (_ist.hurt(1, RandomSource.create(), null)) {
+					_ist.shrink(1);
+					_ist.setDamageValue(0);
+				}
+			}
+			{
+				BlockPos _bp = new BlockPos(x, y, z);
+				BlockState _bs = TheabyssModBlocks.STRIPPED_FROZEN_LOG.get().defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
 				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
 					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());

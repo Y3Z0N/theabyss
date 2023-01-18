@@ -1,7 +1,7 @@
 {
   "parent": "block/template_fence_gate",
   "textures": {
-    "texture": "theabyss:blocks/jungle_planks"
+    "texture": "theabyss:blocks/nightgrove_planks"
   },
   "render_type": "solid"
 }

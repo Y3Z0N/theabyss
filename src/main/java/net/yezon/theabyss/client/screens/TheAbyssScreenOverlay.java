@@ -1,7 +1,9 @@
 
 package net.yezon.theabyss.client.screens;
 
-import net.yezon.theabyss.events.TheAbyssScreenHandlerEvent;
+import org.checkerframework.checker.units.qual.h;
+
+import net.yezon.theabyss.events.TheAbyssScreenHandlerevent;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,6 +14,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.gui.screens.ReceivingLevelScreen;
 import net.minecraft.client.Minecraft;
@@ -28,21 +31,17 @@ public class TheAbyssScreenOverlay {
 			int h = event.getScreen().height;
 			int posX = w / 2;
 			int posY = h / 2;
-			Level _world = null;
-			double _x = 0;
-			double _y = 0;
-			double _z = 0;
+			Level world = null;
+			double x = 0;
+			double y = 0;
+			double z = 0;
 			Player entity = Minecraft.getInstance().player;
 			if (entity != null) {
-				_world = entity.level;
-				_x = entity.getX();
-				_y = entity.getY();
-				_z = entity.getZ();
+				world = entity.level;
+				x = entity.getX();
+				y = entity.getY();
+				z = entity.getZ();
 			}
-			Level world = _world;
-			double x = _x;
-			double y = _y;
-			double z = _z;
 			RenderSystem.disableDepthTest();
 			RenderSystem.depthMask(false);
 			RenderSystem.enableBlend();
@@ -50,10 +49,11 @@ public class TheAbyssScreenOverlay {
 			RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
 					GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 			RenderSystem.setShaderColor(1, 1, 1, 1);
-			if (TheAbyssScreenHandlerEvent.execute(entity)) {
+			if (TheAbyssScreenHandlerevent.execute(entity)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/screens/loadingscreen.png"));
 				Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, 0, 0, 0, w, h, w, h);
-				Minecraft.getInstance().font.draw(event.getPoseStack(), "Entering The Abyss ...", posX + -52, posY + -13, -16711732);
+				Minecraft.getInstance().font.draw(event.getPoseStack(),
+						Component.translatable("gui.theabyss.the_abyss_screen.label_entering_the_abyss"), posX + -52, posY + -13, -16711732);
 			}
 			RenderSystem.depthMask(true);
 			RenderSystem.defaultBlendFunc();

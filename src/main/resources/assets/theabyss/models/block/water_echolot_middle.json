@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/water_echolot_middle",
-  "textures": {
-    "all": "theabyss:blocks/bricks_cracked",
-    "particle": "theabyss:blocks/bricks_cracked",
-    "texture": "theabyss:blocks/water_echolot_bottom_middle"
-  },
-  "render_type": "solid"
-}

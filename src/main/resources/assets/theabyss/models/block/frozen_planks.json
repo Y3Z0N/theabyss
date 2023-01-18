@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "theabyss:blocks/frozen_planks",
-    "particle": "theabyss:blocks/frozen_planks"
+    "all": "theabyss:blocks/frost_planks",
+    "particle": "theabyss:blocks/frost_planks"
   },
   "render_type": "solid"
 }

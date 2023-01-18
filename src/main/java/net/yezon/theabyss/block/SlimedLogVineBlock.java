@@ -1,9 +1,10 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.BreakVinesEvent;
+import net.yezon.theabyss.events.BreakVinesevent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
@@ -46,6 +47,11 @@ public class SlimedLogVineBlock extends Block {
 	@Override
 	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
+	}
+
+	@Override
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
 	}
 
 	@Override
@@ -98,6 +104,6 @@ public class SlimedLogVineBlock extends Block {
 	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		BreakVinesEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		BreakVinesevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 }

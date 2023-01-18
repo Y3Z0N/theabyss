@@ -26,6 +26,11 @@ public class PlayerBodyRenderer extends HumanoidMobRenderer<PlayerBodyEntity, Hu
 	}
 
 	@Override
+	protected RenderType getRenderType(PlayerBodyEntity p_115322_, boolean p_115323_, boolean p_115324_, boolean p_115325_) {
+		return RenderType.endPortal();
+	}
+
+	@Override
 	public ResourceLocation getTextureLocation(PlayerBodyEntity entity) {
 		return new ResourceLocation("theabyss:textures/entities/player_body.png");
 	}

@@ -1,0 +1,9 @@
+{
+	"name": "Getting Started",
+	"description": "Find everything you need to survive and thrive in the Abyss, a dark and dangerous dimension. From crafting tools and armor to building the portal, this guide has it all. Are you ready to brave the unknown and explore the secrets of the Abyss?",
+	"icon": "theabyss:unstable_obsidian",
+
+
+	"sortnum":1,
+	"secret":false
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:phantom_crate",
+  "features": "theabyss:skeleton_body_variant_1",
+  "step": "vegetal_decoration"
+}

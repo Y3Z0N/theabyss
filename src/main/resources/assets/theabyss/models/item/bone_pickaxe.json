@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "theabyss:items/bone_pickaxe_copy"
+    "layer0": "theabyss:items/bone_pickaxe"
   }
 }

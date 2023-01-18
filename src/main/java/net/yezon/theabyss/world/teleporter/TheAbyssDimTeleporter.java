@@ -62,16 +62,16 @@ public class TheAbyssDimTeleporter implements ITeleporter {
 		this.entityEnterPos = entityEnterPos;
 	}
 
-	public Optional<BlockUtil.FoundRectangle> findPortalAround(BlockPos pPos, boolean pIsNether, WorldBorder pWorldBorder) {
+	public Optional<BlockUtil.FoundRectangle> findPortalAround(BlockPos p_192986_, boolean p_192987_, WorldBorder p_192988_) {
 		PoiManager poimanager = this.level.getPoiManager();
-		int i = pIsNether ? 16 : 128;
-		poimanager.ensureLoadedAndValid(this.level, pPos, i);
+		int i = p_192987_ ? 16 : 128;
+		poimanager.ensureLoadedAndValid(this.level, p_192986_, i);
 		Optional<PoiRecord> optional = poimanager.getInSquare((p_230634_) -> {
 			return p_230634_.is(poi.unwrapKey().get());
-		}, pPos, i, PoiManager.Occupancy.ANY).filter((p_192981_) -> {
-			return pWorldBorder.isWithinBounds(p_192981_.getPos());
+		}, p_192986_, i, PoiManager.Occupancy.ANY).filter((p_192981_) -> {
+			return p_192988_.isWithinBounds(p_192981_.getPos());
 		}).sorted(Comparator.<PoiRecord>comparingDouble((p_192984_) -> {
-			return p_192984_.getPos().distSqr(pPos);
+			return p_192984_.getPos().distSqr(p_192986_);
 		}).thenComparingInt((p_192992_) -> {
 			return p_192992_.getPos().getY();
 		})).filter((p_192990_) -> {
@@ -88,16 +88,16 @@ public class TheAbyssDimTeleporter implements ITeleporter {
 		});
 	}
 
-	public Optional<BlockUtil.FoundRectangle> createPortal(BlockPos pPos, Direction.Axis pAxis) {
-		Direction direction = Direction.get(Direction.AxisDirection.POSITIVE, pAxis);
+	public Optional<BlockUtil.FoundRectangle> createPortal(BlockPos p_77667_, Direction.Axis p_77668_) {
+		Direction direction = Direction.get(Direction.AxisDirection.POSITIVE, p_77668_);
 		double d0 = -1.0D;
 		BlockPos blockpos = null;
 		double d1 = -1.0D;
 		BlockPos blockpos1 = null;
 		WorldBorder worldborder = this.level.getWorldBorder();
 		int i = Math.min(this.level.getMaxBuildHeight(), this.level.getMinBuildHeight() + this.level.getLogicalHeight()) - 1;
-		BlockPos.MutableBlockPos blockpos$mutableblockpos = pPos.mutable();
-		for (BlockPos.MutableBlockPos blockpos$mutableblockpos1 : BlockPos.spiralAround(pPos, 16, Direction.EAST, Direction.SOUTH)) {
+		BlockPos.MutableBlockPos blockpos$mutableblockpos = p_77667_.mutable();
+		for (BlockPos.MutableBlockPos blockpos$mutableblockpos1 : BlockPos.spiralAround(p_77667_, 16, Direction.EAST, Direction.SOUTH)) {
 			int j = Math.min(i,
 					this.level.getHeight(Heightmap.Types.MOTION_BLOCKING, blockpos$mutableblockpos1.getX(), blockpos$mutableblockpos1.getZ()));
 			int k = 1;
@@ -115,7 +115,7 @@ public class TheAbyssDimTeleporter implements ITeleporter {
 							if (j1 <= 0 || j1 >= 3) {
 								blockpos$mutableblockpos1.setY(l);
 								if (this.canHostFrame(blockpos$mutableblockpos1, blockpos$mutableblockpos, direction, 0)) {
-									double d2 = pPos.distSqr(blockpos$mutableblockpos1);
+									double d2 = p_77667_.distSqr(blockpos$mutableblockpos1);
 									if (this.canHostFrame(blockpos$mutableblockpos1, blockpos$mutableblockpos, direction, -1)
 											&& this.canHostFrame(blockpos$mutableblockpos1, blockpos$mutableblockpos, direction, 1)
 											&& (d0 == -1.0D || d0 > d2)) {
@@ -143,7 +143,7 @@ public class TheAbyssDimTeleporter implements ITeleporter {
 			if (i2 < k1) {
 				return Optional.empty();
 			}
-			blockpos = (new BlockPos(pPos.getX(), Mth.clamp(pPos.getY(), k1, i2), pPos.getZ())).immutable();
+			blockpos = (new BlockPos(p_77667_.getX(), Mth.clamp(p_77667_.getY(), k1, i2), p_77667_.getZ())).immutable();
 			Direction direction1 = direction.getClockWise();
 			if (!worldborder.isWithinBounds(blockpos)) {
 				return Optional.empty();
@@ -151,7 +151,9 @@ public class TheAbyssDimTeleporter implements ITeleporter {
 			for (int i3 = -1; i3 < 2; ++i3) {
 				for (int j3 = 0; j3 < 2; ++j3) {
 					for (int k3 = -1; k3 < 3; ++k3) {
-						BlockState blockstate1 = k3 < 0 ? Blocks.REINFORCED_DEEPSLATE.defaultBlockState() : Blocks.AIR.defaultBlockState();
+						BlockState blockstate1 = k3 < 0
+								? TheabyssModBlocks.UNSTABLE_OBSIDIAN.get().defaultBlockState()
+								: Blocks.AIR.defaultBlockState();
 						blockpos$mutableblockpos.setWithOffset(blockpos, j3 * direction.getStepX() + i3 * direction1.getStepX(), k3,
 								j3 * direction.getStepZ() + i3 * direction1.getStepZ());
 						this.level.setBlockAndUpdate(blockpos$mutableblockpos, blockstate1);
@@ -163,11 +165,11 @@ public class TheAbyssDimTeleporter implements ITeleporter {
 			for (int j2 = -1; j2 < 4; ++j2) {
 				if (l1 == -1 || l1 == 2 || j2 == -1 || j2 == 3) {
 					blockpos$mutableblockpos.setWithOffset(blockpos, l1 * direction.getStepX(), j2, l1 * direction.getStepZ());
-					this.level.setBlock(blockpos$mutableblockpos, Blocks.REINFORCED_DEEPSLATE.defaultBlockState(), 3);
+					this.level.setBlock(blockpos$mutableblockpos, TheabyssModBlocks.UNSTABLE_OBSIDIAN.get().defaultBlockState(), 3);
 				}
 			}
 		}
-		BlockState blockstate = TheabyssModBlocks.THE_ABYSS_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, pAxis);
+		BlockState blockstate = TheabyssModBlocks.THE_ABYSS_PORTAL.get().defaultBlockState().setValue(NetherPortalBlock.AXIS, p_77668_);
 		for (int k2 = 0; k2 < 2; ++k2) {
 			for (int l2 = 0; l2 < 3; ++l2) {
 				blockpos$mutableblockpos.setWithOffset(blockpos, k2 * direction.getStepX(), l2, k2 * direction.getStepZ());
@@ -178,16 +180,16 @@ public class TheAbyssDimTeleporter implements ITeleporter {
 		return Optional.of(new BlockUtil.FoundRectangle(blockpos.immutable(), 2, 3));
 	}
 
-	private boolean canHostFrame(BlockPos pOriginalPos, BlockPos.MutableBlockPos pOffsetPos, Direction pDirection, int pOffsetScale) {
-		Direction direction = pDirection.getClockWise();
+	private boolean canHostFrame(BlockPos p_77662_, BlockPos.MutableBlockPos p_77663_, Direction p_77664_, int p_77665_) {
+		Direction direction = p_77664_.getClockWise();
 		for (int i = -1; i < 3; ++i) {
 			for (int j = -1; j < 4; ++j) {
-				pOffsetPos.setWithOffset(pOriginalPos, pDirection.getStepX() * i + direction.getStepX() * pOffsetScale, j,
-						pDirection.getStepZ() * i + direction.getStepZ() * pOffsetScale);
-				if (j < 0 && !this.level.getBlockState(pOffsetPos).getMaterial().isSolid()) {
+				p_77663_.setWithOffset(p_77662_, p_77664_.getStepX() * i + direction.getStepX() * p_77665_, j,
+						p_77664_.getStepZ() * i + direction.getStepZ() * p_77665_);
+				if (j < 0 && !this.level.getBlockState(p_77663_).getMaterial().isSolid()) {
 					return false;
 				}
-				if (j >= 0 && !this.level.isEmptyBlock(pOffsetPos)) {
+				if (j >= 0 && !this.level.isEmptyBlock(p_77663_)) {
 					return false;
 				}
 			}

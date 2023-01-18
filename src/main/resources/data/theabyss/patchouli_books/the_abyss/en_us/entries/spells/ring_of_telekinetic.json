@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Telekinetic",
+	"icon": "theabyss:ring_of_telekinetic",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_telekinetic",
+	"title": "Ring Of Telekinetic",
+	"link_recipe": false,
+	"text": "Equip this ring to send your foes soaring into the sky, only to come crashing down with a thud. The ring uses 35.0 somnium to power its devastating ability, leaving enemies with a painful fall damage. Unleash this fearsome attack and watch as your enemies crumble before you."
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_ring",
+	"input1": "theabyss:ender_crystal_shard",
+	"input2": "theabyss:hollow_crystal_shard",
+	"input3": "theabyss:ender_crystal_shard",
+	"input4": "theabyss:hollow_crystal_shard",
+	"input5": "theabyss:ender_crystal_shard",
+	"input6": "theabyss:hollow_crystal_shard",
+	"input7": "theabyss:ender_crystal_shard",
+	"input8": "theabyss:hollow_crystal_shard",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

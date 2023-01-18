@@ -18,7 +18,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class PatreonDeathEvent {
+public class PatreonDeathevent {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
 		if (event != null && event.getEntity() != null) {

@@ -1,0 +1,47 @@
+{
+	"name": "Somnium Cooldown",
+	"icon": "theabyss:somnium_cooldown_upgrade",
+"category": "theabyss:alchemy",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:somnium_cooldown_upgrade",
+	"title": "Somnium Cooldown Upgrade",
+	"link_recipe": false,
+	"text": "The Somnium Cooldown Upgrade essence is a powerful tool that reduces the cooldown period for artifacts, rings, and spells. It can be used up to five times to maximize its effectiveness in battle or other situations. "
+	},
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "The Somnium Cooldown Upgrade can be crafted in a Somnium Infuser using loran energy and somnium as ingredients."
+},
+{
+	"type": "theabyss:infuser_recipes",
+	"heading": "Recipe",
+	"somnium": "theabyss:somnium",
+	"energy": "theabyss:loran_energy",
+	"input1": "theabyss:node_shard",
+	"input2": "theabyss:crystal_hand",
+	"input3": "theabyss:node_shard",
+	"input4": "theabyss:crystal_hand",
+	"text1": "Place Somnium and loran energy in the upper input slots.",
+	"text2": "To craft Somnium Cooldown Upgrade, place the required items in the test tubes on the left and right."
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/somnium_usage.png"
+		]
+}
+	]
+	}

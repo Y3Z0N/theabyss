@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "theabyss:blocks/rotten_leaves",
-    "particle": "theabyss:blocks/rotten_leaves"
-  },
-  "render_type": "translucent"
-}

@@ -10,6 +10,8 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+
 public class TheRokaRenderer extends MobRenderer<TheRokaEntity, ModelRokaEntityModel<TheRokaEntity>> {
 	public TheRokaRenderer(EntityRendererProvider.Context context) {
 		super(context, new ModelRokaEntityModel(context.bakeLayer(ModelRokaEntityModel.LAYER_LOCATION)), 0.5f);
@@ -19,6 +21,11 @@ public class TheRokaRenderer extends MobRenderer<TheRokaEntity, ModelRokaEntityM
 				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/rokaentitytexture_glow.png"));
 			}
 		});
+	}
+	
+
+	protected void scale(TheRokaEntity entity, PoseStack posestack, float partialTicks) {
+		posestack.scale(0.5f, 0.5f, 0.5f);
 	}
 
 	@Override

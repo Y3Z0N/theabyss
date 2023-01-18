@@ -1,9 +1,0 @@
-{
-  "parent": "theabyss:custom/jungle_table",
-  "textures": {
-    "all": "theabyss:blocks/jungle_planks",
-    "particle": "theabyss:blocks/jungle_planks",
-    "0": "theabyss:blocks/jungle_planks"
-  },
-  "render_type": "solid"
-}

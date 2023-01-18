@@ -1,9 +1,9 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.GhostPotionStartEvent;
-import net.yezon.theabyss.events.GhostPotionEndEvent;
-import net.yezon.theabyss.events.GhostOnPotionActiveEvent;
+import net.yezon.theabyss.events.GhostPotionStartevent;
+import net.yezon.theabyss.events.GhostPotionEndevent;
+import net.yezon.theabyss.events.GhostOnPotionActiveevent;
 
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,18 +22,18 @@ public class GhostMobEffect extends MobEffect {
 
 	@Override
 	public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-		GhostPotionStartEvent.execute(entity);
+		GhostPotionStartevent.execute(entity);
 	}
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		GhostOnPotionActiveEvent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ());
+		GhostOnPotionActiveevent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ());
 	}
 
 	@Override
 	public void removeAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
 		super.removeAttributeModifiers(entity, attributeMap, amplifier);
-		GhostPotionEndEvent.execute(entity);
+		GhostPotionEndevent.execute(entity);
 	}
 
 	@Override

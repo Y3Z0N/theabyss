@@ -1,0 +1,9 @@
+{
+	"name": "Spells",
+	"description": "Unleash your inner wizard and discover the secrets of crafting powerful magical tools! In this guide, you'll learn how to create useable wands, enchanted rings, and mysterious artifacts for casting spells. But beware - the world of magic also contains dangerous and forbidden dark magic. Are you brave enough to tread that path?",
+	"icon": "theabyss:ring_of_eagle",
+
+
+	"sortnum":5,
+	"secret":false
+}

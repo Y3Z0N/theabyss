@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.network;
 
-import net.yezon.theabyss.events.Friendly1Event;
+import net.yezon.theabyss.events.Friendly1event;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.network.NetworkEvent;
@@ -52,7 +52,7 @@ public class FriendleyFireAMessage {
 			return;
 		if (type == 0) {
 
-			Friendly1Event.execute(world, x, y, z, entity);
+			Friendly1event.execute(world, x, y, z, entity);
 		}
 	}
 

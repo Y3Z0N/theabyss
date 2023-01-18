@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.RingOfBlackStrikeParticleEvent;
-import net.yezon.theabyss.events.RingOfBlackStrikeAttackBulletHitsLivingEntityEvent;
+import net.yezon.theabyss.events.RingOfBlackStrikeParticleevent;
+import net.yezon.theabyss.events.RingOfBlackStrikeAttackBulletHitsLivingEntityevent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -66,13 +66,13 @@ public class RingOfBlackStrikeAttackEntity extends AbstractArrow implements Item
 	@Override
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
-		RingOfBlackStrikeAttackBulletHitsLivingEntityEvent.execute(entityHitResult.getEntity());
+		RingOfBlackStrikeAttackBulletHitsLivingEntityevent.execute(entityHitResult.getEntity());
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		RingOfBlackStrikeParticleEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		RingOfBlackStrikeParticleevent.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (this.inGround)
 			this.discard();
 	}

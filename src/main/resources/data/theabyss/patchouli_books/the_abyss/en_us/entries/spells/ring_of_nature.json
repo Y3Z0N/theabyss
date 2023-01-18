@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Nature",
+	"icon": "theabyss:ring_of_nature",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_nature",
+	"title": "Ring Of Nature",
+	"link_recipe": false,
+	"text": "Transform your surroundings with the power of this magical ring! With the ability to instantly grow plants in a 3x3 radius, you'll be able to bring new life to any environment. Just beware, this ring won't work on saplings. But with a somnium cost of only 8.0, you'll be able to unleash the full potential of this incredible tool again and again."
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_ring",
+	"input1": "minecraft:bone",
+	"input2": "minecraft:bone",
+	"input3": "minecraft:bone",
+	"input4": "minecraft:bone",
+	"input5": "minecraft:bone",
+	"input6": "minecraft:bone",
+	"input7": "minecraft:bone",
+	"input8": "minecraft:bone",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

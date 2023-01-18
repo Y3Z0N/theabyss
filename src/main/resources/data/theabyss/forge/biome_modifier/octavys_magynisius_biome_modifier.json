@@ -1,9 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": [
-    "theabyss:blue_jungle",
-    "theabyss:blue_forest"
-  ],
+  "biomes": "theabyss:blue_jungle",
   "features": "theabyss:octavys_magynisius",
   "step": "vegetal_decoration"
 }

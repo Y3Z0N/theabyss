@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "theabyss:blue_forest",
-  "features": "theabyss:blaru_tree_middle_2",
-  "step": "surface_structures"
-}

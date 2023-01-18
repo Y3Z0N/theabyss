@@ -1,0 +1,25 @@
+{
+	"name": "Hollow Crystal Shard",
+	"icon": "theabyss:hollow_crystal_shard",
+"category": "theabyss:crystals",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:hollow_crystal_shard",
+	"title": "Hollow Crystal Shard",
+	"link_recipe": false,
+	"text": "Are you daring enough to venture into the treacherous depths of the Abyss dimension in Minecraft, where danger lurks at every turn? If so, you might just come across the rare and coveted Hollow Crystal Shards. These shimmering, glowing crystals can only be found within the Phantom Crater biomes that dot the landscape of the Abyss."
+	},
+	{
+	"type": "text",
+	"text": "But be warned - the Phantom Crater is home to the dangerous and elusive Phantoms, who are known to attack travelers on sight. If you hope to come away with a few of these rare Hollow Crystal Shards, you'll need to be brave and vigilant. Are you up for the challenge?"
+}
+	]
+	}

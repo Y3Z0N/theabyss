@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Time",
+	"icon": "theabyss:ring_of_time",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_time",
+	"title": "Ring Of Time",
+	"link_recipe": false,
+	"text": "Harness the power of time itself with this ring of frozen moments. By freezing the movement of all entities in its radius, you are free to move about as you please. This ring consumes 80.0 somnium to activate its temporal abilities, allowing you to strategically position yourself for victory. Utilize this ring to turn the tide of any battle in your favor."
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_freeze",
+	"input1": "theabyss:hollow_powder",
+	"input2": "theabyss:incorythe_gem",
+	"input3": "theabyss:hollow_powder",
+	"input4": "theabyss:incorythe_gem",
+	"input5": "theabyss:hollow_powder",
+	"input6": "theabyss:incorythe_gem",
+	"input7": "theabyss:hollow_powder",
+	"input8": "theabyss:incorythe_gem",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

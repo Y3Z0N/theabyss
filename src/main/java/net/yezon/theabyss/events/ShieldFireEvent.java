@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
 
-public class ShieldFireEvent {
+public class ShieldFireevent {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		{
 			final Vec3 _center = new Vec3(x, y, z);

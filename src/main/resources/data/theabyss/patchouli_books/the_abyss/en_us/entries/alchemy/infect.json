@@ -1,0 +1,47 @@
+{
+	"name": "Anti Infect Essence",
+	"icon": "theabyss:anti_infect_essence",
+"category": "theabyss:alchemy",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+		{
+			"type": "spotlight",
+			"item": "theabyss:anti_infect_essence",
+			"title": "Anti Infect Essence",
+			"link_recipe":false,
+			"text": "The Anti Infect Essence is a lifesaving tool for anyone venturing into the treacherous Abyss dimension. The air in this realm is filled with poisonous spores that can cause persistent diseases and lead to a slow and painful death. To survive, you'll need to quickly craft two to four of these essences to protect yourself from infection. Don't let the poisonous air of the Abyss claim another victim - arm yourself with the Anti Infect Essence and breathe easy."
+		},
+		{
+			"type": "text",
+			"title": "Crafting",
+			"text": "The Anti Infect Essence is a powerful remedy that can be crafted using a Somnium Infuser. To create this essential potion, you'll need to harness the energy of loran and the mysterious substance known as somnium. Whether you're facing down deadly spores or seeking protection from other dangers in the Abyss, this essence is sure to come in handy on your journey."
+		},
+		{
+			"type": "theabyss:infuser_recipes",
+			"heading": "Recipe",
+			"somnium": "theabyss:somnium",
+			"energy": "theabyss:loran_energy",
+			"input1": "theabyss:rotten_flesh",
+			"input2": "theabyss:rotten_flesh",
+			"input3": "theabyss:rotten_flesh",
+			"input4": "theabyss:rotten_flesh",
+			"text1": "Place Somnium and loran energy in the upper input slots.",
+			"text2": "To craft Anti Infection, place the required items in the test tubes on the left and right."
+				},
+
+		{
+				"type": "image",
+				"border": true,
+					"title": "Infuser GUI",
+				"images": [
+						"theabyss:textures/guide/infuser/somnium_usage.png"
+				]
+		}
+	]
+}

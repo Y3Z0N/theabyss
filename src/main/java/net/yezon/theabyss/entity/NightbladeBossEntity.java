@@ -1,11 +1,10 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.NightbladeBossDodgeOnHurtEvent;
-import net.yezon.theabyss.events.NightbladeBossDiesEvent;
-import net.yezon.theabyss.events.NightBladeMusicOnSpawnEvent;
-import net.yezon.theabyss.events.NightBladeBossAbilityEvent;
-import net.yezon.theabyss.init.TheabyssModParticleTypes;
+import net.yezon.theabyss.events.NightbladeBossDodgeOnHurtevent;
+import net.yezon.theabyss.events.NightbladeBossDiesevent;
+import net.yezon.theabyss.events.NightBladeMusicOnSpawnevent;
+import net.yezon.theabyss.events.NightBladeBossAbilityevent;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -34,7 +33,6 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
@@ -45,7 +43,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.core.particles.SimpleParticleType;
 
 import javax.annotation.Nullable;
 
@@ -79,7 +76,7 @@ public class NightbladeBossEntity extends Monster {
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
-				return (double) (4.0 + entity.getBbWidth() * entity.getBbWidth());
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
@@ -115,7 +112,7 @@ public class NightbladeBossEntity extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		NightbladeBossDodgeOnHurtEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		NightbladeBossDodgeOnHurtevent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 		if (source.getDirectEntity() instanceof AbstractArrow)
 			return false;
 		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)
@@ -146,21 +143,21 @@ public class NightbladeBossEntity extends Monster {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		NightbladeBossDiesEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		NightbladeBossDiesevent.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason,
 			@Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		NightBladeMusicOnSpawnEvent.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		NightBladeMusicOnSpawnevent.execute(world, this.getX(), this.getY(), this.getZ(), this);
 		return retval;
 	}
 
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		NightBladeBossAbilityEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		NightBladeBossAbilityevent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override
@@ -184,24 +181,6 @@ public class NightbladeBossEntity extends Monster {
 	public void customServerAiStep() {
 		super.customServerAiStep();
 		this.bossInfo.setProgress(this.getHealth() / this.getMaxHealth());
-	}
-
-	public void aiStep() {
-		super.aiStep();
-		double x = this.getX();
-		double y = this.getY();
-		double z = this.getZ();
-		Entity entity = this;
-		Level world = this.level;
-		for (int l = 0; l < 1; ++l) {
-			double x0 = x + random.nextFloat();
-			double y0 = y + random.nextFloat();
-			double z0 = z + random.nextFloat();
-			double dx = (random.nextFloat() - 0.5D) * 0.5D;
-			double dy = (random.nextFloat() - 0.5D) * 0.5D;
-			double dz = (random.nextFloat() - 0.5D) * 0.5D;
-			world.addParticle((SimpleParticleType) (TheabyssModParticleTypes.END_SWORD_PT.get()), x0, y0, z0, dx, dy, dz);
-		}
 	}
 
 	public static void init() {

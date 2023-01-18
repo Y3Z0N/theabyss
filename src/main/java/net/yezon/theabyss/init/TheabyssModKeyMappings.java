@@ -1,5 +1,5 @@
 
-
+  
 package net.yezon.theabyss.init;
 
 import org.lwjgl.glfw.GLFW;
@@ -102,6 +102,7 @@ public class TheabyssModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping ABIL_DEBUG = new KeyMapping("key.theabyss.abil_debug", GLFW.GLFW_KEY_DOWN, "key.categories.misc");
 	private static long GHOST_ATTACK_LASTPRESS = 0;
 	private static long GHOST_FIRE_ATTACK_LASTPRESS = 0;
 	private static long GHOST_DEACTIVATE_LASTPRESS = 0;
@@ -113,6 +114,7 @@ public class TheabyssModKeyMappings {
 		event.register(GHOST_DEACTIVATE);
 		event.register(FRIENDLEY_FIRE_A);
 		event.register(FRIENDLEY_FIRE_B);
+		event.register(ABIL_DEBUG);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})

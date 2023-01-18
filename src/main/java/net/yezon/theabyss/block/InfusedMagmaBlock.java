@@ -20,7 +20,7 @@ import java.util.Collections;
 
 public class InfusedMagmaBlock extends Block {
 	public InfusedMagmaBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).lightLevel(s -> 3).requiresCorrectToolForDrops()
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).lightLevel(s -> 6).requiresCorrectToolForDrops()
 				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
 	}
 

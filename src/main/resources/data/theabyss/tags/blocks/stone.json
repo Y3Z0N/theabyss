@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "theabyss:stone",
+    "theabyss:cobble_stone",
+    "theabyss:dark_stone",
+    "theabyss:stone_rackle"
+  ]
+}

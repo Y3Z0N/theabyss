@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "theabyss:blocks/dirt_vigilant",
+    "up": "theabyss:blocks/grass_top_vigilant",
+    "north": "theabyss:blocks/grass_sides_vigilant",
+    "east": "theabyss:blocks/grass_sides_vigilant",
+    "south": "theabyss:blocks/grass_sides_vigilant",
+    "west": "theabyss:blocks/grass_sides_vigilant",
+    "particle": "theabyss:blocks/dirt_vigilant"
+  },
+  "render_type": "solid"
+}

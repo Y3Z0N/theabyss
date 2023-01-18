@@ -13,7 +13,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.Registry;
 import net.minecraft.core.BlockPos;
 
-public class ApplyPocketPortEvent {
+public class ApplyPocketPortevent {
 	public static void execute(LevelAccessor world) {
 		if (world instanceof ServerLevel _origLevel) {
 			LevelAccessor _worldorig = world;

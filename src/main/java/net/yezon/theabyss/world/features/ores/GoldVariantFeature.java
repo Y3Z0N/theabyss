@@ -36,10 +36,10 @@ public class GoldVariantFeature extends OreFeature {
 		FEATURE = new GoldVariantFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:gold_variant", FEATURE,
 				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()),
-						TheabyssModBlocks.GOLD_VARIANT.get().defaultBlockState())), 15));
+						TheabyssModBlocks.GOLD_VARIANT.get().defaultBlockState())), 8));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:gold_variant", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(2), InSquarePlacement.spread(),
-						HeightRangePlacement.uniform(VerticalAnchor.absolute(20), VerticalAnchor.absolute(50)), BiomeFilter.biome()));
+				List.of(CountPlacement.of(1), InSquarePlacement.spread(),
+						HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(-30)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 

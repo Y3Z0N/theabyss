@@ -37,8 +37,8 @@ public class GarniteOreFeature extends OreFeature {
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:garnite_ore", FEATURE,
 				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()),
 						TheabyssModBlocks.GARNITE_ORE.get().defaultBlockState())), 4));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:garnite_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(3), InSquarePlacement.spread(),
-				HeightRangePlacement.uniform(VerticalAnchor.absolute(5), VerticalAnchor.absolute(12)), BiomeFilter.biome()));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:garnite_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(2), InSquarePlacement.spread(),
+				HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(-20)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 

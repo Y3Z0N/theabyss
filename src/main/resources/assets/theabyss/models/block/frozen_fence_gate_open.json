@@ -1,7 +1,7 @@
 {
   "parent": "block/template_fence_gate_open",
   "textures": {
-    "texture": "theabyss:blocks/frozen_planks"
+    "texture": "theabyss:blocks/frost_planks"
   },
   "render_type": "solid"
 }

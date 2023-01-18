@@ -166,6 +166,8 @@ public class TheabyssModVariables {
 			clone.Freeze = original.Freeze;
 			clone.CavernaCrystalResearch = original.CavernaCrystalResearch;
 			clone.AurelCrystalResearch = original.AurelCrystalResearch;
+			clone.HolyPlayer = original.HolyPlayer;
+			clone.ConfigBook = original.ConfigBook;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -437,6 +439,8 @@ public class TheabyssModVariables {
 		public double Freeze = 0;
 		public boolean CavernaCrystalResearch = false;
 		public boolean AurelCrystalResearch = false;
+		public boolean HolyPlayer = false;
+		public boolean ConfigBook = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -532,6 +536,8 @@ public class TheabyssModVariables {
 			nbt.putDouble("Freeze", Freeze);
 			nbt.putBoolean("CavernaCrystalResearch", CavernaCrystalResearch);
 			nbt.putBoolean("AurelCrystalResearch", AurelCrystalResearch);
+			nbt.putBoolean("HolyPlayer", HolyPlayer);
+			nbt.putBoolean("ConfigBook", ConfigBook);
 			return nbt;
 		}
 
@@ -624,6 +630,8 @@ public class TheabyssModVariables {
 			Freeze = nbt.getDouble("Freeze");
 			CavernaCrystalResearch = nbt.getBoolean("CavernaCrystalResearch");
 			AurelCrystalResearch = nbt.getBoolean("AurelCrystalResearch");
+			HolyPlayer = nbt.getBoolean("HolyPlayer");
+			ConfigBook = nbt.getBoolean("ConfigBook");
 		}
 	}
 
@@ -736,6 +744,8 @@ public class TheabyssModVariables {
 					variables.Freeze = message.data.Freeze;
 					variables.CavernaCrystalResearch = message.data.CavernaCrystalResearch;
 					variables.AurelCrystalResearch = message.data.AurelCrystalResearch;
+					variables.HolyPlayer = message.data.HolyPlayer;
+					variables.ConfigBook = message.data.ConfigBook;
 				}
 			});
 			context.setPacketHandled(true);

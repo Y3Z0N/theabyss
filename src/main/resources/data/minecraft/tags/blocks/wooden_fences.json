@@ -4,11 +4,9 @@
     "theabyss:jungle_fence",
     "theabyss:blaru_fence",
     "theabyss:slimed_fence",
-    "theabyss:roggen_fence",
-    "theabyss:ruma_fence",
     "theabyss:sal_fence",
-    "theabyss:tantra_fence",
     "theabyss:frozen_fence",
-    "theabyss:bog_fence"
+    "theabyss:bog_fence",
+    "theabyss:vigilant_fence"
   ]
 }

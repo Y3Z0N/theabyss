@@ -1,0 +1,49 @@
+{
+	"name": "Somnium Usage",
+	"icon": "theabyss:somnium_upgrade",
+"category": "theabyss:alchemy",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:somnium_upgrade",
+	"title": "Somnium Usage Upgrade",
+	"link_recipe": false,
+	"text": "The Somnium Usage Upgrade essence is a powerful tool that allows the user to conserve energy when using spells, artifacts, or rings. This essence can be consumed 3 to 5 times to maximize its effectiveness and help the user endure longer in battle or other situations. "
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "The Somnium Usage Upgrade can be crafted in a Somnium Infuser using loran energy and somnium as ingredients."
+},
+
+{
+	"type": "theabyss:infuser_recipes",
+	"heading": "Recipe",
+	"somnium": "theabyss:somnium",
+	"energy": "theabyss:loran_energy",
+	"input1": "theabyss:roka_horn",
+	"input2": "theabyss:node_shard",
+	"input3": "theabyss:phantom_soul_item",
+	"input4": "theabyss:soul_heart",
+	"text1": "Place Somnium and loran energy in the upper input slots.",
+	"text2": "To craft Somnium Usage Uprgade, place the required items in the test tubes on the left and right."
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/somnium_usage.png"
+		]
+}
+	]
+	}

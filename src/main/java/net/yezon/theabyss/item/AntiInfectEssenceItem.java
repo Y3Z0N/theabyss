@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.AntiInfectUseEvent;
+import net.yezon.theabyss.events.AntiInfectUseevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -43,7 +43,7 @@ public class AntiInfectEssenceItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		AntiInfectUseEvent.execute(entity);
+		AntiInfectUseevent.execute(entity);
 		return retval;
 	}
 }

@@ -1,10 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": [
-    "theabyss:mud_plains",
-    "theabyss:blue_jungle",
-    "theabyss:blue_forest"
-  ],
+  "biomes": "theabyss:mud_plains",
   "features": "theabyss:roma_mud_2",
   "step": "underground_ores"
 }

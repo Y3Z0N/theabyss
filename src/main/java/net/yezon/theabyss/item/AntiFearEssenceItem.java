@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.AntiFearEssenceEffectEvent;
+import net.yezon.theabyss.events.AntiFearEssenceEffectevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -53,7 +53,7 @@ public class AntiFearEssenceItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		AntiFearEssenceEffectEvent.execute(entity);
+		AntiFearEssenceEffectevent.execute(entity);
 		return retval;
 	}
 }

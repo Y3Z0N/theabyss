@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "theabyss:blocks/florite_ore",
-    "particle": "theabyss:blocks/florite_ore"
-  },
-  "render_type": "solid"
-}

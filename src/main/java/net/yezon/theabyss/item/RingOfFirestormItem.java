@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfFirestormEvent;
+import net.yezon.theabyss.events.ApplyRingOfFirestormevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -54,14 +54,14 @@ public void appendHoverText(ItemStack itemstack, Level world, List<Component> li
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyRingOfFirestormEvent.execute(world, x, y, z, entity, itemstack);
+		ApplyRingOfFirestormevent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		super.useOn(context);
-		ApplyRingOfFirestormEvent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
+		ApplyRingOfFirestormevent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
 				context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
 		return InteractionResult.SUCCESS;
 	}

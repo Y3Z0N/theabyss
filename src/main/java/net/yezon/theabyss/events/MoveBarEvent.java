@@ -5,7 +5,7 @@ import net.yezon.theabyss.network.TheabyssModVariables;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 
-public class MoveBarEvent {
+public class MoveBarevent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

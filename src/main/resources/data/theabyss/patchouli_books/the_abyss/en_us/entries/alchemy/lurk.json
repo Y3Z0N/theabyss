@@ -1,0 +1,47 @@
+{
+	"name": "Lurker Juice",
+	"icon": "theabyss:lurker_juice",
+"category": "theabyss:alchemy",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:lurker_juice",
+	"title": "Lurker Juice",
+	"link_recipe": false,
+	"text": "The Lurker Juice is a potent potion that enhances the user's endurance and jumping abilities. It is easy to craft and provides quick results, but the effects do not last long. Use it wisely to gain an edge in battle or exploration. "
+	},
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "The Lurker Juice can be crafted in a Somnium Infuser using loran energy and somnium as ingredients."
+},
+{
+	"type": "theabyss:infuser_recipes",
+	"heading": "Recipe",
+	"somnium": "theabyss:somnium",
+	"energy": "theabyss:loran_energy",
+	"input1": "theabyss:lurker_sobber",
+	"input2": "theabyss:lurker_sobber",
+	"input3": "theabyss:lurker_sobber",
+	"input4": "theabyss:lurker_sobber",
+	"text1": "Place Somnium and loran energy in the upper input slots.",
+	"text2": "To craft Lurker Juice, place the required items in the test tubes on the left and right."
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/somnium_usage.png"
+		]
+}
+	]
+	}

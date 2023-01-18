@@ -10,7 +10,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.server.level.ServerPlayer;
 
-public class AfterLifePotionEndEvent {
+public class AfterLifePotionEndevent {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;

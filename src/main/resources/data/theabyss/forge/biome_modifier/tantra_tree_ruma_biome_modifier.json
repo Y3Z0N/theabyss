@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "theabyss:fungal_forest",
-  "features": "theabyss:tantra_tree_ruma",
-  "step": "surface_structures"
-}

@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Firestorm",
+	"icon": "theabyss:ring_of_firestorm",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_firestorm",
+	"title": "Ring Of Firestorm",
+	"link_recipe": false,
+	"text": "Unleash the fury of the elements with this incredible ring! It allows you to summon a raging firestorm that will deal damage to any entity in its path. But be warned: such a powerful ability comes at a steep cost of 80.0 somnium. Do you have what it takes to wield the power of the inferno?"
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_firestrike",
+	"input1": "theabyss:crimson_crystal_shard",
+	"input2": "minecraft:blaze_rod",
+	"input3": "theabyss:crimson_crystal_shard",
+	"input4": "minecraft:blaze_rod",
+	"input5": "theabyss:crimson_crystal_shard",
+	"input6": "minecraft:blaze_rod",
+	"input7": "theabyss:crimson_crystal_shard",
+	"input8": "minecraft:blaze_rod",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

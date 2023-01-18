@@ -68,7 +68,7 @@ public class ExtractorScreen extends AbstractContainerScreen<ExtractorMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Extractor", 6, 7, -3342388);
+		this.font.draw(poseStack, Component.translatable("gui.theabyss.extractor.label_extractor"), 6, 7, -3342388);
 	}
 
 	@Override

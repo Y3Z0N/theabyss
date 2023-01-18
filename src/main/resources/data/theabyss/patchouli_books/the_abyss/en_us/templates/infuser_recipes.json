@@ -1,0 +1,82 @@
+{
+  "components": [
+    {
+      "type": "patchouli:header",
+      "text": "#heading",
+      "x": -1,
+      "y": -1
+    },
+    {
+      "type": "patchouli:image",
+      "image": "theabyss:textures/guide/infuser/infuser_overlay.png",
+      "x": 5,
+      "y": 72,
+      "width": 101,
+      "height": 26,
+      "u": 0,
+      "v": 0
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#somnium",
+      "framed": "true",
+    "link_recipe": false,
+      "x": 10,
+      "y": 17
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#energy",
+      "framed": "true",
+    "link_recipe": false,
+      "x": 60,
+      "y": 17
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input1",
+      "framed": "false",
+	  "link_recipe": false,
+      "x": 10,
+      "y": 77
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input2",
+      "framed": "false",
+	  "link_recipe": false,
+      "x": 35,
+      "y": 77
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input3",
+      "framed": "false",
+	  "link_recipe": false,
+      "x": 60,
+      "y": 77
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input4",
+      "framed": "false",
+	  "link_recipe": false,
+      "x": 85,
+      "y": 77
+    },
+    {
+      "type": "patchouli:text",
+      "text": "#text1",
+    "x": 1,
+      "y": 40,
+    "max_width": 115
+  },
+    {
+      "type": "patchouli:text",
+      "text": "#text2",
+	  "x": 1,
+      "y": 100,
+	  "max_width": 115
+    }
+  ]
+}

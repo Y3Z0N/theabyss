@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfBlackstrikeEvent;
+import net.yezon.theabyss.events.ApplyRingOfBlackstrikeevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -55,14 +55,14 @@ list.add(Component.literal("\uEF02 40.0 \uEF04 100.0 \uEF03 Right Click"));
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyRingOfBlackstrikeEvent.execute(world, x, y, z, entity, itemstack);
+		ApplyRingOfBlackstrikeevent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		super.useOn(context);
-		ApplyRingOfBlackstrikeEvent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
+		ApplyRingOfBlackstrikeevent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
 				context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
 		return InteractionResult.SUCCESS;
 	}

@@ -36,9 +36,9 @@ public class LoranOreFeature extends OreFeature {
 		FEATURE = new LoranOreFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:loran_ore", FEATURE,
 				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()),
-						TheabyssModBlocks.LORAN_ORE.get().defaultBlockState())), 7));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:loran_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(25), InSquarePlacement.spread(),
-				HeightRangePlacement.uniform(VerticalAnchor.absolute(40), VerticalAnchor.absolute(200)), BiomeFilter.biome()));
+						TheabyssModBlocks.LORAN_ORE.get().defaultBlockState())), 2));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:loran_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(1), InSquarePlacement.spread(),
+				HeightRangePlacement.uniform(VerticalAnchor.absolute(-15), VerticalAnchor.absolute(0)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 

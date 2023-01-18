@@ -1,0 +1,52 @@
+{
+	"name": "Ring Of Home",
+	"icon": "theabyss:ring_of_home",
+"category": "theabyss:spells",
+"advancement": "minecraft:adventure/sleep_in_bed",
+
+	"priority":false,
+	"secret":false,
+	"read_by_default":false,
+
+
+	"pages": [
+	{
+	"type": "spotlight",
+	"item": "theabyss:ring_of_home",
+	"title": "Ring Of Home",
+	"link_recipe": false,
+	"text": "With this handy ring, you have the ability to instantly transport yourself back to your respawn point. But first, you'll need to set your spawn point by sleeping in a bed. This ring can only be used in the Overworld, and it requires 50.0 somnium to activate. Are you ready to make a quick escape from danger?"
+	},
+
+	{
+	"type": "text",
+	"title": "Crafting",
+	"text": "Embark on a journey of magic and creation with this special artifact! To craft it, you'll need to harness the power of the Arcane - a mysterious and ancient force that holds the secrets of the universe. With it, you'll be able to bring this artifact to life and unleash its full magical potential. So why wait? Gather your materials and begin crafting this mystical object today!"
+},
+
+{
+	"type": "theabyss:arcane_recipes",
+	"heading": "Recipe",
+	"ring": "theabyss:ring_of_ring",
+	"input1": "minecraft:white_bed",
+	"input2": "theabyss:ender_crystal_shard",
+	"input3": "minecraft:white_bed",
+	"input4": "theabyss:ender_crystal_shard",
+	"input5": "minecraft:white_bed",
+	"input6": "theabyss:ender_crystal_shard",
+	"input7": "minecraft:white_bed",
+	"input8": "theabyss:ender_crystal_shard",
+	"text1": "-",
+	"text2": "-"
+		},
+
+{
+		"type": "image",
+		"border": true,
+			"title": "Infuser GUI",
+		"images": [
+				"theabyss:textures/guide/infuser/arcane_usage.png"
+		]
+}
+	]
+	}

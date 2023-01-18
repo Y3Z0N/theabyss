@@ -1,7 +1,9 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.EnderLanternCheckEvent;
+import org.checkerframework.checker.units.qual.s;
+
+import net.yezon.theabyss.events.EnderLanternCheckevent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -39,6 +41,11 @@ public class EnderLanternBlock extends Block {
 	}
 
 	@Override
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
+	}
+
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 
 		return Shapes.or(box(6, 0, 6, 10, 9, 10), box(5, 0, 5, 11, 7, 11));
@@ -56,13 +63,13 @@ public class EnderLanternBlock extends Block {
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
 		world.scheduleTick(pos, this, 10);
-		EnderLanternCheckEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		EnderLanternCheckevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		EnderLanternCheckEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		EnderLanternCheckevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override
@@ -72,7 +79,7 @@ public class EnderLanternBlock extends Block {
 		int y = pos.getY();
 		int z = pos.getZ();
 
-		EnderLanternCheckEvent.execute(world, x, y, z);
+		EnderLanternCheckevent.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 10);
 	}
 }

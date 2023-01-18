@@ -1,22 +1,7 @@
 {
-  "parent": "theabyss:block/mortar_and_pestle",
-  "display": {
-    "thirdperson": {
-      "rotation": [
-        10,
-        -45,
-        170
-      ],
-      "translation": [
-        0,
-        1.5,
-        -2.75
-      ],
-      "scale": [
-        0.375,
-        0.375,
-        0.375
-      ]
-    }
-  }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "theabyss:items/mortar_and_pestle"
+  },
+  "render_type": "translucent"
 }

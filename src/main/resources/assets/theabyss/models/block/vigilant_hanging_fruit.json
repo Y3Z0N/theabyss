@@ -1,0 +1,8 @@
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "theabyss:blocks/hanging_plant_vigilant",
+    "particle": "theabyss:blocks/hanging_plant_vigilant"
+  },
+  "render_type": "cutout"
+}

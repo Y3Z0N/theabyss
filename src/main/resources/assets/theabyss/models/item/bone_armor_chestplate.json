@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "theabyss:items/bone_chestplate_copy"
+    "layer0": "theabyss:items/bone_chestplate"
   }
 }

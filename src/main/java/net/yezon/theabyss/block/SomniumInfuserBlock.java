@@ -4,12 +4,9 @@ package net.yezon.theabyss.block;
 import org.checkerframework.checker.units.qual.s;
 
 import net.yezon.theabyss.world.inventory.InfuserMenu;
-import net.yezon.theabyss.init.TheabyssModParticleTypes;
 import net.yezon.theabyss.block.entity.SomniumInfuserBlockEntity;
 
 import net.minecraftforge.network.NetworkHooks;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -33,13 +30,10 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Containers;
-import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.Minecraft;
 
 import java.util.List;
 import java.util.Collections;
@@ -66,6 +60,11 @@ public class SomniumInfuserBlock extends Block
 	}
 
 	@Override
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
+	}
+
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 
 		return Shapes.or(box(0, 0, 0, 16, 2, 16), box(7, 0, 7, 9, 14, 9));
@@ -77,22 +76,6 @@ public class SomniumInfuserBlock extends Block
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
 		return Collections.singletonList(new ItemStack(this, 1));
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	@Override
-	public void animateTick(BlockState blockstate, Level world, BlockPos pos, RandomSource random) {
-		super.animateTick(blockstate, world, pos, random);
-		Player entity = Minecraft.getInstance().player;
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		for (int l = 0; l < 1; ++l) {
-			double x0 = x + 0.5 + (random.nextFloat() - 0.5) * 0.0999999985098839D;
-			double y0 = y + 1.2 + (random.nextFloat() - 0.5) * 0.0999999985098839D;
-			double z0 = z + 0.5 + (random.nextFloat() - 0.5) * 0.0999999985098839D;
-			world.addParticle((SimpleParticleType) (TheabyssModParticleTypes.END_SWORD_PT.get()), x0, y0, z0, 0, 0, 0);
-		}
 	}
 
 	@Override
