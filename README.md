@@ -1,4 +1,4 @@
-# The abyss: The Other Side 1.16.5 - 1.19.X
+# The Abyss: The Other Side 1.16.5 - 1.19.X
 The abyss II - 2.X.X is a work in progress rewrite of the original "The abyss" mod for Minecraft versions 1.16.5 to 1.19.X.
 
 Currently under development, The Abyss II aims to improve upon the original mod with new features and improved functionality.
