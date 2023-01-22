@@ -17,8 +17,8 @@ plugins {
 
 
 version = '1.0'
-group = 'com.y4z0n.theabyss'
-archivesBaseName = 'theabyss'
+group = 'com.y3z0n.theabyss'
+archivesBaseName = 'TheAbyss'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
