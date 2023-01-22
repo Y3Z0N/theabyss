@@ -1,29 +1,38 @@
-minecraft {
-  runs {
-      client {
-          property 'mixin.env.remapRefMap', 'true'
-          property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-      }
-  }
-}
 repositories {
-  maven {
-    url = "https://maven.blamejared.com"
-  }
+    maven {
+        url = "https://maven.blamejared.com"
+    }
+
+    maven {
+        url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+    }
+
+    maven {
+        url = "https://cursemaven.com"
+    }
+
+    maven {
+        // location of the maven that hosts JEI files since January 2023
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/mezz/jei/"
+    }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
 }
 
 dependencies {
-  compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77:api")
-  runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77")
-}
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77:api")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77")
+    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.39')
 
-repositories {
-  maven {
-      url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
-  }
-}
+    runtimeOnly(fg.deobf("curse.maven:ferritecore-429235:4117906"))
+    runtimeOnly(fg.deobf("curse.maven:lazy-dfu-forge-460819:4327266"))
 
-dependencies {
-  implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.39')
+    compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))
+    compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))
+    // at runtime, use the full JEI jar for Forge
+    runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
 }
-
