@@ -58,7 +58,6 @@ public class ArcaneButtonMessage {
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
 		Level world = entity.level;
-		HashMap guistate = ArcaneMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
@@ -70,6 +69,6 @@ public class ArcaneButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		TheabyssMod.addNetworkMessage(ArcaneButtonMessage.class, ArcaneButtonMessage::buffer, ArcaneButtonMessage::new, ArcaneButtonMessage::handler);
+		//TheabyssMod.addNetworkMessage(ArcaneButtonMessage.class, ArcaneButtonMessage::buffer, ArcaneButtonMessage::new, ArcaneButtonMessage::handler);
 	}
 }

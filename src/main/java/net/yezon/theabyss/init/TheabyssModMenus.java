@@ -24,7 +24,7 @@ public class TheabyssModMenus {
 			() -> IForgeMenuType.create(PatreonScreenMenu::new));
 	public static final RegistryObject<MenuType<InfuserMenu>> INFUSER = REGISTRY.register("infuser", () -> IForgeMenuType.create(InfuserMenu::new));
 	public static final RegistryObject<MenuType<CutterMenu>> CUTTER = REGISTRY.register("cutter", () -> IForgeMenuType.create(CutterMenu::new));
-	public static final RegistryObject<MenuType<ArcaneMenu>> ARCANE = REGISTRY.register("arcane", () -> IForgeMenuType.create(ArcaneMenu::new));
+	public static final RegistryObject<MenuType<ArcaneMenu>> ARCANE = REGISTRY.register("arcane", () -> new MenuType<>(ArcaneMenu::new));
 	public static final RegistryObject<MenuType<ResearchMenu>> RESEARCH = REGISTRY.register("research",
 			() -> IForgeMenuType.create(ResearchMenu::new));
 	public static final RegistryObject<MenuType<ExtractorMenu>> EXTRACTOR = REGISTRY.register("extractor",

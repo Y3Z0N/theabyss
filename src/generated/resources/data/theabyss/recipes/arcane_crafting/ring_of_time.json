@@ -1,0 +1,18 @@
+{
+  "type": "theabyss:arcane_crafting",
+  "core": {
+    "item": "theabyss:ring_of_freeze"
+  },
+  "mode": {
+    "first": {
+      "item": "theabyss:hollow_powder"
+    },
+    "name": "TWO_INGREDIENTS",
+    "second": {
+      "item": "theabyss:incorythe_gem"
+    }
+  },
+  "result": {
+    "item": "theabyss:ring_of_time"
+  }
+}

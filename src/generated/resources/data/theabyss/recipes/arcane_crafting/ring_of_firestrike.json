@@ -1,0 +1,18 @@
+{
+  "type": "theabyss:arcane_crafting",
+  "core": {
+    "item": "theabyss:ring_of_fire"
+  },
+  "mode": {
+    "first": {
+      "item": "theabyss:crimson_crystal_shard"
+    },
+    "name": "TWO_INGREDIENTS",
+    "second": {
+      "item": "minecraft:blaze_powder"
+    }
+  },
+  "result": {
+    "item": "theabyss:ring_of_firestrike"
+  }
+}

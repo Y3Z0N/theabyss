@@ -4,8 +4,8 @@ The abyss II - 2.X.X is a work in progress rewrite of the original "The abyss" m
 Currently under development, The Abyss II aims to improve upon the original mod with new features and improved functionality.
 
 ## Credits:
-- JEI Compatibility - KhanhPham05
-- The abyss - Y3Z0N / Y4Z0N
+- Recipes - KhanhPham05 / KhanhTypo
+- The Abyss Base Mod - Y3Z0N / Y4Z0N
 - Structures - Y3Z0N / TelephaticGrunt (thanks for all your tutorials!)
 
 ## License

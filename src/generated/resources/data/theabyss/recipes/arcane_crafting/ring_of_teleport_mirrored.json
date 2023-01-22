@@ -1,0 +1,18 @@
+{
+  "type": "theabyss:arcane_crafting",
+  "core": {
+    "item": "theabyss:ring_of_ring"
+  },
+  "mode": {
+    "first": {
+      "item": "theabyss:mutated_enderpearl"
+    },
+    "name": "TWO_INGREDIENTS",
+    "second": {
+      "item": "theabyss:ender_powder"
+    }
+  },
+  "result": {
+    "item": "theabyss:ring_of_teleport"
+  }
+}

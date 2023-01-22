@@ -1,44 +1,30 @@
  
 package net.yezon.theabyss;
 
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.network.NetworkRegistry;
+import net.minecraftforge.network.simple.SimpleChannel;
+import net.yezon.theabyss.init.*;
+import net.yezon.theabyss.recipes.AbyssRecipeType;
+import net.yezon.theabyss.recipes.AllRecipeTypes;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-
-import net.yezon.theabyss.init.TheabyssModTabs;
-import net.yezon.theabyss.init.TheabyssModSounds;
-import net.yezon.theabyss.init.TheabyssModParticleTypes;
-import net.yezon.theabyss.init.TheabyssModMobEffects;
-import net.yezon.theabyss.init.TheabyssModMenus;
-import net.yezon.theabyss.init.TheabyssModItems;
-import net.yezon.theabyss.init.TheabyssModFluids;
-import net.yezon.theabyss.init.TheabyssModFluidTypes;
-import net.yezon.theabyss.init.TheabyssModFeatures;
-import net.yezon.theabyss.init.TheabyssModEntities;
-import net.yezon.theabyss.init.TheabyssModBlocks;
-import net.yezon.theabyss.init.TheabyssModBlockEntities;
-import net.yezon.theabyss.init.TheabyssModBiomes;
-
-import net.minecraftforge.network.simple.SimpleChannel;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
-
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.FriendlyByteBuf;
-
-import java.util.function.Supplier;
-import java.util.function.Function;
-import java.util.function.BiConsumer;
-import java.util.List;
-import java.util.ArrayList;
 import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 @Mod("theabyss")
 public class TheabyssMod {
@@ -63,6 +49,8 @@ public class TheabyssMod {
 		TheabyssModParticleTypes.REGISTRY.register(bus);
 		TheabyssModMenus.REGISTRY.register(bus);
 		TheabyssModBiomes.REGISTRY.register(bus);
+
+		AbyssRecipeType.registerBus(bus);
 		GeckoLib.initialize();
 	}
 
@@ -80,7 +68,7 @@ public class TheabyssMod {
 	private static final List<AbstractMap.SimpleEntry<Runnable, Integer>> workQueue = new ArrayList<>();
 
 	public static void queueServerWork(int tick, Runnable action) {
-		workQueue.add(new AbstractMap.SimpleEntry(action, tick));
+		workQueue.add(new AbstractMap.SimpleEntry<>(action, tick));
 	}
 
 	@SubscribeEvent
@@ -95,5 +83,9 @@ public class TheabyssMod {
 			actions.forEach(e -> e.getKey().run());
 			workQueue.removeAll(actions);
 		}
+	}
+
+	public static ResourceLocation location(String path) {
+		return new ResourceLocation(MODID, path);
 	}
 }

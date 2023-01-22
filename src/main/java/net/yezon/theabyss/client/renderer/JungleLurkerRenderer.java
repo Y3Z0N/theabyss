@@ -13,7 +13,7 @@ import net.minecraft.client.renderer.RenderType;
 public class JungleLurkerRenderer extends MobRenderer<JungleLurkerEntity, Modelabyss_lurker<JungleLurkerEntity>> {
 	public JungleLurkerRenderer(EntityRendererProvider.Context context) {
 		super(context, new Modelabyss_lurker(context.bakeLayer(Modelabyss_lurker.LAYER_LOCATION)), 0.5f);
-		this.addLayer(new EyesLayer<JungleLurkerEntity, Modelabyss_lurker<JungleLurkerEntity>>(this) {
+		this.addLayer(new EyesLayer<>(this) {
 			@Override
 			public RenderType renderType() {
 				return RenderType.eyes(new ResourceLocation("theabyss:textures/entities/the_abyss_lurker_glow.png"));

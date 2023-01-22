@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "on_arcane_table_crafted": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "theabyss:arcane_workbench"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "on_arcane_table_crafted"
+    ]
+  ]
+}

@@ -14,7 +14,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
-public class UseDashevent {
+public class UseDashEvent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

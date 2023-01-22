@@ -24,7 +24,7 @@ import net.minecraft.server.level.ServerLevel;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class AfterLifeHandlerevent {
+public class AfterLifeHandlerEvent {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
 		if (event != null && event.getEntity() != null) {

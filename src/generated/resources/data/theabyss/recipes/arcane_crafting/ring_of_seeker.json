@@ -1,0 +1,18 @@
+{
+  "type": "theabyss:arcane_crafting",
+  "core": {
+    "item": "theabyss:ring_of_ring"
+  },
+  "mode": {
+    "first": {
+      "item": "theabyss:knight_ingot"
+    },
+    "name": "TWO_INGREDIENTS",
+    "second": {
+      "item": "theabyss:tenebris_powder"
+    }
+  },
+  "result": {
+    "item": "theabyss:ring_of_seeker"
+  }
+}

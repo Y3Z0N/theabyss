@@ -1,0 +1,15 @@
+{
+  "type": "theabyss:arcane_crafting",
+  "core": {
+    "item": "theabyss:ring_of_ring"
+  },
+  "mode": {
+    "ingredient": {
+      "item": "theabyss:hollow_crystal_shard"
+    },
+    "name": "FILL"
+  },
+  "result": {
+    "item": "theabyss:ring_of_invisibility"
+  }
+}
