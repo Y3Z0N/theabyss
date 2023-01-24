@@ -10,24 +10,24 @@
           "biome": "theabyss:mud_plains",
           "parameters": {
             "temperature": [
-              0.6,
-              0.75
+              0,
+              0.2
             ],
             "humidity": [
-              0.5,
-              0.6
+              -1,
+              -0.5
             ],
             "continentalness": [
-              0,
-              0.25
+              -0.11,
+              0
             ],
             "weirdness": [
-              0.9,
-              1.2
+              0.3,
+              0.5
             ],
             "erosion": [
-              0,
-              0.15
+              -0.5,
+              -0.4
             ],
             "depth": 0,
             "offset": 0
@@ -45,8 +45,8 @@
               0.25
             ],
             "continentalness": [
-              1,
-              2
+              0.8,
+              1.6
             ],
             "weirdness": [
               0,
@@ -64,24 +64,24 @@
           "biome": "theabyss:blue_jungle",
           "parameters": {
             "temperature": [
-              0.35,
-              0.4
+              -1,
+              0
             ],
             "humidity": [
-              -0.35,
-              0.2
+              -0.8,
+              -0.7
             ],
             "continentalness": [
               0,
               0.1
             ],
             "weirdness": [
-              0.8,
-              0.85
+              -1,
+              0.2
             ],
             "erosion": [
-              0,
-              0.15
+              -0.4,
+              -0.3
             ],
             "depth": 0,
             "offset": 0
@@ -91,24 +91,24 @@
           "biome": "theabyss:vigilant_forest",
           "parameters": {
             "temperature": [
-              -1.7,
-              -1.6
+              -0.9,
+              -0.9
             ],
             "humidity": [
               -0.2,
               -0.2
             ],
             "continentalness": [
-              -2,
-              -1
+              -0.5,
+              -0.2
             ],
             "weirdness": [
               -0.5,
-              0.1
+              1
             ],
             "erosion": [
-              0.05,
-              0.1
+              -0.4,
+              -0.35
             ],
             "depth": 0,
             "offset": 0
@@ -118,24 +118,24 @@
           "biome": "theabyss:plains",
           "parameters": {
             "temperature": [
-              0.25,
-              0.3
-            ],
-            "humidity": [
-              -0.3,
+              -1,
               0
             ],
+            "humidity": [
+              -1,
+              -0.5
+            ],
             "continentalness": [
-              0,
-              0.25
+              -0.11,
+              0
             ],
             "weirdness": [
-              0.85,
-              1
+              0.3,
+              0.5
             ],
             "erosion": [
-              0,
-              0.1
+              -0.5,
+              -0.4
             ],
             "depth": 0,
             "offset": 0
@@ -145,24 +145,24 @@
           "biome": "theabyss:slime_forest",
           "parameters": {
             "temperature": [
-              0.25,
-              0.3
+              0.1,
+              0.2
             ],
             "humidity": [
-              -0.45,
-              -0.35
+              0.1,
+              0.3
             ],
             "continentalness": [
-              0.15,
-              0.2
+              -0.7,
+              0.6
             ],
             "weirdness": [
               0,
               0.1
             ],
             "erosion": [
-              -1.5,
-              -1
+              -0.9,
+              -0.7
             ],
             "depth": 0,
             "offset": 0
@@ -172,8 +172,8 @@
           "biome": "theabyss:phantom_crate",
           "parameters": {
             "temperature": [
-              0.6,
-              0.7
+              0,
+              0.1
             ],
             "humidity": [
               0.6,
@@ -184,12 +184,12 @@
               0.25
             ],
             "weirdness": [
-              0.55,
-              0.6
+              0,
+              0.1
             ],
             "erosion": [
-              -1.25,
-              -0.1
+              -0.7,
+              -0.55
             ],
             "depth": 0,
             "offset": 0
@@ -207,16 +207,16 @@
               0.2
             ],
             "continentalness": [
-              0,
-              0.15
+              -0.2,
+              0.1
             ],
             "weirdness": [
               0.3,
               0.4
             ],
             "erosion": [
-              -1.5,
-              -1
+              -0.8,
+              -0.6
             ],
             "depth": 0,
             "offset": 0
@@ -226,7 +226,7 @@
     },
     "settings": {
       "name": "theabyss:the_abyss",
-      "sea_level": 32,
+      "sea_level": 40,
       "legacy_random_source": false,
       "disable_mob_generation": false,
       "noodle_caves_enabled": true,
