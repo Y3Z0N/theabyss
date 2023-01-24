@@ -2,7 +2,7 @@
 package net.yezon.theabyss.network;
 
 import net.yezon.theabyss.world.inventory.ResearchMenu;
-import net.yezon.theabyss.events.ResearchTableHandlerEvent;
+import net.yezon.theabyss.events.ResearchTableHandlerevent;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.network.NetworkEvent;
@@ -64,12 +64,13 @@ public class ResearchButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			ResearchTableHandlerEvent.execute(entity);
+			ResearchTableHandlerevent.execute(entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		TheabyssMod.addNetworkMessage(ResearchButtonMessage.class, ResearchButtonMessage::buffer, ResearchButtonMessage::new, ResearchButtonMessage::handler);
+		TheabyssMod.addNetworkMessage(ResearchButtonMessage.class, ResearchButtonMessage::buffer, ResearchButtonMessage::new,
+				ResearchButtonMessage::handler);
 	}
 }

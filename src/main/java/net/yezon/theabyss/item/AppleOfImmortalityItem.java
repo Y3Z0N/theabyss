@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.AppleOfImmortalityEffectEvent;
+import net.yezon.theabyss.events.AppleOfImmortalityEffectevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -18,9 +18,10 @@ import java.util.List;
 
 public class AppleOfImmortalityItem extends Item {
 	public AppleOfImmortalityItem() {
-		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(64).rarity(Rarity.RARE).food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.3f)
+		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(64).rarity(Rarity.RARE)
+				.food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.3f)
 
-				.build()));
+						.build()));
 	}
 
 	@Override
@@ -41,7 +42,7 @@ public class AppleOfImmortalityItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		AppleOfImmortalityEffectEvent.execute(entity);
+		AppleOfImmortalityEffectevent.execute(entity);
 		return retval;
 	}
 }

@@ -129,7 +129,8 @@ public class LaroFishEntity extends Squid {
 
 	public static void init() {
 		SpawnPlacements.register(TheabyssModEntities.LARO_FISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getBlockState(pos).is(Blocks.WATER) && world.getBlockState(pos.above()).is(Blocks.WATER)));
+				(entityType, world, reason, pos,
+						random) -> (world.getBlockState(pos).is(Blocks.WATER) && world.getBlockState(pos.above()).is(Blocks.WATER)));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

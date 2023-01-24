@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.FirestormOnPotionActiveEvent;
+import net.yezon.theabyss.events.FirestormOnPotionActiveevent;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -19,7 +19,7 @@ public class FirestormMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		FirestormOnPotionActiveEvent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		FirestormOnPotionActiveevent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 
 	@Override

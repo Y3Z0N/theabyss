@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfFireworkEvent;
+import net.yezon.theabyss.events.ApplyRingOfFireworkevent;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
@@ -46,7 +46,7 @@ public class RingOfFireworkItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyRingOfFireworkEvent.execute(world, x, y, z, entity, itemstack);
+		ApplyRingOfFireworkevent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 }

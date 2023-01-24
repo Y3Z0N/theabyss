@@ -31,7 +31,8 @@ public class VigilantBlueOuterLeavesBlock extends Block {
 	public static final DirectionProperty FACING = DirectionalBlock.FACING;
 
 	public VigilantBlueOuterLeavesBlock() {
-		super(BlockBehaviour.Properties.of(Material.WATER_PLANT).sound(SoundType.GRASS).strength(1f, 10f).lightLevel(s -> 8).noCollission().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
+		super(BlockBehaviour.Properties.of(Material.WATER_PLANT).sound(SoundType.GRASS).strength(1f, 10f).lightLevel(s -> 8).noCollission()
+				.noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
 				.isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
@@ -53,6 +54,7 @@ public class VigilantBlueOuterLeavesBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+
 		return switch (state.getValue(FACING)) {
 			default -> box(0, 0, 0, 16, 16, 2);
 			case NORTH -> box(0, 0, 14, 16, 16, 16);

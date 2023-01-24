@@ -34,13 +34,15 @@ public class SaturniaVersaFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new SaturniaVersaFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:saturnia_versa", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.SATURNIA_VERSA.get())), List.of(), 64));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:saturnia_versa", CONFIGURED_FEATURE, List.of(CountPlacement.of(1), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:saturnia_versa", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.SATURNIA_VERSA.get())), List.of(), 64));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:saturnia_versa", CONFIGURED_FEATURE, List.of(CountPlacement.of(1),
+				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")),
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(
+			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")),
 			ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:deleted_mod_element")));
 
 	public SaturniaVersaFeature() {

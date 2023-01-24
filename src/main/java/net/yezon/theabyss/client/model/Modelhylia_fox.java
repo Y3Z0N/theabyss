@@ -44,27 +44,44 @@ public class Modelhylia_fox<T extends Entity> extends EntityModel<T> {
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
-		PartDefinition mob_head = partdefinition.addOrReplaceChild("mob_head", CubeListBuilder.create().texOffs(0, 17).addBox(-4.0F, -2.0F, -6.0F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 16.0F, -3.0F));
-		PartDefinition cube_r1 = mob_head.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, -3.0F, -0.5F, 2.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)),
+		PartDefinition mob_head = partdefinition.addOrReplaceChild("mob_head",
+				CubeListBuilder.create().texOffs(0, 17).addBox(-4.0F, -2.0F, -6.0F, 8.0F, 6.0F, 6.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(0.0F, 16.0F, -3.0F));
+		PartDefinition cube_r1 = mob_head.addOrReplaceChild("cube_r1",
+				CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, -3.0F, -0.5F, 2.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(-3.0F, -1.0F, -2.5F, 0.0F, 0.0F, -0.3491F));
-		PartDefinition cube_r2 = mob_head.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, 17).addBox(-1.0F, -3.0F, -0.5F, 2.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)),
+		PartDefinition cube_r2 = mob_head.addOrReplaceChild("cube_r2",
+				CubeListBuilder.create().texOffs(0, 17).addBox(-1.0F, -3.0F, -0.5F, 2.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(3.0F, -1.0F, -2.5F, 0.0F, 0.0F, 0.3491F));
-		PartDefinition cube_r3 = mob_head.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(22, 15).addBox(-2.0F, 0.0F, -3.0F, 4.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)),
+		PartDefinition cube_r3 = mob_head.addOrReplaceChild("cube_r3",
+				CubeListBuilder.create().texOffs(22, 15).addBox(-2.0F, 0.0F, -3.0F, 4.0F, 2.0F, 3.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, 1.65F, -6.0F, 0.1745F, 0.0F, 0.0F));
-		PartDefinition right_leg2 = partdefinition.addOrReplaceChild("right_leg2", CubeListBuilder.create().texOffs(16, 29).addBox(-2.005F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-1.0F, 18.0F, 6.0F));
-		PartDefinition left_leg2 = partdefinition.addOrReplaceChild("left_leg2", CubeListBuilder.create().texOffs(8, 29).addBox(0.005F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(1.0F, 18.0F, 6.0F));
-		PartDefinition right_leg1 = partdefinition.addOrReplaceChild("right_leg1", CubeListBuilder.create().texOffs(0, 29).addBox(-2.005F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(-1.0F, 18.0F, -1.0F));
-		PartDefinition left_leg1 = partdefinition.addOrReplaceChild("left_leg1", CubeListBuilder.create().texOffs(26, 27).addBox(0.005F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(1.0F, 18.0F, -1.0F));
-		PartDefinition mob_tail = partdefinition.addOrReplaceChild("mob_tail", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 16.0F, 7.0F, 1.5708F, 0.0F, 0.0F));
-		PartDefinition cube_r4 = mob_tail.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(24, 0).addBox(-2.0F, 0.0F, -2.25F, 4.0F, 10.0F, 5.0F, new CubeDeformation(0.0F)),
+		PartDefinition right_leg2 = partdefinition.addOrReplaceChild("right_leg2",
+				CubeListBuilder.create().texOffs(16, 29).addBox(-2.005F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(-1.0F, 18.0F, 6.0F));
+		PartDefinition left_leg2 = partdefinition.addOrReplaceChild("left_leg2",
+				CubeListBuilder.create().texOffs(8, 29).addBox(0.005F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(1.0F, 18.0F, 6.0F));
+		PartDefinition right_leg1 = partdefinition.addOrReplaceChild("right_leg1",
+				CubeListBuilder.create().texOffs(0, 29).addBox(-2.005F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(-1.0F, 18.0F, -1.0F));
+		PartDefinition left_leg1 = partdefinition.addOrReplaceChild("left_leg1",
+				CubeListBuilder.create().texOffs(26, 27).addBox(0.005F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)),
+				PartPose.offset(1.0F, 18.0F, -1.0F));
+		PartDefinition mob_tail = partdefinition.addOrReplaceChild("mob_tail", CubeListBuilder.create(),
+				PartPose.offsetAndRotation(0.0F, 16.0F, 7.0F, 1.5708F, 0.0F, 0.0F));
+		PartDefinition cube_r4 = mob_tail.addOrReplaceChild("cube_r4",
+				CubeListBuilder.create().texOffs(24, 0).addBox(-2.0F, 0.0F, -2.25F, 4.0F, 10.0F, 5.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, -0.1745F, 0.0F, 0.0F));
-		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -3.0F, -3.0F, 6.0F, 11.0F, 6.0F, new CubeDeformation(0.0F)),
+		PartDefinition body = partdefinition.addOrReplaceChild("body",
+				CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -3.0F, -3.0F, 6.0F, 11.0F, 6.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, 16.0F, 0.0F, 1.5708F, 0.0F, 0.0F));
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue,
+			float alpha) {
 		mob_head.render(poseStack, buffer, packedLight, packedOverlay);
 		right_leg2.render(poseStack, buffer, packedLight, packedOverlay);
 		left_leg2.render(poseStack, buffer, packedLight, packedOverlay);

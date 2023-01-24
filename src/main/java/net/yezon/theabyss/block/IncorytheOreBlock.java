@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.GetIncorytheOreAdvEvent;
+import net.yezon.theabyss.events.GetIncorytheOreAdvevent;
 import net.yezon.theabyss.init.TheabyssModItems;
 
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -58,7 +58,7 @@ public class IncorytheOreBlock extends Block {
 	@Override
 	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		GetIncorytheOreAdvEvent.execute(entity);
+		GetIncorytheOreAdvevent.execute(entity);
 		return retval;
 	}
 }

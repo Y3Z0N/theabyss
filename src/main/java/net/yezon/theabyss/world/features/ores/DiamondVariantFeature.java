@@ -35,13 +35,16 @@ public class DiamondVariantFeature extends OreFeature {
 	public static Feature<?> feature() {
 		FEATURE = new DiamondVariantFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:diamond_variant", FEATURE,
-				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()), TheabyssModBlocks.DIAMOND_VARIANT.get().defaultBlockState())), 4));
+				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()),
+						TheabyssModBlocks.DIAMOND_VARIANT.get().defaultBlockState())), 4));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:diamond_variant", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(2), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-20)), BiomeFilter.biome()));
+				List.of(CountPlacement.of(2), InSquarePlacement.spread(),
+						HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-20)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public DiamondVariantFeature() {
 		super(OreConfiguration.CODEC);

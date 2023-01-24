@@ -38,14 +38,19 @@ public class IgnetarisVersaFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new IgnetarisVersaFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:ignetaris_versa", FEATURE,
-				FeatureUtils.simpleRandomPatchConfiguration(20, PlacementUtils.filtered(Feature.BLOCK_COLUMN, BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(TheabyssModBlocks.IGNETARIS_VERSA.get())),
-						BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.wouldSurvive(TheabyssModBlocks.IGNETARIS_VERSA.get().defaultBlockState(), BlockPos.ZERO)))));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:ignetaris_versa", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(10), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+				FeatureUtils.simpleRandomPatchConfiguration(20,
+						PlacementUtils.filtered(Feature.BLOCK_COLUMN,
+								BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4),
+										BlockStateProvider.simple(TheabyssModBlocks.IGNETARIS_VERSA.get())),
+								BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,
+										BlockPredicate.wouldSurvive(TheabyssModBlocks.IGNETARIS_VERSA.get().defaultBlockState(), BlockPos.ZERO)))));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:ignetaris_versa", CONFIGURED_FEATURE, List.of(CountPlacement.of(10),
+				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public IgnetarisVersaFeature() {
 		super(RandomPatchConfiguration.CODEC);

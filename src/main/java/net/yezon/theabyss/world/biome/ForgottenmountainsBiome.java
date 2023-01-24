@@ -16,8 +16,10 @@ import net.minecraft.core.particles.ParticleTypes;
 
 public class ForgottenmountainsBiome {
 	public static Biome createBiome() {
-		BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder().fogColor(-4131073).waterColor(-13421721).waterFogColor(-4737097).skyColor(-4131073).foliageColorOverride(-2688257).grassColorOverride(-3933953)
-				.ambientLoopSound(new SoundEvent(new ResourceLocation("theabyss:frost_world_ambience"))).backgroundMusic(new Music(new SoundEvent(new ResourceLocation("theabyss:the_abyss_music")), 12000, 24000, true))
+		BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder().fogColor(-4131073).waterColor(-13421721).waterFogColor(-4737097)
+				.skyColor(-4131073).foliageColorOverride(-2688257).grassColorOverride(-3933953)
+				.ambientLoopSound(new SoundEvent(new ResourceLocation("theabyss:frost_world_ambience")))
+				.backgroundMusic(new Music(new SoundEvent(new ResourceLocation("theabyss:the_abyss_music")), 12000, 24000, true))
 				.ambientParticle(new AmbientParticleSettings(ParticleTypes.ASH, 0.02f)).build();
 		BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder();
 		BiomeDefaultFeatures.addIcebergs(biomeGenerationSettings);
@@ -25,6 +27,7 @@ public class ForgottenmountainsBiome {
 		BiomeDefaultFeatures.addSurfaceFreezing(biomeGenerationSettings);
 		MobSpawnSettings.Builder mobSpawnInfo = new MobSpawnSettings.Builder();
 		mobSpawnInfo.addSpawn(MobCategory.AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.LIGHTNING_BOLT, 10, 1, 1));
-		return new Biome.BiomeBuilder().precipitation(Biome.Precipitation.SNOW).temperature(-1f).downfall(0.5f).specialEffects(effects).mobSpawnSettings(mobSpawnInfo.build()).generationSettings(biomeGenerationSettings.build()).build();
+		return new Biome.BiomeBuilder().precipitation(Biome.Precipitation.SNOW).temperature(-1f).downfall(0.5f).specialEffects(effects)
+				.mobSpawnSettings(mobSpawnInfo.build()).generationSettings(biomeGenerationSettings.build()).build();
 	}
 }

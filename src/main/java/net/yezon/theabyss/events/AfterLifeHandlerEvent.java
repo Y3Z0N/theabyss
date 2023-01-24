@@ -24,7 +24,7 @@ import net.minecraft.server.level.ServerLevel;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class AfterLifeHandlerEvent {
+public class AfterLifeHandlerevent {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
 		if (event != null && event.getEntity() != null) {
@@ -40,7 +40,9 @@ public class AfterLifeHandlerEvent {
 		if (entity == null)
 			return;
 		if (entity instanceof Player) {
-			if (entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.ARTIFACT_OF_AFTER_LIFE.get())) : false) {
+			if (entity instanceof Player _playerHasItem
+					? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.ARTIFACT_OF_AFTER_LIFE.get()))
+					: false) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}
@@ -52,13 +54,15 @@ public class AfterLifeHandlerEvent {
 					Entity _ent = entity;
 					_ent.teleportTo((x + Math.random() * Math.round(128)), y, (x + Math.random() * Math.round(128)));
 					if (_ent instanceof ServerPlayer _serverPlayer)
-						_serverPlayer.connection.teleport((x + Math.random() * Math.round(128)), y, (x + Math.random() * Math.round(128)), _ent.getYRot(), _ent.getXRot());
+						_serverPlayer.connection.teleport((x + Math.random() * Math.round(128)), y, (x + Math.random() * Math.round(128)),
+								_ent.getYRot(), _ent.getXRot());
 				}
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = new PlayerBodyEntity(TheabyssModEntities.PLAYER_BODY.get(), _level);
 					entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED,
+								null, null);
 					world.addFreshEntity(entityToSpawn);
 				}
 			}

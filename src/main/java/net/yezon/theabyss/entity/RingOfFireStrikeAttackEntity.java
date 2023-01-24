@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.RingOfFireStrikeParticleEvent;
-import net.yezon.theabyss.events.RingOfFireStrikeAttackProjectileHitsBlockEvent;
+import net.yezon.theabyss.events.RingOfFireStrikeParticleevent;
+import net.yezon.theabyss.events.RingOfFireStrikeAttackProjectileHitsBlockevent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -67,25 +67,28 @@ public class RingOfFireStrikeAttackEntity extends AbstractArrow implements ItemS
 	@Override
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
-		RingOfFireStrikeAttackProjectileHitsBlockEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		RingOfFireStrikeAttackProjectileHitsBlockevent.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override
 	public void onHitBlock(BlockHitResult blockHitResult) {
 		super.onHitBlock(blockHitResult);
-		RingOfFireStrikeAttackProjectileHitsBlockEvent.execute(this.level, blockHitResult.getBlockPos().getX(), blockHitResult.getBlockPos().getY(), blockHitResult.getBlockPos().getZ());
+		RingOfFireStrikeAttackProjectileHitsBlockevent.execute(this.level, blockHitResult.getBlockPos().getX(),
+				blockHitResult.getBlockPos().getY(), blockHitResult.getBlockPos().getZ());
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		RingOfFireStrikeParticleEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		RingOfFireStrikeParticleevent.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (this.inGround)
 			this.discard();
 	}
 
-	public static RingOfFireStrikeAttackEntity shoot(Level world, LivingEntity entity, RandomSource random, float power, double damage, int knockback) {
-		RingOfFireStrikeAttackEntity entityarrow = new RingOfFireStrikeAttackEntity(TheabyssModEntities.RING_OF_FIRE_STRIKE_ATTACK.get(), entity, world);
+	public static RingOfFireStrikeAttackEntity shoot(Level world, LivingEntity entity, RandomSource random, float power, double damage,
+			int knockback) {
+		RingOfFireStrikeAttackEntity entityarrow = new RingOfFireStrikeAttackEntity(TheabyssModEntities.RING_OF_FIRE_STRIKE_ATTACK.get(), entity,
+				world);
 		entityarrow.shoot(entity.getViewVector(1).x, entity.getViewVector(1).y, entity.getViewVector(1).z, power * 2, 0);
 		entityarrow.setSilent(true);
 		entityarrow.setCritArrow(false);
@@ -93,12 +96,14 @@ public class RingOfFireStrikeAttackEntity extends AbstractArrow implements ItemS
 		entityarrow.setKnockback(knockback);
 		entityarrow.setSecondsOnFire(100);
 		world.addFreshEntity(entityarrow);
-		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("")), SoundSource.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
+		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("")),
+				SoundSource.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
 		return entityarrow;
 	}
 
 	public static RingOfFireStrikeAttackEntity shoot(LivingEntity entity, LivingEntity target) {
-		RingOfFireStrikeAttackEntity entityarrow = new RingOfFireStrikeAttackEntity(TheabyssModEntities.RING_OF_FIRE_STRIKE_ATTACK.get(), entity, entity.level);
+		RingOfFireStrikeAttackEntity entityarrow = new RingOfFireStrikeAttackEntity(TheabyssModEntities.RING_OF_FIRE_STRIKE_ATTACK.get(), entity,
+				entity.level);
 		double dx = target.getX() - entity.getX();
 		double dy = target.getY() + target.getEyeHeight() - 1.1;
 		double dz = target.getZ() - entity.getZ();
@@ -109,7 +114,8 @@ public class RingOfFireStrikeAttackEntity extends AbstractArrow implements ItemS
 		entityarrow.setCritArrow(false);
 		entityarrow.setSecondsOnFire(100);
 		entity.level.addFreshEntity(entityarrow);
-		entity.level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("")), SoundSource.PLAYERS, 1, 1f / (RandomSource.create().nextFloat() * 0.5f + 1));
+		entity.level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("")),
+				SoundSource.PLAYERS, 1, 1f / (RandomSource.create().nextFloat() * 0.5f + 1));
 		return entityarrow;
 	}
 }

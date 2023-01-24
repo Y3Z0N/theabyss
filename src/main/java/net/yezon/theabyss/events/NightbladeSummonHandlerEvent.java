@@ -39,7 +39,7 @@ import javax.annotation.Nullable;
 import java.util.Map;
 
 @Mod.EventBusSubscriber
-public class NightbladeSummonHandlerEvent {
+public class NightbladeSummonHandlerevent {
 	@SubscribeEvent
 	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
 		if (event.getHand() != event.getEntity().getUsedItemHand())
@@ -54,7 +54,8 @@ public class NightbladeSummonHandlerEvent {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.EYE_OF_ABYSS.get() && TheabyssModBlocks.NIGHT_ALTAR.get() == (world.getBlockState(new BlockPos(x, y, z))).getBlock()) {
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.EYE_OF_ABYSS.get()
+				&& TheabyssModBlocks.NIGHT_ALTAR.get() == (world.getBlockState(new BlockPos(x, y, z))).getBlock()) {
 			if ((world.getBlockState(new BlockPos(x + 6, y + 5, z))).getBlock() == TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED.get()
 					&& (world.getBlockState(new BlockPos(x - 6, y + 5, z))).getBlock() == TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED.get()
 					&& (world.getBlockState(new BlockPos(x, y + 5, z + 6))).getBlock() == TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED.get()
@@ -95,9 +96,11 @@ public class NightbladeSummonHandlerEvent {
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.ender_eye.death")), SoundSource.NEUTRAL, 1, 1);
+						_level.playSound(null, new BlockPos(x, y, z),
+								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.ender_eye.death")), SoundSource.NEUTRAL, 1, 1);
 					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.ender_eye.death")), SoundSource.NEUTRAL, 1, 1, false);
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.ender_eye.death")),
+								SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				if ((world.getBlockState(new BlockPos(x + 6, y + 5, z))).getBlock() == TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED.get()
@@ -107,7 +110,8 @@ public class NightbladeSummonHandlerEvent {
 						&& (world.getBlockState(new BlockPos(x + 3, y + 4, z - 3))).getBlock() == TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED.get()
 						&& (world.getBlockState(new BlockPos(x + 3, y + 4, z + 3))).getBlock() == TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED.get()
 						&& (world.getBlockState(new BlockPos(x - 3, y + 4, z + 3))).getBlock() == TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED.get()
-						&& (world.getBlockState(new BlockPos(x - 3, y + 4, z - 3))).getBlock() == TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED.get()) {
+						&& (world.getBlockState(new BlockPos(x - 3, y + 4, z - 3))).getBlock() == TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED
+								.get()) {
 					TheabyssMod.queueServerWork(20, () -> {
 						world.setBlock(new BlockPos(x + 6, y + 5, z), TheabyssModBlocks.STONE_BRICK_PILLAR.get().defaultBlockState(), 3);
 						if (world instanceof ServerLevel _level) {
@@ -192,7 +196,8 @@ public class NightbladeSummonHandlerEvent {
 							Entity entityToSpawn = new NightbladeBossEntity(TheabyssModEntities.NIGHTBLADE_BOSS.get(), _level);
 							entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
 							if (entityToSpawn instanceof Mob _mobToSpawn)
-								_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+								_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()),
+										MobSpawnType.MOB_SUMMONED, null, null);
 							world.addFreshEntity(entityToSpawn);
 						}
 					});
@@ -241,9 +246,11 @@ public class NightbladeSummonHandlerEvent {
 			}
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
-					_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.fire.extinguish")), SoundSource.NEUTRAL, 1, 1);
+					_level.playSound(null, new BlockPos(x, y, z),
+							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.fire.extinguish")), SoundSource.NEUTRAL, 1, 1);
 				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.fire.extinguish")), SoundSource.NEUTRAL, 1, 1, false);
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.fire.extinguish")),
+							SoundSource.NEUTRAL, 1, 1, false);
 				}
 			}
 			if (entity instanceof LivingEntity _entity)

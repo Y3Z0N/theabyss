@@ -6,7 +6,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 
-public class AppleOfImmortalityEffectEvent {
+public class AppleOfImmortalityEffectevent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

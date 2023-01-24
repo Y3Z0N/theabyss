@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfPocketRoomEvent;
+import net.yezon.theabyss.events.ApplyRingOfPocketRoomevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -53,7 +53,7 @@ public void appendHoverText(ItemStack itemstack, Level world, List<Component> li
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyRingOfPocketRoomEvent.execute(world, x, y, z, entity, itemstack);
+		ApplyRingOfPocketRoomevent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 }

@@ -25,7 +25,8 @@ public class FireFlyParticleParticle extends TextureSheetParticle {
 			this.spriteSet = spriteSet;
 		}
 
-		public Particle createParticle(SimpleParticleType typeIn, ClientLevel worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
+		public Particle createParticle(SimpleParticleType typeIn, ClientLevel worldIn, double x, double y, double z, double xSpeed, double ySpeed,
+				double zSpeed) {
 			return new FireFlyParticleParticle(worldIn, x, y, z, xSpeed, ySpeed, zSpeed, this.spriteSet);
 		}
 	}
@@ -36,7 +37,7 @@ public class FireFlyParticleParticle extends TextureSheetParticle {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
 		this.setSize(5f, 5f);
-		this.quadSize *= 0.30000000000000004f;
+		this.quadSize *= 0.3f;
 		this.lifetime = (int) Math.max(1, 10 + (this.random.nextInt(4) - 2));
 		this.gravity = 0f;
 		this.hasPhysics = true;

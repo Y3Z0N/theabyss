@@ -15,13 +15,17 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 
-public class ApplyRingOfSeekerEvent {
+public class ApplyRingOfSeekerevent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.RING_OF_SEEKER.get())) : false) {
-			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Mana < 50
-					* (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade) {
+		if (entity instanceof Player _playerHasItem
+				? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.RING_OF_SEEKER.get()))
+				: false) {
+			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new TheabyssModVariables.PlayerVariables())).Mana < 50
+							* (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal((Component.translatable("ring.theabyss.low_energy").getString())), (true));
 			} else {
@@ -40,7 +44,8 @@ public class ApplyRingOfSeekerEvent {
 					entityToSpawn.setYBodyRot(0);
 					entityToSpawn.setYHeadRot(0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED,
+								null, null);
 					world.addFreshEntity(entityToSpawn);
 				}
 				if (world instanceof ServerLevel _level) {
@@ -49,7 +54,8 @@ public class ApplyRingOfSeekerEvent {
 					entityToSpawn.setYBodyRot(0);
 					entityToSpawn.setYHeadRot(0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED,
+								null, null);
 					world.addFreshEntity(entityToSpawn);
 				}
 				if (world instanceof ServerLevel _level) {
@@ -58,7 +64,8 @@ public class ApplyRingOfSeekerEvent {
 					entityToSpawn.setYBodyRot(0);
 					entityToSpawn.setYHeadRot(0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED,
+								null, null);
 					world.addFreshEntity(entityToSpawn);
 				}
 				if (world instanceof ServerLevel _level) {
@@ -67,7 +74,8 @@ public class ApplyRingOfSeekerEvent {
 					entityToSpawn.setYBodyRot(0);
 					entityToSpawn.setYHeadRot(0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED,
+								null, null);
 					world.addFreshEntity(entityToSpawn);
 				}
 				if (world instanceof ServerLevel _level) {
@@ -76,7 +84,8 @@ public class ApplyRingOfSeekerEvent {
 					entityToSpawn.setYBodyRot(0);
 					entityToSpawn.setYHeadRot(0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED,
+								null, null);
 					world.addFreshEntity(entityToSpawn);
 				}
 				if (world instanceof ServerLevel _level) {
@@ -85,7 +94,8 @@ public class ApplyRingOfSeekerEvent {
 					entityToSpawn.setYBodyRot(0);
 					entityToSpawn.setYHeadRot(0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED,
+								null, null);
 					world.addFreshEntity(entityToSpawn);
 				}
 				if (world instanceof ServerLevel _level) {
@@ -94,7 +104,8 @@ public class ApplyRingOfSeekerEvent {
 					entityToSpawn.setYBodyRot(0);
 					entityToSpawn.setYHeadRot(0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED,
+								null, null);
 					world.addFreshEntity(entityToSpawn);
 				}
 				if (world instanceof ServerLevel _level) {
@@ -103,12 +114,15 @@ public class ApplyRingOfSeekerEvent {
 					entityToSpawn.setYBodyRot(0);
 					entityToSpawn.setYHeadRot(0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
-						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED,
+								null, null);
 					world.addFreshEntity(entityToSpawn);
 				}
 				{
-					double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Mana
-							- 50 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade;
+					double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new TheabyssModVariables.PlayerVariables())).Mana
+							- 50 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade;
 					entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Mana = _setval;
 						capability.syncPlayerVariables(entity);

@@ -17,7 +17,8 @@ import java.util.Collections;
 
 public class FortisUltimaBlock extends FlowerBlock {
 	public FortisUltimaBlock() {
-		super(MobEffects.SATURATION, 0, BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 2).noCollission());
+		super(MobEffects.SATURATION, 0, BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).instabreak()
+				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 2).noCollission());
 	}
 
 	@Override

@@ -38,14 +38,18 @@ public class OctavysMagynisiusFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new OctavysMagynisiusFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:octavys_magynisius", FEATURE,
-				FeatureUtils.simpleRandomPatchConfiguration(64, PlacementUtils.filtered(Feature.BLOCK_COLUMN, BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(TheabyssModBlocks.OCTAVYS_MAGYNISIUS.get())),
-						BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.wouldSurvive(TheabyssModBlocks.OCTAVYS_MAGYNISIUS.get().defaultBlockState(), BlockPos.ZERO)))));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:octavys_magynisius", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(3), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+				FeatureUtils.simpleRandomPatchConfiguration(64, PlacementUtils.filtered(Feature.BLOCK_COLUMN,
+						BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4),
+								BlockStateProvider.simple(TheabyssModBlocks.OCTAVYS_MAGYNISIUS.get())),
+						BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,
+								BlockPredicate.wouldSurvive(TheabyssModBlocks.OCTAVYS_MAGYNISIUS.get().defaultBlockState(), BlockPos.ZERO)))));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:octavys_magynisius", CONFIGURED_FEATURE, List.of(CountPlacement.of(3),
+				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public OctavysMagynisiusFeature() {
 		super(RandomPatchConfiguration.CODEC);

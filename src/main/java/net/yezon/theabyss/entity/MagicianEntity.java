@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.MagicianSpawnEvent;
-import net.yezon.theabyss.events.MagicianAbilitiesEvent;
+import net.yezon.theabyss.events.MagicianSpawnevent;
+import net.yezon.theabyss.events.MagicianAbilitiesevent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -34,7 +34,8 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.chat.Component;
 
 public class MagicianEntity extends Monster {
-	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.BLUE, ServerBossEvent.BossBarOverlay.PROGRESS);
+	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.BLUE,
+			ServerBossEvent.BossBarOverlay.PROGRESS);
 
 	public MagicianEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(TheabyssModEntities.MAGICIAN.get(), world);
@@ -103,7 +104,7 @@ public class MagicianEntity extends Monster {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		MagicianAbilitiesEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		MagicianAbilitiesevent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override
@@ -130,12 +131,13 @@ public class MagicianEntity extends Monster {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(TheabyssModEntities.MAGICIAN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-			return MagicianSpawnEvent.execute(world);
-		});
+		SpawnPlacements.register(TheabyssModEntities.MAGICIAN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				(entityType, world, reason, pos, random) -> {
+					int x = pos.getX();
+					int y = pos.getY();
+					int z = pos.getZ();
+					return MagicianSpawnevent.execute(world);
+				});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.Comparator;
 
 @Mod.EventBusSubscriber
-public class TotemHandlerEvent {
+public class TotemHandlerevent {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
 		if (event != null && event.getEntity() != null) {
@@ -54,10 +54,17 @@ public class TotemHandlerEvent {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.TOTEM_OF_ABYSS.get())) : false)
-				|| (entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.TOTEM_OF_THUNDER.get())) : false)
-				|| (entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.TOTEM_OF_TIME.get())) : false)) {
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.TOTEM_OF_TIME.get()) {
+		if ((entity instanceof Player _playerHasItem
+				? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.TOTEM_OF_ABYSS.get()))
+				: false)
+				|| (entity instanceof Player _playerHasItem
+						? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.TOTEM_OF_THUNDER.get()))
+						: false)
+				|| (entity instanceof Player _playerHasItem
+						? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.TOTEM_OF_TIME.get()))
+						: false)) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.TOTEM_OF_TIME
+					.get()) {
 				if (world.isClientSide())
 					Minecraft.getInstance().gameRenderer.displayItemActivation(new ItemStack(TheabyssModItems.TOTEM_OF_TIME.get()));
 				{
@@ -75,21 +82,23 @@ public class TotemHandlerEvent {
 					_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 2, 0.5, 0.5, 0.5, 1);
 				{
 					final Vec3 _center = new Vec3(x, y, z);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-							.collect(Collectors.toList());
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream()
+							.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
 						if (!(entityiterator == entity)) {
 							if (entityiterator instanceof LivingEntity _entity)
 								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 40, (false), (false)));
 							if (entityiterator instanceof LivingEntity _entity)
-								_entity.addEffect(new MobEffectInstance(TheabyssModMobEffects.TIME_STOP_POTION_IRATOR.get(), 200, 40, (false), (false)));
+								_entity.addEffect(
+										new MobEffectInstance(TheabyssModMobEffects.TIME_STOP_POTION_IRATOR.get(), 200, 40, (false), (false)));
 							if (entity instanceof LivingEntity _entity)
 								_entity.addEffect(new MobEffectInstance(TheabyssModMobEffects.TIME_STOP_POTION_EFFECT.get(), 200, 0));
 						}
 					}
 				}
 			}
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.TOTEM_OF_TIME.get()) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.TOTEM_OF_TIME
+					.get()) {
 				if (world.isClientSide())
 					Minecraft.getInstance().gameRenderer.displayItemActivation(new ItemStack(TheabyssModItems.TOTEM_OF_TIME.get()));
 				{
@@ -107,21 +116,23 @@ public class TotemHandlerEvent {
 					_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 2, 0.5, 0.5, 0.5, 1);
 				{
 					final Vec3 _center = new Vec3(x, y, z);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-							.collect(Collectors.toList());
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream()
+							.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
 						if (!(entityiterator == entity)) {
 							if (entityiterator instanceof LivingEntity _entity)
 								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 40, (false), (false)));
 							if (entityiterator instanceof LivingEntity _entity)
-								_entity.addEffect(new MobEffectInstance(TheabyssModMobEffects.TIME_STOP_POTION_IRATOR.get(), 200, 40, (false), (false)));
+								_entity.addEffect(
+										new MobEffectInstance(TheabyssModMobEffects.TIME_STOP_POTION_IRATOR.get(), 200, 40, (false), (false)));
 							if (entity instanceof LivingEntity _entity)
 								_entity.addEffect(new MobEffectInstance(TheabyssModMobEffects.TIME_STOP_POTION_EFFECT.get(), 200, 0));
 						}
 					}
 				}
 			}
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.TOTEM_OF_THUNDER.get()) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.TOTEM_OF_THUNDER
+					.get()) {
 				if (world.isClientSide())
 					Minecraft.getInstance().gameRenderer.displayItemActivation(new ItemStack(TheabyssModItems.TOTEM_OF_THUNDER.get()));
 				{
@@ -139,13 +150,14 @@ public class TotemHandlerEvent {
 					_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 2, 0.5, 0.5, 0.5, 1);
 				{
 					final Vec3 _center = new Vec3(x, y, z);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(20 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-							.collect(Collectors.toList());
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(20 / 2d), e -> true).stream()
+							.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
 						if (!(entityiterator == entity)) {
 							if (world instanceof ServerLevel _level) {
 								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-								entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));
+								entityToSpawn.moveTo(
+										Vec3.atBottomCenterOf(new BlockPos(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));
 								entityToSpawn.setVisualOnly(true);
 								_level.addFreshEntity(entityToSpawn);
 							}
@@ -154,7 +166,8 @@ public class TotemHandlerEvent {
 					}
 				}
 			}
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.TOTEM_OF_THUNDER.get()) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.TOTEM_OF_THUNDER
+					.get()) {
 				if (world.isClientSide())
 					Minecraft.getInstance().gameRenderer.displayItemActivation(new ItemStack(TheabyssModItems.TOTEM_OF_THUNDER.get()));
 				{
@@ -172,13 +185,14 @@ public class TotemHandlerEvent {
 					_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 2, 0.5, 0.5, 0.5, 1);
 				{
 					final Vec3 _center = new Vec3(x, y, z);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(20 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-							.collect(Collectors.toList());
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(20 / 2d), e -> true).stream()
+							.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
 						if (!(entityiterator == entity)) {
 							if (world instanceof ServerLevel _level) {
 								LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-								entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));
+								entityToSpawn.moveTo(
+										Vec3.atBottomCenterOf(new BlockPos(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));
 								entityToSpawn.setVisualOnly(true);
 								_level.addFreshEntity(entityToSpawn);
 							}
@@ -187,7 +201,8 @@ public class TotemHandlerEvent {
 					}
 				}
 			}
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.TOTEM_OF_ABYSS.get()) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.TOTEM_OF_ABYSS
+					.get()) {
 				if (world.isClientSide())
 					Minecraft.getInstance().gameRenderer.displayItemActivation(new ItemStack(TheabyssModItems.TOTEM_OF_ABYSS.get()));
 				{
@@ -204,7 +219,8 @@ public class TotemHandlerEvent {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 2, 0.5, 0.5, 0.5, 1);
 			}
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.TOTEM_OF_ABYSS.get()) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.TOTEM_OF_ABYSS
+					.get()) {
 				if (world.isClientSide())
 					Minecraft.getInstance().gameRenderer.displayItemActivation(new ItemStack(TheabyssModItems.TOTEM_OF_ABYSS.get()));
 				{
@@ -226,9 +242,11 @@ public class TotemHandlerEvent {
 			}
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
-					_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.totem.use")), SoundSource.NEUTRAL, 1, 1);
+					_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.totem.use")),
+							SoundSource.NEUTRAL, 1, 1);
 				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.totem.use")), SoundSource.NEUTRAL, 1, 1, false);
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.totem.use")), SoundSource.NEUTRAL,
+							1, 1, false);
 				}
 			}
 			if (entity instanceof LivingEntity _entity)

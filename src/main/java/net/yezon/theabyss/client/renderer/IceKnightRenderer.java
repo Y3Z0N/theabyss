@@ -15,7 +15,8 @@ import net.minecraft.client.model.HumanoidModel;
 public class IceKnightRenderer extends HumanoidMobRenderer<IceKnightEntity, HumanoidModel<IceKnightEntity>> {
 	public IceKnightRenderer(EntityRendererProvider.Context context) {
 		super(context, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER)), 0.7f);
-		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR))));
+		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)),
+				new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR))));
 		this.addLayer(new EyesLayer<IceKnightEntity, HumanoidModel<IceKnightEntity>>(this) {
 			@Override
 			public RenderType renderType() {

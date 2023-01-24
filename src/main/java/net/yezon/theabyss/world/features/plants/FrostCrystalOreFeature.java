@@ -34,13 +34,15 @@ public class FrostCrystalOreFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new FrostCrystalOreFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:frost_crystal_ore", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.FROST_CRYSTAL_ORE.get())), List.of(), 5));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:frost_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(9), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:frost_crystal_ore", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.FROST_CRYSTAL_ORE.get())), List.of(), 5));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:frost_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(9),
+				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:frost_world")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:frost_world")));
 
 	public FrostCrystalOreFeature() {
 		super(RandomPatchConfiguration.CODEC);

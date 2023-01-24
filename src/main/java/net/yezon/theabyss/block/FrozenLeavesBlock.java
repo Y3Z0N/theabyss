@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.FrozenLeavesHandlerEvent;
+import net.yezon.theabyss.events.FrozenLeavesHandlerevent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -26,7 +26,8 @@ import java.util.Collections;
 
 public class FrozenLeavesBlock extends Block {
 	public FrozenLeavesBlock() {
-		super(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).strength(0.3f, 5f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).strength(0.3f, 5f).noOcclusion()
+				.isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
@@ -60,7 +61,7 @@ public class FrozenLeavesBlock extends Block {
 	@Override
 	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		FrozenLeavesHandlerEvent.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+		FrozenLeavesHandlerevent.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
 		return retval;
 	}
 }

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.command;
 
-import net.yezon.theabyss.events.ExecutePatreonCommandEvent;
+import net.yezon.theabyss.events.ExecutePatreonCommandevent;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -40,7 +40,7 @@ public class Ta2patreonCommand {
 						index++;
 					}
 
-					ExecutePatreonCommandEvent.execute(world, x, y, z, entity);
+					ExecutePatreonCommandevent.execute(world, x, y, z, entity);
 					return 0;
 				})).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();
@@ -59,7 +59,7 @@ public class Ta2patreonCommand {
 						index++;
 					}
 
-					ExecutePatreonCommandEvent.execute(world, x, y, z, entity);
+					ExecutePatreonCommandevent.execute(world, x, y, z, entity);
 					return 0;
 				}));
 	}

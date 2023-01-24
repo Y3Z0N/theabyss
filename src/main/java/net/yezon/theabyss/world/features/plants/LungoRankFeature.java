@@ -37,14 +37,18 @@ public class LungoRankFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new LungoRankFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:lungo_rank", FEATURE,
-				FeatureUtils.simpleRandomPatchConfiguration(6, PlacementUtils.filtered(Feature.BLOCK_COLUMN, BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(TheabyssModBlocks.LUNGO_RANK.get())),
-						BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.wouldSurvive(TheabyssModBlocks.LUNGO_RANK.get().defaultBlockState(), BlockPos.ZERO)))));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:lungo_rank", CONFIGURED_FEATURE, List.of(CountPlacement.of(20), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:lungo_rank", FEATURE, FeatureUtils.simpleRandomPatchConfiguration(6,
+				PlacementUtils.filtered(Feature.BLOCK_COLUMN,
+						BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(TheabyssModBlocks.LUNGO_RANK.get())),
+						BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,
+								BlockPredicate.wouldSurvive(TheabyssModBlocks.LUNGO_RANK.get().defaultBlockState(), BlockPos.ZERO)))));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:lungo_rank", CONFIGURED_FEATURE, List.of(CountPlacement.of(20),
+				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public LungoRankFeature() {
 		super(RandomPatchConfiguration.CODEC);

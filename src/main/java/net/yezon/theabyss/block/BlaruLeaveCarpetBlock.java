@@ -16,7 +16,8 @@ import net.minecraft.core.BlockPos;
 
 public class BlaruLeaveCarpetBlock extends FlowerBlock {
 	public BlaruLeaveCarpetBlock() {
-		super(MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().noLootTable().noCollission().offsetType(BlockBehaviour.OffsetType.NONE));
+		super(MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().noLootTable()
+				.noCollission().offsetType(BlockBehaviour.OffsetType.NONE));
 	}
 
 	@Override

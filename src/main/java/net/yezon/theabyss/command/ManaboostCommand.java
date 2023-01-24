@@ -3,7 +3,7 @@ package net.yezon.theabyss.command;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.ManaboostCommandEvent;
+import net.yezon.theabyss.events.ManaboostCommandevent;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -23,44 +23,45 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 public class ManaboostCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("manaboost").requires(s -> s.hasPermission(4)).then(Commands.argument("arguments", StringArgumentType.greedyString()).executes(arguments -> {
-			ServerLevel world = arguments.getSource().getLevel();
-			double x = arguments.getSource().getPosition().x();
-			double y = arguments.getSource().getPosition().y();
-			double z = arguments.getSource().getPosition().z();
-			Entity entity = arguments.getSource().getEntity();
-			if (entity == null)
-				entity = FakePlayerFactory.getMinecraft(world);
-			Direction direction = entity.getDirection();
-			HashMap<String, String> cmdparams = new HashMap<>();
-			int index = -1;
-			for (String param : arguments.getInput().split("\\s+")) {
-				if (index >= 0)
-					cmdparams.put(Integer.toString(index), param);
-				index++;
-			}
+		event.getDispatcher().register(Commands.literal("manaboost").requires(s -> s.hasPermission(4))
+				.then(Commands.argument("arguments", StringArgumentType.greedyString()).executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+					HashMap<String, String> cmdparams = new HashMap<>();
+					int index = -1;
+					for (String param : arguments.getInput().split("\\s+")) {
+						if (index >= 0)
+							cmdparams.put(Integer.toString(index), param);
+						index++;
+					}
 
-			ManaboostCommandEvent.execute(entity);
-			return 0;
-		})).executes(arguments -> {
-			ServerLevel world = arguments.getSource().getLevel();
-			double x = arguments.getSource().getPosition().x();
-			double y = arguments.getSource().getPosition().y();
-			double z = arguments.getSource().getPosition().z();
-			Entity entity = arguments.getSource().getEntity();
-			if (entity == null)
-				entity = FakePlayerFactory.getMinecraft(world);
-			Direction direction = entity.getDirection();
-			HashMap<String, String> cmdparams = new HashMap<>();
-			int index = -1;
-			for (String param : arguments.getInput().split("\\s+")) {
-				if (index >= 0)
-					cmdparams.put(Integer.toString(index), param);
-				index++;
-			}
+					ManaboostCommandevent.execute(entity);
+					return 0;
+				})).executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+					HashMap<String, String> cmdparams = new HashMap<>();
+					int index = -1;
+					for (String param : arguments.getInput().split("\\s+")) {
+						if (index >= 0)
+							cmdparams.put(Integer.toString(index), param);
+						index++;
+					}
 
-			ManaboostCommandEvent.execute(entity);
-			return 0;
-		}));
+					ManaboostCommandevent.execute(entity);
+					return 0;
+				}));
 	}
 }

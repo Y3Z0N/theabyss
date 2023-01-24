@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.AmuledOfNosajEffectEvent;
+import net.yezon.theabyss.events.AmuledOfNosajEffectevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -45,7 +45,7 @@ public class AmuledOfNosajItem extends Item {
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			AmuledOfNosajEffectEvent.execute(entity);
-		AmuledOfNosajEffectEvent.execute(entity);
+			AmuledOfNosajEffectevent.execute(entity);
+		AmuledOfNosajEffectevent.execute(entity);
 	}
 }

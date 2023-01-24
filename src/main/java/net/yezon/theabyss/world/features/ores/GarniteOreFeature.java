@@ -35,13 +35,15 @@ public class GarniteOreFeature extends OreFeature {
 	public static Feature<?> feature() {
 		FEATURE = new GarniteOreFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:garnite_ore", FEATURE,
-				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()), TheabyssModBlocks.GARNITE_ORE.get().defaultBlockState())), 4));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:garnite_ore", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(2), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(-20)), BiomeFilter.biome()));
+				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()),
+						TheabyssModBlocks.GARNITE_ORE.get().defaultBlockState())), 4));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:garnite_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(2), InSquarePlacement.spread(),
+				HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(-20)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public GarniteOreFeature() {
 		super(OreConfiguration.CODEC);

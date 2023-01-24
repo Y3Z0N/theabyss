@@ -34,13 +34,15 @@ public class GlowShroomFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new GlowShroomFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:glow_shroom", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.GLOW_SHROOM.get())), List.of(), 64));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:glow_shroom", CONFIGURED_FEATURE, List.of(CountPlacement.of(3), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:glow_shroom", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.GLOW_SHROOM.get())), List.of(), 64));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:glow_shroom", CONFIGURED_FEATURE, List.of(CountPlacement.of(3),
+				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public GlowShroomFeature() {
 		super(RandomPatchConfiguration.CODEC);

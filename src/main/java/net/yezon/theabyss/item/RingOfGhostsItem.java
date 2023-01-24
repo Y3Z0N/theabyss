@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfGhostEvent;
+import net.yezon.theabyss.events.ApplyRingOfGhostevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -55,14 +55,14 @@ list.add(Component.literal("\uEF02 95.0 \uEF04 100.0 \uEF03 Right Click"));
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyRingOfGhostEvent.execute(world, x, y, z, entity, itemstack);
+		ApplyRingOfGhostevent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		super.useOn(context);
-		ApplyRingOfGhostEvent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
+		ApplyRingOfGhostevent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
 				context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
 		return InteractionResult.SUCCESS;
 	}

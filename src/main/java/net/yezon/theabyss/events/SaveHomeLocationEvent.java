@@ -12,7 +12,7 @@ import net.minecraft.world.entity.Entity;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class SaveHomeLocationEvent {
+public class SaveHomeLocationevent {
 	@SubscribeEvent
 	public static void onEntityEndSleep(PlayerWakeUpEvent event) {
 		execute(event, event.getEntity());

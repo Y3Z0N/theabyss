@@ -8,7 +8,7 @@ import net.minecraft.advancements.Advancement;
 
 import java.util.Iterator;
 
-public class TheAbyssAdvGrantEvent {
+public class TheAbyssAdvGrantevent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

@@ -1,5 +1,5 @@
 
-
+  
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.client.renderer.VersaWhaleRenderer;
@@ -26,7 +26,6 @@ import net.yezon.theabyss.client.renderer.LokusRenderer;
 import net.yezon.theabyss.client.renderer.LizardRenderer;
 import net.yezon.theabyss.client.renderer.LaroFishRenderer;
 import net.yezon.theabyss.client.renderer.JungleLurkerRenderer;
-import net.yezon.theabyss.client.renderer.JellyFishRenderer;
 import net.yezon.theabyss.client.renderer.InfectedZombieRenderer;
 import net.yezon.theabyss.client.renderer.InfectedWolfRenderer;
 import net.yezon.theabyss.client.renderer.InfectedSpiderRenderer;
@@ -110,6 +109,5 @@ public class TheabyssModEntityRenderers {
 		event.registerEntityRenderer(TheabyssModEntities.RING_OF_BLACK_STRIKE_ATTACK.get(), RingOfBlackStrikeAttackRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.SUMMONED_HOLLOW_SEEKER.get(), SummonedHollowSeekerRenderer::new);
 		event.registerEntityRenderer(TheabyssModEntities.ARTIFACT_OF_PHANTOMS.get(), ThrownItemRenderer::new);
-		event.registerEntityRenderer(TheabyssModEntities.JELLY_FISH.get(), JellyFishRenderer::new);
 	}
 }

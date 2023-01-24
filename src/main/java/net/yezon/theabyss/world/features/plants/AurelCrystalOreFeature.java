@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.world.features.plants;
 
-import net.yezon.theabyss.events.CaveMossGenEvent;
+import net.yezon.theabyss.events.CaveMossGenevent;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
@@ -35,13 +35,15 @@ public class AurelCrystalOreFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new AurelCrystalOreFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:aurel_crystal_ore", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.AUREL_CRYSTAL_ORE.get())), List.of(), 7));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:aurel_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(14), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:aurel_crystal_ore", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.AUREL_CRYSTAL_ORE.get())), List.of(), 7));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:aurel_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(14),
+				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public AurelCrystalOreFeature() {
 		super(RandomPatchConfiguration.CODEC);
@@ -54,7 +56,7 @@ public class AurelCrystalOreFeature extends RandomPatchFeature {
 		int x = context.origin().getX();
 		int y = context.origin().getY();
 		int z = context.origin().getZ();
-		if (!CaveMossGenEvent.execute(y))
+		if (!CaveMossGenevent.execute(y))
 			return false;
 		return super.place(context);
 	}

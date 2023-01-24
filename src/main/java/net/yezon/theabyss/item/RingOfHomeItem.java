@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfHomeEvent;
+import net.yezon.theabyss.events.ApplyRingOfHomeevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -55,14 +55,14 @@ list.add(Component.literal("\uEF02 50.0 \uEF04 100.0 \uEF03 Right Click"));
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyRingOfHomeEvent.execute(world, x, y, z, entity, itemstack);
+		ApplyRingOfHomeevent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		super.useOn(context);
-		ApplyRingOfHomeEvent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
+		ApplyRingOfHomeevent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
 				context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
 		return InteractionResult.SUCCESS;
 	}

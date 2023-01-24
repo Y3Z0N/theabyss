@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.JungleMelonEffectEvent;
+import net.yezon.theabyss.events.JungleMelonEffectevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -14,9 +14,10 @@ import net.minecraft.world.entity.LivingEntity;
 
 public class JungleMelonItemItem extends Item {
 	public JungleMelonItemItem() {
-		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(8).rarity(Rarity.RARE).food((new FoodProperties.Builder()).nutrition(6).saturationMod(1f).alwaysEat()
+		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(8).rarity(Rarity.RARE)
+				.food((new FoodProperties.Builder()).nutrition(6).saturationMod(1f).alwaysEat()
 
-				.build()));
+						.build()));
 	}
 
 	@Override
@@ -31,7 +32,7 @@ public class JungleMelonItemItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		JungleMelonEffectEvent.execute(entity);
+		JungleMelonEffectevent.execute(entity);
 		return retval;
 	}
 }

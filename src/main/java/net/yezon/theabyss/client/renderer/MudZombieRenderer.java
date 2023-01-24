@@ -15,7 +15,8 @@ import net.minecraft.client.model.HumanoidModel;
 public class MudZombieRenderer extends HumanoidMobRenderer<MudZombieEntity, HumanoidModel<MudZombieEntity>> {
 	public MudZombieRenderer(EntityRendererProvider.Context context) {
 		super(context, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
-		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR))));
+		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)),
+				new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR))));
 		this.addLayer(new EyesLayer<MudZombieEntity, HumanoidModel<MudZombieEntity>>(this) {
 			@Override
 			public RenderType renderType() {

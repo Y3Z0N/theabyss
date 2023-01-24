@@ -1,8 +1,6 @@
 
 package net.yezon.theabyss.world.features;
 
-import net.yezon.theabyss.init.TheabyssModBlocks;
-
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockIgnoreProcessor;
@@ -15,7 +13,6 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
@@ -40,13 +37,12 @@ public class SlimeTreeFeature extends Feature<NoneFeatureConfiguration> {
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
-	private final List<Block> base_blocks;
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 	private StructureTemplate template = null;
 
 	public SlimeTreeFeature() {
 		super(NoneFeatureConfiguration.CODEC);
-		base_blocks = List.of(TheabyssModBlocks.BLARU_MOSS.get());
 	}
 
 	@Override
@@ -64,11 +60,12 @@ public class SlimeTreeFeature extends Feature<NoneFeatureConfiguration> {
 				int i = context.origin().getX() + context.random().nextInt(16);
 				int k = context.origin().getZ() + context.random().nextInt(16);
 				int j = context.level().getHeight(Heightmap.Types.OCEAN_FLOOR_WG, i, k) - 1;
-				if (!base_blocks.contains(context.level().getBlockState(new BlockPos(i, j, k)).getBlock()))
-					continue;
 				BlockPos spawnTo = new BlockPos(i + 0, j + -2, k + 0);
-				if (template.placeInWorld(context.level(), spawnTo, spawnTo, new StructurePlaceSettings().setMirror(Mirror.values()[context.random().nextInt(2)]).setRotation(Rotation.values()[context.random().nextInt(3)]).setRandom(context.random())
-						.addProcessor(BlockIgnoreProcessor.STRUCTURE_BLOCK).setIgnoreEntities(false), context.random(), 2)) {
+				if (template.placeInWorld(context.level(), spawnTo, spawnTo,
+						new StructurePlaceSettings().setMirror(Mirror.values()[context.random().nextInt(2)])
+								.setRotation(Rotation.values()[context.random().nextInt(3)]).setRandom(context.random())
+								.addProcessor(BlockIgnoreProcessor.STRUCTURE_BLOCK).setIgnoreEntities(false),
+						context.random(), 2)) {
 					anyPlaced = true;
 				}
 			}

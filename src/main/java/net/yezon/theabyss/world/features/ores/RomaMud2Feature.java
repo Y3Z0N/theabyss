@@ -35,13 +35,15 @@ public class RomaMud2Feature extends OreFeature {
 	public static Feature<?> feature() {
 		FEATURE = new RomaMud2Feature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:roma_mud_2", FEATURE,
-				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.ROMA_MUD.get().defaultBlockState()), TheabyssModBlocks.ROMA_MUD_2.get().defaultBlockState())), 32));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:roma_mud_2", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(32), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(40), VerticalAnchor.absolute(200)), BiomeFilter.biome()));
+				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.ROMA_MUD.get().defaultBlockState()),
+						TheabyssModBlocks.ROMA_MUD_2.get().defaultBlockState())), 32));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:roma_mud_2", CONFIGURED_FEATURE, List.of(CountPlacement.of(32), InSquarePlacement.spread(),
+				HeightRangePlacement.uniform(VerticalAnchor.absolute(40), VerticalAnchor.absolute(200)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public RomaMud2Feature() {
 		super(OreConfiguration.CODEC);

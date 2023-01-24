@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.NightbladeBossDodgeOnHurtEvent;
+import net.yezon.theabyss.events.NightbladeBossDodgeOnHurtevent;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -36,7 +36,8 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.chat.Component;
 
 public class NightBladeBossCloneEntity extends Monster {
-	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.PURPLE, ServerBossEvent.BossBarOverlay.PROGRESS);
+	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.PURPLE,
+			ServerBossEvent.BossBarOverlay.PROGRESS);
 
 	public NightBladeBossCloneEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(TheabyssModEntities.NIGHT_BLADE_BOSS_CLONE.get(), world);
@@ -89,7 +90,7 @@ public class NightBladeBossCloneEntity extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		NightbladeBossDodgeOnHurtEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		NightbladeBossDodgeOnHurtevent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 		if (source.getDirectEntity() instanceof AbstractArrow)
 			return false;
 		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)
@@ -145,7 +146,7 @@ public class NightBladeBossCloneEntity extends Monster {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.30000000000000004);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
 		builder = builder.add(Attributes.MAX_HEALTH, 150);
 		builder = builder.add(Attributes.ARMOR, 5);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 2);

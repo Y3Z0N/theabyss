@@ -36,13 +36,15 @@ public class DarkStoneFeature extends OreFeature {
 	public static Feature<?> feature() {
 		FEATURE = new DarkStoneFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:dark_stone", FEATURE,
-				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(Blocks.SNOW_BLOCK.defaultBlockState()), TheabyssModBlocks.DARK_STONE.get().defaultBlockState())), 32));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:dark_stone", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(32), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(35), VerticalAnchor.absolute(150)), BiomeFilter.biome()));
+				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(Blocks.SNOW_BLOCK.defaultBlockState()),
+						TheabyssModBlocks.DARK_STONE.get().defaultBlockState())), 32));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:dark_stone", CONFIGURED_FEATURE, List.of(CountPlacement.of(32), InSquarePlacement.spread(),
+				HeightRangePlacement.uniform(VerticalAnchor.absolute(35), VerticalAnchor.absolute(150)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:frost_world")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:frost_world")));
 
 	public DarkStoneFeature() {
 		super(OreConfiguration.CODEC);

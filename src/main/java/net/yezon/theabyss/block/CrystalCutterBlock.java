@@ -38,9 +38,13 @@ import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
-public class CrystalCutterBlock extends Block implements EntityBlock {
+public class CrystalCutterBlock extends Block
+		implements
+
+			EntityBlock {
 	public CrystalCutterBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).noOcclusion()
+				.isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
@@ -60,6 +64,7 @@ public class CrystalCutterBlock extends Block implements EntityBlock {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+
 		return box(0, 0, 0, 16, 10, 16);
 	}
 

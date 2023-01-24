@@ -11,9 +11,10 @@ import net.minecraft.world.food.FoodProperties;
 
 public class CookedDeerBeefItem extends Item {
 	public CookedDeerBeefItem() {
-		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(64).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(6).saturationMod(0.3f)
+		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(64).rarity(Rarity.COMMON)
+				.food((new FoodProperties.Builder()).nutrition(6).saturationMod(0.3f)
 
-				.build()));
+						.build()));
 	}
 
 	@Override

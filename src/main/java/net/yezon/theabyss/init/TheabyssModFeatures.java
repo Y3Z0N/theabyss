@@ -1,5 +1,5 @@
 
-
+  
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.world.features.plants.YoungExoliusPlantFeature;
@@ -29,6 +29,7 @@ import net.yezon.theabyss.world.features.plants.RalomPlantFeature;
 import net.yezon.theabyss.world.features.plants.OctavysMagynisiusFeature;
 import net.yezon.theabyss.world.features.plants.LungoRankFeature;
 import net.yezon.theabyss.world.features.plants.LoranFlowerFeature;
+import net.yezon.theabyss.world.features.plants.LercasUmbrellaFeature;
 import net.yezon.theabyss.world.features.plants.JungleLeaveCarpetFeature;
 import net.yezon.theabyss.world.features.plants.IgnetarisVersaFeature;
 import net.yezon.theabyss.world.features.plants.IcoraFlowerFeature;
@@ -46,7 +47,6 @@ import net.yezon.theabyss.world.features.plants.CrimsonCrystalOreFeature;
 import net.yezon.theabyss.world.features.plants.CavernaCrystalOreFeature;
 import net.yezon.theabyss.world.features.plants.CaecusVersaFeature;
 import net.yezon.theabyss.world.features.plants.BlaruLeaveCarpetFeature;
-import net.yezon.theabyss.world.features.plants.BlaruGrassFeature;
 import net.yezon.theabyss.world.features.plants.AurelCrystalOreFeature;
 import net.yezon.theabyss.world.features.plants.AnimaFireFeature;
 import net.yezon.theabyss.world.features.plants.AbyssCrystalOreFeature;
@@ -72,8 +72,13 @@ import net.yezon.theabyss.world.features.VigilantTreeFeature;
 import net.yezon.theabyss.world.features.VigilantTree2Feature;
 import net.yezon.theabyss.world.features.VigilantLayingTreeFeature;
 import net.yezon.theabyss.world.features.SlimedTentacleFeature;
+import net.yezon.theabyss.world.features.SlimedRank3Feature;
+import net.yezon.theabyss.world.features.SlimedRank2Feature;
+import net.yezon.theabyss.world.features.SlimedRank1Feature;
 import net.yezon.theabyss.world.features.SlimedGiantShroomFeature;
+import net.yezon.theabyss.world.features.SlimedCraterFeature;
 import net.yezon.theabyss.world.features.SlimeTreeFeature;
+import net.yezon.theabyss.world.features.SlimeCrater2Feature;
 import net.yezon.theabyss.world.features.SkelBoneFeature;
 import net.yezon.theabyss.world.features.SalShroomFeature;
 import net.yezon.theabyss.world.features.PhantomPillar8Feature;
@@ -112,6 +117,8 @@ import net.yezon.theabyss.world.features.BogMiniIsland1Feature;
 import net.yezon.theabyss.world.features.BogIsland3Feature;
 import net.yezon.theabyss.world.features.BogIsland1Feature;
 import net.yezon.theabyss.world.features.BogIsland12Feature;
+import net.yezon.theabyss.world.features.BlaruMossLayerFeature;
+import net.yezon.theabyss.world.features.BlaruMossCaveLayerFeature;
 import net.yezon.theabyss.world.features.BlaruMelonFeature;
 import net.yezon.theabyss.TheabyssMod;
 
@@ -147,6 +154,7 @@ public class TheabyssModFeatures {
 	public static final RegistryObject<Feature<?>> RALOM_PLANT = REGISTRY.register("ralom_plant", RalomPlantFeature::feature);
 	public static final RegistryObject<Feature<?>> FORTIS_ULTIMA = REGISTRY.register("fortis_ultima", FortisUltimaFeature::feature);
 	public static final RegistryObject<Feature<?>> THUNDER_FLOWER = REGISTRY.register("thunder_flower", ThunderFlowerFeature::feature);
+	public static final RegistryObject<Feature<?>> LERCAS_UMBRELLA = REGISTRY.register("lercas_umbrella", LercasUmbrellaFeature::feature);
 	public static final RegistryObject<Feature<?>> SRALA_SHROOM = REGISTRY.register("srala_shroom", SralaShroomFeature::feature);
 	public static final RegistryObject<Feature<?>> SATURNIA_VERSA = REGISTRY.register("saturnia_versa", SaturniaVersaFeature::feature);
 	public static final RegistryObject<Feature<?>> OCTAVYS_MAGYNISIUS = REGISTRY.register("octavys_magynisius", OctavysMagynisiusFeature::feature);
@@ -195,6 +203,8 @@ public class TheabyssModFeatures {
 	public static final RegistryObject<Feature<?>> SLIMED_GIANT_SHROOM = REGISTRY.register("slimed_giant_shroom", SlimedGiantShroomFeature::feature);
 	public static final RegistryObject<Feature<?>> LAYING_LOG = REGISTRY.register("laying_log", LayingLogFeature::feature);
 	public static final RegistryObject<Feature<?>> LAYING_SLIME = REGISTRY.register("laying_slime", LayingSlimeFeature::feature);
+	public static final RegistryObject<Feature<?>> SLIMED_CRATER = REGISTRY.register("slimed_crater", SlimedCraterFeature::feature);
+	public static final RegistryObject<Feature<?>> SLIME_CRATER_2 = REGISTRY.register("slime_crater_2", SlimeCrater2Feature::feature);
 	public static final RegistryObject<Feature<?>> SKEL_BONE = REGISTRY.register("skel_bone", SkelBoneFeature::feature);
 	public static final RegistryObject<Feature<?>> FROZEN_TREE = REGISTRY.register("frozen_tree", FrozenTreeFeature::feature);
 	public static final RegistryObject<Feature<?>> DEAD_FROZEN_TREE = REGISTRY.register("dead_frozen_tree", DeadFrozenTreeFeature::feature);
@@ -211,6 +221,9 @@ public class TheabyssModFeatures {
 	public static final RegistryObject<Feature<?>> BOG_SHROOM_2 = REGISTRY.register("bog_shroom_2", BogShroom2Feature::feature);
 	public static final RegistryObject<Feature<?>> FROST_PORTAL = REGISTRY.register("frost_portal", FrostPortalFeature::feature);
 	public static final RegistryObject<Feature<?>> SLIMED_TENTACLE = REGISTRY.register("slimed_tentacle", SlimedTentacleFeature::feature);
+	public static final RegistryObject<Feature<?>> SLIMED_RANK_1 = REGISTRY.register("slimed_rank_1", SlimedRank1Feature::feature);
+	public static final RegistryObject<Feature<?>> SLIMED_RANK_2 = REGISTRY.register("slimed_rank_2", SlimedRank2Feature::feature);
+	public static final RegistryObject<Feature<?>> SLIMED_RANK_3 = REGISTRY.register("slimed_rank_3", SlimedRank3Feature::feature);
 	public static final RegistryObject<Feature<?>> PHANTOM_PILLAR_0 = REGISTRY.register("phantom_pillar_0", PhantomPillar0Feature::feature);
 	public static final RegistryObject<Feature<?>> PHANTOM_PILLAR_1 = REGISTRY.register("phantom_pillar_1", PhantomPillar1Feature::feature);
 	public static final RegistryObject<Feature<?>> PHANTOM_PILLAR_2 = REGISTRY.register("phantom_pillar_2", PhantomPillar2Feature::feature);
@@ -220,20 +233,30 @@ public class TheabyssModFeatures {
 	public static final RegistryObject<Feature<?>> PHANTOM_PILLAR_6 = REGISTRY.register("phantom_pillar_6", PhantomPillar6Feature::feature);
 	public static final RegistryObject<Feature<?>> PHANTOM_PILLAR_7 = REGISTRY.register("phantom_pillar_7", PhantomPillar7Feature::feature);
 	public static final RegistryObject<Feature<?>> PHANTOM_PILLAR_8 = REGISTRY.register("phantom_pillar_8", PhantomPillar8Feature::feature);
-	public static final RegistryObject<Feature<?>> SKELETON_HEAD_VARIANT_1 = REGISTRY.register("skeleton_head_variant_1", SkeletonHeadVariant1Feature::feature);
-	public static final RegistryObject<Feature<?>> SKELETON_HEAD_VARIANT_2 = REGISTRY.register("skeleton_head_variant_2", SkeletonHeadVariant2Feature::feature);
-	public static final RegistryObject<Feature<?>> SKELETON_BODY_VARIANT_1 = REGISTRY.register("skeleton_body_variant_1", SkeletonBodyVariant1Feature::feature);
-	public static final RegistryObject<Feature<?>> SKELETON_BODY_VARIANT_2 = REGISTRY.register("skeleton_body_variant_2", SkeletonBodyVariant2Feature::feature);
-	public static final RegistryObject<Feature<?>> SKELETON_BODY_VARIANT_3 = REGISTRY.register("skeleton_body_variant_3", SkeletonBodyVariant3Feature::feature);
-	public static final RegistryObject<Feature<?>> SKELETON_BODY_VARIANT_4 = REGISTRY.register("skeleton_body_variant_4", SkeletonBodyVariant4Feature::feature);
-	public static final RegistryObject<Feature<?>> SKELETON_BODY_VARIANT_5 = REGISTRY.register("skeleton_body_variant_5", SkeletonBodyVariant5Feature::feature);
+	public static final RegistryObject<Feature<?>> SKELETON_HEAD_VARIANT_1 = REGISTRY.register("skeleton_head_variant_1",
+			SkeletonHeadVariant1Feature::feature);
+	public static final RegistryObject<Feature<?>> SKELETON_HEAD_VARIANT_2 = REGISTRY.register("skeleton_head_variant_2",
+			SkeletonHeadVariant2Feature::feature);
+	public static final RegistryObject<Feature<?>> SKELETON_BODY_VARIANT_1 = REGISTRY.register("skeleton_body_variant_1",
+			SkeletonBodyVariant1Feature::feature);
+	public static final RegistryObject<Feature<?>> SKELETON_BODY_VARIANT_2 = REGISTRY.register("skeleton_body_variant_2",
+			SkeletonBodyVariant2Feature::feature);
+	public static final RegistryObject<Feature<?>> SKELETON_BODY_VARIANT_3 = REGISTRY.register("skeleton_body_variant_3",
+			SkeletonBodyVariant3Feature::feature);
+	public static final RegistryObject<Feature<?>> SKELETON_BODY_VARIANT_4 = REGISTRY.register("skeleton_body_variant_4",
+			SkeletonBodyVariant4Feature::feature);
+	public static final RegistryObject<Feature<?>> SKELETON_BODY_VARIANT_5 = REGISTRY.register("skeleton_body_variant_5",
+			SkeletonBodyVariant5Feature::feature);
 	public static final RegistryObject<Feature<?>> STONE_RACKLE = REGISTRY.register("stone_rackle", StoneRackleFeature::feature);
 	public static final RegistryObject<Feature<?>> VIGILANT_BUSH = REGISTRY.register("vigilant_bush", VigilantBushFeature::feature);
 	public static final RegistryObject<Feature<?>> VIGILANT_GRASS = REGISTRY.register("vigilant_grass", VigilantGrassFeature::feature);
 	public static final RegistryObject<Feature<?>> VIGILANT_BLUE_GRASS = REGISTRY.register("vigilant_blue_grass", VigilantBlueGrassFeature::feature);
 	public static final RegistryObject<Feature<?>> VIGILANT_TREE = REGISTRY.register("vigilant_tree", VigilantTreeFeature::feature);
 	public static final RegistryObject<Feature<?>> VIGILANT_TREE_2 = REGISTRY.register("vigilant_tree_2", VigilantTree2Feature::feature);
-	public static final RegistryObject<Feature<?>> VIGILANT_LAYING_TREE = REGISTRY.register("vigilant_laying_tree", VigilantLayingTreeFeature::feature);
+	public static final RegistryObject<Feature<?>> VIGILANT_LAYING_TREE = REGISTRY.register("vigilant_laying_tree",
+			VigilantLayingTreeFeature::feature);
 	public static final RegistryObject<Feature<?>> BLARU_MELON = REGISTRY.register("blaru_melon", BlaruMelonFeature::feature);
-	public static final RegistryObject<Feature<?>> BLARU_GRASS = REGISTRY.register("blaru_grass", BlaruGrassFeature::feature);
+	public static final RegistryObject<Feature<?>> BLARU_MOSS_LAYER = REGISTRY.register("blaru_moss_layer", BlaruMossLayerFeature::feature);
+	public static final RegistryObject<Feature<?>> BLARU_MOSS_CAVE_LAYER = REGISTRY.register("blaru_moss_cave_layer",
+			BlaruMossCaveLayerFeature::feature);
 }

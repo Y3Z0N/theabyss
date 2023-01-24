@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.RingOfBlackStrikeParticleEvent;
-import net.yezon.theabyss.events.RingOfBlackStrikeAttackBulletHitsLivingEntityEvent;
+import net.yezon.theabyss.events.RingOfBlackStrikeParticleevent;
+import net.yezon.theabyss.events.RingOfBlackStrikeAttackBulletHitsLivingEntityevent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -66,31 +66,35 @@ public class RingOfBlackStrikeAttackEntity extends AbstractArrow implements Item
 	@Override
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
-		RingOfBlackStrikeAttackBulletHitsLivingEntityEvent.execute(entityHitResult.getEntity());
+		RingOfBlackStrikeAttackBulletHitsLivingEntityevent.execute(entityHitResult.getEntity());
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		RingOfBlackStrikeParticleEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		RingOfBlackStrikeParticleevent.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (this.inGround)
 			this.discard();
 	}
 
-	public static RingOfBlackStrikeAttackEntity shoot(Level world, LivingEntity entity, RandomSource random, float power, double damage, int knockback) {
-		RingOfBlackStrikeAttackEntity entityarrow = new RingOfBlackStrikeAttackEntity(TheabyssModEntities.RING_OF_BLACK_STRIKE_ATTACK.get(), entity, world);
+	public static RingOfBlackStrikeAttackEntity shoot(Level world, LivingEntity entity, RandomSource random, float power, double damage,
+			int knockback) {
+		RingOfBlackStrikeAttackEntity entityarrow = new RingOfBlackStrikeAttackEntity(TheabyssModEntities.RING_OF_BLACK_STRIKE_ATTACK.get(), entity,
+				world);
 		entityarrow.shoot(entity.getViewVector(1).x, entity.getViewVector(1).y, entity.getViewVector(1).z, power * 2, 0);
 		entityarrow.setSilent(true);
 		entityarrow.setCritArrow(true);
 		entityarrow.setBaseDamage(damage);
 		entityarrow.setKnockback(knockback);
 		world.addFreshEntity(entityarrow);
-		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("")), SoundSource.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
+		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("")),
+				SoundSource.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
 		return entityarrow;
 	}
 
 	public static RingOfBlackStrikeAttackEntity shoot(LivingEntity entity, LivingEntity target) {
-		RingOfBlackStrikeAttackEntity entityarrow = new RingOfBlackStrikeAttackEntity(TheabyssModEntities.RING_OF_BLACK_STRIKE_ATTACK.get(), entity, entity.level);
+		RingOfBlackStrikeAttackEntity entityarrow = new RingOfBlackStrikeAttackEntity(TheabyssModEntities.RING_OF_BLACK_STRIKE_ATTACK.get(), entity,
+				entity.level);
 		double dx = target.getX() - entity.getX();
 		double dy = target.getY() + target.getEyeHeight() - 1.1;
 		double dz = target.getZ() - entity.getZ();
@@ -100,7 +104,8 @@ public class RingOfBlackStrikeAttackEntity extends AbstractArrow implements Item
 		entityarrow.setKnockback(2);
 		entityarrow.setCritArrow(true);
 		entity.level.addFreshEntity(entityarrow);
-		entity.level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("")), SoundSource.PLAYERS, 1, 1f / (RandomSource.create().nextFloat() * 0.5f + 1));
+		entity.level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("")),
+				SoundSource.PLAYERS, 1, 1f / (RandomSource.create().nextFloat() * 0.5f + 1));
 		return entityarrow;
 	}
 }

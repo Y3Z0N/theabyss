@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.AnimaFireEffectEvent;
+import net.yezon.theabyss.events.AnimaFireEffectevent;
 import net.yezon.theabyss.init.TheabyssModItems;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -26,8 +26,9 @@ import java.util.Collections;
 
 public class AnimaFireBlock extends FlowerBlock {
 	public AnimaFireBlock() {
-		super(MobEffects.SATURATION, 0, BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 8).noCollission()
-				.offsetType(BlockBehaviour.OffsetType.NONE));
+		super(MobEffects.SATURATION, 0,
+				BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true)
+						.emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 8).noCollission().offsetType(BlockBehaviour.OffsetType.NONE));
 	}
 
 	@Override
@@ -46,6 +47,6 @@ public class AnimaFireBlock extends FlowerBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		AnimaFireEffectEvent.execute(entity);
+		AnimaFireEffectevent.execute(entity);
 	}
 }

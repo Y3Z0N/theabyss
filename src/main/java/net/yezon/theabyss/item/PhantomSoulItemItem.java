@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.PhantomSoulItemItemInInventoryTickEvent;
+import net.yezon.theabyss.events.PhantomSoulItemItemInInventoryTickevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.Level;
@@ -25,7 +25,7 @@ public class PhantomSoulItemItem extends Item {
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			PhantomSoulItemItemInInventoryTickEvent.execute(entity);
-		PhantomSoulItemItemInInventoryTickEvent.execute(entity);
+			PhantomSoulItemItemInInventoryTickevent.execute(entity);
+		PhantomSoulItemItemInInventoryTickevent.execute(entity);
 	}
 }

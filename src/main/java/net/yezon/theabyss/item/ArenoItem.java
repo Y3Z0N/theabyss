@@ -11,6 +11,7 @@ import net.minecraft.world.item.BucketItem;
 
 public class ArenoItem extends BucketItem {
 	public ArenoItem() {
-		super(TheabyssModFluids.ARENO, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).rarity(Rarity.COMMON).tab(TheabyssModTabs.TAB_THE_ABYSS));
+		super(TheabyssModFluids.ARENO,
+				new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).rarity(Rarity.COMMON).tab(TheabyssModTabs.TAB_THE_ABYSS));
 	}
 }

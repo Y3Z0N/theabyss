@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.PhantomLanternCheckEvent;
+import net.yezon.theabyss.events.PhantomLanternCheckevent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -26,8 +26,8 @@ import java.util.Collections;
 
 public class PhantomLanternBlock extends Block {
 	public PhantomLanternBlock() {
-		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.LANTERN).strength(0.1f, 1f).lightLevel(s -> 15).noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.LANTERN).strength(0.1f, 1f).lightLevel(s -> 15).noOcclusion()
+				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
@@ -47,6 +47,7 @@ public class PhantomLanternBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+
 		return Shapes.or(box(6, 0, 6, 10, 9, 10), box(5, 0, 5, 11, 7, 11));
 	}
 
@@ -62,13 +63,13 @@ public class PhantomLanternBlock extends Block {
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
 		world.scheduleTick(pos, this, 10);
-		PhantomLanternCheckEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		PhantomLanternCheckevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		PhantomLanternCheckEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		PhantomLanternCheckevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override
@@ -77,7 +78,8 @@ public class PhantomLanternBlock extends Block {
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-		PhantomLanternCheckEvent.execute(world, x, y, z);
+
+		PhantomLanternCheckevent.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 10);
 	}
 }

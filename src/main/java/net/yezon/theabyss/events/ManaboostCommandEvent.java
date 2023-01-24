@@ -4,7 +4,7 @@ import net.yezon.theabyss.network.TheabyssModVariables;
 
 import net.minecraft.world.entity.Entity;
 
-public class ManaboostCommandEvent {
+public class ManaboostCommandevent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

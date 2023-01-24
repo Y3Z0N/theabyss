@@ -18,7 +18,8 @@ import net.minecraft.core.BlockPos;
 
 public class LungoRankBlock extends SugarCaneBlock {
 	public LungoRankBlock() {
-		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.WEEPING_VINES).instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 5).noLootTable().noCollission());
+		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.WEEPING_VINES).instabreak()
+				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 5).noLootTable().noCollission());
 	}
 
 	@Override

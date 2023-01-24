@@ -26,11 +26,12 @@ import java.util.Collections;
 
 public class HollowCrystalOreBlock extends FlowerBlock {
 	public HollowCrystalOreBlock() {
-		super(MobEffects.SATURATION, 0,
-				BlockBehaviour.Properties.of(Material.PLANT)
-						.sound(new ForgeSoundType(1.0f, 1.0f, () -> new SoundEvent(new ResourceLocation("theabyss:crystal_break")), () -> new SoundEvent(new ResourceLocation("block.stone.step")),
-								() -> new SoundEvent(new ResourceLocation("block.stone.place")), () -> new SoundEvent(new ResourceLocation("block.stone.hit")), () -> new SoundEvent(new ResourceLocation("block.snow.fall"))))
-						.instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 15).noCollission());
+		super(MobEffects.SATURATION, 0, BlockBehaviour.Properties.of(Material.PLANT)
+				.sound(new ForgeSoundType(1.0f, 1.0f, () -> new SoundEvent(new ResourceLocation("theabyss:crystal_break")),
+						() -> new SoundEvent(new ResourceLocation("block.stone.step")),
+						() -> new SoundEvent(new ResourceLocation("block.stone.place")),
+						() -> new SoundEvent(new ResourceLocation("block.stone.hit")), () -> new SoundEvent(new ResourceLocation("block.snow.fall"))))
+				.instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 15).noCollission());
 	}
 
 	@Override

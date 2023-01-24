@@ -5,7 +5,7 @@ import net.yezon.theabyss.init.TheabyssModMobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 
-public class TimeStopDisplayOverlayIngameEvent {
+public class TimeStopDisplayOverlayIngameevent {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;

@@ -19,7 +19,8 @@ import java.util.Collections;
 
 public class StoneStairsBlock extends StairBlock {
 	public StoneStairsBlock() {
-		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(3f, 10f).requiresCorrectToolForDrops().dynamicShape());
+		super(() -> Blocks.AIR.defaultBlockState(),
+				BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(3f, 10f).requiresCorrectToolForDrops().dynamicShape());
 	}
 
 	@Override

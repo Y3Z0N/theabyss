@@ -35,13 +35,17 @@ public class ArenoFeature extends LakeFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new ArenoFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:areno", FEATURE, new LakeFeature.Configuration(BlockStateProvider.simple(TheabyssModBlocks.ARENO.get()), BlockStateProvider.simple(Blocks.AIR)));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:areno", CONFIGURED_FEATURE, List.of(RarityFilter.onAverageOnceEvery(40), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
-				EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.not(BlockPredicate.ONLY_IN_AIR_PREDICATE), 32), BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:areno", FEATURE,
+				new LakeFeature.Configuration(BlockStateProvider.simple(TheabyssModBlocks.ARENO.get()), BlockStateProvider.simple(Blocks.AIR)));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:areno", CONFIGURED_FEATURE,
+				List.of(RarityFilter.onAverageOnceEvery(40), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
+						EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.not(BlockPredicate.ONLY_IN_AIR_PREDICATE), 32),
+						BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public ArenoFeature() {
 		super(LakeFeature.Configuration.CODEC);

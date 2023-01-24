@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.RottenFleshRandomEffectEvent;
+import net.yezon.theabyss.events.RottenFleshRandomEffectevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -14,9 +14,10 @@ import net.minecraft.world.entity.LivingEntity;
 
 public class RottenFleshItem extends Item {
 	public RottenFleshItem() {
-		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(64).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(1).saturationMod(0.3f)
+		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(64).rarity(Rarity.COMMON)
+				.food((new FoodProperties.Builder()).nutrition(1).saturationMod(0.3f)
 
-				.build()));
+						.build()));
 	}
 
 	@Override
@@ -31,7 +32,7 @@ public class RottenFleshItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		RottenFleshRandomEffectEvent.execute(entity);
+		RottenFleshRandomEffectevent.execute(entity);
 		return retval;
 	}
 }

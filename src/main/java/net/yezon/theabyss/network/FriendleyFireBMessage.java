@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.network;
 
-import net.yezon.theabyss.events.Friendly2Event;
+import net.yezon.theabyss.events.Friendly2event;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.network.NetworkEvent;
@@ -52,12 +52,13 @@ public class FriendleyFireBMessage {
 			return;
 		if (type == 0) {
 
-			Friendly2Event.execute(world, x, y, z, entity);
+			Friendly2event.execute(world, x, y, z, entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		TheabyssMod.addNetworkMessage(FriendleyFireBMessage.class, FriendleyFireBMessage::buffer, FriendleyFireBMessage::new, FriendleyFireBMessage::handler);
+		TheabyssMod.addNetworkMessage(FriendleyFireBMessage.class, FriendleyFireBMessage::buffer, FriendleyFireBMessage::new,
+				FriendleyFireBMessage::handler);
 	}
 }

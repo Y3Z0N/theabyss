@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.BottleOfManaDrinkedEvent;
+import net.yezon.theabyss.events.BottleOfManaDrinkedevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -15,9 +15,10 @@ import net.minecraft.world.entity.LivingEntity;
 
 public class BottleOfSomniumItem extends Item {
 	public BottleOfSomniumItem() {
-		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(16).rarity(Rarity.RARE).food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.19999999999999998f).alwaysEat()
+		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(16).rarity(Rarity.RARE)
+				.food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.2f).alwaysEat()
 
-				.build()));
+						.build()));
 	}
 
 	@Override
@@ -42,7 +43,7 @@ public class BottleOfSomniumItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		BottleOfManaDrinkedEvent.execute(entity);
+		BottleOfManaDrinkedevent.execute(entity);
 		return retval;
 	}
 }

@@ -35,14 +35,20 @@ public class GlacerytheOreFeature extends OreFeature {
 	public static Feature<?> feature() {
 		FEATURE = new GlacerytheOreFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:glacerythe_ore", FEATURE,
-				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()), TheabyssModBlocks.GLACERYTHE_ORE.get().defaultBlockState()),
-						OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.DARK_STONE.get().defaultBlockState()), TheabyssModBlocks.GLACERYTHE_ORE.get().defaultBlockState())), 5));
+				new OreConfiguration(List.of(
+						OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()),
+								TheabyssModBlocks.GLACERYTHE_ORE.get().defaultBlockState()),
+						OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.DARK_STONE.get().defaultBlockState()),
+								TheabyssModBlocks.GLACERYTHE_ORE.get().defaultBlockState())),
+						5));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:glacerythe_ore", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(2), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(25), VerticalAnchor.absolute(40)), BiomeFilter.biome()));
+				List.of(CountPlacement.of(2), InSquarePlacement.spread(),
+						HeightRangePlacement.uniform(VerticalAnchor.absolute(25), VerticalAnchor.absolute(40)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:frost_world")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:frost_world")));
 
 	public GlacerytheOreFeature() {
 		super(OreConfiguration.CODEC);

@@ -25,14 +25,22 @@ public class AbyssConfiguration {
 		GIVE_BOOK = BUILDER.comment("Give the player the official The Abyss guide book.").define("Spawn Book", true);
 		BUILDER.pop();
 		BUILDER.push("MOD");
-		ENTITY_LEVEL = BUILDER.comment("Set the difficulty of the abyss entities. The default value is 5. The minimum is 0, and the maximum is 10.").define("Difficulty", (double) 5);
-		ENABLE_MAGIC = BUILDER.comment("Set this to false if you don't want to use magic. It is recommended to keep it set to true.").define("Enable Magic", true);
-		ORE_RARITY = BUILDER.comment("The higher the number, the more likely rare ores like Incorythe Ore will generate in the abyss dimension. The default value is 25. The minimum value is 10, and the maximum value is 64.").define("Ore Rarity",
-				(double) 25);
-		POTATO_MODE = BUILDER.comment("If set to true, the mod will decrease particles and reduce AI path finding checks to improve overall performance. It is not recommended to set this to true.").define("Enable Potato Mode", false);
-		MODPACK_MODE = BUILDER.comment("If Modpack mode is set to true, it will patch mods like Botania, Ars Nouveau, and other mods to prevent them from spawning structures, flowers, or entities inside the abyss dimension.")
+		ENTITY_LEVEL = BUILDER.comment("Set the difficulty of the abyss entities. The default value is 5. The minimum is 0, and the maximum is 10.")
+				.define("Difficulty", (double) 5);
+		ENABLE_MAGIC = BUILDER.comment("Set this to false if you don't want to use magic. It is recommended to keep it set to true.")
+				.define("Enable Magic", true);
+		ORE_RARITY = BUILDER.comment(
+				"The higher the number, the more likely rare ores like Incorythe Ore will generate in the abyss dimension. The default value is 25. The minimum value is 10, and the maximum value is 64.")
+				.define("Ore Rarity", (double) 25);
+		POTATO_MODE = BUILDER.comment(
+				"If set to true, the mod will decrease particles and reduce AI path finding checks to improve overall performance. It is not recommended to set this to true.")
+				.define("Enable Potato Mode", false);
+		MODPACK_MODE = BUILDER.comment(
+				"If Modpack mode is set to true, it will patch mods like Botania, Ars Nouveau, and other mods to prevent them from spawning structures, flowers, or entities inside the abyss dimension.")
 				.define("Enable Modpack Mode", false);
-		ETERNAL_MODE = BUILDER.comment("This is just for the Eternal Abyss modpack. Do not set this to true unless you want to crash your client or server. This mode requires a core mod! Here be dragons.").define("Enable Eternal Mode", false);
+		ETERNAL_MODE = BUILDER.comment(
+				"This is just for the Eternal Abyss modpack. Do not set this to true unless you want to crash your client or server. This mode requires a core mod! Here be dragons.")
+				.define("Enable Eternal Mode", false);
 		BUILDER.pop();
 
 		SPEC = BUILDER.build();

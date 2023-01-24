@@ -2,10 +2,10 @@
 package net.yezon.theabyss.client.gui;
 
 import net.yezon.theabyss.world.inventory.PatreonScreenMenu;
-import net.yezon.theabyss.events.TierXEvent;
-import net.yezon.theabyss.events.Tier5Event;
-import net.yezon.theabyss.events.Tier4Event;
-import net.yezon.theabyss.events.Tier3Event;
+import net.yezon.theabyss.events.TierXevent;
+import net.yezon.theabyss.events.Tier5event;
+import net.yezon.theabyss.events.Tier4event;
+import net.yezon.theabyss.events.Tier3event;
 import net.yezon.theabyss.network.PatreonScreenButtonMessage;
 import net.yezon.theabyss.TheabyssMod;
 
@@ -76,7 +76,7 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
 		this.font.draw(poseStack, Component.translatable("gui.theabyss.patreon_screen.label_patreon_level"), 6, 7, -13421773);
-		if (TierXEvent.execute(entity))
+		if (TierXevent.execute(entity))
 			this.font.draw(poseStack, Component.translatable("gui.theabyss.patreon_screen.label_dev_tools"), -119, 7, -1);
 	}
 
@@ -90,135 +90,146 @@ public class PatreonScreenScreen extends AbstractContainerScreen<PatreonScreenMe
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 25, 125, 20, Component.translatable("gui.theabyss.patreon_screen.button_get_disc_1"), e -> {
-			if (Tier3Event.execute(entity)) {
-				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(0, x, y, z));
-				PatreonScreenButtonMessage.handleButtonAction(entity, 0, x, y, z);
-			}
-		}) {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 25, 125, 20,
+				Component.translatable("gui.theabyss.patreon_screen.button_get_disc_1"), e -> {
+					if (Tier3event.execute(entity)) {
+						TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(0, x, y, z));
+						PatreonScreenButtonMessage.handleButtonAction(entity, 0, x, y, z);
+					}
+				}) {
 			@Override
 			public void render(PoseStack ms, int gx, int gy, float ticks) {
-				if (Tier3Event.execute(entity))
+				if (Tier3event.execute(entity))
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 52, 125, 20, Component.translatable("gui.theabyss.patreon_screen.button_get_disc_2"), e -> {
-			if (Tier4Event.execute(entity)) {
-				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(1, x, y, z));
-				PatreonScreenButtonMessage.handleButtonAction(entity, 1, x, y, z);
-			}
-		}) {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 52, 125, 20,
+				Component.translatable("gui.theabyss.patreon_screen.button_get_disc_2"), e -> {
+					if (Tier4event.execute(entity)) {
+						TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(1, x, y, z));
+						PatreonScreenButtonMessage.handleButtonAction(entity, 1, x, y, z);
+					}
+				}) {
 			@Override
 			public void render(PoseStack ms, int gx, int gy, float ticks) {
-				if (Tier4Event.execute(entity))
+				if (Tier4event.execute(entity))
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 79, 125, 20, Component.translatable("gui.theabyss.patreon_screen.button_firework_on_join"), e -> {
-			if (Tier4Event.execute(entity)) {
-				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(2, x, y, z));
-				PatreonScreenButtonMessage.handleButtonAction(entity, 2, x, y, z);
-			}
-		}) {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 79, 125, 20,
+				Component.translatable("gui.theabyss.patreon_screen.button_firework_on_join"), e -> {
+					if (Tier4event.execute(entity)) {
+						TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(2, x, y, z));
+						PatreonScreenButtonMessage.handleButtonAction(entity, 2, x, y, z);
+					}
+				}) {
 			@Override
 			public void render(PoseStack ms, int gx, int gy, float ticks) {
-				if (Tier4Event.execute(entity))
+				if (Tier4event.execute(entity))
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 106, 125, 20, Component.translatable("gui.theabyss.patreon_screen.button_particles_on_death"), e -> {
-			if (Tier4Event.execute(entity)) {
-				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(3, x, y, z));
-				PatreonScreenButtonMessage.handleButtonAction(entity, 3, x, y, z);
-			}
-		}) {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 106, 125, 20,
+				Component.translatable("gui.theabyss.patreon_screen.button_particles_on_death"), e -> {
+					if (Tier4event.execute(entity)) {
+						TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(3, x, y, z));
+						PatreonScreenButtonMessage.handleButtonAction(entity, 3, x, y, z);
+					}
+				}) {
 			@Override
 			public void render(PoseStack ms, int gx, int gy, float ticks) {
-				if (Tier4Event.execute(entity))
+				if (Tier4event.execute(entity))
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 133, 125, 20, Component.translatable("gui.theabyss.patreon_screen.button_ring_of_firework"), e -> {
-			if (Tier4Event.execute(entity)) {
-				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(4, x, y, z));
-				PatreonScreenButtonMessage.handleButtonAction(entity, 4, x, y, z);
-			}
-		}) {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 133, 125, 20,
+				Component.translatable("gui.theabyss.patreon_screen.button_ring_of_firework"), e -> {
+					if (Tier4event.execute(entity)) {
+						TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(4, x, y, z));
+						PatreonScreenButtonMessage.handleButtonAction(entity, 4, x, y, z);
+					}
+				}) {
 			@Override
 			public void render(PoseStack ms, int gx, int gy, float ticks) {
-				if (Tier4Event.execute(entity))
+				if (Tier4event.execute(entity))
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 160, 125, 20, Component.translatable("gui.theabyss.patreon_screen.button_particles_while_walk"), e -> {
-			if (Tier4Event.execute(entity)) {
-				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(5, x, y, z));
-				PatreonScreenButtonMessage.handleButtonAction(entity, 5, x, y, z);
-			}
-		}) {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 160, 125, 20,
+				Component.translatable("gui.theabyss.patreon_screen.button_particles_while_walk"), e -> {
+					if (Tier4event.execute(entity)) {
+						TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(5, x, y, z));
+						PatreonScreenButtonMessage.handleButtonAction(entity, 5, x, y, z);
+					}
+				}) {
 			@Override
 			public void render(PoseStack ms, int gx, int gy, float ticks) {
-				if (Tier4Event.execute(entity))
+				if (Tier4event.execute(entity))
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 187, 125, 20, Component.translatable("gui.theabyss.patreon_screen.button_ring_of_fart"), e -> {
-			if (Tier5Event.execute(entity)) {
-				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(6, x, y, z));
-				PatreonScreenButtonMessage.handleButtonAction(entity, 6, x, y, z);
-			}
-		}) {
+		this.addRenderableWidget(new Button(this.leftPos + 24, this.topPos + 187, 125, 20,
+				Component.translatable("gui.theabyss.patreon_screen.button_ring_of_fart"), e -> {
+					if (Tier5event.execute(entity)) {
+						TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(6, x, y, z));
+						PatreonScreenButtonMessage.handleButtonAction(entity, 6, x, y, z);
+					}
+				}) {
 			@Override
 			public void render(PoseStack ms, int gx, int gy, float ticks) {
-				if (Tier5Event.execute(entity))
+				if (Tier5event.execute(entity))
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 25, 67, 20, Component.translatable("gui.theabyss.patreon_screen.button_creative"), e -> {
-			if (TierXEvent.execute(entity)) {
-				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(7, x, y, z));
-				PatreonScreenButtonMessage.handleButtonAction(entity, 7, x, y, z);
-			}
-		}) {
+		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 25, 67, 20,
+				Component.translatable("gui.theabyss.patreon_screen.button_creative"), e -> {
+					if (TierXevent.execute(entity)) {
+						TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(7, x, y, z));
+						PatreonScreenButtonMessage.handleButtonAction(entity, 7, x, y, z);
+					}
+				}) {
 			@Override
 			public void render(PoseStack ms, int gx, int gy, float ticks) {
-				if (TierXEvent.execute(entity))
+				if (TierXevent.execute(entity))
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 52, 67, 20, Component.translatable("gui.theabyss.patreon_screen.button_survival"), e -> {
-			if (TierXEvent.execute(entity)) {
-				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(8, x, y, z));
-				PatreonScreenButtonMessage.handleButtonAction(entity, 8, x, y, z);
-			}
-		}) {
+		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 52, 67, 20,
+				Component.translatable("gui.theabyss.patreon_screen.button_survival"), e -> {
+					if (TierXevent.execute(entity)) {
+						TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(8, x, y, z));
+						PatreonScreenButtonMessage.handleButtonAction(entity, 8, x, y, z);
+					}
+				}) {
 			@Override
 			public void render(PoseStack ms, int gx, int gy, float ticks) {
-				if (TierXEvent.execute(entity))
+				if (TierXevent.execute(entity))
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 79, 67, 20, Component.translatable("gui.theabyss.patreon_screen.button_spectator"), e -> {
-			if (TierXEvent.execute(entity)) {
-				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(9, x, y, z));
-				PatreonScreenButtonMessage.handleButtonAction(entity, 9, x, y, z);
-			}
-		}) {
+		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 79, 67, 20,
+				Component.translatable("gui.theabyss.patreon_screen.button_spectator"), e -> {
+					if (TierXevent.execute(entity)) {
+						TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(9, x, y, z));
+						PatreonScreenButtonMessage.handleButtonAction(entity, 9, x, y, z);
+					}
+				}) {
 			@Override
 			public void render(PoseStack ms, int gx, int gy, float ticks) {
-				if (TierXEvent.execute(entity))
+				if (TierXevent.execute(entity))
 					super.render(ms, gx, gy, ticks);
 			}
 		});
-		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 106, 67, 20, Component.translatable("gui.theabyss.patreon_screen.button_op_sword"), e -> {
-			if (TierXEvent.execute(entity)) {
-				TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(10, x, y, z));
-				PatreonScreenButtonMessage.handleButtonAction(entity, 10, x, y, z);
-			}
-		}) {
+		this.addRenderableWidget(new Button(this.leftPos + -119, this.topPos + 106, 67, 20,
+				Component.translatable("gui.theabyss.patreon_screen.button_op_sword"), e -> {
+					if (TierXevent.execute(entity)) {
+						TheabyssMod.PACKET_HANDLER.sendToServer(new PatreonScreenButtonMessage(10, x, y, z));
+						PatreonScreenButtonMessage.handleButtonAction(entity, 10, x, y, z);
+					}
+				}) {
 			@Override
 			public void render(PoseStack ms, int gx, int gy, float ticks) {
-				if (TierXEvent.execute(entity))
+				if (TierXevent.execute(entity))
 					super.render(ms, gx, gy, ticks);
 			}
 		});

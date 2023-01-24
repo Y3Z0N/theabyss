@@ -1,9 +1,9 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.PhantomTrailEvent;
-import net.yezon.theabyss.events.PhantomEffectEvent;
-import net.yezon.theabyss.events.ArtifactOfPhantomsAbilityEvent;
+import net.yezon.theabyss.events.PhantomTrailevent;
+import net.yezon.theabyss.events.PhantomEffectevent;
+import net.yezon.theabyss.events.ArtifactOfPhantomsAbilityevent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -69,19 +69,19 @@ public class ArtifactOfPhantomsEntity extends AbstractArrow implements ItemSuppl
 	@Override
 	public void playerTouch(Player entity) {
 		super.playerTouch(entity);
-		ArtifactOfPhantomsAbilityEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), entity);
+		ArtifactOfPhantomsAbilityevent.execute(this.level, this.getX(), this.getY(), this.getZ(), entity);
 	}
 
 	@Override
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
-		PhantomEffectEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), entityHitResult.getEntity());
+		PhantomEffectevent.execute(this.level, this.getX(), this.getY(), this.getZ(), entityHitResult.getEntity());
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		PhantomTrailEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		PhantomTrailevent.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (this.inGround)
 			this.discard();
 	}
@@ -94,7 +94,9 @@ public class ArtifactOfPhantomsEntity extends AbstractArrow implements ItemSuppl
 		entityarrow.setBaseDamage(damage);
 		entityarrow.setKnockback(knockback);
 		world.addFreshEntity(entityarrow);
-		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:phantom_attack")), SoundSource.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
+		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(),
+				ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:phantom_attack")), SoundSource.PLAYERS, 1,
+				1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
 		return entityarrow;
 	}
 
@@ -109,7 +111,9 @@ public class ArtifactOfPhantomsEntity extends AbstractArrow implements ItemSuppl
 		entityarrow.setKnockback(1);
 		entityarrow.setCritArrow(true);
 		entity.level.addFreshEntity(entityarrow);
-		entity.level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:phantom_attack")), SoundSource.PLAYERS, 1, 1f / (RandomSource.create().nextFloat() * 0.5f + 1));
+		entity.level.playSound(null, entity.getX(), entity.getY(), entity.getZ(),
+				ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:phantom_attack")), SoundSource.PLAYERS, 1,
+				1f / (RandomSource.create().nextFloat() * 0.5f + 1));
 		return entityarrow;
 	}
 }

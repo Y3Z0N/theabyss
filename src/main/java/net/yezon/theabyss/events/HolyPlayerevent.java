@@ -17,7 +17,7 @@ import net.minecraft.world.entity.Entity;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class HolyPlayerEvent {
+public class HolyPlayerevent {
 	@SubscribeEvent
 	public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
 		execute(event, event.getEntity().level, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
@@ -31,7 +31,8 @@ public class HolyPlayerEvent {
 		if (entity == null)
 			return;
 		if ((entity.getDisplayName().getString()).equals("alda_moin") || (entity.getDisplayName().getString()).equals("Alda_Moin")) {
-			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).HolyPlayer == false) {
+			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new TheabyssModVariables.PlayerVariables())).HolyPlayer == false) {
 				if (world instanceof Level _level && !_level.isClientSide()) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheabyssModItems.HOLY_SPOON.get()));
 					entityToSpawn.setPickUpDelay(10);

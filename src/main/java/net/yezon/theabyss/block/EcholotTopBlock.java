@@ -3,8 +3,8 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.EcholotEffectEvent;
-import net.yezon.theabyss.events.EcholotAmbienceEvent;
+import net.yezon.theabyss.events.EcholotEffectevent;
+import net.yezon.theabyss.events.EcholotAmbienceevent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -24,7 +24,8 @@ import net.minecraft.core.BlockPos;
 
 public class EcholotTopBlock extends Block {
 	public EcholotTopBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(-1, 3600000).lightLevel(s -> 3).noCollission().noOcclusion().randomTicks().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(-1, 3600000).lightLevel(s -> 3).noCollission()
+				.noOcclusion().randomTicks().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
 				.isRedstoneConductor((bs, br, bp) -> false).noLootTable());
 	}
 
@@ -54,12 +55,13 @@ public class EcholotTopBlock extends Block {
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-		EcholotAmbienceEvent.execute(world, x, y, z);
+
+		EcholotAmbienceevent.execute(world, x, y, z);
 	}
 
 	@Override
 	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
 		super.stepOn(world, pos, blockstate, entity);
-		EcholotEffectEvent.execute(entity);
+		EcholotEffectevent.execute(entity);
 	}
 }

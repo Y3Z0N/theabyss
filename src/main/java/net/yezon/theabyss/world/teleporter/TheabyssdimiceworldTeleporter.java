@@ -47,7 +47,8 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 	@SubscribeEvent
 	public static void registerPointOfInterest(RegisterEvent event) {
 		event.register(ForgeRegistries.Keys.POI_TYPES, registerHelper -> {
-			PoiType poiType = new PoiType(ImmutableSet.copyOf(TheabyssModBlocks.FROST_WORLD_PORTAL.get().getStateDefinition().getPossibleStates()), 0, 1);
+			PoiType poiType = new PoiType(ImmutableSet.copyOf(TheabyssModBlocks.FROST_WORLD_PORTAL.get().getStateDefinition().getPossibleStates()), 0,
+					1);
 			registerHelper.register("frost_world_portal", poiType);
 			poi = ForgeRegistries.POI_TYPES.getHolder(poiType).get();
 		});
@@ -80,9 +81,10 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 			BlockPos blockpos = p_192975_.getPos();
 			this.level.getChunkSource().addRegionTicket(CUSTOM_PORTAL, new ChunkPos(blockpos), 3, blockpos);
 			BlockState blockstate = this.level.getBlockState(blockpos);
-			return BlockUtil.getLargestRectangleAround(blockpos, blockstate.getValue(BlockStateProperties.HORIZONTAL_AXIS), 21, Direction.Axis.Y, 21, (p_192978_) -> {
-				return this.level.getBlockState(p_192978_) == blockstate;
-			});
+			return BlockUtil.getLargestRectangleAround(blockpos, blockstate.getValue(BlockStateProperties.HORIZONTAL_AXIS), 21, Direction.Axis.Y, 21,
+					(p_192978_) -> {
+						return this.level.getBlockState(p_192978_) == blockstate;
+					});
 		});
 	}
 
@@ -96,7 +98,8 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 		int i = Math.min(this.level.getMaxBuildHeight(), this.level.getMinBuildHeight() + this.level.getLogicalHeight()) - 1;
 		BlockPos.MutableBlockPos blockpos$mutableblockpos = p_77667_.mutable();
 		for (BlockPos.MutableBlockPos blockpos$mutableblockpos1 : BlockPos.spiralAround(p_77667_, 16, Direction.EAST, Direction.SOUTH)) {
-			int j = Math.min(i, this.level.getHeight(Heightmap.Types.MOTION_BLOCKING, blockpos$mutableblockpos1.getX(), blockpos$mutableblockpos1.getZ()));
+			int j = Math.min(i,
+					this.level.getHeight(Heightmap.Types.MOTION_BLOCKING, blockpos$mutableblockpos1.getX(), blockpos$mutableblockpos1.getZ()));
 			int k = 1;
 			if (worldborder.isWithinBounds(blockpos$mutableblockpos1) && worldborder.isWithinBounds(blockpos$mutableblockpos1.move(direction, 1))) {
 				blockpos$mutableblockpos1.move(direction.getOpposite(), 1);
@@ -104,7 +107,8 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 					blockpos$mutableblockpos1.setY(l);
 					if (this.level.isEmptyBlock(blockpos$mutableblockpos1)) {
 						int i1;
-						for (i1 = l; l > this.level.getMinBuildHeight() && this.level.isEmptyBlock(blockpos$mutableblockpos1.move(Direction.DOWN)); --l) {
+						for (i1 = l; l > this.level.getMinBuildHeight()
+								&& this.level.isEmptyBlock(blockpos$mutableblockpos1.move(Direction.DOWN)); --l) {
 						}
 						if (l + 4 <= i) {
 							int j1 = i1 - l;
@@ -112,7 +116,9 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 								blockpos$mutableblockpos1.setY(l);
 								if (this.canHostFrame(blockpos$mutableblockpos1, blockpos$mutableblockpos, direction, 0)) {
 									double d2 = p_77667_.distSqr(blockpos$mutableblockpos1);
-									if (this.canHostFrame(blockpos$mutableblockpos1, blockpos$mutableblockpos, direction, -1) && this.canHostFrame(blockpos$mutableblockpos1, blockpos$mutableblockpos, direction, 1) && (d0 == -1.0D || d0 > d2)) {
+									if (this.canHostFrame(blockpos$mutableblockpos1, blockpos$mutableblockpos, direction, -1)
+											&& this.canHostFrame(blockpos$mutableblockpos1, blockpos$mutableblockpos, direction, 1)
+											&& (d0 == -1.0D || d0 > d2)) {
 										d0 = d2;
 										blockpos = blockpos$mutableblockpos1.immutable();
 									}
@@ -146,7 +152,8 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 				for (int j3 = 0; j3 < 2; ++j3) {
 					for (int k3 = -1; k3 < 3; ++k3) {
 						BlockState blockstate1 = k3 < 0 ? TheabyssModBlocks.DARK_STONE.get().defaultBlockState() : Blocks.AIR.defaultBlockState();
-						blockpos$mutableblockpos.setWithOffset(blockpos, j3 * direction.getStepX() + i3 * direction1.getStepX(), k3, j3 * direction.getStepZ() + i3 * direction1.getStepZ());
+						blockpos$mutableblockpos.setWithOffset(blockpos, j3 * direction.getStepX() + i3 * direction1.getStepX(), k3,
+								j3 * direction.getStepZ() + i3 * direction1.getStepZ());
 						this.level.setBlockAndUpdate(blockpos$mutableblockpos, blockstate1);
 					}
 				}
@@ -175,7 +182,8 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 		Direction direction = p_77664_.getClockWise();
 		for (int i = -1; i < 3; ++i) {
 			for (int j = -1; j < 4; ++j) {
-				p_77663_.setWithOffset(p_77662_, p_77664_.getStepX() * i + direction.getStepX() * p_77665_, j, p_77664_.getStepZ() * i + direction.getStepZ() * p_77665_);
+				p_77663_.setWithOffset(p_77662_, p_77664_.getStepX() * i + direction.getStepX() * p_77665_, j,
+						p_77664_.getStepZ() * i + direction.getStepZ() * p_77665_);
 				if (j < 0 && !this.level.getBlockState(p_77663_).getMaterial().isSolid()) {
 					return false;
 				}
@@ -223,13 +231,16 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 			Vec3 vector3d;
 			if (blockstate.hasProperty(BlockStateProperties.HORIZONTAL_AXIS)) {
 				direction$axis = blockstate.getValue(BlockStateProperties.HORIZONTAL_AXIS);
-				BlockUtil.FoundRectangle teleportationrepositioner$result = BlockUtil.getLargestRectangleAround(this.entityEnterPos, direction$axis, 21, Direction.Axis.Y, 21, pos -> entity.level.getBlockState(pos) == blockstate);
-				vector3d = TheabyssdimiceworldPortalShape.getRelativePosition(teleportationrepositioner$result, direction$axis, entity.position(), entity.getDimensions(entity.getPose()));
+				BlockUtil.FoundRectangle teleportationrepositioner$result = BlockUtil.getLargestRectangleAround(this.entityEnterPos, direction$axis,
+						21, Direction.Axis.Y, 21, pos -> entity.level.getBlockState(pos) == blockstate);
+				vector3d = TheabyssdimiceworldPortalShape.getRelativePosition(teleportationrepositioner$result, direction$axis, entity.position(),
+						entity.getDimensions(entity.getPose()));
 			} else {
 				direction$axis = Direction.Axis.X;
 				vector3d = new Vec3(0.5, 0, 0);
 			}
-			return TheabyssdimiceworldPortalShape.createPortalInfo(server, repositioner, direction$axis, vector3d, entity.getDimensions(entity.getPose()), entity.getDeltaMovement(), entity.getYRot(), entity.getXRot());
+			return TheabyssdimiceworldPortalShape.createPortalInfo(server, repositioner, direction$axis, vector3d,
+					entity.getDimensions(entity.getPose()), entity.getDeltaMovement(), entity.getYRot(), entity.getXRot());
 		}).orElse(new PortalInfo(entity.position(), Vec3.ZERO, entity.getYRot(), entity.getXRot()));
 	}
 
@@ -239,7 +250,8 @@ public class TheabyssdimiceworldTeleporter implements ITeleporter {
 			if (optional.isPresent()) {
 				return optional;
 			} else {
-				Direction.Axis direction$axis = entity.level.getBlockState(this.entityEnterPos).getOptionalValue(NetherPortalBlock.AXIS).orElse(Direction.Axis.X);
+				Direction.Axis direction$axis = entity.level.getBlockState(this.entityEnterPos).getOptionalValue(NetherPortalBlock.AXIS)
+						.orElse(Direction.Axis.X);
 				return this.createPortal(pos, direction$axis);
 			}
 		} else {

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.EnchantedBottleOfManaDrinkedEvent;
+import net.yezon.theabyss.events.EnchantedBottleOfManaDrinkedevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -18,9 +18,10 @@ import net.minecraft.world.entity.LivingEntity;
 
 public class EnchantedBottleOfSomniumItem extends Item {
 	public EnchantedBottleOfSomniumItem() {
-		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(16).rarity(Rarity.EPIC).food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.19999999999999998f).alwaysEat()
+		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(16).rarity(Rarity.EPIC)
+				.food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.2f).alwaysEat()
 
-				.build()));
+						.build()));
 	}
 
 	@Override
@@ -51,7 +52,7 @@ public class EnchantedBottleOfSomniumItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		EnchantedBottleOfManaDrinkedEvent.execute(entity);
+		EnchantedBottleOfManaDrinkedevent.execute(entity);
 		return retval;
 	}
 }

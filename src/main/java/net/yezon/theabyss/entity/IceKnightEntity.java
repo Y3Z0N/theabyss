@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.IceKnightEntityIsHurtEvent;
+import net.yezon.theabyss.events.IceKnightEntityIsHurtevent;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -88,7 +88,7 @@ public class IceKnightEntity extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		IceKnightEntityIsHurtEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		IceKnightEntityIsHurtevent.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (source.getDirectEntity() instanceof AbstractArrow)
 			return false;
 		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)
@@ -106,7 +106,8 @@ public class IceKnightEntity extends Monster {
 
 	public static void init() {
 		SpawnPlacements.register(TheabyssModEntities.ICE_KNIGHT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
+				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL
+						&& Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

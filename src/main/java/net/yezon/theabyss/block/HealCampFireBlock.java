@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.HealFireEvent;
+import net.yezon.theabyss.events.HealFireevent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -26,8 +26,8 @@ import java.util.Collections;
 
 public class HealCampFireBlock extends Block {
 	public HealCampFireBlock() {
-		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(1f, 10f).lightLevel(s -> 15).noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(1f, 10f).lightLevel(s -> 15).noOcclusion()
+				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
@@ -47,6 +47,7 @@ public class HealCampFireBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+
 		return box(0, 0, 0, 16, 8, 16);
 	}
 
@@ -70,7 +71,8 @@ public class HealCampFireBlock extends Block {
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-		HealFireEvent.execute(world, x, y, z);
+
+		HealFireevent.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 4);
 	}
 }

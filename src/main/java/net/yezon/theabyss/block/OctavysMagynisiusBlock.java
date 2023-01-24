@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.FirePlantEffectEvent;
+import net.yezon.theabyss.events.FirePlantEffectevent;
 
 import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.ForgeHooks;
@@ -27,7 +27,8 @@ import java.util.Collections;
 
 public class OctavysMagynisiusBlock extends SugarCaneBlock {
 	public OctavysMagynisiusBlock() {
-		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).noCollission());
+		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true)
+				.emissiveRendering((bs, br, bp) -> true).noCollission());
 	}
 
 	@Override
@@ -70,6 +71,6 @@ public class OctavysMagynisiusBlock extends SugarCaneBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		FirePlantEffectEvent.execute(entity);
+		FirePlantEffectevent.execute(entity);
 	}
 }

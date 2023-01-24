@@ -40,10 +40,13 @@ import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
-public class SomniumInfuserBlock extends Block implements EntityBlock {
+public class SomniumInfuserBlock extends Block
+		implements
+
+			EntityBlock {
 	public SomniumInfuserBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).lightLevel(s -> 2).noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).lightLevel(s -> 2).noOcclusion()
+				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
@@ -63,6 +66,7 @@ public class SomniumInfuserBlock extends Block implements EntityBlock {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+
 		return Shapes.or(box(0, 0, 0, 16, 2, 16), box(7, 0, 7, 9, 14, 9));
 	}
 

@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.world.inventory;
 
-import net.yezon.theabyss.events.SomniumEnhancerGuiSoundEvent;
-import net.yezon.theabyss.events.GenerateSomniumUpgradesEvent;
+import net.yezon.theabyss.events.SomniumEnhancerGuiSoundevent;
+import net.yezon.theabyss.events.GenerateSomniumUpgradesevent;
 import net.yezon.theabyss.init.TheabyssModMenus;
 import net.yezon.theabyss.init.TheabyssModItems;
 
@@ -109,7 +109,7 @@ public class InfuserMenu extends AbstractContainerMenu implements Supplier<Map<I
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
 		for (int si = 0; si < 9; ++si)
 			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
-		SomniumEnhancerGuiSoundEvent.execute(world, x, y, z);
+		SomniumEnhancerGuiSoundevent.execute(world, x, y, z);
 	}
 
 	@Override
@@ -253,7 +253,7 @@ public class InfuserMenu extends AbstractContainerMenu implements Supplier<Map<I
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			GenerateSomniumUpgradesEvent.execute(world, x, y, z, entity);
+			GenerateSomniumUpgradesevent.execute(world, x, y, z, entity);
 		}
 	}
 }

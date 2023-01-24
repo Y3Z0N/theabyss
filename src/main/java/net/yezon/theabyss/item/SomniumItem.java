@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.GetSomniumAdvEvent;
+import net.yezon.theabyss.events.GetSomniumAdvevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.Level;
@@ -25,14 +25,14 @@ public class SomniumItem extends Item {
 	@Override
 	public void onCraftedBy(ItemStack itemstack, Level world, Player entity) {
 		super.onCraftedBy(itemstack, world, entity);
-		GetSomniumAdvEvent.execute(entity);
+		GetSomniumAdvevent.execute(entity);
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			GetSomniumAdvEvent.execute(entity);
-		GetSomniumAdvEvent.execute(entity);
+			GetSomniumAdvevent.execute(entity);
+		GetSomniumAdvevent.execute(entity);
 	}
 }

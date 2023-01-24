@@ -56,7 +56,7 @@ public abstract class GarniteArmorItem extends ArmorItem {
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0.30000000000000004f;
+				return 0.3f;
 			}
 		}, slot, properties);
 	}

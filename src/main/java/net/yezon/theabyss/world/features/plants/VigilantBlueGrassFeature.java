@@ -34,12 +34,15 @@ public class VigilantBlueGrassFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new VigilantBlueGrassFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:vigilant_blue_grass", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.VIGILANT_BLUE_GRASS.get())), List.of(), 4));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:vigilant_blue_grass", CONFIGURED_FEATURE, List.of(CountPlacement.of(6), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.VIGILANT_BLUE_GRASS.get())), List.of(), 4));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:vigilant_blue_grass", CONFIGURED_FEATURE,
+				List.of(CountPlacement.of(6), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public VigilantBlueGrassFeature() {
 		super(RandomPatchConfiguration.CODEC);

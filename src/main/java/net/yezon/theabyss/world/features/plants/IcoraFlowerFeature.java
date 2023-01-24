@@ -34,13 +34,15 @@ public class IcoraFlowerFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new IcoraFlowerFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:icora_flower", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.ICORA_FLOWER.get())), List.of(), 64));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:icora_flower", CONFIGURED_FEATURE, List.of(CountPlacement.of(1), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:icora_flower", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.ICORA_FLOWER.get())), List.of(), 64));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:icora_flower", CONFIGURED_FEATURE, List.of(CountPlacement.of(1),
+				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:frost_world")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:frost_world")));
 
 	public IcoraFlowerFeature() {
 		super(RandomPatchConfiguration.CODEC);

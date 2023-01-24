@@ -8,7 +8,7 @@ import net.minecraft.advancements.Advancement;
 
 import java.util.Iterator;
 
-public class GetFusionOreAdvEvent {
+public class GetFusionOreAdvevent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

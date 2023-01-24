@@ -17,7 +17,8 @@ import java.util.Collections;
 
 public class SlimedStairsBlock extends StairBlock {
 	public SlimedStairsBlock() {
-		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2f, 10f).dynamicShape());
+		super(() -> Blocks.AIR.defaultBlockState(),
+				BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2f, 10f).dynamicShape());
 	}
 
 	@Override

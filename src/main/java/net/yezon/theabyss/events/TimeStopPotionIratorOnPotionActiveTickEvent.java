@@ -10,7 +10,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.SimpleParticleType;
 
-public class TimeStopPotionIratorOnPotionActiveTickEvent {
+public class TimeStopPotionIratorOnPotionActiveTickevent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.AntiFearEssenceEffectEvent;
+import net.yezon.theabyss.events.AntiFearEssenceEffectevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -19,9 +19,10 @@ import java.util.List;
 
 public class AntiFearEssenceItem extends Item {
 	public AntiFearEssenceItem() {
-		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(16).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.19999999999999998f).alwaysEat()
+		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(16).rarity(Rarity.COMMON)
+				.food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.2f).alwaysEat()
 
-				.build()));
+						.build()));
 	}
 
 	@Override
@@ -52,7 +53,7 @@ public class AntiFearEssenceItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		AntiFearEssenceEffectEvent.execute(entity);
+		AntiFearEssenceEffectevent.execute(entity);
 		return retval;
 	}
 }

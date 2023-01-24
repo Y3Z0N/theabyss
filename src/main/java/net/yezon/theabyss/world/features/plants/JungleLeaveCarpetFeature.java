@@ -34,12 +34,15 @@ public class JungleLeaveCarpetFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new JungleLeaveCarpetFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:jungle_leave_carpet", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.JUNGLE_LEAVE_CARPET.get())), List.of(), 32));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:jungle_leave_carpet", CONFIGURED_FEATURE, List.of(CountPlacement.of(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.JUNGLE_LEAVE_CARPET.get())), List.of(), 32));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:jungle_leave_carpet", CONFIGURED_FEATURE,
+				List.of(CountPlacement.of(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public JungleLeaveCarpetFeature() {
 		super(RandomPatchConfiguration.CODEC);

@@ -1,10 +1,10 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.NightbladeBossDodgeOnHurtEvent;
-import net.yezon.theabyss.events.NightbladeBossDiesEvent;
-import net.yezon.theabyss.events.NightBladeMusicOnSpawnEvent;
-import net.yezon.theabyss.events.NightBladeBossAbilityEvent;
+import net.yezon.theabyss.events.NightbladeBossDodgeOnHurtevent;
+import net.yezon.theabyss.events.NightbladeBossDiesevent;
+import net.yezon.theabyss.events.NightBladeMusicOnSpawnevent;
+import net.yezon.theabyss.events.NightBladeBossAbilityevent;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -47,7 +47,8 @@ import net.minecraft.nbt.CompoundTag;
 import javax.annotation.Nullable;
 
 public class NightbladeBossEntity extends Monster {
-	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.WHITE, ServerBossEvent.BossBarOverlay.PROGRESS);
+	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.WHITE,
+			ServerBossEvent.BossBarOverlay.PROGRESS);
 
 	public NightbladeBossEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(TheabyssModEntities.NIGHTBLADE_BOSS.get(), world);
@@ -111,7 +112,7 @@ public class NightbladeBossEntity extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		NightbladeBossDodgeOnHurtEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		NightbladeBossDodgeOnHurtevent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 		if (source.getDirectEntity() instanceof AbstractArrow)
 			return false;
 		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)
@@ -142,20 +143,21 @@ public class NightbladeBossEntity extends Monster {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		NightbladeBossDiesEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		NightbladeBossDiesevent.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason,
+			@Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		NightBladeMusicOnSpawnEvent.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		NightBladeMusicOnSpawnevent.execute(world, this.getX(), this.getY(), this.getZ(), this);
 		return retval;
 	}
 
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		NightBladeBossAbilityEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		NightBladeBossAbilityevent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

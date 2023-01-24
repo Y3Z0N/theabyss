@@ -13,26 +13,33 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.Registry;
 import net.minecraft.core.BlockPos;
 
-public class ApplyPocketPortEvent {
+public class ApplyPocketPortevent {
 	public static void execute(LevelAccessor world) {
 		if (world instanceof ServerLevel _origLevel) {
 			LevelAccessor _worldorig = world;
-			world = _origLevel.getServer().getLevel(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:pocket_dimension")));
+			world = _origLevel.getServer()
+					.getLevel(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:pocket_dimension")));
 			if (world != null) {
 				if (world instanceof ServerLevel _serverworld) {
 					StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("theabyss", "pocket_room"));
 					if (template != null) {
-						template.placeInWorld(_serverworld, new BlockPos(Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionX), 80, Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionZ)),
-								new BlockPos(Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionX), 80, Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionZ)),
-								new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
+						template.placeInWorld(_serverworld,
+								new BlockPos(Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionX), 80,
+										Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionZ)),
+								new BlockPos(Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionX), 80,
+										Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionZ)),
+								new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+								_serverworld.random, 3);
 					}
 				}
-				TheabyssModVariables.WorldVariables.get(world).PocketDimensionX = Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionX) + Math.round(20);
+				TheabyssModVariables.WorldVariables.get(world).PocketDimensionX = Math
+						.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionX) + Math.round(20);
 				TheabyssModVariables.WorldVariables.get(world).syncData(world);
 			}
 			world = _worldorig;
 		}
-		TheabyssModVariables.WorldVariables.get(world).PocketDimensionX = Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionX) + Math.round(20);
+		TheabyssModVariables.WorldVariables.get(world).PocketDimensionX = Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionX)
+				+ Math.round(20);
 		TheabyssModVariables.WorldVariables.get(world).syncData(world);
 	}
 }

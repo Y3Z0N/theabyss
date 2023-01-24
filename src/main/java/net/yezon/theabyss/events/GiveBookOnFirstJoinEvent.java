@@ -20,7 +20,7 @@ import net.minecraft.commands.CommandSource;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class GiveBookOnFirstJoinEvent {
+public class GiveBookOnFirstJoinevent {
 	@SubscribeEvent
 	public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
 		execute(event, event.getEntity().level, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
@@ -34,9 +34,12 @@ public class GiveBookOnFirstJoinEvent {
 		if (entity == null)
 			return;
 		if (AbyssConfiguration.GIVE_BOOK.get() == true) {
-			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).BookSpawn == false) {
+			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new TheabyssModVariables.PlayerVariables())).BookSpawn == false) {
 				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+					_level.getServer().getCommands().performPrefixedCommand(
+							new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""),
+									_level.getServer(), null).withSuppressedOutput(),
 							("/give " + entity.getDisplayName().getString() + " patchouli:guide_book{\"patchouli:book\": \"theabyss:the_abyss\"}"));
 				{
 					boolean _setval = true;

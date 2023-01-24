@@ -19,8 +19,12 @@ import java.util.Collections;
 
 public class BlaruPlanksBlock extends Block {
 	public BlaruPlanksBlock() {
-		super(BlockBehaviour.Properties.of(Material.WOOD).sound(new ForgeSoundType(1.0f, 1.0f, () -> new SoundEvent(new ResourceLocation("theabyss:wood_place")), () -> new SoundEvent(new ResourceLocation("theabyss:wood_step")),
-				() -> new SoundEvent(new ResourceLocation("theabyss:wood_place")), () -> new SoundEvent(new ResourceLocation("block.wood.hit")), () -> new SoundEvent(new ResourceLocation("block.wood.fall")))).strength(2f, 10f));
+		super(BlockBehaviour.Properties.of(Material.WOOD)
+				.sound(new ForgeSoundType(1.0f, 1.0f, () -> new SoundEvent(new ResourceLocation("theabyss:wood_place")),
+						() -> new SoundEvent(new ResourceLocation("theabyss:wood_step")),
+						() -> new SoundEvent(new ResourceLocation("theabyss:wood_place")),
+						() -> new SoundEvent(new ResourceLocation("block.wood.hit")), () -> new SoundEvent(new ResourceLocation("block.wood.fall"))))
+				.strength(2f, 10f));
 	}
 
 	@Override

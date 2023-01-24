@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyNodeEffectEvent;
+import net.yezon.theabyss.events.ApplyNodeEffectevent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -17,9 +17,10 @@ import net.minecraft.world.entity.LivingEntity;
 
 public class NodeShardItem extends Item {
 	public NodeShardItem() {
-		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(8).rarity(Rarity.EPIC).food((new FoodProperties.Builder()).nutrition(4).saturationMod(0f).alwaysEat()
+		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(8).rarity(Rarity.EPIC)
+				.food((new FoodProperties.Builder()).nutrition(4).saturationMod(0f).alwaysEat()
 
-				.build()));
+						.build()));
 	}
 
 	@Override
@@ -45,7 +46,7 @@ public class NodeShardItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyNodeEffectEvent.execute(entity);
+		ApplyNodeEffectevent.execute(entity);
 		return retval;
 	}
 }

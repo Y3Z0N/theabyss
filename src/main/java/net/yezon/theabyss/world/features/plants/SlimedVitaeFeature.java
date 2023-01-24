@@ -37,15 +37,18 @@ public class SlimedVitaeFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new SlimedVitaeFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:slimed_vitae", FEATURE,
-				FeatureUtils.simpleRandomPatchConfiguration(20, PlacementUtils.filtered(Feature.BLOCK_COLUMN, BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(TheabyssModBlocks.SLIMED_VITAE.get())),
-						BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.wouldSurvive(TheabyssModBlocks.SLIMED_VITAE.get().defaultBlockState(), BlockPos.ZERO)))));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:slimed_vitae", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(30), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:slimed_vitae", FEATURE, FeatureUtils.simpleRandomPatchConfiguration(20,
+				PlacementUtils.filtered(Feature.BLOCK_COLUMN,
+						BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(TheabyssModBlocks.SLIMED_VITAE.get())),
+						BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,
+								BlockPredicate.wouldSurvive(TheabyssModBlocks.SLIMED_VITAE.get().defaultBlockState(), BlockPos.ZERO)))));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:slimed_vitae", CONFIGURED_FEATURE, List.of(CountPlacement.of(30),
+				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set
+			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public SlimedVitaeFeature() {
 		super(RandomPatchConfiguration.CODEC);
