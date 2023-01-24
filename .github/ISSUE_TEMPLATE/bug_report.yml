@@ -64,8 +64,6 @@ body:
             description: The version of Minecraft you were using when the bug occured
             options:
                 - "1.19.2"
-                - "1.16.5"
-                - "1.16.4"
         validations:
             required: true
     -   type: input
