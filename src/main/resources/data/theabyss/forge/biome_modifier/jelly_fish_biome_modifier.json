@@ -1,0 +1,18 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "theabyss:mud_plains",
+    "theabyss:blue_mountain",
+    "theabyss:blue_jungle",
+    "theabyss:vigilant_forest",
+    "theabyss:plains",
+    "theabyss:phantom_crate",
+    "theabyss:slime_forest"
+  ],
+  "spawners": {
+    "type": "theabyss:jelly_fish",
+    "weight": 2,
+    "minCount": 20,
+    "maxCount": 30
+  }
+}

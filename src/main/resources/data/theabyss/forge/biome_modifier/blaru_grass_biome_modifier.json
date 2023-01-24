@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:blaru_forest",
+  "features": "theabyss:blaru_grass",
+  "step": "vegetal_decoration"
+}
