@@ -1,5 +1,5 @@
 
-  
+
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.block.YoungExoliusPlantBlock;
@@ -56,7 +56,6 @@ import net.yezon.theabyss.block.SlimedVitaeBlock;
 import net.yezon.theabyss.block.SlimedTrapDoorBlock;
 import net.yezon.theabyss.block.SlimedStairsBlock;
 import net.yezon.theabyss.block.SlimedSlabBlock;
-import net.yezon.theabyss.block.SlimedRankBlock;
 import net.yezon.theabyss.block.SlimedPressurePlateBlock;
 import net.yezon.theabyss.block.SlimedPlanksBlock;
 import net.yezon.theabyss.block.SlimedLogVineBlock;
@@ -68,7 +67,6 @@ import net.yezon.theabyss.block.SlimedFenceBlock;
 import net.yezon.theabyss.block.SlimedDoorBlock;
 import net.yezon.theabyss.block.SlimedCarpetBlock;
 import net.yezon.theabyss.block.SlimedButtonBlock;
-import net.yezon.theabyss.block.SlimeRootBlockBlock;
 import net.yezon.theabyss.block.SlimeBlockBlock;
 import net.yezon.theabyss.block.SkeletonHeadVariant2Block;
 import net.yezon.theabyss.block.SkeletonHeadVariant1Block;
@@ -108,7 +106,6 @@ import net.yezon.theabyss.block.MortarAndPestleBlock;
 import net.yezon.theabyss.block.LungoRankBlock;
 import net.yezon.theabyss.block.LoranOreBlock;
 import net.yezon.theabyss.block.LoranFlowerBlock;
-import net.yezon.theabyss.block.LercasUmbrellaBlock;
 import net.yezon.theabyss.block.JungleTrapDoorBlock;
 import net.yezon.theabyss.block.JungleStairsBlock;
 import net.yezon.theabyss.block.JungleSlabBlock;
@@ -213,6 +210,7 @@ import net.yezon.theabyss.block.BlaruLogFungiBlock;
 import net.yezon.theabyss.block.BlaruLogBlock;
 import net.yezon.theabyss.block.BlaruLeavesBlock;
 import net.yezon.theabyss.block.BlaruLeaveCarpetBlock;
+import net.yezon.theabyss.block.BlaruGrassBlock;
 import net.yezon.theabyss.block.BlaruFenceGateBlock;
 import net.yezon.theabyss.block.BlaruFenceBlock;
 import net.yezon.theabyss.block.BlaruDoorBlock;
@@ -249,8 +247,7 @@ public class TheabyssModBlocks {
 	public static final RegistryObject<Block> GOLD_VARIANT = REGISTRY.register("gold_variant", () -> new GoldVariantBlock());
 	public static final RegistryObject<Block> IRON_VARIANT = REGISTRY.register("iron_variant", () -> new IronVariantBlock());
 	public static final RegistryObject<Block> EMERALD_VARIANT = REGISTRY.register("emerald_variant", () -> new EmeraldVariantBlock());
-	public static final RegistryObject<Block> FROST_WORLD_PORTAL = REGISTRY.register("frost_world_portal",
-			() -> new TheabyssdimiceworldPortalBlock());
+	public static final RegistryObject<Block> FROST_WORLD_PORTAL = REGISTRY.register("frost_world_portal", () -> new TheabyssdimiceworldPortalBlock());
 	public static final RegistryObject<Block> THE_ABYSS_PORTAL = REGISTRY.register("the_abyss_portal", () -> new TheAbyssDimPortalBlock());
 	public static final RegistryObject<Block> ROMA_MUD = REGISTRY.register("roma_mud", () -> new RomaMudBlock());
 	public static final RegistryObject<Block> ROMA_MUD_2 = REGISTRY.register("roma_mud_2", () -> new RomaMud2Block());
@@ -285,8 +282,7 @@ public class TheabyssModBlocks {
 	public static final RegistryObject<Block> JUNGLE_DOOR = REGISTRY.register("jungle_door", () -> new JungleDoorBlock());
 	public static final RegistryObject<Block> JUNGLE_FENCE = REGISTRY.register("jungle_fence", () -> new JungleFenceBlock());
 	public static final RegistryObject<Block> JUNGLE_FENCE_GATE = REGISTRY.register("jungle_fence_gate", () -> new JungleFenceGateBlock());
-	public static final RegistryObject<Block> JUNGLE_PRESSURE_PLATE = REGISTRY.register("jungle_pressure_plate",
-			() -> new JunglePressurePlateBlock());
+	public static final RegistryObject<Block> JUNGLE_PRESSURE_PLATE = REGISTRY.register("jungle_pressure_plate", () -> new JunglePressurePlateBlock());
 	public static final RegistryObject<Block> JUNGLE_BUTTON = REGISTRY.register("jungle_button", () -> new JungleButtonBlock());
 	public static final RegistryObject<Block> BOG_SHROOM_LOG = REGISTRY.register("bog_shroom_log", () -> new BogShroomLogBlock());
 	public static final RegistryObject<Block> BOG_PLANKS = REGISTRY.register("bog_planks", () -> new BogPlanksBlock());
@@ -316,8 +312,7 @@ public class TheabyssModBlocks {
 	public static final RegistryObject<Block> SLIMED_DOOR = REGISTRY.register("slimed_door", () -> new SlimedDoorBlock());
 	public static final RegistryObject<Block> SLIMED_FENCE = REGISTRY.register("slimed_fence", () -> new SlimedFenceBlock());
 	public static final RegistryObject<Block> SLIMED_FENCE_GATE = REGISTRY.register("slimed_fence_gate", () -> new SlimedFenceGateBlock());
-	public static final RegistryObject<Block> SLIMED_PRESSURE_PLATE = REGISTRY.register("slimed_pressure_plate",
-			() -> new SlimedPressurePlateBlock());
+	public static final RegistryObject<Block> SLIMED_PRESSURE_PLATE = REGISTRY.register("slimed_pressure_plate", () -> new SlimedPressurePlateBlock());
 	public static final RegistryObject<Block> SLIMED_BUTTON = REGISTRY.register("slimed_button", () -> new SlimedButtonBlock());
 	public static final RegistryObject<Block> FROZEN_LOG = REGISTRY.register("frozen_log", () -> new FrozenLogBlock());
 	public static final RegistryObject<Block> FROZEN_PLANKS = REGISTRY.register("frozen_planks", () -> new FrozenPlanksBlock());
@@ -327,8 +322,7 @@ public class TheabyssModBlocks {
 	public static final RegistryObject<Block> FROZEN_DOOR = REGISTRY.register("frozen_door", () -> new FrozenDoorBlock());
 	public static final RegistryObject<Block> FROZEN_FENCE = REGISTRY.register("frozen_fence", () -> new FrozenFenceBlock());
 	public static final RegistryObject<Block> FROZEN_FENCE_GATE = REGISTRY.register("frozen_fence_gate", () -> new FrozenFenceGateBlock());
-	public static final RegistryObject<Block> FROZEN_PRESSURE_PLATE = REGISTRY.register("frozen_pressure_plate",
-			() -> new FrozenPressurePlateBlock());
+	public static final RegistryObject<Block> FROZEN_PRESSURE_PLATE = REGISTRY.register("frozen_pressure_plate", () -> new FrozenPressurePlateBlock());
 	public static final RegistryObject<Block> FROZEN_BUTTON = REGISTRY.register("frozen_button", () -> new FrozenButtonBlock());
 	public static final RegistryObject<Block> FROST_BRICK = REGISTRY.register("frost_brick", () -> new FrostBrickBlock());
 	public static final RegistryObject<Block> FROST_BRICK_CRACKED = REGISTRY.register("frost_brick_cracked", () -> new FrostBrickCrackedBlock());
@@ -348,20 +342,16 @@ public class TheabyssModBlocks {
 	public static final RegistryObject<Block> STONE_BRICK_CHISELED = REGISTRY.register("stone_brick_chiseled", () -> new StoneBrickChiseledBlock());
 	public static final RegistryObject<Block> STONE_BRICK_SLAB = REGISTRY.register("stone_brick_slab", () -> new StoneBrickSlabBlock());
 	public static final RegistryObject<Block> NIGHT_ALTAR = REGISTRY.register("night_altar", () -> new NightAltarBlock());
-	public static final RegistryObject<Block> NIGHT_ALTAR_ACTIVATED = REGISTRY.register("night_altar_activated",
-			() -> new NightAltarActivatedBlock());
+	public static final RegistryObject<Block> NIGHT_ALTAR_ACTIVATED = REGISTRY.register("night_altar_activated", () -> new NightAltarActivatedBlock());
 	public static final RegistryObject<Block> STONE_BRICK_WALL = REGISTRY.register("stone_brick_wall", () -> new StoneBrickWallBlock());
-	public static final RegistryObject<Block> STONE_BRICK_PILLAR_IGNITED = REGISTRY.register("stone_brick_pillar_ignited",
-			() -> new StoneBrickPillarIgnitedBlock());
+	public static final RegistryObject<Block> STONE_BRICK_PILLAR_IGNITED = REGISTRY.register("stone_brick_pillar_ignited", () -> new StoneBrickPillarIgnitedBlock());
 	public static final RegistryObject<Block> STONE_BRICK_PILLAR = REGISTRY.register("stone_brick_pillar", () -> new StoneBrickPillarBlock());
 	public static final RegistryObject<Block> PHANTOM_LANTERN = REGISTRY.register("phantom_lantern", () -> new PhantomLanternBlock());
 	public static final RegistryObject<Block> ENDER_LANTERN = REGISTRY.register("ender_lantern", () -> new EnderLanternBlock());
 	public static final RegistryObject<Block> HOGLIN_LANTERN = REGISTRY.register("hoglin_lantern", () -> new HoglinLanternBlock());
 	public static final RegistryObject<Block> BLUE_SHROOMLIGHT = REGISTRY.register("blue_shroomlight", () -> new BlueShroomlightBlock());
-	public static final RegistryObject<Block> DARK_BLUE_SHROOMLIGHT = REGISTRY.register("dark_blue_shroomlight",
-			() -> new DarkBlueShroomlightBlock());
+	public static final RegistryObject<Block> DARK_BLUE_SHROOMLIGHT = REGISTRY.register("dark_blue_shroomlight", () -> new DarkBlueShroomlightBlock());
 	public static final RegistryObject<Block> PURPLE_SHROOMLIGHT = REGISTRY.register("purple_shroomlight", () -> new PurpleShroomlightBlock());
-	public static final RegistryObject<Block> SLIME_ROOT_BLOCK = REGISTRY.register("slime_root_block", () -> new SlimeRootBlockBlock());
 	public static final RegistryObject<Block> HEAL_CAMP_FIRE = REGISTRY.register("heal_camp_fire", () -> new HealCampFireBlock());
 	public static final RegistryObject<Block> SHIELD_CAMP_FIRE = REGISTRY.register("shield_camp_fire", () -> new ShieldCampFireBlock());
 	public static final RegistryObject<Block> DIRT = REGISTRY.register("dirt", () -> new DirtBlock());
@@ -382,7 +372,6 @@ public class TheabyssModBlocks {
 	public static final RegistryObject<Block> RALOM_PLANT = REGISTRY.register("ralom_plant", () -> new RalomPlantBlock());
 	public static final RegistryObject<Block> FORTIS_ULTIMA = REGISTRY.register("fortis_ultima", () -> new FortisUltimaBlock());
 	public static final RegistryObject<Block> THUNDER_FLOWER = REGISTRY.register("thunder_flower", () -> new ThunderFlowerBlock());
-	public static final RegistryObject<Block> LERCAS_UMBRELLA = REGISTRY.register("lercas_umbrella", () -> new LercasUmbrellaBlock());
 	public static final RegistryObject<Block> SRALA_SHROOM = REGISTRY.register("srala_shroom", () -> new SralaShroomBlock());
 	public static final RegistryObject<Block> SATURNIA_VERSA = REGISTRY.register("saturnia_versa", () -> new SaturniaVersaBlock());
 	public static final RegistryObject<Block> OCTAVYS_MAGYNISIUS = REGISTRY.register("octavys_magynisius", () -> new OctavysMagynisiusBlock());
@@ -430,34 +419,22 @@ public class TheabyssModBlocks {
 	public static final RegistryObject<Block> ECHOLOT_TOP = REGISTRY.register("echolot_top", () -> new EcholotTopBlock());
 	public static final RegistryObject<Block> ECHOLOT_MIDDLE = REGISTRY.register("echolot_middle", () -> new EcholotMiddleBlock());
 	public static final RegistryObject<Block> ECHOLOT_BOTTOM = REGISTRY.register("echolot_bottom", () -> new EcholotBottomBlock());
-	public static final RegistryObject<Block> PHANTOM_HANGING_LANTERN = REGISTRY.register("phantom_hanging_lantern",
-			() -> new PhantomHangingLanternBlock());
-	public static final RegistryObject<Block> ENDER_HANGING_LANTERN = REGISTRY.register("ender_hanging_lantern",
-			() -> new EnderHangingLanternBlock());
-	public static final RegistryObject<Block> HOGLIN_HANGING_LANTERN = REGISTRY.register("hoglin_hanging_lantern",
-			() -> new HoglinHangingLanternBlock());
+	public static final RegistryObject<Block> PHANTOM_HANGING_LANTERN = REGISTRY.register("phantom_hanging_lantern", () -> new PhantomHangingLanternBlock());
+	public static final RegistryObject<Block> ENDER_HANGING_LANTERN = REGISTRY.register("ender_hanging_lantern", () -> new EnderHangingLanternBlock());
+	public static final RegistryObject<Block> HOGLIN_HANGING_LANTERN = REGISTRY.register("hoglin_hanging_lantern", () -> new HoglinHangingLanternBlock());
 	public static final RegistryObject<Block> RAPTOR_EGG = REGISTRY.register("raptor_egg", () -> new RaptorEggBlock());
-	public static final RegistryObject<Block> SLIMED_RANK = REGISTRY.register("slimed_rank", () -> new SlimedRankBlock());
-	public static final RegistryObject<Block> SKELETON_HEAD_VARIANT_1 = REGISTRY.register("skeleton_head_variant_1",
-			() -> new SkeletonHeadVariant1Block());
-	public static final RegistryObject<Block> SKELETON_HEAD_VARIANT_2 = REGISTRY.register("skeleton_head_variant_2",
-			() -> new SkeletonHeadVariant2Block());
-	public static final RegistryObject<Block> SKELETON_BODY_VARIANT_1 = REGISTRY.register("skeleton_body_variant_1",
-			() -> new SkeletonBodyVariant1Block());
-	public static final RegistryObject<Block> SKELETON_BODY_VARIANT_2 = REGISTRY.register("skeleton_body_variant_2",
-			() -> new SkeletonBodyVariant2Block());
-	public static final RegistryObject<Block> SKELETON_BODY_VARIANT_3 = REGISTRY.register("skeleton_body_variant_3",
-			() -> new SkeletonBodyVariant3Block());
-	public static final RegistryObject<Block> SKELETON_BODY_VARIANT_4 = REGISTRY.register("skeleton_body_variant_4",
-			() -> new SkeletonBodyVariant4Block());
-	public static final RegistryObject<Block> SKELETON_BODY_VARIANT_5 = REGISTRY.register("skeleton_body_variant_5",
-			() -> new SkeletonBodyVariant5Block());
+	public static final RegistryObject<Block> SKELETON_HEAD_VARIANT_1 = REGISTRY.register("skeleton_head_variant_1", () -> new SkeletonHeadVariant1Block());
+	public static final RegistryObject<Block> SKELETON_HEAD_VARIANT_2 = REGISTRY.register("skeleton_head_variant_2", () -> new SkeletonHeadVariant2Block());
+	public static final RegistryObject<Block> SKELETON_BODY_VARIANT_1 = REGISTRY.register("skeleton_body_variant_1", () -> new SkeletonBodyVariant1Block());
+	public static final RegistryObject<Block> SKELETON_BODY_VARIANT_2 = REGISTRY.register("skeleton_body_variant_2", () -> new SkeletonBodyVariant2Block());
+	public static final RegistryObject<Block> SKELETON_BODY_VARIANT_3 = REGISTRY.register("skeleton_body_variant_3", () -> new SkeletonBodyVariant3Block());
+	public static final RegistryObject<Block> SKELETON_BODY_VARIANT_4 = REGISTRY.register("skeleton_body_variant_4", () -> new SkeletonBodyVariant4Block());
+	public static final RegistryObject<Block> SKELETON_BODY_VARIANT_5 = REGISTRY.register("skeleton_body_variant_5", () -> new SkeletonBodyVariant5Block());
 	public static final RegistryObject<Block> STONE_RACKLE = REGISTRY.register("stone_rackle", () -> new StoneRackleBlock());
 	public static final RegistryObject<Block> VIGILANT_MOSS = REGISTRY.register("vigilant_moss", () -> new VigilantMossBlock());
 	public static final RegistryObject<Block> VIGILANT_BUSH = REGISTRY.register("vigilant_bush", () -> new VigilantBushBlock());
 	public static final RegistryObject<Block> VIGILANT_LEAVES = REGISTRY.register("vigilant_leaves", () -> new VigilantLeavesBlock());
-	public static final RegistryObject<Block> VIGILANT_HANGING_FRUIT = REGISTRY.register("vigilant_hanging_fruit",
-			() -> new VigilantHangingFruitBlock());
+	public static final RegistryObject<Block> VIGILANT_HANGING_FRUIT = REGISTRY.register("vigilant_hanging_fruit", () -> new VigilantHangingFruitBlock());
 	public static final RegistryObject<Block> VIGILANT_LOG = REGISTRY.register("vigilant_log", () -> new VigilantLogBlock());
 	public static final RegistryObject<Block> VIGILANT_GRASS = REGISTRY.register("vigilant_grass", () -> new VigilantGrassBlock());
 	public static final RegistryObject<Block> VIGILANT_BLUE_GRASS = REGISTRY.register("vigilant_blue_grass", () -> new VigilantBlueGrassBlock());
@@ -469,20 +446,16 @@ public class TheabyssModBlocks {
 	public static final RegistryObject<Block> VIGILANT_DOOR = REGISTRY.register("vigilant_door", () -> new VigilantDoorBlock());
 	public static final RegistryObject<Block> VIGILANT_FENCE_GATE = REGISTRY.register("vigilant_fence_gate", () -> new VigilantFenceGateBlock());
 	public static final RegistryObject<Block> VIGILANT_BUTTON = REGISTRY.register("vigilant_button", () -> new VigilantButtonBlock());
-	public static final RegistryObject<Block> VIGILANT_PRESSURE_PLATE = REGISTRY.register("vigilant_pressure_plate",
-			() -> new VigilantPressurePlateBlock());
-	public static final RegistryObject<Block> VIGILANT_OUTER_LEAVES = REGISTRY.register("vigilant_outer_leaves",
-			() -> new VigilantOuterLeavesBlock());
-	public static final RegistryObject<Block> VIGILANT_BLUE_OUTER_LEAVES = REGISTRY.register("vigilant_blue_outer_leaves",
-			() -> new VigilantBlueOuterLeavesBlock());
+	public static final RegistryObject<Block> VIGILANT_PRESSURE_PLATE = REGISTRY.register("vigilant_pressure_plate", () -> new VigilantPressurePlateBlock());
+	public static final RegistryObject<Block> VIGILANT_OUTER_LEAVES = REGISTRY.register("vigilant_outer_leaves", () -> new VigilantOuterLeavesBlock());
+	public static final RegistryObject<Block> VIGILANT_BLUE_OUTER_LEAVES = REGISTRY.register("vigilant_blue_outer_leaves", () -> new VigilantBlueOuterLeavesBlock());
 	public static final RegistryObject<Block> STRIPPED_BLARU_LOG = REGISTRY.register("stripped_blaru_log", () -> new StrippedBlaruLogBlock());
 	public static final RegistryObject<Block> STRIPPED_JUNGLE_LOG = REGISTRY.register("stripped_jungle_log", () -> new StrippedJungleLogBlock());
-	public static final RegistryObject<Block> STRIPPED_BOG_SHROOM_LOG = REGISTRY.register("stripped_bog_shroom_log",
-			() -> new StrippedBogShroomLogBlock());
-	public static final RegistryObject<Block> STRIPPED_SAL_SHROOM_LOG = REGISTRY.register("stripped_sal_shroom_log",
-			() -> new StrippedSalShroomLogBlock());
+	public static final RegistryObject<Block> STRIPPED_BOG_SHROOM_LOG = REGISTRY.register("stripped_bog_shroom_log", () -> new StrippedBogShroomLogBlock());
+	public static final RegistryObject<Block> STRIPPED_SAL_SHROOM_LOG = REGISTRY.register("stripped_sal_shroom_log", () -> new StrippedSalShroomLogBlock());
 	public static final RegistryObject<Block> STRIPPED_SLIMED_LOG = REGISTRY.register("stripped_slimed_log", () -> new StrippedSlimedLogBlock());
 	public static final RegistryObject<Block> STRIPPED_FROZEN_LOG = REGISTRY.register("stripped_frozen_log", () -> new StrippedFrozenLogBlock());
+	public static final RegistryObject<Block> BLARU_GRASS = REGISTRY.register("blaru_grass", () -> new BlaruGrassBlock());
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {

@@ -12,8 +12,9 @@ import net.minecraft.world.entity.Entity;
 
 import javax.annotation.Nullable;
 
+
 @Mod.EventBusSubscriber
-public class Tickevent {
+public class TickConfigEvent {
 	@SubscribeEvent
 	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
@@ -44,3 +45,4 @@ public class Tickevent {
 		}
 	}
 }
+

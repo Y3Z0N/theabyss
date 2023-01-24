@@ -23,8 +23,8 @@ import java.util.Collections;
 
 public class BogShroomLeaveBlock extends Block {
 	public BogShroomLeaveBlock() {
-		super(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).strength(0.3f, 5f).lightLevel(s -> 4).noOcclusion()
-				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).strength(0.3f, 5f).lightLevel(s -> 4).noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
+				.isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override

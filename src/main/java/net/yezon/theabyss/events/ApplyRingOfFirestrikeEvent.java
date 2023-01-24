@@ -20,17 +20,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
-public class ApplyRingOfFirestrikeevent {
+public class ApplyRingOfFirestrikeEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (entity instanceof Player _playerHasItem
-				? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.RING_OF_FIRESTRIKE.get()))
-				: false) {
-			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new TheabyssModVariables.PlayerVariables())).Mana < 25
-							* (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade) {
+		if (entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.RING_OF_FIRESTRIKE.get())) : false) {
+			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Mana < 25
+					* (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal((Component.translatable("ring.theabyss.low_energy").getString())), (true));
 			} else {
@@ -44,16 +40,12 @@ public class ApplyRingOfFirestrikeevent {
 					}
 				}
 				if (entity instanceof Player _player)
-					_player.getCooldowns().addCooldown(itemstack.getItem(),
-							(int) (20 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new TheabyssModVariables.PlayerVariables())).ManaCooldown));
+					_player.getCooldowns().addCooldown(itemstack.getItem(), (int) (20 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ManaCooldown));
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, new BlockPos(x, y, z),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_fire")), SoundSource.NEUTRAL, 1, 1);
+						_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_fire")), SoundSource.NEUTRAL, 1, 1);
 					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_fire")),
-								SoundSource.NEUTRAL, 1, 1, false);
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_fire")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				{
@@ -62,26 +54,22 @@ public class ApplyRingOfFirestrikeevent {
 					if (!projectileLevel.isClientSide()) {
 						Projectile _entityToSpawn = new Object() {
 							public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
-								AbstractArrow entityToSpawn = new RingOfFireStrikeAttackEntity(TheabyssModEntities.RING_OF_FIRE_STRIKE_ATTACK.get(),
-										level);
+								AbstractArrow entityToSpawn = new RingOfFireStrikeAttackEntity(TheabyssModEntities.RING_OF_FIRE_STRIKE_ATTACK.get(), level);
 								entityToSpawn.setOwner(shooter);
 								entityToSpawn.setBaseDamage(damage);
 								entityToSpawn.setKnockback(knockback);
 								entityToSpawn.setSilent(true);
 								return entityToSpawn;
 							}
-						}.getArrow(projectileLevel, entity, (float) (3 + (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new TheabyssModVariables.PlayerVariables())).ManaDamage), 2);
+						}.getArrow(projectileLevel, entity, (float) (3 + (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ManaDamage), 2);
 						_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 						_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.5, 0);
 						projectileLevel.addFreshEntity(_entityToSpawn);
 					}
 				}
 				{
-					double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new TheabyssModVariables.PlayerVariables())).Mana
-							- 25 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade;
+					double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Mana
+							- 25 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade;
 					entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Mana = _setval;
 						capability.syncPlayerVariables(entity);

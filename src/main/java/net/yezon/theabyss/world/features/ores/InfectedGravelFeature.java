@@ -35,17 +35,13 @@ public class InfectedGravelFeature extends OreFeature {
 	public static Feature<?> feature() {
 		FEATURE = new InfectedGravelFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:gravel", FEATURE,
-				new OreConfiguration(
-						List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.INFECTED_GRASS.get().defaultBlockState()),
-								TheabyssModBlocks.GRAVEL.get().defaultBlockState())),
-						31));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:gravel", CONFIGURED_FEATURE, List.of(CountPlacement.of(24), InSquarePlacement.spread(),
-				HeightRangePlacement.uniform(VerticalAnchor.absolute(40), VerticalAnchor.absolute(150)), BiomeFilter.biome()));
+				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.INFECTED_GRASS.get().defaultBlockState()), TheabyssModBlocks.GRAVEL.get().defaultBlockState())), 31));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:gravel", CONFIGURED_FEATURE,
+				List.of(CountPlacement.of(24), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(40), VerticalAnchor.absolute(150)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set
-			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public InfectedGravelFeature() {
 		super(OreConfiguration.CODEC);

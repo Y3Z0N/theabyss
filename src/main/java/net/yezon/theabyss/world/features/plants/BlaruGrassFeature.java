@@ -3,7 +3,6 @@ package net.yezon.theabyss.world.features.plants;
 
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
-import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.CountPlacement;
@@ -27,24 +26,22 @@ import net.minecraft.core.Holder;
 import java.util.Set;
 import java.util.List;
 
-public class LercasUmbrellaFeature extends RandomPatchFeature {
-	public static LercasUmbrellaFeature FEATURE = null;
+public class BlaruGrassFeature extends RandomPatchFeature {
+	public static BlaruGrassFeature FEATURE = null;
 	public static Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> CONFIGURED_FEATURE = null;
 	public static Holder<PlacedFeature> PLACED_FEATURE = null;
 
 	public static Feature<?> feature() {
-		FEATURE = new LercasUmbrellaFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:lercas_umbrella", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.LERCAS_UMBRELLA.get())), List.of(), 64));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:lercas_umbrella", CONFIGURED_FEATURE, List.of(CountPlacement.of(4),
-				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		FEATURE = new BlaruGrassFeature();
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:blaru_grass", FEATURE,
+				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.BLARU_GRASS.get())), List.of(), 25));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:blaru_grass", CONFIGURED_FEATURE, List.of(CountPlacement.of(30), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set
-			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
-	public LercasUmbrellaFeature() {
+	public BlaruGrassFeature() {
 		super(RandomPatchConfiguration.CODEC);
 	}
 

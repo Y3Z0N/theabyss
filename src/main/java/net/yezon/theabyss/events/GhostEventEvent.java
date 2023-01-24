@@ -10,7 +10,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 
-public class GhostEventevent {
+public class GhostEventEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
@@ -27,8 +27,7 @@ public class GhostEventevent {
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.LARGE_SMOKE, (entity.getX()), (entity.getY()), (entity.getZ()), 5, 0.05, 1.5, 0.05, 0.01);
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (TheabyssModParticleTypes.PHANTOM_FIRE.get()), (entity.getX()), (entity.getY()),
-						(entity.getZ()), 5, 0.05, 1.5, 0.05, 0.01);
+				_level.sendParticles((SimpleParticleType) (TheabyssModParticleTypes.PHANTOM_FIRE.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 5, 0.05, 1.5, 0.05, 0.01);
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.SMOKE, (entity.getX()), (entity.getY()), (entity.getZ()), 5, 0.05, 1.5, 0.05, 0.01);
 		});

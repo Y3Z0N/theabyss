@@ -16,8 +16,7 @@ import java.util.Collections;
 
 public class BlaruFenceGateBlock extends FenceGateBlock {
 	public BlaruFenceGateBlock() {
-		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(3f, 10f).noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false).dynamicShape());
+		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(3f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape());
 	}
 
 	@Override

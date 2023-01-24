@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.DestroyArtifactOfAfterLifeevent;
+import net.yezon.theabyss.events.DestroyArtifactOfAfterLifeEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -34,15 +34,14 @@ public class ArtifactOfAfterLifeItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(Component.literal(
-				"\u00A7bYou have 20 seconds to find your body after your death. if you find your body you'll will come back. if you don't find him you will die."));
+		list.add(Component.literal("\u00A7bYou have 20 seconds to find your body after your death. if you find your body you'll will come back. if you don't find him you will die."));
 	}
 
 	@Override
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			DestroyArtifactOfAfterLifeevent.execute(world, entity, itemstack);
-		DestroyArtifactOfAfterLifeevent.execute(world, entity, itemstack);
+			DestroyArtifactOfAfterLifeEvent.execute(world, entity, itemstack);
+		DestroyArtifactOfAfterLifeEvent.execute(world, entity, itemstack);
 	}
 }

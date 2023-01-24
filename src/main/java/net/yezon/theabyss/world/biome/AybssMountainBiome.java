@@ -25,20 +25,16 @@ import java.util.List;
 
 public class AybssMountainBiome {
 	public static Biome createBiome() {
-		BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder().fogColor(-15851474).waterColor(-13421773).waterFogColor(-10066330)
-				.skyColor(-15851474).foliageColorOverride(-16777216).grassColorOverride(-16764109)
-				.ambientLoopSound(new SoundEvent(new ResourceLocation("theabyss:blue_mountains_ambience")))
-				.ambientAdditionsSound(new AmbientAdditionsSettings(new SoundEvent(new ResourceLocation("theabyss:random_fx")), 0.0111D))
+		BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder().fogColor(-15851474).waterColor(-13421773).waterFogColor(-10066330).skyColor(-15851474).foliageColorOverride(-16777216).grassColorOverride(-16764109)
+				.ambientLoopSound(new SoundEvent(new ResourceLocation("theabyss:blue_mountains_ambience"))).ambientAdditionsSound(new AmbientAdditionsSettings(new SoundEvent(new ResourceLocation("theabyss:random_fx")), 0.0111D))
 				.backgroundMusic(new Music(new SoundEvent(new ResourceLocation("theabyss:the_abyss_music")), 12000, 24000, true))
 				.ambientParticle(new AmbientParticleSettings((SimpleParticleType) (TheabyssModParticleTypes.SPURS_BIOME_01.get()), 0.03f)).build();
 		BiomeGenerationSettings.Builder biomeGenerationSettings = new BiomeGenerationSettings.Builder();
 		biomeGenerationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,
-				PlacementUtils.register("theabyss:grass_blue_mountain", VegetationFeatures.PATCH_GRASS,
-						List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 20), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-								BiomeFilter.biome())));
+				PlacementUtils.register("theabyss:grass_blue_mountain", VegetationFeatures.PATCH_GRASS, List.of(NoiseThresholdCountPlacement.of(-0.8D, 5, 20), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome())));
 		BiomeDefaultFeatures.addDefaultCarversAndLakes(biomeGenerationSettings);
 		MobSpawnSettings.Builder mobSpawnInfo = new MobSpawnSettings.Builder();
-		return new Biome.BiomeBuilder().precipitation(Biome.Precipitation.RAIN).temperature(0.4f).downfall(0.2f).specialEffects(effects)
-				.mobSpawnSettings(mobSpawnInfo.build()).generationSettings(biomeGenerationSettings.build()).build();
+		return new Biome.BiomeBuilder().precipitation(Biome.Precipitation.RAIN).temperature(0.4f).downfall(0.19999999999999998f).specialEffects(effects).mobSpawnSettings(mobSpawnInfo.build()).generationSettings(biomeGenerationSettings.build())
+				.build();
 	}
 }

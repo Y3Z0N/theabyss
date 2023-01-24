@@ -1,5 +1,4 @@
 
-  
 package net.yezon.theabyss.init;
 
 import org.lwjgl.glfw.GLFW;

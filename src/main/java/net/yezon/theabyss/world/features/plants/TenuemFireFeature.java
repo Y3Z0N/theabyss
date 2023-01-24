@@ -34,15 +34,13 @@ public class TenuemFireFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new TenuemFireFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:tenuem_fire", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.TENUEM_FIRE.get())), List.of(), 16));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:tenuem_fire", CONFIGURED_FEATURE, List.of(CountPlacement.of(40),
-				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:tenuem_fire", FEATURE,
+				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.TENUEM_FIRE.get())), List.of(), 16));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:tenuem_fire", CONFIGURED_FEATURE, List.of(CountPlacement.of(40), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set
-			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public TenuemFireFeature() {
 		super(RandomPatchConfiguration.CODEC);

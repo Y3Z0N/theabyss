@@ -22,7 +22,7 @@ import net.minecraft.client.Minecraft;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class FearInAbyssevent {
+public class FearInAbyssEvent {
 	@SubscribeEvent
 	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
@@ -37,22 +37,20 @@ public class FearInAbyssevent {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new TheabyssModVariables.PlayerVariables())).FearEffect == true) {
+		if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).FearEffect == true) {
 			if ((entity.level.dimension()) == (ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")))) {
 				if (!(new Object() {
 					public boolean checkGamemode(Entity _ent) {
 						if (_ent instanceof ServerPlayer _serverPlayer) {
 							return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
 						} else if (_ent.level.isClientSide() && _ent instanceof Player _player) {
-							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft
-									.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+									&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
 						}
 						return false;
 					}
 				}.checkGamemode(entity))) {
-					if (!((entity instanceof LivingEntity _livEnt ? _livEnt.hasEffect(TheabyssModMobEffects.ANTI_FEAR_POTION.get()) : false)
-							|| (entity instanceof LivingEntity _livEnt ? _livEnt.hasEffect(TheabyssModMobEffects.FEAR.get()) : false))) {
+					if (!((entity instanceof LivingEntity _livEnt ? _livEnt.hasEffect(TheabyssModMobEffects.ANTI_FEAR_POTION.get()) : false) || (entity instanceof LivingEntity _livEnt ? _livEnt.hasEffect(TheabyssModMobEffects.FEAR.get()) : false))) {
 						if (Math.random() < 0.000095) {
 							if (entity instanceof LivingEntity _entity)
 								_entity.addEffect(new MobEffectInstance(TheabyssModMobEffects.FEAR.get(), 620, 0));

@@ -21,7 +21,7 @@ import net.minecraft.client.Minecraft;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class InfectHandlerevent {
+public class InfectHandlerEvent {
 	@SubscribeEvent
 	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
@@ -41,8 +41,7 @@ public class InfectHandlerevent {
 				if (_ent instanceof ServerPlayer _serverPlayer) {
 					return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
 				} else if (_ent.level.isClientSide() && _ent instanceof Player _player) {
-					return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft.getInstance()
-							.getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+					return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
 				}
 				return false;
 			}
@@ -51,18 +50,15 @@ public class InfectHandlerevent {
 				if (_ent instanceof ServerPlayer _serverPlayer) {
 					return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.SPECTATOR;
 				} else if (_ent.level.isClientSide() && _ent instanceof Player _player) {
-					return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft.getInstance()
-							.getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.SPECTATOR;
+					return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.SPECTATOR;
 				}
 				return false;
 			}
 		}.checkGamemode(entity))) {
 			if ((entity.level.dimension()) == (ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")))) {
-				if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new TheabyssModVariables.PlayerVariables())).Infected < 1) {
+				if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Infected < 1) {
 					{
-						double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new TheabyssModVariables.PlayerVariables())).Infected + 0.000075;
+						double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Infected + 0.000075;
 						entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.Infected = _setval;
 							capability.syncPlayerVariables(entity);
@@ -70,11 +66,9 @@ public class InfectHandlerevent {
 					}
 				}
 			} else {
-				if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new TheabyssModVariables.PlayerVariables())).Infected > 0.0001) {
+				if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Infected > 0.0001) {
 					{
-						double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new TheabyssModVariables.PlayerVariables())).Infected - 0.005;
+						double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Infected - 0.005;
 						entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.Infected = _setval;
 							capability.syncPlayerVariables(entity);
@@ -82,17 +76,14 @@ public class InfectHandlerevent {
 					}
 				}
 			}
-			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new TheabyssModVariables.PlayerVariables())).Infected > 0.95) {
+			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Infected > 0.95) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.hurt(new DamageSource("infection").bypassArmor(), 1);
 			}
 			if ((entity.level.dimension()) == (ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:frost_world")))) {
-				if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new TheabyssModVariables.PlayerVariables())).Freeze < 1) {
+				if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Freeze < 1) {
 					{
-						double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new TheabyssModVariables.PlayerVariables())).Freeze + 0.00005;
+						double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Freeze + 0.00005;
 						entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.Freeze = _setval;
 							capability.syncPlayerVariables(entity);
@@ -100,11 +91,9 @@ public class InfectHandlerevent {
 					}
 				}
 			} else {
-				if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new TheabyssModVariables.PlayerVariables())).Freeze > 0.0001) {
+				if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Freeze > 0.0001) {
 					{
-						double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new TheabyssModVariables.PlayerVariables())).Freeze - 0.005;
+						double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Freeze - 0.005;
 						entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.Freeze = _setval;
 							capability.syncPlayerVariables(entity);
@@ -112,8 +101,7 @@ public class InfectHandlerevent {
 					}
 				}
 			}
-			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new TheabyssModVariables.PlayerVariables())).Freeze > 0.95) {
+			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Freeze > 0.95) {
 				if (Math.random() < 0.05) {
 					if (entity instanceof LivingEntity _entity)
 						_entity.hurt(new DamageSource("freeze").bypassArmor(), 1);

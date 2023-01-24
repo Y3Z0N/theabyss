@@ -10,13 +10,12 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.server.level.ServerPlayer;
 
-public class AfterLifePotionEndevent {
+public class AfterLifePotionEndEvent {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		TheabyssMod.queueServerWork(20, () -> {
-			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new TheabyssModVariables.PlayerVariables())).FoundBody == true) {
+			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).FoundBody == true) {
 				if (entity instanceof ServerPlayer _player)
 					_player.setGameMode(GameType.SURVIVAL);
 				if (entity instanceof LivingEntity _entity)

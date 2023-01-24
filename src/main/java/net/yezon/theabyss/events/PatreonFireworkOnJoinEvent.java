@@ -6,12 +6,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
-public class PatreonFireworkOnJoinevent {
+public class PatreonFireworkOnJoinEvent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new TheabyssModVariables.PlayerVariables())).FireworkOnJoin == false) {
+		if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).FireworkOnJoin == false) {
 			{
 				boolean _setval = true;
 				entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

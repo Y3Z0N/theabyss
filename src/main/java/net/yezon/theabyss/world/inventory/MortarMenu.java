@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.world.inventory;
 
-import net.yezon.theabyss.events.GeneratePowderevent;
+import net.yezon.theabyss.events.GeneratePowderEvent;
 import net.yezon.theabyss.init.TheabyssModMenus;
 
 import net.minecraftforge.items.SlotItemHandler;
@@ -244,7 +244,7 @@ public class MortarMenu extends AbstractContainerMenu implements Supplier<Map<In
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			GeneratePowderevent.execute(entity);
+			GeneratePowderEvent.execute(entity);
 		}
 	}
 }

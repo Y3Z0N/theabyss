@@ -20,8 +20,7 @@ import java.util.Collections;
 
 public class JungleMelonBlock extends Block {
 	public JungleMelonBlock() {
-		super(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.CROP).strength(0.6f, 10f).lightLevel(s -> 5)
-				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
+		super(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.CROP).strength(0.6f, 10f).lightLevel(s -> 5).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
 	}
 
 	@Override

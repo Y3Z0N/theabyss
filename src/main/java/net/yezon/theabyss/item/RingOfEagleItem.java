@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfEagleevent;
+import net.yezon.theabyss.events.ApplyRingOfEagleEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -56,14 +56,14 @@ public void appendHoverText(ItemStack itemstack, Level world, List<Component> li
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyRingOfEagleevent.execute(world, x, y, z, entity, itemstack);
+		ApplyRingOfEagleEvent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		super.useOn(context);
-		ApplyRingOfEagleevent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
+		ApplyRingOfEagleEvent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
 				context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
 		return InteractionResult.SUCCESS;
 	}

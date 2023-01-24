@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.LiquidBlock;
 
 public class ArenoBlock extends LiquidBlock {
 	public ArenoBlock() {
-		super(() -> TheabyssModFluids.ARENO.get(), BlockBehaviour.Properties.of(Material.LAVA).strength(100f).hasPostProcess((bs, br, bp) -> true)
-				.emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 15).noCollission().noLootTable());
+		super(() -> TheabyssModFluids.ARENO.get(), BlockBehaviour.Properties.of(Material.LAVA).strength(100f).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 15).noCollission().noLootTable());
 	}
 }

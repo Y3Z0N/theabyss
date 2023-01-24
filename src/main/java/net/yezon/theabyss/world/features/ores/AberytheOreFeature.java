@@ -35,16 +35,13 @@ public class AberytheOreFeature extends OreFeature {
 	public static Feature<?> feature() {
 		FEATURE = new AberytheOreFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:aberythe_ore", FEATURE,
-				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()),
-						TheabyssModBlocks.ABERYTHE_ORE.get().defaultBlockState())), 5));
+				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()), TheabyssModBlocks.ABERYTHE_ORE.get().defaultBlockState())), 5));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:aberythe_ore", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(2), InSquarePlacement.spread(),
-						HeightRangePlacement.uniform(VerticalAnchor.absolute(-40), VerticalAnchor.absolute(-15)), BiomeFilter.biome()));
+				List.of(CountPlacement.of(2), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-40), VerticalAnchor.absolute(-15)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set
-			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public AberytheOreFeature() {
 		super(OreConfiguration.CODEC);

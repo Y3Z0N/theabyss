@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.ElectricityOnEffectActiveevent;
+import net.yezon.theabyss.events.ElectricityOnEffectActiveEvent;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -19,7 +19,7 @@ public class ElectricityMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		ElectricityOnEffectActiveevent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		ElectricityOnEffectActiveEvent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 
 	@Override

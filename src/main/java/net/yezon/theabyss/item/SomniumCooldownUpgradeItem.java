@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ManaCooldownUpgradeResultevent;
+import net.yezon.theabyss.events.ManaCooldownUpgradeResultEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -19,10 +19,9 @@ import java.util.List;
 
 public class SomniumCooldownUpgradeItem extends Item {
 	public SomniumCooldownUpgradeItem() {
-		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(16).rarity(Rarity.COMMON)
-				.food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.2f).alwaysEat()
+		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(16).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.19999999999999998f).alwaysEat()
 
-						.build()));
+				.build()));
 	}
 
 	@Override
@@ -54,7 +53,7 @@ public class SomniumCooldownUpgradeItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ManaCooldownUpgradeResultevent.execute(entity);
+		ManaCooldownUpgradeResultEvent.execute(entity);
 		return retval;
 	}
 }

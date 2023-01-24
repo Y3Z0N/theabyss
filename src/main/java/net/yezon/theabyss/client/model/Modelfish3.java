@@ -31,35 +31,21 @@ public class Modelfish3<T extends Entity> extends EntityModel<T> {
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
-		PartDefinition body = partdefinition.addOrReplaceChild("body",
-				CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, -5.0F, -3.0F, 2.0F, 5.0F, 6.0F, new CubeDeformation(0.0F)),
-				PartPose.offset(0.0F, 24.0F, 0.0F));
-		PartDefinition cube_r1 = body.addOrReplaceChild("cube_r1",
-				CubeListBuilder.create().texOffs(0, 6).addBox(0.0F, -3.0F, 0.0F, 0.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.0F, -2.0F, 3.0F, 0.0F, 0.0044F, 0.0F));
-		PartDefinition cube_r2 = body.addOrReplaceChild("cube_r2",
-				CubeListBuilder.create().texOffs(0, 6).mirror().addBox(0.0F, -3.0F, 0.0F, 0.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)).mirror(false),
+		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, -5.0F, -3.0F, 2.0F, 5.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+		PartDefinition cube_r1 = body.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 6).addBox(0.0F, -3.0F, 0.0F, 0.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -2.0F, 3.0F, 0.0F, 0.0044F, 0.0F));
+		PartDefinition cube_r2 = body.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, 6).mirror().addBox(0.0F, -3.0F, 0.0F, 0.0F, 5.0F, 5.0F, new CubeDeformation(0.0F)).mirror(false),
 				PartPose.offsetAndRotation(0.0F, -2.0F, 3.0F, 0.0F, -0.0044F, 0.0F));
-		PartDefinition cube_r3 = body
-				.addOrReplaceChild(
-						"cube_r3", CubeListBuilder.create().texOffs(0, 10).mirror()
-								.addBox(0.0F, -1.0F, -3.0F, 0.0F, 1.0F, 6.0F, new CubeDeformation(0.0F)).mirror(false),
-						PartPose.offsetAndRotation(0.0F, -5.0F, 0.0F, 0.0F, 0.0F, -0.0044F));
-		PartDefinition cube_r4 = body.addOrReplaceChild("cube_r4",
-				CubeListBuilder.create().texOffs(0, 10).addBox(0.0F, -1.0F, -3.0F, 0.0F, 1.0F, 6.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.0F, -5.0F, 0.0F, 0.0F, 0.0F, 0.0044F));
-		PartDefinition cube_r5 = body.addOrReplaceChild("cube_r5",
-				CubeListBuilder.create().texOffs(0, 2).mirror().addBox(0.0F, -1.0F, 0.0F, 0.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false),
+		PartDefinition cube_r3 = body.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 10).mirror().addBox(0.0F, -1.0F, -3.0F, 0.0F, 1.0F, 6.0F, new CubeDeformation(0.0F)).mirror(false),
+				PartPose.offsetAndRotation(0.0F, -5.0F, 0.0F, 0.0F, 0.0F, -0.0044F));
+		PartDefinition cube_r4 = body.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(0, 10).addBox(0.0F, -1.0F, -3.0F, 0.0F, 1.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -5.0F, 0.0F, 0.0F, 0.0F, 0.0044F));
+		PartDefinition cube_r5 = body.addOrReplaceChild("cube_r5", CubeListBuilder.create().texOffs(0, 2).mirror().addBox(0.0F, -1.0F, 0.0F, 0.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false),
 				PartPose.offsetAndRotation(-1.0F, -1.5F, -1.0F, 0.0F, -0.5672F, 0.0F));
-		PartDefinition cube_r6 = body.addOrReplaceChild("cube_r6",
-				CubeListBuilder.create().texOffs(0, 2).addBox(0.0F, -1.0F, 0.0F, 0.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(1.0F, -1.5F, -1.0F, 0.0F, 0.5672F, 0.0F));
+		PartDefinition cube_r6 = body.addOrReplaceChild("cube_r6", CubeListBuilder.create().texOffs(0, 2).addBox(0.0F, -1.0F, 0.0F, 0.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.0F, -1.5F, -1.0F, 0.0F, 0.5672F, 0.0F));
 		return LayerDefinition.create(meshdefinition, 32, 32);
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue,
-			float alpha) {
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 		body.render(poseStack, buffer, packedLight, packedOverlay);
 	}
 

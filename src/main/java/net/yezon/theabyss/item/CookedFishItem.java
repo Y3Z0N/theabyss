@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.CookedFishEffectevent;
+import net.yezon.theabyss.events.CookedFishEffectEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -14,10 +14,9 @@ import net.minecraft.world.entity.LivingEntity;
 
 public class CookedFishItem extends Item {
 	public CookedFishItem() {
-		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(64).rarity(Rarity.UNCOMMON)
-				.food((new FoodProperties.Builder()).nutrition(6).saturationMod(0.3f)
+		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(64).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(6).saturationMod(0.3f)
 
-						.build()));
+				.build()));
 	}
 
 	@Override
@@ -32,7 +31,7 @@ public class CookedFishItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		CookedFishEffectevent.execute(entity);
+		CookedFishEffectEvent.execute(entity);
 		return retval;
 	}
 }

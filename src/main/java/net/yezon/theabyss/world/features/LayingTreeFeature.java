@@ -40,8 +40,7 @@ public class LayingTreeFeature extends Feature<NoneFeatureConfiguration> {
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set
-			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 	private final List<Block> base_blocks;
 	private StructureTemplate template = null;
 
@@ -68,11 +67,8 @@ public class LayingTreeFeature extends Feature<NoneFeatureConfiguration> {
 				if (!base_blocks.contains(context.level().getBlockState(new BlockPos(i, j, k)).getBlock()))
 					continue;
 				BlockPos spawnTo = new BlockPos(i + 0, j + 1, k + 0);
-				if (template.placeInWorld(context.level(), spawnTo, spawnTo,
-						new StructurePlaceSettings().setMirror(Mirror.values()[context.random().nextInt(2)])
-								.setRotation(Rotation.values()[context.random().nextInt(3)]).setRandom(context.random())
-								.addProcessor(BlockIgnoreProcessor.STRUCTURE_BLOCK).setIgnoreEntities(false),
-						context.random(), 2)) {
+				if (template.placeInWorld(context.level(), spawnTo, spawnTo, new StructurePlaceSettings().setMirror(Mirror.values()[context.random().nextInt(2)]).setRotation(Rotation.values()[context.random().nextInt(3)]).setRandom(context.random())
+						.addProcessor(BlockIgnoreProcessor.STRUCTURE_BLOCK).setIgnoreEntities(false), context.random(), 2)) {
 					anyPlaced = true;
 				}
 			}

@@ -3,7 +3,7 @@ package net.yezon.theabyss.client.screens;
 
 import org.checkerframework.checker.units.qual.h;
 
-import net.yezon.theabyss.events.NodeOverlayevent;
+import net.yezon.theabyss.events.NodeOverlayEvent;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -43,10 +43,9 @@ public class NodeOverlay {
 		RenderSystem.depthMask(false);
 		RenderSystem.enableBlend();
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
-		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
-				GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		if (NodeOverlayevent.execute(entity)) {
+		if (NodeOverlayEvent.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/screens/node_gui_applied.png"));
 			Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, 0, 0, 0, w, h, w, h);
 		}

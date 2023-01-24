@@ -11,10 +11,9 @@ import net.minecraft.world.food.FoodProperties;
 
 public class WartShroomItem extends Item {
 	public WartShroomItem() {
-		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(64).rarity(Rarity.UNCOMMON)
-				.food((new FoodProperties.Builder()).nutrition(2).saturationMod(0.2f)
+		super(new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS).stacksTo(64).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(2).saturationMod(0.19999999999999998f)
 
-						.build()));
+				.build()));
 	}
 
 	@Override

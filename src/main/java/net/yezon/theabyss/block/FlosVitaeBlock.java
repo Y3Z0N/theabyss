@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.HealFlowerEffectevent;
+import net.yezon.theabyss.events.HealFlowerEffectEvent;
 import net.yezon.theabyss.init.TheabyssModItems;
 
 import net.minecraftforge.common.PlantType;
@@ -28,8 +28,7 @@ import java.util.Collections;
 
 public class FlosVitaeBlock extends SugarCaneBlock {
 	public FlosVitaeBlock() {
-		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true)
-				.emissiveRendering((bs, br, bp) -> true).noCollission());
+		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).noCollission());
 	}
 
 	@Override
@@ -72,6 +71,6 @@ public class FlosVitaeBlock extends SugarCaneBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		HealFlowerEffectevent.execute(entity);
+		HealFlowerEffectEvent.execute(entity);
 	}
 }

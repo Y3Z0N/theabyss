@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.BreakVinesevent;
+import net.yezon.theabyss.events.BreakVinesEvent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -28,8 +28,7 @@ import java.util.Collections;
 
 public class VigilantHangingFruitBlock extends Block {
 	public VigilantHangingFruitBlock() {
-		super(BlockBehaviour.Properties.of(Material.WATER_PLANT).sound(SoundType.GRASS).strength(1f, 10f).lightLevel(s -> 10).noCollission()
-				.noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
+		super(BlockBehaviour.Properties.of(Material.WATER_PLANT).sound(SoundType.GRASS).strength(1f, 10f).lightLevel(s -> 10).noCollission().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
 				.isRedstoneConductor((bs, br, bp) -> false));
 	}
 
@@ -50,7 +49,6 @@ public class VigilantHangingFruitBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-
 		return box(3.1999999999999997, 0, 3.2, 12.799999999999999, 16, 12.8);
 	}
 
@@ -75,6 +73,6 @@ public class VigilantHangingFruitBlock extends Block {
 	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		BreakVinesevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		BreakVinesEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 }

@@ -18,8 +18,7 @@ import java.util.Collections;
 
 public class JungleDoorBlock extends DoorBlock {
 	public JungleDoorBlock() {
-		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(3f, 10f).noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false).dynamicShape());
+		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(3f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false).dynamicShape());
 	}
 
 	@Override

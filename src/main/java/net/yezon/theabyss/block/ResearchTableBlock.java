@@ -38,13 +38,9 @@ import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
-public class ResearchTableBlock extends Block
-		implements
-
-			EntityBlock {
+public class ResearchTableBlock extends Block implements EntityBlock {
 	public ResearchTableBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override

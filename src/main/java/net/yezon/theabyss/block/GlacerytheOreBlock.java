@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.GetGlacerytheOreAdvevent;
+import net.yezon.theabyss.events.GetGlacerytheOreAdvEvent;
 import net.yezon.theabyss.init.TheabyssModItems;
 
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -58,7 +58,7 @@ public class GlacerytheOreBlock extends Block {
 	@Override
 	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		GetGlacerytheOreAdvevent.execute(entity);
+		GetGlacerytheOreAdvEvent.execute(entity);
 		return retval;
 	}
 }

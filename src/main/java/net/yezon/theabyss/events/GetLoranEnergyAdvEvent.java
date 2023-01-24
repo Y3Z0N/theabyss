@@ -9,14 +9,11 @@ import net.minecraft.advancements.Advancement;
 
 import java.util.Iterator;
 
-public class GetLoranEnergyAdvevent {
+public class GetLoranEnergyAdvEvent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof ServerPlayer _plr && _plr.level instanceof ServerLevel
-				? _plr.getAdvancements().getOrStartProgress(_plr.server.getAdvancements().getAdvancement(new ResourceLocation("theabyss:loran_adv")))
-						.isDone()
-				: false) {
+		if (entity instanceof ServerPlayer _plr && _plr.level instanceof ServerLevel ? _plr.getAdvancements().getOrStartProgress(_plr.server.getAdvancements().getAdvancement(new ResourceLocation("theabyss:loran_adv"))).isDone() : false) {
 			if (entity instanceof ServerPlayer _player) {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("theabyss:ore_adv"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);

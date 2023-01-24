@@ -33,15 +33,13 @@ public class SlimedCarpetFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new SlimedCarpetFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:slimed_carpet", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.SLIMED_CARPET.get())), List.of(), 32));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:slimed_carpet", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:slimed_carpet", FEATURE,
+				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.SLIMED_CARPET.get())), List.of(), 12));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:slimed_carpet", CONFIGURED_FEATURE, List.of(CountPlacement.of(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set
-			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public SlimedCarpetFeature() {
 		super(RandomPatchConfiguration.CODEC);

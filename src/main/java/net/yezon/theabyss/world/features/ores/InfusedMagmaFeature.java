@@ -35,16 +35,13 @@ public class InfusedMagmaFeature extends OreFeature {
 	public static Feature<?> feature() {
 		FEATURE = new InfusedMagmaFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:infused_magma", FEATURE,
-				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()),
-						TheabyssModBlocks.INFUSED_MAGMA.get().defaultBlockState())), 7));
+				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()), TheabyssModBlocks.INFUSED_MAGMA.get().defaultBlockState())), 7));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:infused_magma", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(29), InSquarePlacement.spread(),
-						HeightRangePlacement.uniform(VerticalAnchor.absolute(60), VerticalAnchor.absolute(160)), BiomeFilter.biome()));
+				List.of(CountPlacement.of(29), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(60), VerticalAnchor.absolute(160)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set
-			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public InfusedMagmaFeature() {
 		super(OreConfiguration.CODEC);
