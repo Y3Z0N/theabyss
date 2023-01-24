@@ -3,7 +3,6 @@ package net.yezon.theabyss.client.gui;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.screens.inventory.BeaconScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
@@ -37,7 +36,7 @@ public class ArcaneScreen extends AbstractContainerScreen<ArcaneMenu> {
 
         if (ModList.get().isLoaded("jei")) {
             blit(ms, super.leftPos + 150, super.topPos + 87, 176, 0, 20, 20);
-          ContainerAndScreenUtils.drawGuiItem(this, Items.KNOWLEDGE_BOOK, 152, 91);
+            ContainerAndScreenUtils.drawGuiItem(this, Items.KNOWLEDGE_BOOK, 152, 91);
         }
 
         RenderSystem.disableBlend();
@@ -47,6 +46,6 @@ public class ArcaneScreen extends AbstractContainerScreen<ArcaneMenu> {
     @Override
     protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
         super.font.draw(poseStack, super.playerInventoryTitle, 7, 98, ContainerAndScreenUtils.FONT_COLOR);
-        ContainerAndScreenUtils.drawRightText(poseStack, this,172, 4);
+        ContainerAndScreenUtils.drawRightText(poseStack, this, 172, 4);
     }
 }

@@ -17,6 +17,7 @@ public class AllRecipeTypes {
     public static final List<AbyssRecipeType> ALL_RECIPE_TYPES = new LinkedList<>();
 
     public static final AbyssRecipeType ARCANE_CRAFTING;
+    //public static final AbyssRecipeType SOMNIUM_INFUSING;
 
     static {
         ARCANE_CRAFTING = new AbyssRecipeType("arcane_crafting",
