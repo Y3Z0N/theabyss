@@ -25,8 +25,7 @@ public class UDPTParticle extends TextureSheetParticle {
 			this.spriteSet = spriteSet;
 		}
 
-		public Particle createParticle(SimpleParticleType typeIn, ClientLevel worldIn, double x, double y, double z, double xSpeed, double ySpeed,
-				double zSpeed) {
+		public Particle createParticle(SimpleParticleType typeIn, ClientLevel worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
 			return new UDPTParticle(worldIn, x, y, z, xSpeed, ySpeed, zSpeed, this.spriteSet);
 		}
 	}
@@ -36,7 +35,7 @@ public class UDPTParticle extends TextureSheetParticle {
 	protected UDPTParticle(ClientLevel world, double x, double y, double z, double vx, double vy, double vz, SpriteSet spriteSet) {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
-		this.setSize(0.02f, 0.02f);
+		this.setSize(0.01999999999999999f, 0.02f);
 		this.quadSize *= 0.5f;
 		this.lifetime = 6;
 		this.gravity = 0f;

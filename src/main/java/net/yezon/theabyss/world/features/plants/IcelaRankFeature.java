@@ -37,18 +37,14 @@ public class IcelaRankFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new IcelaRankFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:icela_rank", FEATURE, FeatureUtils.simpleRandomPatchConfiguration(64,
-				PlacementUtils.filtered(Feature.BLOCK_COLUMN,
-						BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(TheabyssModBlocks.ICELA_RANK.get())),
-						BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,
-								BlockPredicate.wouldSurvive(TheabyssModBlocks.ICELA_RANK.get().defaultBlockState(), BlockPos.ZERO)))));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:icela_rank", CONFIGURED_FEATURE, List.of(CountPlacement.of(10),
-				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:icela_rank", FEATURE,
+				FeatureUtils.simpleRandomPatchConfiguration(64, PlacementUtils.filtered(Feature.BLOCK_COLUMN, BlockColumnConfiguration.simple(BiasedToBottomInt.of(2, 4), BlockStateProvider.simple(TheabyssModBlocks.ICELA_RANK.get())),
+						BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.wouldSurvive(TheabyssModBlocks.ICELA_RANK.get().defaultBlockState(), BlockPos.ZERO)))));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:icela_rank", CONFIGURED_FEATURE, List.of(CountPlacement.of(10), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set
-			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:frost_world")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:frost_world")));
 
 	public IcelaRankFeature() {
 		super(RandomPatchConfiguration.CODEC);

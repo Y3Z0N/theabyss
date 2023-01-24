@@ -17,9 +17,8 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.particles.ParticleOptions;
 
 public abstract class ArenoFluid extends ForgeFlowingFluid {
-	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> TheabyssModFluidTypes.ARENO_TYPE.get(),
-			() -> TheabyssModFluids.ARENO.get(), () -> TheabyssModFluids.FLOWING_ARENO.get()).explosionResistance(100f)
-			.bucket(() -> TheabyssModItems.ARENO_BUCKET.get()).block(() -> (LiquidBlock) TheabyssModBlocks.ARENO.get());
+	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> TheabyssModFluidTypes.ARENO_TYPE.get(), () -> TheabyssModFluids.ARENO.get(), () -> TheabyssModFluids.FLOWING_ARENO.get())
+			.explosionResistance(100f).bucket(() -> TheabyssModItems.ARENO_BUCKET.get()).block(() -> (LiquidBlock) TheabyssModBlocks.ARENO.get());
 
 	private ArenoFluid() {
 		super(PROPERTIES);

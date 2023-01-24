@@ -12,7 +12,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.SimpleParticleType;
 
-public class ArtifactOfPhantomsAbilityevent {
+public class ArtifactOfPhantomsAbilityEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;

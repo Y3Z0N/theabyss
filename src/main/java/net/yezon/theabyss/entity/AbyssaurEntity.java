@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.AbyssaurPathFinderevent;
+import net.yezon.theabyss.events.AbyssaurPathFinderEvent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -34,8 +34,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.chat.Component;
 
 public class AbyssaurEntity extends Monster {
-	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.BLUE,
-			ServerBossEvent.BossBarOverlay.PROGRESS);
+	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.BLUE, ServerBossEvent.BossBarOverlay.PROGRESS);
 
 	public AbyssaurEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(TheabyssModEntities.ABYSSAUR.get(), world);
@@ -92,7 +91,7 @@ public class AbyssaurEntity extends Monster {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		AbyssaurPathFinderevent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		AbyssaurPathFinderEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override
@@ -120,15 +119,14 @@ public class AbyssaurEntity extends Monster {
 
 	public static void init() {
 		SpawnPlacements.register(TheabyssModEntities.ABYSSAUR.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL
-						&& Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
+				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.24);
 		builder = builder.add(Attributes.MAX_HEALTH, 200);
-		builder = builder.add(Attributes.ARMOR, 0.3);
+		builder = builder.add(Attributes.ARMOR, 0.30000000000000004);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 15);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 1);

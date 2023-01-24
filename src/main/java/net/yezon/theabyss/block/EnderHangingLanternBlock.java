@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.EnderLanternUncheckevent;
+import net.yezon.theabyss.events.EnderLanternUncheckEvent;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -27,8 +27,8 @@ import java.util.Collections;
 
 public class EnderHangingLanternBlock extends Block {
 	public EnderHangingLanternBlock() {
-		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.LANTERN).strength(0.1f, 1f).lightLevel(s -> 15).noOcclusion()
-				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.LANTERN).strength(0.1f, 1f).lightLevel(s -> 15).noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
+				.isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
@@ -48,7 +48,6 @@ public class EnderHangingLanternBlock extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-
 		return Shapes.or(box(6, 1, 6, 10, 10, 10), box(5, 1, 5, 11, 8, 11));
 	}
 
@@ -69,7 +68,7 @@ public class EnderHangingLanternBlock extends Block {
 	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		EnderLanternUncheckevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		EnderLanternUncheckEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override
@@ -78,8 +77,7 @@ public class EnderHangingLanternBlock extends Block {
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-
-		EnderLanternUncheckevent.execute(world, x, y, z);
+		EnderLanternUncheckEvent.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 10);
 	}
 }

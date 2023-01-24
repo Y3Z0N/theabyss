@@ -1,6 +1,6 @@
 package net.yezon.theabyss.events;
 
-public class NightAltarSummonCheckevent {
+public class NightAltarSummonCheckEvent {
 	public static void execute() {
 	}
 }

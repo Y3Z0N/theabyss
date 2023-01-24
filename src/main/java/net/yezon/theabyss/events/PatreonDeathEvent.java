@@ -18,7 +18,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class PatreonDeathevent {
+public class PatreonDeathEvent {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
 		if (event != null && event.getEntity() != null) {
@@ -34,14 +34,10 @@ public class PatreonDeathevent {
 		if (entity == null)
 			return;
 		if (entity instanceof Player) {
-			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new TheabyssModVariables.PlayerVariables())).ParticlesOnDeath == true) {
-				if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new TheabyssModVariables.PlayerVariables())).P4 == true
-						|| (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new TheabyssModVariables.PlayerVariables())).P5 == true
-						|| (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new TheabyssModVariables.PlayerVariables())).P6 == true) {
+			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ParticlesOnDeath == true) {
+				if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).P4 == true
+						|| (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).P5 == true
+						|| (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).P6 == true) {
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles((SimpleParticleType) (TheabyssModParticleTypes.END_SWORD_PT.get()), x, y, z, 60, 0.6, 0.6, 0.6, 0.1);
 					if (world instanceof ServerLevel _level)

@@ -29,8 +29,7 @@ import java.util.Collections;
 
 public class InfectedGrassBlock extends Block {
 	public InfectedGrassBlock() {
-		super(BlockBehaviour.Properties.of(Material.GRASS).sound(SoundType.WET_GRASS).strength(0.6000000000000001f, 0.6f).noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.GRASS).sound(SoundType.WET_GRASS).strength(0.6000000000000001f, 0.6f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override

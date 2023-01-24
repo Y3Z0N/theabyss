@@ -34,15 +34,13 @@ public class HollowCrystalOreFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new HollowCrystalOreFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:hollow_crystal_ore", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.HOLLOW_CRYSTAL_ORE.get())), List.of(), 3));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:hollow_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(6),
-				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:hollow_crystal_ore", FEATURE,
+				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.HOLLOW_CRYSTAL_ORE.get())), List.of(), 3));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:hollow_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(6), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set
-			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public HollowCrystalOreFeature() {
 		super(RandomPatchConfiguration.CODEC);

@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.HealFlowerEffectevent;
+import net.yezon.theabyss.events.HealFlowerEffectEvent;
 
 import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.ForgeHooks;
@@ -30,8 +30,7 @@ import java.util.Collections;
 
 public class SlimedVitaeBlock extends SugarCaneBlock {
 	public SlimedVitaeBlock() {
-		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true)
-				.emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 6).noCollission());
+		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 6).noCollission());
 	}
 
 	@Override
@@ -74,6 +73,6 @@ public class SlimedVitaeBlock extends SugarCaneBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		HealFlowerEffectevent.execute(entity);
+		HealFlowerEffectEvent.execute(entity);
 	}
 }

@@ -22,15 +22,15 @@ import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
 
-public class MagicianAbilitiesevent {
+public class MagicianAbilitiesEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		if (Math.random() < 0.004) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream()
-						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity)) {
 						if (entityiterator instanceof Player) {
@@ -41,20 +41,17 @@ public class MagicianAbilitiesevent {
 			}
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
-					_level.playSound(null, new BlockPos(x, y, z),
-							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_fire")), SoundSource.NEUTRAL, (float) 0.8,
-							1);
+					_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_fire")), SoundSource.NEUTRAL, (float) 0.8, 1);
 				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_fire")),
-							SoundSource.NEUTRAL, (float) 0.8, 1, false);
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_fire")), SoundSource.NEUTRAL, (float) 0.8, 1, false);
 				}
 			}
 		}
 		if (Math.random() < 0.002) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream()
-						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity)) {
 						if (entityiterator instanceof Player) {
@@ -66,20 +63,17 @@ public class MagicianAbilitiesevent {
 			}
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
-					_level.playSound(null, new BlockPos(x, y, z),
-							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_freeze")), SoundSource.NEUTRAL, (float) 0.8,
-							1);
+					_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_freeze")), SoundSource.NEUTRAL, (float) 0.8, 1);
 				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_freeze")),
-							SoundSource.NEUTRAL, (float) 0.8, 1, false);
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_freeze")), SoundSource.NEUTRAL, (float) 0.8, 1, false);
 				}
 			}
 		}
 		if (Math.random() < 0.002) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream()
-						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity)) {
 						if (entityiterator instanceof MagicianEntity) {
@@ -95,20 +89,17 @@ public class MagicianAbilitiesevent {
 			}
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
-					_level.playSound(null, new BlockPos(x, y, z),
-							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_invisibility")), SoundSource.NEUTRAL,
-							(float) 0.8, 1);
+					_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_invisibility")), SoundSource.NEUTRAL, (float) 0.8, 1);
 				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_invisibility")),
-							SoundSource.NEUTRAL, (float) 0.8, 1, false);
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_invisibility")), SoundSource.NEUTRAL, (float) 0.8, 1, false);
 				}
 			}
 		}
 		if (Math.random() < 0.001) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream()
-						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity)) {
 						if (entityiterator instanceof Player) {
@@ -120,20 +111,17 @@ public class MagicianAbilitiesevent {
 			}
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
-					_level.playSound(null, new BlockPos(x, y, z),
-							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_ghost")), SoundSource.NEUTRAL, (float) 0.8,
-							1);
+					_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_ghost")), SoundSource.NEUTRAL, (float) 0.8, 1);
 				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_ghost")),
-							SoundSource.NEUTRAL, (float) 0.8, 1, false);
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_ghost")), SoundSource.NEUTRAL, (float) 0.8, 1, false);
 				}
 			}
 		}
 		if (Math.random() < 0.006) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream()
-						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity)) {
 						if (entityiterator instanceof Player) {
@@ -141,8 +129,7 @@ public class MagicianAbilitiesevent {
 								Entity _ent = entityiterator;
 								_ent.teleportTo((entity.getX()), (entity.getY()), (entity.getZ()));
 								if (_ent instanceof ServerPlayer _serverPlayer)
-									_serverPlayer.connection.teleport((entity.getX()), (entity.getY()), (entity.getZ()), _ent.getYRot(),
-											_ent.getXRot());
+									_serverPlayer.connection.teleport((entity.getX()), (entity.getY()), (entity.getZ()), _ent.getYRot(), _ent.getXRot());
 							}
 						}
 					}
@@ -150,12 +137,9 @@ public class MagicianAbilitiesevent {
 			}
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
-					_level.playSound(null, new BlockPos(x, y, z),
-							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_teleport")), SoundSource.NEUTRAL,
-							(float) 0.2, 1);
+					_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_teleport")), SoundSource.NEUTRAL, (float) 0.2, 1);
 				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_teleport")),
-							SoundSource.NEUTRAL, (float) 0.2, 1, false);
+					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_teleport")), SoundSource.NEUTRAL, (float) 0.2, 1, false);
 				}
 			}
 		}

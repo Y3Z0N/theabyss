@@ -1,5 +1,4 @@
 
-  
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.item.WartShroomItem;
@@ -354,8 +353,7 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> RING_OF_RING = REGISTRY.register("ring_of_ring", () -> new RingOfRingItem());
 	public static final RegistryObject<Item> AMULED_OF_NOSAJ = REGISTRY.register("amuled_of_nosaj", () -> new AmuledOfNosajItem());
 	public static final RegistryObject<Item> CLOCK_OF_TIME = REGISTRY.register("clock_of_time", () -> new ClockOfTimeItem());
-	public static final RegistryObject<Item> ARTIFACT_OF_AFTER_LIFE = REGISTRY.register("artifact_of_after_life",
-			() -> new ArtifactOfAfterLifeItem());
+	public static final RegistryObject<Item> ARTIFACT_OF_AFTER_LIFE = REGISTRY.register("artifact_of_after_life", () -> new ArtifactOfAfterLifeItem());
 	public static final RegistryObject<Item> TOTEM_OF_ABYSS = REGISTRY.register("totem_of_abyss", () -> new TotemOfAbyssItem());
 	public static final RegistryObject<Item> TOTEM_OF_THUNDER = REGISTRY.register("totem_of_thunder", () -> new TotemOfThunderItem());
 	public static final RegistryObject<Item> TOTEM_OF_TIME = REGISTRY.register("totem_of_time", () -> new TotemOfTimeItem());
@@ -455,8 +453,7 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> NIGHT_ALTAR = block(TheabyssModBlocks.NIGHT_ALTAR, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> NIGHT_ALTAR_ACTIVATED = block(TheabyssModBlocks.NIGHT_ALTAR_ACTIVATED, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> STONE_BRICK_WALL = block(TheabyssModBlocks.STONE_BRICK_WALL, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> STONE_BRICK_PILLAR_IGNITED = block(TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED,
-			TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> STONE_BRICK_PILLAR_IGNITED = block(TheabyssModBlocks.STONE_BRICK_PILLAR_IGNITED, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> STONE_BRICK_PILLAR = block(TheabyssModBlocks.STONE_BRICK_PILLAR, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> PHANTOM_LANTERN = block(TheabyssModBlocks.PHANTOM_LANTERN, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> ENDER_LANTERN = block(TheabyssModBlocks.ENDER_LANTERN, TheabyssModTabs.TAB_THE_ABYSS);
@@ -464,7 +461,6 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> BLUE_SHROOMLIGHT = block(TheabyssModBlocks.BLUE_SHROOMLIGHT, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> DARK_BLUE_SHROOMLIGHT = block(TheabyssModBlocks.DARK_BLUE_SHROOMLIGHT, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> PURPLE_SHROOMLIGHT = block(TheabyssModBlocks.PURPLE_SHROOMLIGHT, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> SLIME_ROOT_BLOCK = block(TheabyssModBlocks.SLIME_ROOT_BLOCK, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> HEAL_CAMP_FIRE = block(TheabyssModBlocks.HEAL_CAMP_FIRE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> SHIELD_CAMP_FIRE = block(TheabyssModBlocks.SHIELD_CAMP_FIRE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> DIRT = block(TheabyssModBlocks.DIRT, TheabyssModTabs.TAB_THE_ABYSS);
@@ -480,127 +476,83 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> GRAVEL = block(TheabyssModBlocks.GRAVEL, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> INFECTED_GRASS = block(TheabyssModBlocks.INFECTED_GRASS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> BLARU_MOSS = block(TheabyssModBlocks.BLARU_MOSS, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> THE_ROKA = REGISTRY.register("the_roka_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.THE_ROKA, -10027060, -1,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> ICE_SKELETON = REGISTRY.register("ice_skeleton_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.ICE_SKELETON, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> ICE_KNIGHT = REGISTRY.register("ice_knight_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.ICE_KNIGHT, -16777216, -16777216,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> NIGHTBLADE_BOSS = REGISTRY.register("nightblade_boss_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.NIGHTBLADE_BOSS, -16777216, -16777216,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> NIGHT_BLADE_BOSS_CLONE = REGISTRY.register("night_blade_boss_clone_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.NIGHT_BLADE_BOSS_CLONE, -16777216, -16777216,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> DEER = REGISTRY.register("deer_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.DEER,
-			-16777216, -10158107, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> LARO_FISH = REGISTRY.register("laro_fish_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.LARO_FISH, -14539719, -16711732,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> LURO_FISH = REGISTRY.register("luro_fish_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.LURO_FISH, -15059388, -16711732,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> RALU_FISH = REGISTRY.register("ralu_fish_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.RALU_FISH, -15387549, -16711732,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> HYLIA_FOX = REGISTRY.register("hylia_fox_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.HYLIA_FOX, -16764109, -16724839,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> CRYSTAL_GOLEM = REGISTRY.register("crystal_golem_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.CRYSTAL_GOLEM, -65332, -1,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> ABYSSAUR = REGISTRY.register("abyssaur_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.ABYSSAUR, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> MAGICIAN = REGISTRY.register("magician_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.MAGICIAN, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> SOUL_GUARD = REGISTRY.register("soul_guard_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.SOUL_GUARD, -16777216, -16777216,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> INFECTED_SPIDER = REGISTRY.register("infected_spider_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFECTED_SPIDER, -16764109, -10092289,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> INFECTED_CREEPER = REGISTRY.register("infected_creeper_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFECTED_CREEPER, -16777216, -6750055,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> GUARD = REGISTRY.register("guard_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.GUARD,
-			-16777216, -16777216, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> MUD_ZOMBIE = REGISTRY.register("mud_zombie_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.MUD_ZOMBIE, -16764109, -16711681,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> INFECTED_ZOMBIE = REGISTRY.register("infected_zombie_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFECTED_ZOMBIE, -16764109, -16711681,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> RAPTOR = REGISTRY.register("raptor_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.RAPTOR, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> END_SPIDER = REGISTRY.register("end_spider_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.END_SPIDER, -16764109, -16764109,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> LIZARD = REGISTRY.register("lizard_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.LIZARD,
-			-16777216, -16711783, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> ELDER = REGISTRY.register("elder_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.ELDER,
-			-16777216, -16711732, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> JUNGLE_LURKER = REGISTRY.register("jungle_lurker_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.JUNGLE_LURKER, -16751002, -16724788,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> SLIME_SPIDER = REGISTRY.register("slime_spider_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.SLIME_SPIDER, -16777165, -13369447,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> SCORPION = REGISTRY.register("scorpion_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.SCORPION, -16764109, -10092289,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> SEEKER = REGISTRY.register("seeker_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.SEEKER,
-			-16777216, -16777216, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> PLAYER_BODY = REGISTRY.register("player_body_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.PLAYER_BODY, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> HAUNTED_SKELETON = REGISTRY.register("haunted_skeleton_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.HAUNTED_SKELETON, -1, -1,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> SHATTERED_ZOMBIE = REGISTRY.register("shattered_zombie_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.SHATTERED_ZOMBIE, -16764109, -16711681,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> SUMMONED_SEEKER = REGISTRY.register("summoned_seeker_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.SUMMONED_SEEKER, -16777216, -16777216,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> INFECTED_WOLF = REGISTRY.register("infected_wolf_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFECTED_WOLF, -16764109, -16724839,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> INFECTED_PHANTOM = REGISTRY.register("infected_phantom_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFECTED_PHANTOM, -16777216, -16711783,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> POWERED_WOLF = REGISTRY.register("powered_wolf_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.POWERED_WOLF, -16764109, -16724839,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> BRAIN_WALKER = REGISTRY.register("brain_walker_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.BRAIN_WALKER, -10092442, -3407668,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> VERSA_WHALE = REGISTRY.register("versa_whale_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.VERSA_WHALE, -16764109, -16724839,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> LOKUS = REGISTRY.register("lokus_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.LOKUS,
-			-16777216, -10158107, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> FROST_SPIDER = REGISTRY.register("frost_spider_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.FROST_SPIDER, -6684673, -13057,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> GLOW_PUG = REGISTRY.register("glow_pug_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.GLOW_PUG, -16764109, -16724839,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> ABYSSAL_LION = REGISTRY.register("abyssal_lion_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.ABYSSAL_LION, -16764109, -16724839,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> INFCETED_COW = REGISTRY.register("infceted_cow_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFCETED_COW, -16764109, -16711681,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
-	public static final RegistryObject<Item> ABYLAGER = REGISTRY.register("abylager_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.ABYLAGER, -16751002, -16764109,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> THE_ROKA_SPAWN_EGG = REGISTRY.register("the_roka_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.THE_ROKA, -10027060, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> ICE_SKELETON_SPAWN_EGG = REGISTRY.register("ice_skeleton_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.ICE_SKELETON, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> ICE_KNIGHT_SPAWN_EGG = REGISTRY.register("ice_knight_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.ICE_KNIGHT, -16777216, -16777216, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> NIGHTBLADE_BOSS_SPAWN_EGG = REGISTRY.register("nightblade_boss_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.NIGHTBLADE_BOSS, -16777216, -16777216, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> NIGHT_BLADE_BOSS_CLONE_SPAWN_EGG = REGISTRY.register("night_blade_boss_clone_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.NIGHT_BLADE_BOSS_CLONE, -16777216, -16777216, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> DEER_SPAWN_EGG = REGISTRY.register("deer_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.DEER, -16777216, -10158107, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> LARO_FISH_SPAWN_EGG = REGISTRY.register("laro_fish_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.LARO_FISH, -14539719, -16711732, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> LURO_FISH_SPAWN_EGG = REGISTRY.register("luro_fish_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.LURO_FISH, -15059388, -16711732, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> RALU_FISH_SPAWN_EGG = REGISTRY.register("ralu_fish_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.RALU_FISH, -15387549, -16711732, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> HYLIA_FOX_SPAWN_EGG = REGISTRY.register("hylia_fox_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.HYLIA_FOX, -16764109, -16724839, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> CRYSTAL_GOLEM_SPAWN_EGG = REGISTRY.register("crystal_golem_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.CRYSTAL_GOLEM, -65332, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> ABYSSAUR_SPAWN_EGG = REGISTRY.register("abyssaur_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.ABYSSAUR, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> MAGICIAN_SPAWN_EGG = REGISTRY.register("magician_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.MAGICIAN, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> SOUL_GUARD_SPAWN_EGG = REGISTRY.register("soul_guard_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.SOUL_GUARD, -16777216, -16777216, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> INFECTED_SPIDER_SPAWN_EGG = REGISTRY.register("infected_spider_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFECTED_SPIDER, -16764109, -10092289, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> INFECTED_CREEPER_SPAWN_EGG = REGISTRY.register("infected_creeper_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFECTED_CREEPER, -16777216, -6750055, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> GUARD_SPAWN_EGG = REGISTRY.register("guard_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.GUARD, -16777216, -16777216, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> MUD_ZOMBIE_SPAWN_EGG = REGISTRY.register("mud_zombie_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.MUD_ZOMBIE, -16764109, -16711681, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> INFECTED_ZOMBIE_SPAWN_EGG = REGISTRY.register("infected_zombie_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFECTED_ZOMBIE, -16764109, -16711681, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> RAPTOR_SPAWN_EGG = REGISTRY.register("raptor_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.RAPTOR, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> END_SPIDER_SPAWN_EGG = REGISTRY.register("end_spider_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.END_SPIDER, -16764109, -16764109, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> LIZARD_SPAWN_EGG = REGISTRY.register("lizard_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.LIZARD, -16777216, -16711783, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> ELDER_SPAWN_EGG = REGISTRY.register("elder_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.ELDER, -16777216, -16711732, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> JUNGLE_LURKER_SPAWN_EGG = REGISTRY.register("jungle_lurker_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.JUNGLE_LURKER, -16751002, -16724788, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> SLIME_SPIDER_SPAWN_EGG = REGISTRY.register("slime_spider_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.SLIME_SPIDER, -16777165, -13369447, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> SCORPION_SPAWN_EGG = REGISTRY.register("scorpion_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.SCORPION, -16764109, -10092289, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> SEEKER_SPAWN_EGG = REGISTRY.register("seeker_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.SEEKER, -16777216, -16777216, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> PLAYER_BODY_SPAWN_EGG = REGISTRY.register("player_body_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.PLAYER_BODY, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> HAUNTED_SKELETON_SPAWN_EGG = REGISTRY.register("haunted_skeleton_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.HAUNTED_SKELETON, -1, -1, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> SHATTERED_ZOMBIE_SPAWN_EGG = REGISTRY.register("shattered_zombie_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.SHATTERED_ZOMBIE, -16764109, -16711681, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> SUMMONED_SEEKER_SPAWN_EGG = REGISTRY.register("summoned_seeker_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.SUMMONED_SEEKER, -16777216, -16777216, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> INFECTED_WOLF_SPAWN_EGG = REGISTRY.register("infected_wolf_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFECTED_WOLF, -16764109, -16724839, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> INFECTED_PHANTOM_SPAWN_EGG = REGISTRY.register("infected_phantom_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFECTED_PHANTOM, -16777216, -16711783, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> POWERED_WOLF_SPAWN_EGG = REGISTRY.register("powered_wolf_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.POWERED_WOLF, -16764109, -16724839, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> BRAIN_WALKER_SPAWN_EGG = REGISTRY.register("brain_walker_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.BRAIN_WALKER, -10092442, -3407668, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> VERSA_WHALE_SPAWN_EGG = REGISTRY.register("versa_whale_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.VERSA_WHALE, -16764109, -16724839, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> LOKUS_SPAWN_EGG = REGISTRY.register("lokus_spawn_egg", () -> new ForgeSpawnEggItem(TheabyssModEntities.LOKUS, -16777216, -10158107, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> FROST_SPIDER_SPAWN_EGG = REGISTRY.register("frost_spider_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.FROST_SPIDER, -6684673, -13057, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> GLOW_PUG_SPAWN_EGG = REGISTRY.register("glow_pug_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.GLOW_PUG, -16764109, -16724839, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> ABYSSAL_LION_SPAWN_EGG = REGISTRY.register("abyssal_lion_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.ABYSSAL_LION, -16764109, -16724839, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> INFCETED_COW_SPAWN_EGG = REGISTRY.register("infceted_cow_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFCETED_COW, -16764109, -16711681, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> ABYLAGER_SPAWN_EGG = REGISTRY.register("abylager_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.ABYLAGER, -16751002, -16764109, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
 	public static final RegistryObject<Item> LORAN_FLOWER = doubleBlock(TheabyssModBlocks.LORAN_FLOWER, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> GULOM_PLANT = block(TheabyssModBlocks.GULOM_PLANT, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> RALOM_PLANT = block(TheabyssModBlocks.RALOM_PLANT, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> FORTIS_ULTIMA = block(TheabyssModBlocks.FORTIS_ULTIMA, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> THUNDER_FLOWER = block(TheabyssModBlocks.THUNDER_FLOWER, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> LERCAS_UMBRELLA = block(TheabyssModBlocks.LERCAS_UMBRELLA, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> SRALA_SHROOM = block(TheabyssModBlocks.SRALA_SHROOM, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> SATURNIA_VERSA = block(TheabyssModBlocks.SATURNIA_VERSA, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> OCTAVYS_MAGYNISIUS = block(TheabyssModBlocks.OCTAVYS_MAGYNISIUS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
@@ -646,59 +598,40 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> LUNGO_RANK = block(TheabyssModBlocks.LUNGO_RANK, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> GLOWING_BLARU_MOSS = block(TheabyssModBlocks.GLOWING_BLARU_MOSS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> FUSION_ARMOR_HELMET = REGISTRY.register("fusion_armor_helmet", () -> new FusionArmorItem.Helmet());
-	public static final RegistryObject<Item> FUSION_ARMOR_CHESTPLATE = REGISTRY.register("fusion_armor_chestplate",
-			() -> new FusionArmorItem.Chestplate());
+	public static final RegistryObject<Item> FUSION_ARMOR_CHESTPLATE = REGISTRY.register("fusion_armor_chestplate", () -> new FusionArmorItem.Chestplate());
 	public static final RegistryObject<Item> FUSION_ARMOR_LEGGINGS = REGISTRY.register("fusion_armor_leggings", () -> new FusionArmorItem.Leggings());
 	public static final RegistryObject<Item> FUSION_ARMOR_BOOTS = REGISTRY.register("fusion_armor_boots", () -> new FusionArmorItem.Boots());
-	public static final RegistryObject<Item> INCORYTHE_ARMOR_HELMET = REGISTRY.register("incorythe_armor_helmet",
-			() -> new IncorytheArmorItem.Helmet());
-	public static final RegistryObject<Item> INCORYTHE_ARMOR_CHESTPLATE = REGISTRY.register("incorythe_armor_chestplate",
-			() -> new IncorytheArmorItem.Chestplate());
-	public static final RegistryObject<Item> INCORYTHE_ARMOR_LEGGINGS = REGISTRY.register("incorythe_armor_leggings",
-			() -> new IncorytheArmorItem.Leggings());
+	public static final RegistryObject<Item> INCORYTHE_ARMOR_HELMET = REGISTRY.register("incorythe_armor_helmet", () -> new IncorytheArmorItem.Helmet());
+	public static final RegistryObject<Item> INCORYTHE_ARMOR_CHESTPLATE = REGISTRY.register("incorythe_armor_chestplate", () -> new IncorytheArmorItem.Chestplate());
+	public static final RegistryObject<Item> INCORYTHE_ARMOR_LEGGINGS = REGISTRY.register("incorythe_armor_leggings", () -> new IncorytheArmorItem.Leggings());
 	public static final RegistryObject<Item> INCORYTHE_ARMOR_BOOTS = REGISTRY.register("incorythe_armor_boots", () -> new IncorytheArmorItem.Boots());
 	public static final RegistryObject<Item> PHANTOM_ARMOR_HELMET = REGISTRY.register("phantom_armor_helmet", () -> new PhantomArmorItem.Helmet());
-	public static final RegistryObject<Item> PHANTOM_ARMOR_CHESTPLATE = REGISTRY.register("phantom_armor_chestplate",
-			() -> new PhantomArmorItem.Chestplate());
-	public static final RegistryObject<Item> PHANTOM_ARMOR_LEGGINGS = REGISTRY.register("phantom_armor_leggings",
-			() -> new PhantomArmorItem.Leggings());
+	public static final RegistryObject<Item> PHANTOM_ARMOR_CHESTPLATE = REGISTRY.register("phantom_armor_chestplate", () -> new PhantomArmorItem.Chestplate());
+	public static final RegistryObject<Item> PHANTOM_ARMOR_LEGGINGS = REGISTRY.register("phantom_armor_leggings", () -> new PhantomArmorItem.Leggings());
 	public static final RegistryObject<Item> PHANTOM_ARMOR_BOOTS = REGISTRY.register("phantom_armor_boots", () -> new PhantomArmorItem.Boots());
-	public static final RegistryObject<Item> IGNISITHE_ARMOR_HELMET = REGISTRY.register("ignisithe_armor_helmet",
-			() -> new IgnisitheArmorItem.Helmet());
-	public static final RegistryObject<Item> IGNISITHE_ARMOR_CHESTPLATE = REGISTRY.register("ignisithe_armor_chestplate",
-			() -> new IgnisitheArmorItem.Chestplate());
-	public static final RegistryObject<Item> IGNISITHE_ARMOR_LEGGINGS = REGISTRY.register("ignisithe_armor_leggings",
-			() -> new IgnisitheArmorItem.Leggings());
+	public static final RegistryObject<Item> IGNISITHE_ARMOR_HELMET = REGISTRY.register("ignisithe_armor_helmet", () -> new IgnisitheArmorItem.Helmet());
+	public static final RegistryObject<Item> IGNISITHE_ARMOR_CHESTPLATE = REGISTRY.register("ignisithe_armor_chestplate", () -> new IgnisitheArmorItem.Chestplate());
+	public static final RegistryObject<Item> IGNISITHE_ARMOR_LEGGINGS = REGISTRY.register("ignisithe_armor_leggings", () -> new IgnisitheArmorItem.Leggings());
 	public static final RegistryObject<Item> IGNISITHE_ARMOR_BOOTS = REGISTRY.register("ignisithe_armor_boots", () -> new IgnisitheArmorItem.Boots());
 	public static final RegistryObject<Item> UNORITHE_ARMOR_HELMET = REGISTRY.register("unorithe_armor_helmet", () -> new UnoritheArmorItem.Helmet());
-	public static final RegistryObject<Item> UNORITHE_ARMOR_CHESTPLATE = REGISTRY.register("unorithe_armor_chestplate",
-			() -> new UnoritheArmorItem.Chestplate());
-	public static final RegistryObject<Item> UNORITHE_ARMOR_LEGGINGS = REGISTRY.register("unorithe_armor_leggings",
-			() -> new UnoritheArmorItem.Leggings());
+	public static final RegistryObject<Item> UNORITHE_ARMOR_CHESTPLATE = REGISTRY.register("unorithe_armor_chestplate", () -> new UnoritheArmorItem.Chestplate());
+	public static final RegistryObject<Item> UNORITHE_ARMOR_LEGGINGS = REGISTRY.register("unorithe_armor_leggings", () -> new UnoritheArmorItem.Leggings());
 	public static final RegistryObject<Item> UNORITHE_ARMOR_BOOTS = REGISTRY.register("unorithe_armor_boots", () -> new UnoritheArmorItem.Boots());
 	public static final RegistryObject<Item> GARNITE_ARMOR_HELMET = REGISTRY.register("garnite_armor_helmet", () -> new GarniteArmorItem.Helmet());
-	public static final RegistryObject<Item> GARNITE_ARMOR_CHESTPLATE = REGISTRY.register("garnite_armor_chestplate",
-			() -> new GarniteArmorItem.Chestplate());
-	public static final RegistryObject<Item> GARNITE_ARMOR_LEGGINGS = REGISTRY.register("garnite_armor_leggings",
-			() -> new GarniteArmorItem.Leggings());
+	public static final RegistryObject<Item> GARNITE_ARMOR_CHESTPLATE = REGISTRY.register("garnite_armor_chestplate", () -> new GarniteArmorItem.Chestplate());
+	public static final RegistryObject<Item> GARNITE_ARMOR_LEGGINGS = REGISTRY.register("garnite_armor_leggings", () -> new GarniteArmorItem.Leggings());
 	public static final RegistryObject<Item> GARNITE_ARMOR_BOOTS = REGISTRY.register("garnite_armor_boots", () -> new GarniteArmorItem.Boots());
-	public static final RegistryObject<Item> GLACERYTHE_ARMOR_HELMET = REGISTRY.register("glacerythe_armor_helmet",
-			() -> new GlacerytheArmorItem.Helmet());
-	public static final RegistryObject<Item> GLACERYTHE_ARMOR_CHESTPLATE = REGISTRY.register("glacerythe_armor_chestplate",
-			() -> new GlacerytheArmorItem.Chestplate());
-	public static final RegistryObject<Item> GLACERYTHE_ARMOR_LEGGINGS = REGISTRY.register("glacerythe_armor_leggings",
-			() -> new GlacerytheArmorItem.Leggings());
-	public static final RegistryObject<Item> GLACERYTHE_ARMOR_BOOTS = REGISTRY.register("glacerythe_armor_boots",
-			() -> new GlacerytheArmorItem.Boots());
+	public static final RegistryObject<Item> GLACERYTHE_ARMOR_HELMET = REGISTRY.register("glacerythe_armor_helmet", () -> new GlacerytheArmorItem.Helmet());
+	public static final RegistryObject<Item> GLACERYTHE_ARMOR_CHESTPLATE = REGISTRY.register("glacerythe_armor_chestplate", () -> new GlacerytheArmorItem.Chestplate());
+	public static final RegistryObject<Item> GLACERYTHE_ARMOR_LEGGINGS = REGISTRY.register("glacerythe_armor_leggings", () -> new GlacerytheArmorItem.Leggings());
+	public static final RegistryObject<Item> GLACERYTHE_ARMOR_BOOTS = REGISTRY.register("glacerythe_armor_boots", () -> new GlacerytheArmorItem.Boots());
 	public static final RegistryObject<Item> BONE_ARMOR_HELMET = REGISTRY.register("bone_armor_helmet", () -> new BoneArmorItem.Helmet());
 	public static final RegistryObject<Item> BONE_ARMOR_CHESTPLATE = REGISTRY.register("bone_armor_chestplate", () -> new BoneArmorItem.Chestplate());
 	public static final RegistryObject<Item> BONE_ARMOR_LEGGINGS = REGISTRY.register("bone_armor_leggings", () -> new BoneArmorItem.Leggings());
 	public static final RegistryObject<Item> BONE_ARMOR_BOOTS = REGISTRY.register("bone_armor_boots", () -> new BoneArmorItem.Boots());
 	public static final RegistryObject<Item> ABERYTHE_ARMOR_HELMET = REGISTRY.register("aberythe_armor_helmet", () -> new AberytheArmorItem.Helmet());
-	public static final RegistryObject<Item> ABERYTHE_ARMOR_CHESTPLATE = REGISTRY.register("aberythe_armor_chestplate",
-			() -> new AberytheArmorItem.Chestplate());
-	public static final RegistryObject<Item> ABERYTHE_ARMOR_LEGGINGS = REGISTRY.register("aberythe_armor_leggings",
-			() -> new AberytheArmorItem.Leggings());
+	public static final RegistryObject<Item> ABERYTHE_ARMOR_CHESTPLATE = REGISTRY.register("aberythe_armor_chestplate", () -> new AberytheArmorItem.Chestplate());
+	public static final RegistryObject<Item> ABERYTHE_ARMOR_LEGGINGS = REGISTRY.register("aberythe_armor_leggings", () -> new AberytheArmorItem.Leggings());
 	public static final RegistryObject<Item> ABERYTHE_ARMOR_BOOTS = REGISTRY.register("aberythe_armor_boots", () -> new AberytheArmorItem.Boots());
 	public static final RegistryObject<Item> EYEICON = REGISTRY.register("eyeicon", () -> new EYEICONItem());
 	public static final RegistryObject<Item> PHANTOM_ATTACK = REGISTRY.register("phantom_attack", () -> new PhantomAttackItem());
@@ -709,17 +642,14 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> PHANTOM_HANGING_LANTERN = block(TheabyssModBlocks.PHANTOM_HANGING_LANTERN, null);
 	public static final RegistryObject<Item> ENDER_HANGING_LANTERN = block(TheabyssModBlocks.ENDER_HANGING_LANTERN, null);
 	public static final RegistryObject<Item> HOGLIN_HANGING_LANTERN = block(TheabyssModBlocks.HOGLIN_HANGING_LANTERN, null);
-	public static final RegistryObject<Item> RING_OF_FIRE_STRIKE_ATTACK = REGISTRY.register("ring_of_fire_strike_attack",
-			() -> new RingOfFireStrikeAttackItem());
-	public static final RegistryObject<Item> RING_OF_BLACK_STRIKE_ATTACK = REGISTRY.register("ring_of_black_strike_attack",
-			() -> new RingOfBlackStrikeAttackItem());
+	public static final RegistryObject<Item> RING_OF_FIRE_STRIKE_ATTACK = REGISTRY.register("ring_of_fire_strike_attack", () -> new RingOfFireStrikeAttackItem());
+	public static final RegistryObject<Item> RING_OF_BLACK_STRIKE_ATTACK = REGISTRY.register("ring_of_black_strike_attack", () -> new RingOfBlackStrikeAttackItem());
 	public static final RegistryObject<Item> STORYICON = REGISTRY.register("storyicon", () -> new STORYICONItem());
 	public static final RegistryObject<Item> RAPTOR_EGG = block(TheabyssModBlocks.RAPTOR_EGG, null);
 	public static final RegistryObject<Item> RING_OF_FIREWORK = REGISTRY.register("ring_of_firework", () -> new RingOfFireworkItem());
 	public static final RegistryObject<Item> RING_OF_FART = REGISTRY.register("ring_of_fart", () -> new RingOfFartItem());
 	public static final RegistryObject<Item> NIGHTBLADE_THEME = REGISTRY.register("nightblade_theme", () -> new NightbladeThemeItem());
 	public static final RegistryObject<Item> CYANIDE_THEME = REGISTRY.register("cyanide_theme", () -> new CyanideThemeItem());
-	public static final RegistryObject<Item> SLIMED_RANK = block(TheabyssModBlocks.SLIMED_RANK, null);
 	public static final RegistryObject<Item> NODE_SHARD = REGISTRY.register("node_shard", () -> new NodeShardItem());
 	public static final RegistryObject<Item> WART_SHROOM = REGISTRY.register("wart_shroom", () -> new WartShroomItem());
 	public static final RegistryObject<Item> JUNGLE_MELON_ITEM = REGISTRY.register("jungle_melon_item", () -> new JungleMelonItemItem());
@@ -729,22 +659,18 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> FISH = REGISTRY.register("fish", () -> new FishItem());
 	public static final RegistryObject<Item> COOKED_FISH = REGISTRY.register("cooked_fish", () -> new CookedFishItem());
 	public static final RegistryObject<Item> BOTTLE_OF_SOMNIUM = REGISTRY.register("bottle_of_somnium", () -> new BottleOfSomniumItem());
-	public static final RegistryObject<Item> ENCHANTED_BOTTLE_OF_SOMNIUM = REGISTRY.register("enchanted_bottle_of_somnium",
-			() -> new EnchantedBottleOfSomniumItem());
+	public static final RegistryObject<Item> ENCHANTED_BOTTLE_OF_SOMNIUM = REGISTRY.register("enchanted_bottle_of_somnium", () -> new EnchantedBottleOfSomniumItem());
 	public static final RegistryObject<Item> SOMNIUM_UPGRADE = REGISTRY.register("somnium_upgrade", () -> new SomniumUpgradeItem());
 	public static final RegistryObject<Item> SOMNIUM_REGEN_UPGRADE = REGISTRY.register("somnium_regen_upgrade", () -> new SomniumRegenUpgradeItem());
 	public static final RegistryObject<Item> ANTI_FEAR_ESSENCE = REGISTRY.register("anti_fear_essence", () -> new AntiFearEssenceItem());
-	public static final RegistryObject<Item> SOMNIUM_COOLDOWN_UPGRADE = REGISTRY.register("somnium_cooldown_upgrade",
-			() -> new SomniumCooldownUpgradeItem());
-	public static final RegistryObject<Item> SOMNIUM_DAMAGE_UPRAGDE = REGISTRY.register("somnium_damage_upragde",
-			() -> new SomniumDamageUpragdeItem());
+	public static final RegistryObject<Item> SOMNIUM_COOLDOWN_UPGRADE = REGISTRY.register("somnium_cooldown_upgrade", () -> new SomniumCooldownUpgradeItem());
+	public static final RegistryObject<Item> SOMNIUM_DAMAGE_UPRAGDE = REGISTRY.register("somnium_damage_upragde", () -> new SomniumDamageUpragdeItem());
 	public static final RegistryObject<Item> APPLE_OF_IMMORTALITY = REGISTRY.register("apple_of_immortality", () -> new AppleOfImmortalityItem());
 	public static final RegistryObject<Item> IMMORTAL_SUBSTANCE = REGISTRY.register("immortal_substance", () -> new ImmortalSubstanceItem());
 	public static final RegistryObject<Item> ANTI_INFECT_ESSENCE = REGISTRY.register("anti_infect_essence", () -> new AntiInfectEssenceItem());
 	public static final RegistryObject<Item> LURKER_JUICE = REGISTRY.register("lurker_juice", () -> new LurkerJuiceItem());
-	public static final RegistryObject<Item> SUMMONED_HOLLOW_SEEKER = REGISTRY.register("summoned_hollow_seeker_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheabyssModEntities.SUMMONED_HOLLOW_SEEKER, -16777216, -16777216,
-					new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> SUMMONED_HOLLOW_SEEKER_SPAWN_EGG = REGISTRY.register("summoned_hollow_seeker_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.SUMMONED_HOLLOW_SEEKER, -16777216, -16777216, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
 	public static final RegistryObject<Item> HOLY_SPOON = REGISTRY.register("holy_spoon", () -> new HolySpoonItem());
 	public static final RegistryObject<Item> CROWN_OF_NOSAJ = REGISTRY.register("crown_of_nosaj", () -> new CrownOfNosajItem());
 	public static final RegistryObject<Item> ARTIFACT_OF_PHANTOMS = REGISTRY.register("artifact_of_phantoms", () -> new ArtifactOfPhantomsItem());
@@ -760,8 +686,7 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> VIGILANT_MOSS = block(TheabyssModBlocks.VIGILANT_MOSS, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> VIGILANT_BUSH = block(TheabyssModBlocks.VIGILANT_BUSH, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> VIGILANT_LEAVES = block(TheabyssModBlocks.VIGILANT_LEAVES, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> VIGILANT_HANGING_FRUIT = block(TheabyssModBlocks.VIGILANT_HANGING_FRUIT,
-			TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
+	public static final RegistryObject<Item> VIGILANT_HANGING_FRUIT = block(TheabyssModBlocks.VIGILANT_HANGING_FRUIT, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> VIGILANT_LOG = block(TheabyssModBlocks.VIGILANT_LOG, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> VIGILANT_GRASS = block(TheabyssModBlocks.VIGILANT_GRASS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> VIGILANT_BLUE_GRASS = block(TheabyssModBlocks.VIGILANT_BLUE_GRASS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
@@ -773,20 +698,18 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> VIGILANT_DOOR = doubleBlock(TheabyssModBlocks.VIGILANT_DOOR, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> VIGILANT_FENCE_GATE = block(TheabyssModBlocks.VIGILANT_FENCE_GATE, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> VIGILANT_BUTTON = block(TheabyssModBlocks.VIGILANT_BUTTON, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> VIGILANT_PRESSURE_PLATE = block(TheabyssModBlocks.VIGILANT_PRESSURE_PLATE,
-			TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> VIGILANT_OUTER_LEAVES = block(TheabyssModBlocks.VIGILANT_OUTER_LEAVES,
-			TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
-	public static final RegistryObject<Item> VIGILANT_BLUE_OUTER_LEAVES = block(TheabyssModBlocks.VIGILANT_BLUE_OUTER_LEAVES,
-			TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
+	public static final RegistryObject<Item> VIGILANT_PRESSURE_PLATE = block(TheabyssModBlocks.VIGILANT_PRESSURE_PLATE, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> VIGILANT_OUTER_LEAVES = block(TheabyssModBlocks.VIGILANT_OUTER_LEAVES, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
+	public static final RegistryObject<Item> VIGILANT_BLUE_OUTER_LEAVES = block(TheabyssModBlocks.VIGILANT_BLUE_OUTER_LEAVES, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> STRIPPED_BLARU_LOG = block(TheabyssModBlocks.STRIPPED_BLARU_LOG, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> STRIPPED_JUNGLE_LOG = block(TheabyssModBlocks.STRIPPED_JUNGLE_LOG, TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> STRIPPED_BOG_SHROOM_LOG = block(TheabyssModBlocks.STRIPPED_BOG_SHROOM_LOG,
-			TheabyssModTabs.TAB_THE_ABYSS);
-	public static final RegistryObject<Item> STRIPPED_SAL_SHROOM_LOG = block(TheabyssModBlocks.STRIPPED_SAL_SHROOM_LOG,
-			TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> STRIPPED_BOG_SHROOM_LOG = block(TheabyssModBlocks.STRIPPED_BOG_SHROOM_LOG, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> STRIPPED_SAL_SHROOM_LOG = block(TheabyssModBlocks.STRIPPED_SAL_SHROOM_LOG, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> STRIPPED_SLIMED_LOG = block(TheabyssModBlocks.STRIPPED_SLIMED_LOG, TheabyssModTabs.TAB_THE_ABYSS);
 	public static final RegistryObject<Item> STRIPPED_FROZEN_LOG = block(TheabyssModBlocks.STRIPPED_FROZEN_LOG, TheabyssModTabs.TAB_THE_ABYSS);
+	public static final RegistryObject<Item> BLARU_GRASS = block(TheabyssModBlocks.BLARU_GRASS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
+	public static final RegistryObject<Item> JELLY_FISH_SPAWN_EGG = REGISTRY.register("jelly_fish_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.JELLY_FISH, -14539719, -16711732, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

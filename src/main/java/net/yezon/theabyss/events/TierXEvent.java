@@ -4,12 +4,11 @@ import net.yezon.theabyss.network.TheabyssModVariables;
 
 import net.minecraft.world.entity.Entity;
 
-public class TierXevent {
+public class TierXEvent {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new TheabyssModVariables.PlayerVariables())).PX == true) {
+		if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).PX == true) {
 			return true;
 		}
 		return false;

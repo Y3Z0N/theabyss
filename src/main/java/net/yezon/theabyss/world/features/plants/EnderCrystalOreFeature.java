@@ -32,10 +32,9 @@ public class EnderCrystalOreFeature extends RandomPatchFeature {
 
 	public static Feature<?> feature() {
 		FEATURE = new EnderCrystalOreFeature();
-		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:ender_crystal_ore", FEATURE, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-				new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.ENDER_CRYSTAL_ORE.get())), List.of(), 4));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:ender_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(9),
-				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:ender_crystal_ore", FEATURE,
+				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.ENDER_CRYSTAL_ORE.get())), List.of(), 4));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:ender_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(9), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 

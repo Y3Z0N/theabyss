@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.SetMiniBossevent;
+import net.yezon.theabyss.events.SetMiniBossEvent;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -45,8 +45,7 @@ import net.minecraft.nbt.CompoundTag;
 import javax.annotation.Nullable;
 
 public class ElderEntity extends Monster {
-	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.BLUE,
-			ServerBossEvent.BossBarOverlay.PROGRESS);
+	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.BLUE, ServerBossEvent.BossBarOverlay.PROGRESS);
 
 	public ElderEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(TheabyssModEntities.ELDER.get(), world);
@@ -112,10 +111,9 @@ public class ElderEntity extends Monster {
 	}
 
 	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason,
-			@Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		SetMiniBossevent.execute(world, this.getX(), this.getY(), this.getZ());
+		SetMiniBossEvent.execute(world, this.getX(), this.getY(), this.getZ());
 		return retval;
 	}
 
@@ -144,8 +142,7 @@ public class ElderEntity extends Monster {
 
 	public static void init() {
 		SpawnPlacements.register(TheabyssModEntities.ELDER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL
-						&& Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
+				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

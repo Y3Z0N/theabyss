@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
 
-public class NightBladeBossAbilityevent {
+public class NightBladeBossAbilityEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
@@ -57,8 +57,8 @@ public class NightBladeBossAbilityevent {
 		if (Math.random() < 0.003) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(100 / 2d), e -> true).stream()
-						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(100 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity)) {
 						if (entityiterator instanceof LivingEntity _entity)
@@ -98,13 +98,12 @@ public class NightBladeBossAbilityevent {
 		if (Math.random() < 0.0025) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream()
-						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (world instanceof ServerLevel _level) {
 						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-						entityToSpawn
-								.moveTo(Vec3.atBottomCenterOf(new BlockPos(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));
 						entityToSpawn.setVisualOnly(true);
 						_level.addFreshEntity(entityToSpawn);
 					}
@@ -118,13 +117,12 @@ public class NightBladeBossAbilityevent {
 		if (Math.random() < 0.0025) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream()
-						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+						.collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (world instanceof ServerLevel _level) {
 						LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
-						entityToSpawn
-								.moveTo(Vec3.atBottomCenterOf(new BlockPos(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));
+						entityToSpawn.moveTo(Vec3.atBottomCenterOf(new BlockPos(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));
 						entityToSpawn.setVisualOnly(true);
 						_level.addFreshEntity(entityToSpawn);
 					}
@@ -143,16 +141,14 @@ public class NightBladeBossAbilityevent {
 				Entity entityToSpawn = new NightBladeBossCloneEntity(TheabyssModEntities.NIGHT_BLADE_BOSS_CLONE.get(), _level);
 				entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
 				if (entityToSpawn instanceof Mob _mobToSpawn)
-					_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null,
-							null);
+					_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
 				world.addFreshEntity(entityToSpawn);
 			}
 			if (world instanceof ServerLevel _level) {
 				Entity entityToSpawn = new NightBladeBossCloneEntity(TheabyssModEntities.NIGHT_BLADE_BOSS_CLONE.get(), _level);
 				entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
 				if (entityToSpawn instanceof Mob _mobToSpawn)
-					_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null,
-							null);
+					_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
 				world.addFreshEntity(entityToSpawn);
 			}
 		}

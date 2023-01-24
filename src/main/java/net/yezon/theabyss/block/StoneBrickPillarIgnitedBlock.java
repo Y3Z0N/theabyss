@@ -25,8 +25,7 @@ import java.util.Collections;
 
 public class StoneBrickPillarIgnitedBlock extends Block {
 	public StoneBrickPillarIgnitedBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(3f, 10f).lightLevel(s -> 15).requiresCorrectToolForDrops()
-				.noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(3f, 10f).lightLevel(s -> 15).requiresCorrectToolForDrops().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
 				.isRedstoneConductor((bs, br, bp) -> false));
 	}
 

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.world.features.plants;
 
-import net.yezon.theabyss.events.CaveMossGenevent;
+import net.yezon.theabyss.events.CaveMossGenEvent;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
@@ -36,15 +36,12 @@ public class CavernaCrystalOreFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new CavernaCrystalOreFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:caverna_crystal_ore", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.CAVERNA_CRYSTAL_ORE.get())), List.of(), 6));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:caverna_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(12),
-				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));
+				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.CAVERNA_CRYSTAL_ORE.get())), List.of(), 6));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:caverna_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(12), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set
-			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public CavernaCrystalOreFeature() {
 		super(RandomPatchConfiguration.CODEC);
@@ -57,7 +54,7 @@ public class CavernaCrystalOreFeature extends RandomPatchFeature {
 		int x = context.origin().getX();
 		int y = context.origin().getY();
 		int z = context.origin().getZ();
-		if (!CaveMossGenevent.execute(y))
+		if (!CaveMossGenEvent.execute(y))
 			return false;
 		return super.place(context);
 	}

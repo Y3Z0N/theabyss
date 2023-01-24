@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfFlightevent;
+import net.yezon.theabyss.events.ApplyRingOfFlightEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -48,7 +48,7 @@ list.add(Component.literal("\uEF02 10.0 \uEF04 100.0 \uEF03 Right Click"));
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			ApplyRingOfFlightevent.execute(entity, itemstack);
-		ApplyRingOfFlightevent.execute(entity, itemstack);
+			ApplyRingOfFlightEvent.execute(entity, itemstack);
+		ApplyRingOfFlightEvent.execute(entity, itemstack);
 	}
 }

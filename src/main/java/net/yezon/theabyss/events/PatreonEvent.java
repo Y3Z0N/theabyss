@@ -20,7 +20,7 @@ import net.minecraft.commands.CommandSource;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class Patreonevent {
+public class PatreonEvent {
 	@SubscribeEvent
 	public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
 		execute(event, event.getEntity().level, event.getEntity());
@@ -33,45 +33,37 @@ public class Patreonevent {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new TheabyssModVariables.PlayerVariables())).P4 == true
-				|| (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new TheabyssModVariables.PlayerVariables())).P5 == true) {
-			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new TheabyssModVariables.PlayerVariables())).FireworkOnJoin == true) {
+		if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).P4 == true
+				|| (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).P5 == true) {
+			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).FireworkOnJoin == true) {
 				TheabyssMod.queueServerWork(100, () -> {
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performPrefixedCommand(
-								new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO,
-										_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+								new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 								"summon firework_rocket ~ ~ ~ {LifeTime:30,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;2651799],FadeColors:[I;2651799]}],Flight:1}}}}");
 				});
 				TheabyssMod.queueServerWork(110, () -> {
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performPrefixedCommand(
-								new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO,
-										_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+								new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 								"summon firework_rocket ~ ~ ~ {LifeTime:25,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;2651799],FadeColors:[I;2651799]}],Flight:1}}}}");
 				});
 				TheabyssMod.queueServerWork(120, () -> {
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performPrefixedCommand(
-								new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO,
-										_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+								new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 								"summon firework_rocket ~ ~ ~ {LifeTime:30,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;2651799],FadeColors:[I;2651799]}],Flight:1}}}}");
 				});
 				TheabyssMod.queueServerWork(130, () -> {
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performPrefixedCommand(
-								new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO,
-										_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+								new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 								"summon firework_rocket ~ ~ ~ {LifeTime:25,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;2651799],FadeColors:[I;2651799]}],Flight:1}}}}");
 				});
 				TheabyssMod.queueServerWork(140, () -> {
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performPrefixedCommand(
-								new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO,
-										_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+								new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 								"summon firework_rocket ~ ~ ~ {LifeTime:30,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[I;2651799],FadeColors:[I;2651799]}],Flight:1}}}}");
 				});
 			}

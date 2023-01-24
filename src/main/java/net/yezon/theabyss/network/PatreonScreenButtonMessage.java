@@ -2,17 +2,17 @@
 package net.yezon.theabyss.network;
 
 import net.yezon.theabyss.world.inventory.PatreonScreenMenu;
-import net.yezon.theabyss.events.PatreonWalkParticlesevent;
-import net.yezon.theabyss.events.PatreonGetDisc2event;
-import net.yezon.theabyss.events.PatreonGetDisc1event;
-import net.yezon.theabyss.events.PatreonFireworkOnJoinevent;
-import net.yezon.theabyss.events.PatreonDeathParticleevent;
-import net.yezon.theabyss.events.PXSurvivalevent;
-import net.yezon.theabyss.events.PXSpectatorevent;
-import net.yezon.theabyss.events.PXOpSwordevent;
-import net.yezon.theabyss.events.PXCreativeevent;
-import net.yezon.theabyss.events.GiveRingOfFireworkevent;
-import net.yezon.theabyss.events.GiveRingOfFartevent;
+import net.yezon.theabyss.events.PatreonWalkParticlesEvent;
+import net.yezon.theabyss.events.PatreonGetDisc2Event;
+import net.yezon.theabyss.events.PatreonGetDisc1Event;
+import net.yezon.theabyss.events.PatreonFireworkOnJoinEvent;
+import net.yezon.theabyss.events.PatreonDeathParticleEvent;
+import net.yezon.theabyss.events.PXSurvivalEvent;
+import net.yezon.theabyss.events.PXSpectatorEvent;
+import net.yezon.theabyss.events.PXOpSwordEvent;
+import net.yezon.theabyss.events.PXCreativeEvent;
+import net.yezon.theabyss.events.GiveRingOfFireworkEvent;
+import net.yezon.theabyss.events.GiveRingOfFartEvent;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.network.NetworkEvent;
@@ -74,53 +74,52 @@ public class PatreonScreenButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			PatreonGetDisc1event.execute(world, x, y, z);
+			PatreonGetDisc1Event.execute(world, x, y, z);
 		}
 		if (buttonID == 1) {
 
-			PatreonGetDisc2event.execute(world, x, y, z);
+			PatreonGetDisc2Event.execute(world, x, y, z);
 		}
 		if (buttonID == 2) {
 
-			PatreonFireworkOnJoinevent.execute(entity);
+			PatreonFireworkOnJoinEvent.execute(entity);
 		}
 		if (buttonID == 3) {
 
-			PatreonDeathParticleevent.execute(entity);
+			PatreonDeathParticleEvent.execute(entity);
 		}
 		if (buttonID == 4) {
 
-			GiveRingOfFireworkevent.execute(world, x, y, z);
+			GiveRingOfFireworkEvent.execute(world, x, y, z);
 		}
 		if (buttonID == 5) {
 
-			PatreonWalkParticlesevent.execute(entity);
+			PatreonWalkParticlesEvent.execute(entity);
 		}
 		if (buttonID == 6) {
 
-			GiveRingOfFartevent.execute(world, x, y, z);
+			GiveRingOfFartEvent.execute(world, x, y, z);
 		}
 		if (buttonID == 7) {
 
-			PXCreativeevent.execute(entity);
+			PXCreativeEvent.execute(entity);
 		}
 		if (buttonID == 8) {
 
-			PXSurvivalevent.execute(entity);
+			PXSurvivalEvent.execute(entity);
 		}
 		if (buttonID == 9) {
 
-			PXSpectatorevent.execute(entity);
+			PXSpectatorEvent.execute(entity);
 		}
 		if (buttonID == 10) {
 
-			PXOpSwordevent.execute(world, x, y, z, entity);
+			PXOpSwordEvent.execute(world, x, y, z, entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		TheabyssMod.addNetworkMessage(PatreonScreenButtonMessage.class, PatreonScreenButtonMessage::buffer, PatreonScreenButtonMessage::new,
-				PatreonScreenButtonMessage::handler);
+		TheabyssMod.addNetworkMessage(PatreonScreenButtonMessage.class, PatreonScreenButtonMessage::buffer, PatreonScreenButtonMessage::new, PatreonScreenButtonMessage::handler);
 	}
 }

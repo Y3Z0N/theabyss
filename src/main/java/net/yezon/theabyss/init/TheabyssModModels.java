@@ -1,5 +1,4 @@
 
-  
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.client.model.Modelzombie1;
@@ -9,6 +8,7 @@ import net.yezon.theabyss.client.model.Modelslime_spider;
 import net.yezon.theabyss.client.model.Modelskeleton_abyss;
 import net.yezon.theabyss.client.model.Modelscorpion;
 import net.yezon.theabyss.client.model.Modelmagician;
+import net.yezon.theabyss.client.model.Modelinfected_jellyfish;
 import net.yezon.theabyss.client.model.Modelhylia_fox;
 import net.yezon.theabyss.client.model.Modelglow_pug;
 import net.yezon.theabyss.client.model.Modelfrost_spider;
@@ -54,6 +54,7 @@ public class TheabyssModModels {
 		event.registerLayerDefinition(Modelscorpion.LAYER_LOCATION, Modelscorpion::createBodyLayer);
 		event.registerLayerDefinition(Modelabyss_wolf.LAYER_LOCATION, Modelabyss_wolf::createBodyLayer);
 		event.registerLayerDefinition(Modelfish2.LAYER_LOCATION, Modelfish2::createBodyLayer);
+		event.registerLayerDefinition(Modelinfected_jellyfish.LAYER_LOCATION, Modelinfected_jellyfish::createBodyLayer);
 		event.registerLayerDefinition(ModelPhantom.LAYER_LOCATION, ModelPhantom::createBodyLayer);
 		event.registerLayerDefinition(Modelabyssal_lion.LAYER_LOCATION, Modelabyssal_lion::createBodyLayer);
 		event.registerLayerDefinition(Modelfrost_spider.LAYER_LOCATION, Modelfrost_spider::createBodyLayer);

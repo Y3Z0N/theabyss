@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfNightbladeevent;
+import net.yezon.theabyss.events.ApplyRingOfNightbladeEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -56,14 +56,14 @@ list.add(Component.literal("\uEF02 50.0 \uEF04 100.0 \uEF03 Right Click"));
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyRingOfNightbladeevent.execute(world, x, y, z, entity, itemstack);
+		ApplyRingOfNightbladeEvent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		super.useOn(context);
-		ApplyRingOfNightbladeevent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
+		ApplyRingOfNightbladeEvent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
 				context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
 		return InteractionResult.SUCCESS;
 	}

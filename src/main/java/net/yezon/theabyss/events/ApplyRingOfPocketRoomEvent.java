@@ -27,31 +27,23 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
-public class ApplyRingOfPocketRoomevent {
+public class ApplyRingOfPocketRoomEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (entity instanceof Player _playerHasItem
-				? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.RING_OF_POCKET_BOX.get()))
-				: false) {
-			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new TheabyssModVariables.PlayerVariables())).Mana < 50
-							* (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade) {
+		if (entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(TheabyssModItems.RING_OF_POCKET_BOX.get())) : false) {
+			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Mana < 50
+					* (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade) {
 				if (entity instanceof Player _player && !_player.level.isClientSide())
 					_player.displayClientMessage(Component.literal((Component.translatable("ring.theabyss.low_energy").getString())), (true));
 			} else {
 				if (entity instanceof Player _player)
-					_player.getCooldowns().addCooldown(itemstack.getItem(),
-							(int) (500 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new TheabyssModVariables.PlayerVariables())).ManaCooldown));
+					_player.getCooldowns().addCooldown(itemstack.getItem(), (int) (500 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ManaCooldown));
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, new BlockPos(x, y, z),
-								ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_teleport")), SoundSource.NEUTRAL, 1, 1);
+						_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_teleport")), SoundSource.NEUTRAL, 1, 1);
 					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_teleport")),
-								SoundSource.NEUTRAL, 1, 1, false);
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:spell_of_teleport")), SoundSource.NEUTRAL, 1, 1, false);
 					}
 				}
 				if (itemstack.getItem() == TheabyssModItems.RING_OF_POCKET_BOX.get()) {
@@ -62,28 +54,18 @@ public class ApplyRingOfPocketRoomevent {
 							_ist.setDamageValue(0);
 						}
 					}
-					if ((entity.level.dimension()) == (ResourceKey.create(Registry.DIMENSION_REGISTRY,
-							new ResourceLocation("theabyss:pocket_dimension")))) {
+					if ((entity.level.dimension()) == (ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:pocket_dimension")))) {
 						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands().performPrefixedCommand(
-									new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""),
-											_level.getServer(), null).withSuppressedOutput(),
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 									("execute in minecraft:overworld run tp " + entity.getDisplayName().getString() + " "
-											+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-													.orElse(new TheabyssModVariables.PlayerVariables())).SaveX)
-											+ " "
-											+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-													.orElse(new TheabyssModVariables.PlayerVariables())).SaveY)
-											+ " " + Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-													.orElse(new TheabyssModVariables.PlayerVariables())).SaveZ)));
+											+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).SaveX) + " "
+											+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).SaveY) + " "
+											+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).SaveZ)));
 					} else if ((entity.level.dimension()) == (Level.OVERWORLD)) {
-						if (!((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new TheabyssModVariables.PlayerVariables())).PocketDimension == true)) {
+						if (!((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).PocketDimension == true)) {
 							{
-								double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new TheabyssModVariables.PlayerVariables())).Mana
-										- 50 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade;
+								double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Mana
+										- 50 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade;
 								entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.Mana = _setval;
 									capability.syncPlayerVariables(entity);
@@ -111,27 +93,22 @@ public class ApplyRingOfPocketRoomevent {
 								});
 							}
 							TheabyssMod.queueServerWork(4, () -> {
-								ApplyPocketPortevent.execute(world);
+								ApplyPocketPortEvent.execute(world);
 							});
 							TheabyssMod.queueServerWork(6, () -> {
 								if (world instanceof ServerLevel _level)
 									_level.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
-													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											("execute in theabyss:pocket_dimension run tp " + entity.getDisplayName().getString() + " "
-													+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-															.orElse(new TheabyssModVariables.PlayerVariables())).PocketPlayerX)
-													+ " 82 "
-													+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-															.orElse(new TheabyssModVariables.PlayerVariables())).PocketPlayerZ)));
+													+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).PocketPlayerX) + " 82 "
+													+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).PocketPlayerZ)));
 							});
 							TheabyssMod.queueServerWork(1, () -> {
 								if (entity instanceof LivingEntity _entity)
 									_entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 80, 0, (false), (false)));
 								if (world instanceof ServerLevel _level)
 									_level.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
-													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											("execute in theabyss:pocket_dimension run tp " + entity.getDisplayName().getString() + " 0 2000 0"));
 								{
 									boolean _setval = true;
@@ -185,10 +162,8 @@ public class ApplyRingOfPocketRoomevent {
 								});
 							}
 							{
-								double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new TheabyssModVariables.PlayerVariables())).Mana
-										- 50 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-												.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade;
+								double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Mana
+										- 50 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade;
 								entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.Mana = _setval;
 									capability.syncPlayerVariables(entity);
@@ -197,14 +172,10 @@ public class ApplyRingOfPocketRoomevent {
 							TheabyssMod.queueServerWork(2, () -> {
 								if (world instanceof ServerLevel _level)
 									_level.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "",
-													Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+											new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 											("execute in theabyss:pocket_dimension run tp " + entity.getDisplayName().getString() + " "
-													+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-															.orElse(new TheabyssModVariables.PlayerVariables())).PocketPlayerX)
-													+ " 82 "
-													+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-															.orElse(new TheabyssModVariables.PlayerVariables())).PocketPlayerZ)));
+													+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).PocketPlayerX) + " 82 "
+													+ Math.round((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).PocketPlayerZ)));
 							});
 						}
 					} else {

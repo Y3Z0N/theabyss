@@ -18,8 +18,7 @@ import java.util.Collections;
 
 public class VigilantStairsBlock extends StairBlock {
 	public VigilantStairsBlock() {
-		super(() -> Blocks.AIR.defaultBlockState(),
-				BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2f, 3f).dynamicShape());
+		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2f, 3f).dynamicShape());
 	}
 
 	@Override

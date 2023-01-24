@@ -15,8 +15,7 @@ import java.util.Collections;
 
 public class FrostBrickStairsBlock extends StairBlock {
 	public FrostBrickStairsBlock() {
-		super(() -> Blocks.AIR.defaultBlockState(),
-				BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).dynamicShape());
+		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).dynamicShape());
 	}
 
 	@Override

@@ -34,8 +34,7 @@ public class SlimeBlockBlock extends Block {
 	public static final DirectionProperty FACING = DirectionalBlock.FACING;
 
 	public SlimeBlockBlock() {
-		super(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.SLIME_BLOCK).strength(1.45f, 10f).requiresCorrectToolForDrops()
-				.noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.SLIME_BLOCK).strength(1.45f, 10f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 

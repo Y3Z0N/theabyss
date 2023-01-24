@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfTelekineticevent;
+import net.yezon.theabyss.events.ApplyRingOfTelekineticEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -53,14 +53,14 @@ public void appendHoverText(ItemStack itemstack, Level world, List<Component> li
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyRingOfTelekineticevent.execute(world, x, y, z, entity, itemstack);
+		ApplyRingOfTelekineticEvent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		super.useOn(context);
-		ApplyRingOfTelekineticevent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
+		ApplyRingOfTelekineticEvent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
 				context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
 		return InteractionResult.SUCCESS;
 	}

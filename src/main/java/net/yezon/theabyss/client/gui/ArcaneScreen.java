@@ -84,12 +84,11 @@ public class ArcaneScreen extends AbstractContainerScreen<ArcaneMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(
-				new Button(this.leftPos + 98, this.topPos + 41, 50, 20, Component.translatable("gui.theabyss.arcane.button_build"), e -> {
-					if (true) {
-						TheabyssMod.PACKET_HANDLER.sendToServer(new ArcaneButtonMessage(0, x, y, z));
-						ArcaneButtonMessage.handleButtonAction(entity, 0, x, y, z);
-					}
-				}));
+		this.addRenderableWidget(new Button(this.leftPos + 98, this.topPos + 41, 50, 20, Component.translatable("gui.theabyss.arcane.button_build"), e -> {
+			if (true) {
+				TheabyssMod.PACKET_HANDLER.sendToServer(new ArcaneButtonMessage(0, x, y, z));
+				ArcaneButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		}));
 	}
 }

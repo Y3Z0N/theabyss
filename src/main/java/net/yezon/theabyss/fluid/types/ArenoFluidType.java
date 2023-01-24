@@ -13,16 +13,14 @@ import java.util.function.Consumer;
 
 public class ArenoFluidType extends FluidType {
 	public ArenoFluidType() {
-		super(FluidType.Properties.create().canSwim(false).canDrown(false).pathType(BlockPathTypes.LAVA).adjacentPathType(null).motionScale(0.007D)
-				.density(500).viscosity(500).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
+		super(FluidType.Properties.create().canSwim(false).canDrown(false).pathType(BlockPathTypes.LAVA).adjacentPathType(null).motionScale(0.007D).density(500).viscosity(500).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
 				.sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY).sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH));
 	}
 
 	@Override
 	public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
 		consumer.accept(new IClientFluidTypeExtensions() {
-			private static final ResourceLocation STILL_TEXTURE = new ResourceLocation("theabyss:blocks/areno"),
-					FLOWING_TEXTURE = new ResourceLocation("theabyss:blocks/areno");
+			private static final ResourceLocation STILL_TEXTURE = new ResourceLocation("theabyss:blocks/areno"), FLOWING_TEXTURE = new ResourceLocation("theabyss:blocks/areno");
 
 			@Override
 			public ResourceLocation getStillTexture() {

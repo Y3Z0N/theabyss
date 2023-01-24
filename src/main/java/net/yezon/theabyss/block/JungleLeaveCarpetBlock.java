@@ -21,8 +21,7 @@ import java.util.Collections;
 
 public class JungleLeaveCarpetBlock extends FlowerBlock {
 	public JungleLeaveCarpetBlock() {
-		super(MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().noCollission()
-				.offsetType(BlockBehaviour.OffsetType.NONE));
+		super(MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.NONE));
 	}
 
 	@Override

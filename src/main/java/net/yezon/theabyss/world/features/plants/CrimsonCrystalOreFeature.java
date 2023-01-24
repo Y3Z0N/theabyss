@@ -33,10 +33,8 @@ public class CrimsonCrystalOreFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new CrimsonCrystalOreFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:crimson_crystal_ore", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.CRIMSON_CRYSTAL_ORE.get())), List.of(), 5));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:crimson_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(13),
-				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.CRIMSON_CRYSTAL_ORE.get())), List.of(), 5));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:crimson_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(13), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 

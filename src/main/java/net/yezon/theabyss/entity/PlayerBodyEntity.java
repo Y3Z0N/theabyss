@@ -1,9 +1,9 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.ReturnToLifeevent;
-import net.yezon.theabyss.events.PlayerBodyParticlesevent;
-import net.yezon.theabyss.events.PlayerBodyDespawnevent;
+import net.yezon.theabyss.events.ReturnToLifeEvent;
+import net.yezon.theabyss.events.PlayerBodyParticlesEvent;
+import net.yezon.theabyss.events.PlayerBodyDespawnEvent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -94,20 +94,20 @@ public class PlayerBodyEntity extends Monster {
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason,
 			@Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		PlayerBodyDespawnevent.execute(world, this);
+		PlayerBodyDespawnEvent.execute(world, this);
 		return retval;
 	}
 
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		PlayerBodyParticlesevent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		PlayerBodyParticlesEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override
 	public void playerTouch(Player sourceentity) {
 		super.playerTouch(sourceentity);
-		ReturnToLifeevent.execute(this);
+		ReturnToLifeEvent.execute(this);
 	}
 
 	public static void init() {

@@ -11,18 +11,14 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
-public class GeneratePocketRoomevent {
+public class GeneratePocketRoomEvent {
 	public static void execute(LevelAccessor world) {
 		if (world instanceof ServerLevel _serverworld) {
 			StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("theabyss", "pocket_room"));
 			if (template != null) {
-				template.placeInWorld(_serverworld,
-						new BlockPos(Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionX), 80,
-								Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionZ)),
-						new BlockPos(Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionX), 80,
-								Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionZ)),
-						new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random,
-						3);
+				template.placeInWorld(_serverworld, new BlockPos(Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionX), 80, Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionZ)),
+						new BlockPos(Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionX), 80, Math.round(TheabyssModVariables.WorldVariables.get(world).PocketDimensionZ)),
+						new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
 			}
 		}
 	}

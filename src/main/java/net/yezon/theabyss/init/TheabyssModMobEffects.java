@@ -1,5 +1,4 @@
 
- 
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.potion.WeakElectricityMobEffect;
@@ -32,10 +31,8 @@ public class TheabyssModMobEffects {
 	public static final DeferredRegister<MobEffect> REGISTRY = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, TheabyssMod.MODID);
 	public static final RegistryObject<MobEffect> FEAR = REGISTRY.register("fear", () -> new FearMobEffect());
 	public static final RegistryObject<MobEffect> NODE_POTION = REGISTRY.register("node_potion", () -> new NodePotionMobEffect());
-	public static final RegistryObject<MobEffect> TIME_STOP_POTION_EFFECT = REGISTRY.register("time_stop_potion_effect",
-			() -> new TimeStopPotionEffectMobEffect());
-	public static final RegistryObject<MobEffect> TIME_STOP_POTION_IRATOR = REGISTRY.register("time_stop_potion_irator",
-			() -> new TimeStopPotionIratorMobEffect());
+	public static final RegistryObject<MobEffect> TIME_STOP_POTION_EFFECT = REGISTRY.register("time_stop_potion_effect", () -> new TimeStopPotionEffectMobEffect());
+	public static final RegistryObject<MobEffect> TIME_STOP_POTION_IRATOR = REGISTRY.register("time_stop_potion_irator", () -> new TimeStopPotionIratorMobEffect());
 	public static final RegistryObject<MobEffect> CURSE = REGISTRY.register("curse", () -> new CurseMobEffect());
 	public static final RegistryObject<MobEffect> CURSED_AURA = REGISTRY.register("cursed_aura", () -> new CursedAuraMobEffect());
 	public static final RegistryObject<MobEffect> ANTI_FEAR_POTION = REGISTRY.register("anti_fear_potion", () -> new AntiFearPotionMobEffect());

@@ -23,8 +23,7 @@ import java.util.Collections;
 
 public class TeslaRankBlock extends SugarCaneBlock {
 	public TeslaRankBlock() {
-		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true)
-				.emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 1).noCollission());
+		super(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 1).noCollission());
 	}
 
 	@Override

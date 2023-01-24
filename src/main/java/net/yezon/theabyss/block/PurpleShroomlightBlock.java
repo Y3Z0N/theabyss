@@ -18,8 +18,7 @@ import java.util.Collections;
 
 public class PurpleShroomlightBlock extends Block {
 	public PurpleShroomlightBlock() {
-		super(BlockBehaviour.Properties.of(Material.BUILDABLE_GLASS).sound(SoundType.SHROOMLIGHT).strength(0.25f, 10f).lightLevel(s -> 15)
-				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
+		super(BlockBehaviour.Properties.of(Material.BUILDABLE_GLASS).sound(SoundType.SHROOMLIGHT).strength(0.25f, 10f).lightLevel(s -> 15).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true));
 	}
 
 	@Override

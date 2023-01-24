@@ -10,7 +10,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.SimpleParticleType;
 
-public class BrikedKnightSwordToolInHandTickevent {
+public class BrikedKnightSwordToolInHandTickEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;

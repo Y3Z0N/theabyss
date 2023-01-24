@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.ThunderFlowerEffectevent;
+import net.yezon.theabyss.events.ThunderFlowerEffectEvent;
 import net.yezon.theabyss.init.TheabyssModItems;
 
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -23,8 +23,7 @@ import java.util.Collections;
 
 public class ThunderFlowerBlock extends FlowerBlock {
 	public ThunderFlowerBlock() {
-		super(MobEffects.SATURATION, 0,
-				BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().lightLevel(s -> 5).noCollission());
+		super(MobEffects.SATURATION, 0, BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().lightLevel(s -> 5).noCollission());
 	}
 
 	@Override
@@ -38,6 +37,6 @@ public class ThunderFlowerBlock extends FlowerBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		ThunderFlowerEffectevent.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+		ThunderFlowerEffectEvent.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
 	}
 }

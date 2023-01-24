@@ -15,8 +15,7 @@ import net.minecraft.client.model.HumanoidModel;
 public class SoulGuardRenderer extends HumanoidMobRenderer<SoulGuardEntity, HumanoidModel<SoulGuardEntity>> {
 	public SoulGuardRenderer(EntityRendererProvider.Context context) {
 		super(context, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER)), 0.7f);
-		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)),
-				new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR))));
+		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR))));
 		this.addLayer(new EyesLayer<SoulGuardEntity, HumanoidModel<SoulGuardEntity>>(this) {
 			@Override
 			public RenderType renderType() {

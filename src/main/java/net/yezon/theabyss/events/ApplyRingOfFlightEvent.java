@@ -10,17 +10,14 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.network.chat.Component;
 
-public class ApplyRingOfFlightevent {
+public class ApplyRingOfFlightEvent {
 	public static void execute(Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.RING_OF_FLIGHT.get()
-				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.RING_OF_FLIGHT
-						.get()) {
-			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new TheabyssModVariables.PlayerVariables())).Mana < 0.5
-							* (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade) {
+				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.RING_OF_FLIGHT.get()) {
+			if ((entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Mana < 0.5
+					* (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade) {
 				if (entity instanceof Player _player) {
 					_player.getAbilities().flying = (false);
 					_player.onUpdateAbilities();
@@ -42,10 +39,8 @@ public class ApplyRingOfFlightevent {
 					_player.onUpdateAbilities();
 				}
 				{
-					double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new TheabyssModVariables.PlayerVariables())).Mana
-							- 0.5 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade;
+					double _setval = (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).Mana
+							- 0.5 * (entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheabyssModVariables.PlayerVariables())).ManaUpgrade;
 					entity.getCapability(TheabyssModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.Mana = _setval;
 						capability.syncPlayerVariables(entity);
@@ -54,8 +49,7 @@ public class ApplyRingOfFlightevent {
 			}
 		}
 		if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.RING_OF_FLIGHT.get()
-				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.RING_OF_FLIGHT
-						.get())) {
+				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheabyssModItems.RING_OF_FLIGHT.get())) {
 			if (entity instanceof Player _player) {
 				_player.getAbilities().flying = (false);
 				_player.onUpdateAbilities();

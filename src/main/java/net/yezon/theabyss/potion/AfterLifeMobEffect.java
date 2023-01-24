@@ -1,9 +1,9 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.ReturnToBodyevent;
-import net.yezon.theabyss.events.AfterLifePotionStartevent;
-import net.yezon.theabyss.events.AfterLifePotionEndevent;
+import net.yezon.theabyss.events.ReturnToBodyEvent;
+import net.yezon.theabyss.events.AfterLifePotionStartEvent;
+import net.yezon.theabyss.events.AfterLifePotionEndEvent;
 
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,18 +22,18 @@ public class AfterLifeMobEffect extends MobEffect {
 
 	@Override
 	public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-		AfterLifePotionStartevent.execute(entity);
+		AfterLifePotionStartEvent.execute(entity);
 	}
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		ReturnToBodyevent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		ReturnToBodyEvent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 
 	@Override
 	public void removeAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
 		super.removeAttributeModifiers(entity, attributeMap, amplifier);
-		AfterLifePotionEndevent.execute(entity.level, entity);
+		AfterLifePotionEndEvent.execute(entity.level, entity);
 	}
 
 	@Override

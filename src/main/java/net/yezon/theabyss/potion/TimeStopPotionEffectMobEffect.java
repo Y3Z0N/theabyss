@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.TimeStopParticlesevent;
+import net.yezon.theabyss.events.TimeStopParticlesEvent;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -19,7 +19,7 @@ public class TimeStopPotionEffectMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		TimeStopParticlesevent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ());
+		TimeStopParticlesEvent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ());
 	}
 
 	@Override

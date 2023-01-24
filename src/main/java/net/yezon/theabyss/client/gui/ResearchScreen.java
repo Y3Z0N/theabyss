@@ -90,12 +90,11 @@ public class ResearchScreen extends AbstractContainerScreen<ResearchMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(
-				new Button(this.leftPos + 78, this.topPos + 42, 65, 20, Component.translatable("gui.theabyss.research.button_research"), e -> {
-					if (true) {
-						TheabyssMod.PACKET_HANDLER.sendToServer(new ResearchButtonMessage(0, x, y, z));
-						ResearchButtonMessage.handleButtonAction(entity, 0, x, y, z);
-					}
-				}));
+		this.addRenderableWidget(new Button(this.leftPos + 78, this.topPos + 42, 65, 20, Component.translatable("gui.theabyss.research.button_research"), e -> {
+			if (true) {
+				TheabyssMod.PACKET_HANDLER.sendToServer(new ResearchButtonMessage(0, x, y, z));
+				ResearchButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		}));
 	}
 }

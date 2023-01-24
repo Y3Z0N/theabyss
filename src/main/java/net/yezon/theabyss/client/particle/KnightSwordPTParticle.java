@@ -25,8 +25,7 @@ public class KnightSwordPTParticle extends TextureSheetParticle {
 			this.spriteSet = spriteSet;
 		}
 
-		public Particle createParticle(SimpleParticleType typeIn, ClientLevel worldIn, double x, double y, double z, double xSpeed, double ySpeed,
-				double zSpeed) {
+		public Particle createParticle(SimpleParticleType typeIn, ClientLevel worldIn, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
 			return new KnightSwordPTParticle(worldIn, x, y, z, xSpeed, ySpeed, zSpeed, this.spriteSet);
 		}
 	}
@@ -37,13 +36,13 @@ public class KnightSwordPTParticle extends TextureSheetParticle {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
 		this.setSize(0.02f, 0.02f);
-		this.quadSize *= 0.2f;
+		this.quadSize *= 0.19999999999999998f;
 		this.lifetime = 20;
 		this.gravity = 0f;
 		this.hasPhysics = true;
-		this.xd = vx * 0.2;
-		this.yd = vy * 0.2;
-		this.zd = vz * 0.2;
+		this.xd = vx * 0.19999999999999998;
+		this.yd = vy * 0.19999999999999998;
+		this.zd = vz * 0.19999999999999998;
 		this.setSpriteFromAge(spriteSet);
 	}
 

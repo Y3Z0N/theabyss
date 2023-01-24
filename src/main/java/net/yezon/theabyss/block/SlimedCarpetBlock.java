@@ -21,8 +21,7 @@ import java.util.Collections;
 
 public class SlimedCarpetBlock extends FlowerBlock {
 	public SlimedCarpetBlock() {
-		super(MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.SLIME_BLOCK).instabreak().noCollission()
-				.offsetType(BlockBehaviour.OffsetType.NONE));
+		super(MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.SLIME_BLOCK).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.NONE));
 	}
 
 	@Override

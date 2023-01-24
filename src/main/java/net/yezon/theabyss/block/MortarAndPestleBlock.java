@@ -38,13 +38,9 @@ import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
-public class MortarAndPestleBlock extends Block
-		implements
-
-			EntityBlock {
+public class MortarAndPestleBlock extends Block implements EntityBlock {
 	public MortarAndPestleBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
@@ -64,7 +60,6 @@ public class MortarAndPestleBlock extends Block
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-
 		return box(4, 0, 4, 12, 4, 12);
 	}
 

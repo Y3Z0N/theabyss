@@ -35,15 +35,12 @@ public class SkeletonBodyVariant2Feature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new SkeletonBodyVariant2Feature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:skeleton_body_variant_2", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-						new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.SKELETON_BODY_VARIANT_2.get())), List.of(), 1));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:skeleton_body_variant_2", CONFIGURED_FEATURE, List.of(CountPlacement.of(31),
-				RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.SKELETON_BODY_VARIANT_2.get())), List.of(), 1));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:skeleton_body_variant_2", CONFIGURED_FEATURE, List.of(CountPlacement.of(31), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 		return FEATURE;
 	}
 
-	private final Set<ResourceKey<Level>> generate_dimensions = Set
-			.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
+	private final Set<ResourceKey<Level>> generate_dimensions = Set.of(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("theabyss:the_abyss")));
 
 	public SkeletonBodyVariant2Feature() {
 		super(RandomPatchConfiguration.CODEC);

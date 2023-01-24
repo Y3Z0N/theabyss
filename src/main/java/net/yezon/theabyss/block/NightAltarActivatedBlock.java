@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.NightAltarSummonCheckevent;
+import net.yezon.theabyss.events.NightAltarSummonCheckEvent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -30,8 +30,7 @@ import java.util.Collections;
 
 public class NightAltarActivatedBlock extends Block {
 	public NightAltarActivatedBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(-1, 3600000).lightLevel(s -> 5)
-				.requiresCorrectToolForDrops().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(-1, 3600000).lightLevel(s -> 5).requiresCorrectToolForDrops().noOcclusion().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true)
 				.isRedstoneConductor((bs, br, bp) -> false));
 	}
 
@@ -75,8 +74,7 @@ public class NightAltarActivatedBlock extends Block {
 		double hitY = hit.getLocation().y;
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
-
-		NightAltarSummonCheckevent.execute();
+		NightAltarSummonCheckEvent.execute();
 		return InteractionResult.SUCCESS;
 	}
 }

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfFreezeevent;
+import net.yezon.theabyss.events.ApplyRingOfFreezeEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -55,14 +55,14 @@ public void appendHoverText(ItemStack itemstack, Level world, List<Component> li
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyRingOfFreezeevent.execute(world, x, y, z, entity, itemstack);
+		ApplyRingOfFreezeEvent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		super.useOn(context);
-		ApplyRingOfFreezeevent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
+		ApplyRingOfFreezeEvent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
 				context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
 		return InteractionResult.SUCCESS;
 	}

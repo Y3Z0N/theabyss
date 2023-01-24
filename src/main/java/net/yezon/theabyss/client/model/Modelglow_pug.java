@@ -42,34 +42,20 @@ public class Modelglow_pug<T extends Entity> extends EntityModel<T> {
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
-		PartDefinition LeftLeg2 = partdefinition.addOrReplaceChild("LeftLeg2",
-				CubeListBuilder.create().texOffs(36, 0).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.0F)),
-				PartPose.offset(4.0F, 19.0F, 5.0F));
-		PartDefinition LeftLeg1 = partdefinition.addOrReplaceChild("LeftLeg1",
-				CubeListBuilder.create().texOffs(42, 21).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.0F)),
-				PartPose.offset(4.0F, 19.0F, -5.0F));
-		PartDefinition RightLeg2 = partdefinition.addOrReplaceChild("RightLeg2",
-				CubeListBuilder.create().texOffs(30, 16).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.0F)),
-				PartPose.offset(-4.0F, 19.0F, 5.0F));
-		PartDefinition RightLeg1 = partdefinition.addOrReplaceChild("RightLeg1",
-				CubeListBuilder.create().texOffs(0, 43).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.0F)),
-				PartPose.offset(-4.0F, 19.0F, -5.0F));
-		PartDefinition MushCap = partdefinition.addOrReplaceChild("MushCap",
-				CubeListBuilder.create().texOffs(0, 0).addBox(-6.0F, -4.0F, -6.0F, 12.0F, 4.0F, 12.0F, new CubeDeformation(0.0F)),
-				PartPose.offset(0.0F, 14.0F, 0.0F));
+		PartDefinition LeftLeg2 = partdefinition.addOrReplaceChild("LeftLeg2", CubeListBuilder.create().texOffs(36, 0).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(4.0F, 19.0F, 5.0F));
+		PartDefinition LeftLeg1 = partdefinition.addOrReplaceChild("LeftLeg1", CubeListBuilder.create().texOffs(42, 21).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(4.0F, 19.0F, -5.0F));
+		PartDefinition RightLeg2 = partdefinition.addOrReplaceChild("RightLeg2", CubeListBuilder.create().texOffs(30, 16).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(-4.0F, 19.0F, 5.0F));
+		PartDefinition RightLeg1 = partdefinition.addOrReplaceChild("RightLeg1", CubeListBuilder.create().texOffs(0, 43).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 5.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(-4.0F, 19.0F, -5.0F));
+		PartDefinition MushCap = partdefinition.addOrReplaceChild("MushCap", CubeListBuilder.create().texOffs(0, 0).addBox(-6.0F, -4.0F, -6.0F, 12.0F, 4.0F, 12.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 14.0F, 0.0F));
 		PartDefinition Plant = MushCap.addOrReplaceChild("Plant",
-				CubeListBuilder.create().texOffs(24, 32).addBox(-6.0F, -11.0F, 0.0F, 12.0F, 11.0F, 0.0F, new CubeDeformation(0.0F)).texOffs(0, 20)
-						.addBox(0.0F, -11.0F, -6.0F, 0.0F, 11.0F, 12.0F, new CubeDeformation(0.0F)),
+				CubeListBuilder.create().texOffs(24, 32).addBox(-6.0F, -11.0F, 0.0F, 12.0F, 11.0F, 0.0F, new CubeDeformation(0.0F)).texOffs(0, 20).addBox(0.0F, -11.0F, -6.0F, 0.0F, 11.0F, 12.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, -4.0F, 0.0F, 0.0F, 0.7854F, 0.0F));
-		PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main",
-				CubeListBuilder.create().texOffs(0, 16).addBox(-5.0F, -10.0F, -5.0F, 10.0F, 6.0F, 10.0F, new CubeDeformation(0.0F)),
-				PartPose.offset(0.0F, 24.0F, 0.0F));
+		PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main", CubeListBuilder.create().texOffs(0, 16).addBox(-5.0F, -10.0F, -5.0F, 10.0F, 6.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
 
 	@Override
-	public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue,
-			float alpha) {
+	public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 		LeftLeg2.render(poseStack, buffer, packedLight, packedOverlay);
 		LeftLeg1.render(poseStack, buffer, packedLight, packedOverlay);
 		RightLeg2.render(poseStack, buffer, packedLight, packedOverlay);

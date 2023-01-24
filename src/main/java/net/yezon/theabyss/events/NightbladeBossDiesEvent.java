@@ -8,10 +8,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
-public class NightbladeBossDiesevent {
+public class NightbladeBossDiesEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if (world instanceof ServerLevel _level)
-			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level,
-					4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "stopsound @a * theabyss:end_game_music");
+			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+					"stopsound @a * theabyss:end_game_music");
 	}
 }
