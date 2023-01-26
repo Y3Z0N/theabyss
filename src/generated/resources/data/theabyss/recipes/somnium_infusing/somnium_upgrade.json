@@ -13,5 +13,8 @@
     {
       "item": "theabyss:soul_heart"
     }
-  ]
+  ],
+  "result": {
+    "item": "theabyss:somnium_upgrade"
+  }
 }

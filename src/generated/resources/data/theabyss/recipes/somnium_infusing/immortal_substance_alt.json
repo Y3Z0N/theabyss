@@ -13,5 +13,8 @@
     {
       "item": "theabyss:apple_of_immortality"
     }
-  ]
+  ],
+  "result": {
+    "item": "theabyss:immortal_substance"
+  }
 }

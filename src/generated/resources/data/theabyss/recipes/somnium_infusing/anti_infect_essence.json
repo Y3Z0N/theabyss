@@ -13,5 +13,8 @@
     {
       "item": "theabyss:rotten_flesh"
     }
-  ]
+  ],
+  "result": {
+    "item": "theabyss:anti_infect_essence"
+  }
 }

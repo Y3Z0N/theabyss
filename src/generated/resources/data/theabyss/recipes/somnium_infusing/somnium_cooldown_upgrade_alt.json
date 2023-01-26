@@ -13,5 +13,8 @@
     {
       "item": "theabyss:node_shard"
     }
-  ]
+  ],
+  "result": {
+    "item": "theabyss:somnium_cooldown_upgrade"
+  }
 }

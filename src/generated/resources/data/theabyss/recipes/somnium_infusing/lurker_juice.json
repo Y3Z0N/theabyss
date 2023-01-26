@@ -13,5 +13,8 @@
     {
       "item": "theabyss:lurker_sobber"
     }
-  ]
+  ],
+  "result": {
+    "item": "theabyss:lurker_juice"
+  }
 }

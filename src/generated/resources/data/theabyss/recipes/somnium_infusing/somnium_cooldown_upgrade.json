@@ -13,5 +13,8 @@
     {
       "item": "theabyss:crystal_hand"
     }
-  ]
+  ],
+  "result": {
+    "item": "theabyss:somnium_cooldown_upgrade"
+  }
 }

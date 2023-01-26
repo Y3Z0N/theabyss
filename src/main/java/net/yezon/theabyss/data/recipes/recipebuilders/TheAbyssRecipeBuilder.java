@@ -12,6 +12,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yezon.theabyss.TheabyssMod;
 import net.yezon.theabyss.recipes.AbyssRecipeType;
+import net.yezon.theabyss.utils.RecipeUtils;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -80,6 +81,7 @@ public abstract class TheAbyssRecipeBuilder implements RecipeBuilder {
         @Override
         public void serializeRecipeData(JsonObject pJson) {
             this.builder.toJson(pJson);
+            pJson.add("result", RecipeUtils.itemStackToJson(this.builder.getRecipeResult()));
         }
 
         @Override

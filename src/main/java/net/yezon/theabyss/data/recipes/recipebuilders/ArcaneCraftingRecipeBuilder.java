@@ -64,6 +64,5 @@ public class ArcaneCraftingRecipeBuilder extends TheAbyssRecipeBuilder {
     protected void toJson(JsonObject jsonObject) {
         jsonObject.add("core", this.center.toJson());
         this.shape.toJson(jsonObject, ingredients);
-        RecipeUtils.writeResultToJson(jsonObject, super.getRecipeResult());
     }
 }

@@ -13,5 +13,8 @@
     {
       "item": "minecraft:apple"
     }
-  ]
+  ],
+  "result": {
+    "item": "theabyss:immortal_substance"
+  }
 }
