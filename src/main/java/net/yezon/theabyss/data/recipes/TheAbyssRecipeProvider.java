@@ -10,6 +10,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yezon.theabyss.TheabyssMod;
 import net.yezon.theabyss.data.recipes.recipebuilders.ArcaneCraftingRecipeBuilder;
+import net.yezon.theabyss.data.recipes.recipebuilders.SomniumInfusingRecipeBuilder;
 import net.yezon.theabyss.data.recipes.recipebuilders.TheAbyssRecipeBuilder;
 import net.yezon.theabyss.recipes.impl.ArcaneStationRecipe;
 
@@ -27,6 +28,45 @@ public class TheAbyssRecipeProvider extends RecipeProvider {
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> p_176532_) {
         this.buildArcaneRecipes(p_176532_);
+        this.buildSomniumInfusingRecipes(p_176532_);
+    }
+
+    private void buildSomniumInfusingRecipes(Consumer<FinishedRecipe> consumer) {
+        SomniumInfusingRecipeBuilder.buildTwoInputs(consumer, null,
+                IMMORTAL_SUBSTANCE,
+                Ingredient.of(APPLE_OF_IMMORTALITY.get()),
+                Ingredient.of(Items.APPLE));
+        SomniumInfusingRecipeBuilder.buildTwoInputs(consumer, null,
+                SOMNIUM_COOLDOWN_UPGRADE,
+                Ingredient.of(NODE_SHARD.get()),
+                Ingredient.of(CRYSTAL_HAND.get()));
+        SomniumInfusingRecipeBuilder.build(consumer, null,
+                SOMNIUM_DAMAGE_UPRAGDE,
+                Ingredient.of(ROKA_HORN.get()),
+                Ingredient.of(ELDER_EYE.get()),
+                Ingredient.of(CRYSTAL_HAND.get()),
+                Ingredient.of(CREEPER_DUST.get()));
+        SomniumInfusingRecipeBuilder.buildOneInput(consumer, null,
+                ANTI_FEAR_ESSENCE,
+                Ingredient.of(ROKA_HORN.get()));
+        SomniumInfusingRecipeBuilder.build(consumer, null,
+                SOMNIUM_REGEN_UPGRADE,
+                Ingredient.of(ROKA_HORN.get()),
+                Ingredient.of(PHANTOM_ESSENCE.get()),
+                Ingredient.of(BOTTLE_OF_SOMNIUM.get()),
+                Ingredient.of(INFECTED_SLIME.get()));
+        SomniumInfusingRecipeBuilder.build(consumer, null,
+                SOMNIUM_UPGRADE,
+                Ingredient.of(ROKA_HORN.get()),
+                Ingredient.of(NODE_SHARD.get()),
+                Ingredient.of(PHANTOM_SOUL_ITEM.get()),
+                Ingredient.of(SOUL_HEART.get()));
+        SomniumInfusingRecipeBuilder.buildOneInput(consumer, null,
+                ANTI_INFECT_ESSENCE,
+                Ingredient.of(ROTTEN_FLESH.get()));
+        SomniumInfusingRecipeBuilder.buildOneInput(consumer, null,
+                LURKER_JUICE,
+                Ingredient.of(LURKER_SOBBER.get()));
     }
 
     private void buildArcaneRecipes(Consumer<FinishedRecipe> consumer) {

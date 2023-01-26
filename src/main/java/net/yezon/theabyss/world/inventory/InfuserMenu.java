@@ -11,12 +11,11 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.yezon.theabyss.block.entity.SomniumInfuserBlockEntity;
 import net.yezon.theabyss.init.TheabyssModBlocks;
-import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModMenus;
+import net.yezon.theabyss.recipes.impl.SomniumInfusingRecipe;
 import net.yezon.theabyss.utils.ContainerAndScreenUtils;
 
 public class InfuserMenu extends TheAbyssContainerMenu {
-
     private final ContainerLevelAccess access;
     private final ContainerData containerData;
 
@@ -29,8 +28,8 @@ public class InfuserMenu extends TheAbyssContainerMenu {
         this.containerData = containerData;
 
 
-        super.addSlot(ContainerAndScreenUtils.createFilteredSlot(container, 0, 31, 7, TheabyssModItems.SOMNIUM.get()));
-        super.addSlot(ContainerAndScreenUtils.createFilteredSlot(container, 1, 75, 16, TheabyssModItems.LORAN_ENERGY.get()));
+        super.addSlot(ContainerAndScreenUtils.createFilteredSlot(container, 0, 31, 7, SomniumInfusingRecipe.SOMNIUM_FUEL));
+        super.addSlot(ContainerAndScreenUtils.createFilteredSlot(container, 1, 75, 16, SomniumInfusingRecipe.LORAN_FUEL));
         super.addSlot(new Slot(container, 2, 23, 42));
         super.addSlot(new Slot(container, 3, 49, 50));
         super.addSlot(new Slot(container, 4, 101, 50));
@@ -80,11 +79,12 @@ public class InfuserMenu extends TheAbyssContainerMenu {
     }
 
     public int getProcessBarHeight() {
-        return 0;
+        int progress = this.containerData.get(0);
+        int duration = this.containerData.get(1);
+        return progress * 24 / duration;
     }
 
-    @Override
-    public void removed(Player pPlayer) {
-        super.removed(pPlayer);
+    public boolean isProcessing() {
+        return this.containerData.get(0) > 0;
     }
 }

@@ -1,0 +1,17 @@
+{
+  "type": "theabyss:somnium_infusing",
+  "ingredients": [
+    {
+      "item": "theabyss:crystal_hand"
+    },
+    {
+      "item": "theabyss:node_shard"
+    },
+    {
+      "item": "theabyss:crystal_hand"
+    },
+    {
+      "item": "theabyss:node_shard"
+    }
+  ]
+}

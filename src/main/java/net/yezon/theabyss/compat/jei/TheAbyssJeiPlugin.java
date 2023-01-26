@@ -1,4 +1,4 @@
-package net.yezon.theabyss.compat;
+package net.yezon.theabyss.compat.jei;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -21,6 +21,7 @@ import net.yezon.theabyss.recipes.RecipeDisplayData;
 import java.util.function.Supplier;
 
 @JeiPlugin()
+@SuppressWarnings("unused")
 public class TheAbyssJeiPlugin implements IModPlugin {
     public static final ResourceLocation PLUGIN_ID = TheabyssMod.location("jei_recipes_plugin");
     private final Supplier<ClientLevel> clientLevel = () -> Minecraft.getInstance().level;
@@ -38,19 +39,15 @@ public class TheAbyssJeiPlugin implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        AllRecipeTypes.ALL_RECIPE_TYPES.forEach(recipeType -> {
-            registration.addRecipes(
-                    this.getJeiType(recipeType),
-                    recipeType.getAllRecipes(this.clientLevel.get())
-            );
-        });
+        AllRecipeTypes.ALL_RECIPE_TYPES.forEach(recipeType -> registration.addRecipes(
+                this.getJeiType(recipeType),
+                recipeType.getAllRecipes(this.clientLevel.get())
+        ));
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        AllRecipeTypes.ALL_RECIPE_TYPES.forEach(recipeType -> {
-            registration.addRecipeCatalyst(new ItemStack(recipeType.getData().tabIcon().get()), TheAbyssRecipeCategory.CATEGORY_MAP.get(recipeType).getRecipeType());
-        });
+        AllRecipeTypes.ALL_RECIPE_TYPES.forEach(recipeType -> registration.addRecipeCatalyst(new ItemStack(recipeType.getData().tabIcon().get()), TheAbyssRecipeCategory.CATEGORY_MAP.get(recipeType).getRecipeType()));
     }
 
     @Override
@@ -58,7 +55,8 @@ public class TheAbyssJeiPlugin implements IModPlugin {
         AllRecipeTypes.ALL_RECIPE_TYPES.forEach(recipeType -> {
             RecipeType<?> jeiRecipeType = this.getJeiType(recipeType);
             RecipeDisplayData.RecipeViewHolder holder = recipeType.getData().recipeViewArea();
-            registration.addRecipeClickArea(holder.screenClass(), holder.x(), holder.y(), holder.width(), holder.height(), jeiRecipeType);
+            if (holder != null)
+                registration.addRecipeClickArea(holder.screenClass(), holder.x(), holder.y(), holder.width(), holder.height(), jeiRecipeType);
         });
     }
 

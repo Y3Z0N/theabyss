@@ -1,6 +1,6 @@
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-package net.yezon.theabyss.compat;
+package net.yezon.theabyss.compat.jei;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 

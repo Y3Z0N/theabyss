@@ -1,6 +1,8 @@
 package net.yezon.theabyss.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.SoundType;
@@ -12,10 +14,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.yezon.theabyss.block.base.TheAbyssTickableEntityBlock;
 import net.yezon.theabyss.block.entity.SomniumInfuserBlockEntity;
-import net.yezon.theabyss.block.entity.base.TickableBlockEntity;
 import net.yezon.theabyss.init.TheabyssModBlockEntities;
 import net.yezon.theabyss.utils.ContainerAndScreenUtils;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class SomniumInfuserBlock extends TheAbyssTickableEntityBlock<SomniumInfuserBlockEntity> {
     public SomniumInfuserBlock() {
@@ -38,5 +41,17 @@ public class SomniumInfuserBlock extends TheAbyssTickableEntityBlock<SomniumInfu
     @Override
     public SomniumInfuserBlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
         return new SomniumInfuserBlockEntity(pPos, pState);
+    }
+
+    @Override
+    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
+        if (pLevel.isClientSide()) {
+            Optional<SomniumInfuserBlockEntity> blockEntity = pLevel.getBlockEntity(pPos, TheabyssModBlockEntities.SOMNIUM_INFUSER.get());
+            if (blockEntity.isPresent()) {
+                if (!blockEntity.get().isIdle()) {
+                    pLevel.addParticle(ParticleTypes.SMOKE, pPos.getX() - 0.5d, pPos.getY() + 1, pPos.getZ() - 0.5d, 0, 0, 0);
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,17 @@
+{
+  "type": "theabyss:somnium_infusing",
+  "ingredients": [
+    {
+      "item": "theabyss:roka_horn"
+    },
+    {
+      "item": "theabyss:phantom_essence"
+    },
+    {
+      "item": "theabyss:bottle_of_somnium"
+    },
+    {
+      "item": "theabyss:infected_slime"
+    }
+  ]
+}

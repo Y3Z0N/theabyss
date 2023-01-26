@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.yezon.theabyss.TheabyssMod;
 import net.yezon.theabyss.client.gui.base.TheAbyssContainerScreen;
+import net.yezon.theabyss.recipes.AllRecipeTypes;
 import net.yezon.theabyss.utils.ContainerAndScreenUtils;
 import net.yezon.theabyss.world.inventory.InfuserMenu;
 
@@ -30,7 +31,21 @@ public class InfuserScreen extends TheAbyssContainerScreen<InfuserMenu> {
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
         RenderSystem.setShaderTexture(0, texture);
+
         super.blit(poseStack, super.leftPos, super.topPos, 0, 0, 176, 170);
+        if (menu.isProcessing()) {
+            //somnium tube
+            super.blit(poseStack, super.leftPos + 49, super.topPos + 11, 176, 20, 25, 21);
+
+            //slots lighting
+            super.blit(poseStack, super.leftPos + 40, super.topPos + 33, 0, 170, 86, 35);
+
+            //process bar
+            int i = menu.getProcessBarHeight();
+            super.blit(poseStack, super.leftPos + 82, super.topPos + 33, 201, 25 - i, 2, i + 1);
+        }
+
+        ContainerAndScreenUtils.drawRecipeViewBox(this, poseStack, AllRecipeTypes.SOMNIUM_INFUSING, 176, 0);
         RenderSystem.disableBlend();
     }
 

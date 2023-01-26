@@ -1,7 +1,11 @@
-package net.yezon.theabyss.compat;
+package net.yezon.theabyss.compat.jei;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.gui.drawable.IDrawableAnimated;
+import mezz.jei.api.gui.drawable.IDrawableStatic;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
@@ -16,17 +20,23 @@ import net.yezon.theabyss.recipes.AbyssRecipeType;
 import net.yezon.theabyss.recipes.RecipeDisplayData;
 import oshi.util.tuples.Pair;
 
+import javax.annotation.Nullable;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class TheAbyssRecipeCategory implements IRecipeCategory<Recipe<Container>> {
     public static final Map<AbyssRecipeType, TheAbyssRecipeCategory> CATEGORY_MAP = new HashMap<>();
     private final RecipeType<Recipe<Container>> jeiRecipeType;
     private final AbyssRecipeType abyssRecipeType;
-    private final IDrawable background;
+    private final IDrawableStatic background;
     private final IDrawable icon;
     private final Map<Integer, Pair<Integer, Integer>> ingredientMapping;
     private final RecipeDisplayData recipeViewData;
+    @Nullable
+    private final IDrawableAnimated drawableAnimated;
+    private int animateOffsetX = 0;
+    private int animateOffsetY = 0;
 
     public TheAbyssRecipeCategory(IGuiHelper guiHelper, AbyssRecipeType abyssRecipeType) {
         this.jeiRecipeType = new RecipeType<>(abyssRecipeType.getId(), abyssRecipeType.getRecipeClass());
@@ -37,8 +47,29 @@ public class TheAbyssRecipeCategory implements IRecipeCategory<Recipe<Container>
         this.icon = guiHelper.createDrawableItemStack(new ItemStack(recipeViewData.tabIcon().get()));
         this.ingredientMapping = recipeViewData.ingredientMapping();
 
+        if (abyssRecipeType.getData().animatedDrawable() != null) {
+            final RecipeDisplayData.AnimatedDrawableBuilder builder = abyssRecipeType.getData().animatedDrawable();
+            final IDrawableStatic drawableStatic = guiHelper.createDrawable(abyssRecipeType.getData().jeiPngName(), builder.u(), builder.v(), builder.width(), builder.height());
+            this.drawableAnimated = guiHelper.createAnimatedDrawable(drawableStatic, builder.tickPerCycle(), startDirection(builder.from()), builder.inverted());
+            this.animateOffsetX = builder.x();
+            this.animateOffsetY = builder.y();
+        } else {
+            this.drawableAnimated = null;
+        }
+
         CATEGORY_MAP.put(abyssRecipeType, this);
         TheabyssMod.LOGGER.info("Registering JEI recipe tab for [{}]", abyssRecipeType.getId());
+    }
+
+    private static IDrawableAnimated.StartDirection startDirection(RecipeDisplayData.AnimatedDrawableBuilder.StartFrom from) {
+        return IDrawableAnimated.StartDirection.valueOf(from.name().toUpperCase(Locale.ROOT));
+    }
+
+    @Override
+    public void draw(Recipe<Container> recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
+        if (this.drawableAnimated != null) {
+            this.drawableAnimated.draw(stack, this.animateOffsetX, this.animateOffsetY);
+        }
     }
 
     @Override

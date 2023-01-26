@@ -15,18 +15,21 @@ import net.yezon.theabyss.block.entity.base.TickableBlockEntity;
 import net.yezon.theabyss.init.TheabyssModBlockEntities;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 import net.yezon.theabyss.init.TheabyssModItems;
+import net.yezon.theabyss.recipes.AllRecipeTypes;
+import net.yezon.theabyss.recipes.impl.SomniumInfusingRecipe;
 import net.yezon.theabyss.utils.ContainerAndScreenUtils;
+import net.yezon.theabyss.utils.RecipeUtils;
 import net.yezon.theabyss.world.inventory.InfuserMenu;
 import org.jetbrains.annotations.Nullable;
 
 public class SomniumInfuserBlockEntity extends AbyssContainerBlockEntity implements TickableBlockEntity {
     public static final int CONTAINER_SIZE = 7;
+    private final int resultSlot = CONTAINER_SIZE - 1;
     public static final int DATA_SIZE = 2;
     public static final int DEFAULT_PROCESS_DURATION = 200;
+    private final NonNullList<ItemStack> items = NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY);
     private int processDuration = DEFAULT_PROCESS_DURATION;
     private int processTime = 0;
-    private final NonNullList<ItemStack> items = NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY);
-
     private final ContainerData containerData = new ContainerData() {
         @Override
         public int get(int pIndex) {
@@ -34,8 +37,7 @@ public class SomniumInfuserBlockEntity extends AbyssContainerBlockEntity impleme
         }
 
         @Override
-        public void set(int pIndex, int pValue) {
-        }
+        public void set(int pIndex, int pValue) {}
 
         @Override
         public int getCount() {
@@ -54,7 +56,7 @@ public class SomniumInfuserBlockEntity extends AbyssContainerBlockEntity impleme
 
     @Override
     public boolean canPlaceItem(int pIndex, ItemStack pStack) {
-        return switch(pIndex) {
+        return switch (pIndex) {
             case 0 -> pStack.is(TheabyssModItems.SOMNIUM.get());
             case 1 -> pStack.is(TheabyssModItems.LORAN_ENERGY.get());
             default -> pIndex != 6;
@@ -63,11 +65,86 @@ public class SomniumInfuserBlockEntity extends AbyssContainerBlockEntity impleme
 
     @Override
     public void serverTick(Level level, BlockPos blockPos, BlockState state) {
-        if (!this.isEmpty()) {
-            System.out.println(this.items);
+        if (!this.canProcess()) {
+            final @Nullable SomniumInfusingRecipe recipe = RecipeUtils.getRecipeFor(level, AllRecipeTypes.SOMNIUM_INFUSING, this);
+            if (recipe != null && this.canStackOutput(recipe)) {
+                if (this.isIdle()) {
+                     this.processTime = 1;
+                     this.processDuration = recipe.getProcessDuration();
+                } else if (this.processTime >= this.processDuration) {
+                    this.processRecipe(recipe);
+                } else {
+                    this.processTime++;
+                }
+            } else {
+                resetTime();
+            }
+        } else {
+            resetTime();
         }
 
         setChanged(level, blockPos, state);
+    }
+
+
+
+    private void processRecipe(SomniumInfusingRecipe recipe) {
+        final ItemStack result = recipe.assemble(this);
+        if (this.items.get(resultSlot).isEmpty()) {
+            super.setItem(resultSlot, result);
+        } else {
+            this.items.get(resultSlot).grow(result.getCount());
+        }
+
+        for (int i = 0; i < this.items.size() - 1; i++) {
+            ItemStack itemStack = items.get(i);
+            if (itemStack.hasCraftingRemainingItem()) {
+                ItemStack remainingItem = itemStack.getCraftingRemainingItem();
+                this.items.set(i, remainingItem);
+            } else {
+                itemStack.shrink(1);
+            }
+        }
+
+        this.resetTime();
+    }
+
+    private boolean canStackOutput(SomniumInfusingRecipe recipe) {
+
+        if (!this.items.get(this.resultSlot).isEmpty()) {
+            ItemStack resultItem = recipe.getResultItem();
+            ItemStack resultSlot = this.getItem(this.resultSlot);
+
+            if (resultItem.is(resultSlot.getItem())) {
+                final int maxItemStack = Math.min(resultSlot.getMaxStackSize(), this.getMaxStackSize());
+                final int remainSpace = maxItemStack - (resultSlot.getCount() + resultItem.getCount());
+                return remainSpace > 0;
+            } else {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private void resetTime() {
+        this.processTime = 0;
+        this.processDuration = DEFAULT_PROCESS_DURATION;
+    }
+
+    public boolean isIdle() {
+        return this.processTime <= 0;
+    }
+
+
+    private boolean canProcess() {
+        for (int i = 0; i < items.size() - 1; i++) {
+            if (super.getItem(i).isEmpty()) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     @Nullable

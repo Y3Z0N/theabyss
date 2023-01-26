@@ -8,12 +8,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.Container;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -31,16 +28,12 @@ import net.yezon.theabyss.world.inventory.TheAbyssContainerMenu;
 
 import javax.annotation.Nullable;
 import java.util.function.BiFunction;
-import java.util.function.Supplier;
+import java.util.function.Predicate;
 
 public class ContainerAndScreenUtils {
     public static final int FONT_COLOR = 0xff99ffcc;
 
     private ContainerAndScreenUtils() {
-    }
-
-    public static <T extends AbstractContainerMenu> SimpleMenuProvider createSimpleMenuProvider(Supplier<MenuType<T>> supplier, Component key, Level level) {
-        return new SimpleMenuProvider(((pContainerId, pPlayerInventory, pPlayer) -> supplier.get().create(pContainerId, pPlayerInventory)), key);
     }
 
     public static void drawRightText(PoseStack poseStack, AbstractContainerScreen<?> screen, int cornerX, int cornerY) {
@@ -65,7 +58,8 @@ public class ContainerAndScreenUtils {
 
     public static void drawRecipeViewBox(AbstractContainerScreen<?> screen, PoseStack poseStack, AbyssRecipeType recipeType, int uOffset, int vOffset) {
         final RecipeDisplayData.RecipeViewHolder holder = recipeType.getData().recipeViewArea();
-        drawRecipeViewBox(screen, poseStack, holder.x(), holder.y(), uOffset, vOffset, holder.width(), holder.height());
+        if (holder != null)
+            drawRecipeViewBox(screen, poseStack, holder.x(), holder.y(), uOffset, vOffset, holder.width(), holder.height());
     }
 
     public static void drawRecipeViewBox(AbstractContainerScreen<?> screen, PoseStack poseStack, int x, int y, int uOffset, int vOffset, int width, int height) {
@@ -76,8 +70,7 @@ public class ContainerAndScreenUtils {
 
             screen.blit(poseStack, xPos, yPos, uOffset, vOffset, width, height);
 
-            drawGuiItem(screen, Items.KNOWLEDGE_BOOK, xPos + 2, yPos + 2);
-
+            drawGuiItem(screen, Items.KNOWLEDGE_BOOK, x + 2, y + 2);
         }
     }
 
@@ -95,11 +88,11 @@ public class ContainerAndScreenUtils {
         return pLevel.isClientSide() ? TickableBlockEntity::staticClientTick : TickableBlockEntity::staticServerTick;
     }
 
-    public static Slot createFilteredSlot(Container container, int index, int x, int y, ItemLike filtered) {
+    public static Slot createFilteredSlot(Container container, int index, int x, int y, Predicate<ItemStack> filtered) {
         return new Slot(container, index, x, y) {
             @Override
             public boolean mayPlace(ItemStack pStack) {
-                return pStack.is(filtered.asItem());
+                return filtered.test(pStack);
             }
         };
     }

@@ -1,0 +1,17 @@
+{
+  "type": "theabyss:somnium_infusing",
+  "ingredients": [
+    {
+      "item": "theabyss:roka_horn"
+    },
+    {
+      "item": "theabyss:elder_eye"
+    },
+    {
+      "item": "theabyss:crystal_hand"
+    },
+    {
+      "item": "theabyss:creeper_dust"
+    }
+  ]
+}

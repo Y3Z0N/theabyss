@@ -14,9 +14,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public record RecipeDisplayData(ResourceLocation jeiPngName, int width, int height, Supplier<? extends ItemLike> tabIcon,
-                                RecipeViewHolder recipeViewArea,
-                                RecipeTransferHolder<? extends AbstractContainerMenu> recipeTransferHolder, Map<Integer, Pair<Integer, Integer>> ingredientMapping, int resultX, int resultY) {
+public record RecipeDisplayData(ResourceLocation jeiPngName, int width, int height,
+                                Supplier<? extends ItemLike> tabIcon,
+                                @Nullable RecipeViewHolder recipeViewArea,
+                                RecipeTransferHolder<? extends AbstractContainerMenu> recipeTransferHolder,
+                                @Nullable AnimatedDrawableBuilder animatedDrawable,
+                                Map<Integer, Pair<Integer, Integer>> ingredientMapping, int resultX, int resultY) {
     public static class Builder {
         private final ResourceLocation imageLocation;
         private final int width;
@@ -26,6 +29,8 @@ public record RecipeDisplayData(ResourceLocation jeiPngName, int width, int heig
         private RecipeViewHolder recipeViewArea;
         @Nullable
         private RecipeTransferHolder<? extends AbstractContainerMenu> recipeTransferHolder;
+        @Nullable
+        private AnimatedDrawableBuilder animatedDrawable;
 
         public Builder(String imageName, int width, int height, Supplier<? extends ItemLike> tabIcon) {
             this.imageLocation = TheabyssMod.location("textures/jei/" + imageName + (imageName.contains(".png") ? "" : ".png"));
@@ -37,6 +42,10 @@ public record RecipeDisplayData(ResourceLocation jeiPngName, int width, int heig
 
         public static Builder builder(String imageName, int width, int height, Supplier<? extends ItemLike> tabIcon) {
             return new Builder(imageName, width, height, tabIcon);
+        }
+
+        public Builder addRecipeViewArea(Class<? extends AbstractContainerScreen<?>> screenClass, int x, int y) {
+            return addRecipeViewArea(screenClass, x, y, 20, 20);
         }
 
         public Builder addRecipeViewArea(Class<? extends AbstractContainerScreen<?>> screenClass, int x, int y, int width, int height) {
@@ -54,14 +63,38 @@ public record RecipeDisplayData(ResourceLocation jeiPngName, int width, int heig
             return this;
         }
 
+        public Builder addAnimatedDrawable(int u, int v, int width, int height, int x, int y, int tickPerCycle, AnimatedDrawableBuilder.StartFrom from, boolean inverted) {
+            this.animatedDrawable = new AnimatedDrawableBuilder(u, v, width, height, x, y, tickPerCycle, from, inverted);
+            return this;
+        }
+
         public RecipeDisplayData construct(int resultSlotX, int resultSlotY) {
             Preconditions.checkNotNull(this.recipeViewArea, "Missing recipe view area");
-            if (this.recipeTransferHolder == null) TheabyssMod.LOGGER.warn("Recipe transfer handler for [{}] is missing", this.imageLocation);
-            return new RecipeDisplayData(this.imageLocation, this.width, this.height, this.tabIcon, this.recipeViewArea, this.recipeTransferHolder, this.ingredientMapping, resultSlotX, resultSlotY);
+            if (this.recipeTransferHolder == null)
+                TheabyssMod.LOGGER.warn("Recipe transfer handler for [{}] is missing", this.imageLocation);
+            return new RecipeDisplayData(this.imageLocation, this.width, this.height, this.tabIcon, this.recipeViewArea, this.recipeTransferHolder, this.animatedDrawable, this.ingredientMapping, resultSlotX, resultSlotY);
         }
     }
 
-    public record RecipeViewHolder(Class<? extends AbstractContainerScreen<?>> screenClass, int x, int y, int width, int height) {}
-    public record RecipeTransferHolder<T extends AbstractContainerMenu>(Class<T> menuClass, Supplier<? extends MenuType<T>> menuType, int recipeSlotStart, int recipeSlotCount, int inventorySlotStart, int inventorySlotCount) {}
+    public record RecipeViewHolder(Class<? extends AbstractContainerScreen<?>> screenClass, int x, int y, int width,
+                                   int height) {
+    }
+
+    public record RecipeTransferHolder<T extends AbstractContainerMenu>(Class<T> menuClass,
+                                                                        Supplier<? extends MenuType<T>> menuType,
+                                                                        int recipeSlotStart, int recipeSlotCount,
+                                                                        int inventorySlotStart,
+                                                                        int inventorySlotCount) {
+    }
+
+    public record AnimatedDrawableBuilder(int u, int v, int width, int height, int x, int y, int tickPerCycle, StartFrom from,
+                                          boolean inverted) {
+        public enum StartFrom {
+            TOP,
+            BOTTOM,
+            LEFT,
+            RIGHT
+        }
+    }
 }
 

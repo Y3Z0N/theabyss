@@ -12,8 +12,8 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yezon.theabyss.TheabyssMod;
 import net.yezon.theabyss.recipes.AbyssRecipeType;
-import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.Nullable;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -28,7 +28,7 @@ public abstract class TheAbyssRecipeBuilder implements RecipeBuilder {
         this.recipeSerializer = recipeSerializer.getSerializer();
     }
 
-    public static void saveRecipe(RecipeBuilder recipeBuilder, Consumer<FinishedRecipe> consumer, @javax.annotation.Nullable ResourceLocation recipeId) {
+    public static void saveRecipe(RecipeBuilder recipeBuilder, Consumer<FinishedRecipe> consumer, @Nullable ResourceLocation recipeId) {
         if (recipeId == null) {
             recipeBuilder.save(consumer);
         } else {
@@ -103,7 +103,7 @@ public abstract class TheAbyssRecipeBuilder implements RecipeBuilder {
         }
 
         private String getSerializerName() {
-            return ForgeRegistries.RECIPE_SERIALIZERS.getKey(this.getType()).getPath() + "/";
+            return Objects.requireNonNull(ForgeRegistries.RECIPE_SERIALIZERS.getKey(this.getType())).getPath() + "/";
         }
     }
 }
