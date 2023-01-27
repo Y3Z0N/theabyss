@@ -7,7 +7,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 
-public class FlyingOnPotionActiveevent {
+public class FlyingOnPotionActiveEvent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

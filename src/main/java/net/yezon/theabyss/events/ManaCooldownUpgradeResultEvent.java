@@ -6,7 +6,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
-public class ManaCooldownUpgradeResultevent {
+public class ManaCooldownUpgradeResultEvent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

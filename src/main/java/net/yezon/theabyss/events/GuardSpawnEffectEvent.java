@@ -9,7 +9,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
-public class GuardSpawnEffectevent {
+public class GuardSpawnEffectEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;

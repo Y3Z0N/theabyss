@@ -8,7 +8,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.yezon.theabyss.events.GetLoranEnergyAdvevent;
+import net.yezon.theabyss.events.GetLoranEnergyAdvEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import javax.annotation.Nullable;
@@ -44,15 +44,15 @@ public class LoranEnergyItem extends Item {
     @Override
     public void onCraftedBy(ItemStack itemstack, Level world, Player entity) {
         super.onCraftedBy(itemstack, world, entity);
-        GetLoranEnergyAdvevent.execute(entity);
+        GetLoranEnergyAdvEvent.execute(entity);
     }
 
     @Override
     public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(itemstack, world, entity, slot, selected);
         if (selected)
-            GetLoranEnergyAdvevent.execute(entity);
-        GetLoranEnergyAdvevent.execute(entity);
+            GetLoranEnergyAdvEvent.execute(entity);
+        GetLoranEnergyAdvEvent.execute(entity);
     }
 
     @Override

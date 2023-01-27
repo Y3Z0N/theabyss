@@ -7,7 +7,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerPlayer;
 
-public class GhostPotionEndevent {
+public class GhostPotionEndEvent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

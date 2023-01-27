@@ -9,7 +9,7 @@ import net.minecraft.core.BlockPos;
 
 import java.util.Map;
 
-public class EnderLanternCheckevent {
+public class EnderLanternCheckEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if (!((world.getBlockState(new BlockPos(x, y + 1, z))).getMaterial() == net.minecraft.world.level.material.Material.AIR)) {
 			{

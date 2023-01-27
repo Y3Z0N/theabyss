@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.world.features.plants;
 
-import net.yezon.theabyss.events.CaveMossGenevent;
+import net.yezon.theabyss.events.CaveMossGenEvent;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
@@ -56,7 +56,7 @@ public class AurelCrystalOreFeature extends RandomPatchFeature {
 		int x = context.origin().getX();
 		int y = context.origin().getY();
 		int z = context.origin().getZ();
-		if (!CaveMossGenevent.execute(y))
+		if (!CaveMossGenEvent.execute(y))
 			return false;
 		return super.place(context);
 	}

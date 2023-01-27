@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.BreakVinesevent;
+import net.yezon.theabyss.events.BreakVinesEvent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -104,6 +104,6 @@ public class FrozenLogVineBlock extends Block {
 	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		BreakVinesevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		BreakVinesEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 }

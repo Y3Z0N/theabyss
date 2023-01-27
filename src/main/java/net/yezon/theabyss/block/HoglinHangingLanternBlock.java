@@ -1,9 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import org.checkerframework.checker.units.qual.s;
-
-import net.yezon.theabyss.events.HoglinLanternUncheckevent;
+import net.yezon.theabyss.events.HoglinLanternUncheckEvent;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -69,7 +67,7 @@ public class HoglinHangingLanternBlock extends Block {
 	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		HoglinLanternUncheckevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		HoglinLanternUncheckEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override
@@ -79,7 +77,7 @@ public class HoglinHangingLanternBlock extends Block {
 		int y = pos.getY();
 		int z = pos.getZ();
 
-		HoglinLanternUncheckevent.execute(world, x, y, z);
+		HoglinLanternUncheckEvent.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 10);
 	}
 }

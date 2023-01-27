@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.RottenFleshRandomEffectevent;
+import net.yezon.theabyss.events.RottenFleshRandomEffectEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -32,7 +32,7 @@ public class RottenFleshItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		RottenFleshRandomEffectevent.execute(entity);
+		RottenFleshRandomEffectEvent.execute(entity);
 		return retval;
 	}
 }

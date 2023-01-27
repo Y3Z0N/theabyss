@@ -15,7 +15,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
-public class IceKnightEntityIsHurtevent {
+public class IceKnightEntityIsHurtEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if (Math.random() < 0.3) {
 			if (world instanceof ServerLevel _level) {

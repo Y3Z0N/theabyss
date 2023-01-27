@@ -1,9 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import org.checkerframework.checker.units.qual.s;
-
-import net.yezon.theabyss.events.BreakVinesevent;
+import net.yezon.theabyss.events.BreakVinesEvent;
 import net.yezon.theabyss.init.TheabyssModItems;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -107,6 +105,6 @@ public class SlimedLogCrystalBlock extends Block {
 	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		BreakVinesevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		BreakVinesEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 }

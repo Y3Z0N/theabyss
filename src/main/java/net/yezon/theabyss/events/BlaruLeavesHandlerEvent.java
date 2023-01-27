@@ -12,7 +12,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.core.BlockPos;
 
-public class BlaruLeavesHandlerevent {
+public class BlaruLeavesHandlerEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;

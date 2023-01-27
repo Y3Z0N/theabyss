@@ -1,9 +1,7 @@
 
 package net.yezon.theabyss.client.screens;
 
-import org.checkerframework.checker.units.qual.h;
-
-import net.yezon.theabyss.events.ManaBarToggleevent;
+import net.yezon.theabyss.events.ManaBarToggleEvent;
 import net.yezon.theabyss.network.TheabyssModVariables;
 
 import net.minecraftforge.fml.common.Mod;
@@ -55,7 +53,7 @@ public class SomniumBarOverlay {
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
 				GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		if (ManaBarToggleevent.execute(entity)) {
+		if (ManaBarToggleEvent.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_none_icon.png"));
 			Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + HudX + 0, posY + HudY + 0, 0, 0, 9, 9, 9, 9);
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/mana_none_icon.png"));

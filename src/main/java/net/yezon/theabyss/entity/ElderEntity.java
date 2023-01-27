@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.SetMiniBossevent;
+import net.yezon.theabyss.events.SetMiniBossEvent;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -115,7 +115,7 @@ public class ElderEntity extends Monster {
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason,
 			@Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		SetMiniBossevent.execute(world, this.getX(), this.getY(), this.getZ());
+		SetMiniBossEvent.execute(world, this.getX(), this.getY(), this.getZ());
 		return retval;
 	}
 

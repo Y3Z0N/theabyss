@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.TeleportTrailevent;
-import net.yezon.theabyss.events.TeleportHandlerevent;
+import net.yezon.theabyss.events.TeleportTrailEvent;
+import net.yezon.theabyss.events.TeleportHandlerEvent;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -68,20 +68,20 @@ public class MutatedEnderpearlEntity extends AbstractArrow implements ItemSuppli
 	@Override
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
-		TeleportHandlerevent.execute(this.level, this.getX(), this.getY(), this.getZ(), entityHitResult.getEntity());
+		TeleportHandlerEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), entityHitResult.getEntity());
 	}
 
 	@Override
 	public void onHitBlock(BlockHitResult blockHitResult) {
 		super.onHitBlock(blockHitResult);
-		TeleportHandlerevent.execute(this.level, blockHitResult.getBlockPos().getX(), blockHitResult.getBlockPos().getY(),
+		TeleportHandlerEvent.execute(this.level, blockHitResult.getBlockPos().getX(), blockHitResult.getBlockPos().getY(),
 				blockHitResult.getBlockPos().getZ(), this.getOwner());
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		TeleportTrailevent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		TeleportTrailEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (this.inGround)
 			this.discard();
 	}

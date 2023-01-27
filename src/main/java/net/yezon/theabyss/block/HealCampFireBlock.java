@@ -1,9 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import org.checkerframework.checker.units.qual.s;
-
-import net.yezon.theabyss.events.HealFireevent;
+import net.yezon.theabyss.events.HealFireEvent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -72,7 +70,7 @@ public class HealCampFireBlock extends Block {
 		int y = pos.getY();
 		int z = pos.getZ();
 
-		HealFireevent.execute(world, x, y, z);
+		HealFireEvent.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 4);
 	}
 }

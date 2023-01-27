@@ -10,7 +10,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 
-public class GhostEventevent {
+public class GhostEventEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfOceanevent;
+import net.yezon.theabyss.events.ApplyRingOfOceanEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -53,14 +53,14 @@ public void appendHoverText(ItemStack itemstack, Level world, List<Component> li
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyRingOfOceanevent.execute(world, x, y, z, entity, itemstack);
+		ApplyRingOfOceanEvent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		super.useOn(context);
-		ApplyRingOfOceanevent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
+		ApplyRingOfOceanEvent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
 				context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
 		return InteractionResult.SUCCESS;
 	}

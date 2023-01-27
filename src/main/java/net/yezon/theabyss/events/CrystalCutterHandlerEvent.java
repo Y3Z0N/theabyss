@@ -20,7 +20,7 @@ import net.minecraft.core.BlockPos;
 import java.util.function.Supplier;
 import java.util.Map;
 
-public class CrystalCutterHandlerevent {
+public class CrystalCutterHandlerEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;

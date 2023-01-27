@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.MagicianSpawnevent;
-import net.yezon.theabyss.events.MagicianAbilitiesevent;
+import net.yezon.theabyss.events.MagicianSpawnEvent;
+import net.yezon.theabyss.events.MagicianAbilitiesEvent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -104,7 +104,7 @@ public class MagicianEntity extends Monster {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		MagicianAbilitiesevent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		MagicianAbilitiesEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override
@@ -136,7 +136,7 @@ public class MagicianEntity extends Monster {
 					int x = pos.getX();
 					int y = pos.getY();
 					int z = pos.getZ();
-					return MagicianSpawnevent.execute(world);
+					return MagicianSpawnEvent.execute(world);
 				});
 	}
 

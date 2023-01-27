@@ -11,7 +11,7 @@ import net.minecraft.server.level.ServerPlayer;
 import java.util.function.Supplier;
 import java.util.Map;
 
-public class ExtractSomniumFromLoranevent {
+public class ExtractSomniumFromLoranEvent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

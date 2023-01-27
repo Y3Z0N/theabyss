@@ -18,7 +18,7 @@ import net.minecraft.core.BlockPos;
 
 import io.netty.buffer.Unpooled;
 
-public class ExecutePatreonCommandevent {
+public class ExecutePatreonCommandEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;

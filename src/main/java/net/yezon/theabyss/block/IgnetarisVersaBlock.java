@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.FirePlantEffectevent;
+import net.yezon.theabyss.events.FirePlantEffectEvent;
 
 import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.ForgeHooks;
@@ -71,6 +71,6 @@ public class IgnetarisVersaBlock extends SugarCaneBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		FirePlantEffectevent.execute(entity);
+		FirePlantEffectEvent.execute(entity);
 	}
 }

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.SeekerOnEntityTickUpdateevent;
+import net.yezon.theabyss.events.SeekerOnEntityTickUpdateEvent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -98,7 +98,7 @@ public class SeekerEntity extends Monster {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		SeekerOnEntityTickUpdateevent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		SeekerOnEntityTickUpdateEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	public static void init() {

@@ -13,7 +13,7 @@ import net.minecraft.network.chat.Component;
 import java.util.function.Supplier;
 import java.util.Map;
 
-public class ResearchTableHandlerevent {
+public class ResearchTableHandlerEvent {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;

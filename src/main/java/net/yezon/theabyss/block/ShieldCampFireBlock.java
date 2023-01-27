@@ -1,9 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import org.checkerframework.checker.units.qual.s;
-
-import net.yezon.theabyss.events.ShieldFireevent;
+import net.yezon.theabyss.events.ShieldFireEvent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -72,7 +70,7 @@ public class ShieldCampFireBlock extends Block {
 		int y = pos.getY();
 		int z = pos.getZ();
 
-		ShieldFireevent.execute(world, x, y, z);
+		ShieldFireEvent.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 4);
 	}
 }

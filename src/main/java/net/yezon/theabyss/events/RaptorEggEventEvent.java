@@ -15,7 +15,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
-public class RaptorEggEventevent {
+public class RaptorEggEventEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		world.destroyBlock(new BlockPos(x, y, z), false);
 		if (world instanceof Level _level) {

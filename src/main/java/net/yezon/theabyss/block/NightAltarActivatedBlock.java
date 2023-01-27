@@ -1,9 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import org.checkerframework.checker.units.qual.s;
-
-import net.yezon.theabyss.events.NightAltarSummonCheckevent;
+import net.yezon.theabyss.events.NightAltarSummonCheckEvent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -76,7 +74,7 @@ public class NightAltarActivatedBlock extends Block {
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
 
-		NightAltarSummonCheckevent.execute();
+		NightAltarSummonCheckEvent.execute();
 		return InteractionResult.SUCCESS;
 	}
 }

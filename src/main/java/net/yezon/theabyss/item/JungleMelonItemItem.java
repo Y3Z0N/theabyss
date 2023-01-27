@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.JungleMelonEffectevent;
+import net.yezon.theabyss.events.JungleMelonEffectEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -32,7 +32,7 @@ public class JungleMelonItemItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		JungleMelonEffectevent.execute(entity);
+		JungleMelonEffectEvent.execute(entity);
 		return retval;
 	}
 }

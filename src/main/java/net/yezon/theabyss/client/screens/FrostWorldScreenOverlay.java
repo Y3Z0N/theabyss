@@ -1,9 +1,7 @@
 
 package net.yezon.theabyss.client.screens;
 
-import org.checkerframework.checker.units.qual.h;
-
-import net.yezon.theabyss.events.IntroScreenHandlerevent;
+import net.yezon.theabyss.events.IntroScreenHandlerEvent;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -49,7 +47,7 @@ public class FrostWorldScreenOverlay {
 			RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
 					GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 			RenderSystem.setShaderColor(1, 1, 1, 1);
-			if (IntroScreenHandlerevent.execute(entity)) {
+			if (IntroScreenHandlerEvent.execute(entity)) {
 				RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/screens/loadingscreen.png"));
 				Minecraft.getInstance().gui.blit(event.getPoseStack(), posX + -2043, posY + -1129, 0, 0, 4096, 2160, 4096, 2160);
 

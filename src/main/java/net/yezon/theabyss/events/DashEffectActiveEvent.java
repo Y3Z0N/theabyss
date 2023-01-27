@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
 
-public class DashEffectActiveevent {
+public class DashEffectActiveEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;

@@ -10,7 +10,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
-public class CheckForGroundevent {
+public class CheckForGroundEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if ((world.getBlockState(new BlockPos(x - 6, y, z - 6))).getBlock() == Blocks.AIR
 				|| (world.getBlockState(new BlockPos(x - 6, y - 6, z - 6))).getBlock() == Blocks.AIR

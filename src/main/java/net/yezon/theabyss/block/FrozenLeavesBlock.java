@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.FrozenLeavesHandlerevent;
+import net.yezon.theabyss.events.FrozenLeavesHandlerEvent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -61,7 +61,7 @@ public class FrozenLeavesBlock extends Block {
 	@Override
 	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		FrozenLeavesHandlerevent.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+		FrozenLeavesHandlerEvent.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
 		return retval;
 	}
 }

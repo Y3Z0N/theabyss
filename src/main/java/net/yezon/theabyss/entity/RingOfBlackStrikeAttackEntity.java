@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.RingOfBlackStrikeParticleevent;
+import net.yezon.theabyss.events.RingOfBlackStrikeParticleEvent;
 import net.yezon.theabyss.events.RingOfBlackStrikeAttackBulletHitsLivingEntityevent;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -72,7 +72,7 @@ public class RingOfBlackStrikeAttackEntity extends AbstractArrow implements Item
 	@Override
 	public void tick() {
 		super.tick();
-		RingOfBlackStrikeParticleevent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		RingOfBlackStrikeParticleEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (this.inGround)
 			this.discard();
 	}

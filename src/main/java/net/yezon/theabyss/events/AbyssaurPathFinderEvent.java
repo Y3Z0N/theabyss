@@ -14,14 +14,13 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
 
 public class AbyssaurPathFinderEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
-		if (entity == null)
-			return;
 		if (Math.random() < 0.003) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
@@ -43,9 +42,9 @@ public class AbyssaurPathFinderEvent {
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, new BlockPos(x, y, z),
-							ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:abyssaur_attack")), SoundSource.NEUTRAL, 1, 1);
+							Objects.requireNonNull(ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:abyssaur_attack"))), SoundSource.NEUTRAL, 1, 1);
 				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:abyssaur_attack")),
+					_level.playLocalSound(x, y, z, Objects.requireNonNull(ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theabyss:abyssaur_attack"))),
 							SoundSource.NEUTRAL, 1, 1, false);
 				}
 			}

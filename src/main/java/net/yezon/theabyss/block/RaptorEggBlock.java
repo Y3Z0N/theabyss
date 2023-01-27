@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.RaptorEggEventevent;
+import net.yezon.theabyss.events.RaptorEggEventEvent;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -58,13 +58,13 @@ public class RaptorEggBlock extends FlowerBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		RaptorEggEventevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		RaptorEggEventEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override
 	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		RaptorEggEventevent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		RaptorEggEventEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		return retval;
 	}
 }

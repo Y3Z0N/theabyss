@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyRingOfRegevent;
+import net.yezon.theabyss.events.ApplyRingOfRegEvent;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -57,14 +57,14 @@ public class RingOfRegItem extends Item {
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
-		ApplyRingOfRegevent.execute(world, x, y, z, entity, itemstack);
+		ApplyRingOfRegEvent.execute(world, x, y, z, entity, itemstack);
 		return ar;
 	}
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
 		super.useOn(context);
-		ApplyRingOfRegevent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
+		ApplyRingOfRegEvent.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(),
 				context.getClickedPos().getZ(), context.getPlayer(), context.getItemInHand());
 		return InteractionResult.SUCCESS;
 	}

@@ -1,9 +1,7 @@
 
 package net.yezon.theabyss.network;
 
-import net.yezon.theabyss.world.inventory.ArcaneMenu;
-import net.yezon.theabyss.events.ArcaneWorkBenchHandler2event;
-import net.yezon.theabyss.TheabyssMod;
+import net.yezon.theabyss.events.ArcaneWorkBenchHandler2Event;
 
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -16,7 +14,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import java.util.function.Supplier;
-import java.util.HashMap;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ArcaneButtonMessage {
@@ -63,7 +60,7 @@ public class ArcaneButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			ArcaneWorkBenchHandler2event.execute(world, x, y, z, entity);
+			ArcaneWorkBenchHandler2Event.execute(world, x, y, z, entity);
 		}
 	}
 

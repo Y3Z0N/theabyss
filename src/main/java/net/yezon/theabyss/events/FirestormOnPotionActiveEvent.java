@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Comparator;
 
-public class FirestormOnPotionActiveevent {
+public class FirestormOnPotionActiveEvent {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;

@@ -20,7 +20,7 @@ import net.minecraft.commands.CommandSource;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class GiveBookOnFirstJoinevent {
+public class GiveBookOnFirstJoinEvent {
 	@SubscribeEvent
 	public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
 		execute(event, event.getEntity().level, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());

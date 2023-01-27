@@ -20,7 +20,7 @@ import net.minecraft.commands.CommandSource;
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class Patreonevent {
+public class PatreonEvent {
 	@SubscribeEvent
 	public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
 		execute(event, event.getEntity().level, event.getEntity());
