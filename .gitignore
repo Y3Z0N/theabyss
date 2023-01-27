@@ -33,7 +33,6 @@
 /*.launch
 /secrets.properties
 /*.iml
-/*.gradle/
 /.gradle/
 /.idea/
 /mcmodsrepo/
