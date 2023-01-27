@@ -16,6 +16,9 @@ import net.yezon.theabyss.TheabyssMod;
 import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * @author KhanhTypo
+ */
 public class AbyssRecipeType {
     public static final DeferredRegister<RecipeType<?>> TYPE_REGISTRY = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, TheabyssMod.MODID);
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZER_REGISTRY = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, TheabyssMod.MODID);

@@ -7,6 +7,9 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.yezon.theabyss.TheabyssMod;
 
+/**
+ * @author KhanhTypo
+ */
 @SuppressWarnings("deprecation")
 public class TheAbyssTagProvider extends TagsProvider<Item> {
 

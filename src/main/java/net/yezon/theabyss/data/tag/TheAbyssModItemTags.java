@@ -9,7 +9,9 @@ import net.yezon.theabyss.init.TheabyssModItems;
 
 import java.util.HashMap;
 
-
+/**
+ * @author KhanhTypo
+ */
 @SuppressWarnings("SameParameterValue")
 public class TheAbyssModItemTags {
     public static final HashMap<TagKey<Item>, Item> ALL_TAGS = new HashMap<>();

@@ -1,0 +1,23 @@
+{
+  "type": "theabyss:mortar_and_pestle",
+  "ingredients": [
+    {
+      "item": "theabyss:aurel_crystal_ore"
+    },
+    {
+      "item": "theabyss:aurel_crystal_ore"
+    },
+    {
+      "item": "theabyss:bottle_of_somnium"
+    },
+    {
+      "item": "theabyss:aurel_crystal_ore"
+    },
+    {
+      "item": "theabyss:aurel_crystal_ore"
+    }
+  ],
+  "result": {
+    "item": "theabyss:aurel_powder"
+  }
+}

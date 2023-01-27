@@ -14,6 +14,7 @@
       "item": "minecraft:apple"
     }
   ],
+  "process_time": 200,
   "result": {
     "item": "theabyss:immortal_substance"
   }

@@ -13,10 +13,13 @@ import net.yezon.theabyss.recipes.AllRecipeTypes;
 import net.yezon.theabyss.recipes.TheAbyssRecipe;
 import net.yezon.theabyss.utils.RecipeUtils;
 
+/**
+ * @author KhanhTypo
+ */
 public class SomniumInfusingRecipe extends TheAbyssRecipe {
-    private final int processTime;
     public static final Ingredient SOMNIUM_FUEL = Ingredient.of(TheAbyssModItemTags.IS_SOMNIUM_FUEL);
     public static final Ingredient LORAN_FUEL = Ingredient.of(TheAbyssModItemTags.IS_LORAN_FUEL);
+    private final int processTime;
 
     public SomniumInfusingRecipe(ResourceLocation recipeId, ItemStack result, NonNullList<Ingredient> ingredients, int processTime) {
         super(recipeId, result, AllRecipeTypes.SOMNIUM_INFUSING, ingredients);

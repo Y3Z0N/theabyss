@@ -10,6 +10,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yezon.theabyss.TheabyssMod;
 import net.yezon.theabyss.data.recipes.recipebuilders.ArcaneCraftingRecipeBuilder;
+import net.yezon.theabyss.data.recipes.recipebuilders.MortarRecipeBuilder;
 import net.yezon.theabyss.data.recipes.recipebuilders.SomniumInfusingRecipeBuilder;
 import net.yezon.theabyss.data.recipes.recipebuilders.TheAbyssRecipeBuilder;
 import net.yezon.theabyss.recipes.impl.ArcaneStationRecipe;
@@ -20,15 +21,78 @@ import java.util.function.Consumer;
 
 import static net.yezon.theabyss.init.TheabyssModItems.*;
 
+/**
+ * @author KhanhTypo
+ */
 public class TheAbyssRecipeProvider extends RecipeProvider {
     public TheAbyssRecipeProvider(DataGenerator p_125973_) {
         super(p_125973_);
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> p_176532_) {
-        this.buildArcaneRecipes(p_176532_);
-        this.buildSomniumInfusingRecipes(p_176532_);
+    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+        this.buildArcaneRecipes(consumer);
+        this.buildSomniumInfusingRecipes(consumer);
+        this.buildMortarAndPestleRecipe(consumer);
+    }
+
+    private void buildMortarAndPestleRecipe(Consumer<FinishedRecipe> consumer) {
+        MortarRecipeBuilder.buildOneInput(consumer, null,
+                new ItemStack(CRIMSON_POWDER.get()),
+                Ingredient.of(BOTTLE_OF_SOMNIUM.get()),
+                Ingredient.of(CRIMSON_CRYSTAL_SHARD.get()));
+
+        MortarRecipeBuilder.buildOneInput(consumer, null,
+                new ItemStack(ABYSS_POWDER.get()),
+                Ingredient.of(BOTTLE_OF_SOMNIUM.get()),
+                Ingredient.of(ABYSS_CRYSTAL_SHARD.get()));
+
+        MortarRecipeBuilder.buildOneInput(consumer, null,
+                new ItemStack(AUREL_POWDER.get()),
+                Ingredient.of(BOTTLE_OF_SOMNIUM.get()),
+                Ingredient.of(AUREL_CRYSTAL_ORE.get()));
+
+        MortarRecipeBuilder.buildOneInput(consumer, null,
+                new ItemStack(ENDER_POWDER.get()),
+                Ingredient.of(BOTTLE_OF_SOMNIUM.get()),
+                Ingredient.of(ENDER_CRYSTAL_SHARD.get()));
+
+        MortarRecipeBuilder.buildOneInput(consumer, null,
+                new ItemStack(FROST_POWDER.get()),
+                Ingredient.of(BOTTLE_OF_SOMNIUM.get()),
+                Ingredient.of(FROST_CRYSTAL_SHARD.get()));
+
+        MortarRecipeBuilder.buildOneInput(consumer, null,
+                new ItemStack(HOLLOW_POWDER.get()),
+                Ingredient.of(BOTTLE_OF_SOMNIUM.get()),
+                Ingredient.of(HOLLOW_CRYSTAL_SHARD.get()));
+
+        MortarRecipeBuilder.buildOneInput(consumer, null,
+                new ItemStack(WARPED_POWDER.get()),
+                Ingredient.of(BOTTLE_OF_SOMNIUM.get()),
+                Ingredient.of(WARPED_CRYSTAL_SHARD.get()));
+
+        MortarRecipeBuilder.buildOneInput(consumer, null,
+                new ItemStack(VIT_POWDER.get()),
+                Ingredient.of(BOTTLE_OF_SOMNIUM.get()),
+                Ingredient.of(VITAE_STONE.get()));
+
+        MortarRecipeBuilder.buildOneInput(consumer, null,
+                new ItemStack(FEAR_POWDER.get()),
+                Ingredient.of(ANTI_FEAR_ESSENCE.get()),
+                Ingredient.of(ROKA_HORN.get()));
+
+        MortarRecipeBuilder.buildTwoInputs(consumer, null,
+                new ItemStack(ARDOR_POWDER.get()),
+                Ingredient.of(BOTTLE_OF_SOMNIUM.get()),
+                Ingredient.of(LORAN.get()),
+                Ingredient.of(VITAE_DUST.get()));
+
+        MortarRecipeBuilder.buildTwoInputs(consumer, null,
+                new ItemStack(TENEBRIS_POWDER.get()),
+                Ingredient.of(ANTI_FEAR_ESSENCE.get()),
+                Ingredient.of(CAVERNA_POWDER.get()),
+                Ingredient.of(ROKA_HORN.get()));
     }
 
     private void buildSomniumInfusingRecipes(Consumer<FinishedRecipe> consumer) {

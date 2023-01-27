@@ -11,7 +11,6 @@ import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.yezon.theabyss.TheabyssMod;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 import net.yezon.theabyss.init.TheabyssModMenus;
 import net.yezon.theabyss.recipes.AllRecipeTypes;
@@ -20,6 +19,9 @@ import net.yezon.theabyss.utils.RecipeUtils;
 
 import javax.annotation.Nullable;
 
+/**
+ * @author KhanhTypo
+ */
 public class ArcaneMenu extends AbstractContainerMenu {
     public static final int CONTAINER_SIZE = 9;
     private static final int RESULT_SLOT_INDEX = 9;
@@ -62,16 +64,12 @@ public class ArcaneMenu extends AbstractContainerMenu {
         super.addSlot(new Slot(this.resultSlot, 0, 152, 43) {
             @Override
             public void onTake(Player pPlayer, ItemStack pStack) {
-                //checkTakeAchievements(pStack);
                 resultTaken();
-                TheabyssMod.LOGGER.info("result slot taken [{}] in [{}]", pStack, pPlayer.level.isClientSide ? "CLIENT" : "SEVER");
                 super.setChanged();
             }
 
             @Override
             protected void onQuickCraft(ItemStack pStack, int pAmount) {
-                //this.resultTaken();
-                TheabyssMod.LOGGER.info("result slot quick taken [{}]", pStack);
             }
 
             @Override
@@ -80,9 +78,7 @@ public class ArcaneMenu extends AbstractContainerMenu {
             }
 
             private void resultTaken() {
-                for (int i = 0; i < craftingContainer.getContainerSize(); i++) {
-                    craftingContainer.removeItem(i, 1);
-                }
+                TheAbyssContainerMenu.onResultSlotTaken(craftingContainer);
             }
         });
 

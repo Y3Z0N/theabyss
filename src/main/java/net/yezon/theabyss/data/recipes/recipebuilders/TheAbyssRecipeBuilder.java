@@ -18,6 +18,9 @@ import javax.annotation.Nullable;
 import java.util.Objects;
 import java.util.function.Consumer;
 
+/**
+ * @author KhanhTypo
+ */
 public abstract class TheAbyssRecipeBuilder implements RecipeBuilder {
     protected final Advancement.Builder advancementBuilder;
     private final ItemStack result;

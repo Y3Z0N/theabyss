@@ -14,6 +14,7 @@
       "item": "theabyss:crystal_hand"
     }
   ],
+  "process_time": 200,
   "result": {
     "item": "theabyss:somnium_cooldown_upgrade"
   }

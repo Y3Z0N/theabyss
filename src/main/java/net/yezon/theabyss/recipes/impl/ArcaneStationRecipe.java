@@ -18,6 +18,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.function.BiConsumer;
 
+/**
+ * @author KhanhTypo
+ */
 public class ArcaneStationRecipe implements Recipe<Container> {
 
     //0 -> 7 is the round

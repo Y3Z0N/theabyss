@@ -1,0 +1,23 @@
+{
+  "type": "theabyss:mortar_and_pestle",
+  "ingredients": [
+    {
+      "item": "theabyss:caverna_powder"
+    },
+    {
+      "item": "theabyss:roka_horn"
+    },
+    {
+      "item": "theabyss:anti_fear_essence"
+    },
+    {
+      "item": "theabyss:roka_horn"
+    },
+    {
+      "item": "theabyss:caverna_powder"
+    }
+  ],
+  "result": {
+    "item": "theabyss:tenebris_powder"
+  }
+}

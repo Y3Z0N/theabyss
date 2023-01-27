@@ -1,15 +1,20 @@
 package net.yezon.theabyss.utils;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.Container;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
@@ -22,6 +27,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.fml.ModList;
 import net.yezon.theabyss.block.entity.base.AbyssContainerBlockEntity;
 import net.yezon.theabyss.block.entity.base.TickableBlockEntity;
+import net.yezon.theabyss.client.gui.base.TheAbyssContainerScreen;
 import net.yezon.theabyss.recipes.AbyssRecipeType;
 import net.yezon.theabyss.recipes.RecipeDisplayData;
 import net.yezon.theabyss.world.inventory.TheAbyssContainerMenu;
@@ -30,6 +36,9 @@ import javax.annotation.Nullable;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
 
+/**
+ * @author KhanhTypo
+ */
 public class ContainerAndScreenUtils {
     public static final int FONT_COLOR = 0xff99ffcc;
 
@@ -114,5 +123,30 @@ public class ContainerAndScreenUtils {
             menu.addSlot(new Slot(inv, si, x + si * 18, y + 58));
 
         menu.setInventoryLabel(x, y - 10);
+    }
+
+    public static <T extends AbstractContainerMenu> MenuProvider createMenuProvider(Component displayName, ContainerLevelAccess access, AccessibleMenuProvider<T> menuProvider) {
+        return new MenuProvider() {
+            @Override
+            public Component getDisplayName() {
+                return displayName;
+            }
+
+            @Override
+            public T createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
+                return menuProvider.createMenu(pContainerId, pPlayerInventory, access);
+            }
+        };
+    }
+
+    public static void setupContainerScreen(AbstractContainerScreen<?> screen, PoseStack poseStack, ResourceLocation resourceLocation, int width, int height) {
+        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+        RenderSystem.setShaderColor(1, 1, 1, 1);
+        RenderSystem.setShaderTexture(0, resourceLocation);
+        screen.blit(poseStack, screen.getGuiLeft(), screen.getGuiTop(), 0, 0, width, height);
+
+        if (screen instanceof TheAbyssContainerScreen<?> containerScreen) {
+            containerScreen.setTitleLabelCornerPosition(width);
+        }
     }
 }

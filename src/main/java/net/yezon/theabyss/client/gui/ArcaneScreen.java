@@ -1,21 +1,20 @@
 package net.yezon.theabyss.client.gui;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.item.Items;
-import net.minecraftforge.fml.ModList;
+import net.yezon.theabyss.TheabyssMod;
+import net.yezon.theabyss.recipes.AllRecipeTypes;
 import net.yezon.theabyss.utils.ContainerAndScreenUtils;
 import net.yezon.theabyss.world.inventory.ArcaneMenu;
 
 public class ArcaneScreen extends AbstractContainerScreen<ArcaneMenu> {
+    public static final ResourceLocation GUI = TheabyssMod.location("textures/screens/arcane_gui.png");
+
     public ArcaneScreen(ArcaneMenu container, Inventory inventory, Component text) {
         super(container, inventory, text);
-        this.imageWidth = 176;
-        this.imageHeight = 200;
     }
 
     @Override
@@ -27,19 +26,8 @@ public class ArcaneScreen extends AbstractContainerScreen<ArcaneMenu> {
 
     @Override
     protected void renderBg(PoseStack ms, float partialTicks, int gx, int gy) {
-        RenderSystem.setShaderColor(1, 1, 1, 1);
-        RenderSystem.enableBlend();
-        RenderSystem.defaultBlendFunc();
-
-        RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/screens/arcane_gui.png"));
-        blit(ms, super.leftPos, super.topPos, 0, 0, 176, 194);
-
-        if (ModList.get().isLoaded("jei")) {
-            blit(ms, super.leftPos + 150, super.topPos + 87, 176, 0, 20, 20);
-            ContainerAndScreenUtils.drawGuiItem(this, Items.KNOWLEDGE_BOOK, 152, 91);
-        }
-
-        RenderSystem.disableBlend();
+        ContainerAndScreenUtils.setupContainerScreen(this, ms, GUI, 176, 194);
+        ContainerAndScreenUtils.drawRecipeViewBox(this, ms, AllRecipeTypes.ARCANE_CRAFTING, 176, 0);
     }
 
 

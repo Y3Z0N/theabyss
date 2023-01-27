@@ -25,8 +25,8 @@ public class TheabyssModBlockEntities {
             CrystalCutterBlockEntity::new);
     public static final RegistryObject<BlockEntityType<SomniumInfuserBlockEntity>> SOMNIUM_INFUSER = register("somnium_infuser", TheabyssModBlocks.SOMNIUM_INFUSER,
             SomniumInfuserBlockEntity::new);
-    public static final RegistryObject<BlockEntityType<MortarAndPestleBlockEntity>> MORTAR_AND_PESTLE = register("mortar_and_pestle", TheabyssModBlocks.MORTAR_AND_PESTLE,
-            MortarAndPestleBlockEntity::new);
+    //public static final RegistryObject<BlockEntityType<MortarAndPestleBlockEntity>> MORTAR_AND_PESTLE = register("mortar_and_pestle", TheabyssModBlocks.MORTAR_AND_PESTLE,
+    //        MortarAndPestleBlockEntity::new);
 
 
 }

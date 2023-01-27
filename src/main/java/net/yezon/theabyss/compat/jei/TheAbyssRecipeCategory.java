@@ -22,6 +22,7 @@ import oshi.util.tuples.Pair;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -31,7 +32,7 @@ public class TheAbyssRecipeCategory implements IRecipeCategory<Recipe<Container>
     private final AbyssRecipeType abyssRecipeType;
     private final IDrawableStatic background;
     private final IDrawable icon;
-    private final Map<Integer, Pair<Integer, Integer>> ingredientMapping;
+    private final List<Pair<Integer, Integer>> ingredientMapping;
     private final RecipeDisplayData recipeViewData;
     @Nullable
     private final IDrawableAnimated drawableAnimated;
@@ -94,7 +95,11 @@ public class TheAbyssRecipeCategory implements IRecipeCategory<Recipe<Container>
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, Recipe<Container> recipe, IFocusGroup focuses) {
-        this.ingredientMapping.forEach((index, position) -> builder.addSlot(RecipeIngredientRole.INPUT, position.getA(), position.getB()).addIngredients(recipe.getIngredients().get(index)));
+        for (int i = 0; i < this.ingredientMapping.size(); i++) {
+            Pair<Integer, Integer> position = this.ingredientMapping.get(i);
+            builder.addSlot(RecipeIngredientRole.INPUT, position.getA(), position.getB())
+                    .addIngredients(recipe.getIngredients().get(i));
+        }
         builder.addSlot(RecipeIngredientRole.OUTPUT, this.recipeViewData.resultX(), this.recipeViewData.resultY()).addItemStack(recipe.getResultItem());
     }
 }

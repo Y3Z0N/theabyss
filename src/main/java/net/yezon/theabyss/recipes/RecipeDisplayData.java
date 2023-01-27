@@ -10,22 +10,25 @@ import net.yezon.theabyss.TheabyssMod;
 import oshi.util.tuples.Pair;
 
 import javax.annotation.Nullable;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * @author KhanhTypo
+ */
 public record RecipeDisplayData(ResourceLocation jeiPngName, int width, int height,
                                 Supplier<? extends ItemLike> tabIcon,
                                 @Nullable RecipeViewHolder recipeViewArea,
                                 RecipeTransferHolder<? extends AbstractContainerMenu> recipeTransferHolder,
                                 @Nullable AnimatedDrawableBuilder animatedDrawable,
-                                Map<Integer, Pair<Integer, Integer>> ingredientMapping, int resultX, int resultY) {
+                                List<Pair<Integer, Integer>> ingredientMapping, int resultX, int resultY) {
     public static class Builder {
         private final ResourceLocation imageLocation;
         private final int width;
         private final int height;
         private final Supplier<? extends ItemLike> tabIcon;
-        private final HashMap<Integer, Pair<Integer, Integer>> ingredientMapping;
+        private final List<Pair<Integer, Integer>> ingredientMapping;
         private RecipeViewHolder recipeViewArea;
         @Nullable
         private RecipeTransferHolder<? extends AbstractContainerMenu> recipeTransferHolder;
@@ -37,7 +40,7 @@ public record RecipeDisplayData(ResourceLocation jeiPngName, int width, int heig
             this.width = width;
             this.height = height;
             this.tabIcon = tabIcon;
-            this.ingredientMapping = new HashMap<>();
+            this.ingredientMapping = new LinkedList<>();
         }
 
         public static Builder builder(String imageName, int width, int height, Supplier<? extends ItemLike> tabIcon) {
@@ -58,8 +61,8 @@ public record RecipeDisplayData(ResourceLocation jeiPngName, int width, int heig
             return this;
         }
 
-        public Builder addIngredient(int index, int x, int y) {
-            this.ingredientMapping.put(index, new Pair<>(x, y));
+        public Builder addIngredient(int x, int y) {
+            this.ingredientMapping.add(new Pair<>(x, y));
             return this;
         }
 
@@ -87,7 +90,8 @@ public record RecipeDisplayData(ResourceLocation jeiPngName, int width, int heig
                                                                         int inventorySlotCount) {
     }
 
-    public record AnimatedDrawableBuilder(int u, int v, int width, int height, int x, int y, int tickPerCycle, StartFrom from,
+    public record AnimatedDrawableBuilder(int u, int v, int width, int height, int x, int y, int tickPerCycle,
+                                          StartFrom from,
                                           boolean inverted) {
         public enum StartFrom {
             TOP,

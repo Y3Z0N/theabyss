@@ -29,5 +29,5 @@ public class TheabyssModMenus {
 			() -> IForgeMenuType.create(ResearchMenu::new));
 	public static final RegistryObject<MenuType<ExtractorMenu>> EXTRACTOR = REGISTRY.register("extractor",
 			() -> IForgeMenuType.create(ExtractorMenu::new));
-	public static final RegistryObject<MenuType<MortarMenu>> MORTAR = REGISTRY.register("mortar", () -> IForgeMenuType.create(MortarMenu::new));
+	public static final RegistryObject<MenuType<MortarMenu>> MORTAR = REGISTRY.register("mortar", () ->  new MenuType<>(MortarMenu::new));
 }

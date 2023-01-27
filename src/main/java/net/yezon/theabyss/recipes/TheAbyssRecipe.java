@@ -10,6 +10,9 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 
+/**
+ * @author KhanhTypo
+ */
 public abstract class TheAbyssRecipe implements Recipe<Container> {
     protected final ResourceLocation recipeId;
     protected final ItemStack result;

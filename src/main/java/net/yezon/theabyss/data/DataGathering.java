@@ -18,6 +18,9 @@ import net.yezon.theabyss.recipes.AllRecipeTypes;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * @author KhanhTypo
+ */
 @Mod.EventBusSubscriber(modid = TheabyssMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGathering {
 

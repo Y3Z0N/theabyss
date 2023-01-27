@@ -1,0 +1,23 @@
+{
+  "type": "theabyss:mortar_and_pestle",
+  "ingredients": [
+    {
+      "item": "theabyss:vitae_stone"
+    },
+    {
+      "item": "theabyss:vitae_stone"
+    },
+    {
+      "item": "theabyss:bottle_of_somnium"
+    },
+    {
+      "item": "theabyss:vitae_stone"
+    },
+    {
+      "item": "theabyss:vitae_stone"
+    }
+  ],
+  "result": {
+    "item": "theabyss:vit_powder"
+  }
+}

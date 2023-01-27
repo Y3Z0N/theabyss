@@ -18,6 +18,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
+/**
+ * @author KhanhTypo
+ */
 @SuppressWarnings("unused")
 public class ArcaneCraftingRecipeBuilder extends TheAbyssRecipeBuilder {
     private final ArcaneStationRecipe.RecipeMode shape;

@@ -17,12 +17,16 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.yezon.theabyss.block.entity.SomniumInfuserBlockEntity;
 import net.yezon.theabyss.recipes.AbyssRecipeType;
 import net.yezon.theabyss.recipes.impl.ArcaneStationRecipe;
+import net.yezon.theabyss.recipes.impl.MortarAndPestleRecipe;
 import net.yezon.theabyss.recipes.impl.SomniumInfusingRecipe;
 
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * @author KhanhTypo
+ */
 public final class RecipeUtils {
     private RecipeUtils() {
     }
@@ -59,7 +63,7 @@ public final class RecipeUtils {
         };
     }
 
-    private static NonNullList<Ingredient> ingredientsFromNetwork(FriendlyByteBuf buffer, int size) {
+    public static NonNullList<Ingredient> ingredientsFromNetwork(FriendlyByteBuf buffer, int size) {
         final NonNullList<Ingredient> ingredients = NonNullList.withSize(size, Ingredient.EMPTY);
 
         ingredients.replaceAll(ignored -> Ingredient.fromNetwork(buffer));
@@ -89,7 +93,7 @@ public final class RecipeUtils {
     }
 
     @SuppressWarnings("SameParameterValue")
-    private static NonNullList<Ingredient> ingredientsFromJson(JsonObject pJsonObject, int expectedSize) {
+    public static NonNullList<Ingredient> ingredientsFromJson(JsonObject pJsonObject, int expectedSize) {
         final JsonElement jsonElement = pJsonObject.get("ingredients");
         Preconditions.checkState(!jsonElement.isJsonNull() && jsonElement.isJsonArray());
         final JsonArray ingredientArray = jsonElement.getAsJsonArray();
@@ -122,15 +126,36 @@ public final class RecipeUtils {
             }
 
             @Override
-            public SomniumInfusingRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
-                final NonNullList<Ingredient> ingredient = ingredientsFromNetwork(pBuffer, 4);
-                final ItemStack result = pBuffer.readItem();
-                final int processTime = pBuffer.readInt();
-                return new SomniumInfusingRecipe(pRecipeId, result, ingredient, processTime);
+            public SomniumInfusingRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
+                final NonNullList<Ingredient> ingredient = RecipeUtils.ingredientsFromNetwork(buffer, 4);
+                final ItemStack result = buffer.readItem();
+                final int processTime = buffer.readInt();
+                return new SomniumInfusingRecipe(recipeId, result, ingredient, processTime);
             }
 
             @Override
             public void toNetwork(FriendlyByteBuf pBuffer, SomniumInfusingRecipe pRecipe) {
+                pRecipe.toNetwork(pBuffer);
+            }
+        };
+    }
+
+    public static RecipeSerializer<MortarAndPestleRecipe> createMortarAndPestleRecipe() {
+        return new RecipeSerializer<>() {
+            @Override
+            public MortarAndPestleRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
+                final NonNullList<Ingredient> ingredients = ingredientsFromJson(pSerializedRecipe, 5);
+                final ItemStack result = ShapedRecipe.itemStackFromJson(pSerializedRecipe.getAsJsonObject("result"));
+                return new MortarAndPestleRecipe(pRecipeId, result, ingredients);
+            }
+
+            @Override
+            public MortarAndPestleRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+                return new MortarAndPestleRecipe(pRecipeId, pBuffer.readItem(), ingredientsFromNetwork(pBuffer, 5));
+            }
+
+            @Override
+            public void toNetwork(FriendlyByteBuf pBuffer, MortarAndPestleRecipe pRecipe) {
                 pRecipe.toNetwork(pBuffer);
             }
         };
