@@ -66,7 +66,7 @@ public class ContainerAndScreenUtils {
     }
 
     public static void drawRecipeViewBox(AbstractContainerScreen<?> screen, PoseStack poseStack, AbyssRecipeType recipeType, int uOffset, int vOffset) {
-        final RecipeDisplayData.RecipeViewHolder holder = recipeType.getData().recipeViewArea();
+        final RecipeDisplayData.RecipeViewHolder holder = recipeType.getDisplayData().recipeViewArea();
         if (holder != null)
             drawRecipeViewBox(screen, poseStack, holder.x(), holder.y(), uOffset, vOffset, holder.width(), holder.height());
     }

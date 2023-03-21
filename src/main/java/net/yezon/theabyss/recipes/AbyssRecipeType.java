@@ -58,7 +58,7 @@ public class AbyssRecipeType {
         return id;
     }
 
-    public RecipeDisplayData getData() {
+    public RecipeDisplayData getDisplayData() {
         return data;
     }
 

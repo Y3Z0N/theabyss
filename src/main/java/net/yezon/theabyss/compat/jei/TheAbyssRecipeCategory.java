@@ -43,14 +43,14 @@ public class TheAbyssRecipeCategory implements IRecipeCategory<Recipe<Container>
         this.jeiRecipeType = new RecipeType<>(abyssRecipeType.getId(), abyssRecipeType.getRecipeClass());
         this.abyssRecipeType = abyssRecipeType;
 
-        this.recipeViewData = abyssRecipeType.getData();
-        this.background = guiHelper.createDrawable(abyssRecipeType.getData().jeiPngName(), 0, 0, recipeViewData.width(), recipeViewData.height());
+        this.recipeViewData = abyssRecipeType.getDisplayData();
+        this.background = guiHelper.createDrawable(abyssRecipeType.getDisplayData().jeiPngName(), 0, 0, recipeViewData.width(), recipeViewData.height());
         this.icon = guiHelper.createDrawableItemStack(new ItemStack(recipeViewData.tabIcon().get()));
         this.ingredientMapping = recipeViewData.ingredientMapping();
 
-        if (abyssRecipeType.getData().animatedDrawable() != null) {
-            final RecipeDisplayData.AnimatedDrawableBuilder builder = abyssRecipeType.getData().animatedDrawable();
-            final IDrawableStatic drawableStatic = guiHelper.createDrawable(abyssRecipeType.getData().jeiPngName(), builder.u(), builder.v(), builder.width(), builder.height());
+        if (abyssRecipeType.getDisplayData().animatedDrawable() != null) {
+            final RecipeDisplayData.AnimatedDrawableBuilder builder = abyssRecipeType.getDisplayData().animatedDrawable();
+            final IDrawableStatic drawableStatic = guiHelper.createDrawable(abyssRecipeType.getDisplayData().jeiPngName(), builder.u(), builder.v(), builder.width(), builder.height());
             this.drawableAnimated = guiHelper.createAnimatedDrawable(drawableStatic, builder.tickPerCycle(), startDirection(builder.from()), builder.inverted());
             this.animateOffsetX = builder.x();
             this.animateOffsetY = builder.y();

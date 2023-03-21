@@ -40,7 +40,7 @@ public class DataGathering {
     public static void registerCategory(RegisterRecipeBookCategoriesEvent event) {
         for (AbyssRecipeType recipeType : AllRecipeTypes.ALL_RECIPE_TYPES) {
             String recipeBookTypeName = recipeType.getId().getPath().toUpperCase(Locale.ROOT);
-            event.registerBookCategories(RecipeBookType.create(recipeBookTypeName), List.of(RecipeBookCategories.create(recipeBookTypeName, new ItemStack(recipeType.getData().tabIcon().get()))));
+            event.registerBookCategories(RecipeBookType.create(recipeBookTypeName), List.of(RecipeBookCategories.create(recipeBookTypeName, new ItemStack(recipeType.getDisplayData().tabIcon().get()))));
             event.registerRecipeCategoryFinder(recipeType.getVanillaType(), recipe -> RecipeBookCategories.valueOf(recipeBookTypeName));
         }
     }

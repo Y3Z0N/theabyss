@@ -22,6 +22,7 @@ import net.minecraft.core.BlockPos;
 import java.util.List;
 import java.util.Collections;
 
+@SuppressWarnings("deprecation")
 public class AnimaFireBlock extends FlowerBlock {
 	public AnimaFireBlock() {
 		super(MobEffects.SATURATION, 0,

@@ -47,17 +47,19 @@ public class TheAbyssJeiPlugin implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        AllRecipeTypes.ALL_RECIPE_TYPES.forEach(recipeType -> registration.addRecipeCatalyst(new ItemStack(recipeType.getData().tabIcon().get()), TheAbyssRecipeCategory.CATEGORY_MAP.get(recipeType).getRecipeType()));
+        AllRecipeTypes.ALL_RECIPE_TYPES.forEach(recipeType -> registration.addRecipeCatalyst(new ItemStack(recipeType.getDisplayData().tabIcon().get()), TheAbyssRecipeCategory.CATEGORY_MAP.get(recipeType).getRecipeType()));
     }
 
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
-        AllRecipeTypes.ALL_RECIPE_TYPES.forEach(recipeType -> {
+        for (AbyssRecipeType recipeType : AllRecipeTypes.ALL_RECIPE_TYPES) {
             RecipeType<?> jeiRecipeType = this.getJeiType(recipeType);
-            RecipeDisplayData.RecipeViewHolder holder = recipeType.getData().recipeViewArea();
-            if (holder != null)
+            RecipeDisplayData.RecipeViewHolder holder = recipeType.getDisplayData().recipeViewArea();
+            if (holder != null) {
+                TheabyssMod.LOGGER.info("Adding recipe view  holder to [{}]", recipeType.getId());
                 registration.addRecipeClickArea(holder.screenClass(), holder.x(), holder.y(), holder.width(), holder.height(), jeiRecipeType);
-        });
+            } else TheabyssMod.LOGGER.warn("There is no recipe view holder for [{}]", recipeType.getId());
+        }
     }
 
     private RecipeType<Recipe<Container>> getJeiType(AbyssRecipeType recipeType) {
@@ -69,7 +71,7 @@ public class TheAbyssJeiPlugin implements IModPlugin {
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
         AllRecipeTypes.ALL_RECIPE_TYPES.forEach(
                 recipeType -> {
-                    final RecipeDisplayData.RecipeTransferHolder<? extends AbstractContainerMenu> holder = recipeType.getData().recipeTransferHolder();
+                    final RecipeDisplayData.RecipeTransferHolder<? extends AbstractContainerMenu> holder = recipeType.getDisplayData().recipeTransferHolder();
                     registration.addRecipeTransferHandler(holder.menuClass(),
                             ((MenuType<AbstractContainerMenu>) holder.menuType().get()),
                             this.getJeiType(recipeType),
