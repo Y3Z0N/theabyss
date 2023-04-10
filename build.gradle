@@ -24,7 +24,7 @@ minecraft {
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-
+            jvmArg("-Xmx1500m")
 
             mods {
                 theabyss {
@@ -40,6 +40,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+            jvmArg("-Xmx1500m")
 
             mods {
                 theabyss {

@@ -1,7 +1,6 @@
 package net.yezon.theabyss.recipes;
 
 import net.minecraft.core.NonNullList;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
@@ -10,12 +9,14 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 
+import javax.annotation.Nullable;
+
 /**
  * @author KhanhTypo
  */
 public abstract class TheAbyssRecipe implements Recipe<Container> {
+    public final ItemStack result;
     protected final ResourceLocation recipeId;
-    protected final ItemStack result;
     protected final AbyssRecipeType recipeType;
     protected final NonNullList<Ingredient> ingredients;
 
@@ -32,7 +33,7 @@ public abstract class TheAbyssRecipe implements Recipe<Container> {
     }
 
     @Override
-    public ItemStack assemble(Container pContainer) {
+    public ItemStack assemble(@Nullable Container pContainer) {
         return this.result.copy();
     }
 
@@ -61,5 +62,4 @@ public abstract class TheAbyssRecipe implements Recipe<Container> {
         return this.recipeType.getVanillaType();
     }
 
-    public abstract void toNetwork(FriendlyByteBuf buffer);
 }

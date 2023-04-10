@@ -2,7 +2,6 @@ package net.yezon.theabyss.recipes.impl;
 
 import com.google.common.base.Preconditions;
 import net.minecraft.core.NonNullList;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
@@ -11,7 +10,6 @@ import net.minecraft.world.level.Level;
 import net.yezon.theabyss.data.tag.TheAbyssModItemTags;
 import net.yezon.theabyss.recipes.AllRecipeTypes;
 import net.yezon.theabyss.recipes.TheAbyssRecipe;
-import net.yezon.theabyss.utils.RecipeUtils;
 
 /**
  * @author KhanhTypo
@@ -36,13 +34,6 @@ public class SomniumInfusingRecipe extends TheAbyssRecipe {
         }
 
         return true;
-    }
-
-    @Override
-    public void toNetwork(FriendlyByteBuf buffer) {
-        RecipeUtils.ingredientsToNetwork(buffer, super.getIngredients());
-        buffer.writeItem(super.getResultItem());
-        buffer.writeInt(this.processTime);
     }
 
     public int getProcessDuration() {

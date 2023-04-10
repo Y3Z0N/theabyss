@@ -8,12 +8,13 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.yezon.theabyss.recipes.AllRecipeTypes;
+import net.yezon.theabyss.recipes.TheAbyssRecipe;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Locale;
 import java.util.function.BiConsumer;
@@ -21,27 +22,16 @@ import java.util.function.BiConsumer;
 /**
  * @author KhanhTypo
  */
-public class ArcaneStationRecipe implements Recipe<Container> {
+public class ArcaneStationRecipe extends TheAbyssRecipe {
+
+    private final Ingredient core;
 
     //0 -> 7 is the round
-    private final NonNullList<Ingredient> ingredients;
-    private final Ingredient core;
-    private final ResourceLocation id;
-    private final ItemStack result;
-
     public ArcaneStationRecipe(ResourceLocation id, NonNullList<Ingredient> ingredients, Ingredient core, ItemStack result) {
-        this.ingredients = ingredients;
+        super(id, result, AllRecipeTypes.ARCANE_CRAFTING, ingredients);
         this.core = core;
-        this.id = id;
-        this.result = result;
-
         Preconditions.checkState(ingredients.size() == 9);
         ingredients.set(ingredients.size() - 1, this.core);
-    }
-
-    @Override
-    public NonNullList<Ingredient> getIngredients() {
-        return this.ingredients;
     }
 
     @Override
@@ -54,23 +44,8 @@ public class ArcaneStationRecipe implements Recipe<Container> {
     }
 
     @Override
-    public ItemStack assemble(Container pContainer) {
-        return this.result.copy();
-    }
-
-    @Override
-    public boolean canCraftInDimensions(int pWidth, int pHeight) {
-        return true;
-    }
-
-    @Override
     public ItemStack getResultItem() {
         return this.result.copy();
-    }
-
-    @Override
-    public ResourceLocation getId() {
-        return this.id;
     }
 
     @Override

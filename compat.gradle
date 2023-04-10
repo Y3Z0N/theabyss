@@ -31,7 +31,7 @@ dependencies {
 
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77")
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.39')
+    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.40')
 
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))

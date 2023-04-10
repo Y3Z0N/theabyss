@@ -34,6 +34,6 @@
 /secrets.properties
 /*.iml
 /*.gradle/
-/.gradle/
 /.idea/
 /mcmodsrepo/
+/unused/
