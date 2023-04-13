@@ -17,6 +17,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.yezon.theabyss.TheabyssMod;
 import net.yezon.theabyss.block.entity.SomniumInfuserBlockEntity;
 import net.yezon.theabyss.recipes.AbyssRecipeType;
+import net.yezon.theabyss.recipes.AllRecipeTypes;
 import net.yezon.theabyss.recipes.impl.ArcaneStationRecipe;
 import net.yezon.theabyss.recipes.impl.MortarAndPestleRecipe;
 import net.yezon.theabyss.recipes.impl.SomniumInfusingRecipe;
@@ -44,7 +45,7 @@ public final class RecipeUtils {
         return new RecipeSerializer<>() {
             @Override
             public ArcaneStationRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
-                TheabyssMod.LOGGER.info("loading recipe [{}] from json", pRecipeId);
+                //TheabyssMod.LOGGER.info("loading recipe [{}] from json", pRecipeId);
                 final ItemStack result = ShapedRecipe.itemStackFromJson(pSerializedRecipe.getAsJsonObject("result"));
                 final Ingredient core = Ingredient.fromJson(pSerializedRecipe.getAsJsonObject("core"));
                 final NonNullList<Ingredient> ingredients = ArcaneStationRecipe.RecipeMode.readFromJson(pSerializedRecipe.getAsJsonObject("mode"));
@@ -54,14 +55,14 @@ public final class RecipeUtils {
 
             @Override
             public ArcaneStationRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
-                TheabyssMod.LOGGER.info("loading recipe [{}] from network", pRecipeId);
+                //TheabyssMod.LOGGER.info("loading recipe [{}] from network", pRecipeId);
                 final NonNullList<Ingredient> fromNetworkIngredients = ingredientsFromNetwork(pBuffer, 8, 9);
                 return new ArcaneStationRecipe(pRecipeId, fromNetworkIngredients, Ingredient.fromNetwork(pBuffer), pBuffer.readItem());
             }
 
             @Override
             public void toNetwork(FriendlyByteBuf pBuffer, ArcaneStationRecipe pRecipe) {
-                TheabyssMod.LOGGER.info("uploading recipe [{}] to network", pRecipe.getId());
+                //TheabyssMod.LOGGER.info("uploading recipe [{}] to network", pRecipe.getId());
                 ingredientsToNetwork(pBuffer, pRecipe.getIngredients());
                 pBuffer.writeItem(pRecipe.result);
             }
@@ -76,7 +77,8 @@ public final class RecipeUtils {
         final NonNullList<Ingredient> ingredients = NonNullList.withSize(returnSize, Ingredient.EMPTY);
 
         for (int i = 0; i < size; i++) {
-            ingredients.set(i, Ingredient.fromNetwork(buffer));
+            final Ingredient ingredient = Ingredient.fromNetwork(buffer);
+            ingredients.set(i, ingredient);
         }
 
         //TheabyssMod.LOGGER.info("--- Receiving {} ingredients, returned {}", returnSize, ingredients.size());
@@ -121,7 +123,7 @@ public final class RecipeUtils {
         return new RecipeSerializer<>() {
             @Override
             public SomniumInfusingRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
-                TheabyssMod.LOGGER.info("loading recipe [{}] from json", pRecipeId);
+                //TheabyssMod.LOGGER.info("loading recipe [{}] from json", pRecipeId);
                 final NonNullList<Ingredient> ingredients = NonNullList.withSize(6, Ingredient.EMPTY);
                 ingredients.set(0, SomniumInfusingRecipe.SOMNIUM_FUEL);
                 ingredients.set(1, SomniumInfusingRecipe.LORAN_FUEL);
@@ -138,7 +140,7 @@ public final class RecipeUtils {
 
             @Override
             public SomniumInfusingRecipe fromNetwork(ResourceLocation recipeId, FriendlyByteBuf buffer) {
-                TheabyssMod.LOGGER.info("loading recipe [{}] from network", recipeId);
+                //TheabyssMod.LOGGER.info("loading recipe [{}] from network", recipeId);
                 final NonNullList<Ingredient> ingredient = RecipeUtils.ingredientsFromNetwork(buffer, 6);
                 final ItemStack result = buffer.readItem();
                 final int processTime = buffer.readInt();
@@ -147,7 +149,7 @@ public final class RecipeUtils {
 
             @Override
             public void toNetwork(FriendlyByteBuf buffer, SomniumInfusingRecipe recipe) {
-                TheabyssMod.LOGGER.info("uploading recipe [{}] to network", recipe.getId());
+                //TheabyssMod.LOGGER.info("uploading recipe [{}] to network", recipe.getId());
                 RecipeUtils.ingredientsToNetwork(buffer, recipe.getIngredients());
                 buffer.writeItem(recipe.getResultItem());
                 buffer.writeInt(recipe.getProcessDuration());
@@ -159,7 +161,7 @@ public final class RecipeUtils {
         return new RecipeSerializer<>() {
             @Override
             public MortarAndPestleRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
-                TheabyssMod.LOGGER.info("loading recipe [{}] from json", pRecipeId);
+                //TheabyssMod.LOGGER.info("loading recipe [{}] from json", pRecipeId);
                 final NonNullList<Ingredient> ingredients = ingredientsFromJson(pSerializedRecipe, 5);
                 final ItemStack result = ShapedRecipe.itemStackFromJson(pSerializedRecipe.getAsJsonObject("result"));
                 return new MortarAndPestleRecipe(pRecipeId, result, ingredients);
@@ -167,16 +169,24 @@ public final class RecipeUtils {
 
             @Override
             public MortarAndPestleRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
-                TheabyssMod.LOGGER.info("loading recipe [{}] from network", pRecipeId);
+                //TheabyssMod.LOGGER.info("loading recipe [{}] from network", pRecipeId);
                 return new MortarAndPestleRecipe(pRecipeId, pBuffer.readItem(), ingredientsFromNetwork(pBuffer, 5));
             }
 
             @Override
             public void toNetwork(FriendlyByteBuf pBuffer, MortarAndPestleRecipe pRecipe) {
-                TheabyssMod.LOGGER.info("uploading recipe [{}] to network", pRecipe.getId());
+                //TheabyssMod.LOGGER.info("uploading recipe [{}] to network", pRecipe.getId());
                 pBuffer.writeItem(pRecipe.result);
                 RecipeUtils.ingredientsToNetwork(pBuffer, pRecipe.getIngredients());
             }
         };
+    }
+
+    public static boolean isModRecipe(RecipeType<?> type) {
+        for (AbyssRecipeType recipeType : AllRecipeTypes.ALL_RECIPE_TYPES) {
+            if (recipeType.getVanillaType().equals(type)) return true;
+        }
+
+        return false;
     }
 }
