@@ -34,6 +34,7 @@ public class TheAbyssRecipeProvider extends RecipeProvider {
         this.buildArcaneRecipes(consumer);
         this.buildSomniumInfusingRecipes(consumer);
         this.buildMortarAndPestleRecipe(consumer);
+
     }
 
     private void buildMortarAndPestleRecipe(Consumer<FinishedRecipe> consumer) {
