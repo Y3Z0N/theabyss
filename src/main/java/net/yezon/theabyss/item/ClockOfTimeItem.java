@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ApplyClockOfTimeEvent;
+import net.yezon.theabyss.eventhandlers.ApplyClockOfTimeEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -50,7 +50,7 @@ public class ClockOfTimeItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ApplyClockOfTimeEvent.execute(world, entity, itemstack);
+		ApplyClockOfTimeEventHandler.execute(world, entity, itemstack);
 		return ar;
 	}
 }

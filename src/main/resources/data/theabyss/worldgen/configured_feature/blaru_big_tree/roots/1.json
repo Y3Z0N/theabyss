@@ -1,0 +1,194 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": {
+          "config": {
+            "features": [
+              {
+                "feature": {
+                  "feature": {
+                    "config": {
+                      "to_place": {
+                        "state": {
+                          "Name": "theabyss:blaru_leave_carpet"
+                        },
+                        "type": "minecraft:simple_state_provider"
+                      }
+                    },
+                    "type": "minecraft:simple_block"
+                  },
+                  "placement": [
+                    {
+                      "xz_spread": 0,
+                      "y_spread": 1,
+                      "type": "minecraft:random_offset"
+                    },
+                    {
+                      "predicate": {
+                        "predicates": [
+                          {
+                            "blocks": [
+                              "minecraft:air",
+                              "minecraft:vine"
+                            ],
+                            "type": "minecraft:matching_blocks"
+                          },
+                          {
+                            "offset": [
+                              0,
+                              -1,
+                              0
+                            ],
+                            "blocks": "theabyss:blaru_log",
+                            "type": "minecraft:matching_blocks"
+                          }
+                        ],
+                        "type": "minecraft:all_of"
+                      },
+                      "type": "minecraft:block_predicate_filter"
+                    }
+                  ]
+                },
+                "chance": 0.075
+              }
+            ],
+            "default": {
+              "feature": {
+                "config": {
+                  "to_place": {
+                    "state": {
+                      "Properties": {
+                        "axis": "y"
+                      },
+                      "Name": "theabyss:blaru_log"
+                    },
+                    "type": "minecraft:simple_state_provider"
+                  }
+                },
+                "type": "minecraft:simple_block"
+              },
+              "placement": [
+                {
+                  "predicate": {
+                    "predicates": [
+                      {
+                        "type": "minecraft:replaceable"
+                      },
+                      {
+                        "predicates": [
+                          {
+                            "offset": [
+                              0,
+                              -1,
+                              0
+                            ],
+                            "blocks": "#theabyss:dirt",
+                            "type": "minecraft:matching_blocks"
+                          },
+                          {
+                            "offset": [
+                              0,
+                              -1,
+                              0
+                            ],
+                            "blocks": "theabyss:blaru_log",
+                            "type": "minecraft:matching_blocks"
+                          }
+                        ],
+                        "type": "minecraft:any_of"
+                      }
+                    ],
+                    "type": "minecraft:all_of"
+                  },
+                  "type": "minecraft:block_predicate_filter"
+                }
+              ]
+            }
+          },
+          "type": "minecraft:random_selector"
+        },
+        "placement": [
+          {
+            "count": 36,
+            "type": "minecraft:count"
+          },
+          {
+            "xz_spread": {
+              "type": "minecraft:uniform",
+              "value": {
+                "min_inclusive": -2,
+                "max_inclusive": 2
+              }
+            },
+            "y_spread": {
+              "type": "minecraft:uniform",
+              "value": {
+                "min_inclusive": -2,
+                "max_inclusive": 3
+              }
+            },
+            "type": "minecraft:random_offset"
+          },
+          {
+            "predicate": {
+              "predicates": [
+                {
+                  "offset": [
+                    1,
+                    2,
+                    0
+                  ],
+                  "blocks": [
+                    "theabyss:blaru_log",
+                    "theabyss:blaru_log"
+                  ],
+                  "type": "minecraft:matching_blocks"
+                },
+                {
+                  "offset": [
+                    0,
+                    2,
+                    1
+                  ],
+                  "blocks": [
+                    "theabyss:blaru_log",
+                    "theabyss:blaru_log"
+                  ],
+                  "type": "minecraft:matching_blocks"
+                },
+                {
+                  "offset": [
+                    -1,
+                    2,
+                    0
+                  ],
+                  "blocks": [
+                    "theabyss:blaru_log",
+                    "theabyss:blaru_log"
+                  ],
+                  "type": "minecraft:matching_blocks"
+                },
+                {
+                  "offset": [
+                    0,
+                    2,
+                    -1
+                  ],
+                  "blocks": [
+                    "theabyss:blaru_log",
+                    "theabyss:blaru_log"
+                  ],
+                  "type": "minecraft:matching_blocks"
+                }
+              ],
+              "type": "minecraft:any_of"
+            },
+            "type": "minecraft:block_predicate_filter"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "minecraft:simple_random_selector"
+}

@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.NodeParticlesEvent;
-import net.yezon.theabyss.events.NodeEffectEvent;
+import net.yezon.theabyss.eventhandlers.NodeParticlesEventHandler;
+import net.yezon.theabyss.eventhandlers.NodeEffectEventHandler;
 
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,12 +21,12 @@ public class NodePotionMobEffect extends MobEffect {
 
 	@Override
 	public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-		NodeEffectEvent.execute(entity);
+		NodeEffectEventHandler.execute(entity);
 	}
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		NodeParticlesEvent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ());
+		NodeParticlesEventHandler.execute(entity.level, entity.getX(), entity.getY(), entity.getZ());
 	}
 
 	@Override

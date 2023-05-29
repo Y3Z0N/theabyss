@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.network;
 
-import net.yezon.theabyss.events.ApplyGhostDeactivateEvent;
+import net.yezon.theabyss.eventhandlers.ApplyGhostDeactivateEventHandler;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.network.NetworkEvent;
@@ -52,11 +52,11 @@ public class GhostDeactivateMessage {
 			return;
 		if (type == 0) {
 
-			ApplyGhostDeactivateEvent.execute(entity);
+			ApplyGhostDeactivateEventHandler.execute(entity);
 		}
 		if (type == 1) {
 
-			ApplyGhostDeactivateEvent.execute(entity);
+			ApplyGhostDeactivateEventHandler.execute(entity);
 		}
 	}
 

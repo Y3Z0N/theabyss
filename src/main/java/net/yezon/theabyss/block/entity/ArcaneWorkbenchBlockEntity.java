@@ -1,4 +1,4 @@
-package net.yezon.theabyss.block.entity;
+/*package net.yezon.theabyss.block.entity;
 
 import net.yezon.theabyss.world.inventory.ArcaneMenu;
 import net.yezon.theabyss.init.TheabyssModBlockEntities;
@@ -141,3 +141,4 @@ public class ArcaneWorkbenchBlockEntity extends RandomizableContainerBlockEntity
 			handler.invalidate();
 	}
 }
+*/

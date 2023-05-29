@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.TimeStopPotionIratorOnPotionActiveTickEvent;
+import net.yezon.theabyss.eventhandlers.TimeStopPotionIratorOnPotionActiveTickEventHandler;
 
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,12 +20,12 @@ public class TimeStopPotionIratorMobEffect extends MobEffect {
 
 	@Override
 	public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-		TimeStopPotionIratorOnPotionActiveTickEvent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		TimeStopPotionIratorOnPotionActiveTickEventHandler.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		TimeStopPotionIratorOnPotionActiveTickEvent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		TimeStopPotionIratorOnPotionActiveTickEventHandler.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 
 	@Override

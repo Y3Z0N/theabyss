@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.EnchantedBottleOfManaDrinkedEvent;
+import net.yezon.theabyss.eventhandlers.EnchantedBottleOfManaDrinkedEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -51,7 +51,7 @@ public class EnchantedBottleOfSomniumItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		EnchantedBottleOfManaDrinkedEvent.execute(entity);
+		EnchantedBottleOfManaDrinkedEventHandler.execute(entity);
 		return retval;
 	}
 }

@@ -2,13 +2,17 @@
   "replace": false,
   "values": [
     "theabyss:blaru_log",
-    "theabyss:vigilant_log",
     "theabyss:stripped_blaru_log",
+    "theabyss:sal_shroom_log",
+    "theabyss:jungle_log",
+    "theabyss:stripped_bog_shroom_log",
+    "theabyss:vigilant_log",
     "theabyss:frozen_log",
     "theabyss:slimed_log",
-    "theabyss:sal_shroom_log",
+    "theabyss:stripped_sal_shroom_log",
+    "theabyss:stripped_slimed_log",
     "theabyss:stripped_jungle_log",
     "theabyss:bog_shroom_log",
-    "theabyss:jungle_log"
+    "theabyss:stripped_frozen_log"
   ]
 }

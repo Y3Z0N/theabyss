@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.CrownOfNosajEffectEvent;
+import net.yezon.theabyss.eventhandlers.CrownOfNosajEffectEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -43,7 +43,7 @@ public class CrownOfNosajItem extends Item {
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			CrownOfNosajEffectEvent.execute(entity);
-		CrownOfNosajEffectEvent.execute(entity);
+			CrownOfNosajEffectEventHandler.execute(entity);
+		CrownOfNosajEffectEventHandler.execute(entity);
 	}
 }

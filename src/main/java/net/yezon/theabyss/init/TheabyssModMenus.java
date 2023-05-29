@@ -20,11 +20,14 @@ import net.minecraft.world.inventory.MenuType;
 
 public class TheabyssModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, TheabyssMod.MODID);
-	public static final RegistryObject<MenuType<PatreonScreenMenu>> PATREON_SCREEN = REGISTRY.register("patreon_screen", () -> IForgeMenuType.create(PatreonScreenMenu::new));
-	public static final RegistryObject<MenuType<InfuserMenu>> INFUSER = REGISTRY.register("infuser", () -> IForgeMenuType.create(InfuserMenu::new));
+	public static final RegistryObject<MenuType<PatreonScreenMenu>> PATREON_SCREEN = REGISTRY.register("patreon_screen",
+			() -> IForgeMenuType.create(PatreonScreenMenu::new));
+	public static final RegistryObject<MenuType<InfuserMenu>> INFUSER = REGISTRY.register("infuser", () -> new MenuType<>(InfuserMenu::new));
 	public static final RegistryObject<MenuType<CutterMenu>> CUTTER = REGISTRY.register("cutter", () -> IForgeMenuType.create(CutterMenu::new));
-	public static final RegistryObject<MenuType<ArcaneMenu>> ARCANE = REGISTRY.register("arcane", () -> IForgeMenuType.create(ArcaneMenu::new));
-	public static final RegistryObject<MenuType<ResearchMenu>> RESEARCH = REGISTRY.register("research", () -> IForgeMenuType.create(ResearchMenu::new));
-	public static final RegistryObject<MenuType<ExtractorMenu>> EXTRACTOR = REGISTRY.register("extractor", () -> IForgeMenuType.create(ExtractorMenu::new));
-	public static final RegistryObject<MenuType<MortarMenu>> MORTAR = REGISTRY.register("mortar", () -> IForgeMenuType.create(MortarMenu::new));
+	public static final RegistryObject<MenuType<ArcaneMenu>> ARCANE = REGISTRY.register("arcane", () -> new MenuType<>(ArcaneMenu::new));
+	public static final RegistryObject<MenuType<ResearchMenu>> RESEARCH = REGISTRY.register("research",
+			() -> IForgeMenuType.create(ResearchMenu::new));
+	public static final RegistryObject<MenuType<ExtractorMenu>> EXTRACTOR = REGISTRY.register("extractor",
+			() -> IForgeMenuType.create(ExtractorMenu::new));
+	public static final RegistryObject<MenuType<MortarMenu>> MORTAR = REGISTRY.register("mortar", () ->  new MenuType<>(MortarMenu::new));
 }

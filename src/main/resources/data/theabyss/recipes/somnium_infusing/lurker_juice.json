@@ -1,0 +1,21 @@
+{
+  "type": "theabyss:somnium_infusing",
+  "ingredients": [
+    {
+      "item": "theabyss:lurker_sobber"
+    },
+    {
+      "item": "theabyss:lurker_sobber"
+    },
+    {
+      "item": "theabyss:lurker_sobber"
+    },
+    {
+      "item": "theabyss:lurker_sobber"
+    }
+  ],
+  "process_time": 200,
+  "result": {
+    "item": "theabyss:lurker_juice"
+  }
+}

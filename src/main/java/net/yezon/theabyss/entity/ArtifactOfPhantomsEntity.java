@@ -1,9 +1,9 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.PhantomTrailEvent;
-import net.yezon.theabyss.events.PhantomEffectEvent;
-import net.yezon.theabyss.events.ArtifactOfPhantomsAbilityEvent;
+import net.yezon.theabyss.eventhandlers.PhantomTrailEventHandler;
+import net.yezon.theabyss.eventhandlers.PhantomEffectEventHandler;
+import net.yezon.theabyss.eventhandlers.ArtifactOfPhantomsAbilityEventHandler;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -69,19 +69,19 @@ public class ArtifactOfPhantomsEntity extends AbstractArrow implements ItemSuppl
 	@Override
 	public void playerTouch(Player entity) {
 		super.playerTouch(entity);
-		ArtifactOfPhantomsAbilityEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), entity);
+		ArtifactOfPhantomsAbilityEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ(), entity);
 	}
 
 	@Override
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
-		PhantomEffectEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), entityHitResult.getEntity());
+		PhantomEffectEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ(), entityHitResult.getEntity());
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		PhantomTrailEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		PhantomTrailEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (this.inGround)
 			this.discard();
 	}

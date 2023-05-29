@@ -1,0 +1,23 @@
+{
+  "type": "theabyss:mortar_and_pestle",
+  "ingredients": [
+    {
+      "item": "theabyss:roka_horn"
+    },
+    {
+      "item": "theabyss:roka_horn"
+    },
+    {
+      "item": "theabyss:anti_fear_essence"
+    },
+    {
+      "item": "theabyss:roka_horn"
+    },
+    {
+      "item": "theabyss:roka_horn"
+    }
+  ],
+  "result": {
+    "item": "theabyss:fear_powder"
+  }
+}

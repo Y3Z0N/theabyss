@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.SeekerOnEntityTickUpdateEvent;
+import net.yezon.theabyss.eventhandlers.SeekerParticlesEventHandler;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -9,7 +9,6 @@ import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -22,7 +21,6 @@ import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
@@ -86,8 +84,6 @@ public class SeekerEntity extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)
-			return false;
 		if (source == DamageSource.FALL)
 			return false;
 		if (source == DamageSource.LIGHTNING_BOLT)
@@ -98,7 +94,7 @@ public class SeekerEntity extends Monster {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		SeekerOnEntityTickUpdateEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		SeekerParticlesEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	public static void init() {
@@ -110,7 +106,7 @@ public class SeekerEntity extends Monster {
 		builder = builder.add(Attributes.MAX_HEALTH, 3);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 4);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 350);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 500);
 		return builder;
 	}
 }

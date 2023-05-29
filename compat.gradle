@@ -24,15 +24,14 @@ repositories {
 }
 
 dependencies {
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77:api")
-    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77")
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.39')
 
-    runtimeOnly(fg.deobf("curse.maven:ferritecore-429235:4117906"))
-    runtimeOnly(fg.deobf("curse.maven:lazy-dfu-forge-460819:4327266"))
+
+    compileOnly(fg.deobf("curse.maven:nbt-tool-451553:3879898"))
+
+
+    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.39')
 
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))
-    // at runtime, use the full JEI jar for Forge
     runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
 }

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.world.features.plants;
 
-import net.yezon.theabyss.events.CaveMossGenEvent;
+import net.yezon.theabyss.eventhandlers.CaveMossGenEventHandler;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
@@ -54,7 +54,7 @@ public class CavernaCrystalOreFeature extends RandomPatchFeature {
 		int x = context.origin().getX();
 		int y = context.origin().getY();
 		int z = context.origin().getZ();
-		if (!CaveMossGenEvent.execute(y))
+		if (!CaveMossGenEventHandler.execute(y))
 			return false;
 		return super.place(context);
 	}

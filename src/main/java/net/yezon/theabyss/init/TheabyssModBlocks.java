@@ -1,5 +1,4 @@
 
-
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.block.YoungExoliusPlantBlock;
@@ -106,6 +105,7 @@ import net.yezon.theabyss.block.MortarAndPestleBlock;
 import net.yezon.theabyss.block.LungoRankBlock;
 import net.yezon.theabyss.block.LoranOreBlock;
 import net.yezon.theabyss.block.LoranFlowerBlock;
+import net.yezon.theabyss.block.LoranEndOreBlock;
 import net.yezon.theabyss.block.JungleTrapDoorBlock;
 import net.yezon.theabyss.block.JungleStairsBlock;
 import net.yezon.theabyss.block.JungleSlabBlock;
@@ -456,6 +456,7 @@ public class TheabyssModBlocks {
 	public static final RegistryObject<Block> STRIPPED_SLIMED_LOG = REGISTRY.register("stripped_slimed_log", () -> new StrippedSlimedLogBlock());
 	public static final RegistryObject<Block> STRIPPED_FROZEN_LOG = REGISTRY.register("stripped_frozen_log", () -> new StrippedFrozenLogBlock());
 	public static final RegistryObject<Block> BLARU_GRASS = REGISTRY.register("blaru_grass", () -> new BlaruGrassBlock());
+	public static final RegistryObject<Block> LORAN_END_ORE = REGISTRY.register("loran_end_ore", () -> new LoranEndOreBlock());
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {

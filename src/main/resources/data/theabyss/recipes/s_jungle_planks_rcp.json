@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "theabyss:stripped_jungle_log"
+    }
+  ],
+  "result": {
+    "item": "theabyss:jungle_planks",
+    "count": 4
+  }
+}

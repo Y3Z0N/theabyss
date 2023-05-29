@@ -32,6 +32,34 @@
         },
         {
           "feature": {
+            "feature": "theabyss:blaru_big_tree/1",
+            "placement": []
+          },
+          "chance": 0.1
+        },
+        {
+          "feature": {
+            "feature": "theabyss:blaru_big_tree/2",
+            "placement": []
+          },
+          "chance": 0.1
+        },
+        {
+          "feature": {
+            "feature": "theabyss:blaru_big_tree/3",
+            "placement": []
+          },
+          "chance": 0.1
+        },
+        {
+          "feature": {
+            "feature": "theabyss:blaru_big_tree/4",
+            "placement": []
+          },
+          "chance": 0.1
+        },
+        {
+          "feature": {
             "feature": "theabyss:blaru_pine/5",
             "placement": []
           },

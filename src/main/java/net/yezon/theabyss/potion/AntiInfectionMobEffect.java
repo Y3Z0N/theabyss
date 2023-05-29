@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.AntiInfectionTickEvent;
+import net.yezon.theabyss.eventhandlers.AntiInfectionTickEventHandler;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -19,7 +19,7 @@ public class AntiInfectionMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		AntiInfectionTickEvent.execute(entity);
+		AntiInfectionTickEventHandler.execute(entity);
 	}
 
 	@Override

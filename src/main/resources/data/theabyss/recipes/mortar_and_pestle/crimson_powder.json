@@ -1,0 +1,23 @@
+{
+  "type": "theabyss:mortar_and_pestle",
+  "ingredients": [
+    {
+      "item": "theabyss:crimson_crystal_shard"
+    },
+    {
+      "item": "theabyss:crimson_crystal_shard"
+    },
+    {
+      "item": "theabyss:bottle_of_somnium"
+    },
+    {
+      "item": "theabyss:crimson_crystal_shard"
+    },
+    {
+      "item": "theabyss:crimson_crystal_shard"
+    }
+  ],
+  "result": {
+    "item": "theabyss:crimson_powder"
+  }
+}

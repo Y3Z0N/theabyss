@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.DashEffectActiveEvent;
+import net.yezon.theabyss.eventhandlers.DashEffectActiveEventHandler;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -19,7 +19,7 @@ public class DashMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		DashEffectActiveEvent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		DashEffectActiveEventHandler.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 
 	@Override

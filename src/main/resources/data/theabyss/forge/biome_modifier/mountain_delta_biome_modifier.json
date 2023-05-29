@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "theabyss:blue_mountain",
+  "features": "theabyss:mountain_delta",
+  "step": "raw_generation"
+}

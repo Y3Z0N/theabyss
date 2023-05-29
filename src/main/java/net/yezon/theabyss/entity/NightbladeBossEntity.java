@@ -1,10 +1,10 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.NightbladeBossDodgeOnHurtEvent;
-import net.yezon.theabyss.events.NightbladeBossDiesEvent;
-import net.yezon.theabyss.events.NightBladeMusicOnSpawnEvent;
-import net.yezon.theabyss.events.NightBladeBossAbilityEvent;
+import net.yezon.theabyss.eventhandlers.NightbladeBossDodgeOnHurtEventHandler;
+import net.yezon.theabyss.eventhandlers.NightbladeBossDiesEventHandler;
+import net.yezon.theabyss.eventhandlers.NightBladeMusicOnSpawnEventHandler;
+import net.yezon.theabyss.eventhandlers.NightBladeBossAbilityEventHandler;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -111,7 +111,7 @@ public class NightbladeBossEntity extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		NightbladeBossDodgeOnHurtEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		NightbladeBossDodgeOnHurtEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 		if (source.getDirectEntity() instanceof AbstractArrow)
 			return false;
 		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)
@@ -142,20 +142,20 @@ public class NightbladeBossEntity extends Monster {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		NightbladeBossDiesEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		NightbladeBossDiesEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		NightBladeMusicOnSpawnEvent.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		NightBladeMusicOnSpawnEventHandler.execute(world, this.getX(), this.getY(), this.getZ(), this);
 		return retval;
 	}
 
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		NightBladeBossAbilityEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		NightBladeBossAbilityEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

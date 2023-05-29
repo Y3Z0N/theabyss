@@ -25,11 +25,11 @@
 			"item": "theabyss:loran",
 			"title": "Loran",
 			"link_recipe":false,
-			"text": "Take the first steps towards building a portal with Loran, a mysterious blue plant that absorbs and stores light, converting it into various energies. With both helpful and harmful properties depending on what it mixes with, Loran is a powerful tool for creating portals and harnessing its energy. Just be sure to handle it with caution!"
+			"text": "Take the first steps towards building a portal with Loran, a mysterious blue plant or ore that absorbs and stores light, converting it into various energies. With both helpful and harmful properties depending on how it is processed, Loran is a powerful resource for creating portals and harnessing its energy. Just be sure to handle it with caution!"
 		},
 			{
 				"type": "text",
-				"text": "To build the portal frame, you'll need Loran, a glowing blue plant that absorbs and stores light, Obsidian, a hard and durable material formed from cooled lava, and Crying obsidian, a rare and elusive variant of obsidian imbued with magical properties. Mix these ingredients to create unstable obsidian, a crucial component for building the portal frame. But be careful, unstable obsidian is volatile and must be handled with caution."
+				"text": "To build the portal frame, gather Loran (a glowing blue plant or ore found in the end dimension), Obsidian (a durable material formed from cooled lava), and Crying obsidian (a rare variant with magical properties). Combine these to create unstable obsidian, a vital component for the frame. Handle it with care as unstable obsidian is volatile."
 			},
 			{
 				"type": "crafting",

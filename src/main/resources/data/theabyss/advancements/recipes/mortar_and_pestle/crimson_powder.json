@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "has_mortar_and_pestle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "theabyss:mortar_and_pestle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_mortar_and_pestle"
+    ]
+  ]
+}

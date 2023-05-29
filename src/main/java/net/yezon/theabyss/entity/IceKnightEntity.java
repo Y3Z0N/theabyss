@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.IceKnightEntityIsHurtEvent;
+import net.yezon.theabyss.eventhandlers.IceKnightEntityIsHurtEventHandler;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -88,7 +88,7 @@ public class IceKnightEntity extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		IceKnightEntityIsHurtEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		IceKnightEntityIsHurtEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (source.getDirectEntity() instanceof AbstractArrow)
 			return false;
 		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)

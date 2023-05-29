@@ -34,7 +34,7 @@ public class WarpedCrystalOreFeature extends RandomPatchFeature {
 		FEATURE = new WarpedCrystalOreFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:warped_crystal_ore", FEATURE,
 				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.WARPED_CRYSTAL_ORE.get())), List.of(), 5));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:warped_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(8), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:warped_crystal_ore", CONFIGURED_FEATURE, List.of(CountPlacement.of(40), RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 

@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.UnoritheArmorLeggingsAbilityEvent;
-import net.yezon.theabyss.events.UnoritheArmorBootsAbilityEvent;
+import net.yezon.theabyss.eventhandlers.UnoritheArmorLeggingsAbilityEventHandler;
+import net.yezon.theabyss.eventhandlers.UnoritheArmorBootsAbilityEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 import net.yezon.theabyss.init.TheabyssModItems;
 
@@ -109,7 +109,7 @@ public abstract class UnoritheArmorItem extends ArmorItem {
 
 		@Override
 		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
-			UnoritheArmorLeggingsAbilityEvent.execute(entity);
+			UnoritheArmorLeggingsAbilityEventHandler.execute(entity);
 		}
 	}
 
@@ -131,7 +131,7 @@ public abstract class UnoritheArmorItem extends ArmorItem {
 
 		@Override
 		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
-			UnoritheArmorBootsAbilityEvent.execute(entity);
+			UnoritheArmorBootsAbilityEventHandler.execute(entity);
 		}
 	}
 }

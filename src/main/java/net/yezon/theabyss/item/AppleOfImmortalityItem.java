@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.AppleOfImmortalityEffectEvent;
+import net.yezon.theabyss.eventhandlers.AppleOfImmortalityEffectEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,7 +41,7 @@ public class AppleOfImmortalityItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		AppleOfImmortalityEffectEvent.execute(entity);
+		AppleOfImmortalityEffectEventHandler.execute(entity);
 		return retval;
 	}
 }

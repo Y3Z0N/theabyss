@@ -2,7 +2,7 @@
 package net.yezon.theabyss.network;
 
 import net.yezon.theabyss.world.inventory.ResearchMenu;
-import net.yezon.theabyss.events.ResearchTableHandlerEvent;
+import net.yezon.theabyss.eventhandlers.ResearchTableHandlerEventHandler;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.network.NetworkEvent;
@@ -64,7 +64,7 @@ public class ResearchButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			ResearchTableHandlerEvent.execute(entity);
+			ResearchTableHandlerEventHandler.execute(entity);
 		}
 	}
 

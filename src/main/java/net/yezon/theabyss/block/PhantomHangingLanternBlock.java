@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.PhantomLanternUncheckEvent;
+import net.yezon.theabyss.eventhandlers.PhantomLanternUncheckEventHandler;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -68,7 +68,7 @@ public class PhantomHangingLanternBlock extends Block {
 	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		PhantomLanternUncheckEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		PhantomLanternUncheckEventHandler.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override
@@ -77,7 +77,7 @@ public class PhantomHangingLanternBlock extends Block {
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-		PhantomLanternUncheckEvent.execute(world, x, y, z);
+		PhantomLanternUncheckEventHandler.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 10);
 	}
 }

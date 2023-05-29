@@ -1,5 +1,4 @@
 
-
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.entity.VersaWhaleEntity;
@@ -35,11 +34,13 @@ import net.yezon.theabyss.entity.InfectedZombieEntity;
 import net.yezon.theabyss.entity.InfectedWolfEntity;
 import net.yezon.theabyss.entity.InfectedSpiderEntity;
 import net.yezon.theabyss.entity.InfectedPhantomEntity;
+import net.yezon.theabyss.entity.InfectedDragonflyEntity;
 import net.yezon.theabyss.entity.InfectedCreeperEntity;
 import net.yezon.theabyss.entity.InfcetedCowEntity;
 import net.yezon.theabyss.entity.IceSkeletonEntity;
 import net.yezon.theabyss.entity.IceKnightEntity;
 import net.yezon.theabyss.entity.HyliaFoxEntity;
+import net.yezon.theabyss.entity.HummingbirdEntity;
 import net.yezon.theabyss.entity.HauntedSkeletonEntity;
 import net.yezon.theabyss.entity.GuardEntity;
 import net.yezon.theabyss.entity.GlowPugEntity;
@@ -91,15 +92,15 @@ public class TheabyssModEntities {
 	public static final RegistryObject<EntityType<LaroFishEntity>> LARO_FISH = register("laro_fish",
 			EntityType.Builder.<LaroFishEntity>of(LaroFishEntity::new, MobCategory.WATER_AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LaroFishEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.6f, 0.5f));
 	public static final RegistryObject<EntityType<LuroFishEntity>> LURO_FISH = register("luro_fish",
 			EntityType.Builder.<LuroFishEntity>of(LuroFishEntity::new, MobCategory.WATER_AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LuroFishEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.6f, 0.5f));
 	public static final RegistryObject<EntityType<RaluFishEntity>> RALU_FISH = register("ralu_fish",
 			EntityType.Builder.<RaluFishEntity>of(RaluFishEntity::new, MobCategory.WATER_AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RaluFishEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.6f, 0.5f));
 	public static final RegistryObject<EntityType<HyliaFoxEntity>> HYLIA_FOX = register("hylia_fox",
 			EntityType.Builder.<HyliaFoxEntity>of(HyliaFoxEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HyliaFoxEntity::new).fireImmune().sized(0.8f, 0.8f));
 	public static final RegistryObject<EntityType<CrystalGolemEntity>> CRYSTAL_GOLEM = register("crystal_golem", EntityType.Builder.<CrystalGolemEntity>of(CrystalGolemEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
@@ -189,7 +190,15 @@ public class TheabyssModEntities {
 	public static final RegistryObject<EntityType<ArtifactOfPhantomsEntity>> ARTIFACT_OF_PHANTOMS = register("projectile_artifact_of_phantoms", EntityType.Builder.<ArtifactOfPhantomsEntity>of(ArtifactOfPhantomsEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(ArtifactOfPhantomsEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<JellyFishEntity>> JELLY_FISH = register("jelly_fish", EntityType.Builder.<JellyFishEntity>of(JellyFishEntity::new, MobCategory.WATER_AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
-			.setUpdateInterval(3).setCustomClientFactory(JellyFishEntity::new).fireImmune().sized(0.6f, 1.8f));
+			.setUpdateInterval(3).setCustomClientFactory(JellyFishEntity::new).fireImmune().sized(0.6f, 0.5f));
+	public static final RegistryObject<EntityType<InfectedDragonflyEntity>> INFECTED_DRAGONFLY = register("infected_dragonfly",
+			EntityType.Builder.<InfectedDragonflyEntity>of(InfectedDragonflyEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(InfectedDragonflyEntity::new)
+
+					.sized(0.6f, 0.6f));
+	public static final RegistryObject<EntityType<HummingbirdEntity>> HUMMINGBIRD = register("hummingbird",
+			EntityType.Builder.<HummingbirdEntity>of(HummingbirdEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HummingbirdEntity::new)
+
+					.sized(0.6f, 0.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -242,6 +251,8 @@ public class TheabyssModEntities {
 			AbylagerEntity.init();
 			SummonedHollowSeekerEntity.init();
 			JellyFishEntity.init();
+			InfectedDragonflyEntity.init();
+			HummingbirdEntity.init();
 		});
 	}
 
@@ -291,5 +302,7 @@ public class TheabyssModEntities {
 		event.put(ABYLAGER.get(), AbylagerEntity.createAttributes().build());
 		event.put(SUMMONED_HOLLOW_SEEKER.get(), SummonedHollowSeekerEntity.createAttributes().build());
 		event.put(JELLY_FISH.get(), JellyFishEntity.createAttributes().build());
+		event.put(INFECTED_DRAGONFLY.get(), InfectedDragonflyEntity.createAttributes().build());
+		event.put(HUMMINGBIRD.get(), HummingbirdEntity.createAttributes().build());
 	}
 }

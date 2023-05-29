@@ -1,4 +1,3 @@
-
 package net.yezon.theabyss.client.gui;
 
 import net.yezon.theabyss.world.inventory.ExtractorMenu;

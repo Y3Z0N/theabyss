@@ -1,0 +1,23 @@
+{
+  "type": "theabyss:mortar_and_pestle",
+  "ingredients": [
+    {
+      "item": "theabyss:hollow_crystal_shard"
+    },
+    {
+      "item": "theabyss:hollow_crystal_shard"
+    },
+    {
+      "item": "theabyss:bottle_of_somnium"
+    },
+    {
+      "item": "theabyss:hollow_crystal_shard"
+    },
+    {
+      "item": "theabyss:hollow_crystal_shard"
+    }
+  ],
+  "result": {
+    "item": "theabyss:hollow_powder"
+  }
+}

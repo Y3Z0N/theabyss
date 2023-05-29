@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.IgnisitheArmorBodyAbilityEvent;
+import net.yezon.theabyss.eventhandlers.IgnisitheArmorBodyAbilityEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 import net.yezon.theabyss.init.TheabyssModItems;
 
@@ -97,7 +97,7 @@ public abstract class IgnisitheArmorItem extends ArmorItem {
 
 		@Override
 		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
-			IgnisitheArmorBodyAbilityEvent.execute(entity);
+			IgnisitheArmorBodyAbilityEventHandler.execute(entity);
 		}
 	}
 

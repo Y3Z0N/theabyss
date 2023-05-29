@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.BlindFlowerEffectEvent;
+import net.yezon.theabyss.eventhandlers.BlindFlowerEffectEventHandler;
 
 import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.ForgeHooks;
@@ -70,6 +70,6 @@ public class CaecusVersaBlock extends SugarCaneBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		BlindFlowerEffectEvent.execute(entity);
+		BlindFlowerEffectEventHandler.execute(entity);
 	}
 }

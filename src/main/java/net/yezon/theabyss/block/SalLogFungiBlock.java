@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.BreakVinesEvent;
+import net.yezon.theabyss.eventhandlers.BreakVinesEventHandler;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -105,6 +105,6 @@ public class SalLogFungiBlock extends Block {
 	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		BreakVinesEvent.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		BreakVinesEventHandler.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 }

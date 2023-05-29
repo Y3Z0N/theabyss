@@ -34,8 +34,8 @@ public class BlaruGrassFeature extends RandomPatchFeature {
 	public static Feature<?> feature() {
 		FEATURE = new BlaruGrassFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:blaru_grass", FEATURE,
-				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.BLARU_GRASS.get())), List.of(), 25));
-		PLACED_FEATURE = PlacementUtils.register("theabyss:blaru_grass", CONFIGURED_FEATURE, List.of(CountPlacement.of(30), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
+				FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(TheabyssModBlocks.BLARU_GRASS.get())), List.of(), 32));
+		PLACED_FEATURE = PlacementUtils.register("theabyss:blaru_grass", CONFIGURED_FEATURE, List.of(CountPlacement.of(40), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
 		return FEATURE;
 	}
 

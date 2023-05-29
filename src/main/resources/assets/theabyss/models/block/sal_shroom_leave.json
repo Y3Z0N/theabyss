@@ -4,5 +4,5 @@
     "all": "theabyss:blocks/sal_shroom_leave",
     "particle": "theabyss:blocks/sal_shroom_leave"
   },
-  "render_type": "cutout"
+  "render_type": "solid"
 }

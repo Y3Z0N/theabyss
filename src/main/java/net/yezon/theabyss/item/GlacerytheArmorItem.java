@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.GlacerytheArmorHelmetAbilityEvent;
-import net.yezon.theabyss.events.GlacerytheArmorBootsAbilityEvent;
+import net.yezon.theabyss.eventhandlers.GlacerytheArmorHelmetAbilityEventHandler;
+import net.yezon.theabyss.eventhandlers.GlacerytheArmorBootsAbilityEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 import net.yezon.theabyss.init.TheabyssModItems;
 
@@ -87,7 +87,7 @@ public abstract class GlacerytheArmorItem extends ArmorItem {
 
 		@Override
 		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
-			GlacerytheArmorHelmetAbilityEvent.execute(entity);
+			GlacerytheArmorHelmetAbilityEventHandler.execute(entity);
 		}
 	}
 
@@ -131,7 +131,7 @@ public abstract class GlacerytheArmorItem extends ArmorItem {
 
 		@Override
 		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
-			GlacerytheArmorBootsAbilityEvent.execute(entity);
+			GlacerytheArmorBootsAbilityEventHandler.execute(entity);
 		}
 	}
 }

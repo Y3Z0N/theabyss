@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.world.inventory;
 
-import net.yezon.theabyss.events.CrystalCutterHandlerEvent;
+import net.yezon.theabyss.eventhandlers.CrystalCutterHandlerEventHandler;
 import net.yezon.theabyss.init.TheabyssModMenus;
 import net.yezon.theabyss.init.TheabyssModItems;
 
@@ -243,7 +243,7 @@ public class CutterMenu extends AbstractContainerMenu implements Supplier<Map<In
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			CrystalCutterHandlerEvent.execute(world, x, y, z, entity);
+			CrystalCutterHandlerEventHandler.execute(world, x, y, z, entity);
 		}
 	}
 }

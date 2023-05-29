@@ -1,0 +1,21 @@
+{
+  "type": "theabyss:somnium_infusing",
+  "ingredients": [
+    {
+      "item": "theabyss:apple_of_immortality"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "theabyss:apple_of_immortality"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "process_time": 200,
+  "result": {
+    "item": "theabyss:immortal_substance"
+  }
+}

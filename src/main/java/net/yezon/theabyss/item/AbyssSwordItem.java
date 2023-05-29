@@ -1,9 +1,9 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.UseSliceEvent;
-import net.yezon.theabyss.events.UseDashEvent;
-import net.yezon.theabyss.events.SwordParticleEvent;
+import net.yezon.theabyss.eventhandlers.UseSliceEventHandler;
+import net.yezon.theabyss.eventhandlers.UseDashEventHandler;
+import net.yezon.theabyss.eventhandlers.SwordParticleEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.Level;
@@ -50,14 +50,14 @@ public class AbyssSwordItem extends SwordItem {
 	@Override
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
-		UseSliceEvent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		UseSliceEventHandler.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
 		return retval;
 	}
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
 		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-		UseDashEvent.execute(entity);
+		UseDashEventHandler.execute(entity);
 		return ar;
 	}
 
@@ -65,6 +65,6 @@ public class AbyssSwordItem extends SwordItem {
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			SwordParticleEvent.execute(world, entity.getX(), entity.getY(), entity.getZ());
+			SwordParticleEventHandler.execute(world, entity.getX(), entity.getY(), entity.getZ());
 	}
 }

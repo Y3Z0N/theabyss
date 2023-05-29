@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.NightbladeBossDodgeOnHurtEvent;
+import net.yezon.theabyss.eventhandlers.NightbladeBossDodgeOnHurtEventHandler;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -89,7 +89,7 @@ public class NightBladeBossCloneEntity extends Monster {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		NightbladeBossDodgeOnHurtEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		NightbladeBossDodgeOnHurtEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 		if (source.getDirectEntity() instanceof AbstractArrow)
 			return false;
 		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)

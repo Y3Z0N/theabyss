@@ -16,6 +16,7 @@ import net.yezon.theabyss.client.model.Modelfish3;
 import net.yezon.theabyss.client.model.Modelfish2;
 import net.yezon.theabyss.client.model.Modelfish1;
 import net.yezon.theabyss.client.model.Modelelder_entity;
+import net.yezon.theabyss.client.model.Modeldragonfly;
 import net.yezon.theabyss.client.model.Modeldeer;
 import net.yezon.theabyss.client.model.Modelcrystal_golem_big;
 import net.yezon.theabyss.client.model.Modelbrain;
@@ -50,6 +51,7 @@ public class TheabyssModModels {
 		event.registerLayerDefinition(Modelskeleton_abyss.LAYER_LOCATION, Modelskeleton_abyss::createBodyLayer);
 		event.registerLayerDefinition(Modelhylia_fox.LAYER_LOCATION, Modelhylia_fox::createBodyLayer);
 		event.registerLayerDefinition(Modelabyss_raptor.LAYER_LOCATION, Modelabyss_raptor::createBodyLayer);
+		event.registerLayerDefinition(Modeldragonfly.LAYER_LOCATION, Modeldragonfly::createBodyLayer);
 		event.registerLayerDefinition(Modelancient_seeker.LAYER_LOCATION, Modelancient_seeker::createBodyLayer);
 		event.registerLayerDefinition(Modelscorpion.LAYER_LOCATION, Modelscorpion::createBodyLayer);
 		event.registerLayerDefinition(Modelabyss_wolf.LAYER_LOCATION, Modelabyss_wolf::createBodyLayer);

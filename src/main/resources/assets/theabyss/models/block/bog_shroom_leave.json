@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "theabyss:blocks/bog_shroom_vine",
-    "particle": "theabyss:blocks/bog_shroom_vine"
+    "all": "theabyss:blocks/bog_shroom_leaves",
+    "particle": "theabyss:blocks/bog_shroom_leaves"
   },
-  "render_type": "cutout"
+  "render_type": "solid"
 }

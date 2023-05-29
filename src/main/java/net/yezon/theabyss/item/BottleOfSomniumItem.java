@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.BottleOfManaDrinkedEvent;
+import net.yezon.theabyss.eventhandlers.BottleOfManaDrinkedEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -42,7 +42,7 @@ public class BottleOfSomniumItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		BottleOfManaDrinkedEvent.execute(entity);
+		BottleOfManaDrinkedEventHandler.execute(entity);
 		return retval;
 	}
 }

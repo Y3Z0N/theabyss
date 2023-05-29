@@ -4,5 +4,5 @@
     "all": "theabyss:blocks/leaves_vigilant",
     "particle": "theabyss:blocks/leaves_vigilant"
   },
-  "render_type": "cutout"
+  "render_type": "solid"
 }

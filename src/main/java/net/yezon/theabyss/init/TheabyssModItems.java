@@ -710,6 +710,11 @@ public class TheabyssModItems {
 	public static final RegistryObject<Item> BLARU_GRASS = block(TheabyssModBlocks.BLARU_GRASS, TheabyssModTabs.TAB_THE_ABYSS_FLOWER);
 	public static final RegistryObject<Item> JELLY_FISH_SPAWN_EGG = REGISTRY.register("jelly_fish_spawn_egg",
 			() -> new ForgeSpawnEggItem(TheabyssModEntities.JELLY_FISH, -14539719, -16711732, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> INFECTED_DRAGONFLY_SPAWN_EGG = REGISTRY.register("infected_dragonfly_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.INFECTED_DRAGONFLY, -16751002, -16764109, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> HUMMINGBIRD_SPAWN_EGG = REGISTRY.register("hummingbird_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheabyssModEntities.HUMMINGBIRD, -16751002, -16764109, new Item.Properties().tab(TheabyssModTabs.TAB_THE_ABYSS_ENTITY)));
+	public static final RegistryObject<Item> LORAN_END_ORE = block(TheabyssModBlocks.LORAN_END_ORE, TheabyssModTabs.TAB_THE_ABYSS);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

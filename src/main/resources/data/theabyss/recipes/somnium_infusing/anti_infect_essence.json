@@ -1,0 +1,21 @@
+{
+  "type": "theabyss:somnium_infusing",
+  "ingredients": [
+    {
+      "item": "theabyss:rotten_flesh"
+    },
+    {
+      "item": "theabyss:rotten_flesh"
+    },
+    {
+      "item": "theabyss:rotten_flesh"
+    },
+    {
+      "item": "theabyss:rotten_flesh"
+    }
+  ],
+  "process_time": 200,
+  "result": {
+    "item": "theabyss:anti_infect_essence"
+  }
+}

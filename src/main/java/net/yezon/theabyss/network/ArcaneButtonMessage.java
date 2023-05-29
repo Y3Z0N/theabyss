@@ -1,9 +1,7 @@
 
 package net.yezon.theabyss.network;
 
-import net.yezon.theabyss.world.inventory.ArcaneMenu;
-import net.yezon.theabyss.events.ArcaneWorkBenchHandler2Event;
-import net.yezon.theabyss.TheabyssMod;
+import net.yezon.theabyss.eventhandlers.ArcaneWorkBenchHandler2EventHandler;
 
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -16,7 +14,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import java.util.function.Supplier;
-import java.util.HashMap;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ArcaneButtonMessage {
@@ -58,18 +55,17 @@ public class ArcaneButtonMessage {
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
 		Level world = entity.level;
-		HashMap guistate = ArcaneMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			ArcaneWorkBenchHandler2Event.execute(world, x, y, z, entity);
+			ArcaneWorkBenchHandler2EventHandler.execute(world, x, y, z, entity);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		TheabyssMod.addNetworkMessage(ArcaneButtonMessage.class, ArcaneButtonMessage::buffer, ArcaneButtonMessage::new, ArcaneButtonMessage::handler);
+		//TheabyssMod.addNetworkMessage(ArcaneButtonMessage.class, ArcaneButtonMessage::buffer, ArcaneButtonMessage::new, ArcaneButtonMessage::handler);
 	}
 }

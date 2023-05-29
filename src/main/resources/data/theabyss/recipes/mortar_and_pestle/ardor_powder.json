@@ -1,0 +1,23 @@
+{
+  "type": "theabyss:mortar_and_pestle",
+  "ingredients": [
+    {
+      "item": "theabyss:loran"
+    },
+    {
+      "item": "theabyss:vitae_dust"
+    },
+    {
+      "item": "theabyss:bottle_of_somnium"
+    },
+    {
+      "item": "theabyss:vitae_dust"
+    },
+    {
+      "item": "theabyss:loran"
+    }
+  ],
+  "result": {
+    "item": "theabyss:ardor_powder"
+  }
+}

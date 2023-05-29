@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "theabyss:slime_forest",
-  "features": "theabyss:slime_crater_2",
-  "step": "surface_structures"
-}

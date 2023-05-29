@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.PhantomArmorBodyAbilityEvent;
+import net.yezon.theabyss.eventhandlers.PhantomArmorBodyAbilityEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 import net.yezon.theabyss.init.TheabyssModItems;
 
@@ -97,7 +97,7 @@ public abstract class PhantomArmorItem extends ArmorItem {
 
 		@Override
 		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
-			PhantomArmorBodyAbilityEvent.execute(entity);
+			PhantomArmorBodyAbilityEventHandler.execute(entity);
 		}
 	}
 

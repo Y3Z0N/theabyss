@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.CookedFishEffectEvent;
+import net.yezon.theabyss.eventhandlers.CookedFishEffectEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -31,7 +31,7 @@ public class CookedFishItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		CookedFishEffectEvent.execute(entity);
+		CookedFishEffectEventHandler.execute(entity);
 		return retval;
 	}
 }

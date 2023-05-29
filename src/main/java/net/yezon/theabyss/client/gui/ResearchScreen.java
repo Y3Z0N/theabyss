@@ -1,4 +1,3 @@
-
 package net.yezon.theabyss.client.gui;
 
 import net.yezon.theabyss.world.inventory.ResearchMenu;
@@ -24,6 +23,7 @@ public class ResearchScreen extends AbstractContainerScreen<ResearchMenu> {
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	Button button_research;
 
 	public ResearchScreen(ResearchMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -90,11 +90,13 @@ public class ResearchScreen extends AbstractContainerScreen<ResearchMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 78, this.topPos + 42, 65, 20, Component.translatable("gui.theabyss.research.button_research"), e -> {
+		button_research = new Button(this.leftPos + 78, this.topPos + 42, 65, 20, Component.translatable("gui.theabyss.research.button_research"), e -> {
 			if (true) {
 				TheabyssMod.PACKET_HANDLER.sendToServer(new ResearchButtonMessage(0, x, y, z));
 				ResearchButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}));
+		});
+		guistate.put("button:button_research", button_research);
+		this.addRenderableWidget(button_research);
 	}
 }

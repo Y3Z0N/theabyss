@@ -1,11 +1,8 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.BlaruLeavesHandlerEvent;
+import net.yezon.theabyss.eventhandlers.BlaruLeavesHandlerEventHandler;
 
-import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.FluidState;
@@ -26,7 +23,7 @@ import java.util.Collections;
 
 public class VigilantLeavesBlock extends Block {
 	public VigilantLeavesBlock() {
-		super(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).strength(0.3f, 5f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.LEAVES).sound(SoundType.GRASS).strength(0.3f, 5f));
 	}
 
 	@Override
@@ -37,11 +34,6 @@ public class VigilantLeavesBlock extends Block {
 	@Override
 	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
-	}
-
-	@Override
-	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return Shapes.empty();
 	}
 
 	@Override
@@ -60,7 +52,7 @@ public class VigilantLeavesBlock extends Block {
 	@Override
 	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		BlaruLeavesHandlerEvent.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+		BlaruLeavesHandlerEventHandler.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
 		return retval;
 	}
 }

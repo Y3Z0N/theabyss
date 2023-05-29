@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.HolyLuckEvent;
+import net.yezon.theabyss.eventhandlers.HolyLuckEventHandler;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -46,7 +46,7 @@ public class HolySpoonItem extends SwordItem {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
 		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-		HolyLuckEvent.execute(entity);
+		HolyLuckEventHandler.execute(entity);
 		return ar;
 	}
 }

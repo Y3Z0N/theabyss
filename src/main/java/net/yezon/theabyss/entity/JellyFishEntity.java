@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.JellyFishHandlerEvent;
+import net.yezon.theabyss.eventhandlers.JellyFishHandlerEventHandler;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -121,7 +121,7 @@ public class JellyFishEntity extends Monster {
 	@Override
 	public void playerTouch(Player sourceentity) {
 		super.playerTouch(sourceentity);
-		JellyFishHandlerEvent.execute(this);
+		JellyFishHandlerEventHandler.execute(this);
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.AbyssaurPathFinderEvent;
+import net.yezon.theabyss.eventhandlers.AbyssaurPathFinderEventHandler;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -91,7 +91,7 @@ public class AbyssaurEntity extends Monster {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		AbyssaurPathFinderEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		AbyssaurPathFinderEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

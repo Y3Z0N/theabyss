@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.GlowingBlaruMossParticleEvent;
+import net.yezon.theabyss.eventhandlers.GlowingBlaruMossParticleEventHandler;
 import net.yezon.theabyss.init.TheabyssModBlocks;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -82,12 +82,12 @@ public class GlowingBlaruMossBlock extends FlowerBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		GlowingBlaruMossParticleEvent.execute(world, pos.getY(), entity);
+		GlowingBlaruMossParticleEventHandler.execute(world, pos.getY(), entity);
 	}
 
 	@Override
 	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
 		super.stepOn(world, pos, blockstate, entity);
-		GlowingBlaruMossParticleEvent.execute(world, pos.getY(), entity);
+		GlowingBlaruMossParticleEventHandler.execute(world, pos.getY(), entity);
 	}
 }

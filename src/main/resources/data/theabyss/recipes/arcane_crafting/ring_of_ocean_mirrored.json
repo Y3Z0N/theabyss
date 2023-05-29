@@ -1,0 +1,18 @@
+{
+  "type": "theabyss:arcane_crafting",
+  "core": {
+    "item": "theabyss:ring_of_ring"
+  },
+  "mode": {
+    "first": {
+      "item": "theabyss:loran"
+    },
+    "name": "TWO_INGREDIENTS",
+    "second": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "theabyss:ring_of_ocean"
+  }
+}

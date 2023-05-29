@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "theabyss:blocks/dark_stone_22",
-    "particle": "theabyss:blocks/dark_stone_22"
+    "all": "theabyss:blocks/dark_stone",
+    "particle": "theabyss:blocks/dark_stone"
   },
   "render_type": "solid"
 }

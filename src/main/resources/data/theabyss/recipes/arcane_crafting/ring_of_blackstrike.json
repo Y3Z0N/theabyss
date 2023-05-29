@@ -1,0 +1,18 @@
+{
+  "type": "theabyss:arcane_crafting",
+  "core": {
+    "item": "theabyss:ring_of_telekinetic"
+  },
+  "mode": {
+    "first": {
+      "item": "theabyss:ender_powder"
+    },
+    "name": "TWO_INGREDIENTS",
+    "second": {
+      "item": "theabyss:hollow_crystal_shard"
+    }
+  },
+  "result": {
+    "item": "theabyss:ring_of_blackstrike"
+  }
+}

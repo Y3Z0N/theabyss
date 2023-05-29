@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.world.inventory;
 
-import net.yezon.theabyss.events.ExtractSomniumFromLoranEvent;
+import net.yezon.theabyss.eventhandlers.ExtractSomniumFromLoranEventHandler;
 import net.yezon.theabyss.init.TheabyssModMenus;
 import net.yezon.theabyss.init.TheabyssModItems;
 
@@ -243,7 +243,7 @@ public class ExtractorMenu extends AbstractContainerMenu implements Supplier<Map
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			ExtractSomniumFromLoranEvent.execute(entity);
+			ExtractSomniumFromLoranEventHandler.execute(entity);
 		}
 	}
 }

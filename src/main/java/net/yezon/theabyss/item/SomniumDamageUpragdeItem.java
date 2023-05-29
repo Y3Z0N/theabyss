@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ManaDurabilityUpgradeResultEvent;
+import net.yezon.theabyss.eventhandlers.ManaDurabilityUpgradeResultEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -53,7 +53,7 @@ public class SomniumDamageUpragdeItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ManaDurabilityUpgradeResultEvent.execute(entity);
+		ManaDurabilityUpgradeResultEventHandler.execute(entity);
 		return retval;
 	}
 }

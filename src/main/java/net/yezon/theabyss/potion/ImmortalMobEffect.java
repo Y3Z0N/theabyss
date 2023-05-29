@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.ImmortalPotionExpiresEvent;
-import net.yezon.theabyss.events.ImmortalPotionActiveEvent;
+import net.yezon.theabyss.eventhandlers.ImmortalPotionExpiresEventHandler;
+import net.yezon.theabyss.eventhandlers.ImmortalPotionActiveEventHandler;
 
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,13 +21,13 @@ public class ImmortalMobEffect extends MobEffect {
 
 	@Override
 	public void addAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
-		ImmortalPotionActiveEvent.execute(entity);
+		ImmortalPotionActiveEventHandler.execute(entity);
 	}
 
 	@Override
 	public void removeAttributeModifiers(LivingEntity entity, AttributeMap attributeMap, int amplifier) {
 		super.removeAttributeModifiers(entity, attributeMap, amplifier);
-		ImmortalPotionExpiresEvent.execute(entity);
+		ImmortalPotionExpiresEventHandler.execute(entity);
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.potion;
 
-import net.yezon.theabyss.events.FlyingOnPotionActiveEvent;
+import net.yezon.theabyss.eventhandlers.FlyingOnPotionActiveEventHandler;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -19,7 +19,7 @@ public class FlyingMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		FlyingOnPotionActiveEvent.execute(entity);
+		FlyingOnPotionActiveEventHandler.execute(entity);
 	}
 
 	@Override

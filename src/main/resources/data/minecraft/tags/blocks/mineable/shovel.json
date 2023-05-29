@@ -1,6 +1,12 @@
 {
   "replace": false,
   "values": [
-    "theabyss:snow_block"
+    "theabyss:snow_block",
+    "theabyss:dirt",
+    "theabyss:infected_peat",
+    "theabyss:gravel",
+    "theabyss:infected_grass",
+    "theabyss:blaru_moss",
+    "theabyss:vigilant_moss"
   ]
 }

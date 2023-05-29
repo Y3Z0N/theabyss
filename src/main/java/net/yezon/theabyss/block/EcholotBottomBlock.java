@@ -3,7 +3,7 @@ package net.yezon.theabyss.block;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.yezon.theabyss.events.EcholotEffectEvent;
+import net.yezon.theabyss.eventhandlers.EcholotEffectEventHandler;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -48,6 +48,6 @@ public class EcholotBottomBlock extends Block {
 	@Override
 	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
 		super.stepOn(world, pos, blockstate, entity);
-		EcholotEffectEvent.execute(entity);
+		EcholotEffectEventHandler.execute(entity);
 	}
 }

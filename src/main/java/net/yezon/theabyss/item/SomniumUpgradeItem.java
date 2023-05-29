@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.ManaUpgradeResultEvent;
+import net.yezon.theabyss.eventhandlers.ManaUpgradeResultEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 
 import net.minecraft.world.level.block.state.BlockState;
@@ -53,7 +53,7 @@ public class SomniumUpgradeItem extends Item {
 		double y = entity.getY();
 		double z = entity.getZ();
 
-		ManaUpgradeResultEvent.execute(entity);
+		ManaUpgradeResultEventHandler.execute(entity);
 		return retval;
 	}
 }

@@ -1,5 +1,4 @@
 
-
 package net.yezon.theabyss.init;
 
 import net.yezon.theabyss.world.features.plants.YoungExoliusPlantFeature;
@@ -53,6 +52,7 @@ import net.yezon.theabyss.world.features.plants.AbyssCrystalOreFeature;
 import net.yezon.theabyss.world.features.ores.StoneRackleFeature;
 import net.yezon.theabyss.world.features.ores.RomaMud2Feature;
 import net.yezon.theabyss.world.features.ores.LoranOreFeature;
+import net.yezon.theabyss.world.features.ores.LoranEndOreFeature;
 import net.yezon.theabyss.world.features.ores.IronVariantFeature;
 import net.yezon.theabyss.world.features.ores.InfusedMagmaFeature;
 import net.yezon.theabyss.world.features.ores.InfectedPeatFeature;
@@ -67,7 +67,6 @@ import net.yezon.theabyss.world.features.ores.EmeraldVariantFeature;
 import net.yezon.theabyss.world.features.ores.DiamondVariantFeature;
 import net.yezon.theabyss.world.features.ores.DarkStoneFeature;
 import net.yezon.theabyss.world.features.ores.AberytheOreFeature;
-import net.yezon.theabyss.world.features.lakes.ArenoFeature;
 import net.yezon.theabyss.world.features.VigilantTreeFeature;
 import net.yezon.theabyss.world.features.VigilantTree2Feature;
 import net.yezon.theabyss.world.features.VigilantLayingTreeFeature;
@@ -113,6 +112,7 @@ import net.yezon.theabyss.world.features.BogIsland3Feature;
 import net.yezon.theabyss.world.features.BogIsland1Feature;
 import net.yezon.theabyss.world.features.BogIsland12Feature;
 import net.yezon.theabyss.world.features.BlaruMelonFeature;
+import net.yezon.theabyss.world.features.ArenoFeatureFeature;
 import net.yezon.theabyss.TheabyssMod;
 
 import net.minecraftforge.registries.RegistryObject;
@@ -139,7 +139,6 @@ public class TheabyssModFeatures {
 	public static final RegistryObject<Feature<?>> ROMA_MUD_2 = REGISTRY.register("roma_mud_2", RomaMud2Feature::feature);
 	public static final RegistryObject<Feature<?>> DARK_STONE = REGISTRY.register("dark_stone", DarkStoneFeature::feature);
 	public static final RegistryObject<Feature<?>> INFUSED_MAGMA = REGISTRY.register("infused_magma", InfusedMagmaFeature::feature);
-	public static final RegistryObject<Feature<?>> ARENO = REGISTRY.register("areno", ArenoFeature::feature);
 	public static final RegistryObject<Feature<?>> INFECTED_PEAT = REGISTRY.register("infected_peat", InfectedPeatFeature::feature);
 	public static final RegistryObject<Feature<?>> GRAVEL = REGISTRY.register("gravel", InfectedGravelFeature::feature);
 	public static final RegistryObject<Feature<?>> LORAN_FLOWER = REGISTRY.register("loran_flower", LoranFlowerFeature::feature);
@@ -236,4 +235,6 @@ public class TheabyssModFeatures {
 	public static final RegistryObject<Feature<?>> VIGILANT_LAYING_TREE = REGISTRY.register("vigilant_laying_tree", VigilantLayingTreeFeature::feature);
 	public static final RegistryObject<Feature<?>> BLARU_MELON = REGISTRY.register("blaru_melon", BlaruMelonFeature::feature);
 	public static final RegistryObject<Feature<?>> BLARU_GRASS = REGISTRY.register("blaru_grass", BlaruGrassFeature::feature);
+	public static final RegistryObject<Feature<?>> ARENO_FEATURE = REGISTRY.register("areno_feature", ArenoFeatureFeature::new);
+	public static final RegistryObject<Feature<?>> LORAN_END_ORE = REGISTRY.register("loran_end_ore", LoranEndOreFeature::feature);
 }

@@ -1,250 +1,148 @@
-
 package net.yezon.theabyss.world.inventory;
 
-import net.yezon.theabyss.events.GeneratePowderEvent;
-import net.yezon.theabyss.init.TheabyssModMenus;
-
-import net.minecraftforge.items.SlotItemHandler;
-import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.core.BlockPos;
+import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.fml.common.Mod;
+import net.yezon.theabyss.init.TheabyssModBlocks;
+import net.yezon.theabyss.init.TheabyssModMenus;
+import net.yezon.theabyss.recipes.AllRecipeTypes;
+import net.yezon.theabyss.recipes.impl.MortarAndPestleRecipe;
+import net.yezon.theabyss.utils.ContainerAndScreenUtils;
+import net.yezon.theabyss.utils.RecipeUtils;
 
-import java.util.function.Supplier;
-import java.util.Map;
-import java.util.HashMap;
+import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
-public class MortarMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
-	public final static HashMap<String, Object> guistate = new HashMap<>();
-	public final Level world;
-	public final Player entity;
-	public int x, y, z;
-	private IItemHandler internal;
-	private final Map<Integer, Slot> customSlots = new HashMap<>();
-	private boolean bound = false;
+public class MortarMenu extends TheAbyssContainerMenu {
+    public static final int CONTAINER_SIZE = 5;
+    private final ContainerLevelAccess access;
+    private final SimpleContainer craftingContainer;
+    private final SimpleContainer resultContainer;
+    private final Player player;
 
-	public MortarMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(TheabyssModMenus.MORTAR.get(), id);
-		this.entity = inv.player;
-		this.world = inv.player.level;
-		this.internal = new ItemStackHandler(6);
-		BlockPos pos = null;
-		if (extraData != null) {
-			pos = extraData.readBlockPos();
-			this.x = pos.getX();
-			this.y = pos.getY();
-			this.z = pos.getZ();
-		}
-		if (pos != null) {
-			if (extraData.readableBytes() == 1) { // bound to item
-				byte hand = extraData.readByte();
-				ItemStack itemstack;
-				if (hand == 0)
-					itemstack = this.entity.getMainHandItem();
-				else
-					itemstack = this.entity.getOffhandItem();
-				itemstack.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-					this.internal = capability;
-					this.bound = true;
-				});
-			} else if (extraData.readableBytes() > 1) {
-				extraData.readByte(); // drop padding
-				Entity entity = world.getEntity(extraData.readVarInt());
-				if (entity != null)
-					entity.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						this.internal = capability;
-						this.bound = true;
-					});
-			} else { // might be bound to block
-				BlockEntity ent = inv.player != null ? inv.player.level.getBlockEntity(pos) : null;
-				if (ent != null) {
-					ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						this.internal = capability;
-						this.bound = true;
-					});
-				}
-			}
-		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 134, 43) {
-			@Override
-			public boolean mayPlace(ItemStack stack) {
-				return false;
-			}
-		}));
-		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 26, 43) {
-		}));
-		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 44, 25) {
-		}));
-		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 62, 43) {
-		}));
-		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 44, 61) {
-		}));
-		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 44, 43) {
-		}));
-		for (int si = 0; si < 3; ++si)
-			for (int sj = 0; sj < 9; ++sj)
-				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 17 + 84 + si * 18));
-		for (int si = 0; si < 9; ++si)
-			this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 17 + 142));
-	}
+    public MortarMenu(int id, Inventory inv) {
+        this(id, inv, ContainerLevelAccess.NULL);
+    }
 
-	@Override
-	public boolean stillValid(Player player) {
-		return true;
-	}
+    public MortarMenu(int id, Inventory inv, ContainerLevelAccess access) {
+        super(TheabyssModMenus.MORTAR.get(), id);
+        this.access = access;
+        this.player = inv.player;
+        this.craftingContainer = new SimpleContainer(CONTAINER_SIZE) {
+            @Override
+            public void setChanged() {
+                slotsChanged(this);
+            }
+        };
+        this.resultContainer = new SimpleContainer(1) {
+            @Override
+            public void setChanged() {
+            }
+        };
 
-	@Override
-	public ItemStack quickMoveStack(Player playerIn, int index) {
-		ItemStack itemstack = ItemStack.EMPTY;
-		Slot slot = (Slot) this.slots.get(index);
-		if (slot != null && slot.hasItem()) {
-			ItemStack itemstack1 = slot.getItem();
-			itemstack = itemstack1.copy();
-			if (index < 6) {
-				if (!this.moveItemStackTo(itemstack1, 6, this.slots.size(), true))
-					return ItemStack.EMPTY;
-				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 6, false)) {
-				if (index < 6 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 6 + 27, this.slots.size(), true))
-						return ItemStack.EMPTY;
-				} else {
-					if (!this.moveItemStackTo(itemstack1, 6, 6 + 27, false))
-						return ItemStack.EMPTY;
-				}
-				return ItemStack.EMPTY;
-			}
-			if (itemstack1.getCount() == 0)
-				slot.set(ItemStack.EMPTY);
-			else
-				slot.setChanged();
-			if (itemstack1.getCount() == itemstack.getCount())
-				return ItemStack.EMPTY;
-			slot.onTake(playerIn, itemstack1);
-		}
-		return itemstack;
-	}
+        this.addCraftingSlot(0, 56, 25);
+        this.addCraftingSlot(1, 38, 43);
+        this.addCraftingSlot(2, 56, 43);
+        this.addCraftingSlot(3, 74, 43);
+        this.addCraftingSlot(4, 56, 61);
 
-	@Override
-	protected boolean moveItemStackTo(ItemStack p_38904_, int p_38905_, int p_38906_, boolean p_38907_) {
-		boolean flag = false;
-		int i = p_38905_;
-		if (p_38907_) {
-			i = p_38906_ - 1;
-		}
-		if (p_38904_.isStackable()) {
-			while (!p_38904_.isEmpty()) {
-				if (p_38907_) {
-					if (i < p_38905_) {
-						break;
-					}
-				} else if (i >= p_38906_) {
-					break;
-				}
-				Slot slot = this.slots.get(i);
-				ItemStack itemstack = slot.getItem();
-				if (slot.mayPlace(itemstack) && !itemstack.isEmpty() && ItemStack.isSameItemSameTags(p_38904_, itemstack)) {
-					int j = itemstack.getCount() + p_38904_.getCount();
-					int maxSize = Math.min(slot.getMaxStackSize(), p_38904_.getMaxStackSize());
-					if (j <= maxSize) {
-						p_38904_.setCount(0);
-						itemstack.setCount(j);
-						slot.set(itemstack);
-						flag = true;
-					} else if (itemstack.getCount() < maxSize) {
-						p_38904_.shrink(maxSize - itemstack.getCount());
-						itemstack.setCount(maxSize);
-						slot.set(itemstack);
-						flag = true;
-					}
-				}
-				if (p_38907_) {
-					--i;
-				} else {
-					++i;
-				}
-			}
-		}
-		if (!p_38904_.isEmpty()) {
-			if (p_38907_) {
-				i = p_38906_ - 1;
-			} else {
-				i = p_38905_;
-			}
-			while (true) {
-				if (p_38907_) {
-					if (i < p_38905_) {
-						break;
-					}
-				} else if (i >= p_38906_) {
-					break;
-				}
-				Slot slot1 = this.slots.get(i);
-				ItemStack itemstack1 = slot1.getItem();
-				if (itemstack1.isEmpty() && slot1.mayPlace(p_38904_)) {
-					if (p_38904_.getCount() > slot1.getMaxStackSize()) {
-						slot1.set(p_38904_.split(slot1.getMaxStackSize()));
-					} else {
-						slot1.set(p_38904_.split(p_38904_.getCount()));
-					}
-					slot1.setChanged();
-					flag = true;
-					break;
-				}
-				if (p_38907_) {
-					--i;
-				} else {
-					++i;
-				}
-			}
-		}
-		return flag;
-	}
+        super.addSlot(new Slot(this.resultContainer, 0, 134, 43) {
+            @Override
+            public boolean mayPlace(ItemStack pStack) {
+                return false;
+            }
 
-	@Override
-	public void removed(Player playerIn) {
-		super.removed(playerIn);
-		if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
-			if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
-				for (int j = 0; j < internal.getSlots(); ++j) {
-					playerIn.drop(internal.extractItem(j, internal.getStackInSlot(j).getCount(), false), false);
-				}
-			} else {
-				for (int i = 0; i < internal.getSlots(); ++i) {
-					playerIn.getInventory().placeItemBackInInventory(internal.extractItem(i, internal.getStackInSlot(i).getCount(), false));
-				}
-			}
-		}
-	}
+            @Override
+            public void onTake(Player pPlayer, ItemStack pStack) {
+                resultTaken();
+                super.setChanged();
+            }
 
-	public Map<Integer, Slot> get() {
-		return customSlots;
-	}
+            @Override
+            protected void onQuickCraft(ItemStack pStack, int pAmount) {
+            }
 
-	@SubscribeEvent
-	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		Player entity = event.player;
-		if (event.phase == TickEvent.Phase.END && entity.containerMenu instanceof MortarMenu) {
-			Level world = entity.level;
-			double x = entity.getX();
-			double y = entity.getY();
-			double z = entity.getZ();
-			GeneratePowderEvent.execute(entity);
-		}
-	}
+            private void resultTaken() {
+                onResultSlotTaken(craftingContainer);
+            }
+        });
+
+        ContainerAndScreenUtils.addPlayerInventorySlots(this, inv, 8, 101);
+    }
+
+    @Override
+    public void slotsChanged(Container pContainer) {
+        this.access.execute((level, pos) -> gridUpdate(level, this.player));
+    }
+
+    private void addCraftingSlot(int index, int x, int y) {
+        super.addSlot(new Slot(this.craftingContainer, index, x, y));
+    }
+
+    @Override
+    public void removed(Player pPlayer) {
+        super.removed(pPlayer);
+        this.access.execute((level, pos) -> gridUpdate(level, pPlayer));
+    }
+
+    public void gridUpdate(Level level, Player player) {
+        if (!level.isClientSide()) {
+            ServerPlayer serverPlayer = ((ServerPlayer) player);
+            ItemStack item = ItemStack.EMPTY;
+            final @Nullable MortarAndPestleRecipe recipe = RecipeUtils.getRecipeFor(level, AllRecipeTypes.MORTAR_AND_PESTLE, this.craftingContainer);
+
+            if (recipe != null) {
+                item = recipe.assemble(this.craftingContainer);
+            }
+
+            this.resultContainer.setItem(0, item);
+            super.setRemoteSlot(CONTAINER_SIZE, item);
+            serverPlayer.connection.send(new ClientboundContainerSetSlotPacket(containerId, super.incrementStateId(), CONTAINER_SIZE, item));
+        }
+    }
+
+    @Override
+    public boolean stillValid(Player player) {
+        return stillValid(access, player, TheabyssModBlocks.MORTAR_AND_PESTLE.get());
+    }
+
+    @Override
+    public ItemStack quickMoveStack(Player playerIn, int index) {
+        ItemStack itemstack = ItemStack.EMPTY;
+        Slot slot = this.slots.get(index);
+        if (slot.hasItem()) {
+            ItemStack itemstack1 = slot.getItem();
+            itemstack = itemstack1.copy();
+            if (index < 6) {
+                if (!this.moveItemStackTo(itemstack1, 6, this.slots.size(), true))
+                    return ItemStack.EMPTY;
+                slot.onQuickCraft(itemstack1, itemstack);
+            } else if (!this.moveItemStackTo(itemstack1, 0, 6, false)) {
+                if (index < 6 + 27) {
+                    if (!this.moveItemStackTo(itemstack1, 6 + 27, this.slots.size(), true))
+                        return ItemStack.EMPTY;
+                } else {
+                    if (!this.moveItemStackTo(itemstack1, 6, 6 + 27, false))
+                        return ItemStack.EMPTY;
+                }
+                return ItemStack.EMPTY;
+            }
+            if (itemstack1.getCount() == 0)
+                slot.set(ItemStack.EMPTY);
+            else
+                slot.setChanged();
+            if (itemstack1.getCount() == itemstack.getCount())
+                return ItemStack.EMPTY;
+            slot.onTake(playerIn, itemstack1);
+        }
+        return itemstack;
+    }
 }

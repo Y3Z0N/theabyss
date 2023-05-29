@@ -3,7 +3,7 @@ package net.yezon.theabyss.client.screens;
 
 import org.checkerframework.checker.units.qual.h;
 
-import net.yezon.theabyss.events.GhostVisionOverlayDisplayOverlayIngameEvent;
+import net.yezon.theabyss.eventhandlers.GhostVisionOverlayDisplayOverlayIngameEventHandler;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -45,7 +45,7 @@ public class DimensionOverlay {
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		if (GhostVisionOverlayDisplayOverlayIngameEvent.execute(entity)) {
+		if (GhostVisionOverlayDisplayOverlayIngameEventHandler.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/screens/screen_overlay.png"));
 			Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, 0, 0, 0, w, h, w, h);
 		}

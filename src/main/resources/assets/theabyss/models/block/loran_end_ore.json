@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "theabyss:blocks/loran_end_stone",
+    "particle": "theabyss:blocks/loran_end_stone"
+  },
+  "render_type": "solid"
+}

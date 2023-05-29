@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.block;
 
-import net.yezon.theabyss.events.HealFlowerEffectEvent;
+import net.yezon.theabyss.eventhandlers.HealFlowerEffectEventHandler;
 import net.yezon.theabyss.init.TheabyssModItems;
 
 import net.minecraftforge.common.PlantType;
@@ -71,6 +71,6 @@ public class FlosVitaeBlock extends SugarCaneBlock {
 	@Override
 	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
 		super.entityInside(blockstate, world, pos, entity);
-		HealFlowerEffectEvent.execute(entity);
+		HealFlowerEffectEventHandler.execute(entity);
 	}
 }

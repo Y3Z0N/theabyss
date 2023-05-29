@@ -18,7 +18,7 @@ import java.util.Collections;
 
 public class VigilantBlueGrassBlock extends FlowerBlock {
 	public VigilantBlueGrassBlock() {
-		super(MobEffects.SATURATION, 0, BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).instabreak().hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 7).noCollission());
+		super(MobEffects.SATURATION, 0, BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).strength(-1, 3600000).hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).lightLevel(s -> 7).noCollission());
 	}
 
 	@Override

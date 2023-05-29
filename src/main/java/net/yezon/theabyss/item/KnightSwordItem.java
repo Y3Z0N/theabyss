@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.BrikedKnightSwordToolInHandTickEvent;
+import net.yezon.theabyss.eventhandlers.BrikedKnightSwordToolInHandTickEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 import net.yezon.theabyss.init.TheabyssModItems;
 
@@ -46,6 +46,6 @@ public class KnightSwordItem extends SwordItem {
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			BrikedKnightSwordToolInHandTickEvent.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
+			BrikedKnightSwordToolInHandTickEventHandler.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 }

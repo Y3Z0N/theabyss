@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.GuardSpawnEffectEvent;
+import net.yezon.theabyss.eventhandlers.GuardSpawnEffectEventHandler;
 import net.yezon.theabyss.init.TheabyssModItems;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
@@ -119,7 +119,7 @@ public class SoulGuardEntity extends Monster {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		GuardSpawnEffectEvent.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		GuardSpawnEffectEventHandler.execute(world, this.getX(), this.getY(), this.getZ(), this);
 		return retval;
 	}
 

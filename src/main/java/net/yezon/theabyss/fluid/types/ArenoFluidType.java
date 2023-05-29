@@ -5,7 +5,6 @@ import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.resources.ResourceLocation;
 
@@ -13,7 +12,7 @@ import java.util.function.Consumer;
 
 public class ArenoFluidType extends FluidType {
 	public ArenoFluidType() {
-		super(FluidType.Properties.create().canSwim(false).canDrown(false).pathType(BlockPathTypes.LAVA).adjacentPathType(null).motionScale(0.007D).density(500).viscosity(500).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
+		super(FluidType.Properties.create().fallDistanceModifier(0F).canExtinguish(true).supportsBoating(true).canHydrate(true).density(500).viscosity(500).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
 				.sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY).sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH));
 	}
 

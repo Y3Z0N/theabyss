@@ -161,6 +161,7 @@ public class TheabyssModVariables {
 			clone.AurelCrystalResearch = original.AurelCrystalResearch;
 			clone.HolyPlayer = original.HolyPlayer;
 			clone.ConfigBook = original.ConfigBook;
+			clone.GetDimension = original.GetDimension;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -430,6 +431,7 @@ public class TheabyssModVariables {
 		public boolean AurelCrystalResearch = false;
 		public boolean HolyPlayer = false;
 		public boolean ConfigBook = false;
+		public String GetDimension = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -527,6 +529,7 @@ public class TheabyssModVariables {
 			nbt.putBoolean("AurelCrystalResearch", AurelCrystalResearch);
 			nbt.putBoolean("HolyPlayer", HolyPlayer);
 			nbt.putBoolean("ConfigBook", ConfigBook);
+			nbt.putString("GetDimension", GetDimension);
 			return nbt;
 		}
 
@@ -621,6 +624,7 @@ public class TheabyssModVariables {
 			AurelCrystalResearch = nbt.getBoolean("AurelCrystalResearch");
 			HolyPlayer = nbt.getBoolean("HolyPlayer");
 			ConfigBook = nbt.getBoolean("ConfigBook");
+			GetDimension = nbt.getString("GetDimension");
 		}
 	}
 
@@ -734,6 +738,7 @@ public class TheabyssModVariables {
 					variables.AurelCrystalResearch = message.data.AurelCrystalResearch;
 					variables.HolyPlayer = message.data.HolyPlayer;
 					variables.ConfigBook = message.data.ConfigBook;
+					variables.GetDimension = message.data.GetDimension;
 				}
 			});
 			context.setPacketHandled(true);

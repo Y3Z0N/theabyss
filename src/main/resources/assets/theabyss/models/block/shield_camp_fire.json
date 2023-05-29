@@ -7,5 +7,5 @@
     "log": "theabyss:blocks/campfire_log",
     "fire": "theabyss:blocks/anima_fire"
   },
-  "render_type": "solid"
+  "render_type": "cutout"
 }

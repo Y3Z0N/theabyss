@@ -1,8 +1,8 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.RingOfFireStrikeParticleEvent;
-import net.yezon.theabyss.events.RingOfFireStrikeAttackProjectileHitsBlockEvent;
+import net.yezon.theabyss.eventhandlers.RingOfFireStrikeParticleEventHandler;
+import net.yezon.theabyss.eventhandlers.RingOfFireStrikeAttackProjectileHitsBlockEventHandler;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -67,19 +67,19 @@ public class RingOfFireStrikeAttackEntity extends AbstractArrow implements ItemS
 	@Override
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
-		RingOfFireStrikeAttackProjectileHitsBlockEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		RingOfFireStrikeAttackProjectileHitsBlockEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override
 	public void onHitBlock(BlockHitResult blockHitResult) {
 		super.onHitBlock(blockHitResult);
-		RingOfFireStrikeAttackProjectileHitsBlockEvent.execute(this.level, blockHitResult.getBlockPos().getX(), blockHitResult.getBlockPos().getY(), blockHitResult.getBlockPos().getZ());
+		RingOfFireStrikeAttackProjectileHitsBlockEventHandler.execute(this.level, blockHitResult.getBlockPos().getX(), blockHitResult.getBlockPos().getY(), blockHitResult.getBlockPos().getZ());
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		RingOfFireStrikeParticleEvent.execute(this.level, this.getX(), this.getY(), this.getZ());
+		RingOfFireStrikeParticleEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ());
 		if (this.inGround)
 			this.discard();
 	}

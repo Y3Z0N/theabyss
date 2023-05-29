@@ -1,0 +1,21 @@
+{
+  "type": "theabyss:somnium_infusing",
+  "ingredients": [
+    {
+      "item": "theabyss:roka_horn"
+    },
+    {
+      "item": "theabyss:node_shard"
+    },
+    {
+      "item": "theabyss:phantom_soul_item"
+    },
+    {
+      "item": "theabyss:soul_heart"
+    }
+  ],
+  "process_time": 200,
+  "result": {
+    "item": "theabyss:somnium_upgrade"
+  }
+}

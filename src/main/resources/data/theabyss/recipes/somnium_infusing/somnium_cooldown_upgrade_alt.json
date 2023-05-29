@@ -1,0 +1,21 @@
+{
+  "type": "theabyss:somnium_infusing",
+  "ingredients": [
+    {
+      "item": "theabyss:crystal_hand"
+    },
+    {
+      "item": "theabyss:node_shard"
+    },
+    {
+      "item": "theabyss:crystal_hand"
+    },
+    {
+      "item": "theabyss:node_shard"
+    }
+  ],
+  "process_time": 200,
+  "result": {
+    "item": "theabyss:somnium_cooldown_upgrade"
+  }
+}

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.item;
 
-import net.yezon.theabyss.events.IgnisitheSwordAbilityEvent;
+import net.yezon.theabyss.eventhandlers.IgnisitheSwordAbilityEventHandler;
 import net.yezon.theabyss.init.TheabyssModTabs;
 import net.yezon.theabyss.init.TheabyssModItems;
 
@@ -44,7 +44,7 @@ public class IgnisitheSwordItem extends SwordItem {
 	@Override
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
-		IgnisitheSwordAbilityEvent.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+		IgnisitheSwordAbilityEventHandler.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
 		return retval;
 	}
 }

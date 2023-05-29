@@ -1,0 +1,18 @@
+{
+  "type": "theabyss:arcane_crafting",
+  "core": {
+    "item": "theabyss:ring_of_ring"
+  },
+  "mode": {
+    "first": {
+      "item": "minecraft:blaze_powder"
+    },
+    "name": "TWO_INGREDIENTS",
+    "second": {
+      "item": "theabyss:crimson_powder"
+    }
+  },
+  "result": {
+    "item": "theabyss:ring_of_fire"
+  }
+}

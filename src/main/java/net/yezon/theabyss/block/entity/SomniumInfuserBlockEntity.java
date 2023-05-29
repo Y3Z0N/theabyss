@@ -1,145 +1,173 @@
 package net.yezon.theabyss.block.entity;
 
-import net.yezon.theabyss.world.inventory.InfuserMenu;
-import net.yezon.theabyss.init.TheabyssModBlockEntities;
-
-import net.minecraftforge.items.wrapper.SidedInvWrapper;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.capabilities.Capability;
-
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.WorldlyContainer;
-import net.minecraft.world.ContainerHelper;
-import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.core.NonNullList;
-import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.yezon.theabyss.block.entity.base.AbyssContainerBlockEntity;
+import net.yezon.theabyss.block.entity.base.TickableBlockEntity;
+import net.yezon.theabyss.init.TheabyssModBlockEntities;
+import net.yezon.theabyss.init.TheabyssModBlocks;
+import net.yezon.theabyss.init.TheabyssModItems;
+import net.yezon.theabyss.recipes.AllRecipeTypes;
+import net.yezon.theabyss.recipes.impl.SomniumInfusingRecipe;
+import net.yezon.theabyss.utils.ContainerAndScreenUtils;
+import net.yezon.theabyss.utils.RecipeUtils;
+import net.yezon.theabyss.world.inventory.InfuserMenu;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
+public class SomniumInfuserBlockEntity extends AbyssContainerBlockEntity implements TickableBlockEntity {
+    public static final int CONTAINER_SIZE = 7;
+    private final int resultSlot = CONTAINER_SIZE - 1;
+    public static final int DATA_SIZE = 2;
+    public static final int DEFAULT_PROCESS_DURATION = 200;
+    private final NonNullList<ItemStack> items = NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY);
+    private int processDuration = DEFAULT_PROCESS_DURATION;
+    private int processTime = 0;
+    private final ContainerData containerData = new ContainerData() {
+        @Override
+        public int get(int pIndex) {
+            return pIndex == 0 ? processTime : processDuration;
+        }
 
-import java.util.stream.IntStream;
+        @Override
+        public void set(int pIndex, int pValue) {}
 
-import io.netty.buffer.Unpooled;
+        @Override
+        public int getCount() {
+            return DATA_SIZE;
+        }
+    };
 
-public class SomniumInfuserBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
-	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(7, ItemStack.EMPTY);
-	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
+    public SomniumInfuserBlockEntity(BlockPos pPos, BlockState pBlockState) {
+        super(TheabyssModBlockEntities.SOMNIUM_INFUSER, pPos, pBlockState, CONTAINER_SIZE);
+    }
 
-	public SomniumInfuserBlockEntity(BlockPos position, BlockState state) {
-		super(TheabyssModBlockEntities.SOMNIUM_INFUSER.get(), position, state);
-	}
+    @Override
+    public NonNullList<ItemStack> getItems() {
+        return this.items;
+    }
 
-	@Override
-	public void load(CompoundTag compound) {
-		super.load(compound);
-		if (!this.tryLoadLootTable(compound))
-			this.stacks = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-		ContainerHelper.loadAllItems(compound, this.stacks);
-	}
+    @Override
+    public boolean canPlaceItem(int pIndex, ItemStack pStack) {
+        return switch (pIndex) {
+            case 0 -> pStack.is(TheabyssModItems.SOMNIUM.get());
+            case 1 -> pStack.is(TheabyssModItems.LORAN_ENERGY.get());
+            default -> pIndex != 6;
+        };
+    }
 
-	@Override
-	public void saveAdditional(CompoundTag compound) {
-		super.saveAdditional(compound);
-		if (!this.trySaveLootTable(compound)) {
-			ContainerHelper.saveAllItems(compound, this.stacks);
-		}
-	}
+    @Override
+    public void serverTick(Level level, BlockPos blockPos, BlockState state) {
+        if (!this.canProcess()) {
+            final @Nullable SomniumInfusingRecipe recipe = RecipeUtils.getRecipeFor(level, AllRecipeTypes.SOMNIUM_INFUSING, this);
+            if (recipe != null && this.canStackOutput(recipe)) {
+                if (this.isIdle()) {
+                     this.processTime = 1;
+                     this.processDuration = recipe.getProcessDuration();
+                } else if (this.processTime >= this.processDuration) {
+                    this.processRecipe(recipe);
+                } else {
+                    this.processTime++;
+                }
+            } else {
+                resetTime();
+            }
+        } else {
+            resetTime();
+        }
 
-	@Override
-	public ClientboundBlockEntityDataPacket getUpdatePacket() {
-		return ClientboundBlockEntityDataPacket.create(this);
-	}
+        setChanged(level, blockPos, state);
+    }
 
-	@Override
-	public CompoundTag getUpdateTag() {
-		return this.saveWithFullMetadata();
-	}
 
-	@Override
-	public int getContainerSize() {
-		return stacks.size();
-	}
 
-	@Override
-	public boolean isEmpty() {
-		for (ItemStack itemstack : this.stacks)
-			if (!itemstack.isEmpty())
-				return false;
-		return true;
-	}
+    private void processRecipe(SomniumInfusingRecipe recipe) {
+        final ItemStack result = recipe.assemble(this);
+        if (this.items.get(resultSlot).isEmpty()) {
+            super.setItem(resultSlot, result);
+        } else {
+            this.items.get(resultSlot).grow(result.getCount());
+        }
 
-	@Override
-	public Component getDefaultName() {
-		return Component.literal("somnium_infuser");
-	}
+        for (int i = 0; i < this.items.size() - 1; i++) {
+            ItemStack itemStack = items.get(i);
+            if (itemStack.hasCraftingRemainingItem()) {
+                ItemStack remainingItem = itemStack.getCraftingRemainingItem();
+                this.items.set(i, remainingItem);
+            } else {
+                itemStack.shrink(1);
+            }
+        }
 
-	@Override
-	public int getMaxStackSize() {
-		return 64;
-	}
+        this.resetTime();
+    }
 
-	@Override
-	public AbstractContainerMenu createMenu(int id, Inventory inventory) {
-		return new InfuserMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
-	}
+    private boolean canStackOutput(SomniumInfusingRecipe recipe) {
 
-	@Override
-	public Component getDisplayName() {
-		return Component.literal("Somnium Infuser");
-	}
+        if (!this.items.get(this.resultSlot).isEmpty()) {
+            ItemStack resultItem = recipe.getResultItem();
+            ItemStack resultSlot = this.getItem(this.resultSlot);
 
-	@Override
-	protected NonNullList<ItemStack> getItems() {
-		return this.stacks;
-	}
+            if (resultItem.is(resultSlot.getItem())) {
+                final int maxItemStack = Math.min(resultSlot.getMaxStackSize(), this.getMaxStackSize());
+                final int remainSpace = maxItemStack - (resultSlot.getCount() + resultItem.getCount());
+                return remainSpace > 0;
+            } else {
+                return false;
+            }
+        }
 
-	@Override
-	protected void setItems(NonNullList<ItemStack> stacks) {
-		this.stacks = stacks;
-	}
+        return true;
+    }
 
-	@Override
-	public boolean canPlaceItem(int index, ItemStack stack) {
-		return true;
-	}
+    private void resetTime() {
+        this.processTime = 0;
+        this.processDuration = DEFAULT_PROCESS_DURATION;
+    }
 
-	@Override
-	public int[] getSlotsForFace(Direction side) {
-		return IntStream.range(0, this.getContainerSize()).toArray();
-	}
+    public boolean isIdle() {
+        return this.processTime <= 0;
+    }
 
-	@Override
-	public boolean canPlaceItemThroughFace(int index, ItemStack stack, @Nullable Direction direction) {
-		return this.canPlaceItem(index, stack);
-	}
 
-	@Override
-	public boolean canTakeItemThroughFace(int index, ItemStack stack, Direction direction) {
-		if (index == 2)
-			return false;
-		return true;
-	}
+    private boolean canProcess() {
+        for (int i = 0; i < items.size() - 1; i++) {
+            if (super.getItem(i).isEmpty()) {
+                return true;
+            }
+        }
 
-	@Override
-	public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction facing) {
-		if (!this.remove && facing != null && capability == ForgeCapabilities.ITEM_HANDLER)
-			return handlers[facing.ordinal()].cast();
-		return super.getCapability(capability, facing);
-	}
+        return false;
+    }
 
-	@Override
-	public void setRemoved() {
-		super.setRemoved();
-		for (LazyOptional<? extends IItemHandler> handler : handlers)
-			handler.invalidate();
-	}
+    @Nullable
+    @Override
+    public InfuserMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
+        return new InfuserMenu(pContainerId, pPlayerInventory, this, ContainerAndScreenUtils.createLevelAccess(this), this.containerData);
+    }
+
+    @Override
+    public Component getDisplayName() {
+        return TheabyssModBlocks.SOMNIUM_INFUSER.get().getName();
+    }
+
+    @Override
+    protected void saveAdditional(CompoundTag pTag) {
+        pTag.putInt("processDuration", this.processDuration);
+        pTag.putInt("processTime", this.processTime);
+        super.saveAdditional(pTag);
+    }
+
+    @Override
+    protected void loadAdditional(CompoundTag pTag) {
+        this.processDuration = pTag.getInt("processDuration");
+        this.processTime = pTag.getInt("processTime");
+    }
 }

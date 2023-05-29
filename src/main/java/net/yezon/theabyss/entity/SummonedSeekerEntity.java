@@ -1,7 +1,8 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.SummonedSeekerOnEntityTickUpdateEvent;
+import net.yezon.theabyss.eventhandlers.SummonedSeekerOnEntityTickUpdateEventHandler;
+import net.yezon.theabyss.eventhandlers.SeekerParticlesEventHandler;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -10,7 +11,6 @@ import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
@@ -24,7 +24,6 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
@@ -84,8 +83,6 @@ public class SummonedSeekerEntity extends PathfinderMob {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)
-			return false;
 		if (source == DamageSource.FALL)
 			return false;
 		if (source == DamageSource.DROWN)
@@ -100,14 +97,20 @@ public class SummonedSeekerEntity extends PathfinderMob {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		SummonedSeekerOnEntityTickUpdateEvent.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		SummonedSeekerOnEntityTickUpdateEventHandler.execute(world, this.getX(), this.getY(), this.getZ(), this);
 		return retval;
 	}
 
 	@Override
 	public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
 		super.awardKillScore(entity, score, damageSource);
-		SummonedSeekerOnEntityTickUpdateEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), entity);
+		SummonedSeekerOnEntityTickUpdateEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ(), entity);
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		SeekerParticlesEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ());
 	}
 
 	public static void init() {
@@ -119,7 +122,7 @@ public class SummonedSeekerEntity extends PathfinderMob {
 		builder = builder.add(Attributes.MAX_HEALTH, 10);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 8);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 350);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 500);
 		return builder;
 	}
 }

@@ -1,7 +1,7 @@
 
 package net.yezon.theabyss.entity;
 
-import net.yezon.theabyss.events.SummonedSeekerOnEntityTickUpdateEvent;
+import net.yezon.theabyss.eventhandlers.SummonedSeekerOnEntityTickUpdateEventHandler;
 import net.yezon.theabyss.init.TheabyssModEntities;
 
 import net.minecraftforge.registries.ForgeRegistries;
@@ -169,14 +169,14 @@ public class SummonedHollowSeekerEntity extends PathfinderMob implements RangedA
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		SummonedSeekerOnEntityTickUpdateEvent.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		SummonedSeekerOnEntityTickUpdateEventHandler.execute(world, this.getX(), this.getY(), this.getZ(), this);
 		return retval;
 	}
 
 	@Override
 	public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
 		super.awardKillScore(entity, score, damageSource);
-		SummonedSeekerOnEntityTickUpdateEvent.execute(this.level, this.getX(), this.getY(), this.getZ(), entity);
+		SummonedSeekerOnEntityTickUpdateEventHandler.execute(this.level, this.getX(), this.getY(), this.getZ(), entity);
 	}
 
 	@Override

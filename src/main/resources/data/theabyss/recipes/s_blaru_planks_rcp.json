@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "theabyss:stripped_blaru_log"
+    }
+  ],
+  "result": {
+    "item": "theabyss:blaru_planks",
+    "count": 4
+  }
+}

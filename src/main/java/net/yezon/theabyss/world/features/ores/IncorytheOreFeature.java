@@ -35,9 +35,9 @@ public class IncorytheOreFeature extends OreFeature {
 	public static Feature<?> feature() {
 		FEATURE = new IncorytheOreFeature();
 		CONFIGURED_FEATURE = FeatureUtils.register("theabyss:incorythe_ore", FEATURE,
-				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()), TheabyssModBlocks.INCORYTHE_ORE.get().defaultBlockState())), 3));
+				new OreConfiguration(List.of(OreConfiguration.target(new BlockStateMatchTest(TheabyssModBlocks.STONE.get().defaultBlockState()), TheabyssModBlocks.INCORYTHE_ORE.get().defaultBlockState())), 4));
 		PLACED_FEATURE = PlacementUtils.register("theabyss:incorythe_ore", CONFIGURED_FEATURE,
-				List.of(CountPlacement.of(1), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-45)), BiomeFilter.biome()));
+				List.of(CountPlacement.of(3), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(-45)), BiomeFilter.biome()));
 		return FEATURE;
 	}
 

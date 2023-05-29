@@ -3,7 +3,7 @@ package net.yezon.theabyss.client.screens;
 
 import org.checkerframework.checker.units.qual.h;
 
-import net.yezon.theabyss.events.TimeStopDisplayOverlayIngameEvent;
+import net.yezon.theabyss.eventhandlers.TimeStopDisplayOverlayIngameEventHandler;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -45,7 +45,7 @@ public class TimeStopOverlay {
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
-		if (TimeStopDisplayOverlayIngameEvent.execute(entity)) {
+		if (TimeStopDisplayOverlayIngameEventHandler.execute(entity)) {
 			RenderSystem.setShaderTexture(0, new ResourceLocation("theabyss:textures/screens/time_travel.png"));
 			Minecraft.getInstance().gui.blit(event.getPoseStack(), 0, 0, 0, 0, w, h, w, h);
 		}
